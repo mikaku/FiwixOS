@@ -3,14 +3,11 @@
 # this script creates the FiwixOS media files.
 #
 
-KERNEL_DIR=/home/mikaku/github/fiwix
 SOURCE_FLOPPY=fiwix-floppy-base.img.gz
 SOURCE_FLOPPY_INITRD=initrd-base.img.gz
-SOURCE_ISO=../iso
 FLOPPY_IMAGE=FiwixOS-$1-i386.img
 FLOPPY_INITRD_IMAGE=FiwixOS-$1-initrd-i386.img
 ISO_IMAGE=FiwixOS-$1-i386.iso
-KERNEL_VERSION=$(grep UTS_RELEASE ${KERNEL_DIR}/include/fiwix/system.h | awk '{print $3}' | sed 's/"//g')
 
 create_ipk() {
 	dir=$1
@@ -591,10 +588,15 @@ EOF
 # Main
 # ----------------------------------------------------------------------------
 
+if [ $# != 3 ] ; then
+	echo "$0 <os_version> <source_dir> <kernel_dir>"
+	exit 1
+fi
+
 OSVERSION=$1
-
-[ -z "$OSVERSION" ] && echo "$0 <os_version>" && exit 1
-
+SOURCE_ISO=$2
+KERNEL_DIR=$3
+KERNEL_VERSION=$(grep UTS_RELEASE ${KERNEL_DIR}/include/fiwix/system.h | awk '{print $3}' | sed 's/"//g')
 
 # some checks
 [ ! -d "$KERNEL_DIR" ] && exit 1
