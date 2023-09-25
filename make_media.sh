@@ -331,8 +331,7 @@ copy_etc() {
 	media=$1
 
 	echo "configure /etc directory ..."
-	tar -jxf etc.tar.bz2
-	mv etc /tmp/$media
+	tar -C /tmp/$media -jxf etc.tar.bz2
 	sed -i 's/_VERSION_/'$OSVERSION'/' /tmp/$media/etc/issue /tmp/$media/etc/rc.d/rcS
 
 	if [ "$media" = "floppy" ] ; then
@@ -383,7 +382,7 @@ make_media_setup() {
 	echo "-----------------------------------------------------------------------"
 	rm -f FiwixOS-${OSVERSION}-*
 
-	tar -C .. -jcf FiwixOS-${OSVERSION}-Media-Setup.tar.bz2 ./media_setup
+	tar --transform "s/^./FiwixOS/" --exclude=iso --exclude=.git -jcf FiwixOS-${OSVERSION}-Media-Setup.tar.bz2 .
 }
 
 make_floppy() {
@@ -589,7 +588,7 @@ EOF
 # ----------------------------------------------------------------------------
 
 if [ $# != 3 ] ; then
-	echo "$0 <os_version> <source_dir> <kernel_dir>"
+	echo "$0 <os_version> <iso_dir> <kernel_dir>"
 	exit 1
 fi
 
