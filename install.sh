@@ -22,7 +22,7 @@ DEFAULT="echo -en \\033[m"	# \\033[0;39m
 REVERSE="echo -en \\033[7m"
 BRIGHT="echo -en \\033[1;39m"
 
-DIALOG="dialog --ascii-lines"
+DIALOG="dialog --ascii-lines --no-collapse"
 HEADER="FiwixOS $OSVERSION Installation"
 LINES=24
 CONSOLE="/dev/tty12"
@@ -139,9 +139,9 @@ production  use and  may  well  have serious  bugs  and broken
 features, which have not yet been identified or resolved.
 
 
-*****************************
-*** USE AT YOUR OWN RISK! ***
-*****************************
+                 *****************************
+                 *** USE AT YOUR OWN RISK! ***
+                 *****************************
 
 "
 	$DIALOG --backtitle "$HEADER" --title "[ WARNING ]" --msgbox "$text" 0 0
@@ -261,10 +261,11 @@ target_media_selection() {
 	local result
 	local text="
 You need to specify in which hard disk you want to
-install FiwixOS $OSVERSION. A minimal of ${MINPARTSIZE}MiB of
-capacity is required if you plan to install a full system.
+install FiwixOS $OSVERSION. A minimal of  ${MINPARTSIZE}MiB of
+capacity is required if you plan to install a full
+system.
 
-The following is the list of all hard disk drives
+The following is the  list of all hard disk drives
 detected in your system:
 "
 	for disk in $HDLIST ; do
@@ -380,6 +381,7 @@ boot_configuration() {
 		if [ "$instype" = 1 ] ; then
 			text="
 Do you want to put /boot on a separated partition?
+
 "
 			$DIALOG --backtitle "$HEADER" --title "[ INSTALLATION TYPE SELECTION ]" --extra-button --extra-label Cancel --yesno "$text" 0 0
 
@@ -392,6 +394,7 @@ Do you want to put /boot on a separated partition?
 		if [ "$instype" = 1 ] || [ "$instype" = 2 ] ; then
 			text="
 Do you want to install the GRUB boot loader when finished?
+
 "
 			$DIALOG --backtitle "$HEADER" --title "[ INSTALLATION TYPE SELECTION ]" --extra-button --extra-label Cancel --yesno "$text" 0 0
 
@@ -409,10 +412,11 @@ Do you want to install the GRUB boot loader when finished?
 
 select_packages() {
 	local text="
-Please specify the software selection from the list below."
+Please specify the software selection from the list below.
+"
 	local result
 
-	software=$($DIALOG --output-fd 1 --backtitle "$HEADER" --title "[ SOFTWARE SELECTION ]" --no-tags --menu "$text" 0 40 3 \
+	software=$($DIALOG --output-fd 1 --backtitle "$HEADER" --title "[ SOFTWARE SELECTION ]" --no-tags --menu "$text" 0 45 3 \
 		min  "Minimal install (basic functionality)" \
 		full "Full install (all packages)")
 
@@ -524,9 +528,9 @@ create_home_partition() {
 	fi
 
 	if [ "$nparts" -gt 2 ] ; then
+		nump=$(expr $nump + 1)
 		progress=$(echo "${progress}Creating partition $nump for /home\n") ; show_progress
 
-		nump=$(expr $nump + 1)
 		if [ "$homesize" = "max" ] ; then
 			(echo n ; echo p ; echo $nump ; echo ; echo ; echo w) | /busybox fdisk $TARGET >$CONSOLE 2>$CONSOLE || error || exit 1
 		else
@@ -770,6 +774,7 @@ Please wait while the software is installed, this may take a few minutes.
 			${SOURCE}/install/pkgs/bin/gzip_* \
 			${SOURCE}/install/pkgs/bin/less_* \
 			${SOURCE}/install/pkgs/bin/lrzsz_* \
+			${SOURCE}/install/pkgs/bin/mandoc_* \
 			${SOURCE}/install/pkgs/bin/mingetty_* \
 			${SOURCE}/install/pkgs/bin/nano_* \
 			${SOURCE}/install/pkgs/bin/ncurses_* \
