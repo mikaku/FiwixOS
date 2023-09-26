@@ -417,8 +417,8 @@ Please specify the software selection from the list below.
 	local result
 
 	software=$($DIALOG --output-fd 1 --backtitle "$HEADER" --title "[ SOFTWARE SELECTION ]" --no-tags --menu "$text" 0 45 3 \
-		min  "Minimal install (basic functionality)" \
-		full "Full install (all packages)")
+		full "Full install (all packages)") \
+		min  "Minimal install (basic functionality)"
 
 	result=$?
 	case $result in
@@ -790,10 +790,10 @@ Please wait while the software is installed, this may take a few minutes.
 			${SOURCE}/install/pkgs/bin/vim_* \
 			${SOURCE}/install/pkgs/bin/vixie-cron_*)
 	else
-		# we need to keep the order
-		softlist=$(ls ${SOURCE}/install/base/* \
-			${SOURCE}/install/pkgs/bin/*)
-		softlist=$softlist $(ls ${SOURCE}/install/extras/* 2>/dev/null)
+		# we need to keep the alphabetic order (base, bin, extras)
+		softlist=$(ls ${SOURCE}/install/base/* ; \
+			ls ${SOURCE}/install/pkgs/bin/* ; \
+			ls ${SOURCE}/install/extras/* 2>/dev/null)
 	fi
 
 	for file in $softlist ; do
