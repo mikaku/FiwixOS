@@ -482,6 +482,7 @@ operating system.
 EOF
 
 	cp -p install.sh /tmp/iso/sbin
+	chmod +x /tmp/iso/sbin/install.sh
 	sed -i 's/_VERSION_/'$OSVERSION'/' /tmp/$media/sbin/install.sh
 
 	# extract some necessary programs for the installation
@@ -521,6 +522,7 @@ EOF
 
 	# copy whole iso tree
 	cp -pr ${SOURCE_ISO}/* /tmp/iso
+	chown -R root:root /tmp/iso
 
 	echo "creating some ipk packages ..."
 	mkdir -p /tmp/iso/install/base
