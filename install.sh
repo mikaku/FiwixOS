@@ -417,8 +417,8 @@ Please specify the software selection from the list below.
 	local result
 
 	software=$($DIALOG --output-fd 1 --backtitle "$HEADER" --title "[ SOFTWARE SELECTION ]" --no-tags --menu "$text" 0 45 3 \
-		full "Full install (all packages)") \
-		min  "Minimal install (basic functionality)"
+		full "Full install (all packages)" \
+		min  "Minimal install (basic functionality)")
 
 	result=$?
 	case $result in
