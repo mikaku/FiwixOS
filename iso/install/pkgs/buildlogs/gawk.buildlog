@@ -1,0 +1,434 @@
+/mnt/builds-fiwix-3.3/gawk-3.1.8 /mnt/builds-fiwix-3.3
+patching gawk-3.1.8
+patching file config.guess
+patching file config.sub
+checking for a BSD-compatible install... ./install-sh -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for egrep... (cached) /bin/grep -E
+checking for bison... no
+checking for byacc... byacc
+checking whether ln -s works... yes
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... gcc -E
+checking whether make sets $(MAKE)... (cached) yes
+checking for special development options... no
+checking for z/OS USS compilation... no
+checking for strerror in -lcposix... no
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking for AIX compilation hacks... no
+checking for Linux/Alpha compilation hacks... no
+checking for function prototypes... yes
+checking for string.h... (cached) yes
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for ld used by GCC... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... no
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for ANSI C header files... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking arpa/inet.h usability... no
+checking arpa/inet.h presence... no
+checking for arpa/inet.h... no
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking libintl.h usability... no
+checking libintl.h presence... no
+checking for libintl.h... no
+checking mcheck.h usability... no
+checking mcheck.h presence... no
+checking for mcheck.h... no
+checking netdb.h usability... no
+checking netdb.h presence... no
+checking for netdb.h... no
+checking netinet/in.h usability... no
+checking netinet/in.h presence... no
+checking for netinet/in.h... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for string.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking sys/socket.h usability... no
+checking sys/socket.h presence... no
+checking for sys/socket.h... no
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking stropts.h usability... no
+checking stropts.h presence... no
+checking for stropts.h... no
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking for memory.h... (cached) yes
+checking for pid_t... yes
+checking return type of signal handlers... void
+checking for size_t... yes
+checking for uid_t in sys/types.h... yes
+checking type of array argument to getgroups... gid_t
+checking for long long int... yes
+checking for unsigned long long int... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for ssize_t... yes
+checking size of unsigned int... 4
+checking size of unsigned long... 4
+checking for socklen_t... no
+checking for socklen_t equivalent... int
+checking for vprintf... yes
+checking for _doprnt... no
+checking for sys/time.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for alarm... yes
+checking for working mktime... no
+checking for getaddrinfo... no
+checking for getaddrinfo in -lsocket... no
+checking for fmod in -lm... yes
+checking for isinf in -lm... yes
+checking for ismod in -lm... no
+checking for libsigsegv... no
+checking for atexit... yes
+checking for btowc... yes
+checking for fmod... yes
+checking for getgrent... yes
+checking for getgroups... yes
+checking for grantpt... no
+checking for isascii... yes
+checking for iswctype... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for mbrlen... yes
+checking for memcmp... yes
+checking for memcpy... yes
+checking for memcpy_ulong... no
+checking for memmove... yes
+checking for memset... yes
+checking for memset_ulong... no
+checking for mkstemp... yes
+checking for setlocale... yes
+checking for snprintf... yes
+checking for strchr... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strncasecmp... yes
+checking for strtod... yes
+checking for strtoul... yes
+checking for system... yes
+checking for tmpfile... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for tzset... yes
+checking for usleep... yes
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcscoll... (cached) yes
+checking for wctype... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking dlfcn.h usability... no
+checking dlfcn.h presence... no
+checking for dlfcn.h... no
+checking whether getpgrp requires zero arguments... yes
+checking for printf %F format... yes
+checking for gethostbyname... no
+checking for gethostbyname in -lnsl... no
+checking for connect... no
+checking for connect in -lsocket... no
+checking for struct stat.st_blksize... yes
+checking whether time.h and sys/time.h may both be included... (cached) yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... no
+checking whether tzname is declared... yes
+checking for tzname... yes
+checking whether char is unsigned... no
+checking for an ANSI C-conforming const... yes
+checking for C/C++ restrict keyword... __restrict
+checking for inline... inline
+checking for preprocessor stringizing operator... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating awklib/Makefile
+config.status: creating doc/Makefile
+config.status: creating po/Makefile.in
+config.status: creating test/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make 'CFLAGS=-g -O2' 'LDFLAGS=-s' all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+Making all in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT array.o -MD -MP -MF .deps/array.Tpo -c -o array.o array.c
+mv -f .deps/array.Tpo .deps/array.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT awkgram.o -MD -MP -MF .deps/awkgram.Tpo -c -o awkgram.o awkgram.c
+awkgram.y: In function 'get_src_buf':
+awkgram.y:1350:13: warning: assignment from incompatible pointer type [enabled by default]
+mv -f .deps/awkgram.Tpo .deps/awkgram.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT builtin.o -MD -MP -MF .deps/builtin.Tpo -c -o builtin.o builtin.c
+mv -f .deps/builtin.Tpo .deps/builtin.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT dfa.o -MD -MP -MF .deps/dfa.Tpo -c -o dfa.o dfa.c
+mv -f .deps/dfa.Tpo .deps/dfa.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT ext.o -MD -MP -MF .deps/ext.Tpo -c -o ext.o ext.c
+mv -f .deps/ext.Tpo .deps/ext.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT field.o -MD -MP -MF .deps/field.Tpo -c -o field.o field.c
+mv -f .deps/field.Tpo .deps/field.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT floatcomp.o -MD -MP -MF .deps/floatcomp.Tpo -c -o floatcomp.o floatcomp.c
+mv -f .deps/floatcomp.Tpo .deps/floatcomp.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT gawkmisc.o -MD -MP -MF .deps/gawkmisc.Tpo -c -o gawkmisc.o gawkmisc.c
+mv -f .deps/gawkmisc.Tpo .deps/gawkmisc.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT getopt.o -MD -MP -MF .deps/getopt.Tpo -c -o getopt.o getopt.c
+mv -f .deps/getopt.Tpo .deps/getopt.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT getopt1.o -MD -MP -MF .deps/getopt1.Tpo -c -o getopt1.o getopt1.c
+mv -f .deps/getopt1.Tpo .deps/getopt1.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT io.o -MD -MP -MF .deps/io.Tpo -c -o io.o io.c
+mv -f .deps/io.Tpo .deps/io.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.c
+mv -f .deps/main.Tpo .deps/main.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT msg.o -MD -MP -MF .deps/msg.Tpo -c -o msg.o msg.c
+mv -f .deps/msg.Tpo .deps/msg.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT node.o -MD -MP -MF .deps/node.Tpo -c -o node.o node.c
+mv -f .deps/node.Tpo .deps/node.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT random.o -MD -MP -MF .deps/random.Tpo -c -o random.o random.c
+mv -f .deps/random.Tpo .deps/random.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT re.o -MD -MP -MF .deps/re.Tpo -c -o re.o re.c
+mv -f .deps/re.Tpo .deps/re.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT regex.o -MD -MP -MF .deps/regex.Tpo -c -o regex.o regex.c
+mv -f .deps/regex.Tpo .deps/regex.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT replace.o -MD -MP -MF .deps/replace.Tpo -c -o replace.o replace.c
+mv -f .deps/replace.Tpo .deps/replace.Po
+/bin/sh ./config.status --file=version.c:version.in
+config.status: creating version.c
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT version.o -MD -MP -MF .deps/version.Tpo -c -o version.o version.c
+mv -f .deps/version.Tpo .deps/version.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT eval.o -MD -MP -MF .deps/eval.Tpo -c -o eval.o eval.c
+mv -f .deps/eval.Tpo .deps/eval.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT profile.o -MD -MP -MF .deps/profile.Tpo -c -o profile.o profile.c
+mv -f .deps/profile.Tpo .deps/profile.Po
+gcc  -g -O2  -s -o gawk array.o awkgram.o builtin.o dfa.o ext.o field.o floatcomp.o gawkmisc.o getopt.o getopt1.o io.o main.o msg.o node.o random.o re.o regex.o replace.o version.o eval.o profile.o    -lm -lm 
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT eval_p.o -MD -MP -MF .deps/eval_p.Tpo -c -o eval_p.o eval_p.c
+mv -f .deps/eval_p.Tpo .deps/eval_p.Po
+gcc -DDEFPATH='".:/usr/share/awk"' -DHAVE_CONFIG_H -DGAWK -DLOCALEDIR='"/usr/share/locale"' -I.   -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 -MT profile_p.o -MD -MP -MF .deps/profile_p.Tpo -c -o profile_p.o profile_p.c
+mv -f .deps/profile_p.Tpo .deps/profile_p.Po
+gcc  -g -O2  -s -o pgawk array.o awkgram.o builtin.o dfa.o ext.o field.o floatcomp.o gawkmisc.o getopt.o getopt1.o io.o main.o msg.o node.o random.o re.o regex.o replace.o version.o eval_p.o profile_p.o    -lm -lm 
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+Making all in awklib
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+gcc -DHAVE_CONFIG_H -I. -I..  -I.. -I.. -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 ./eg/lib/pwcat.c -s -o pwcat
+gcc -DHAVE_CONFIG_H -I. -I..  -I.. -I.. -DGETPGRP_VOID=1 -DELIDE_CODE=1  -g -O2 ./eg/lib/grcat.c -s -o grcat
+cp ./eg/prog/igawk.sh igawk ; chmod 755 igawk
+sed 's;/usr/local/libexec/awk;/usr/libexec/awk;' < ./eg/lib/passwdawk.in > passwd.awk
+sed 's;/usr/local/libexec/awk;/usr/libexec/awk;' < ./eg/lib/groupawk.in > group.awk
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+Making all in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/po'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/po'
+Making all in test
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+Making install in .
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  ./install-sh -c gawk pgawk '/mnt/builds-fiwix-3.3/installation/usr/bin'
+make 'CFLAGS=-g -O2' 'LDFLAGS=-s' install-exec-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+(cd /mnt/builds-fiwix-3.3/installation/usr/bin; \
+ln gawk gawk-3.1.8 2>/dev/null ; \
+ln pgawk pgawk-3.1.8 2>/dev/null ; \
+if [ ! -f awk ]; \
+then	ln -s gawk awk; \
+fi; exit 0)
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8'
+Making install in awklib
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+ .././install-sh -c igawk '/mnt/builds-fiwix-3.3/installation/usr/bin'
+test -z "/usr/libexec/awk" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/libexec/awk"
+  .././install-sh -c pwcat grcat '/mnt/builds-fiwix-3.3/installation/usr/libexec/awk'
+make  install-exec-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/awk
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/awk
+for i in passwd.awk group.awk ./eg/lib/*.awk ; do \
+	progname=`echo $i | sed 's;.*/;;'` ; \
+	.././install-sh -c -m 644 $i /mnt/builds-fiwix-3.3/installation/usr/share/awk/$progname ; \
+done
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/awklib'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/share/info" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/info"
+ .././install-sh -c -m 644 ./gawk.info ./gawkinet.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/gawk.info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/gawkinet.info'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ .././install-sh -c -m 644 gawk.1 igawk.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+(cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man1; \
+ln gawk.1 pgawk.1 2>/dev/null ; \
+exit 0)
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/doc'
+Making install in po
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/po'
+if test "gawk" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    .././install-sh -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/po'
+Making install in test
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/gawk-3.1.8/test'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/igawk: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/gawk-3.1.8
+./usr/bin/gawk
+./usr/bin/pgawk
+./usr/bin/pgawk-3.1.8
+./usr/bin/awk
+./usr/bin/igawk
+./usr/libexec/
+./usr/libexec/awk/
+./usr/libexec/awk/pwcat
+./usr/libexec/awk/grcat
+./usr/share/
+./usr/share/awk/
+./usr/share/awk/passwd.awk
+./usr/share/awk/group.awk
+./usr/share/awk/assert.awk
+./usr/share/awk/bits2str.awk
+./usr/share/awk/cliff_rand.awk
+./usr/share/awk/ctime.awk
+./usr/share/awk/ftrans.awk
+./usr/share/awk/getopt.awk
+./usr/share/awk/gettime.awk
+./usr/share/awk/join.awk
+./usr/share/awk/libintl.awk
+./usr/share/awk/nextfile.awk
+./usr/share/awk/noassign.awk
+./usr/share/awk/ord.awk
+./usr/share/awk/readable.awk
+./usr/share/awk/rewind.awk
+./usr/share/awk/round.awk
+./usr/share/awk/strtonum.awk
+./usr/share/awk/zerofile.awk
+./usr/share/info/
+./usr/share/info/dir
+./usr/share/info/gawk.info
+./usr/share/info/gawkinet.info
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/pgawk.1
+./usr/share/man/man1/gawk.1
+./usr/share/man/man1/igawk.1
+/mnt/builds-fiwix-3.3
+
+real	0m23.743s
+user	0m16.370s
+sys	0m5.480s

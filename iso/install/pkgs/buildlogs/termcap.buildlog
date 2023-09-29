@@ -1,0 +1,56 @@
+/mnt/builds-fiwix-3.3/termcap-1.3.1 /mnt/builds-fiwix-3.3
+creating cache ./config.cache
+checking for gcc... gcc
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking for ranlib... ranlib
+checking for a BSD compatible install... /bin/install -c
+checking how to run the C preprocessor... gcc -E
+checking for string.h... yes
+checking for unistd.h... yes
+checking whether cross-compiling... no
+checking for ANSI C header files... yes
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+gcc -c  -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1  -DTERMCAP_FILE=\"/mnt/builds-fiwix-3.3/installation/etc/termcap\" -I. -I. -g termcap.c
+gcc -c  -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1  -DTERMCAP_FILE=\"/mnt/builds-fiwix-3.3/installation/etc/termcap\" -I. -I. -g tparam.c
+gcc -c  -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1  -DTERMCAP_FILE=\"/mnt/builds-fiwix-3.3/installation/etc/termcap\" -I. -I. -g version.c
+ar rc libtermcap.a termcap.o tparam.o version.o
+ranlib libtermcap.a
+/bin/sh ./mkinstalldirs  /mnt/builds-fiwix-3.3/installation/usr/lib \
+/mnt/builds-fiwix-3.3/installation/usr/include /mnt/builds-fiwix-3.3/installation/usr/info
+mkdir /mnt/builds-fiwix-3.3/installation/usr
+mkdir /mnt/builds-fiwix-3.3/installation/usr/lib
+mkdir /mnt/builds-fiwix-3.3/installation/usr/include
+mkdir /mnt/builds-fiwix-3.3/installation/usr/info
+/bin/install -c -D -m 644 ./termcap.src /mnt/builds-fiwix-3.3/installation/etc/termcap
+/bin/install -c -D -m 644 libtermcap.a /mnt/builds-fiwix-3.3/installation/usr/lib/libtermcap.a
+ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libtermcap.a
+cd .; /bin/install -c -D -m 644 termcap.h /mnt/builds-fiwix-3.3/installation/usr/include/termcap.h
+cd .; test -z "/usr/include" || \
+  /bin/install -c -D -m 644 termcap.h /usr/include/termcap.h
+cd .; for f in termcap.info*; \
+do /bin/install -c -D -m 644 $f /mnt/builds-fiwix-3.3/installation/usr/info/$f; done
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/lib/
+./usr/lib/libtermcap.a
+./usr/include/
+./usr/include/termcap.h
+./usr/info/
+./usr/info/termcap.info
+./usr/info/termcap.info-1
+./usr/info/termcap.info-2
+./usr/info/termcap.info-3
+./usr/info/termcap.info-4
+./etc/
+./etc/termcap
+/mnt/builds-fiwix-3.3
+
+real	0m0.750s
+user	0m0.290s
+sys	0m0.320s

@@ -1,0 +1,880 @@
+/mnt/builds-fiwix-3.3/util-linux-ng-2.17 /mnt/builds-fiwix-3.3
+patching util-linux-ng-2.17
+patching file config/config.guess
+patching file config/config.sub
+patching file config.h.in
+patching file fdisk/cfdisk.c
+patching file fdisk/fdisk.c
+patching file fdisk/fdiskaixlabel.c
+patching file fdisk/fdiskmaclabel.c
+patching file fdisk/fdisksgilabel.c
+patching file fdisk/fdisksunlabel.c
+patching file fdisk/sfdisk.c
+patching file include/bitops.h
+patching file lib/md5.c
+patching file lib/wholedisk.c
+patching file login-utils/Makefile.in
+patching file login-utils/agetty.c
+patching file login-utils/checktty.c
+patching file login-utils/login.c
+patching file login-utils/login.h
+patching file misc-utils/findfs.c
+patching file misc-utils/logger.c
+patching file misc-utils/namei.c
+patching file misc-utils/script.c
+patching file misc-utils/scriptreplay.c
+patching file misc-utils/wipefs.c
+patching file misc-utils/write.c
+patching file shlibs/blkid/samples/mkfs.c
+patching file shlibs/blkid/samples/partitions.c
+patching file shlibs/blkid/samples/superblocks.c
+patching file shlibs/blkid/samples/topology.c
+patching file shlibs/blkid/src/blkidP.h
+patching file sys-utils/flock.c
+patching file sys-utils/ipcmk.c
+patching file sys-utils/renice.c
+patching file tests/helpers/test_sysinfo.c
+patching file text-utils/Makefile.in
+patching file text-utils/column.c
+patching file text-utils/display.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+configure: Default --exec-prefix detected.
+configure:   --bindir defaults to /bin
+configure:   --sbindir defaults to /sbin
+configure:   --libdir defaults to /lib
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for an ANSI C-conforming const... yes
+checking for working volatile... yes
+checking whether byte ordering is bigendian... no
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu99... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu99 object... ok
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu99 static flag -static works... yes
+checking if gcc -std=gnu99 supports -c -o file.o... yes
+checking if gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu99 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for pkg-config... /bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build gtk-doc documentation... no
+checking for gtkdoc-check... no
+checking for xsltproc... /bin/xsltproc
+checking for perl... /bin/perl
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking for linux/compiler.h... no
+checking for linux/blkpg.h... no
+checking for linux/major.h... no
+checking err.h usability... yes
+checking err.h presence... yes
+checking for err.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking linux/fd.h usability... no
+checking linux/fd.h presence... no
+checking for linux/fd.h... no
+checking linux/tiocl.h usability... no
+checking linux/tiocl.h presence... no
+checking for linux/tiocl.h... no
+checking linux/version.h usability... no
+checking linux/version.h presence... no
+checking for linux/version.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking pty.h usability... no
+checking pty.h presence... no
+checking for pty.h... no
+checking mntent.h usability... yes
+checking mntent.h presence... yes
+checking for mntent.h... yes
+checking net/if.h usability... no
+checking net/if.h presence... no
+checking for net/if.h... no
+checking net/if_dl.h usability... no
+checking net/if_dl.h presence... no
+checking for net/if_dl.h... no
+checking netinet/in.h usability... no
+checking netinet/in.h presence... no
+checking for netinet/in.h... no
+checking rpcsvc/nfs_prot.h usability... no
+checking rpcsvc/nfs_prot.h presence... no
+checking for rpcsvc/nfs_prot.h... no
+checking scsi/scsi.h usability... no
+checking scsi/scsi.h presence... no
+checking for scsi/scsi.h... no
+checking for stdlib.h... (cached) yes
+checking sys/disk.h usability... no
+checking sys/disk.h presence... no
+checking for sys/disk.h... no
+checking sys/disklabel.h usability... no
+checking sys/disklabel.h presence... no
+checking for sys/disklabel.h... no
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking sys/io.h usability... yes
+checking sys/io.h presence... yes
+checking for sys/io.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking sys/mkdev.h usability... no
+checking sys/mkdev.h presence... no
+checking for sys/mkdev.h... no
+checking sys/prctl.h usability... no
+checking sys/prctl.h presence... no
+checking for sys/prctl.h... no
+checking sys/queue.h usability... yes
+checking sys/queue.h presence... yes
+checking for sys/queue.h... yes
+checking sys/sockio.h usability... no
+checking sys/sockio.h presence... no
+checking for sys/sockio.h... no
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking for sys/ioctl.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking sys/un.h usability... no
+checking sys/un.h presence... no
+checking for sys/un.h... no
+checking sys/user.h usability... no
+checking sys/user.h presence... no
+checking for sys/user.h... no
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for unistd.h... (cached) yes
+checking linux/raw.h usability... no
+checking linux/raw.h presence... no
+checking for linux/raw.h... no
+checking whether _NL_TIME_WEEK_1STDAY is declared... no
+checking for inet_aton... no
+checking for futimens... no
+checking for fsync... yes
+checking for getdomainname... no
+checking for get_current_dir_name... no
+checking for usleep... yes
+checking for nanosleep... yes
+checking for personality... yes
+checking for updwtmp... yes
+checking for jrand48... yes
+checking for lchown... yes
+checking for llseek... yes
+checking for lseek64... no
+checking for strtoull... yes
+checking for sysconf... yes
+checking for getdtablesize... no
+checking for getrlimit... yes
+checking for srandom... yes
+checking for setresgid... no
+checking for setresuid... no
+checking for inotify_init... no
+checking for prctl... no
+checking for getmntinfo... no
+checking for __secure_getenv... no
+checking for rpmatch... yes
+checking for _LARGEFILE_SOURCE value needed for large files... no
+checking for openat... no
+checking for fstatat... no
+checking for unlinkat... no
+checking for struct sockaddr.sa_len... no
+checking whether the target supports thread-local storage... no
+configure: WARNING: non-linux system; do not build mount utilities
+checking for UUID... yes
+checking uuid.h usability... yes
+checking uuid.h presence... yes
+checking for uuid.h... yes
+checking for openpty in -lutil... no
+checking for tgetnum in -ltermcap... yes
+checking whether NLS is requested... no
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for ld used by GCC... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking whether NLS is requested... no
+checking whether to use NLS... no
+checking ncurses.h usability... yes
+checking ncurses.h presence... yes
+checking for ncurses.h... yes
+checking for initscr in -lncursesw... no
+checking for initscr in -lncurses... yes
+checking ncurses/ncurses.h usability... no
+checking ncurses/ncurses.h presence... no
+checking for ncurses/ncurses.h... no
+checking for tgetent in -ltinfo... no
+checking for union semun... yes
+checking for syscall pivot_root... no
+configure: WARNING: Unable to detect syscall pivot_root.
+checking for syscall sched_getaffinity... no
+configure: WARNING: Unable to detect syscall sched_getaffinity.
+checking for syscall ioprio_set... no
+configure: WARNING: Unable to detect syscall ioprio_set.
+checking for syscall ioprio_get... no
+configure: WARNING: Unable to detect syscall ioprio_get.
+checking for syscall fallocate... no
+configure: WARNING: Unable to detect syscall fallocate.
+checking for fallocate... no
+checking for syscall unshare... no
+configure: WARNING: Unable to detect syscall unshare.
+checking for unshare... no
+checking for struct termios.c_line... yes
+checking whether ADDR_NO_RANDOMIZE is declared... no
+checking whether FDPIC_FUNCPTRS is declared... no
+checking whether MMAP_PAGE_ZERO is declared... no
+checking whether ADDR_COMPAT_LAYOUT is declared... no
+checking whether READ_IMPLIES_EXEC is declared... no
+checking whether ADDR_LIMIT_32BIT is declared... no
+checking whether WHOLE_SECONDS is declared... no
+checking whether STICKY_TIMEOUTS is declared... no
+checking whether ADDR_LIMIT_3GB is declared... no
+checking sys/swap.h usability... no
+checking sys/swap.h presence... no
+checking for sys/swap.h... no
+configure: WARNING: non-linux system; do not build fallocate
+checking security/pam_misc.h usability... no
+checking security/pam_misc.h presence... no
+checking for security/pam_misc.h... no
+configure: creating ./config.status
+config.status: creating disk-utils/Makefile
+config.status: creating fdisk/Makefile
+config.status: creating fsck/Makefile
+config.status: creating getopt/Makefile
+config.status: creating hwclock/Makefile
+config.status: creating include/Makefile
+config.status: creating lib/Makefile
+config.status: creating login-utils/Makefile
+config.status: creating Makefile
+config.status: creating misc-utils/chkdupexe
+config.status: creating misc-utils/Makefile
+config.status: creating mount/Makefile
+config.status: creating partx/Makefile
+config.status: creating po/Makefile.in
+config.status: WARNING:  'po/Makefile.in.in' seems to ignore the --datarootdir setting
+config.status: creating schedutils/Makefile
+config.status: creating shlibs/blkid/blkid.pc
+config.status: creating shlibs/blkid/Makefile
+config.status: creating shlibs/blkid/docs/Makefile
+config.status: creating shlibs/blkid/docs/version.xml
+config.status: creating shlibs/blkid/src/Makefile
+config.status: creating shlibs/blkid/src/blkid.h
+config.status: creating shlibs/blkid/src/superblocks/Makefile
+config.status: creating shlibs/blkid/src/topology/Makefile
+config.status: creating shlibs/blkid/src/partitions/Makefile
+config.status: creating shlibs/blkid/samples/Makefile
+config.status: creating shlibs/uuid/uuid.pc
+config.status: creating shlibs/uuid/Makefile
+config.status: creating shlibs/uuid/man/Makefile
+config.status: creating shlibs/uuid/src/Makefile
+config.status: creating shlibs/Makefile
+config.status: creating sys-utils/Makefile
+config.status: creating tests/commands.sh
+config.status: creating tests/helpers/Makefile
+config.status: creating tests/Makefile
+config.status: creating text-utils/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+Making all in include
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+Making all in disk-utils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+  CC     mkfs.o
+  CCLD   mkfs
+  CC     mkswap-mkswap.o
+  CC     mkswap-blkdev.o
+  CC     mkswap-wholedisk.o
+  CCLD   mkswap
+  CC     fsck.minix.o
+  CCLD   fsck.minix
+  CC     mkfs.minix.o
+  CC     blkdev.o
+  CCLD   mkfs.minix
+  CC     mkfs.bfs.o
+  CCLD   mkfs.bfs
+  CC     isosize.o
+  CCLD   isosize
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+Making all in fdisk
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+  CC     fdisk-fdisk.o
+  CC     fdisk-fdiskbsdlabel.o
+  CC     fdisk-fdisksgilabel.o
+  CC     fdisk-fdisksunlabel.o
+fdisksunlabel.c: In function 'verify_sun':
+fdisksunlabel.c:355:23: warning: assignment from incompatible pointer type [enabled by default]
+  CC     fdisk-fdiskaixlabel.o
+  CC     fdisk-fdiskmaclabel.o
+  CC     fdisk-partname.o
+  CC     fdisk-i386_sys_types.o
+  CC     fdisk-gpt.o
+  CC     fdisk-blkdev.o
+  CC     fdisk-wholedisk.o
+  CCLD   fdisk
+  CC     sfdisk.o
+sfdisk.c: In function 'sseek':
+sfdisk.c:179:9: warning: right shift count >= width of type [enabled by default]
+sfdisk.c:180:9: warning: right shift count >= width of type [enabled by default]
+  CC     partname.o
+  CC     i386_sys_types.o
+  CC     gpt.o
+  CC     blkdev.o
+  CC     wholedisk.o
+  CCLD   sfdisk
+  CC     cfdisk.o
+  CCLD   cfdisk
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+Making all in getopt
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+  CC     getopt.o
+  CCLD   getopt
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+Making all in lib
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+  CC     blkdev.o
+  CCLD   test_blkdev
+  CC     ismounted.o
+  CCLD   test_ismounted
+  CC     wholedisk.o
+  CCLD   test_wholedisk
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+Making all in shlibs
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+Making all in login-utils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+  CC     login.o
+  CC     setproctitle.o
+  CC     checktty.o
+  CCLD   login
+  CC     agetty.o
+agetty.c: In function 'termio_init':
+agetty.c:712:5: warning: implicit declaration of function 'cfsetispeed' [-Wimplicit-function-declaration]
+agetty.c:713:5: warning: implicit declaration of function 'cfsetospeed' [-Wimplicit-function-declaration]
+agetty.c: In function 'do_prompt':
+agetty.c:930:8: warning: implicit declaration of function 'cfgetispeed' [-Wimplicit-function-declaration]
+  CCLD   agetty
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+Making all in misc-utils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+  CC     cal.o
+  CCLD   cal
+  CC     ddate.o
+  CCLD   ddate
+  CC     logger.o
+  CCLD   logger
+  CC     look.o
+  CCLD   look
+  CC     mcookie.o
+  CC     md5.o
+  CCLD   mcookie
+  CC     namei.o
+  CCLD   namei
+  CC     script.o
+  CCLD   script
+  CC     whereis.o
+  CCLD   whereis
+  CC     scriptreplay.o
+scriptreplay.c: In function 'delay_for':
+scriptreplay.c:73:2: warning: implicit declaration of function 'nanosleep' [-Wimplicit-function-declaration]
+  CCLD   scriptreplay
+  CC     rename.o
+  CCLD   rename
+  CC     write-write.o
+  CCLD   write
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+Making all in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/po'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/po'
+Making all in schedutils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+Making all in sys-utils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+  CC     flock.o
+  CCLD   flock
+  CC     ipcrm.o
+ipcrm.c: In function 'remove_ids':
+ipcrm.c:69:5: warning: implicit declaration of function 'semctl' [-Wimplicit-function-declaration]
+ipcrm.c: In function 'main':
+ipcrm.c:199:10: warning: implicit declaration of function 'semget' [-Wimplicit-function-declaration]
+  CCLD   ipcrm
+  CC     ipcs.o
+ipcs.c: In function 'do_sem':
+ipcs.c:380:2: warning: implicit declaration of function 'semctl' [-Wimplicit-function-declaration]
+  CCLD   ipcs
+  CC     ipcmk.o
+ipcmk.c: In function 'createSem':
+ipcmk.c:76:2: warning: implicit declaration of function 'semget' [-Wimplicit-function-declaration]
+  CCLD   ipcmk
+  CC     renice.o
+  CCLD   renice
+  CC     setsid.o
+  CCLD   setsid
+  CC     readprofile.o
+  CCLD   readprofile
+echo ".so man8/setarch.8" > linux32.8
+echo ".so man8/setarch.8" > linux64.8
+echo ".so man8/setarch.8" > i386.8
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+Making all in text-utils
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+  CC     col.o
+  CCLD   col
+  CC     colcrt.o
+  CCLD   colcrt
+  CC     colrm.o
+  CCLD   colrm
+  CC     column.o
+  CCLD   column
+  CC     hexdump.o
+  CC     conv.o
+  CC     display.o
+  CC     hexsyntax.o
+  CC     odsyntax.o
+  CC     parse.o
+  CCLD   hexdump
+  CC     rev.o
+  CCLD   rev
+  CC     line.o
+  CCLD   line
+  CC     tailf.o
+  CCLD   tailf
+  CC     ul.o
+  CCLD   ul
+  CC     pg.o
+  CCLD   pg
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+Making all in tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+Making all in helpers
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+  CC     test_sysinfo.o
+  CCLD   test_sysinfo
+  CC     test_pathnames.o
+  CCLD   test_pathnames
+  CC     test_byteswap.o
+  CCLD   test_byteswap
+  CC     test_md5.o
+  CC     md5.o
+  CCLD   test_md5
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+Making install in include
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/include'
+Making install in disk-utils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+test -z "/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/sbin"
+  /bin/sh ../libtool   --mode=install /bin/install -c mkfs mkswap fsck.minix mkfs.minix mkfs.bfs '/mnt/builds-fiwix-3.3/installation/sbin'
+libtool: install: /bin/install -c mkfs /mnt/builds-fiwix-3.3/installation/sbin/mkfs
+libtool: install: /bin/install -c mkswap /mnt/builds-fiwix-3.3/installation/sbin/mkswap
+libtool: install: /bin/install -c fsck.minix /mnt/builds-fiwix-3.3/installation/sbin/fsck.minix
+libtool: install: /bin/install -c mkfs.minix /mnt/builds-fiwix-3.3/installation/sbin/mkfs.minix
+libtool: install: /bin/install -c mkfs.bfs /mnt/builds-fiwix-3.3/installation/sbin/mkfs.bfs
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c isosize '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c isosize /mnt/builds-fiwix-3.3/installation/usr/bin/isosize
+test -z "/usr/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/sbin"
+test -z "/usr/share/man/man8" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man8"
+ /bin/install -c -m 644 isosize.8 mkfs.8 mkswap.8 fsck.minix.8 mkfs.minix.8 mkfs.bfs.8 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/disk-utils'
+Making install in fdisk
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+test -z "/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/sbin"
+  /bin/sh ../libtool   --mode=install /bin/install -c fdisk sfdisk cfdisk '/mnt/builds-fiwix-3.3/installation/sbin'
+libtool: install: /bin/install -c fdisk /mnt/builds-fiwix-3.3/installation/sbin/fdisk
+libtool: install: /bin/install -c sfdisk /mnt/builds-fiwix-3.3/installation/sbin/sfdisk
+libtool: install: /bin/install -c cfdisk /mnt/builds-fiwix-3.3/installation/sbin/cfdisk
+test -z "/usr/share/man/man8" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man8"
+ /bin/install -c -m 644 fdisk.8 sfdisk.8 cfdisk.8 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/fdisk'
+Making install in getopt
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c getopt '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c getopt /mnt/builds-fiwix-3.3/installation/usr/bin/getopt
+test -z "/usr/share/getopt/" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/getopt/"
+ /bin/install -c getopt-parse.bash getopt-parse.tcsh getopt-test.bash getopt-test.tcsh '/mnt/builds-fiwix-3.3/installation/usr/share/getopt/'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ /bin/install -c -m 644 getopt.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/getopt'
+Making install in lib
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/lib'
+Making install in shlibs
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/shlibs'
+Making install in login-utils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+test -z "/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c login '/mnt/builds-fiwix-3.3/installation/bin'
+libtool: install: /bin/install -c login /mnt/builds-fiwix-3.3/installation/bin/login
+test -z "/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/sbin"
+  /bin/sh ../libtool   --mode=install /bin/install -c agetty '/mnt/builds-fiwix-3.3/installation/sbin'
+libtool: install: /bin/install -c agetty /mnt/builds-fiwix-3.3/installation/sbin/agetty
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+test -z "/usr/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/sbin"
+make  install-exec-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+cd /mnt/builds-fiwix-3.3/installation/usr/sbin && ln -sf vipw vigr
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+test -z "/usr/share/man/man8" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man8"
+ /bin/install -c -m 644 agetty.8 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+make[3]: Nothing to be done for 'install-data-hook'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/login-utils'
+Making install in misc-utils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+test -z "/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/bin"
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+test -z "/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/sbin"
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c cal ddate logger look mcookie namei script whereis scriptreplay rename write '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c cal /mnt/builds-fiwix-3.3/installation/usr/bin/cal
+libtool: install: /bin/install -c ddate /mnt/builds-fiwix-3.3/installation/usr/bin/ddate
+libtool: install: /bin/install -c logger /mnt/builds-fiwix-3.3/installation/usr/bin/logger
+libtool: install: /bin/install -c look /mnt/builds-fiwix-3.3/installation/usr/bin/look
+libtool: install: /bin/install -c mcookie /mnt/builds-fiwix-3.3/installation/usr/bin/mcookie
+libtool: install: /bin/install -c namei /mnt/builds-fiwix-3.3/installation/usr/bin/namei
+libtool: install: /bin/install -c script /mnt/builds-fiwix-3.3/installation/usr/bin/script
+libtool: install: /bin/install -c whereis /mnt/builds-fiwix-3.3/installation/usr/bin/whereis
+libtool: install: /bin/install -c scriptreplay /mnt/builds-fiwix-3.3/installation/usr/bin/scriptreplay
+libtool: install: /bin/install -c rename /mnt/builds-fiwix-3.3/installation/usr/bin/rename
+libtool: install: /bin/install -c write /mnt/builds-fiwix-3.3/installation/usr/bin/write
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+ /bin/install -c chkdupexe '/mnt/builds-fiwix-3.3/installation/usr/bin'
+test -z "/usr/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/sbin"
+make  install-exec-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+chgrp tty /mnt/builds-fiwix-3.3/installation/usr/bin/write
+chmod g+s /mnt/builds-fiwix-3.3/installation/usr/bin/write
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ /bin/install -c -m 644 cal.1 chkdupexe.1 ddate.1 logger.1 look.1 mcookie.1 namei.1 script.1 whereis.1 scriptreplay.1 rename.1 write.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+test -z "/usr/share/man/man8" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man8"
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/misc-utils'
+Making install in po
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/po'
+if test "util-linux-ng" = "gettext-tools"; then \
+  /bin/sh ../config/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/po'
+Making install in schedutils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/schedutils'
+Making install in sys-utils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+test -z "/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/bin"
+test -z "/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/sbin"
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c flock ipcrm ipcs ipcmk renice setsid '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c flock /mnt/builds-fiwix-3.3/installation/usr/bin/flock
+libtool: install: /bin/install -c ipcrm /mnt/builds-fiwix-3.3/installation/usr/bin/ipcrm
+libtool: install: /bin/install -c ipcs /mnt/builds-fiwix-3.3/installation/usr/bin/ipcs
+libtool: install: /bin/install -c ipcmk /mnt/builds-fiwix-3.3/installation/usr/bin/ipcmk
+libtool: install: /bin/install -c renice /mnt/builds-fiwix-3.3/installation/usr/bin/renice
+libtool: install: /bin/install -c setsid /mnt/builds-fiwix-3.3/installation/usr/bin/setsid
+test -z "/usr/sbin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/sbin"
+  /bin/sh ../libtool   --mode=install /bin/install -c readprofile '/mnt/builds-fiwix-3.3/installation/usr/sbin'
+libtool: install: /bin/install -c readprofile /mnt/builds-fiwix-3.3/installation/usr/sbin/readprofile
+make  install-exec-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+for I in ; do \
+	cd /mnt/builds-fiwix-3.3/installation/usr/sbin && ln -sf rdev $I ; \
+done
+for I in linux32 linux64  i386      ; do \
+	cd /mnt/builds-fiwix-3.3/installation/usr/bin && ln -sf setarch $I ; \
+done
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+test -z "/usr/share/info" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/info"
+ /bin/install -c -m 644 ./ipc.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/ipc.info'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ /bin/install -c -m 644 flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 setsid.1 readprofile.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+test -z "/usr/share/man/man8" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man8"
+ /bin/install -c -m 644 linux32.8 linux64.8 i386.8 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/sys-utils'
+Making install in text-utils
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+test -z "/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/bin"
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/sh ../libtool   --mode=install /bin/install -c col colcrt colrm column hexdump rev line tailf ul pg '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c col /mnt/builds-fiwix-3.3/installation/usr/bin/col
+libtool: install: /bin/install -c colcrt /mnt/builds-fiwix-3.3/installation/usr/bin/colcrt
+libtool: install: /bin/install -c colrm /mnt/builds-fiwix-3.3/installation/usr/bin/colrm
+libtool: install: /bin/install -c column /mnt/builds-fiwix-3.3/installation/usr/bin/column
+libtool: install: /bin/install -c hexdump /mnt/builds-fiwix-3.3/installation/usr/bin/hexdump
+libtool: install: /bin/install -c rev /mnt/builds-fiwix-3.3/installation/usr/bin/rev
+libtool: install: /bin/install -c line /mnt/builds-fiwix-3.3/installation/usr/bin/line
+libtool: install: /bin/install -c tailf /mnt/builds-fiwix-3.3/installation/usr/bin/tailf
+libtool: install: /bin/install -c ul /mnt/builds-fiwix-3.3/installation/usr/bin/ul
+libtool: install: /bin/install -c pg /mnt/builds-fiwix-3.3/installation/usr/bin/pg
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ /bin/install -c -m 644 col.1 colcrt.1 colrm.1 column.1 hexdump.1 rev.1 line.1 tailf.1 ul.1 more.1 pg.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/text-utils'
+Making install in tests
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+Making install in helpers
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests/helpers'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17/tests'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/util-linux-ng-2.17'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+rmdir: failed to remove 'lib': No such file or directory
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/chkdupexe: File format not recognized
+strip:./usr/share/getopt/getopt-parse.bash: File format not recognized
+strip:./usr/share/getopt/getopt-parse.tcsh: File format not recognized
+strip:./usr/share/getopt/getopt-test.bash: File format not recognized
+strip:./usr/share/getopt/getopt-test.tcsh: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/isosize
+./usr/bin/getopt
+./usr/bin/cal
+./usr/bin/ddate
+./usr/bin/look
+./usr/bin/mcookie
+./usr/bin/namei
+./usr/bin/script
+./usr/bin/whereis
+./usr/bin/scriptreplay
+./usr/bin/rename
+./usr/bin/write
+./usr/bin/chkdupexe
+./usr/bin/flock
+./usr/bin/ipcrm
+./usr/bin/ipcs
+./usr/bin/ipcmk
+./usr/bin/setsid
+./usr/bin/col
+./usr/bin/colcrt
+./usr/bin/colrm
+./usr/bin/column
+./usr/bin/hexdump
+./usr/bin/rev
+./usr/bin/line
+./usr/bin/tailf
+./usr/bin/ul
+./usr/bin/pg
+./usr/bin/login
+./usr/sbin/
+./usr/sbin/readprofile
+./usr/sbin/agetty
+./usr/sbin/cfdisk
+./usr/sbin/fdisk
+./usr/sbin/fsck.minix
+./usr/sbin/mkfs.minix
+./usr/sbin/mkswap
+./usr/sbin/sfdisk
+./usr/share/
+./usr/share/man/
+./usr/share/man/man8/
+./usr/share/man/man8/isosize.8
+./usr/share/man/man8/mkswap.8
+./usr/share/man/man8/fsck.minix.8
+./usr/share/man/man8/mkfs.minix.8
+./usr/share/man/man8/fdisk.8
+./usr/share/man/man8/sfdisk.8
+./usr/share/man/man8/cfdisk.8
+./usr/share/man/man8/agetty.8
+./usr/share/man/man1/
+./usr/share/man/man1/getopt.1
+./usr/share/man/man1/cal.1
+./usr/share/man/man1/chkdupexe.1
+./usr/share/man/man1/ddate.1
+./usr/share/man/man1/look.1
+./usr/share/man/man1/mcookie.1
+./usr/share/man/man1/namei.1
+./usr/share/man/man1/script.1
+./usr/share/man/man1/whereis.1
+./usr/share/man/man1/scriptreplay.1
+./usr/share/man/man1/rename.1
+./usr/share/man/man1/write.1
+./usr/share/man/man1/flock.1
+./usr/share/man/man1/ipcrm.1
+./usr/share/man/man1/ipcs.1
+./usr/share/man/man1/ipcmk.1
+./usr/share/man/man1/setsid.1
+./usr/share/man/man1/readprofile.1
+./usr/share/man/man1/col.1
+./usr/share/man/man1/colcrt.1
+./usr/share/man/man1/colrm.1
+./usr/share/man/man1/column.1
+./usr/share/man/man1/hexdump.1
+./usr/share/man/man1/rev.1
+./usr/share/man/man1/line.1
+./usr/share/man/man1/tailf.1
+./usr/share/man/man1/ul.1
+./usr/share/man/man1/pg.1
+./usr/share/getopt/
+./usr/share/getopt/getopt-parse.bash
+./usr/share/getopt/getopt-parse.tcsh
+./usr/share/getopt/getopt-test.bash
+./usr/share/getopt/getopt-test.tcsh
+./usr/share/info/
+./usr/share/info/ipc.info
+./usr/share/info/dir
+/mnt/builds-fiwix-3.3
+
+real	0m34.603s
+user	0m15.990s
+sys	0m11.630s

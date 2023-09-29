@@ -1,0 +1,567 @@
+/mnt/builds-fiwix-3.3/ncurses-examples-20180127 /mnt/builds-fiwix-3.3
+patching ncurses-examples-20180127
+patching file config.guess
+patching file config.sub
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+Configuring for fiwix
+checking whether make sets ${MAKE}... yes
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for executable suffix... 
+checking for object suffix... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking version of gcc... 4.7.4
+checking for gcc option to accept ANSI C... none needed
+checking $CC variable... ok
+checking for inline... inline
+checking how to run the C preprocessor... egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+gcc -E
+egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+checking for mawk... no
+checking for gawk... gawk
+checking for a BSD compatible install... /bin/install -c
+checking if you want to install stripped executables... yes
+checking if install needs to be told about ownership... no
+checking for lint... no
+checking for cppcheck... no
+checking for splint... no
+checking if filesystem supports mixed-case filenames... yes
+checking for exctags... no
+checking for ctags... no
+checking for exetags... no
+checking for etags... no
+checking for ctags... no
+checking for etags... no
+checking if -lm needed for math functions... no
+configure: checking for gcc __attribute__ directives...
+... scanf
+... printf
+... unused
+... noreturn
+checking if you want to work around bogus compiler/loader warnings... no
+checking if we should define _XOPEN_SOURCE... 500
+checking if we should define _POSIX_C_SOURCE... no
+checking for signal global datatype... volatile sig_atomic_t
+checking if SIGWINCH is defined... yes
+checking for nl_langinfo and CODESET... yes
+checking if you want to use pkg-config... yes
+checking for pkg-config... /bin/pkg-config
+checking if you want to see long compiling messages... yes
+checking for ncurses wrap-prefix... _nc_
+checking if you want to check for wide-character functions... yes
+checking for specific curses-directory... no
+checking for specified curses library type... curses
+checking for extra include directories... no
+checking if we have identified curses headers... ncurses.h
+checking for ncurses.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for terminfo header... term.h
+checking for ncurses version... 5.9.20110404
+checking if we have identified curses libraries... no
+checking for tgoto... no
+checking for tgoto in -lncurses... yes
+checking if we can link with ncurses library... yes
+checking for _nc_init_pthreads in -lncurses... no
+checking for X11 rgb file... ${exec_prefix}/lib/X11/rgb.txt
+checking if you want to check for panel functions... yes
+checking for new_panel in -lpanel... yes
+checking if you want to check for menu functions... yes
+checking for NetBSD menu.h... no
+checking for menu_driver in -lmenu... yes
+checking if you want to check for form functions... yes
+checking for NetBSD form.h... no
+checking for form_driver in -lform... yes
+checking for panel.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for menu.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for form.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for ANSI C header files... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking whether time.h and sys/time.h may both be included... yes
+checking for getopt.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for locale.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for math.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for stdarg.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for stdint.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for sys/ioctl.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for sys/select.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for sys/time.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for termios.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for unistd.h... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for unistd.h... (cached) yes
+checking for getopt.h... (cached) yes
+checking for header declaring getopt variables... unistd.h
+checking for getopt... yes
+checking for gettimeofday... yes
+checking for tdestroy... yes
+checking for tsearch... yes
+checking if we can use termcap.h... yes
+checking for mblen... yes
+checking for mbrlen... yes
+checking for mbrtowc... yes
+checking for mbsrtowcs... yes
+checking for mbstowcs... yes
+checking for mbtowc... yes
+checking for wcsrtombs... yes
+checking for wcstombs... yes
+checking definition to turn on extended curses functions... _XOPEN_SOURCE_EXTENDED
+checking for term.h... (cached) term.h
+checking for unctrl.h... unctrl.h
+checking for alloc_pair... no
+checking for assume_default_colors... yes
+checking for chgat... yes
+checking for color_content... yes
+checking for color_set... yes
+checking for copywin... yes
+checking for delscreen... yes
+checking for dupwin... yes
+checking for filter... yes
+checking for getbegx... yes
+checking for getcurx... yes
+checking for getmaxx... yes
+checking for getnstr... yes
+checking for getparx... yes
+checking for getwin... yes
+checking for halfdelay... yes
+checking for init_extended_color... no
+checking for mvderwin... yes
+checking for mvvline... yes
+checking for mvwin... yes
+checking for mvwvline... yes
+checking for napms... yes
+checking for newpad... yes
+checking for putwin... yes
+checking for reset_color_pairs... no
+checking for resize_term... yes
+checking for resizeterm... yes
+checking for restartterm... yes
+checking for ripoffline... yes
+checking for scr_dump... yes
+checking for setupterm... yes
+checking for slk_color... yes
+checking for slk_init... yes
+checking for termattrs... yes
+checking for tgetent... yes
+checking for tigetnum... yes
+checking for tigetstr... yes
+checking for tputs_sp... no
+checking for typeahead... yes
+checking for use_default_colors... yes
+checking for use_env... yes
+checking for use_extended_names... yes
+checking for use_screen... yes
+checking for use_window... yes
+checking for vid_puts... no
+checking for vidputs... yes
+checking for vsscanf... no
+checking for vw_printw... yes
+checking for wchgat... yes
+checking for winsdelln... yes
+checking for winsstr... yes
+checking for wresize... yes
+checking for wsyncdown... yes
+checking for _tracef... no
+checking for tputs... yes
+checking for ncurses extended functions... defined
+checking if _XPG5 should be defined to enable wide-characters... yes
+checking for wide-character functions... no
+checking if curses library uses pthreads... no
+checking if sys/time.h works with sys/select.h... yes
+checking for openpty in -lutil... no
+checking for openpty header... no
+checking for function curses_version... yes
+checking for alternate character set array... acs_map
+checking for wide alternate character set array... unknown
+checking for wide alternate character constants... no
+checking for type attr_t in ncurses.h... yes
+checking if we must include wchar.h to declare mbstate_t... yes
+checking if we must include wchar.h to declare wchar_t... no
+checking if we must include wchar.h to declare wint_t... no
+checking for data curscr declaration in ncurses.h... yes
+checking for data ospeed declaration in ncurses.h... no
+checking for data ospeed in library... yes
+checking for data boolnames declaration in ncurses.h... yes
+checking for data boolfnames declaration in ncurses.h... yes
+checking for data ttytype declaration in ncurses.h... yes
+checking if you want to turn on gcc warnings... no
+checking if you want to use dmalloc for testing... no
+checking if you want to use dbmalloc for testing... no
+checking if you want to use valgrind for testing... no
+checking if you want to perform memory-leak testing... no
+checking for an rpath option... 
+checking if rpath-hack should be disabled... no
+checking for updated LDFLAGS... no
+configure: creating ./config.status
+config.status: creating Makefile
+fgrep: warning: fgrep is obsolescent; using grep -F
+fgrep: warning: fgrep is obsolescent; using grep -F
+fgrep: warning: fgrep is obsolescent; using grep -F
+egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+config.status: creating ncurses_cfg.h
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="background" ./background.c
+gcc -g -O2  -o background ../ncurses-examples-20180127/background.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="blue" ./blue.c
+gcc -g -O2  -o blue ../ncurses-examples-20180127/blue.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="bs" ./bs.c
+gcc -g -O2  -o bs ../ncurses-examples-20180127/bs.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="cardfile" ./cardfile.c
+gcc -g -O2  -o cardfile ../ncurses-examples-20180127/cardfile.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="chgat" ./chgat.c
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="popup_msg" ./popup_msg.c
+gcc -g -O2  -o chgat ../ncurses-examples-20180127/chgat.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="clip_printw" ./clip_printw.c
+gcc -g -O2  -o clip_printw ../ncurses-examples-20180127/clip_printw.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="color_set" ./color_set.c
+gcc -g -O2  -o color_set ../ncurses-examples-20180127/color_set.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_altkeys" ./demo_altkeys.c
+gcc -g -O2  -o demo_altkeys ../ncurses-examples-20180127/demo_altkeys.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_defkey" ./demo_defkey.c
+gcc -g -O2  -o demo_defkey ../ncurses-examples-20180127/demo_defkey.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_forms" ./demo_forms.c
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="edit_field" ./edit_field.c
+gcc -g -O2  -o demo_forms ../ncurses-examples-20180127/demo_forms.o ../ncurses-examples-20180127/edit_field.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_keyok" ./demo_keyok.c
+gcc -g -O2  -o demo_keyok ../ncurses-examples-20180127/demo_keyok.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_menus" ./demo_menus.c
+gcc -g -O2  -o demo_menus ../ncurses-examples-20180127/demo_menus.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_new_pair" ./demo_new_pair.c
+gcc -g -O2  -o demo_new_pair ../ncurses-examples-20180127/demo_new_pair.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_panels" ./demo_panels.c
+gcc -g -O2  -o demo_panels ../ncurses-examples-20180127/demo_panels.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="demo_terminfo" ./demo_terminfo.c
+gcc -g -O2  -o demo_terminfo ../ncurses-examples-20180127/demo_terminfo.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="ditto" ./ditto.c
+gcc -g -O2  -o ditto ../ncurses-examples-20180127/ditto.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`   -lm
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="dots" ./dots.c
+gcc -g -O2  -o dots ../ncurses-examples-20180127/dots.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="dots_curses" ./dots_curses.c
+gcc -g -O2  -o dots_curses ../ncurses-examples-20180127/dots_curses.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="dots_mvcur" ./dots_mvcur.c
+gcc -g -O2  -o dots_mvcur ../ncurses-examples-20180127/dots_mvcur.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="dots_termcap" ./dots_termcap.c
+gcc -g -O2  -o dots_termcap ../ncurses-examples-20180127/dots_termcap.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="dots_xcurses" ./dots_xcurses.c
+gcc -g -O2  -o dots_xcurses ../ncurses-examples-20180127/dots_xcurses.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="echochar" ./echochar.c
+gcc -g -O2  -o echochar ../ncurses-examples-20180127/echochar.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="extended_color" ./extended_color.c
+gcc -g -O2  -o extended_color ../ncurses-examples-20180127/extended_color.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="filter" ./filter.c
+gcc -g -O2  -o filter ../ncurses-examples-20180127/filter.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="firework" ./firework.c
+gcc -g -O2  -o firework ../ncurses-examples-20180127/firework.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="firstlast" ./firstlast.c
+gcc -g -O2  -o firstlast ../ncurses-examples-20180127/firstlast.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="foldkeys" ./foldkeys.c
+gcc -g -O2  -o foldkeys ../ncurses-examples-20180127/foldkeys.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="form_driver_w" ./form_driver_w.c
+gcc -g -O2  -o form_driver_w ../ncurses-examples-20180127/form_driver_w.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="gdc" ./gdc.c
+gcc -g -O2  -o gdc ../ncurses-examples-20180127/gdc.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="hanoi" ./hanoi.c
+gcc -g -O2  -o hanoi ../ncurses-examples-20180127/hanoi.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="hashtest" ./hashtest.c
+gcc -g -O2  -o hashtest ../ncurses-examples-20180127/hashtest.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="inch_wide" ./inch_wide.c
+gcc -g -O2  -o inch_wide ../ncurses-examples-20180127/inch_wide.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="inchs" ./inchs.c
+gcc -g -O2  -o inchs ../ncurses-examples-20180127/inchs.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="ins_wide" ./ins_wide.c
+gcc -g -O2  -o ins_wide ../ncurses-examples-20180127/ins_wide.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="insdelln" ./insdelln.c
+gcc -g -O2  -o insdelln ../ncurses-examples-20180127/insdelln.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="inserts" ./inserts.c
+gcc -g -O2  -o inserts ../ncurses-examples-20180127/inserts.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="key_names" ./key_names.c
+gcc -g -O2  -o key_names ../ncurses-examples-20180127/key_names.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="keynames" ./keynames.c
+gcc -g -O2  -o keynames ../ncurses-examples-20180127/keynames.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="knight" ./knight.c
+gcc -g -O2  -o knight ../ncurses-examples-20180127/knight.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="list_keys" ./list_keys.c
+gcc -g -O2  -o list_keys ../ncurses-examples-20180127/list_keys.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="lrtest" ./lrtest.c
+gcc -g -O2  -o lrtest ../ncurses-examples-20180127/lrtest.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="movewindow" ./movewindow.c
+gcc -g -O2  -o movewindow ../ncurses-examples-20180127/movewindow.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="ncurses" ./ncurses.c
+gcc -g -O2  -o ncurses ../ncurses-examples-20180127/ncurses.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -lform -lmenu -lpanel -lncurses    
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="padview" ./padview.c
+gcc -g -O2  -o padview ../ncurses-examples-20180127/padview.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="picsmap" ./picsmap.c
+gcc -g -O2  -o picsmap ../ncurses-examples-20180127/picsmap.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="newdemo" ./newdemo.c
+gcc -g -O2  -o newdemo ../ncurses-examples-20180127/newdemo.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="railroad" ./railroad.c
+gcc -g -O2  -o railroad ../ncurses-examples-20180127/railroad.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="rain" ./rain.c
+gcc -g -O2  -o rain ../ncurses-examples-20180127/rain.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`   -lm
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="redraw" ./redraw.c
+gcc -g -O2  -o redraw ../ncurses-examples-20180127/redraw.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="savescreen" ./savescreen.c
+gcc -g -O2  -o savescreen ../ncurses-examples-20180127/savescreen.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="sp_tinfo" ./sp_tinfo.c
+gcc -g -O2  -o sp_tinfo ../ncurses-examples-20180127/sp_tinfo.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="tclock" ./tclock.c
+gcc -g -O2  -o tclock ../ncurses-examples-20180127/tclock.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_add_wchstr" ./test_add_wchstr.c
+gcc -g -O2  -o test_add_wchstr ../ncurses-examples-20180127/test_add_wchstr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_addchstr" ./test_addchstr.c
+gcc -g -O2  -o test_addchstr ../ncurses-examples-20180127/test_addchstr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_addstr" ./test_addstr.c
+gcc -g -O2  -o test_addstr ../ncurses-examples-20180127/test_addstr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_addwstr" ./test_addwstr.c
+gcc -g -O2  -o test_addwstr ../ncurses-examples-20180127/test_addwstr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_arrays" ./test_arrays.c
+gcc -g -O2  -o test_arrays ../ncurses-examples-20180127/test_arrays.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_get_wstr" ./test_get_wstr.c
+gcc -g -O2  -o test_get_wstr ../ncurses-examples-20180127/test_get_wstr.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_getstr" ./test_getstr.c
+gcc -g -O2  -o test_getstr ../ncurses-examples-20180127/test_getstr.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_instr" ./test_instr.c
+gcc -g -O2  -o test_instr ../ncurses-examples-20180127/test_instr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_inwstr" ./test_inwstr.c
+gcc -g -O2  -o test_inwstr ../ncurses-examples-20180127/test_inwstr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_opaque" ./test_opaque.c
+gcc -g -O2  -o test_opaque ../ncurses-examples-20180127/test_opaque.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_setupterm" ./test_setupterm.c
+gcc -g -O2  -o test_setupterm ../ncurses-examples-20180127/test_setupterm.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_sgr" ./test_sgr.c
+gcc -g -O2  -o test_sgr ../ncurses-examples-20180127/test_sgr.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`      
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_termattrs" ./test_termattrs.c
+gcc -g -O2  -o test_termattrs ../ncurses-examples-20180127/test_termattrs.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_vid_puts" ./test_vid_puts.c
+gcc -g -O2  -o test_vid_puts ../ncurses-examples-20180127/test_vid_puts.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="test_vidputs" ./test_vidputs.c
+gcc -g -O2  -o test_vidputs ../ncurses-examples-20180127/test_vidputs.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="testaddch" ./testaddch.c
+gcc -g -O2  -o testaddch ../ncurses-examples-20180127/testaddch.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="testcurs" ./testcurs.c
+gcc -g -O2  -o testcurs ../ncurses-examples-20180127/testcurs.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="testscanw" ./testscanw.c
+gcc -g -O2  -o testscanw ../ncurses-examples-20180127/testscanw.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="view" ./view.c
+gcc -g -O2  -o view ../ncurses-examples-20180127/view.o ../ncurses-examples-20180127/popup_msg.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="worm" ./worm.c
+gcc -g -O2  -o worm ../ncurses-examples-20180127/worm.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`   -lm
+gcc -c -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  -DMODULE_NAME="xmas" ./xmas.c
+gcc -g -O2  -o xmas ../ncurses-examples-20180127/xmas.o -s -I. -I. -I../test -DHAVE_CONFIG_H -DDATA_DIR=\"/usr/share\" -D_XOPEN_SOURCE=500 -D_XOPEN_SOURCE_EXTENDED -D_XPG5 -g -O2  `echo "-lform -lmenu -lpanel -lncurses  " | sed -e 's/-lform.*-lpanel[^ ]*//'`  
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/bin
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share
+installing background -> /mnt/builds-fiwix-3.3/installation/usr/bin/background
+installing blue -> /mnt/builds-fiwix-3.3/installation/usr/bin/blue
+installing bs -> /mnt/builds-fiwix-3.3/installation/usr/bin/bs
+installing cardfile -> /mnt/builds-fiwix-3.3/installation/usr/bin/cardfile
+installing chgat -> /mnt/builds-fiwix-3.3/installation/usr/bin/chgat
+installing clip_printw -> /mnt/builds-fiwix-3.3/installation/usr/bin/clip_printw
+installing color_set -> /mnt/builds-fiwix-3.3/installation/usr/bin/color_set
+installing demo_altkeys -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_altkeys
+installing demo_defkey -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_defkey
+installing demo_forms -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_forms
+installing demo_keyok -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_keyok
+installing demo_menus -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_menus
+installing demo_new_pair -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_new_pair
+installing demo_panels -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_panels
+installing demo_terminfo -> /mnt/builds-fiwix-3.3/installation/usr/bin/demo_terminfo
+installing ditto -> /mnt/builds-fiwix-3.3/installation/usr/bin/ditto
+installing dots -> /mnt/builds-fiwix-3.3/installation/usr/bin/dots
+installing dots_curses -> /mnt/builds-fiwix-3.3/installation/usr/bin/dots_curses
+installing dots_mvcur -> /mnt/builds-fiwix-3.3/installation/usr/bin/dots_mvcur
+installing dots_termcap -> /mnt/builds-fiwix-3.3/installation/usr/bin/dots_termcap
+installing dots_xcurses -> /mnt/builds-fiwix-3.3/installation/usr/bin/dots_xcurses
+installing echochar -> /mnt/builds-fiwix-3.3/installation/usr/bin/echochar
+installing extended_color -> /mnt/builds-fiwix-3.3/installation/usr/bin/extended_color
+installing filter -> /mnt/builds-fiwix-3.3/installation/usr/bin/filter
+installing firework -> /mnt/builds-fiwix-3.3/installation/usr/bin/firework
+installing firstlast -> /mnt/builds-fiwix-3.3/installation/usr/bin/firstlast
+installing foldkeys -> /mnt/builds-fiwix-3.3/installation/usr/bin/foldkeys
+installing form_driver_w -> /mnt/builds-fiwix-3.3/installation/usr/bin/form_driver_w
+installing gdc -> /mnt/builds-fiwix-3.3/installation/usr/bin/gdc
+installing hanoi -> /mnt/builds-fiwix-3.3/installation/usr/bin/hanoi
+installing hashtest -> /mnt/builds-fiwix-3.3/installation/usr/bin/hashtest
+installing inch_wide -> /mnt/builds-fiwix-3.3/installation/usr/bin/inch_wide
+installing inchs -> /mnt/builds-fiwix-3.3/installation/usr/bin/inchs
+installing ins_wide -> /mnt/builds-fiwix-3.3/installation/usr/bin/ins_wide
+installing insdelln -> /mnt/builds-fiwix-3.3/installation/usr/bin/insdelln
+installing inserts -> /mnt/builds-fiwix-3.3/installation/usr/bin/inserts
+installing key_names -> /mnt/builds-fiwix-3.3/installation/usr/bin/key_names
+installing keynames -> /mnt/builds-fiwix-3.3/installation/usr/bin/keynames
+installing knight -> /mnt/builds-fiwix-3.3/installation/usr/bin/knight
+installing list_keys -> /mnt/builds-fiwix-3.3/installation/usr/bin/list_keys
+installing lrtest -> /mnt/builds-fiwix-3.3/installation/usr/bin/lrtest
+installing movewindow -> /mnt/builds-fiwix-3.3/installation/usr/bin/movewindow
+installing ncurses -> /mnt/builds-fiwix-3.3/installation/usr/bin/ncurses
+installing padview -> /mnt/builds-fiwix-3.3/installation/usr/bin/padview
+installing picsmap -> /mnt/builds-fiwix-3.3/installation/usr/bin/picsmap
+installing newdemo -> /mnt/builds-fiwix-3.3/installation/usr/bin/newdemo
+installing railroad -> /mnt/builds-fiwix-3.3/installation/usr/bin/railroad
+installing rain -> /mnt/builds-fiwix-3.3/installation/usr/bin/rain
+installing redraw -> /mnt/builds-fiwix-3.3/installation/usr/bin/redraw
+installing savescreen -> /mnt/builds-fiwix-3.3/installation/usr/bin/savescreen
+installing sp_tinfo -> /mnt/builds-fiwix-3.3/installation/usr/bin/sp_tinfo
+installing tclock -> /mnt/builds-fiwix-3.3/installation/usr/bin/tclock
+installing test_add_wchstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_add_wchstr
+installing test_addchstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_addchstr
+installing test_addstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_addstr
+installing test_addwstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_addwstr
+installing test_arrays -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_arrays
+installing test_get_wstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_get_wstr
+installing test_getstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_getstr
+installing test_instr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_instr
+installing test_inwstr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_inwstr
+installing test_opaque -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_opaque
+installing test_setupterm -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_setupterm
+installing test_sgr -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_sgr
+installing test_termattrs -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_termattrs
+installing test_vid_puts -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_vid_puts
+installing test_vidputs -> /mnt/builds-fiwix-3.3/installation/usr/bin/test_vidputs
+installing testaddch -> /mnt/builds-fiwix-3.3/installation/usr/bin/testaddch
+installing testcurs -> /mnt/builds-fiwix-3.3/installation/usr/bin/testcurs
+installing testscanw -> /mnt/builds-fiwix-3.3/installation/usr/bin/testscanw
+installing view -> /mnt/builds-fiwix-3.3/installation/usr/bin/view
+installing worm -> /mnt/builds-fiwix-3.3/installation/usr/bin/worm
+installing xmas -> /mnt/builds-fiwix-3.3/installation/usr/bin/xmas
+installing ./savescreen.sh -> /mnt/builds-fiwix-3.3/installation/usr/bin/savescreen.sh
+installing ./tput-colorcube -> /mnt/builds-fiwix-3.3/installation/usr/bin/tput-colorcube
+installing ./tput-initc -> /mnt/builds-fiwix-3.3/installation/usr/bin/tput-initc
+installing ./tracemunch -> /mnt/builds-fiwix-3.3/installation/usr/bin/tracemunch
+installing ./escherknot.xbm -> /mnt/builds-fiwix-3.3/installation/usr/share/escherknot.xbm
+installing ./mensetmanus.xbm -> /mnt/builds-fiwix-3.3/installation/usr/share/mensetmanus.xbm
+installing ./mini.xterm_48x48.xpm -> /mnt/builds-fiwix-3.3/installation/usr/share/mini.xterm_48x48.xpm
+installing ./terminal.xbm -> /mnt/builds-fiwix-3.3/installation/usr/share/terminal.xbm
+installing ./xterm-color_48x48.xpm -> /mnt/builds-fiwix-3.3/installation/usr/share/xterm-color_48x48.xpm
+installing ./cardfile.dat -> /mnt/builds-fiwix-3.3/installation/usr/share/cardfile.dat
+installing ./linux-color.dat -> /mnt/builds-fiwix-3.3/installation/usr/share/linux-color.dat
+installing ./xterm-16color.dat -> /mnt/builds-fiwix-3.3/installation/usr/share/xterm-16color.dat
+installing ./xterm-256color.dat -> /mnt/builds-fiwix-3.3/installation/usr/share/xterm-256color.dat
+installing ./xterm-88color.dat -> /mnt/builds-fiwix-3.3/installation/usr/share/xterm-88color.dat
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation/usr/share /mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+mv: cannot move 'ncurses-examples' to a subdirectory of itself, 'ncurses-examples/ncurses-examples'
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation/usr /mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/share/ncurses-examples/bin/savescreen.sh: File format not recognized
+strip:./usr/share/ncurses-examples/bin/tput-colorcube: File format not recognized
+strip:./usr/share/ncurses-examples/bin/tput-initc: File format not recognized
+strip:./usr/share/ncurses-examples/bin/tracemunch: File format not recognized
+./
+./usr/
+./usr/share/
+./usr/share/ncurses-examples/
+./usr/share/ncurses-examples/cardfile.dat
+./usr/share/ncurses-examples/escherknot.xbm
+./usr/share/ncurses-examples/linux-color.dat
+./usr/share/ncurses-examples/mensetmanus.xbm
+./usr/share/ncurses-examples/mini.xterm_48x48.xpm
+./usr/share/ncurses-examples/terminal.xbm
+./usr/share/ncurses-examples/xterm-16color.dat
+./usr/share/ncurses-examples/xterm-256color.dat
+./usr/share/ncurses-examples/xterm-88color.dat
+./usr/share/ncurses-examples/xterm-color_48x48.xpm
+./usr/share/ncurses-examples/bin/
+./usr/share/ncurses-examples/bin/background
+./usr/share/ncurses-examples/bin/blue
+./usr/share/ncurses-examples/bin/bs
+./usr/share/ncurses-examples/bin/cardfile
+./usr/share/ncurses-examples/bin/chgat
+./usr/share/ncurses-examples/bin/clip_printw
+./usr/share/ncurses-examples/bin/color_set
+./usr/share/ncurses-examples/bin/demo_altkeys
+./usr/share/ncurses-examples/bin/demo_defkey
+./usr/share/ncurses-examples/bin/demo_forms
+./usr/share/ncurses-examples/bin/demo_keyok
+./usr/share/ncurses-examples/bin/demo_menus
+./usr/share/ncurses-examples/bin/demo_new_pair
+./usr/share/ncurses-examples/bin/demo_panels
+./usr/share/ncurses-examples/bin/demo_terminfo
+./usr/share/ncurses-examples/bin/ditto
+./usr/share/ncurses-examples/bin/dots
+./usr/share/ncurses-examples/bin/dots_curses
+./usr/share/ncurses-examples/bin/dots_mvcur
+./usr/share/ncurses-examples/bin/dots_termcap
+./usr/share/ncurses-examples/bin/dots_xcurses
+./usr/share/ncurses-examples/bin/echochar
+./usr/share/ncurses-examples/bin/extended_color
+./usr/share/ncurses-examples/bin/filter
+./usr/share/ncurses-examples/bin/firework
+./usr/share/ncurses-examples/bin/firstlast
+./usr/share/ncurses-examples/bin/foldkeys
+./usr/share/ncurses-examples/bin/form_driver_w
+./usr/share/ncurses-examples/bin/gdc
+./usr/share/ncurses-examples/bin/hanoi
+./usr/share/ncurses-examples/bin/hashtest
+./usr/share/ncurses-examples/bin/inch_wide
+./usr/share/ncurses-examples/bin/inchs
+./usr/share/ncurses-examples/bin/ins_wide
+./usr/share/ncurses-examples/bin/insdelln
+./usr/share/ncurses-examples/bin/inserts
+./usr/share/ncurses-examples/bin/key_names
+./usr/share/ncurses-examples/bin/keynames
+./usr/share/ncurses-examples/bin/knight
+./usr/share/ncurses-examples/bin/list_keys
+./usr/share/ncurses-examples/bin/lrtest
+./usr/share/ncurses-examples/bin/movewindow
+./usr/share/ncurses-examples/bin/ncurses
+./usr/share/ncurses-examples/bin/padview
+./usr/share/ncurses-examples/bin/picsmap
+./usr/share/ncurses-examples/bin/newdemo
+./usr/share/ncurses-examples/bin/railroad
+./usr/share/ncurses-examples/bin/rain
+./usr/share/ncurses-examples/bin/redraw
+./usr/share/ncurses-examples/bin/savescreen
+./usr/share/ncurses-examples/bin/sp_tinfo
+./usr/share/ncurses-examples/bin/tclock
+./usr/share/ncurses-examples/bin/test_add_wchstr
+./usr/share/ncurses-examples/bin/test_addchstr
+./usr/share/ncurses-examples/bin/view
+./usr/share/ncurses-examples/bin/test_addstr
+./usr/share/ncurses-examples/bin/test_addwstr
+./usr/share/ncurses-examples/bin/test_arrays
+./usr/share/ncurses-examples/bin/test_get_wstr
+./usr/share/ncurses-examples/bin/test_getstr
+./usr/share/ncurses-examples/bin/test_instr
+./usr/share/ncurses-examples/bin/test_inwstr
+./usr/share/ncurses-examples/bin/test_opaque
+./usr/share/ncurses-examples/bin/test_setupterm
+./usr/share/ncurses-examples/bin/test_sgr
+./usr/share/ncurses-examples/bin/test_termattrs
+./usr/share/ncurses-examples/bin/test_vid_puts
+./usr/share/ncurses-examples/bin/test_vidputs
+./usr/share/ncurses-examples/bin/testaddch
+./usr/share/ncurses-examples/bin/testcurs
+./usr/share/ncurses-examples/bin/testscanw
+./usr/share/ncurses-examples/bin/worm
+./usr/share/ncurses-examples/bin/xmas
+./usr/share/ncurses-examples/bin/savescreen.sh
+./usr/share/ncurses-examples/bin/tput-colorcube
+./usr/share/ncurses-examples/bin/tput-initc
+./usr/share/ncurses-examples/bin/tracemunch
+/mnt/builds-fiwix-3.3
+
+real	0m41.134s
+user	0m19.480s
+sys	0m13.720s

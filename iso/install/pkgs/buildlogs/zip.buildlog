@@ -1,0 +1,122 @@
+/mnt/builds-fiwix-3.3/zip30 /mnt/builds-fiwix-3.3
+make -f unix/Makefile generic CC=gcc CPP="gcc -E"
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/zip30'
+sh unix/configure "gcc" "-I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION" ""
+Check C compiler type (optimization options)
+  GNU C (-O3)
+Check bzip2 support
+  Check for bzip2 in bzip2 directory
+  Check if OS already has bzip2 library installed
+-- OS supports bzip2 - linking in bzip2
+Check for the C preprocessor
+Check if we can use asm code
+Check if compiler generates underlines
+Check for ANSI options
+Check for prototypes
+Check the handling of const
+Check for time_t
+Check for size_t
+Check for off_t
+Check size of UIDs and GIDs
+(Now zip stores variable size UIDs/GIDs using a new extra field.  This
+ tests if this OS uses 16-bit UIDs/GIDs and so if the old 16-bit storage
+ should also be used for backward compatibility.)
+  s.st_uid is 2 bytes
+  s.st_gid is 2 bytes
+-- 16-bit UIDs and GIDs - keeping old 16-bit UID/GID support
+Check for Large File Support
+-- no Large File Support - no 64-bit off_t
+Check for wide char support
+-- have wchar_t - enabling Unicode support
+Check for gcc no-builtin flag
+Check for rmdir
+Check for strchr
+Check for strrchr
+Check for rename
+Check for mktemp
+Check for mktime
+Check for mkstemp
+Check for memset
+Check for memmove
+Check for strerror
+Check for errno declaration
+Check for directory libraries
+Check for readlink
+Check for directory include file
+Check for nonexistent include files
+Check for term I/O include file
+Check for valloc
+Check for /usr/local/bin and /usr/local/man
+Check for OS-specific flags
+Check for symbolic links
+eval make -f unix/Makefile zips `cat flags`
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/zip30'
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zip.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zipfile.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zipup.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H fileio.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H util.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H globals.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H crypt.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H ttyio.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H unix/unix.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H crc32.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zbz2err.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H deflate.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H trees.c
+/usr/bin/cpp match.S > _match.s
+gcc -c _match.s
+mv _match.o match.o
+rm -f _match.s
+/usr/bin/cpp crc_i386.S > _crc_i386.s
+gcc -c _crc_i386.s
+mv _crc_i386.o crc_i386.o
+rm -f _crc_i386.s
+gcc -o zip  zip.o zipfile.o zipup.o fileio.o util.o globals.o crypt.o ttyio.o unix.o crc32.o zbz2err.o deflate.o trees.o match.o crc_i386.o -lbz2
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zipcloak.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o zipfile_.o zipfile.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o fileio_.o fileio.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o util_.o util.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o unix_.o unix/unix.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o crc32_.o crc32.c
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H -DUTIL -o crypt_.o crypt.c
+gcc -o zipcloak  zipcloak.o zipfile_.o fileio_.o util_.o globals.o unix_.o crc32_.o crc_i386.o  crypt_.o ttyio.o -lbz2
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zipnote.c
+gcc -o zipnote  zipnote.o  zipfile_.o fileio_.o util_.o globals.o unix_.o crc32_.o crc_i386.o -lbz2
+gcc -c -I. -DUNIX -DHAVE_TERMIOS_H -D_POSIX_VERSION -O3 -DBZIP2_SUPPORT -DASMV -DASM_CRC -DUNICODE_SUPPORT -DHAVE_DIRENT_H -DHAVE_TERMIOS_H zipsplit.c
+gcc -o zipsplit  zipsplit.o zipfile_.o fileio_.o util_.o globals.o unix_.o crc32_.o crc_i386.o -lbz2
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/zip30'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/zip30'
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/bin
+cp zip zipcloak zipnote zipsplit /mnt/builds-fiwix-3.3/installation/usr/bin
+cd /mnt/builds-fiwix-3.3/installation/usr/bin; chmod 755 zip zipcloak zipnote zipsplit
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/man/man1
+cp man/zip.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zip.1
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zip.1
+cp man/zipcloak.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipcloak.1
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipcloak.1
+cp man/zipnote.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipnote.1
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipnote.1
+cp man/zipsplit.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipsplit.1
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/man/man1/zipsplit.1
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/zip
+./usr/bin/zipcloak
+./usr/bin/zipnote
+./usr/bin/zipsplit
+./usr/man/
+./usr/man/man1/
+./usr/man/man1/zip.1
+./usr/man/man1/zipcloak.1
+./usr/man/man1/zipnote.1
+./usr/man/man1/zipsplit.1
+/mnt/builds-fiwix-3.3
+
+real	0m10.964s
+user	0m8.700s
+sys	0m1.870s

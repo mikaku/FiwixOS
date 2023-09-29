@@ -1,0 +1,488 @@
+/mnt/builds-fiwix-3.3/openjpeg-1.5.2 /mnt/builds-fiwix-3.3
+/usr/share/aclocal/aalib.m4:12: warning: underquoted definition of AM_PATH_AALIB
+/usr/share/aclocal/aalib.m4:12:   run info Automake 'Extending aclocal'
+/usr/share/aclocal/aalib.m4:12:   or see http://www.gnu.org/software/automake/manual/automake.html#Extending-aclocal
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+/usr/share/aclocal/aalib.m4:12: warning: underquoted definition of AM_PATH_AALIB
+/usr/share/aclocal/aalib.m4:12:   run info Automake 'Extending aclocal'
+/usr/share/aclocal/aalib.m4:12:   or see http://www.gnu.org/software/automake/manual/automake.html#Extending-aclocal
+configure.ac:39: installing './compile'
+configure.ac:26: installing './config.guess'
+configure.ac:26: installing './config.sub'
+configure.ac:28: installing './install-sh'
+configure.ac:28: installing './missing'
+applications/codec/Makefile.am:101: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/codec/Makefile.am:101: but option 'subdir-objects' is disabled
+automake: warning: possible forward-incompatibility.
+automake: At least a source file is in a subdirectory, but the 'subdir-objects'
+automake: automake option hasn't been enabled.  For now, the corresponding output
+automake: object file(s) will be placed in the top-level directory.  However,
+automake: this behaviour will change in future Automake versions: they will
+automake: unconditionally cause object files to be placed in the same subdirectory
+automake: of the corresponding sources.
+automake: You are advised to start using 'subdir-objects' option throughout your
+automake: project, to avoid future incompatibilities.
+applications/codec/Makefile.am:82: warning: source file '../common/color.c' is in a subdirectory,
+applications/codec/Makefile.am:82: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am:82: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/codec/Makefile.am:82: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am:43: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/codec/Makefile.am:43: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am:62: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/codec/Makefile.am:62: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am:23: warning: source file '../common/color.c' is in a subdirectory,
+applications/codec/Makefile.am:23: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am:23: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/codec/Makefile.am:23: but option 'subdir-objects' is disabled
+applications/codec/Makefile.am: installing './depcomp'
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/bio.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/cio.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/dwt.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/event.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/image.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/j2k.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/j2k_lib.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/jp2.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/jpt.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/mct.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/mqc.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/openjpeg.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/pi.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/raw.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/t1.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/t2.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/tcd.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/tgt.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/cidx_manager.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/phix_manager.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/ppix_manager.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/thix_manager.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:3: warning: source file '../../libopenjpeg/tpix_manager.c' is in a subdirectory,
+applications/mj2/Makefile.am:3: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:43: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/mj2/Makefile.am:43: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:63: warning: source file '../common/color.c' is in a subdirectory,
+applications/mj2/Makefile.am:63: but option 'subdir-objects' is disabled
+applications/mj2/Makefile.am:63: warning: source file '../common/opj_getopt.c' is in a subdirectory,
+applications/mj2/Makefile.am:63: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../bio.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../cio.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../dwt.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../event.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../image.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../j2k.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../j2k_lib.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../jp2.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../jpt.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../mct.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../mqc.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../openjpeg.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../pi.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../raw.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../t1.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../t2.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../tcd.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../tgt.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../cidx_manager.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../phix_manager.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../ppix_manager.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../thix_manager.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+libopenjpeg/jpwl/Makefile.am:5: warning: source file '../tpix_manager.c' is in a subdirectory,
+libopenjpeg/jpwl/Makefile.am:5: but option 'subdir-objects' is disabled
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking how to print strings... printf
+checking for style of include used by make... GNU
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether to build in debug mode... no
+checking whether to build the MJ2 binaries... no
+checking whether to build the JPWL library... no
+checking whether to build the JPIP library... no
+checking whether to build the JPIP server... no
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking for pkg-config... /bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking whether to build documentation... yes
+checking for doxygen... no
+WARNING:
+The doxygen program was not found in your execute path.
+You may have doxygen installed somewhere not covered by your path.
+
+If this is the case make sure you have the packages installed, AND
+that the doxygen program is in your execute path (see your
+shell manual page on setting the $PATH environment variable), OR
+alternatively, specify the program to use with --with-doxygen.
+configure: WARNING: no doxygen detected. Documentation will not be built
+checking whether ln -s works... yes
+checking whether to build with PNG support... yes
+checking for PNG... no
+checking for PNG... no
+checking for PNG... no
+checking for PNG... yes
+checking whether PNG is available... yes
+checking whether to build with TIFF support... yes
+checking whether TIFF library is available in standard or predefined directories... no
+checking whether TIFF library is available in /usr... no
+checking whether TIFF library is available in /usr/local... no
+checking whether TIFF library is available in /opt/local... no
+configure: WARNING: Can not find a usuable TIFF library. Make sure that CPPFLAGS and LDFLAGS are correctly set.
+checking whether TIFF is available... no
+checking whether to build with LCMS-2 support... yes
+checking for LCMS2... yes
+checking whether LCMS-2 is available... yes
+checking whether to build with LCMS-1 support... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether byte ordering is bigendian... no
+checking whether the compiler supports -Wno-unused-result... yes
+checking whether the compiler supports -O3... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libopenjpeg1.pc
+config.status: creating libopenjpeg-jpwl.pc
+config.status: creating libopenjpeg/Makefile
+config.status: creating libopenjpeg/jpwl/Makefile
+config.status: creating applications/Makefile
+config.status: creating applications/codec/Makefile
+config.status: creating applications/mj2/Makefile
+config.status: creating applications/jpip/Makefile
+config.status: creating applications/jpip/libopenjpip/Makefile
+config.status: creating applications/jpip/util/Makefile
+config.status: creating doc/Makefile
+config.status: creating opj_config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+
+
+------------------------------------------------------------------------
+openjpeg 1.5.2
+------------------------------------------------------------------------
+
+
+Configuration Options Summary:
+
+  Debug...............: no
+
+  Optional support:
+    libpng............: yes
+    libtiff...........: no
+    libcms............: lcms version 2.x
+
+  Documentation.......: no
+    Build.............: make doc
+
+  mj2.................: no
+  jpwl................: no
+  jpip................: no
+  jpip server.........: no
+
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+Making all in libopenjpeg
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+Making all in .
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+  CC       libopenjpeg_la-bio.lo
+  CC       libopenjpeg_la-cio.lo
+  CC       libopenjpeg_la-dwt.lo
+  CC       libopenjpeg_la-event.lo
+  CC       libopenjpeg_la-image.lo
+  CC       libopenjpeg_la-j2k.lo
+  CC       libopenjpeg_la-j2k_lib.lo
+  CC       libopenjpeg_la-jp2.lo
+  CC       libopenjpeg_la-jpt.lo
+  CC       libopenjpeg_la-mct.lo
+  CC       libopenjpeg_la-mqc.lo
+  CC       libopenjpeg_la-openjpeg.lo
+  CC       libopenjpeg_la-pi.lo
+  CC       libopenjpeg_la-raw.lo
+  CC       libopenjpeg_la-t1.lo
+  CC       libopenjpeg_la-t2.lo
+  CC       libopenjpeg_la-tcd.lo
+  CC       libopenjpeg_la-tgt.lo
+  CC       libopenjpeg_la-cidx_manager.lo
+  CC       libopenjpeg_la-phix_manager.lo
+  CC       libopenjpeg_la-ppix_manager.lo
+  CC       libopenjpeg_la-thix_manager.lo
+  CC       libopenjpeg_la-tpix_manager.lo
+  CCLD     libopenjpeg.la
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+Making all in applications
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+Making all in codec
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+  CC       j2k_to_image-color.o
+  CC       j2k_to_image-opj_getopt.o
+  CC       j2k_to_image-convert.o
+  CC       j2k_to_image-index.o
+  CC       j2k_to_image-j2k_to_image.o
+  CCLD     j2k_to_image
+  CC       image_to_j2k-opj_getopt.o
+  CC       image_to_j2k-convert.o
+  CC       image_to_j2k-index.o
+  CC       image_to_j2k-image_to_j2k.o
+  CCLD     image_to_j2k
+  CC       j2k_dump-opj_getopt.o
+  CC       j2k_dump-index.o
+  CC       j2k_dump-j2k_dump.o
+  CCLD     j2k_dump
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+Making install in libopenjpeg
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+Making install in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ../libtool   --mode=install /bin/install -c   libopenjpeg.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c .libs/libopenjpeg.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libopenjpeg.la
+libtool: install: /bin/install -c .libs/libopenjpeg.a /mnt/builds-fiwix-3.3/installation/usr/lib/libopenjpeg.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libopenjpeg.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libopenjpeg.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include/openjpeg-1.5'
+ /bin/install -c -m 644 openjpeg.h '/mnt/builds-fiwix-3.3/installation/usr/include/openjpeg-1.5'
+make  install-data-hook
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+cd /mnt/builds-fiwix-3.3/installation/usr/include && rm -f openjpeg.h
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/libopenjpeg'
+Making install in applications
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+Making install in codec
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c j2k_to_image image_to_j2k j2k_dump '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c j2k_to_image /mnt/builds-fiwix-3.3/installation/usr/bin/j2k_to_image
+libtool: install: /bin/install -c image_to_j2k /mnt/builds-fiwix-3.3/installation/usr/bin/image_to_j2k
+libtool: install: /bin/install -c j2k_dump /mnt/builds-fiwix-3.3/installation/usr/bin/j2k_dump
+make  install-data-hook
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications/codec'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/applications'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/doc/openjpeg-1.5'
+ /bin/install -c -m 644 ../LICENSE '/mnt/builds-fiwix-3.3/installation/usr/share/doc/openjpeg-1.5'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 man/man1/image_to_j2k.1 man/man1/j2k_dump.1 man/man1/j2k_to_image.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+ /bin/install -c -m 644 man/man3/libopenjpeg.3 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2/doc'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+ /bin/install -c -m 644 libopenjpeg1.pc '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+ln -s -nf libopenjpeg1.pc /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig/libopenjpeg.pc
+ (LA)	/usr/lib/libopenjpeg.la
+ (A)	/usr/lib/libopenjpeg.a
+ (H)	/usr/include/openjpeg-1.5/openjpeg.h
+ (B)	/usr/bin/j2k_to_image
+ (B)	/usr/bin/image_to_j2k
+ (B)	/usr/bin/j2k_dump
+ (MAN)	/usr/share/man/man1/image_to_j2k.1
+ (MAN)	/usr/share/man/man1/j2k_dump.1
+ (MAN)	/usr/share/man/man1/j2k_to_image.1
+ (MAN)	/usr/share/man/man3/libopenjpeg.3
+ (PC)	/usr/lib/pkgconfig/libopenjpeg1.pc
+ (LN)	/usr/lib/pkgconfig/libopenjpeg.pc
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/openjpeg-1.5.2'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libopenjpeg.la: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/libopenjpeg.la
+./usr/lib/libopenjpeg.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/libopenjpeg1.pc
+./usr/lib/pkgconfig/libopenjpeg.pc
+./usr/include/
+./usr/include/openjpeg-1.5/
+./usr/include/openjpeg-1.5/openjpeg.h
+./usr/bin/
+./usr/bin/j2k_to_image
+./usr/bin/image_to_j2k
+./usr/bin/j2k_dump
+./usr/share/
+./usr/share/doc/
+./usr/share/doc/openjpeg-1.5/
+./usr/share/doc/openjpeg-1.5/LICENSE
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/image_to_j2k.1
+./usr/share/man/man1/j2k_dump.1
+./usr/share/man/man1/j2k_to_image.1
+./usr/share/man/man3/
+./usr/share/man/man3/libopenjpeg.3
+/mnt/builds-fiwix-3.3
+
+real	0m28.806s
+user	0m18.400s
+sys	0m5.900s

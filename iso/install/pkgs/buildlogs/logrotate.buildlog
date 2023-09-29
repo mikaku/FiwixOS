@@ -1,0 +1,164 @@
+/mnt/builds-fiwix-3.3/logrotate-3.21.0 /mnt/builds-fiwix-3.3
+patching logrotate-3.21.0
+patching file logrotate.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking dependency style of gcc -std=gnu11... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for gcc... (cached) gcc
+checking whether the compiler supports GNU C... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to enable C11 features... (cached) -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... (cached) yes
+checking dependency style of gcc -std=gnu11... (cached) gcc3
+checking for struct stat.st_blksize... yes
+checking for struct stat.st_blocks... yes
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for uint32_t... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking for libgen.h... yes
+checking for poptParseArgvString in -lpopt... yes
+checking for getfscreatecon_raw in -lselinux... no
+checking for acl_get_file in -lacl... no
+checking for asprintf... yes
+checking for futimens... no
+checking for madvise... no
+checking for secure_getenv... no
+checking for strndup... yes
+checking for utimensat... no
+checking for vsyslog... no
+checking for struct stat.st_atim... no
+checking for struct stat.st_mtim... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating test/Makefile
+config.status: creating logrotate.8
+config.status: creating logrotate.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+
+  logrotate 3.21.0
+
+  SELinux support:        no
+  ACL support:            no
+  default mail command:   /bin/mail
+  compress command:       /bin/gzip
+  uncompress command:     /bin/gunzip
+  compress extension:     .gz
+  statefile path:         /var/lib/logrotate.status
+
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+Making all in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+  CC       config.o
+config.c: In function 'do_mkdir':
+config.c:414:21: warning: format '%o' expects argument of type 'unsigned int', but argument 4 has type 'mode_t' [-Wformat]
+config.c: In function 'readConfigFile':
+config.c:1841:51: warning: conversion to 'unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+config.c:1851:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  CC       log.o
+  CC       logrotate.o
+logrotate.c: In function 'sortGlobResult':
+logrotate.c:139:35: warning: conversion to 'size_t' from 'int' may change the sign of the result [-Wsign-conversion]
+logrotate.c: In function 'findNeedRotating':
+logrotate.c:1450:41: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c:1454:39: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c:1542:40: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c: In function 'findLastRotated':
+logrotate.c:1610:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c: In function 'prerotateSingleLog':
+logrotate.c:1877:49: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c:1935:45: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c:1937:47: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+logrotate.c:1937:100: warning: conversion to 'long unsigned int' from 'int' may change the sign of the result [-Wsign-conversion]
+logrotate.c: In function 'rotateSingleLog':
+logrotate.c:2218:33: warning: conversion to 'short unsigned int' from 'mode_t' may alter its value [-Wconversion]
+logrotate.c: In function 'writeState':
+logrotate.c:2682:20: warning: conversion to 'short unsigned int' from 'long unsigned int' may alter its value [-Wconversion]
+  CCLD     logrotate
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+Making all in test
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+test .. = .. || ln -fs ../test/* .
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+make  install-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+Making install in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/sbin'
+  /bin/install -c logrotate '/mnt/builds-fiwix-3.3/installation/usr/sbin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man5'
+ /bin/install -c -m 644 logrotate.conf.5 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man5'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+ /bin/install -c -m 644 logrotate.8 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man8'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+Making install in test
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0/test'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/logrotate-3.21.0'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./etc/cron.daily/logrotate: File format not recognized
+./
+./usr/
+./usr/sbin/
+./usr/sbin/logrotate
+./usr/share/
+./usr/share/man/
+./usr/share/man/man5/
+./usr/share/man/man5/logrotate.conf.5
+./usr/share/man/man8/
+./usr/share/man/man8/logrotate.8
+./etc/
+./etc/cron.daily/
+./etc/cron.daily/logrotate
+./etc/logrotate.conf
+./etc/logrotate.d/
+/mnt/builds-fiwix-3.3
+
+real	0m4.624s
+user	0m2.990s
+sys	0m1.390s

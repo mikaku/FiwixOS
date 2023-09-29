@@ -1,0 +1,298 @@
+/mnt/builds-fiwix-3.3/libffi-3.4.4 /mnt/builds-fiwix-3.3
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking target system type... i386-pc-fiwix
+continue configure in default builddir "./i386-pc-fiwix"
+....exec /bin/sh .././configure "--srcdir=.." "--enable-builddir=i386-pc-fiwix" "fiwix"
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking target system type... i386-pc-fiwix
+checking for gsed... sed
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... gcc3
+checking for g++... g++
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking dependency style of g++... gcc3
+checking dependency style of gcc -std=gnu11... gcc3
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking for readelf... readelf
+checking size of size_t... 4
+checking for C compiler vendor... gnu
+checking whether C compiler accepts -fstrict-aliasing... yes
+checking whether C compiler accepts -ffast-math... yes
+checking for gcc architecture flag... 
+checking for x86 cpuid 0 output... 1:756e6547:6c65746e:49656e69
+checking for x86 cpuid 1 output... 480:800:80200000:b
+checking for gcc architecture flag... unknown
+checking whether C compiler accepts  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math... yes
+checking CFLAGS for most reasonable warnings... -Wall
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for sys/memfd.h... no
+checking for memfd_create... no
+checking for sys/mman.h... yes
+checking for mmap... yes
+checking for mkostemp... yes
+checking for mkstemp... yes
+checking for sys/mman.h... (cached) yes
+checking for mmap... (cached) yes
+checking whether read-only mmap of a plain file works... yes
+checking whether mmap from /dev/zero works... yes
+checking for MAP_ANON(YMOUS)... yes
+checking whether mmap with MAP_ANON(YMOUS) works... yes
+checking for egrep... (cached) /bin/grep -E
+checking for memcpy... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking size of double... 8
+checking size of long double... 12
+checking whether byte ordering is bigendian... no
+checking assembler .cfi pseudo-op support... yes
+checking assembler supports pc related relocs... yes
+checking whether compiler supports pointer authentication... no
+checking for _ prefix in compiled symbols... no
+checking whether C compiler accepts -fno-lto... yes
+checking whether .eh_frame section should be read-only... yes
+checking for __attribute__((visibility("hidden")))... yes
+configure: versioning on shared library symbols is no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating include/Makefile
+config.status: creating include/ffi.h
+config.status: creating Makefile
+config.status: creating testsuite/Makefile
+config.status: creating man/Makefile
+config.status: creating doc/Makefile
+config.status: creating libffi.pc
+config.status: creating fficonfig.h
+config.status: executing buildir commands
+config.status: create top_srcdir/Makefile guessed from local Makefile
+config.status: build in i386-pc-fiwix (HOST=)
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing include commands
+config.status: executing src commands
+MAKE i386-pc-fiwix : 0 * all-all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make  all-recursive
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+Making all in include
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+Making all in testsuite
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+Making all in man
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+Making all in doc
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+depbase=`echo src/prep_cif.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/prep_cif.lo -MD -MP -MF $depbase.Tpo -c -o src/prep_cif.lo ../src/prep_cif.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/prep_cif.lo -MD -MP -MF src/.deps/prep_cif.Tpo -c ../src/prep_cif.c -o src/prep_cif.o
+depbase=`echo src/types.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/types.lo -MD -MP -MF $depbase.Tpo -c -o src/types.lo ../src/types.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/types.lo -MD -MP -MF src/.deps/types.Tpo -c ../src/types.c -o src/types.o
+depbase=`echo src/raw_api.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/raw_api.lo -MD -MP -MF $depbase.Tpo -c -o src/raw_api.lo ../src/raw_api.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/raw_api.lo -MD -MP -MF src/.deps/raw_api.Tpo -c ../src/raw_api.c -o src/raw_api.o
+depbase=`echo src/java_raw_api.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/java_raw_api.lo -MD -MP -MF $depbase.Tpo -c -o src/java_raw_api.lo ../src/java_raw_api.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/java_raw_api.lo -MD -MP -MF src/.deps/java_raw_api.Tpo -c ../src/java_raw_api.c -o src/java_raw_api.o
+depbase=`echo src/closures.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/closures.lo -MD -MP -MF $depbase.Tpo -c -o src/closures.lo ../src/closures.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/closures.lo -MD -MP -MF src/.deps/closures.Tpo -c ../src/closures.c -o src/closures.o
+depbase=`echo src/tramp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/tramp.lo -MD -MP -MF $depbase.Tpo -c -o src/tramp.lo ../src/tramp.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/tramp.lo -MD -MP -MF src/.deps/tramp.Tpo -c ../src/tramp.c -o src/tramp.o
+depbase=`echo src/x86/ffi.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src   -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/x86/ffi.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/ffi.lo ../src/x86/ffi.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -Wall -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -MT src/x86/ffi.lo -MD -MP -MF src/x86/.deps/ffi.Tpo -c ../src/x86/ffi.c -o src/x86/ffi.o
+depbase=`echo src/x86/sysv.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ./libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../include -Iinclude -I../src  -I. -I../include -Iinclude -I../src  -MT src/x86/sysv.lo -MD -MP -MF $depbase.Tpo -c -o src/x86/sysv.lo ../src/x86/sysv.S &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I../include -Iinclude -I../src -I. -I../include -Iinclude -I../src -MT src/x86/sysv.lo -MD -MP -MF src/x86/.deps/sysv.Tpo -c ../src/x86/sysv.S -o src/x86/sysv.o
+/bin/sh ./libtool  --tag=CC   --mode=link gcc -std=gnu11  -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions  -s -o libffi_convenience.la  src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo src/tramp.lo   src/x86/ffi.lo src/x86/sysv.lo 
+libtool: link: ar cr .libs/libffi_convenience.a  src/prep_cif.o src/types.o src/raw_api.o src/java_raw_api.o src/closures.o src/tramp.o src/x86/ffi.o src/x86/sysv.o
+libtool: link: ranlib .libs/libffi_convenience.a
+libtool: link: ( cd ".libs" && rm -f "libffi_convenience.la" && ln -s "../libffi_convenience.la" "libffi_convenience.la" )
+/bin/sh ./libtool  --tag=CC   --mode=link gcc -std=gnu11  -Wall  -O3 -fomit-frame-pointer -fstrict-aliasing -ffast-math -fexceptions -no-undefined -version-info `grep -v '^#' ../libtool-version`   '-s'  -s -o libffi.la -rpath /usr/lib src/prep_cif.lo src/types.lo src/raw_api.lo src/java_raw_api.lo src/closures.lo src/tramp.lo  src/x86/ffi.lo src/x86/sysv.lo 
+libtool: link: ar cr .libs/libffi.a  src/prep_cif.o src/types.o src/raw_api.o src/java_raw_api.o src/closures.o src/tramp.o src/x86/ffi.o src/x86/sysv.o
+libtool: link: ranlib .libs/libffi.a
+libtool: link: ( cd ".libs" && rm -f "libffi.la" && ln -s "../libffi.la" "libffi.la" )
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+MAKE i386-pc-fiwix : 0 * install
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+Making install in include
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/install -c -m 644 ffi.h ffitarget.h '/mnt/builds-fiwix-3.3/installation/usr/include'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/include'
+Making install in testsuite
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/testsuite'
+Making install in man
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+ /bin/install -c -m 644 ../../man/ffi.3 ../../man/ffi_call.3 ../../man/ffi_prep_cif.3 ../../man/ffi_prep_cif_var.3 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/man'
+Making install in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ /bin/install -c -m 644 ../../doc/libffi.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/libffi.info'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ./libtool   --mode=install /bin/install -c   libffi.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c .libs/libffi.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libffi.la
+libtool: install: /bin/install -c .libs/libffi.a /mnt/builds-fiwix-3.3/installation/usr/lib/libffi.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libffi.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libffi.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+ /bin/install -c -m 644 libffi.pc '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libffi-3.4.4/i386-pc-fiwix'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libffi.la: File format not recognized
+./
+./usr/
+./usr/include/
+./usr/include/ffi.h
+./usr/include/ffitarget.h
+./usr/share/
+./usr/share/man/
+./usr/share/man/man3/
+./usr/share/man/man3/ffi.3
+./usr/share/man/man3/ffi_call.3
+./usr/share/man/man3/ffi_prep_cif.3
+./usr/share/man/man3/ffi_prep_cif_var.3
+./usr/share/info/
+./usr/share/info/libffi.info
+./usr/share/info/dir
+./usr/lib/
+./usr/lib/libffi.la
+./usr/lib/libffi.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/libffi.pc
+/mnt/builds-fiwix-3.3
+
+real	0m7.875s
+user	0m1.970s
+sys	0m3.240s

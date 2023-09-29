@@ -1,0 +1,268 @@
+/mnt/builds-fiwix-3.3/at-3.1.23 /mnt/builds-fiwix-3.3
+patching at-3.1.23
+patching file atd.c
+patching file config.guess
+patching file config.sub
+patching file daemon.c
+patching file getloadavg.c
+patching file parsetime.y
+patching file rc
+patching file syslog.h
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for a BSD-compatible install... /bin/install -c
+checking whether ln -s works... yes
+checking for bison... no
+checking for byacc... byacc
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking HP-UX -Aa... no
+checking __attribute__((noreturn))... yes
+checking for yywrap in -lfl... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking syslog.h usability... no
+checking syslog.h presence... no
+checking for syslog.h... no
+checking for unistd.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking sys/fcntl.h usability... yes
+checking sys/fcntl.h presence... yes
+checking for sys/fcntl.h... yes
+checking getopt.h usability... yes
+checking getopt.h presence... yes
+checking for getopt.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for uid_t in sys/types.h... yes
+checking for mode_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for vprintf... yes
+checking for _doprnt... no
+checking for getloadavg... no
+checking for pstat_getdynamic... no
+checking for kstat_open in -lkstat... no
+checking for elf_begin in -lelf... no
+checking for kvm_open in -lkvm... no
+checking for getloadavg in -lutil... no
+checking for getloadavg in -lgetloadavg... no
+checking for getloadavg... no
+checking sys/dg_sys_info.h usability... no
+checking sys/dg_sys_info.h presence... no
+checking for sys/dg_sys_info.h... no
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for setlocale... yes
+checking inq_stats/cpustats.h usability... no
+checking inq_stats/cpustats.h presence... no
+checking for inq_stats/cpustats.h... no
+checking sys/cpustats.h usability... no
+checking sys/cpustats.h presence... no
+checking for sys/cpustats.h... no
+checking mach/mach.h usability... no
+checking mach/mach.h presence... no
+checking for mach/mach.h... no
+checking nlist.h usability... no
+checking nlist.h presence... no
+checking for nlist.h... no
+checking whether getloadavg requires setgid... no
+checking for getcwd... yes
+checking for mktime... yes
+checking for strftime... yes
+checking for setreuid... yes
+checking for setresuid... no
+checking for sigaction... yes
+checking for waitpid... yes
+checking security/pam_appl.h usability... no
+checking security/pam_appl.h presence... no
+checking for security/pam_appl.h... no
+checking for sendmail... no
+checking etcdir... /etc
+checking location of pid file... /var/run
+checking location of spool directory... not found
+checking jobdir... /var/spool/at
+checking atspool... /var/spool/at/spool
+checking maximum load average for batch to start jobs... 0.8
+checking username to run under... root
+checking for is_selinux_enabled in -lselinux... no
+checking groupname to run under... root
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: WARNING:  'Makefile.in' seems to ignore the --datarootdir setting
+config.status: creating atrun
+config.status: creating atd.8
+config.status: creating atrun.8
+config.status: creating at.1
+config.status: creating at.allow.5
+config.status: creating batch
+config.status: creating config.h
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall at.c
+at.c: In function 'writefile':
+at.c:399:13: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c:402:17: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c:428:7: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c:468:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c: In function 'main':
+at.c:818:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c:818:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+at.c:956:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall panic.c
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall perm.c
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall posixtm.c
+byacc -d parsetime.y
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall y.tab.c
+flex -i parsetime.l
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall lex.yy.c
+lex.yy.c:1506:17: warning: 'yyunput' defined but not used [-Wunused-function]
+lex.yy.c:1549:16: warning: 'input' defined but not used [-Wunused-function]
+gcc -s -o at at.o panic.o perm.o posixtm.o y.tab.o lex.yy.o -lfl  -lfl
+rm -f atq atrm
+ln -s -f at atq
+ln -s -f at atrm
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall atd.c
+atd.c: In function 'syslog':
+atd.c:167:2: warning: implicit declaration of function 'gettimeofday' [-Wimplicit-function-declaration]
+atd.c: In function 'isbatch':
+atd.c:233:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+atd.c: In function 'run_loop':
+atd.c:729:72: warning: "/*" within comment [-Wcomment]
+atd.c:731:6: warning: "/*" within comment [-Wcomment]
+atd.c:740:2: warning: array subscript has type 'char' [-Wchar-subscripts]
+atd.c:740:2: warning: array subscript has type 'char' [-Wchar-subscripts]
+atd.c:655:10: warning: variable 'batch_queue' set but not used [-Wunused-but-set-variable]
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall daemon.c
+daemon.c: In function 'daemon_setup':
+daemon.c:122:12: warning: variable 'old_umask' set but not used [-Wunused-but-set-variable]
+gcc -c -I. -O2 -g -Wall -DHAVE_CONFIG_H -DVERSION=\"3.1.23\" -DETCDIR=\"/etc\" -DLOADAVG_MX=0.8 -DDAEMON_USERNAME=\"root\" -DDAEMON_GROUPNAME=\"root\" -DLFILE=\"/var/spool/at/.SEQ\" -Wall getloadavg.c
+gcc -s -o atd atd.o daemon.o getloadavg.o -lfl   
+cat atd.service.in | sed -e 's![@]sbindir[@]!/mnt/builds-fiwix-3.3/installation/usr/sbin!g' | sed -e 's![@]atjobdir[@]!/var/spool/at!g' > atd.service
+/bin/install -c -g root -o root -m 755 -d /etc
+/bin/install -c -g root -o root -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/bin
+/bin/install -c -g root -o root -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/sbin
+/bin/install -c -g root -o root -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/doc
+/bin/install -c -g root -o root -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/doc/at
+/bin/install -c -g root -o root -m 755 -d /mnt/builds-fiwix-3.3/installation/var/spool/at/spool /mnt/builds-fiwix-3.3/installation/var/spool/at
+chmod 1770 /mnt/builds-fiwix-3.3/installation/var/spool/at/spool /mnt/builds-fiwix-3.3/installation/var/spool/at
+touch /mnt/builds-fiwix-3.3/installation/var/spool/at/.SEQ
+chmod 600 /mnt/builds-fiwix-3.3/installation/var/spool/at/.SEQ
+chown root:root /mnt/builds-fiwix-3.3/installation/var/spool/at/.SEQ
+test -f /etc/at.allow || test -f /etc/at.deny || /bin/install -c -o root -g root -m 640 at.deny /etc/
+/bin/install -c -g root -o root -m 6755 at /mnt/builds-fiwix-3.3/installation/usr/bin
+ln -s -f at /mnt/builds-fiwix-3.3/installation/usr/bin/atq
+ln -s -f at /mnt/builds-fiwix-3.3/installation/usr/bin/atrm
+/bin/install -c -g root -o root -m 755 batch /mnt/builds-fiwix-3.3/installation/usr/bin
+/bin/install -c -d -o root -g root -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+/bin/install -c -d -o root -g root -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/man/man5
+/bin/install -c -d -o root -g root -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/man/man8
+/bin/install -c -g root -o root -m 755 atd /mnt/builds-fiwix-3.3/installation/usr/sbin
+/bin/install -c -g root -o root -m 755 atrun /mnt/builds-fiwix-3.3/installation/usr/sbin
+/bin/install -c -g root -o root -m 644 at.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/
+cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man1 && ln -s -f at.1 atq.1 && ln -s -f at.1 batch.1 && ln -s -f at.1 atrm.1
+/bin/install -c -g root -o root -m 644 atd.8 /mnt/builds-fiwix-3.3/installation/usr/share/man/man8/
+sed "s,\${exec_prefix},/mnt/builds-fiwix-3.3/installation/usr,g" <atrun.8>tmpman
+/bin/install -c -g root -o root -m 644 tmpman /mnt/builds-fiwix-3.3/installation/usr/share/man/man8/atrun.8
+rm -f tmpman
+/bin/install -c -g root -o root -m 644 at.allow.5 /mnt/builds-fiwix-3.3/installation/usr/share/man/man5/
+cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man5 && ln -s -f at.allow.5 at.deny.5
+/bin/install -c -g root -o root -m 644 Problems Copyright README ChangeLog timespec /mnt/builds-fiwix-3.3/installation/usr/doc/at
+rm -f /mnt/builds-fiwix-3.3/installation/usr/share/man/cat1/at.1* /mnt/builds-fiwix-3.3/installation/usr/share/man/cat1/batch.1* \
+	/mnt/builds-fiwix-3.3/installation/usr/share/man/cat1/atq.1*
+rm -f /mnt/builds-fiwix-3.3/installation/usr/share/man/cat1/atd.8*
+if test x"no" != xno; then \
+	/bin/install -c -o root -g root -m 755 -d no; \
+	/bin/install -c -o root -g root -m 644 atd.service no; \
+fi
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation/usr /mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/batch: File format not recognized
+strip:./usr/sbin/atrun: File format not recognized
+strip:./etc/rc.d/init.d/atd: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/at
+./usr/bin/atq
+./usr/bin/atrm
+./usr/bin/batch
+./usr/sbin/
+./usr/sbin/atd
+./usr/sbin/atrun
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/at.1
+./usr/share/man/man1/atq.1
+./usr/share/man/man1/batch.1
+./usr/share/man/man1/atrm.1
+./usr/share/man/man5/
+./usr/share/man/man5/at.allow.5
+./usr/share/man/man5/at.deny.5
+./usr/share/man/man8/
+./usr/share/man/man8/atd.8
+./usr/share/man/man8/atrun.8
+./usr/share/doc/
+./usr/share/doc/at-3.1.23/
+./usr/share/doc/at-3.1.23/ChangeLog
+./usr/share/doc/at-3.1.23/Copyright
+./usr/share/doc/at-3.1.23/Problems
+./usr/share/doc/at-3.1.23/README
+./usr/share/doc/at-3.1.23/timespec
+./var/
+./var/spool/
+./var/spool/at/
+./var/spool/at/spool/
+./var/spool/at/.SEQ
+./etc/
+./etc/rc.d/
+./etc/rc.d/init.d/
+./etc/rc.d/init.d/atd
+./etc/logrotate.d/
+./etc/logrotate.d/atd
+./etc/at.deny
+/mnt/builds-fiwix-3.3
+
+real	0m6.187s
+user	0m3.410s
+sys	0m2.190s

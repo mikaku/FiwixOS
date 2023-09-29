@@ -1,0 +1,135 @@
+/mnt/builds-fiwix-3.3/xmlto-0.0.28 /mnt/builds-fiwix-3.3
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking whether gcc and cc understand -c and -o together... yes
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking for mktemp... mktemp
+checking for find... find 
+checking for bash... /bin/sh
+checking for getopt... getopt
+checking for long options support in getopt... yes
+checking for paperconf... paperconf
+checking for locale... locale
+checking for xmllint... /bin/xmllint
+checking for xsltproc... /bin/xsltproc
+checking for dblatex... dblatex
+checking for fop... fop
+checking for xmltex... xmltex
+checking for pdfxmltex... pdfxmltex
+checking for default backend... DEFAULT
+checking for lynx... lynx
+checking for elinks... elinks
+checking for w3m... w3m
+checking for tail... /bin/tail
+checking for grep... /bin/grep
+checking for sed... /bin/sed
+checking for cp... /bin/cp
+checking for zip... /bin/zip
+checking for default web browser... w3m
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating xmlto
+config.status: creating xmlto.spec
+config.status: creating config.h
+config.status: executing depfiles commands
+make  all-am
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/xmlto-0.0.28'
+depbase=`echo xmlif/xmlif.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DHAVE_CONFIG_H -I.     -g -O2 -MT xmlif/xmlif.o -MD -MP -MF $depbase.Tpo -c -o xmlif/xmlif.o xmlif/xmlif.c &&\
+mv -f $depbase.Tpo $depbase.Po
+gcc  -g -O2  -s -o xmlif/xmlif xmlif/xmlif.o  
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/xmlto-0.0.28'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/xmlto-0.0.28'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/install -c xmlif/xmlif '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/install -c xmlto '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 man/man1/xmlto.1 man/man1/xmlif.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/xhtml1'
+ /bin/install -c -m 644  format/xhtml1/dvi format/xhtml1/fo format/xhtml1/pdf format/xhtml1/ps format/xhtml1/txt format/xhtml1/awt format/xhtml1/mif format/xhtml1/pcl format/xhtml1/svg '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/xhtml1'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/docbook'
+ /bin/install -c -m 644  format/docbook/dvi format/docbook/epub format/docbook/fo format/docbook/html format/docbook/html-nochunks format/docbook/xhtml format/docbook/xhtml-nochunks format/docbook/man format/docbook/pdf format/docbook/ps format/docbook/txt format/docbook/htmlhelp format/docbook/javahelp format/docbook/mif format/docbook/pcl format/docbook/svg format/docbook/awt '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/docbook'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/fo'
+ /bin/install -c -m 644  format/fo/ps format/fo/awt format/fo/mif format/fo/pcl format/fo/svg format/fo/txt format/fo/dvi format/fo/pdf '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/format/fo'
+ /bin/install -c -m 644  xmlto.mak '/mnt/builds-fiwix-3.3/installation/usr/share/xmlto/.'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/xmlto-0.0.28'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/xmlto: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/xmlif
+./usr/bin/xmlto
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/xmlto.1
+./usr/share/man/man1/xmlif.1
+./usr/share/xmlto/
+./usr/share/xmlto/format/
+./usr/share/xmlto/format/xhtml1/
+./usr/share/xmlto/format/xhtml1/dvi
+./usr/share/xmlto/format/xhtml1/fo
+./usr/share/xmlto/format/xhtml1/pdf
+./usr/share/xmlto/format/xhtml1/ps
+./usr/share/xmlto/format/xhtml1/txt
+./usr/share/xmlto/format/xhtml1/awt
+./usr/share/xmlto/format/xhtml1/mif
+./usr/share/xmlto/format/xhtml1/pcl
+./usr/share/xmlto/format/xhtml1/svg
+./usr/share/xmlto/format/docbook/
+./usr/share/xmlto/format/docbook/dvi
+./usr/share/xmlto/format/docbook/epub
+./usr/share/xmlto/format/docbook/fo
+./usr/share/xmlto/format/docbook/html
+./usr/share/xmlto/format/docbook/html-nochunks
+./usr/share/xmlto/format/docbook/xhtml
+./usr/share/xmlto/format/docbook/xhtml-nochunks
+./usr/share/xmlto/format/docbook/man
+./usr/share/xmlto/format/docbook/pdf
+./usr/share/xmlto/format/docbook/ps
+./usr/share/xmlto/format/docbook/txt
+./usr/share/xmlto/format/docbook/htmlhelp
+./usr/share/xmlto/format/docbook/javahelp
+./usr/share/xmlto/format/docbook/mif
+./usr/share/xmlto/format/docbook/pcl
+./usr/share/xmlto/format/docbook/svg
+./usr/share/xmlto/format/docbook/awt
+./usr/share/xmlto/format/fo/
+./usr/share/xmlto/format/fo/ps
+./usr/share/xmlto/format/fo/awt
+./usr/share/xmlto/format/fo/mif
+./usr/share/xmlto/format/fo/pcl
+./usr/share/xmlto/format/fo/svg
+./usr/share/xmlto/format/fo/txt
+./usr/share/xmlto/format/fo/dvi
+./usr/share/xmlto/format/fo/pdf
+./usr/share/xmlto/xmlto.mak
+/mnt/builds-fiwix-3.3
+
+real	0m2.163s
+user	0m1.360s
+sys	0m0.650s

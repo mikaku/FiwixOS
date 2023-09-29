@@ -1,0 +1,21 @@
+/mnt/builds-fiwix-3.3/symlinks-1.4.3 /mnt/builds-fiwix-3.3
+patching symlinks-1.4.3
+patching file Makefile
+gcc -s -Wall -Wstrict-prototypes -O2  -o symlinks symlinks.c
+/usr/bin/install -D -c -o root -g 0 -m 755 symlinks /mnt/builds-fiwix-3.3/installation/usr/bin/symlinks
+/usr/bin/install -D -c -o root -g 0 -m 644 symlinks.8 /mnt/builds-fiwix-3.3/installation/usr/man/man8/symlinks.8
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/symlinks
+./usr/man/
+./usr/man/man8/
+./usr/man/man8/symlinks.8
+/mnt/builds-fiwix-3.3
+
+real	0m1.894s
+user	0m0.200s
+sys	0m0.320s

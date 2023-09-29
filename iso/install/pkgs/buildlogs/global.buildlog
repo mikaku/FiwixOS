@@ -1,0 +1,1085 @@
+/mnt/builds-fiwix-3.3/global-6.6.10 /mnt/builds-fiwix-3.3
+patching global-6.6.10
+patching file config.guess
+patching file config.sub
+patching file libglibc/obstack.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... gcc3
+checking whether make sets $(MAKE)... (cached) yes
+checking for emacs... no
+checking for xemacs... no
+checking where .elc files should go... ${datadir}/emacs/site-lisp
+checking for perl... /bin/perl
+checking for lid... no
+checking for ar... ar
+configure: using "/usr/bin/env python" as the shebang line's interpreter for 'pygments_parser.py'
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/time.h... yes
+checking for sys/param.h... yes
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... no
+checking for dlopen in -lsvld... no
+checking for dld_link in -ldld... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for gcc -std=gnu11 options needed to detect all undeclared functions... none needed
+checking what extension is used for runtime loadable modules... .so
+checking what variable specifies run-time module search path... 
+checking for the default library search path... /lib /usr/lib
+checking for library containing dlopen... no
+checking for dlopen in -lsvld... (cached) no
+checking for shl_load... (cached) no
+checking for shl_load in -ldld... (cached) no
+checking for dld_link in -ldld... (cached) no
+checking for _ prefix in compiled symbols... no
+checking whether deplibs are loaded by dlopen... unknown
+checking for argz.h... yes
+checking for error_t... yes
+checking for argz_add... yes
+checking for argz_append... yes
+checking for argz_count... yes
+checking for argz_create_sep... yes
+checking for argz_insert... yes
+checking for argz_next... yes
+checking for argz_stringify... yes
+checking if argz actually works... yes
+checking whether libtool supports -dlopen/-dlpreopen... yes
+checking for ltdl.h... yes
+checking whether lt_dlinterface_register is declared... yes
+checking for lt_dladvise_preload in -lltdl... yes
+checking where to find libltdl headers... 
+checking where to find libltdl library... -lltdl
+checking for unistd.h... (cached) yes
+checking for dl.h... no
+checking for sys/dl.h... no
+checking for dld.h... no
+checking for mach-o/dyld.h... no
+checking for dirent.h... yes
+checking for closedir... yes
+checking for opendir... yes
+checking for readdir... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for limits.h... yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdarg.h... yes
+checking for sys/time.h... (cached) yes
+checking for fcntl.h... yes
+checking for sys/resource.h... yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether POSIX.1-2008 realpath is equipped... yes
+checking for egrep... (cached) /bin/grep -E
+checking whether stat file-mode macros are broken... no
+checking for an ANSI C-conforming const... yes
+checking for off_t... yes
+checking for size_t... yes
+checking for struct stat.st_blksize... yes
+checking whether byte ordering is bigendian... no
+checking for int8_t... yes
+checking for int16_t... yes
+checking for int32_t... yes
+checking for u_int8_t... yes
+checking for u_int16_t... yes
+checking for u_int32_t... yes
+checking for ssize_t... yes
+checking for caddr_t... yes
+checking size of int... 4
+checking size of short... 2
+checking size of char... 1
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking for working memcmp... yes
+checking return type of signal handlers... void
+checking for strftime... yes
+checking for getcwd... yes
+checking for putenv... yes
+checking for lstat... yes
+checking for snprintf... yes
+checking for index... yes
+checking for rindex... yes
+checking for bzero... yes
+checking for bcmp... yes
+checking for bcopy... yes
+checking for strchr... yes
+checking for strrchr... yes
+checking for memset... yes
+checking for memcmp... yes
+checking for memmove... yes
+checking for putc_unlocked... yes
+checking for getc_unlocked... yes
+checking for gettimeofday... yes
+checking for getrusage... yes
+checking for pread... yes
+checking for pwrite... yes
+checking whether we are using the GNU DJGPP compiler... no
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+configure: checking "location of ncurses.h file"...
+Found ncurses on /usr/include/ncurses.h
+checking for ncurses version... egrep: warning: egrep is obsolescent; using grep -E
+5.9
+checking for an ANSI C-conforming const... (cached) yes
+checking for mode_t... yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for sighandler_t... no
+checking for sigsetjmp... no
+checking for fixkeypad... no
+checking for strerror... yes
+checking for sqlite3 support... no
+checking for home-etc support... no
+checking for exuberant ctags program... no
+checking for universal ctags program... no
+checking for POSIX sort program... using /bin/sort
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating gtags.conf
+config.status: creating Doxyfile
+config.status: creating libutil/langmap.h
+config.status: creating libutil/Makefile
+config.status: creating gtags/Makefile
+config.status: creating htags/Makefile
+config.status: creating htags/icons/Makefile
+config.status: creating htags/jquery/Makefile
+config.status: creating htags/jquery/images/Makefile
+config.status: creating libdb/Makefile
+config.status: creating global/Makefile
+config.status: creating gozilla/Makefile
+config.status: creating gtags-cscope/Makefile
+config.status: creating globash/Makefile
+config.status: creating htags-refkit/Makefile
+config.status: creating htags-server/Makefile
+config.status: creating libglibc/Makefile
+config.status: creating doc/Makefile
+config.status: creating script/Makefile
+config.status: creating libparser/Makefile
+config.status: creating plugin-factory/Makefile
+config.status: creating plugin-factory/pygments_parser.py
+config.status: creating libltdl/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+Making all in libglibc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+depbase=`echo regex.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT regex.o -MD -MP -MF $depbase.Tpo -c -o regex.o regex.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo getopt.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT getopt.o -MD -MP -MF $depbase.Tpo -c -o getopt.o getopt.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo getopt1.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT getopt1.o -MD -MP -MF $depbase.Tpo -c -o getopt1.o getopt1.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo snprintf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT snprintf.o -MD -MP -MF $depbase.Tpo -c -o snprintf.o snprintf.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo obstack.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT obstack.o -MD -MP -MF $depbase.Tpo -c -o obstack.o obstack.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo hash-string.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT hash-string.o -MD -MP -MF $depbase.Tpo -c -o hash-string.o hash-string.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo fnmatch.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT fnmatch.o -MD -MP -MF $depbase.Tpo -c -o fnmatch.o fnmatch.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libgloglibc.a
+ar cru libgloglibc.a regex.o getopt.o getopt1.o snprintf.o obstack.o hash-string.o fnmatch.o 
+ranlib libgloglibc.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+Making all in libutil
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+depbase=`echo assoc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT assoc.o -MD -MP -MF $depbase.Tpo -c -o assoc.o assoc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo conf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT conf.o -MD -MP -MF $depbase.Tpo -c -o conf.o conf.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo dbop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT dbop.o -MD -MP -MF $depbase.Tpo -c -o dbop.o dbop.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo defined.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT defined.o -MD -MP -MF $depbase.Tpo -c -o defined.o defined.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo die.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT die.o -MD -MP -MF $depbase.Tpo -c -o die.o die.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo find.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT find.o -MD -MP -MF $depbase.Tpo -c -o find.o find.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo getdbpath.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT getdbpath.o -MD -MP -MF $depbase.Tpo -c -o getdbpath.o getdbpath.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo gtagsop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT gtagsop.o -MD -MP -MF $depbase.Tpo -c -o gtagsop.o gtagsop.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo locatestring.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT locatestring.o -MD -MP -MF $depbase.Tpo -c -o locatestring.o locatestring.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo makepath.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT makepath.o -MD -MP -MF $depbase.Tpo -c -o makepath.o makepath.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo path.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT path.o -MD -MP -MF $depbase.Tpo -c -o path.o path.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo gpathop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT gpathop.o -MD -MP -MF $depbase.Tpo -c -o gpathop.o gpathop.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo strbuf.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT strbuf.o -MD -MP -MF $depbase.Tpo -c -o strbuf.o strbuf.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo strmake.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT strmake.o -MD -MP -MF $depbase.Tpo -c -o strmake.o strmake.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo tab.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT tab.o -MD -MP -MF $depbase.Tpo -c -o tab.o tab.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo test.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT test.o -MD -MP -MF $depbase.Tpo -c -o test.o test.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo token.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT token.o -MD -MP -MF $depbase.Tpo -c -o token.o token.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo usable.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT usable.o -MD -MP -MF $depbase.Tpo -c -o usable.o usable.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo version.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT version.o -MD -MP -MF $depbase.Tpo -c -o version.o version.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo is_unixy.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT is_unixy.o -MD -MP -MF $depbase.Tpo -c -o is_unixy.o is_unixy.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo abs2rel.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT abs2rel.o -MD -MP -MF $depbase.Tpo -c -o abs2rel.o abs2rel.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo split.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT split.o -MD -MP -MF $depbase.Tpo -c -o split.o split.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo strlimcpy.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT strlimcpy.o -MD -MP -MF $depbase.Tpo -c -o strlimcpy.o strlimcpy.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo linetable.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT linetable.o -MD -MP -MF $depbase.Tpo -c -o linetable.o linetable.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo env.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT env.o -MD -MP -MF $depbase.Tpo -c -o env.o env.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo char.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT char.o -MD -MP -MF $depbase.Tpo -c -o char.o char.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo date.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT date.o -MD -MP -MF $depbase.Tpo -c -o date.o date.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo langmap.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT langmap.o -MD -MP -MF $depbase.Tpo -c -o langmap.o langmap.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo varray.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT varray.o -MD -MP -MF $depbase.Tpo -c -o varray.o varray.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo idset.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT idset.o -MD -MP -MF $depbase.Tpo -c -o idset.o idset.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo strhash.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT strhash.o -MD -MP -MF $depbase.Tpo -c -o strhash.o strhash.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo xargs.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT xargs.o -MD -MP -MF $depbase.Tpo -c -o xargs.o xargs.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo encodepath.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT encodepath.o -MD -MP -MF $depbase.Tpo -c -o encodepath.o encodepath.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo rewrite.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT rewrite.o -MD -MP -MF $depbase.Tpo -c -o rewrite.o rewrite.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo compress.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT compress.o -MD -MP -MF $depbase.Tpo -c -o compress.o compress.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo checkalloc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT checkalloc.o -MD -MP -MF $depbase.Tpo -c -o checkalloc.o checkalloc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo pool.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT pool.o -MD -MP -MF $depbase.Tpo -c -o pool.o pool.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo fileop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT fileop.o -MD -MP -MF $depbase.Tpo -c -o fileop.o fileop.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo statistics.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT statistics.o -MD -MP -MF $depbase.Tpo -c -o statistics.o statistics.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo args.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT args.o -MD -MP -MF $depbase.Tpo -c -o args.o args.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo logging.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT logging.o -MD -MP -MF $depbase.Tpo -c -o logging.o logging.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo nearsort.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT nearsort.o -MD -MP -MF $depbase.Tpo -c -o nearsort.o nearsort.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo secure_popen.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT secure_popen.o -MD -MP -MF $depbase.Tpo -c -o secure_popen.o secure_popen.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo convert.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT convert.o -MD -MP -MF $depbase.Tpo -c -o convert.o convert.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo output.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT output.o -MD -MP -MF $depbase.Tpo -c -o output.o output.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo vstack.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DBINDIR='"/usr/bin"' -DDATADIR='"/usr/share"' -DLIBDIR='"/usr/lib"' -DLOCALSTATEDIR='"/usr/var"' -DSYSCONFDIR='"/usr/etc"' -DELIDE_CODE=1  -g -O2 -MT vstack.o -MD -MP -MF $depbase.Tpo -c -o vstack.o vstack.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libgloutil.a
+ar cru libgloutil.a assoc.o conf.o dbop.o defined.o die.o find.o getdbpath.o gtagsop.o locatestring.o makepath.o path.o gpathop.o strbuf.o strmake.o tab.o test.o token.o usable.o version.o is_unixy.o abs2rel.o split.o strlimcpy.o linetable.o env.o char.o date.o langmap.o varray.o idset.o strhash.o xargs.o encodepath.o rewrite.o compress.o checkalloc.o pool.o fileop.o statistics.o args.o logging.o nearsort.o secure_popen.o convert.o output.o vstack.o 
+ranlib libgloutil.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+Making all in libparser
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+depbase=`echo parser.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT parser.o -MD -MP -MF $depbase.Tpo -c -o parser.o parser.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo C.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT C.o -MD -MP -MF $depbase.Tpo -c -o C.o C.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo Cpp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT Cpp.o -MD -MP -MF $depbase.Tpo -c -o Cpp.o Cpp.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo asm_parse.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT asm_parse.o -MD -MP -MF $depbase.Tpo -c -o asm_parse.o asm_parse.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo asm_scan.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT asm_scan.o -MD -MP -MF $depbase.Tpo -c -o asm_scan.o asm_scan.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo java.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT java.o -MD -MP -MF $depbase.Tpo -c -o java.o java.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo php.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT php.o -MD -MP -MF $depbase.Tpo -c -o php.o php.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libgloparser.a
+ar cru libgloparser.a parser.o C.o Cpp.o asm_parse.o asm_scan.o java.o php.o 
+ranlib libgloparser.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+Making all in libltdl
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make  all-am
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT loaders/libltdlc_la-preopen.lo -MD -MP -MF loaders/.deps/libltdlc_la-preopen.Tpo -c -o loaders/libltdlc_la-preopen.lo `test -f 'loaders/preopen.c' || echo './'`loaders/preopen.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT loaders/libltdlc_la-preopen.lo -MD -MP -MF loaders/.deps/libltdlc_la-preopen.Tpo -c loaders/preopen.c -o loaders/libltdlc_la-preopen.o
+mv -f loaders/.deps/libltdlc_la-preopen.Tpo loaders/.deps/libltdlc_la-preopen.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT libltdlc_la-lt__alloc.lo -MD -MP -MF .deps/libltdlc_la-lt__alloc.Tpo -c -o libltdlc_la-lt__alloc.lo `test -f 'lt__alloc.c' || echo './'`lt__alloc.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT libltdlc_la-lt__alloc.lo -MD -MP -MF .deps/libltdlc_la-lt__alloc.Tpo -c lt__alloc.c -o libltdlc_la-lt__alloc.o
+mv -f .deps/libltdlc_la-lt__alloc.Tpo .deps/libltdlc_la-lt__alloc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT libltdlc_la-lt_dlloader.lo -MD -MP -MF .deps/libltdlc_la-lt_dlloader.Tpo -c -o libltdlc_la-lt_dlloader.lo `test -f 'lt_dlloader.c' || echo './'`lt_dlloader.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT libltdlc_la-lt_dlloader.lo -MD -MP -MF .deps/libltdlc_la-lt_dlloader.Tpo -c lt_dlloader.c -o libltdlc_la-lt_dlloader.o
+mv -f .deps/libltdlc_la-lt_dlloader.Tpo .deps/libltdlc_la-lt_dlloader.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT libltdlc_la-lt_error.lo -MD -MP -MF .deps/libltdlc_la-lt_error.Tpo -c -o libltdlc_la-lt_error.lo `test -f 'lt_error.c' || echo './'`lt_error.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT libltdlc_la-lt_error.lo -MD -MP -MF .deps/libltdlc_la-lt_error.Tpo -c lt_error.c -o libltdlc_la-lt_error.o
+mv -f .deps/libltdlc_la-lt_error.Tpo .deps/libltdlc_la-lt_error.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT libltdlc_la-ltdl.lo -MD -MP -MF .deps/libltdlc_la-ltdl.Tpo -c -o libltdlc_la-ltdl.lo `test -f 'ltdl.c' || echo './'`ltdl.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT libltdlc_la-ltdl.lo -MD -MP -MF .deps/libltdlc_la-ltdl.Tpo -c ltdl.c -o libltdlc_la-ltdl.o
+mv -f .deps/libltdlc_la-ltdl.Tpo .deps/libltdlc_la-ltdl.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -DLTDLOPEN=libltdlc -DLT_CONFIG_H='<config.h>' -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1  -g -O2 -MT libltdlc_la-slist.lo -MD -MP -MF .deps/libltdlc_la-slist.Tpo -c -o libltdlc_la-slist.lo `test -f 'slist.c' || echo './'`slist.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -DLTDLOPEN=libltdlc "-DLT_CONFIG_H=<config.h>" -DLTDL -I. -I. -Ilibltdl -I./libltdl -DELIDE_CODE=1 -g -O2 -MT libltdlc_la-slist.lo -MD -MP -MF .deps/libltdlc_la-slist.Tpo -c slist.c -o libltdlc_la-slist.o
+mv -f .deps/libltdlc_la-slist.Tpo .deps/libltdlc_la-slist.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2 -no-undefined  -s -o libltdlc.la  loaders/libltdlc_la-preopen.lo libltdlc_la-lt__alloc.lo libltdlc_la-lt_dlloader.lo libltdlc_la-lt_error.lo libltdlc_la-ltdl.lo libltdlc_la-slist.lo  
+libtool: link: ar cr .libs/libltdlc.a  loaders/libltdlc_la-preopen.o libltdlc_la-lt__alloc.o libltdlc_la-lt_dlloader.o libltdlc_la-lt_error.o libltdlc_la-ltdl.o libltdlc_la-slist.o
+libtool: link: ranlib .libs/libltdlc.a
+libtool: link: ( cd ".libs" && rm -f "libltdlc.la" && ln -s "../libltdlc.la" "libltdlc.la" )
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+Making all in plugin-factory
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+depbase=`echo exuberant-ctags.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR='"/usr/share"' -DELIDE_CODE=1  -g -O2 -MT exuberant-ctags.lo -MD -MP -MF $depbase.Tpo -c -o exuberant-ctags.lo exuberant-ctags.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I../libparser -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR=\"/usr/share\" -DELIDE_CODE=1 -g -O2 -MT exuberant-ctags.lo -MD -MP -MF .deps/exuberant-ctags.Tpo -c exuberant-ctags.c -o exuberant-ctags.o
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2 -module -avoid-version -no-undefined -s -o exuberant-ctags.la -rpath /usr/lib/gtags exuberant-ctags.lo  
+libtool: link: ar cr .libs/libexuberant-ctags.a  exuberant-ctags.o
+libtool: link: ranlib .libs/libexuberant-ctags.a
+libtool: link: ( cd ".libs" && rm -f "exuberant-ctags.la" && ln -s "../exuberant-ctags.la" "exuberant-ctags.la" )
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR='"/usr/share"' -DELIDE_CODE=1 -DUSE_EXTRA_FIELDS -g -O2 -MT universal_ctags_la-exuberant-ctags.lo -MD -MP -MF .deps/universal_ctags_la-exuberant-ctags.Tpo -c -o universal_ctags_la-exuberant-ctags.lo `test -f 'exuberant-ctags.c' || echo './'`exuberant-ctags.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I../libparser -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR=\"/usr/share\" -DELIDE_CODE=1 -DUSE_EXTRA_FIELDS -g -O2 -MT universal_ctags_la-exuberant-ctags.lo -MD -MP -MF .deps/universal_ctags_la-exuberant-ctags.Tpo -c exuberant-ctags.c -o universal_ctags_la-exuberant-ctags.o
+mv -f .deps/universal_ctags_la-exuberant-ctags.Tpo .deps/universal_ctags_la-exuberant-ctags.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11 -DUSE_EXTRA_FIELDS -g -O2 -module -avoid-version -no-undefined -s -o universal-ctags.la -rpath /usr/lib/gtags universal_ctags_la-exuberant-ctags.lo  
+libtool: link: ar cr .libs/libuniversal-ctags.a  universal_ctags_la-exuberant-ctags.o
+libtool: link: ranlib .libs/libuniversal-ctags.a
+libtool: link: ( cd ".libs" && rm -f "universal-ctags.la" && ln -s "../universal-ctags.la" "universal-ctags.la" )
+depbase=`echo pygments-parser.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR='"/usr/share"' -DELIDE_CODE=1  -g -O2 -MT pygments-parser.lo -MD -MP -MF $depbase.Tpo -c -o pygments-parser.lo pygments-parser.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I../libparser -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR=\"/usr/share\" -DELIDE_CODE=1 -g -O2 -MT pygments-parser.lo -MD -MP -MF .deps/pygments-parser.Tpo -c pygments-parser.c -o pygments-parser.o
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2 -module -avoid-version -no-undefined -s -o pygments-parser.la -rpath /usr/lib/gtags pygments-parser.lo  
+libtool: link: ar cr .libs/libpygments-parser.a  pygments-parser.o
+libtool: link: ranlib .libs/libpygments-parser.a
+libtool: link: ( cd ".libs" && rm -f "pygments-parser.la" && ln -s "../pygments-parser.la" "pygments-parser.la" )
+depbase=`echo user-custom.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR='"/usr/share"' -DELIDE_CODE=1  -g -O2 -MT user-custom.lo -MD -MP -MF $depbase.Tpo -c -o user-custom.lo user-custom.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I../libparser -I../libutil -I../libdb -I../libglibc -I../libutil -DDATADIR=\"/usr/share\" -DELIDE_CODE=1 -g -O2 -MT user-custom.lo -MD -MP -MF .deps/user-custom.Tpo -c user-custom.c -o user-custom.o
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2 -module -avoid-version -no-undefined -s -o user-custom.la -rpath /usr/lib/gtags user-custom.lo  
+libtool: link: ar cr .libs/libuser-custom.a  user-custom.o
+libtool: link: ranlib .libs/libuser-custom.a
+libtool: link: ( cd ".libs" && rm -f "user-custom.la" && ln -s "../user-custom.la" "user-custom.la" )
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+Making all in libdb
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+depbase=`echo bt_close.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_close.o -MD -MP -MF $depbase.Tpo -c -o bt_close.o bt_close.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_conv.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_conv.o -MD -MP -MF $depbase.Tpo -c -o bt_conv.o bt_conv.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_debug.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_debug.o -MD -MP -MF $depbase.Tpo -c -o bt_debug.o bt_debug.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_delete.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_delete.o -MD -MP -MF $depbase.Tpo -c -o bt_delete.o bt_delete.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_get.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_get.o -MD -MP -MF $depbase.Tpo -c -o bt_get.o bt_get.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_open.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_open.o -MD -MP -MF $depbase.Tpo -c -o bt_open.o bt_open.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_overflow.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_overflow.o -MD -MP -MF $depbase.Tpo -c -o bt_overflow.o bt_overflow.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_page.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_page.o -MD -MP -MF $depbase.Tpo -c -o bt_page.o bt_page.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_put.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_put.o -MD -MP -MF $depbase.Tpo -c -o bt_put.o bt_put.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_search.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_search.o -MD -MP -MF $depbase.Tpo -c -o bt_search.o bt_search.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_seq.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_seq.o -MD -MP -MF $depbase.Tpo -c -o bt_seq.o bt_seq.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_split.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_split.o -MD -MP -MF $depbase.Tpo -c -o bt_split.o bt_split.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo bt_utils.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT bt_utils.o -MD -MP -MF $depbase.Tpo -c -o bt_utils.o bt_utils.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo db.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT db.o -MD -MP -MF $depbase.Tpo -c -o db.o db.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mpool.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil  -DELIDE_CODE=1  -g -O2 -MT mpool.o -MD -MP -MF $depbase.Tpo -c -o mpool.o mpool.c &&\
+mv -f $depbase.Tpo $depbase.Po
+rm -f libglodb.a
+ar cru libglodb.a bt_close.o bt_conv.o bt_debug.o bt_delete.o bt_get.o bt_open.o bt_overflow.o bt_page.o bt_put.o bt_search.o bt_seq.o bt_split.o bt_utils.o db.o mpool.o  
+ranlib libglodb.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+Making all in global
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+depbase=`echo global.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DLID='"no"' -DELIDE_CODE=1  -g -O2 -MT global.o -MD -MP -MF $depbase.Tpo -c -o global.o global.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo literal.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DLID='"no"' -DELIDE_CODE=1  -g -O2 -MT literal.o -MD -MP -MF $depbase.Tpo -c -o literal.o literal.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o global global.o literal.o ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a -lltdl 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o global global.o literal.o  ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a /usr/lib/libltdl.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+Making all in gozilla
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+depbase=`echo gozilla.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT gozilla.o -MD -MP -MF $depbase.Tpo -c -o gozilla.o gozilla.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o gozilla gozilla.o ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o gozilla gozilla.o  ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+Making all in gtags
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+depbase=`echo gtags.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT gtags.o -MD -MP -MF $depbase.Tpo -c -o gtags.o gtags.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o gtags gtags.o ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a -lltdl 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o gtags gtags.o  ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a /usr/lib/libltdl.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+Making all in htags
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+Making all in icons
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+Making all in jquery
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+Making all in jquery/images
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+depbase=`echo htags.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT htags.o -MD -MP -MF $depbase.Tpo -c -o htags.o htags.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo defineindex.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT defineindex.o -MD -MP -MF $depbase.Tpo -c -o defineindex.o defineindex.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo dupindex.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT dupindex.o -MD -MP -MF $depbase.Tpo -c -o dupindex.o dupindex.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo fileindex.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT fileindex.o -MD -MP -MF $depbase.Tpo -c -o fileindex.o fileindex.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cflowindex.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT cflowindex.o -MD -MP -MF $depbase.Tpo -c -o cflowindex.o cflowindex.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo src2html.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT src2html.o -MD -MP -MF $depbase.Tpo -c -o src2html.o src2html.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo anchor.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT anchor.o -MD -MP -MF $depbase.Tpo -c -o anchor.o anchor.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cache.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT cache.o -MD -MP -MF $depbase.Tpo -c -o cache.o cache.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo common.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT common.o -MD -MP -MF $depbase.Tpo -c -o common.o common.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo incop.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT incop.o -MD -MP -MF $depbase.Tpo -c -o incop.o incop.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo path2url.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT path2url.o -MD -MP -MF $depbase.Tpo -c -o path2url.o path2url.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo c.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT c.o -MD -MP -MF $depbase.Tpo -c -o c.o c.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo cpp.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT cpp.o -MD -MP -MF $depbase.Tpo -c -o cpp.o cpp.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo java.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT java.o -MD -MP -MF $depbase.Tpo -c -o java.o java.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo php.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT php.o -MD -MP -MF $depbase.Tpo -c -o php.o php.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo asm.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -I. -DELIDE_CODE=1  -g -O2 -MT asm.o -MD -MP -MF $depbase.Tpo -c -o asm.o asm.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o htags htags.o defineindex.o dupindex.o fileindex.o cflowindex.o src2html.o anchor.o cache.o common.o incop.o path2url.o c.o cpp.o java.o php.o asm.o ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o htags htags.o defineindex.o dupindex.o fileindex.o cflowindex.o src2html.o anchor.o cache.o common.o incop.o path2url.o c.o cpp.o java.o php.o asm.o  ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a
+sed -e 's!@PERLPATH@!/bin/perl!g' -e 's!@GLOBALPATH@!/usr/bin/global!g' -e 's!@GENERATOR@!GNU GLOBAL 6.6.10!g' ./global.cgi.in > global.cgi
+sed -e 's!@PERLPATH@!/bin/perl!g' -e 's!@GLOBALPATH@!/usr/bin/global!g' -e 's!@GENERATOR@!GNU GLOBAL 6.6.10!g' ./completion.cgi.in > completion.cgi
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+Making all in htags-refkit
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+Making all in htags-server
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+Making all in globash
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+sed -e 's!@DATADIR@!'"/usr/share/gtags"'!g' ./globash.in >globash.tmp && \
+chmod +x globash.tmp && mv globash.tmp globash
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+Making all in script
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+Making all in gtags-cscope
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+depbase=`echo gtags-cscope.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT gtags-cscope.o -MD -MP -MF $depbase.Tpo -c -o gtags-cscope.o gtags-cscope.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo alloc.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT alloc.o -MD -MP -MF $depbase.Tpo -c -o alloc.o alloc.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo basename.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT basename.o -MD -MP -MF $depbase.Tpo -c -o basename.o basename.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo build.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT build.o -MD -MP -MF $depbase.Tpo -c -o build.o build.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo command.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT command.o -MD -MP -MF $depbase.Tpo -c -o command.o command.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo display.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT display.o -MD -MP -MF $depbase.Tpo -c -o display.o display.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo edit.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT edit.o -MD -MP -MF $depbase.Tpo -c -o edit.o edit.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo exec.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT exec.o -MD -MP -MF $depbase.Tpo -c -o exec.o exec.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo find.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT find.o -MD -MP -MF $depbase.Tpo -c -o find.o find.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo help.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT help.o -MD -MP -MF $depbase.Tpo -c -o help.o help.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo history.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT history.o -MD -MP -MF $depbase.Tpo -c -o history.o history.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo input.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT input.o -MD -MP -MF $depbase.Tpo -c -o input.o input.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo logdir.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT logdir.o -MD -MP -MF $depbase.Tpo -c -o logdir.o logdir.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mouse.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT mouse.o -MD -MP -MF $depbase.Tpo -c -o mouse.o mouse.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mygetenv.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT mygetenv.o -MD -MP -MF $depbase.Tpo -c -o mygetenv.o mygetenv.c &&\
+mv -f $depbase.Tpo $depbase.Po
+depbase=`echo mypopen.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..   -I../libparser  -I../libutil -I../libdb -I../libglibc -I../libutil -DELIDE_CODE=1  -g -O2 -MT mypopen.o -MD -MP -MF $depbase.Tpo -c -o mypopen.o mypopen.c &&\
+mv -f $depbase.Tpo $depbase.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o gtags-cscope gtags-cscope.o alloc.o basename.o build.o command.o display.o edit.o exec.o find.o help.o history.o input.o logdir.o mouse.o mygetenv.o mypopen.o ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a -lltdl -lncurses 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o gtags-cscope gtags-cscope.o alloc.o basename.o build.o command.o display.o edit.o exec.o find.o help.o history.o input.o logdir.o mouse.o mygetenv.o mypopen.o  ../libparser/libgloparser.a ../libutil/libgloutil.a ../libdb/libglodb.a ../libglibc/libgloglibc.a /usr/lib/libltdl.a -lncurses
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+Making install in libglibc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libglibc'
+Making install in libutil
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man5'
+ /bin/install -c -m 644 gtags.conf.5 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man5'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libutil'
+Making install in libparser
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libparser'
+Making install in libltdl
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make  install-am
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libltdl'
+Making install in plugin-factory
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/install -c -m 644 PLUGIN_HOWTO PLUGIN_HOWTO.pygments PLUGIN_HOWTO.universal-ctags uctags-scheme.c-diff '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/gtags'
+ /bin/sh ../libtool   --mode=install /bin/install -c   exuberant-ctags.la universal-ctags.la pygments-parser.la user-custom.la '/mnt/builds-fiwix-3.3/installation/usr/lib/gtags'
+libtool: install: /bin/install -c .libs/exuberant-ctags.lai /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/exuberant-ctags.la
+libtool: install: /bin/install -c .libs/universal-ctags.lai /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/universal-ctags.la
+libtool: install: /bin/install -c .libs/pygments-parser.lai /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/pygments-parser.la
+libtool: install: /bin/install -c .libs/user-custom.lai /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/user-custom.la
+libtool: install: /bin/install -c .libs/libexuberant-ctags.a /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libexuberant-ctags.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libexuberant-ctags.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libexuberant-ctags.a
+libtool: install: /bin/install -c .libs/libuniversal-ctags.a /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuniversal-ctags.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuniversal-ctags.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuniversal-ctags.a
+libtool: install: /bin/install -c .libs/libpygments-parser.a /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libpygments-parser.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libpygments-parser.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libpygments-parser.a
+libtool: install: /bin/install -c .libs/libuser-custom.a /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuser-custom.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuser-custom.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/gtags/libuser-custom.a
+libtool: warning: remember to run 'libtool --finish /usr/lib/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/script'
+ /bin/install -c -m 644 pygments_parser.py maps2conf.pl '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/script'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+if cd /mnt/builds-fiwix-3.3/installation/usr/share/gtags/script; then \
+	chmod 755 pygments_parser.py maps2conf.pl; \
+fi
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/plugin-factory'
+Making install in libdb
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/libdb'
+Making install in global
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../libtool   --mode=install /bin/install -c global '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c global /mnt/builds-fiwix-3.3/installation/usr/bin/global
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 global.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/global'
+Making install in gozilla
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../libtool   --mode=install /bin/install -c gozilla '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c gozilla /mnt/builds-fiwix-3.3/installation/usr/bin/gozilla
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 gozilla.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/var/gtags ]; then \
+	/bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/var/gtags; \
+	chmod 777 /mnt/builds-fiwix-3.3/installation/usr/var/gtags; \
+fi
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gozilla'
+Making install in gtags
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../libtool   --mode=install /bin/install -c gtags '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c gtags /mnt/builds-fiwix-3.3/installation/usr/bin/gtags
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 gtags.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags'
+Making install in htags
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+Making install in icons
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/icons'
+ /bin/install -c -m 644 index.png c.png text.png dir.png back.png help.png first.png last.png left.png right.png top.png bottom.png n_first.png n_last.png n_left.png n_right.png n_top.png n_bottom.png pglobe.png '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/icons'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/icons'
+Making install in jquery
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/jquery'
+ /bin/install -c -m 644 jquery.js jquery.suggest.css jquery.suggest.js jquery.treeview.css jquery.treeview.js '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/jquery'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery'
+Making install in jquery/images
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/jquery/images'
+ /bin/install -c -m 644 file.png folder-closed.png folder.png minus.png plus.png treeview-black-line.png treeview-black.png treeview-default-line.png treeview-default.png treeview-famfamfam-line.png treeview-famfamfam.png treeview-gray-line.png treeview-gray.png treeview-red-line.png treeview-red.png '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/jquery/images'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags/jquery/images'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../libtool   --mode=install /bin/install -c htags '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c htags /mnt/builds-fiwix-3.3/installation/usr/bin/htags
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/install -c -m 644 global.cgi completion.cgi dot_htaccess jscode_suggest jscode_treeview style.css '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 htags.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags'
+Making install in htags-refkit
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-refkit'
+Making install in htags-server
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/install -c htags-server '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 htags-server.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/htags-server'
+Making install in globash
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/install -c globash '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/install -c -m 644 globash.rc '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 globash.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/globash'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ /bin/install -c -m 644 ./global.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/global.info'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/doc'
+Making install in script
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/install -c -m 644 SERVERSIDE_HOWTO '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/script'
+ /bin/install -c -m 644 less-global elvis-global global-client gtags-client htags-client '/mnt/builds-fiwix-3.3/installation/usr/share/gtags/script'
+make  install-data-hook
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+if cd /mnt/builds-fiwix-3.3/installation/usr/share/gtags/script; then \
+	chmod 755 less-global elvis-global global-client gtags-client htags-client; \
+fi
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/script'
+Making install in gtags-cscope
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../libtool   --mode=install /bin/install -c gtags-cscope '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c gtags-cscope /mnt/builds-fiwix-3.3/installation/usr/bin/gtags-cscope
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 gtags-cscope.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10/gtags-cscope'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+ /bin/install -c -m 644 AUTHORS COPYING COPYING.LIB ChangeLog FAQ INSTALL LICENSE NEWS README THANKS DONORS BUILD_TOOLS README.PATCHES gtags.conf gtags.el gtags.pl gtags.vim gtags-cscope.vim elvis.rc elvis-2.2_0.patch geco.rc vim74-gtags-cscope.patch '/mnt/builds-fiwix-3.3/installation/usr/share/gtags'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/global-6.6.10'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/share/gtags/script/pygments_parser.py: File format not recognized
+strip:./usr/share/gtags/script/maps2conf.pl: File format not recognized
+strip:./usr/share/gtags/script/less-global: File format not recognized
+strip:./usr/share/gtags/script/elvis-global: File format not recognized
+strip:./usr/share/gtags/script/global-client: File format not recognized
+strip:./usr/share/gtags/script/gtags-client: File format not recognized
+strip:./usr/share/gtags/script/htags-client: File format not recognized
+strip:./usr/lib/gtags/exuberant-ctags.la: File format not recognized
+strip:./usr/lib/gtags/universal-ctags.la: File format not recognized
+strip:./usr/lib/gtags/pygments-parser.la: File format not recognized
+strip:./usr/lib/gtags/user-custom.la: File format not recognized
+strip:./usr/bin/htags-server: File format not recognized
+strip:./usr/bin/globash: File format not recognized
+./
+./usr/
+./usr/share/
+./usr/share/man/
+./usr/share/man/man5/
+./usr/share/man/man5/gtags.conf.5
+./usr/share/man/man1/
+./usr/share/man/man1/global.1
+./usr/share/man/man1/gozilla.1
+./usr/share/man/man1/gtags.1
+./usr/share/man/man1/htags.1
+./usr/share/man/man1/htags-server.1
+./usr/share/man/man1/globash.1
+./usr/share/man/man1/gtags-cscope.1
+./usr/share/gtags/
+./usr/share/gtags/PLUGIN_HOWTO
+./usr/share/gtags/PLUGIN_HOWTO.pygments
+./usr/share/gtags/PLUGIN_HOWTO.universal-ctags
+./usr/share/gtags/uctags-scheme.c-diff
+./usr/share/gtags/script/
+./usr/share/gtags/script/pygments_parser.py
+./usr/share/gtags/script/maps2conf.pl
+./usr/share/gtags/script/less-global
+./usr/share/gtags/script/elvis-global
+./usr/share/gtags/script/global-client
+./usr/share/gtags/script/gtags-client
+./usr/share/gtags/script/htags-client
+./usr/share/gtags/icons/
+./usr/share/gtags/icons/index.png
+./usr/share/gtags/icons/c.png
+./usr/share/gtags/icons/text.png
+./usr/share/gtags/icons/dir.png
+./usr/share/gtags/icons/back.png
+./usr/share/gtags/icons/help.png
+./usr/share/gtags/icons/first.png
+./usr/share/gtags/icons/last.png
+./usr/share/gtags/icons/left.png
+./usr/share/gtags/icons/right.png
+./usr/share/gtags/icons/top.png
+./usr/share/gtags/icons/bottom.png
+./usr/share/gtags/icons/n_first.png
+./usr/share/gtags/icons/n_last.png
+./usr/share/gtags/icons/n_left.png
+./usr/share/gtags/icons/n_right.png
+./usr/share/gtags/icons/n_top.png
+./usr/share/gtags/icons/n_bottom.png
+./usr/share/gtags/icons/pglobe.png
+./usr/share/gtags/jquery/
+./usr/share/gtags/jquery/jquery.js
+./usr/share/gtags/jquery/jquery.suggest.css
+./usr/share/gtags/jquery/jquery.suggest.js
+./usr/share/gtags/jquery/jquery.treeview.css
+./usr/share/gtags/jquery/jquery.treeview.js
+./usr/share/gtags/jquery/images/
+./usr/share/gtags/jquery/images/file.png
+./usr/share/gtags/jquery/images/folder-closed.png
+./usr/share/gtags/jquery/images/folder.png
+./usr/share/gtags/jquery/images/minus.png
+./usr/share/gtags/jquery/images/plus.png
+./usr/share/gtags/jquery/images/treeview-black-line.png
+./usr/share/gtags/jquery/images/treeview-black.png
+./usr/share/gtags/jquery/images/treeview-default-line.png
+./usr/share/gtags/jquery/images/treeview-default.png
+./usr/share/gtags/jquery/images/treeview-famfamfam-line.png
+./usr/share/gtags/jquery/images/treeview-famfamfam.png
+./usr/share/gtags/jquery/images/treeview-gray-line.png
+./usr/share/gtags/jquery/images/treeview-gray.png
+./usr/share/gtags/jquery/images/treeview-red-line.png
+./usr/share/gtags/jquery/images/treeview-red.png
+./usr/share/gtags/global.cgi
+./usr/share/gtags/completion.cgi
+./usr/share/gtags/dot_htaccess
+./usr/share/gtags/jscode_suggest
+./usr/share/gtags/jscode_treeview
+./usr/share/gtags/style.css
+./usr/share/gtags/globash.rc
+./usr/share/gtags/SERVERSIDE_HOWTO
+./usr/share/gtags/AUTHORS
+./usr/share/gtags/COPYING
+./usr/share/gtags/COPYING.LIB
+./usr/share/gtags/ChangeLog
+./usr/share/gtags/FAQ
+./usr/share/gtags/INSTALL
+./usr/share/gtags/LICENSE
+./usr/share/gtags/NEWS
+./usr/share/gtags/README
+./usr/share/gtags/THANKS
+./usr/share/gtags/DONORS
+./usr/share/gtags/BUILD_TOOLS
+./usr/share/gtags/README.PATCHES
+./usr/share/gtags/gtags.conf
+./usr/share/gtags/gtags.el
+./usr/share/gtags/gtags.pl
+./usr/share/gtags/gtags.vim
+./usr/share/gtags/gtags-cscope.vim
+./usr/share/gtags/elvis.rc
+./usr/share/gtags/elvis-2.2_0.patch
+./usr/share/gtags/geco.rc
+./usr/share/gtags/vim74-gtags-cscope.patch
+./usr/share/info/
+./usr/share/info/global.info
+./usr/share/info/dir
+./usr/lib/
+./usr/lib/gtags/
+./usr/lib/gtags/exuberant-ctags.la
+./usr/lib/gtags/universal-ctags.la
+./usr/lib/gtags/pygments-parser.la
+./usr/lib/gtags/user-custom.la
+./usr/lib/gtags/libexuberant-ctags.a
+./usr/lib/gtags/libuniversal-ctags.a
+./usr/lib/gtags/libpygments-parser.a
+./usr/lib/gtags/libuser-custom.a
+./usr/bin/
+./usr/bin/global
+./usr/bin/gozilla
+./usr/bin/gtags
+./usr/bin/htags
+./usr/bin/htags-server
+./usr/bin/globash
+./usr/bin/gtags-cscope
+./usr/var/
+./usr/var/gtags/
+/mnt/builds-fiwix-3.3
+
+real	0m34.473s
+user	0m21.830s
+sys	0m10.020s

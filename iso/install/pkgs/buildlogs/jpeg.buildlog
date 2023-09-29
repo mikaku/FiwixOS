@@ -1,0 +1,241 @@
+/mnt/builds-fiwix-3.3/jpeg-9e /mnt/builds-fiwix-3.3
+patching jpeg-9e
+patching file config.guess
+patching file config.sub
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking target system type... i386-pc-fiwix
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... gcc3
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+checking whether make sets $(MAKE)... (cached) yes
+checking whether ln -s works... yes
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking if LD -Wl,--version-script works... yes
+checking for function prototypes... yes
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for locale.h... yes
+checking for string.h... (cached) yes
+checking for size_t... yes
+checking for type unsigned char... yes
+checking for type unsigned short... yes
+checking for type void... yes
+checking for an ANSI C-conforming const... yes
+checking for inline... __inline__
+checking for broken incomplete types... ok
+checking for short external names... ok
+checking to see if char is signed... yes
+checking to see if right shift is signed... yes
+checking to see if fopen accepts b spec... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking libjpeg version number... 9.5.0
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating libjpeg.pc
+config.status: creating jconfig.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-am
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/jpeg-9e'
+  CC       cjpeg.o
+  CC       rdppm.o
+  CC       rdgif.o
+  CC       rdtarga.o
+  CC       rdrle.o
+  CC       rdbmp.o
+  CC       rdswitch.o
+  CC       cdjpeg.o
+  CC       jaricom.lo
+  CC       jcapimin.lo
+  CC       jcapistd.lo
+  CC       jcarith.lo
+  CC       jccoefct.lo
+  CC       jccolor.lo
+  CC       jcdctmgr.lo
+  CC       jchuff.lo
+  CC       jcinit.lo
+  CC       jcmainct.lo
+  CC       jcmarker.lo
+  CC       jcmaster.lo
+  CC       jcomapi.lo
+  CC       jcparam.lo
+  CC       jcprepct.lo
+  CC       jcsample.lo
+  CC       jctrans.lo
+  CC       jdapimin.lo
+  CC       jdapistd.lo
+  CC       jdarith.lo
+  CC       jdatadst.lo
+  CC       jdatasrc.lo
+  CC       jdcoefct.lo
+  CC       jdcolor.lo
+  CC       jddctmgr.lo
+  CC       jdhuff.lo
+  CC       jdinput.lo
+  CC       jdmainct.lo
+  CC       jdmarker.lo
+  CC       jdmaster.lo
+  CC       jdmerge.lo
+  CC       jdpostct.lo
+  CC       jdsample.lo
+  CC       jdtrans.lo
+  CC       jerror.lo
+  CC       jfdctflt.lo
+  CC       jfdctfst.lo
+  CC       jfdctint.lo
+  CC       jidctflt.lo
+  CC       jidctfst.lo
+  CC       jidctint.lo
+  CC       jquant1.lo
+  CC       jquant2.lo
+  CC       jutils.lo
+  CC       jmemmgr.lo
+  CC       jmemnobs.lo
+  CCLD     libjpeg.la
+  CCLD     cjpeg
+  CC       djpeg.o
+  CC       wrppm.o
+  CC       wrgif.o
+  CC       wrtarga.o
+  CC       wrrle.o
+  CC       wrbmp.o
+  CC       rdcolmap.o
+  CCLD     djpeg
+  CC       jpegtran.o
+  CC       transupp.o
+  CCLD     jpegtran
+  CC       rdjpgcom.o
+  CCLD     rdjpgcom
+  CC       wrjpgcom.o
+  CCLD     wrjpgcom
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/jpeg-9e'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/jpeg-9e'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ./libtool   --mode=install /bin/install -c   libjpeg.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c .libs/libjpeg.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libjpeg.la
+libtool: install: /bin/install -c .libs/libjpeg.a /mnt/builds-fiwix-3.3/installation/usr/lib/libjpeg.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libjpeg.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libjpeg.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ./libtool   --mode=install /bin/install -c cjpeg djpeg jpegtran rdjpgcom wrjpgcom '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c cjpeg /mnt/builds-fiwix-3.3/installation/usr/bin/cjpeg
+libtool: install: /bin/install -c djpeg /mnt/builds-fiwix-3.3/installation/usr/bin/djpeg
+libtool: install: /bin/install -c jpegtran /mnt/builds-fiwix-3.3/installation/usr/bin/jpegtran
+libtool: install: /bin/install -c rdjpgcom /mnt/builds-fiwix-3.3/installation/usr/bin/rdjpgcom
+libtool: install: /bin/install -c wrjpgcom /mnt/builds-fiwix-3.3/installation/usr/bin/wrjpgcom
+/bin/sh /mnt/builds-fiwix-3.3/jpeg-9e/install-sh -d /mnt/builds-fiwix-3.3/installation/usr/include
+/bin/install -c -m 644 jconfig.h /mnt/builds-fiwix-3.3/installation/usr/include/jconfig.h
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/install -c -m 644 jerror.h jmorecfg.h jpeglib.h '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+ /bin/install -c -m 644 libjpeg.pc '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/jpeg-9e'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libjpeg.la: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/libjpeg.la
+./usr/lib/libjpeg.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/libjpeg.pc
+./usr/bin/
+./usr/bin/cjpeg
+./usr/bin/djpeg
+./usr/bin/jpegtran
+./usr/bin/rdjpgcom
+./usr/bin/wrjpgcom
+./usr/include/
+./usr/include/jconfig.h
+./usr/include/jerror.h
+./usr/include/jmorecfg.h
+./usr/include/jpeglib.h
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/cjpeg.1
+./usr/share/man/man1/djpeg.1
+./usr/share/man/man1/jpegtran.1
+./usr/share/man/man1/rdjpgcom.1
+./usr/share/man/man1/wrjpgcom.1
+/mnt/builds-fiwix-3.3
+
+real	0m22.238s
+user	0m16.680s
+sys	0m4.250s

@@ -1,0 +1,1073 @@
+/mnt/builds-fiwix-3.3/lxdoom-1.4.4 /mnt/builds-fiwix-3.3
+patching lxdoom-1.4.4
+patching file config.guess
+patching file config.sub
+patching file src/Makefile.in
+patching file src/d_main.c
+patching file src/g_game.c
+patching file src/i_main.h
+patching file src/l_main.c
+patching file src/l_udp.c
+patching file src/p_maputl.c
+patching file src/r_bsp.h
+creating cache ./config.cache
+checking host system type... i386-pc-fiwix
+checking target system type... i386-pc-fiwix
+checking build system type... i386-pc-fiwix
+checking for a BSD compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking whether make sets ${MAKE}... yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... found
+checking for gcc... gcc
+checking whether the C compiler (gcc -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -s) works... yes
+checking whether the C compiler (gcc -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -s) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for size_t... yes
+checking for pid_t... yes
+checking for uid_t in sys/types.h... yes
+checking for sys_siglist declaration in signal.h or unistd.h... no
+checking for working const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for X... no
+CFLAGS complete: -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE
+checking for XShmCreateImage in -lXext... no
+checking for vga_setpalvec in -lvga... yes
+checking for stricmp... no
+checking for strnicmp... no
+checking for inet_aton... no
+checking for linux/joystick.h... no
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/ioctl.h... yes
+checking for sys/filio.h... no
+checking for sys/soundcard.h... no
+checking for machine/soundcard.h... no
+checking for linux/soundcard.h... no
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating src/Makefile
+creating doc/Makefile
+creating data/Makefile
+creating lxdoom.spec
+creating config.h
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+Making all in data
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+Making all in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_video_svgalib.c
+In file included from doomstat.h:42:0,
+                 from l_video_svgalib.c:47:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from l_video_svgalib.c:48:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+l_video_svgalib.c: In function 'I_InitKBTransTable':
+l_video_svgalib.c:241:7: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+In file included from l_video_svgalib.c:35:0:
+/usr/lib/gcc/i386-pc-fiwix/4.7.4/../../../../i386-pc-fiwix/include/string.h:41:9: note: expected 'const char *' but argument is of type 'const unsigned char *'
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c am_map.c
+In file included from doomstat.h:42:0,
+                 from am_map.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from am_map.c:42:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+am_map.c: In function 'AM_Responder':
+am_map.c:634:14: warning: variable 'cheatstate' set but not used [-Wunused-but-set-variable]
+am_map.c: In function 'AM_drawFline':
+am_map.c:1060:7: warning: function with qualified void return type called [enabled by default]
+am_map.c:1076:7: warning: function with qualified void return type called [enabled by default]
+am_map.c: In function 'AM_drawCrosshair':
+am_map.c:1680:14: warning: function with qualified void return type called [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c g_game.c
+In file included from doomstat.h:42:0,
+                 from g_game.c:41:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+g_game.c: In function 'G_DoLoadGame':
+g_game.c:1411:8: warning: variable 'length' set but not used [-Wunused-but-set-variable]
+g_game.c: In function 'G_DoSaveGame':
+g_game.c:1593:3: warning: format '%u' expects argument of type 'unsigned int', but argument 4 has type 'size_t' [-Wformat]
+g_game.c: In function 'G_DoPlayDemo':
+g_game.c:2117:23: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_mobj.c
+In file included from doomstat.h:42:0,
+                 from p_mobj.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_segs.c
+In file included from doomstat.h:42:0,
+                 from r_segs.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c hu_lib.c
+In file included from doomstat.h:42:0,
+                 from hu_lib.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from hu_lib.c:37:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+hu_lib.c: In function 'HUlib_drawTextLine':
+hu_lib.c:172:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+hu_lib.c:182:17: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_lib.c:191:7: warning: pointer targets in passing argument 5 of 'V_DrawMemPatch' differ in signedness [-Wpointer-sign]
+In file included from hu_lib.c:37:0:
+v_video.h:118:6: note: expected 'const byte *' but argument is of type 'const char *'
+hu_lib.c: In function 'HUlib_drawMText':
+hu_lib.c:531:15: warning: variable 'y' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c lprintf.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c d_client.c
+In file included from doomstat.h:42:0,
+                 from d_client.c:38:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+d_client.c: In function 'D_InitNetGame':
+d_client.c:107:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_plats.c
+In file included from doomstat.h:42:0,
+                 from p_plats.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_sky.c
+In file included from r_sky.h:35:0,
+                 from r_sky.c:41:
+m_fixed.h: In function 'FixedDiv':
+m_fixed.h:131:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c d_deh.c
+In file included from doomstat.h:42:0,
+                 from d_deh.c:39:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+d_deh.c: In function 'strlwr':
+d_deh.c:61:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+d_deh.c: In function 'deh_procCheat':
+d_deh.c:2250:33: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+d_deh.c: In function 'rstrip':
+d_deh.c:2691:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+d_deh.c: In function 'ptr_lstrip':
+d_deh.c:2704:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c hu_stuff.c
+In file included from doomstat.h:42:0,
+                 from hu_stuff.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from hu_lib.h:36:0,
+                 from hu_stuff.c:39:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+hu_stuff.c: In function 'HU_Start':
+hu_stuff.c:430:3: warning: pointer targets in passing argument 7 of 'HUlib_initSText' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:176:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:442:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:455:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:468:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:481:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:494:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:507:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:520:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:533:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:554:3: warning: pointer targets in passing argument 8 of 'HUlib_initMText' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:200:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:585:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:594:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:603:3: warning: pointer targets in passing argument 6 of 'HUlib_initTextLine' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:148:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:675:3: warning: pointer targets in passing argument 6 of 'HUlib_initIText' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:229:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c:688:5: warning: pointer targets in passing argument 6 of 'HUlib_initIText' differ in signedness [-Wpointer-sign]
+In file included from hu_stuff.c:39:0:
+hu_lib.h:229:6: note: expected 'const char *' but argument is of type 'const byte *'
+hu_stuff.c: In function 'HU_Drawer':
+hu_stuff.c:804:19: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:842:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:844:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:846:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:894:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:896:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:898:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:900:21: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:947:20: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:949:20: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:951:20: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+hu_stuff.c:953:20: warning: pointer targets in assignment differ in signedness [-Wpointer-sign]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_argv.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_pspr.c
+In file included from doomstat.h:42:0,
+                 from p_pspr.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_bbox.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_saveg.c
+In file included from doomstat.h:42:0,
+                 from p_saveg.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_things.c
+In file included from doomstat.h:42:0,
+                 from r_things.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from r_things.c:38:0:
+r_bsp.h:44:17: warning: 'rw_x' defined but not used [-Wunused-variable]
+r_bsp.h:45:17: warning: 'rw_stopx' defined but not used [-Wunused-variable]
+r_bsp.h:46:17: warning: 'segtextured' defined but not used [-Wunused-variable]
+r_bsp.h:47:17: warning: 'markfloor' defined but not used [-Wunused-variable]
+r_bsp.h:48:17: warning: 'markceiling' defined but not used [-Wunused-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c d_items.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_cheat.c
+In file included from doomstat.h:42:0,
+                 from m_cheat.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+m_cheat.c:109:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:109:3: warning: (near initialization for 'cheat[0].cheat') [-Wpointer-sign]
+m_cheat.c:112:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:112:3: warning: (near initialization for 'cheat[1].cheat') [-Wpointer-sign]
+m_cheat.c:115:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:115:3: warning: (near initialization for 'cheat[2].cheat') [-Wpointer-sign]
+m_cheat.c:123:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:123:3: warning: (near initialization for 'cheat[3].cheat') [-Wpointer-sign]
+m_cheat.c:126:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:126:3: warning: (near initialization for 'cheat[4].cheat') [-Wpointer-sign]
+m_cheat.c:129:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:129:3: warning: (near initialization for 'cheat[5].cheat') [-Wpointer-sign]
+m_cheat.c:132:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:132:3: warning: (near initialization for 'cheat[6].cheat') [-Wpointer-sign]
+m_cheat.c:135:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:135:3: warning: (near initialization for 'cheat[7].cheat') [-Wpointer-sign]
+m_cheat.c:138:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:138:3: warning: (near initialization for 'cheat[8].cheat') [-Wpointer-sign]
+m_cheat.c:141:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:141:3: warning: (near initialization for 'cheat[9].cheat') [-Wpointer-sign]
+m_cheat.c:144:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:144:3: warning: (near initialization for 'cheat[10].cheat') [-Wpointer-sign]
+m_cheat.c:147:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:147:3: warning: (near initialization for 'cheat[11].cheat') [-Wpointer-sign]
+m_cheat.c:150:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:150:3: warning: (near initialization for 'cheat[12].cheat') [-Wpointer-sign]
+m_cheat.c:153:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:153:3: warning: (near initialization for 'cheat[13].cheat') [-Wpointer-sign]
+m_cheat.c:156:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:156:3: warning: (near initialization for 'cheat[14].cheat') [-Wpointer-sign]
+m_cheat.c:159:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:159:3: warning: (near initialization for 'cheat[15].cheat') [-Wpointer-sign]
+m_cheat.c:162:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:162:3: warning: (near initialization for 'cheat[16].cheat') [-Wpointer-sign]
+m_cheat.c:165:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:165:3: warning: (near initialization for 'cheat[17].cheat') [-Wpointer-sign]
+m_cheat.c:168:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:168:3: warning: (near initialization for 'cheat[18].cheat') [-Wpointer-sign]
+m_cheat.c:171:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:171:3: warning: (near initialization for 'cheat[19].cheat') [-Wpointer-sign]
+m_cheat.c:174:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:174:3: warning: (near initialization for 'cheat[20].cheat') [-Wpointer-sign]
+m_cheat.c:177:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:177:3: warning: (near initialization for 'cheat[21].cheat') [-Wpointer-sign]
+m_cheat.c:180:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:180:3: warning: (near initialization for 'cheat[22].cheat') [-Wpointer-sign]
+m_cheat.c:183:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:183:3: warning: (near initialization for 'cheat[23].cheat') [-Wpointer-sign]
+m_cheat.c:186:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:186:3: warning: (near initialization for 'cheat[24].cheat') [-Wpointer-sign]
+m_cheat.c:189:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:189:3: warning: (near initialization for 'cheat[25].cheat') [-Wpointer-sign]
+m_cheat.c:192:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:192:3: warning: (near initialization for 'cheat[26].cheat') [-Wpointer-sign]
+m_cheat.c:195:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:195:3: warning: (near initialization for 'cheat[27].cheat') [-Wpointer-sign]
+m_cheat.c:198:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:198:3: warning: (near initialization for 'cheat[28].cheat') [-Wpointer-sign]
+m_cheat.c:201:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:201:3: warning: (near initialization for 'cheat[29].cheat') [-Wpointer-sign]
+m_cheat.c:204:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:204:3: warning: (near initialization for 'cheat[30].cheat') [-Wpointer-sign]
+m_cheat.c:207:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:207:3: warning: (near initialization for 'cheat[31].cheat') [-Wpointer-sign]
+m_cheat.c:210:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:210:3: warning: (near initialization for 'cheat[32].cheat') [-Wpointer-sign]
+m_cheat.c:213:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:213:3: warning: (near initialization for 'cheat[33].cheat') [-Wpointer-sign]
+m_cheat.c:216:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:216:3: warning: (near initialization for 'cheat[34].cheat') [-Wpointer-sign]
+m_cheat.c:219:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:219:3: warning: (near initialization for 'cheat[35].cheat') [-Wpointer-sign]
+m_cheat.c:222:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:222:3: warning: (near initialization for 'cheat[36].cheat') [-Wpointer-sign]
+m_cheat.c:225:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:225:3: warning: (near initialization for 'cheat[37].cheat') [-Wpointer-sign]
+m_cheat.c:228:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:228:3: warning: (near initialization for 'cheat[38].cheat') [-Wpointer-sign]
+m_cheat.c:231:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:231:3: warning: (near initialization for 'cheat[39].cheat') [-Wpointer-sign]
+m_cheat.c:234:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:234:3: warning: (near initialization for 'cheat[40].cheat') [-Wpointer-sign]
+m_cheat.c:238:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:238:3: warning: (near initialization for 'cheat[41].cheat') [-Wpointer-sign]
+m_cheat.c:241:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:241:3: warning: (near initialization for 'cheat[42].cheat') [-Wpointer-sign]
+m_cheat.c:244:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:244:3: warning: (near initialization for 'cheat[43].cheat') [-Wpointer-sign]
+m_cheat.c:247:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:247:3: warning: (near initialization for 'cheat[44].cheat') [-Wpointer-sign]
+m_cheat.c:250:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:250:3: warning: (near initialization for 'cheat[45].cheat') [-Wpointer-sign]
+m_cheat.c:253:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_cheat.c:253:3: warning: (near initialization for 'cheat[46].cheat') [-Wpointer-sign]
+m_cheat.c: In function 'cheat_mus':
+m_cheat.c:269:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+m_cheat.c:269:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_setup.c
+In file included from doomstat.h:42:0,
+                 from p_setup.c:38:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c s_sound.c
+In file included from doomstat.h:42:0,
+                 from s_sound.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+s_sound.c: In function 'S_ChangeMusic':
+s_sound.c:466:3: warning: passing argument 1 of 'I_RegisterSong' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from s_sound.c:39:0:
+i_sound.h:92:5: note: expected 'void *' but argument is of type 'const void *'
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c d_main.c
+In file included from doomstat.h:42:0,
+                 from d_main.c:44:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from d_main.c:50:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+d_main.c: In function 'D_Display':
+d_main.c:228:5: warning: case value '4294967295' not in enumerated type 'gamestate_t' [-Wswitch]
+d_main.c:213:18: warning: variable 'inhelpscreensstate' set but not used [-Wunused-but-set-variable]
+d_main.c: In function 'D_DoomMainSetup':
+d_main.c:1184:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+d_main.c:1191:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_sight.c
+In file included from p_mobj.h:44:0,
+                 from d_player.h:46,
+                 from r_main.h:35,
+                 from p_sight.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c sounds.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_menu.c
+In file included from doomstat.h:42:0,
+                 from m_menu.c:43:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from m_menu.c:47:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+m_menu.c: In function 'M_StringWidth':
+m_menu.c:4781:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_spec.c
+In file included from doomstat.h:42:0,
+                 from p_spec.c:43:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_spec.c: In function 'P_SpawnSpecials':
+p_spec.c:2392:15: warning: variable 'episode' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c info.c
+In file included from p_mobj.h:44:0,
+                 from info.c:48:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c st_lib.c
+In file included from doomstat.h:42:0,
+                 from st_lib.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from st_lib.c:37:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_misc.c
+In file included from doomstat.h:42:0,
+                 from m_misc.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from m_misc.c:45:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+m_misc.c: In function 'M_DrawText':
+m_misc.c:72:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+m_misc.c: At top level:
+m_misc.c:262:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_misc.c:262:3: warning: (near initialization for 'defaults[34].location.pi') [-Wpointer-sign]
+m_misc.c:264:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+m_misc.c:264:3: warning: (near initialization for 'defaults[35].location.pi') [-Wpointer-sign]
+m_misc.c: In function 'M_LoadDefaults':
+m_misc.c:707:9: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_switch.c
+In file included from doomstat.h:42:0,
+                 from p_switch.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_joy.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_telept.c
+In file included from p_mobj.h:44:0,
+                 from r_defs.h:47,
+                 from p_spec.h:34,
+                 from p_telept.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_telept.c: In function 'EV_SilentLineTeleport':
+p_telept.c:274:13: warning: suggest parentheses around comparison in operand of '!=' [-Wparentheses]
+p_telept.c:276:13: warning: suggest parentheses around comparison in operand of '!=' [-Wparentheses]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c st_stuff.c
+In file included from doomstat.h:42:0,
+                 from st_stuff.c:38:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from st_lib.h:37:0,
+                 from st_stuff.c:43:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c m_random.c
+In file included from doomstat.h:42:0,
+                 from m_random.c:40:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_tick.c
+In file included from doomstat.h:42:0,
+                 from p_tick.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_main.c
+In file included from doomstat.h:42:0,
+                 from l_main.c:48:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c tables.c
+In file included from tables.h:48:0,
+                 from tables.c:51:
+m_fixed.h: In function 'FixedDiv':
+m_fixed.h:131:3: warning: implicit declaration of function 'abs' [-Wimplicit-function-declaration]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_user.c
+In file included from doomstat.h:42:0,
+                 from p_user.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_system.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_sound.c
+In file included from doomstat.h:42:0,
+                 from l_sound.c:55:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+l_sound.c: In function 'I_PlaySong':
+l_sound.c:167:7: warning: format '%d' expects argument of type 'int', but argument 3 has type 'size_t' [-Wformat]
+l_sound.c:167:7: warning: format '%d' expects argument of type 'int', but argument 4 has type 'size_t' [-Wformat]
+l_sound.c:171:7: warning: format '%d' expects argument of type 'int', but argument 3 has type 'size_t' [-Wformat]
+l_sound.c:171:7: warning: format '%d' expects argument of type 'int', but argument 4 has type 'size_t' [-Wformat]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_ceilng.c
+In file included from doomstat.h:42:0,
+                 from p_ceilng.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c v_video.c
+In file included from p_mobj.h:44:0,
+                 from d_player.h:46,
+                 from r_main.h:35,
+                 from v_video.c:40:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from v_video.c:43:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+v_video.c: In function 'V_DrawMemPatch':
+v_video.c:531:16: warning: variable 'DYI2' set but not used [-Wunused-but-set-variable]
+v_video.c:531:11: warning: variable 'DY2' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c doomdef.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_doors.c
+In file included from doomstat.h:42:0,
+                 from p_doors.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_doors.c: In function 'EV_VerticalDoor':
+p_doors.c:449:9: warning: variable 'secnum' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_enemy.c
+In file included from doomstat.h:42:0,
+                 from p_enemy.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_bsp.c
+In file included from doomstat.h:42:0,
+                 from r_bsp.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from r_bsp.c:42:0:
+r_bsp.h:44:17: warning: 'rw_x' defined but not used [-Wunused-variable]
+r_bsp.h:45:17: warning: 'rw_stopx' defined but not used [-Wunused-variable]
+r_bsp.h:46:17: warning: 'segtextured' defined but not used [-Wunused-variable]
+r_bsp.h:47:17: warning: 'markfloor' defined but not used [-Wunused-variable]
+r_bsp.h:48:17: warning: 'markceiling' defined but not used [-Wunused-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c version.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c doomstat.c
+In file included from doomstat.h:42:0,
+                 from doomstat.c:39:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_floor.c
+In file included from doomstat.h:42:0,
+                 from p_floor.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_floor.c: In function 'EV_DoDonut':
+p_floor.c:865:9: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_data.c
+In file included from doomstat.h:42:0,
+                 from r_data.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+r_data.c:66:1: warning: 'packed' attribute ignored [-Wattributes]
+r_data.c:83:1: warning: 'packed' attribute ignored [-Wattributes]
+r_data.c:92:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c w_wad.c
+In file included from doomstat.h:42:0,
+                 from w_wad.c:40:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+w_wad.c: In function 'ExtractFileBase':
+w_wad.c:101:7: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c: In function 'W_LumpNameHash':
+w_wad.c:290:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:291:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:292:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:293:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:294:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:295:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:296:11: warning: array subscript has type 'char' [-Wchar-subscripts]
+w_wad.c:297:12: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_genlin.c
+In file included from doomstat.h:42:0,
+                 from p_genlin.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c dstrings.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c l_udp.c
+l_udp.c: In function 'I_SendPacket':
+l_udp.c:164:3: warning: 'return' with a value, in function returning void [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_inter.c
+In file included from doomstat.h:42:0,
+                 from p_inter.c:35:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_inter.c: In function 'P_DamageMobj':
+p_inter.c:778:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c wi_stuff.c
+In file included from doomstat.h:42:0,
+                 from wi_stuff.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from wi_stuff.c:41:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+wi_stuff.c: In function 'WI_drawDeathmatchStats':
+wi_stuff.c:1150:9: warning: variable 'lh' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_draw.c
+In file included from doomstat.h:42:0,
+                 from r_draw.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from r_draw.c:40:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c f_finale.c
+In file included from doomstat.h:42:0,
+                 from f_finale.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from f_finale.c:38:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_lights.c
+In file included from doomstat.h:42:0,
+                 from p_lights.c:37:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c z_bmalloc.c
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_map.c
+In file included from doomstat.h:42:0,
+                 from p_map.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+p_map.c: In function 'P_ThingHeightClip':
+p_map.c:716:23: warning: variable 'oldz' set but not used [-Wunused-but-set-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_main.c
+In file included from doomstat.h:42:0,
+                 from r_main.c:36:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from r_main.c:45:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+r_main.c: In function 'R_RenderPlayerView':
+r_main.c:661:21: warning: pointer targets in passing argument 6 of 'V_DrawBlock' differ in signedness [-Wpointer-sign]
+In file included from r_main.c:45:0:
+v_video.h:129:6: note: expected 'const byte *' but argument is of type 'char *'
+In file included from r_main.c:41:0:
+r_main.c: At top level:
+r_bsp.h:44:17: warning: 'rw_x' defined but not used [-Wunused-variable]
+r_bsp.h:45:17: warning: 'rw_stopx' defined but not used [-Wunused-variable]
+r_bsp.h:46:17: warning: 'segtextured' defined but not used [-Wunused-variable]
+r_bsp.h:47:17: warning: 'markfloor' defined but not used [-Wunused-variable]
+r_bsp.h:48:17: warning: 'markceiling' defined but not used [-Wunused-variable]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c f_wipe.c
+In file included from p_mobj.h:44:0,
+                 from r_defs.h:47,
+                 from r_data.h:37,
+                 from v_video.h:41,
+                 from f_wipe.c:38:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+In file included from f_wipe.c:38:0:
+v_video.h:151:26: warning: function definition has qualified void return type [enabled by default]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c z_zone.c
+In file included from doomstat.h:42:0,
+                 from z_zone.c:52:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c p_maputl.c
+In file included from doomstat.h:42:0,
+                 from p_maputl.c:38:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c r_plane.c
+In file included from doomstat.h:42:0,
+                 from r_plane.c:50:
+doomdata.h:69:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:80:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:91:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:146:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:152:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:163:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:179:1: warning: 'packed' attribute ignored [-Wattributes]
+doomdata.h:189:1: warning: 'packed' attribute ignored [-Wattributes]
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c drawspan.s
+gcc -DHAVE_CONFIG_H -I. -I. -I..     -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -c drawcol.s
+gcc  -O2 -Wall -Winline -Wcast-align -Wwrite-strings -ffast-math -fomit-frame-pointer -INONE -s -o lsdoom  l_video_svgalib.o am_map.o g_game.o p_mobj.o r_segs.o hu_lib.o lprintf.o d_client.o p_plats.o r_sky.o d_deh.o hu_stuff.o m_argv.o p_pspr.o m_bbox.o p_saveg.o r_things.o d_items.o m_cheat.o p_setup.o s_sound.o d_main.o p_sight.o sounds.o m_menu.o p_spec.o info.o st_lib.o m_misc.o p_switch.o l_joy.o p_telept.o st_stuff.o m_random.o p_tick.o l_main.o tables.o p_user.o l_system.o l_sound.o p_ceilng.o v_video.o doomdef.o p_doors.o p_enemy.o r_bsp.o version.o doomstat.o p_floor.o r_data.o w_wad.o p_genlin.o dstrings.o l_udp.o p_inter.o wi_stuff.o r_draw.o f_finale.o p_lights.o z_bmalloc.o p_map.o r_main.o f_wipe.o z_zone.o p_maputl.o r_plane.o drawspan.o drawcol.o -lvga 
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+make  install-man5 install-man6
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/man/man5
+mkdir /mnt/builds-fiwix-3.3/installation/usr
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man/man5
+ /bin/install -c -m 644 ./boom.cfg.5 /mnt/builds-fiwix-3.3/installation/usr/man/man5/boom.cfg.5
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/man/man6
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man/man6
+ /bin/install -c -m 644 ./lxdoom.6 /mnt/builds-fiwix-3.3/installation/usr/man/man6/lxdoom.6
+ /bin/install -c -m 644 ./lxdoom-game-server.6 /mnt/builds-fiwix-3.3/installation/usr/man/man6/lxdoom-game-server.6
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share/doc
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom
+ /bin/install -c -m 644 ./old-source-docs.tar.gz /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/old-source-docs.tar.gz
+ /bin/install -c -m 644 ./boom.txt /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/boom.txt
+ /bin/install -c -m 644 ./boomref.txt /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/boomref.txt
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/doc'
+Making install in data
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+make[2]: Nothing to be done for 'install-exec-am'.
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/games/doom
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share/games
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share/games/doom
+ /bin/install -c -m 644 ./boomlump.wad /mnt/builds-fiwix-3.3/installation/usr/share/games/doom/boomlump.wad
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/data'
+Making install in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+make[2]: Nothing to be done for 'install-exec-am'.
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/games
+mkdir /mnt/builds-fiwix-3.3/installation/usr/games
+  /bin/install -c  lsdoom /mnt/builds-fiwix-3.3/installation/usr/games/lsdoom
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4/src'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+make[2]: Nothing to be done for 'install-exec-am'.
+/bin/sh ./mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom
+ /bin/install -c -m 644 ./ChangeLog /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/ChangeLog
+ /bin/install -c -m 644 ./README /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/README
+ /bin/install -c -m 644 ./COPYING /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/COPYING
+ /bin/install -c -m 644 ./AUTHORS /mnt/builds-fiwix-3.3/installation/usr/share/doc/lxdoom/AUTHORS
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lxdoom-1.4.4'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/man/
+./usr/man/man5/
+./usr/man/man5/boom.cfg.5
+./usr/man/man6/
+./usr/man/man6/lxdoom.6
+./usr/man/man6/lxdoom-game-server.6
+./usr/share/
+./usr/share/doc/
+./usr/share/doc/lxdoom/
+./usr/share/doc/lxdoom/old-source-docs.tar.gz
+./usr/share/doc/lxdoom/boom.txt
+./usr/share/doc/lxdoom/boomref.txt
+./usr/share/doc/lxdoom/ChangeLog
+./usr/share/doc/lxdoom/README
+./usr/share/doc/lxdoom/COPYING
+./usr/share/doc/lxdoom/AUTHORS
+./usr/share/games/
+./usr/share/games/doom/
+./usr/share/games/doom/boomlump.wad
+./usr/games/
+./usr/games/lsdoom
+/mnt/builds-fiwix-3.3
+
+real	0m17.879s
+user	0m12.450s
+sys	0m3.400s

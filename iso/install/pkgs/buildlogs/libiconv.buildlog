@@ -1,0 +1,1584 @@
+/mnt/builds-fiwix-3.3/libiconv-1.17 /mnt/builds-fiwix-3.3
+patching libiconv-1.17
+patching file lib/iconv.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether the compiler is clang... no
+checking for compiler option needed when checking for declarations... none
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... none
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+checking for strip... /bin/strip
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/param.h... yes
+checking for sys/socket.h... no
+checking for limits.h... yes
+checking for sys/time.h... yes
+checking for features.h... yes
+checking for crtdefs.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... /bin/strip
+checking for ranlib... (cached) ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for ld... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library path variable... none
+checking whether to activate relocatable installation... no
+checking how to copy files... cp -p
+checking how to make hard links... ln
+checking whether ln -s works... yes
+checking for windres... no
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... yes
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking whether iconv is compatible with its POSIX signature... yes
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking for GNU gettext in libc... no
+checking for iconv... (cached) yes
+checking for working iconv... (cached) yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking for mbstate_t... yes
+checking for wchar_t... yes
+checking for getc_unlocked... yes
+checking for mbrtowc... yes
+checking for wcrtomb... yes
+checking for mbsinit... yes
+checking for setlocale... yes
+checking whether <wchar.h> is standalone... yes
+checking for memmove... yes
+checking for nl_langinfo and CODESET... yes
+checking for symlink... yes
+checking for canonicalize_file_name... no
+checking for faccessat... no
+checking for realpath... yes
+checking for lstat... yes
+checking for readlinkat... no
+checking for _set_invalid_parameter_handler... no
+checking for fcntl... yes
+checking for getdtablesize... no
+checking for getprogname... no
+checking for getexecname... no
+checking for readlink... yes
+checking for setenv... yes
+checking for working fcntl.h... yes
+checking for wchar.h... (cached) yes
+checking for EILSEQ... yes
+checking whether byte ordering is bigendian... no
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether lstat correctly handles trailing slash... no
+checking whether // is distinct from /... no
+checking whether realpath works... no
+checking for getcwd... yes
+checking for C/C++ restrict keyword... __restrict__
+checking if environ is properly declared... yes
+checking whether the preprocessor supports include_next... yes
+checking whether source code line length is unlimited... yes
+checking for complete errno.h... no
+checking for EMULTIHOP value... yes
+checking for ENOLINK value... yes
+checking for EOVERFLOW value... yes
+checking for gcc -std=gnu11 options needed to detect all undeclared functions... none needed
+checking whether strerror_r is declared... yes
+checking whether strerror_r returns char *... yes
+checking whether ctype.h defines __header_inline... no
+checking for pid_t... yes
+checking for mode_t... yes
+checking whether stat file-mode macros are broken... no
+checking for nlink_t... yes
+checking whether getdtablesize is declared... yes
+checking whether limits.h has WORD_BIT, BOOL_WIDTH etc.... no
+checking for wint_t... yes
+checking whether wint_t is large enough... yes
+checking whether the compiler produces multi-arch binaries... no
+checking whether stdint.h conforms to C99... no
+checking for sys/inttypes.h... no
+checking for sys/bitypes.h... no
+checking for bit size of ptrdiff_t... 32
+checking for bit size of size_t... 32
+checking for bit size of sig_atomic_t... 32
+checking for bit size of wchar_t... 32
+checking for bit size of wint_t... 32
+checking whether sig_atomic_t is signed... yes
+checking whether wchar_t is signed... yes
+checking whether wint_t is signed... no
+checking for ptrdiff_t integer literal suffix... l
+checking for size_t integer literal suffix... ul
+checking for sig_atomic_t integer literal suffix... 
+checking for wchar_t integer literal suffix... 
+checking for wint_t integer literal suffix... u
+checking whether malloc is ptrdiff_t safe... no
+checking whether malloc, realloc, calloc set errno on failure... yes
+checking whether malloc (0) returns nonnull... yes
+checking whether <limits.h> defines MIN and MAX... no
+checking whether <sys/param.h> defines MIN and MAX... yes
+checking for O_CLOEXEC... yes
+checking for promoted mode_t type... mode_t
+checking for sigset_t... yes
+checking for SIGPIPE... yes
+checking whether setenv is declared... yes
+checking for ssize_t... yes
+checking for uid_t in sys/types.h... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... yes
+checking whether C symbols are prefixed with underscore at the linker level... no
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for good max_align_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether fcloseall is declared... yes
+checking which flavor of printf attribute matches inttypes macros... system
+checking whether ecvt is declared... no
+checking whether fcvt is declared... no
+checking whether gcvt is declared... no
+checking whether strerror(0) succeeds... yes
+checking for struct timespec in <time.h>... yes
+checking for TIME_UTC in <time.h>... no
+checking whether execvpe is declared... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking whether wcsdup is declared... yes
+checking for C compiler option to allow warnings... -Wno-error
+checking for __builtin_expect... yes
+checking for winsock2.h... no
+checking whether // is distinct from /... (cached) no
+checking whether dup2 works... no
+checking for setdtablesize... no
+checking for error_at_line... no
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... yes
+checking whether free is known to preserve errno... no
+checking whether program_invocation_name is declared... no
+checking whether program_invocation_short_name is declared... no
+checking whether __argv is declared... no
+checking whether __progname is defined in default libraries... yes
+checking whether the -Werror option is usable... (cached) yes
+checking for simple visibility declarations... (cached) yes
+checking whether the compiler supports the __inline keyword... yes
+checking for mbstate_t... (cached) yes
+checking for mempcpy... yes
+checking whether open recognizes a trailing slash... no
+checking whether program_invocation_name is declared... (cached) no
+checking whether program_invocation_short_name is declared... (cached) no
+checking for raise... yes
+checking for sigprocmask... yes
+checking for rawmemchr... yes
+checking whether readlink signature is correct... yes
+checking whether readlink handles trailing slash correctly... yes
+checking whether readlink truncates results correctly... yes
+checking for getcwd... (cached) yes
+checking whether free is known to preserve errno... (cached) no
+checking for mempcpy... (cached) yes
+checking for rawmemchr... (cached) yes
+checking for search.h... yes
+checking for tsearch... yes
+checking for sigprocmask... (cached) yes
+checking for ssize_t... (cached) yes
+checking whether stat handles trailing slashes on files... no
+checking for struct stat.st_atim.tv_nsec... no
+checking for struct stat.st_atimespec.tv_nsec... no
+checking for struct stat.st_atimensec... no
+checking for struct stat.st_atim.st__tim.tv_nsec... no
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for working stdalign.h... no
+checking for winsock2.h... (cached) no
+checking for variable-length arrays... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating srclib/Makefile
+config.status: creating src/Makefile
+config.status: creating po/Makefile.in
+config.status: creating man/Makefile
+config.status: creating tests/Makefile
+config.status: creating include/iconv.h
+config.status: creating include/iconv.h.inst
+config.status: creating config.h
+config.status: creating lib/config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+=== configuring in libcharset (/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset)
+configure: running /bin/sh ./configure --disable-option-checking '--prefix=/usr'  'LDFLAGS=-s' --cache-file=/dev/null --srcdir=.
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+checking for a BSD-compatible install... /bin/install -c
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking for gawk... gawk
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for ld... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library path variable... none
+checking whether to activate relocatable installation... no
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking for nl_langinfo and CODESET... yes
+checking for symlink... yes
+checking for working fcntl.h... no
+checking for setlocale... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating include/libcharset.h
+config.status: creating include/libcharset.h.inst
+config.status: creating include/localcharset.h
+config.status: creating include/localcharset.h.inst
+config.status: creating config.h
+config.status: executing libtool commands
+builddir="`pwd`"; cd libcharset && make all && make install-lib libdir="$builddir/lib" includedir="$builddir/lib"
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+cd lib && make all
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+/bin/sh ../libtool --mode=compile gcc -std=gnu11 -I. -I. -I.. -I./.. -I../include -g -O2 -fvisibility=hidden  -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c
+libtool: compile:  gcc -std=gnu11 -I. -I. -I.. -I./.. -I../include -g -O2 -fvisibility=hidden -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./localcharset.c -o localcharset.o
+/bin/sh ../libtool --mode=compile gcc -std=gnu11 -I. -I. -I.. -I./.. -I../include -g -O2 -fvisibility=hidden  -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c
+libtool: compile:  gcc -std=gnu11 -I. -I. -I.. -I./.. -I../include -g -O2 -fvisibility=hidden -DBUILDING_LIBCHARSET -DHAVE_CONFIG_H -c ./relocatable-stub.c -o relocatable-stub.o
+/bin/sh ../libtool --mode=link gcc -std=gnu11 -s -g -O2 -fvisibility=hidden -o libcharset.la -rpath /usr/lib -version-info 1:0:0 -no-undefined localcharset.lo relocatable-stub.lo
+libtool: link: ar cr .libs/libcharset.a  localcharset.o relocatable-stub.o
+libtool: link: ranlib .libs/libcharset.a
+libtool: link: ( cd ".libs" && rm -f "libcharset.la" && ln -s "../libcharset.la" "libcharset.la" )
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+cd lib && make all
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+cd lib && make install-lib libdir='/mnt/builds-fiwix-3.3/libiconv-1.17/lib' includedir='/mnt/builds-fiwix-3.3/libiconv-1.17/lib'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+/bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/libiconv-1.17/lib
+/bin/sh ../libtool --mode=install /bin/install -c libcharset.la /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.la
+libtool: install: /bin/install -c .libs/libcharset.lai /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.la
+libtool: install: /bin/install -c .libs/libcharset.a /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+/bin/sh ./build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/libiconv-1.17/lib
+/bin/install -c -m 644 include/libcharset.h.inst /mnt/builds-fiwix-3.3/libiconv-1.17/lib/libcharset.h
+/bin/install -c -m 644 include/localcharset.h /mnt/builds-fiwix-3.3/libiconv-1.17/lib/localcharset.h
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+cd lib && make all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/lib'
+/bin/sh ../libtool --mode=compile gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./..  -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./iconv.c
+libtool: compile:  gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./.. -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./iconv.c -o iconv.o
+/bin/sh ../libtool --mode=compile gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./..  -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./../libcharset/lib/localcharset.c
+libtool: compile:  gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./.. -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./../libcharset/lib/localcharset.c -o localcharset.o
+/bin/sh ../libtool --mode=compile gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./..  -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./relocatable.c
+libtool: compile:  gcc -std=gnu11 -I. -I. -I../include -I./../include -I.. -I./.. -g -O2 -fvisibility=hidden -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBICONV -DBUILDING_LIBCHARSET -DBUILDING_DLL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libiconv_set_relocation_prefix -Drelocate=libiconv_relocate -Drelocate2=libiconv_relocate2 -DHAVE_CONFIG_H -c ./relocatable.c -o relocatable.o
+/bin/sh ../libtool --mode=link gcc -std=gnu11 -s  -g -O2 -fvisibility=hidden -o libiconv.la -rpath /usr/lib -version-info 8:1:6 -no-undefined iconv.lo localcharset.lo relocatable.lo  
+libtool: link: ar cr .libs/libiconv.a  iconv.o localcharset.o relocatable.o
+libtool: link: ranlib .libs/libiconv.a
+libtool: link: ( cd ".libs" && rm -f "libiconv.la" && ln -s "../libiconv.la" "libiconv.la" )
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/lib'
+cd srclib && make all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+  -e 's|@''HAVE_ALLOCA_H''@||g' \
+  ./alloca.in.h > alloca.h-t
+mv alloca.h-t alloca.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_ERRNO_H''@|<errno.h>|g' \
+      -e 's|@''EMULTIHOP_HIDDEN''@|0|g' \
+      -e 's|@''EMULTIHOP_VALUE''@||g' \
+      -e 's|@''ENOLINK_HIDDEN''@|0|g' \
+      -e 's|@''ENOLINK_VALUE''@||g' \
+      -e 's|@''EOVERFLOW_HIDDEN''@|0|g' \
+      -e 's|@''EOVERFLOW_VALUE''@||g' \
+      ./errno.in.h > errno.h-t
+mv errno.h-t errno.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_FCNTL_H''@|<fcntl.h>|g' \
+      -e 's/@''GNULIB_CREAT''@/0/g' \
+      -e 's/@''GNULIB_FCNTL''@/1/g' \
+      -e 's/@''GNULIB_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_OPEN''@/1/g' \
+      -e 's/@''GNULIB_OPENAT''@/0/g' \
+      -e 's/@''GNULIB_MDA_CREAT''@/1/g' \
+      -e 's/@''GNULIB_MDA_OPEN''@/1/g' \
+      -e 's|@''HAVE_FCNTL''@|1|g' \
+      -e 's|@''HAVE_OPENAT''@|1|g' \
+      -e 's|@''REPLACE_CREAT''@|0|g' \
+      -e 's|@''REPLACE_FCNTL''@|0|g' \
+      -e 's|@''REPLACE_OPEN''@|1|g' \
+      -e 's|@''REPLACE_OPENAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      ./fcntl.in.h > fcntl.h-t
+mv fcntl.h-t fcntl.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_INTTYPES_H''@|<inttypes.h>|g' \
+      -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g' \
+      -e 's/@''PRIPTR_PREFIX''@/__PRIPTR_PREFIX/g' \
+      -e 's/@''GNULIB_IMAXABS''@/0/g' \
+      -e 's/@''GNULIB_IMAXDIV''@/0/g' \
+      -e 's/@''GNULIB_STRTOIMAX''@/0/g' \
+      -e 's/@''GNULIB_STRTOUMAX''@/0/g' \
+      -e 's/@''HAVE_DECL_IMAXABS''@/1/g' \
+      -e 's/@''HAVE_DECL_IMAXDIV''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g' \
+      -e 's/@''HAVE_IMAXDIV_T''@/1/g' \
+      -e 's/@''REPLACE_STRTOIMAX''@/0/g' \
+      -e 's/@''REPLACE_STRTOUMAX''@/0/g' \
+      -e 's/@''INT32_MAX_LT_INTMAX_MAX''@/1/g' \
+      -e 's/@''INT64_MAX_EQ_LONG_MAX''@/defined _LP64/g' \
+      -e 's/@''UINT32_MAX_LT_UINTMAX_MAX''@/1/g' \
+      -e 's/@''UINT64_MAX_EQ_ULONG_MAX''@/defined _LP64/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      ./inttypes.in.h > inttypes.h-t
+mv inttypes.h-t inttypes.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_LIMITS_H''@|<limits.h>|g' \
+      ./limits.in.h > limits.h-t
+mv limits.h-t limits.h
+/bin/mkdir -p 'malloc'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|__always_inline|inline _GL_ATTRIBUTE_ALWAYS_INLINE|g' \
+      -e 's|__glibc_likely|_GL_LIKELY|g' \
+      -e 's|__glibc_unlikely|_GL_UNLIKELY|g' \
+      -e '/libc_hidden_proto/d' \
+      ./malloc/scratch_buffer.h > malloc/scratch_buffer.gl.h-t
+mv malloc/scratch_buffer.gl.h-t malloc/scratch_buffer.gl.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SIGNAL_H''@|<signal.h>|g' \
+      -e 's/@''GNULIB_PTHREAD_SIGMASK''@/0/g' \
+      -e 's/@''GNULIB_RAISE''@/1/g' \
+      -e 's/@''GNULIB_SIGNAL_H_SIGPIPE''@/1/g' \
+      -e 's/@''GNULIB_SIGPROCMASK''@/1/g' \
+      -e 's/@''GNULIB_SIGACTION''@/0/g' \
+      -e 's|@''HAVE_POSIX_SIGNALBLOCKING''@|1|g' \
+      -e 's|@''HAVE_PTHREAD_SIGMASK''@|1|g' \
+      -e 's|@''HAVE_RAISE''@|1|g' \
+      -e 's|@''HAVE_SIGSET_T''@|1|g' \
+      -e 's|@''HAVE_SIGINFO_T''@|1|g' \
+      -e 's|@''HAVE_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_STRUCT_SIGACTION_SA_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_TYPE_VOLATILE_SIG_ATOMIC_T''@|1|g' \
+      -e 's|@''HAVE_SIGHANDLER_T''@|1|g' \
+      -e 's|@''REPLACE_PTHREAD_SIGMASK''@|0|g' \
+      -e 's|@''REPLACE_RAISE''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      ./signal.in.h > signal.h-t
+mv signal.h-t signal.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G -n -e 'w stdalign.h-t' ./stdalign.in.h
+mv stdalign.h-t stdalign.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's/@''HAVE_STDINT_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDINT_H''@|<stdint.h>|g' \
+      -e 's/@''HAVE_C99_STDINT_H''@/0/g' \
+      -e 's/@''HAVE_SYS_TYPES_H''@/1/g' \
+      -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+      -e 's/@''HAVE_SYS_INTTYPES_H''@/0/g' \
+      -e 's/@''HAVE_SYS_BITYPES_H''@/0/g' \
+      -e 's/@''HAVE_WCHAR_H''@/1/g' \
+      -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g' \
+      -e 's/@''BITSIZEOF_PTRDIFF_T''@/32/g' \
+      -e 's/@''PTRDIFF_T_SUFFIX''@/l/g' \
+      -e 's/@''BITSIZEOF_SIG_ATOMIC_T''@/32/g' \
+      -e 's/@''HAVE_SIGNED_SIG_ATOMIC_T''@/1/g' \
+      -e 's/@''SIG_ATOMIC_T_SUFFIX''@//g' \
+      -e 's/@''BITSIZEOF_SIZE_T''@/32/g' \
+      -e 's/@''SIZE_T_SUFFIX''@/ul/g' \
+      -e 's/@''BITSIZEOF_WCHAR_T''@/32/g' \
+      -e 's/@''HAVE_SIGNED_WCHAR_T''@/1/g' \
+      -e 's/@''WCHAR_T_SUFFIX''@//g' \
+      -e 's/@''BITSIZEOF_WINT_T''@/32/g' \
+      -e 's/@''HAVE_SIGNED_WINT_T''@/0/g' \
+      -e 's/@''WINT_T_SUFFIX''@/u/g' \
+      -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g' \
+      ./stdint.in.h > stdint.h-t
+mv stdint.h-t stdint.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDIO_H''@|<stdio.h>|g' \
+      -e 's/@''GNULIB_DPRINTF''@/0/g' \
+      -e 's/@''GNULIB_FCLOSE''@/0/g' \
+      -e 's/@''GNULIB_FDOPEN''@/0/g' \
+      -e 's/@''GNULIB_FFLUSH''@/0/g' \
+      -e 's/@''GNULIB_FGETC''@/1/g' \
+      -e 's/@''GNULIB_FGETS''@/1/g' \
+      -e 's/@''GNULIB_FOPEN''@/0/g' \
+      -e 's/@''GNULIB_FOPEN_GNU''@/0/g' \
+      -e 's/@''GNULIB_FPRINTF''@/1/g' \
+      -e 's/@''GNULIB_FPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_FPURGE''@/0/g' \
+      -e 's/@''GNULIB_FPUTC''@/1/g' \
+      -e 's/@''GNULIB_FPUTS''@/1/g' \
+      -e 's/@''GNULIB_FREAD''@/1/g' \
+      -e 's/@''GNULIB_FREOPEN''@/0/g' \
+      -e 's/@''GNULIB_FSCANF''@/1/g' \
+      -e 's/@''GNULIB_FSEEK''@/0/g' \
+      -e 's/@''GNULIB_FSEEKO''@/0/g' \
+      -e 's/@''GNULIB_FTELL''@/0/g' \
+      -e 's/@''GNULIB_FTELLO''@/0/g' \
+      -e 's/@''GNULIB_FWRITE''@/1/g' \
+      -e 's/@''GNULIB_GETC''@/1/g' \
+      -e 's/@''GNULIB_GETCHAR''@/1/g' \
+      -e 's/@''GNULIB_GETDELIM''@/0/g' \
+      -e 's/@''GNULIB_GETLINE''@/0/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF''@/0/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_PCLOSE''@/0/g' \
+      -e 's/@''GNULIB_PERROR''@/0/g' \
+      -e 's/@''GNULIB_POPEN''@/0/g' \
+      -e 's/@''GNULIB_PRINTF''@/1/g' \
+      -e 's/@''GNULIB_PRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_PUTC''@/1/g' \
+      -e 's/@''GNULIB_PUTCHAR''@/1/g' \
+      -e 's/@''GNULIB_PUTS''@/1/g' \
+      -e 's/@''GNULIB_REMOVE''@/0/g' \
+      -e 's/@''GNULIB_RENAME''@/0/g' \
+      -e 's/@''GNULIB_RENAMEAT''@/0/g' \
+      -e 's/@''GNULIB_SCANF''@/1/g' \
+      -e 's/@''GNULIB_SNPRINTF''@/0/g' \
+      -e 's/@''GNULIB_SPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_STDIO_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_STDIO_H_SIGPIPE''@/1/g' \
+      -e 's/@''GNULIB_TMPFILE''@/0/g' \
+      -e 's/@''GNULIB_VASPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VDPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VFPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VFPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_VFSCANF''@/0/g' \
+      -e 's/@''GNULIB_VSCANF''@/0/g' \
+      -e 's/@''GNULIB_VPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_VSNPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VSPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_MDA_FCLOSEALL''@/1/g' \
+      -e 's/@''GNULIB_MDA_FDOPEN''@/1/g' \
+      -e 's/@''GNULIB_MDA_FILENO''@/1/g' \
+      -e 's/@''GNULIB_MDA_GETW''@/1/g' \
+      -e 's/@''GNULIB_MDA_PUTW''@/1/g' \
+      -e 's/@''GNULIB_MDA_TEMPNAM''@/1/g' \
+      < ./stdio.in.h | \
+  sed -e 's|@''HAVE_DECL_FCLOSEALL''@|1|g' \
+      -e 's|@''HAVE_DECL_FPURGE''@|1|g' \
+      -e 's|@''HAVE_DECL_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_DECL_FTELLO''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDELIM''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLINE''@|1|g' \
+      -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_SNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DPRINTF''@|1|g' \
+      -e 's|@''HAVE_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_FTELLO''@|1|g' \
+      -e 's|@''HAVE_PCLOSE''@|1|g' \
+      -e 's|@''HAVE_POPEN''@|1|g' \
+      -e 's|@''HAVE_RENAMEAT''@|1|g' \
+      -e 's|@''HAVE_VASPRINTF''@|1|g' \
+      -e 's|@''HAVE_VDPRINTF''@|1|g' \
+      -e 's|@''REPLACE_DPRINTF''@|0|g' \
+      -e 's|@''REPLACE_FCLOSE''@|0|g' \
+      -e 's|@''REPLACE_FDOPEN''@|0|g' \
+      -e 's|@''REPLACE_FFLUSH''@|0|g' \
+      -e 's|@''REPLACE_FOPEN''@|0|g' \
+      -e 's|@''REPLACE_FOPEN_FOR_FOPEN_GNU''@|0|g' \
+      -e 's|@''REPLACE_FPRINTF''@|0|g' \
+      -e 's|@''REPLACE_FPURGE''@|0|g' \
+      -e 's|@''REPLACE_FREOPEN''@|0|g' \
+      -e 's|@''REPLACE_FSEEK''@|0|g' \
+      -e 's|@''REPLACE_FSEEKO''@|0|g' \
+      -e 's|@''REPLACE_FTELL''@|0|g' \
+      -e 's|@''REPLACE_FTELLO''@|0|g' \
+      -e 's|@''REPLACE_GETDELIM''@|0|g' \
+      -e 's|@''REPLACE_GETLINE''@|0|g' \
+      -e 's|@''REPLACE_OBSTACK_PRINTF''@|0|g' \
+      -e 's|@''REPLACE_PERROR''@|0|g' \
+      -e 's|@''REPLACE_POPEN''@|0|g' \
+      -e 's|@''REPLACE_PRINTF''@|0|g' \
+      -e 's|@''REPLACE_REMOVE''@|0|g' \
+      -e 's|@''REPLACE_RENAME''@|0|g' \
+      -e 's|@''REPLACE_RENAMEAT''@|0|g' \
+      -e 's|@''REPLACE_SNPRINTF''@|0|g' \
+      -e 's|@''REPLACE_SPRINTF''@|0|g' \
+      -e 's|@''REPLACE_STDIO_READ_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_TMPFILE''@|0|g' \
+      -e 's|@''REPLACE_VASPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VDPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VFPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VSNPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VSPRINTF''@|0|g' \
+      -e 's|@''ASM_SYMBOL_PREFIX''@|""|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      > stdio.h-t
+mv stdio.h-t stdio.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g' \
+      -e 's/@''GNULIB__EXIT''@/0/g' \
+      -e 's/@''GNULIB_ALIGNED_ALLOC''@/0/g' \
+      -e 's/@''GNULIB_ATOLL''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_GNU''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/1/g' \
+      -e 's/@''GNULIB_FREE_POSIX''@/1/g' \
+      -e 's/@''GNULIB_GETLOADAVG''@/0/g' \
+      -e 's/@''GNULIB_GETSUBOPT''@/0/g' \
+      -e 's/@''GNULIB_GRANTPT''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_GNU''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_MBTOWC''@/0/g' \
+      -e 's/@''GNULIB_MKDTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_POSIX_MEMALIGN''@/0/g' \
+      -e 's/@''GNULIB_POSIX_OPENPT''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME_R''@/0/g' \
+      -e 's/@''GNULIB_PUTENV''@/0/g' \
+      -e 's/@''GNULIB_QSORT_R''@/0/g' \
+      -e 's/@''GNULIB_RANDOM''@/0/g' \
+      -e 's/@''GNULIB_RANDOM_R''@/0/g' \
+      -e 's/@''GNULIB_REALLOC_GNU''@/0/g' \
+      -e 's/@''GNULIB_REALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_REALLOCARRAY''@/0/g' \
+      -e 's/@''GNULIB_REALPATH''@/1/g' \
+      -e 's/@''GNULIB_RPMATCH''@/0/g' \
+      -e 's/@''GNULIB_SECURE_GETENV''@/0/g' \
+      -e 's/@''GNULIB_SETENV''@/0/g' \
+      -e 's/@''GNULIB_STRTOD''@/0/g' \
+      -e 's/@''GNULIB_STRTOL''@/0/g' \
+      -e 's/@''GNULIB_STRTOLD''@/0/g' \
+      -e 's/@''GNULIB_STRTOLL''@/0/g' \
+      -e 's/@''GNULIB_STRTOUL''@/0/g' \
+      -e 's/@''GNULIB_STRTOULL''@/0/g' \
+      -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g' \
+      -e 's/@''GNULIB_UNLOCKPT''@/0/g' \
+      -e 's/@''GNULIB_UNSETENV''@/0/g' \
+      -e 's/@''GNULIB_WCTOMB''@/0/g' \
+      -e 's/@''GNULIB_MDA_ECVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_FCVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_GCVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_MKTEMP''@/1/g' \
+      -e 's/@''GNULIB_MDA_PUTENV''@/1/g' \
+      < ./stdlib.in.h | \
+  sed -e 's|@''HAVE__EXIT''@|1|g' \
+      -e 's|@''HAVE_ALIGNED_ALLOC''@|1|g' \
+      -e 's|@''HAVE_ATOLL''@|1|g' \
+      -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|0|g' \
+      -e 's|@''HAVE_DECL_ECVT''@|0|g' \
+      -e 's|@''HAVE_DECL_FCVT''@|0|g' \
+      -e 's|@''HAVE_DECL_GCVT''@|0|g' \
+      -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g' \
+      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+      -e 's|@''HAVE_GRANTPT''@|1|g' \
+      -e 's|@''HAVE_INITSTATE''@|1|g' \
+      -e 's|@''HAVE_DECL_INITSTATE''@|1|g' \
+      -e 's|@''HAVE_MBTOWC''@|1|g' \
+      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMPS''@|1|g' \
+      -e 's|@''HAVE_MKSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKSTEMPS''@|1|g' \
+      -e 's|@''HAVE_POSIX_MEMALIGN''@|1|g' \
+      -e 's|@''HAVE_POSIX_OPENPT''@|1|g' \
+      -e 's|@''HAVE_PTSNAME''@|1|g' \
+      -e 's|@''HAVE_PTSNAME_R''@|1|g' \
+      -e 's|@''HAVE_QSORT_R''@|1|g' \
+      -e 's|@''HAVE_RANDOM''@|1|g' \
+      -e 's|@''HAVE_RANDOM_H''@|1|g' \
+      -e 's|@''HAVE_RANDOM_R''@|1|g' \
+      -e 's|@''HAVE_REALLOCARRAY''@|1|g' \
+      -e 's|@''HAVE_REALPATH''@|1|g' \
+      -e 's|@''HAVE_RPMATCH''@|1|g' \
+      -e 's|@''HAVE_SECURE_GETENV''@|1|g' \
+      -e 's|@''HAVE_DECL_SETENV''@|1|g' \
+      -e 's|@''HAVE_SETSTATE''@|1|g' \
+      -e 's|@''HAVE_DECL_SETSTATE''@|1|g' \
+      -e 's|@''HAVE_STRTOD''@|1|g' \
+      -e 's|@''HAVE_STRTOL''@|1|g' \
+      -e 's|@''HAVE_STRTOLD''@|1|g' \
+      -e 's|@''HAVE_STRTOLL''@|1|g' \
+      -e 's|@''HAVE_STRTOUL''@|1|g' \
+      -e 's|@''HAVE_STRTOULL''@|1|g' \
+      -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g' \
+      -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g' \
+      -e 's|@''HAVE_UNLOCKPT''@|1|g' \
+      -e 's|@''HAVE_DECL_UNSETENV''@|1|g' \
+      -e 's|@''REPLACE_ALIGNED_ALLOC''@|0|g' \
+      -e 's|@''REPLACE_CALLOC_FOR_CALLOC_GNU''@|0|g' \
+      -e 's|@''REPLACE_CALLOC_FOR_CALLOC_POSIX''@|0|g' \
+      -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g' \
+      -e 's|@''REPLACE_FREE''@|1|g' \
+      -e 's|@''REPLACE_INITSTATE''@|0|g' \
+      -e 's|@''REPLACE_MALLOC_FOR_MALLOC_GNU''@|0|g' \
+      -e 's|@''REPLACE_MALLOC_FOR_MALLOC_POSIX''@|1|g' \
+      -e 's|@''REPLACE_MBTOWC''@|0|g' \
+      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+      -e 's|@''REPLACE_POSIX_MEMALIGN''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME_R''@|0|g' \
+      -e 's|@''REPLACE_PUTENV''@|0|g' \
+      -e 's|@''REPLACE_QSORT_R''@|0|g' \
+      -e 's|@''REPLACE_RANDOM''@|0|g' \
+      -e 's|@''REPLACE_RANDOM_R''@|0|g' \
+      -e 's|@''REPLACE_REALLOC_FOR_REALLOC_GNU''@|0|g' \
+      -e 's|@''REPLACE_REALLOC_FOR_REALLOC_POSIX''@|1|g' \
+      -e 's|@''REPLACE_REALLOCARRAY''@|0|g' \
+      -e 's|@''REPLACE_REALPATH''@|1|g' \
+      -e 's|@''REPLACE_SETENV''@|0|g' \
+      -e 's|@''REPLACE_SETSTATE''@|0|g' \
+      -e 's|@''REPLACE_STRTOD''@|0|g' \
+      -e 's|@''REPLACE_STRTOL''@|0|g' \
+      -e 's|@''REPLACE_STRTOLD''@|0|g' \
+      -e 's|@''REPLACE_STRTOLL''@|0|g' \
+      -e 's|@''REPLACE_STRTOUL''@|0|g' \
+      -e 's|@''REPLACE_STRTOULL''@|0|g' \
+      -e 's|@''REPLACE_UNSETENV''@|0|g' \
+      -e 's|@''REPLACE_WCTOMB''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _Noreturn/r ./_Noreturn.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      > stdlib.h-t
+mv stdlib.h-t stdlib.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STRING_H''@|<string.h>|g' \
+      -e 's/@''GNULIB_EXPLICIT_BZERO''@/0/g' \
+      -e 's/@''GNULIB_FFSL''@/0/g' \
+      -e 's/@''GNULIB_FFSLL''@/0/g' \
+      -e 's/@''GNULIB_MBSLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSNLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSRCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSSTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSPCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSCASESTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSPBRK''@/0/g' \
+      -e 's/@''GNULIB_MBSSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSSEP''@/0/g' \
+      -e 's/@''GNULIB_MBSTOK_R''@/0/g' \
+      -e 's/@''GNULIB_MEMCHR''@/0/g' \
+      -e 's/@''GNULIB_MEMMEM''@/0/g' \
+      -e 's/@''GNULIB_MEMPCPY''@/1/g' \
+      -e 's/@''GNULIB_MEMRCHR''@/0/g' \
+      -e 's/@''GNULIB_RAWMEMCHR''@/1/g' \
+      -e 's/@''GNULIB_STPCPY''@/0/g' \
+      -e 's/@''GNULIB_STPNCPY''@/0/g' \
+      -e 's/@''GNULIB_STRCHRNUL''@/0/g' \
+      -e 's/@''GNULIB_STRDUP''@/0/g' \
+      -e 's/@''GNULIB_STRNCAT''@/0/g' \
+      -e 's/@''GNULIB_STRNDUP''@/0/g' \
+      -e 's/@''GNULIB_STRNLEN''@/0/g' \
+      -e 's/@''GNULIB_STRPBRK''@/0/g' \
+      -e 's/@''GNULIB_STRSEP''@/0/g' \
+      -e 's/@''GNULIB_STRSTR''@/0/g' \
+      -e 's/@''GNULIB_STRCASESTR''@/0/g' \
+      -e 's/@''GNULIB_STRTOK_R''@/0/g' \
+      -e 's/@''GNULIB_STRERROR''@/1/g' \
+      -e 's/@''GNULIB_STRERROR_R''@/0/g' \
+      -e 's/@''GNULIB_STRERRORNAME_NP''@/0/g' \
+      -e 's/@''GNULIB_SIGABBREV_NP''@/0/g' \
+      -e 's/@''GNULIB_SIGDESCR_NP''@/0/g' \
+      -e 's/@''GNULIB_STRSIGNAL''@/0/g' \
+      -e 's/@''GNULIB_STRVERSCMP''@/0/g' \
+      -e 's/@''GNULIB_MDA_MEMCCPY''@/1/g' \
+      -e 's/@''GNULIB_MDA_STRDUP''@/1/g' \
+      -e 's/@''GNULIB_FREE_POSIX''@/1/g' \
+      < ./string.in.h | \
+  sed -e 's|@''HAVE_EXPLICIT_BZERO''@|1|g' \
+      -e 's|@''HAVE_FFSL''@|1|g' \
+      -e 's|@''HAVE_FFSLL''@|1|g' \
+      -e 's|@''HAVE_MBSLEN''@|0|g' \
+      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+      -e 's|@''HAVE_RAWMEMCHR''@|1|g' \
+      -e 's|@''HAVE_STPCPY''@|1|g' \
+      -e 's|@''HAVE_STPNCPY''@|1|g' \
+      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+      -e 's|@''HAVE_STRPBRK''@|1|g' \
+      -e 's|@''HAVE_STRSEP''@|1|g' \
+      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+      -e 's|@''HAVE_DECL_STRERROR_R''@|1|g' \
+      -e 's|@''HAVE_STRERRORNAME_NP''@|1|g' \
+      -e 's|@''HAVE_SIGABBREV_NP''@|1|g' \
+      -e 's|@''HAVE_SIGDESCR_NP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g' \
+      -e 's|@''HAVE_STRVERSCMP''@|1|g' \
+      -e 's|@''REPLACE_FFSLL''@|0|g' \
+      -e 's|@''REPLACE_MEMCHR''@|0|g' \
+      -e 's|@''REPLACE_MEMMEM''@|0|g' \
+      -e 's|@''REPLACE_FREE''@|1|g' \
+      -e 's|@''REPLACE_STPNCPY''@|0|g' \
+      -e 's|@''REPLACE_STRCHRNUL''@|0|g' \
+      -e 's|@''REPLACE_STRDUP''@|0|g' \
+      -e 's|@''REPLACE_STRNCAT''@|0|g' \
+      -e 's|@''REPLACE_STRNDUP''@|0|g' \
+      -e 's|@''REPLACE_STRNLEN''@|0|g' \
+      -e 's|@''REPLACE_STRSTR''@|0|g' \
+      -e 's|@''REPLACE_STRCASESTR''@|0|g' \
+      -e 's|@''REPLACE_STRTOK_R''@|0|g' \
+      -e 's|@''REPLACE_STRERROR''@|1|g' \
+      -e 's|@''REPLACE_STRERROR_R''@|0|g' \
+      -e 's|@''REPLACE_STRERRORNAME_NP''@|0|g' \
+      -e 's|@''REPLACE_STRSIGNAL''@|0|g' \
+      -e 's|@''UNDEFINE_STRTOK_R''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      > string.h-t
+mv string.h-t string.h
+/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_STAT_H''@|<sys/stat.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|0|g' \
+      -e 's|@''WINDOWS_STAT_TIMESPEC''@|0|g' \
+      -e 's/@''GNULIB_FCHMODAT''@/0/g' \
+      -e 's/@''GNULIB_FSTAT''@/1/g' \
+      -e 's/@''GNULIB_FSTATAT''@/0/g' \
+      -e 's/@''GNULIB_FUTIMENS''@/0/g' \
+      -e 's/@''GNULIB_GETUMASK''@/0/g' \
+      -e 's/@''GNULIB_LCHMOD''@/0/g' \
+      -e 's/@''GNULIB_LSTAT''@/0/g' \
+      -e 's/@''GNULIB_MKDIR''@/0/g' \
+      -e 's/@''GNULIB_MKDIRAT''@/0/g' \
+      -e 's/@''GNULIB_MKFIFO''@/0/g' \
+      -e 's/@''GNULIB_MKFIFOAT''@/0/g' \
+      -e 's/@''GNULIB_MKNOD''@/0/g' \
+      -e 's/@''GNULIB_MKNODAT''@/0/g' \
+      -e 's/@''GNULIB_STAT''@/1/g' \
+      -e 's/@''GNULIB_UTIMENSAT''@/0/g' \
+      -e 's/@''GNULIB_OVERRIDES_STRUCT_STAT''@/0/g' \
+      -e 's/@''GNULIB_MDA_CHMOD''@/1/g' \
+      -e 's/@''GNULIB_MDA_MKDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_UMASK''@/1/g' \
+      -e 's|@''HAVE_FCHMODAT''@|1|g' \
+      -e 's|@''HAVE_FSTATAT''@|1|g' \
+      -e 's|@''HAVE_FUTIMENS''@|1|g' \
+      -e 's|@''HAVE_GETUMASK''@|1|g' \
+      -e 's|@''HAVE_LCHMOD''@|1|g' \
+      -e 's|@''HAVE_LSTAT''@|1|g' \
+      -e 's|@''HAVE_MKDIRAT''@|1|g' \
+      -e 's|@''HAVE_MKFIFO''@|1|g' \
+      -e 's|@''HAVE_MKFIFOAT''@|1|g' \
+      -e 's|@''HAVE_MKNOD''@|1|g' \
+      -e 's|@''HAVE_MKNODAT''@|1|g' \
+      -e 's|@''HAVE_UTIMENSAT''@|1|g' \
+      -e 's|@''REPLACE_FCHMODAT''@|0|g' \
+      -e 's|@''REPLACE_FSTAT''@|0|g' \
+      -e 's|@''REPLACE_FSTATAT''@|0|g' \
+      -e 's|@''REPLACE_FUTIMENS''@|0|g' \
+      -e 's|@''REPLACE_LSTAT''@|0|g' \
+      -e 's|@''REPLACE_MKDIR''@|0|g' \
+      -e 's|@''REPLACE_MKFIFO''@|0|g' \
+      -e 's|@''REPLACE_MKFIFOAT''@|0|g' \
+      -e 's|@''REPLACE_MKNOD''@|0|g' \
+      -e 's|@''REPLACE_MKNODAT''@|0|g' \
+      -e 's|@''REPLACE_STAT''@|1|g' \
+      -e 's|@''REPLACE_UTIMENSAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      ./sys_stat.in.h > sys/stat.h-t
+mv sys/stat.h-t sys/stat.h
+/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's|@''WINDOWS_STAT_INODES''@|0|g' \
+      ./sys_types.in.h > sys/types.h-t
+mv sys/types.h-t sys/types.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_TIME_H''@|<time.h>|g' \
+      -e 's/@''GNULIB_CTIME''@/0/g' \
+      -e 's/@''GNULIB_LOCALTIME''@/0/g' \
+      -e 's/@''GNULIB_MKTIME''@/0/g' \
+      -e 's/@''GNULIB_NANOSLEEP''@/0/g' \
+      -e 's/@''GNULIB_STRFTIME''@/0/g' \
+      -e 's/@''GNULIB_STRPTIME''@/0/g' \
+      -e 's/@''GNULIB_TIMEGM''@/0/g' \
+      -e 's/@''GNULIB_TIMESPEC_GET''@/0/g' \
+      -e 's/@''GNULIB_TIMESPEC_GETRES''@/0/g' \
+      -e 's/@''GNULIB_TIME_R''@/0/g' \
+      -e 's/@''GNULIB_TIME_RZ''@/0/g' \
+      -e 's/@''GNULIB_TZSET''@/0/g' \
+      -e 's/@''GNULIB_MDA_TZSET''@/1/g' \
+      -e 's|@''HAVE_DECL_LOCALTIME_R''@|1|g' \
+      -e 's|@''HAVE_NANOSLEEP''@|1|g' \
+      -e 's|@''HAVE_STRPTIME''@|1|g' \
+      -e 's|@''HAVE_TIMEGM''@|1|g' \
+      -e 's|@''HAVE_TIMESPEC_GET''@|1|g' \
+      -e 's|@''HAVE_TIMESPEC_GETRES''@|1|g' \
+      -e 's|@''HAVE_TIMEZONE_T''@|0|g' \
+      -e 's|@''REPLACE_CTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_GMTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME_R''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_MKTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_NANOSLEEP''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_STRFTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_TIMEGM''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_TZSET''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''PTHREAD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+      -e 's|@''UNISTD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_TIME_UTC''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      ./time.in.h > time.h-t
+mv time.h-t time.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''HAVE_UNISTD_H''@|1|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's/@''GNULIB_ACCESS''@/0/g' \
+      -e 's/@''GNULIB_CHDIR''@/0/g' \
+      -e 's/@''GNULIB_CHOWN''@/0/g' \
+      -e 's/@''GNULIB_CLOSE''@/1/g' \
+      -e 's/@''GNULIB_COPY_FILE_RANGE''@/0/g' \
+      -e 's/@''GNULIB_DUP''@/0/g' \
+      -e 's/@''GNULIB_DUP2''@/1/g' \
+      -e 's/@''GNULIB_DUP3''@/0/g' \
+      -e 's/@''GNULIB_ENVIRON''@/1/g' \
+      -e 's/@''GNULIB_EUIDACCESS''@/0/g' \
+      -e 's/@''GNULIB_EXECL''@/0/g' \
+      -e 's/@''GNULIB_EXECLE''@/0/g' \
+      -e 's/@''GNULIB_EXECLP''@/0/g' \
+      -e 's/@''GNULIB_EXECV''@/0/g' \
+      -e 's/@''GNULIB_EXECVE''@/0/g' \
+      -e 's/@''GNULIB_EXECVP''@/0/g' \
+      -e 's/@''GNULIB_EXECVPE''@/0/g' \
+      -e 's/@''GNULIB_FACCESSAT''@/0/g' \
+      -e 's/@''GNULIB_FCHDIR''@/0/g' \
+      -e 's/@''GNULIB_FCHOWNAT''@/0/g' \
+      -e 's/@''GNULIB_FDATASYNC''@/0/g' \
+      -e 's/@''GNULIB_FSYNC''@/0/g' \
+      -e 's/@''GNULIB_FTRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_GETCWD''@/0/g' \
+      -e 's/@''GNULIB_GETDOMAINNAME''@/0/g' \
+      -e 's/@''GNULIB_GETDTABLESIZE''@/1/g' \
+      -e 's/@''GNULIB_GETENTROPY''@/0/g' \
+      -e 's/@''GNULIB_GETGROUPS''@/0/g' \
+      -e 's/@''GNULIB_GETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN_R''@/0/g' \
+      -e 's/@''GNULIB_GETOPT_POSIX''@/0/g' \
+      -e 's/@''GNULIB_GETPAGESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETPASS''@/0/g' \
+      -e 's/@''GNULIB_GETPASS_GNU''@/0/g' \
+      -e 's/@''GNULIB_GETUSERSHELL''@/0/g' \
+      -e 's/@''GNULIB_GROUP_MEMBER''@/0/g' \
+      -e 's/@''GNULIB_ISATTY''@/0/g' \
+      -e 's/@''GNULIB_LCHOWN''@/0/g' \
+      -e 's/@''GNULIB_LINK''@/0/g' \
+      -e 's/@''GNULIB_LINKAT''@/0/g' \
+      -e 's/@''GNULIB_LSEEK''@/0/g' \
+      -e 's/@''GNULIB_PIPE''@/0/g' \
+      -e 's/@''GNULIB_PIPE2''@/0/g' \
+      -e 's/@''GNULIB_PREAD''@/0/g' \
+      -e 's/@''GNULIB_PWRITE''@/0/g' \
+      -e 's/@''GNULIB_READ''@/1/g' \
+      -e 's/@''GNULIB_READLINK''@/1/g' \
+      -e 's/@''GNULIB_READLINKAT''@/0/g' \
+      -e 's/@''GNULIB_RMDIR''@/0/g' \
+      -e 's/@''GNULIB_SETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_SLEEP''@/0/g' \
+      -e 's/@''GNULIB_SYMLINK''@/0/g' \
+      -e 's/@''GNULIB_SYMLINKAT''@/0/g' \
+      -e 's/@''GNULIB_TRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_TTYNAME_R''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_GETOPT''@/00/g' \
+      -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/1/g' \
+      -e 's/@''GNULIB_UNLINK''@/0/g' \
+      -e 's/@''GNULIB_UNLINKAT''@/0/g' \
+      -e 's/@''GNULIB_USLEEP''@/0/g' \
+      -e 's/@''GNULIB_WRITE''@/0/g' \
+      -e 's/@''GNULIB_MDA_ACCESS''@/1/g' \
+      -e 's/@''GNULIB_MDA_CHDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_CLOSE''@/1/g' \
+      -e 's/@''GNULIB_MDA_DUP''@/1/g' \
+      -e 's/@''GNULIB_MDA_DUP2''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECL''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECLE''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECLP''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECV''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVE''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVP''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVPE''@/1/g' \
+      -e 's/@''GNULIB_MDA_GETCWD''@/1/g' \
+      -e 's/@''GNULIB_MDA_GETPID''@/1/g' \
+      -e 's/@''GNULIB_MDA_ISATTY''@/1/g' \
+      -e 's/@''GNULIB_MDA_LSEEK''@/1/g' \
+      -e 's/@''GNULIB_MDA_READ''@/1/g' \
+      -e 's/@''GNULIB_MDA_RMDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_SWAB''@/1/g' \
+      -e 's/@''GNULIB_MDA_UNLINK''@/1/g' \
+      -e 's/@''GNULIB_MDA_WRITE''@/1/g' \
+      < ./unistd.in.h | \
+  sed -e 's|@''HAVE_CHOWN''@|1|g' \
+      -e 's|@''HAVE_COPY_FILE_RANGE''@|1|g' \
+      -e 's|@''HAVE_DUP3''@|1|g' \
+      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+      -e 's|@''HAVE_EXECVPE''@|1|g' \
+      -e 's|@''HAVE_FACCESSAT''@|1|g' \
+      -e 's|@''HAVE_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_FCHOWNAT''@|1|g' \
+      -e 's|@''HAVE_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_FSYNC''@|1|g' \
+      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+      -e 's|@''HAVE_GETDTABLESIZE''@|0|g' \
+      -e 's|@''HAVE_GETENTROPY''@|1|g' \
+      -e 's|@''HAVE_GETGROUPS''@|1|g' \
+      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_GETPASS''@|1|g' \
+      -e 's|@''HAVE_GROUP_MEMBER''@|1|g' \
+      -e 's|@''HAVE_LCHOWN''@|1|g' \
+      -e 's|@''HAVE_LINK''@|1|g' \
+      -e 's|@''HAVE_LINKAT''@|1|g' \
+      -e 's|@''HAVE_PIPE''@|1|g' \
+      -e 's|@''HAVE_PIPE2''@|1|g' \
+      -e 's|@''HAVE_PREAD''@|1|g' \
+      -e 's|@''HAVE_PWRITE''@|1|g' \
+      -e 's|@''HAVE_READLINK''@|1|g' \
+      -e 's|@''HAVE_READLINKAT''@|1|g' \
+      -e 's|@''HAVE_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_SLEEP''@|1|g' \
+      -e 's|@''HAVE_SYMLINK''@|1|g' \
+      -e 's|@''HAVE_SYMLINKAT''@|1|g' \
+      -e 's|@''HAVE_UNLINKAT''@|1|g' \
+      -e 's|@''HAVE_USLEEP''@|1|g' \
+      -e 's|@''HAVE_DECL_ENVIRON''@|1|g' \
+      -e 's|@''HAVE_DECL_EXECVPE''@|1|g' \
+      -e 's|@''HAVE_DECL_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_DECL_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+      -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g' \
+      -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNCATE''@|1|g' \
+      -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g' \
+      -e 's|@''HAVE_OS_H''@|0|g' \
+      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+  | \
+  sed -e 's|@''REPLACE_ACCESS''@|0|g' \
+      -e 's|@''REPLACE_CHOWN''@|0|g' \
+      -e 's|@''REPLACE_CLOSE''@|0|g' \
+      -e 's|@''REPLACE_COPY_FILE_RANGE''@|0|g' \
+      -e 's|@''REPLACE_DUP''@|0|g' \
+      -e 's|@''REPLACE_DUP2''@|1|g' \
+      -e 's|@''REPLACE_EXECL''@|0|g' \
+      -e 's|@''REPLACE_EXECLE''@|0|g' \
+      -e 's|@''REPLACE_EXECLP''@|0|g' \
+      -e 's|@''REPLACE_EXECV''@|0|g' \
+      -e 's|@''REPLACE_EXECVE''@|0|g' \
+      -e 's|@''REPLACE_EXECVP''@|0|g' \
+      -e 's|@''REPLACE_EXECVPE''@|0|g' \
+      -e 's|@''REPLACE_FACCESSAT''@|0|g' \
+      -e 's|@''REPLACE_FCHOWNAT''@|0|g' \
+      -e 's|@''REPLACE_FTRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_GETCWD''@|0|g' \
+      -e 's|@''REPLACE_GETDOMAINNAME''@|0|g' \
+      -e 's|@''REPLACE_GETDTABLESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETLOGIN_R''@|0|g' \
+      -e 's|@''REPLACE_GETGROUPS''@|0|g' \
+      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETPASS''@|0|g' \
+      -e 's|@''REPLACE_GETPASS_FOR_GETPASS_GNU''@|0|g' \
+      -e 's|@''REPLACE_ISATTY''@|0|g' \
+      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+      -e 's|@''REPLACE_LINK''@|0|g' \
+      -e 's|@''REPLACE_LINKAT''@|0|g' \
+      -e 's|@''REPLACE_LSEEK''@|0|g' \
+      -e 's|@''REPLACE_PREAD''@|0|g' \
+      -e 's|@''REPLACE_PWRITE''@|0|g' \
+      -e 's|@''REPLACE_READ''@|0|g' \
+      -e 's|@''REPLACE_READLINK''@|0|g' \
+      -e 's|@''REPLACE_READLINKAT''@|0|g' \
+      -e 's|@''REPLACE_RMDIR''@|0|g' \
+      -e 's|@''REPLACE_SLEEP''@|0|g' \
+      -e 's|@''REPLACE_SYMLINK''@|0|g' \
+      -e 's|@''REPLACE_SYMLINKAT''@|0|g' \
+      -e 's|@''REPLACE_TRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_TTYNAME_R''@|0|g' \
+      -e 's|@''REPLACE_UNLINK''@|0|g' \
+      -e 's|@''REPLACE_UNLINKAT''@|0|g' \
+      -e 's|@''REPLACE_USLEEP''@|0|g' \
+      -e 's|@''REPLACE_WRITE''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_SYS_RANDOM_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      > unistd.h-t
+mv unistd.h-t unistd.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G -n -e 'w unitypes.h-t' ./unitypes.in.h
+mv unitypes.h-t unitypes.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G -n -e 'w uniwidth.h-t' ./uniwidth.in.h
+mv uniwidth.h-t uniwidth.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''HAVE_FEATURES_H''@|1|g' \
+      -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g' \
+      -e 's|@''HAVE_WCHAR_H''@|1|g' \
+      -e 's/@''HAVE_CRTDEFS_H''@/0/g' \
+      -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g' \
+      -e 's/@''GNULIB_BTOWC''@/0/g' \
+      -e 's/@''GNULIB_WCTOB''@/0/g' \
+      -e 's/@''GNULIB_MBSINIT''@/0/g' \
+      -e 's/@''GNULIB_MBRTOWC''@/0/g' \
+      -e 's/@''GNULIB_MBRLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_MBSNRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_WCRTOMB''@/0/g' \
+      -e 's/@''GNULIB_WCSRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCSNRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WMEMCHR''@/0/g' \
+      -e 's/@''GNULIB_WMEMCMP''@/0/g' \
+      -e 's/@''GNULIB_WMEMCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMMOVE''@/0/g' \
+      -e 's/@''GNULIB_WMEMPCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMSET''@/0/g' \
+      -e 's/@''GNULIB_WCSLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSNLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSNCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCOLL''@/0/g' \
+      -e 's/@''GNULIB_WCSXFRM''@/0/g' \
+      -e 's/@''GNULIB_WCSDUP''@/0/g' \
+      -e 's/@''GNULIB_WCSCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSRCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSCSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSPBRK''@/0/g' \
+      -e 's/@''GNULIB_WCSSTR''@/0/g' \
+      -e 's/@''GNULIB_WCSTOK''@/0/g' \
+      -e 's/@''GNULIB_WCSWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WCSFTIME''@/0/g' \
+      -e 's/@''GNULIB_MDA_WCSDUP''@/1/g' \
+      -e 's/@''GNULIB_FREE_POSIX''@/1/g' \
+      < ./wchar.in.h | \
+  sed -e 's|@''HAVE_WINT_T''@|1|g' \
+      -e 's|@''HAVE_BTOWC''@|1|g' \
+      -e 's|@''HAVE_MBSINIT''@|1|g' \
+      -e 's|@''HAVE_MBRTOWC''@|1|g' \
+      -e 's|@''HAVE_MBRLEN''@|1|g' \
+      -e 's|@''HAVE_MBSRTOWCS''@|1|g' \
+      -e 's|@''HAVE_MBSNRTOWCS''@|1|g' \
+      -e 's|@''HAVE_WCRTOMB''@|1|g' \
+      -e 's|@''HAVE_WCSRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WCSNRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WMEMCHR''@|1|g' \
+      -e 's|@''HAVE_WMEMCMP''@|1|g' \
+      -e 's|@''HAVE_WMEMCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMMOVE''@|1|g' \
+      -e 's|@''HAVE_WMEMPCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMSET''@|1|g' \
+      -e 's|@''HAVE_WCSLEN''@|1|g' \
+      -e 's|@''HAVE_WCSNLEN''@|1|g' \
+      -e 's|@''HAVE_WCSCPY''@|1|g' \
+      -e 's|@''HAVE_WCPCPY''@|1|g' \
+      -e 's|@''HAVE_WCSNCPY''@|1|g' \
+      -e 's|@''HAVE_WCPNCPY''@|1|g' \
+      -e 's|@''HAVE_WCSCAT''@|1|g' \
+      -e 's|@''HAVE_WCSNCAT''@|1|g' \
+      -e 's|@''HAVE_WCSCMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCMP''@|1|g' \
+      -e 's|@''HAVE_WCSCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSCOLL''@|1|g' \
+      -e 's|@''HAVE_WCSXFRM''@|1|g' \
+      -e 's|@''HAVE_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_WCSCHR''@|1|g' \
+      -e 's|@''HAVE_WCSRCHR''@|1|g' \
+      -e 's|@''HAVE_WCSCSPN''@|1|g' \
+      -e 's|@''HAVE_WCSSPN''@|1|g' \
+      -e 's|@''HAVE_WCSPBRK''@|1|g' \
+      -e 's|@''HAVE_WCSSTR''@|1|g' \
+      -e 's|@''HAVE_WCSTOK''@|1|g' \
+      -e 's|@''HAVE_WCSWIDTH''@|1|g' \
+      -e 's|@''HAVE_WCSFTIME''@|1|g' \
+      -e 's|@''HAVE_DECL_WCTOB''@|1|g' \
+      -e 's|@''HAVE_DECL_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_WCWIDTH''@|1|g' \
+  | \
+  sed -e 's|@''REPLACE_MBSTATE_T''@|0|g' \
+      -e 's|@''REPLACE_BTOWC''@|0|g' \
+      -e 's|@''REPLACE_WCTOB''@|0|g' \
+      -e 's|@''REPLACE_FREE''@|1|g' \
+      -e 's|@''REPLACE_MBSINIT''@|0|g' \
+      -e 's|@''REPLACE_MBRTOWC''@|0|g' \
+      -e 's|@''REPLACE_MBRLEN''@|0|g' \
+      -e 's|@''REPLACE_MBSRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_MBSNRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_WCRTOMB''@|0|g' \
+      -e 's|@''REPLACE_WCSRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCSNRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSFTIME''@|0|g' \
+      -e 's|@''REPLACE_WCSTOK''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./warn-on-use.h' \
+      > wchar.h-t
+mv wchar.h-t wchar.h
+make  all-am
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-allocator.o `test -f 'allocator.c' || echo './'`allocator.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-areadlink.o `test -f 'areadlink.c' || echo './'`areadlink.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-basename-lgpl.o `test -f 'basename-lgpl.c' || echo './'`basename-lgpl.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-binary-io.o `test -f 'binary-io.c' || echo './'`binary-io.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-canonicalize-lgpl.o `test -f 'canonicalize-lgpl.c' || echo './'`canonicalize-lgpl.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-careadlinkat.o `test -f 'careadlinkat.c' || echo './'`careadlinkat.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-cloexec.o `test -f 'cloexec.c' || echo './'`cloexec.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-dup2.o `test -f 'dup2.c' || echo './'`dup2.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-error.o `test -f 'error.c' || echo './'`error.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-fd-hook.o `test -f 'fd-hook.c' || echo './'`fd-hook.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-free.o `test -f 'free.c' || echo './'`free.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-getdtablesize.o `test -f 'getdtablesize.c' || echo './'`getdtablesize.c
+getdtablesize.c: In function 'getdtablesize':
+getdtablesize.c:114:3: warning: implicit declaration of function 'getrlimit' [-Wimplicit-function-declaration]
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-getprogname.o `test -f 'getprogname.c' || echo './'`getprogname.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-malloca.o `test -f 'malloca.c' || echo './'`malloca.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-open.o `test -f 'open.c' || echo './'`open.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-progname.o `test -f 'progname.c' || echo './'`progname.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-safe-read.o `test -f 'safe-read.c' || echo './'`safe-read.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o malloc/libicrt_a-scratch_buffer_dupfree.o `test -f 'malloc/scratch_buffer_dupfree.c' || echo './'`malloc/scratch_buffer_dupfree.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o malloc/libicrt_a-scratch_buffer_grow.o `test -f 'malloc/scratch_buffer_grow.c' || echo './'`malloc/scratch_buffer_grow.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o malloc/libicrt_a-scratch_buffer_grow_preserve.o `test -f 'malloc/scratch_buffer_grow_preserve.c' || echo './'`malloc/scratch_buffer_grow_preserve.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o malloc/libicrt_a-scratch_buffer_set_array_size.o `test -f 'malloc/scratch_buffer_set_array_size.c' || echo './'`malloc/scratch_buffer_set_array_size.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-stat.o `test -f 'stat.c' || echo './'`stat.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-stat-time.o `test -f 'stat-time.c' || echo './'`stat-time.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-strerror.o `test -f 'strerror.c' || echo './'`strerror.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-strerror-override.o `test -f 'strerror-override.c' || echo './'`strerror-override.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-unistd.o `test -f 'unistd.c' || echo './'`unistd.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o uniwidth/libicrt_a-width.o `test -f 'uniwidth/width.c' || echo './'`uniwidth/width.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-xmalloc.o `test -f 'xmalloc.c' || echo './'`xmalloc.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-xstrdup.o `test -f 'xstrdup.c' || echo './'`xstrdup.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -Wno-cast-qual -Wno-conversion -Wno-float-equal -Wno-sign-compare -Wno-undef -Wno-unused-function -Wno-unused-parameter -Wno-sign-conversion -Wno-type-limits -Wno-unsuffixed-float-constants -g -O2 -c -o libicrt_a-xreadlink.o `test -f 'xreadlink.c' || echo './'`xreadlink.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -g -O2 -c -o malloc.o malloc.c
+gcc -std=gnu11 -DHAVE_CONFIG_H -DEXEEXT=\"\" -I. -I.. -I../lib  -DDEPENDS_ON_LIBICONV=1 -DDEPENDS_ON_LIBINTL=1  -fvisibility=hidden -g -O2 -c -o realloc.o realloc.c
+rm -f libicrt.a
+ar cr libicrt.a libicrt_a-allocator.o libicrt_a-areadlink.o libicrt_a-basename-lgpl.o libicrt_a-binary-io.o libicrt_a-canonicalize-lgpl.o libicrt_a-careadlinkat.o libicrt_a-cloexec.o  libicrt_a-dup2.o libicrt_a-error.o  libicrt_a-fd-hook.o libicrt_a-free.o  libicrt_a-getdtablesize.o libicrt_a-getprogname.o libicrt_a-malloca.o    libicrt_a-open.o libicrt_a-progname.o      libicrt_a-safe-read.o malloc/libicrt_a-scratch_buffer_dupfree.o malloc/libicrt_a-scratch_buffer_grow.o malloc/libicrt_a-scratch_buffer_grow_preserve.o malloc/libicrt_a-scratch_buffer_set_array_size.o  libicrt_a-stat.o libicrt_a-stat-time.o   libicrt_a-strerror.o libicrt_a-strerror-override.o libicrt_a-unistd.o uniwidth/libicrt_a-width.o libicrt_a-xmalloc.o libicrt_a-xstrdup.o libicrt_a-xreadlink.o malloc.o realloc.o
+ranlib libicrt.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+cd src && make all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/src'
+gcc -std=gnu11 -c -I. -I. -I.. -I../include -I./../include -I../srclib -I./../srclib -I../lib -g -O2  -DINSTALLDIR=\"/usr/bin\" -DLOCALEDIR=\"/usr/share/locale\" ./iconv_no_i18n.c
+/bin/sh ../libtool --mode=link gcc -std=gnu11 -s -g -O2 iconv_no_i18n.o ../srclib/libicrt.a ../lib/libiconv.la  -o iconv_no_i18n
+libtool: link: gcc -std=gnu11 -s -g -O2 iconv_no_i18n.o -o iconv_no_i18n  ../srclib/libicrt.a ../lib/.libs/libiconv.a
+gcc -std=gnu11 -c -I. -I. -I.. -I../include -I./../include -I../srclib -I./../srclib -I../lib -g -O2  -DINSTALLDIR=\"/usr/bin\" -DLOCALEDIR=\"/usr/share/locale\" ./iconv.c
+test `ls -ld . | sed -e 's/^d\(.........\).*/\1/'` = rwxrwxrwx || chmod 777 .
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/src'
+cd po && make all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/po'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/po'
+cd man && make all
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/man'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/man'
+if test -d tests; then cd tests && make all; fi
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/tests'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/tests'
+cd libcharset && make install prefix='/usr' exec_prefix='/usr' libdir='/usr/lib'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+cd lib && make all
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+cd lib && make install prefix='/usr' exec_prefix='/usr' libdir='/usr/lib'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+/bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/lib ; \
+/bin/sh ../libtool --mode=install /bin/install -c libcharset.la /mnt/builds-fiwix-3.3/installation/usr/lib/libcharset.la
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/lib
+libtool: install: /bin/install -c .libs/libcharset.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libcharset.la
+libtool: install: /bin/install -c .libs/libcharset.a /mnt/builds-fiwix-3.3/installation/usr/lib/libcharset.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libcharset.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libcharset.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset/lib'
+/bin/sh ./build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/include
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/include
+/bin/install -c -m 644 include/libcharset.h.inst /mnt/builds-fiwix-3.3/installation/usr/include/libcharset.h
+/bin/install -c -m 644 include/localcharset.h.inst /mnt/builds-fiwix-3.3/installation/usr/include/localcharset.h
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/libcharset'
+cd lib && make install prefix='/usr' exec_prefix='/usr' libdir='/usr/lib'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/lib'
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/lib ] ; then /bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/lib ; fi
+/bin/sh ../libtool --mode=install /bin/install -c libiconv.la /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.la
+libtool: install: /bin/install -c .libs/libiconv.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.la
+libtool: install: /bin/install -c .libs/libiconv.a /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+case "fiwix" in \
+  aix*) (cd /mnt/builds-fiwix-3.3/installation/usr/lib && \
+         objects=`ar t libiconv.a`" "`ar t /lib/libiconv.a` && \
+         ar x libiconv.a && ar x /lib/libiconv.a && \
+         ar q libiconv.new.a $objects && \
+         rm -f $objects && \
+         mv -f libiconv.new.a libiconv.a) ;; \
+esac
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/lib'
+cd srclib && make install prefix='/usr' exec_prefix='/usr' libdir='/usr/lib'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make  install-am
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/srclib'
+cd src && make install prefix='/usr' exec_prefix='/usr' libdir='/usr/lib'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/src'
+test `ls -ld . | sed -e 's/^d\(.........\).*/\1/'` = rwxrwxrwx || chmod 777 .
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/bin ] ; then /bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/bin ; fi
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/bin
+case "fiwix" in \
+  hpux*) gcc -std=gnu11 -s -g -O2 `if test -n ''; then  /usr/bin; fi` iconv.o ../srclib/libicrt.a -L/mnt/builds-fiwix-3.3/installation/usr/lib -liconv   `if test -n '/mnt/builds-fiwix-3.3/installation'; then echo " -Wl,+b -Wl,/usr/lib"; fi` -o iconv;; \
+  *) /bin/sh ../libtool --mode=link gcc -std=gnu11 -s -g -O2 `if test -n ''; then  /usr/bin; fi` iconv.o ../srclib/libicrt.a /mnt/builds-fiwix-3.3/installation/usr/lib/libiconv.la   -o iconv;; \
+esac
+libtool: link: gcc -std=gnu11 -s -g -O2 iconv.o -o iconv  ../srclib/libicrt.a /usr/lib/libiconv.a
+/bin/sh ../libtool --mode=install /bin/install -c iconv /mnt/builds-fiwix-3.3/installation/usr/bin/iconv
+libtool: install: /bin/install -c iconv /mnt/builds-fiwix-3.3/installation/usr/bin/iconv
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/src'
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/include ] ; then /bin/sh ./build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/include ; fi
+/bin/install -c -m 644 include/iconv.h.inst /mnt/builds-fiwix-3.3/installation/usr/include/iconv.h
+cd po && make install prefix='/usr' exec_prefix='/usr' datarootdir='/usr/share' datadir='/usr/share'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/po'
+if test "libiconv" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/po'
+cd man && make install prefix='/usr' exec_prefix='/usr' datarootdir='/usr/share' datadir='/usr/share' mandir='/usr/share/man'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libiconv-1.17/man'
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/share/man/man1 ] ; then /bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/man/man1 ; fi
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+builddir="`pwd`"; cd . && for f in *.1 ; do (cd "$builddir"; echo /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/$f ; /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/$f) ; done
+/bin/install -c -m 644 ./iconv.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/iconv.1
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/share/man/man3 ] ; then /bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/man/man3 ; fi
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/man/man3
+builddir="`pwd`"; cd . && for f in *.3 ; do (cd "$builddir"; echo /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/$f ; /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/$f) ; done
+/bin/install -c -m 644 ./iconv.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/iconv.3
+/bin/install -c -m 644 ./iconv_close.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/iconv_close.3
+/bin/install -c -m 644 ./iconv_open.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/iconv_open.3
+/bin/install -c -m 644 ./iconv_open_into.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/iconv_open_into.3
+/bin/install -c -m 644 ./iconvctl.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/iconvctl.3
+if [ ! -d /mnt/builds-fiwix-3.3/installation/usr/share/doc/ ] ; then /bin/sh ../build-aux/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/doc/ ; fi
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/doc/
+builddir="`pwd`"; cd . && for f in *.html ; do (cd "$builddir"; echo /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/doc//$f ; /bin/install -c -m 644 ./$f /mnt/builds-fiwix-3.3/installation/usr/share/doc//$f) ; done
+/bin/install -c -m 644 ./iconv.1.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconv.1.html
+/bin/install -c -m 644 ./iconv.3.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconv.3.html
+/bin/install -c -m 644 ./iconv_close.3.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconv_close.3.html
+/bin/install -c -m 644 ./iconv_open.3.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconv_open.3.html
+/bin/install -c -m 644 ./iconv_open_into.3.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconv_open_into.3.html
+/bin/install -c -m 644 ./iconvctl.3.html /mnt/builds-fiwix-3.3/installation/usr/share/doc//iconvctl.3.html
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libiconv-1.17/man'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libcharset.la: File format not recognized
+strip:./usr/lib/libiconv.la: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/libcharset.la
+./usr/lib/libcharset.a
+./usr/lib/libiconv.la
+./usr/lib/libiconv.a
+./usr/include/
+./usr/include/libcharset.h
+./usr/include/localcharset.h
+./usr/include/iconv.h
+./usr/bin/
+./usr/bin/iconv
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/iconv.1
+./usr/share/man/man3/
+./usr/share/man/man3/iconv.3
+./usr/share/man/man3/iconv_close.3
+./usr/share/man/man3/iconv_open.3
+./usr/share/man/man3/iconv_open_into.3
+./usr/share/man/man3/iconvctl.3
+./usr/share/doc/
+./usr/share/doc/iconv.1.html
+./usr/share/doc/iconv.3.html
+./usr/share/doc/iconv_close.3.html
+./usr/share/doc/iconv_open.3.html
+./usr/share/doc/iconv_open_into.3.html
+./usr/share/doc/iconvctl.3.html
+/mnt/builds-fiwix-3.3
+
+real	0m29.907s
+user	0m12.770s
+sys	0m10.460s

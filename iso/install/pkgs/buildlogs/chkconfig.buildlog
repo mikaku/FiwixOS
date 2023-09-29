@@ -1,0 +1,107 @@
+/mnt/builds-fiwix-3.3/chkconfig-1.3.30.2 /mnt/builds-fiwix-3.3
+patching chkconfig-1.3.30.2
+patching file Makefile
+patching file alternatives.c
+patching file chkconfig.c
+patching file leveldb.c
+patching file ntsysv.c
+for d in ; do \
+(cd $d; make) \
+|| case "" in *k*) fail=yes;; *) exit 1;; esac;\
+done && test -z "$fail"
+cc -g -Wall  -D_GNU_SOURCE -DVERSION=\"1.3.30.2\" -c chkconfig.c
+chkconfig.c: In function 'main':
+chkconfig.c:513:5: warning: passing argument 3 of 'poptGetContext' from incompatible pointer type [enabled by default]
+In file included from chkconfig.c:16:0:
+/usr/include/popt.h:215:13: note: expected 'const char **' but argument is of type 'char **'
+cc -g -Wall  -D_GNU_SOURCE   -c -o leveldb.o leveldb.c
+leveldb.c: In function 'parseLevels':
+leveldb.c:44:2: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c: In function 'readDescription':
+leveldb.c:84:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:99:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:106:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c: In function 'readXinetdServiceInfo':
+leveldb.c:187:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:190:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:215:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:221:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c: In function 'readServiceInfo':
+leveldb.c:297:2: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:312:2: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:316:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:328:6: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:337:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:407:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:411:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:412:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:432:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:436:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:437:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:457:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:461:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c:462:4: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c: In function 'currentRunlevel':
+leveldb.c:518:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+leveldb.c: In function 'setXinetdService':
+leveldb.c:616:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+cc -g -o chkconfig chkconfig.o leveldb.o -Wl,-Bstatic -lpopt -Wl,-Bdynamic -liconv
+cc -g -Wall  -D_GNU_SOURCE -DVERSION=\"1.3.30.2\" -c ntsysv.c
+ntsysv.c: In function 'main':
+ntsysv.c:289:5: warning: passing argument 3 of 'poptGetContext' from incompatible pointer type [enabled by default]
+In file included from ntsysv.c:17:0:
+/usr/include/popt.h:215:13: note: expected 'const char **' but argument is of type 'char **'
+cc -g -o ntsysv ntsysv.o leveldb.o -lnewt -lpopt  -liconv -lslang
+cc -g -Wall  -D_GNU_SOURCE -DVERSION=\"1.3.30.2\" -c alternatives.c
+alternatives.c: In function 'parseLine':
+alternatives.c:135:5: warning: array subscript has type 'char' [-Wchar-subscripts]
+alternatives.c: In function 'readConfig':
+alternatives.c:273:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+cc -g  alternatives.o   -o alternatives
+[ -d /mnt/builds-fiwix-3.3/installation//sbin ] || mkdir -p /mnt/builds-fiwix-3.3/installation//sbin
+[ -d /mnt/builds-fiwix-3.3/installation//usr/sbin ] || mkdir -p /mnt/builds-fiwix-3.3/installation//usr/sbin
+[ -d /mnt/builds-fiwix-3.3/installation//usr/man ] || mkdir -p /mnt/builds-fiwix-3.3/installation//usr/man
+[ -d /mnt/builds-fiwix-3.3/installation//usr/man/man8 ] || mkdir -p /mnt/builds-fiwix-3.3/installation//usr/man/man8
+[ -d /mnt/builds-fiwix-3.3/installation//usr/man/man5 ] || mkdir -p /mnt/builds-fiwix-3.3/installation//usr/man/man5
+[ -d /mnt/builds-fiwix-3.3/installation//var/lib/alternatives ] || mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation//var/lib/alternatives
+[ -d /mnt/builds-fiwix-3.3/installation//etc/alternatives ] || mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation//etc/alternatives
+install -m 755 chkconfig /mnt/builds-fiwix-3.3/installation//sbin/chkconfig
+install -m 755 ntsysv /mnt/builds-fiwix-3.3/installation//usr/sbin/ntsysv
+install -m 755 alternatives /mnt/builds-fiwix-3.3/installation//usr/sbin/alternatives
+ln -s alternatives /mnt/builds-fiwix-3.3/installation//usr/sbin/update-alternatives
+for i in chkconfig.8 ntsysv.8 alternatives.8; do \
+	install -m 644 $i /mnt/builds-fiwix-3.3/installation//usr/man/man`echo $i | sed "s/.*\.//"`/$i ; \
+done
+ln -s alternatives.8 /mnt/builds-fiwix-3.3/installation//usr/man/man8/update-alternatives.8
+for d in ; do \
+(cd $d; make install) \
+    || case "" in *k*) fail=yes;; *) exit 1;; esac;\
+done && test -z "$fail"
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./sbin/
+./sbin/chkconfig
+./usr/
+./usr/sbin/
+./usr/sbin/ntsysv
+./usr/sbin/alternatives
+./usr/sbin/update-alternatives
+./usr/man/
+./usr/man/man8/
+./usr/man/man8/chkconfig.8
+./usr/man/man8/ntsysv.8
+./usr/man/man8/alternatives.8
+./usr/man/man8/update-alternatives.8
+./usr/man/man5/
+./var/
+./var/lib/
+./var/lib/alternatives/
+./etc/
+./etc/alternatives/
+/mnt/builds-fiwix-3.3
+
+real	0m3.643s
+user	0m0.660s
+sys	0m1.580s

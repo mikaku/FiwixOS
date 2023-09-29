@@ -1,0 +1,68 @@
+/mnt/builds-fiwix-3.3/zlib-1.2.13 /mnt/builds-fiwix-3.3
+Checking for gcc...
+Checking for shared library support...
+No shared library support.
+Building static library libz.a version 1.2.13 with gcc.
+Checking for size_t... Yes.
+Checking for off64_t... No.
+Checking for fseeko... Yes.
+Checking for strerror... Yes.
+Checking for unistd.h... Yes.
+Checking for stdarg.h... Yes.
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+Checking for vsnprintf() in stdio.h... Yes.
+Checking for return value of vsnprintf()... Yes.
+Checking for attribute(visibility) support... Yes.
+gcc -O3 -DHAVE_HIDDEN -I. -c -o example.o test/example.c
+gcc -O3 -DHAVE_HIDDEN  -c -o adler32.o adler32.c
+gcc -O3 -DHAVE_HIDDEN  -c -o crc32.o crc32.c
+gcc -O3 -DHAVE_HIDDEN  -c -o deflate.o deflate.c
+gcc -O3 -DHAVE_HIDDEN  -c -o infback.o infback.c
+gcc -O3 -DHAVE_HIDDEN  -c -o inffast.o inffast.c
+gcc -O3 -DHAVE_HIDDEN  -c -o inflate.o inflate.c
+gcc -O3 -DHAVE_HIDDEN  -c -o inftrees.o inftrees.c
+gcc -O3 -DHAVE_HIDDEN  -c -o trees.o trees.c
+gcc -O3 -DHAVE_HIDDEN  -c -o zutil.o zutil.c
+gcc -O3 -DHAVE_HIDDEN  -c -o compress.o compress.c
+gcc -O3 -DHAVE_HIDDEN  -c -o uncompr.o uncompr.c
+gcc -O3 -DHAVE_HIDDEN  -c -o gzclose.o gzclose.c
+gcc -O3 -DHAVE_HIDDEN  -c -o gzlib.o gzlib.c
+gcc -O3 -DHAVE_HIDDEN  -c -o gzread.o gzread.c
+gcc -O3 -DHAVE_HIDDEN  -c -o gzwrite.o gzwrite.c
+ar rc libz.a adler32.o crc32.o deflate.o infback.o inffast.o inflate.o inftrees.o trees.o zutil.o compress.o uncompr.o gzclose.o gzlib.o gzread.o gzwrite.o 
+gcc -O3 -DHAVE_HIDDEN -o example example.o -s -L. libz.a
+gcc -O3 -DHAVE_HIDDEN -I. -c -o minigzip.o test/minigzip.c
+gcc -O3 -DHAVE_HIDDEN -o minigzip minigzip.o -s -L. libz.a
+rm -f /mnt/builds-fiwix-3.3/installation/usr/lib/libz.a
+cp libz.a /mnt/builds-fiwix-3.3/installation/usr/lib
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libz.a
+rm -f /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/zlib.3
+cp zlib.3 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/zlib.3
+rm -f /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig/zlib.pc
+cp zlib.pc /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig/zlib.pc
+rm -f /mnt/builds-fiwix-3.3/installation/usr/include/zlib.h /mnt/builds-fiwix-3.3/installation/usr/include/zconf.h
+cp zlib.h zconf.h /mnt/builds-fiwix-3.3/installation/usr/include
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/include/zlib.h /mnt/builds-fiwix-3.3/installation/usr/include/zconf.h
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/lib/
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/zlib.pc
+./usr/lib/libz.a
+./usr/share/
+./usr/share/man/
+./usr/share/man/man3/
+./usr/share/man/man3/zlib.3
+./usr/include/
+./usr/include/zlib.h
+./usr/include/zconf.h
+/mnt/builds-fiwix-3.3
+
+real	0m5.215s
+user	0m4.050s
+sys	0m0.960s

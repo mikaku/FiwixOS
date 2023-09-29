@@ -1,0 +1,41 @@
+/mnt/builds-fiwix-3.3/picocom-3.1 /mnt/builds-fiwix-3.3
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o linenoise-1.0/linenoise.o -c linenoise-1.0/linenoise.c
+linenoise-1.0/linenoise.c: In function 'linenoisePrintKeyCodes':
+linenoise-1.0/linenoise.c:928:13: warning: array subscript has type 'char' [-Wchar-subscripts]
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o picocom.o -c picocom.c
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o term.o -c term.c
+term.c: In function 'term_set_baudrate':
+term.c:811:13: warning: implicit declaration of function 'cfsetospeed' [-Wimplicit-function-declaration]
+term.c:818:13: warning: implicit declaration of function 'cfsetispeed' [-Wimplicit-function-declaration]
+term.c: In function 'term_get_baudrate':
+term.c:858:13: warning: implicit declaration of function 'cfgetispeed' [-Wimplicit-function-declaration]
+term.c:866:9: warning: implicit declaration of function 'cfgetospeed' [-Wimplicit-function-declaration]
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o fdio.o -c fdio.c
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o split.o -c split.c
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o termios2.o -c termios2.c
+cc -Wall -g -DVERSION_STR=\"3.1\" -DTTY_Q_SZ=0 -DHIGH_BAUD -DUSE_FLOCK -DHISTFILE=\".picocom_history\" -DLINENOISE -o custbaud_bsd.o -c custbaud_bsd.c
+cc -s -o picocom  linenoise-1.0/linenoise.o picocom.o term.o fdio.o split.o termios2.o custbaud_bsd.o 
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/pcasc: File format not recognized
+strip:./usr/bin/pcxm: File format not recognized
+strip:./usr/bin/pcym: File format not recognized
+strip:./usr/bin/pczm: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/pcasc
+./usr/bin/pcxm
+./usr/bin/pcym
+./usr/bin/pczm
+./usr/bin/picocom
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/picocom.1
+/mnt/builds-fiwix-3.3
+
+real	0m2.155s
+user	0m0.380s
+sys	0m0.490s

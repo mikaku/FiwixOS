@@ -1,0 +1,623 @@
+/mnt/builds-fiwix-3.3/indent-2.2.12 /mnt/builds-fiwix-3.3
+patching indent-2.2.12
+patching file config/config.guess
+patching file config/config.sub
+patching file src/Makefile.in
+patching file src/code_io.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for library containing strerror... none required
+checking for an ANSI C-conforming const... yes
+checking for dvips... /mnt/builds-fiwix-3.3/indent-2.2.12/config/missing dvips
+checking for a sed that does not truncate output... /bin/sed
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking whether we are using the GNU C Library 2 or newer... no
+checking for ranlib... ranlib
+checking whether the -Werror option is usable... yes
+checking for simple visibility declarations... yes
+checking for inline... inline
+checking for size_t... yes
+checking for stdint.h... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking whether integer division by zero raises SIGFPE... yes
+checking for inttypes.h... yes
+checking for unsigned long long int... yes
+checking for inttypes.h... (cached) yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by gcc... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for multithread API to use... none
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking for inttypes.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for uselocale... yes
+checking for argz_count... yes
+checking for argz_stringify... yes
+checking for argz_next... yes
+checking for __fsetlocking... yes
+checking whether feof_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking for bison... no
+checking for long long int... yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking for intmax_t... yes
+checking whether printf() supports POSIX/XSI format strings... yes
+checking whether we are using the GNU C Library >= 2.1 or uClibc... no
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking for stdint.h... (cached) yes
+checking for symlink... yes
+checking for working fcntl.h... yes
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for ptrdiff_t... yes
+checking features.h usability... yes
+checking features.h presence... yes
+checking for features.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for asprintf... yes
+checking for fwprintf... yes
+checking for newlocale... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for snprintf... yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... yes
+checking for wcrtomb... yes
+checking whether _snprintf is declared... no
+checking whether _snwprintf is declared... no
+checking whether getc_unlocked is declared... yes
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyCurrent... (cached) no
+checking whether included gettext is requested... no
+checking for GNU gettext in libc... no
+checking for GNU gettext in libintl... no
+checking whether to use NLS... yes
+checking where the gettext function comes from... included intl directory
+checking for ANSI C header files... (cached) yes
+checking for strchr... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for utime... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking utime.h usability... yes
+checking utime.h presence... yes
+checking for utime.h... yes
+checking sys/utime.h usability... yes
+checking sys/utime.h presence... yes
+checking for sys/utime.h... yes
+checking if struct utimbuf needs  -posix... no
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating intl/Makefile
+config.status: creating po/Makefile.in
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating man/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+Making all in intl
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/intl'
+sed -e '/IN_LIBGLOCALE/d' \
+    -e 's,@''HAVE_POSIX_PRINTF''@,1,g' \
+    -e 's,@''HAVE_ASPRINTF''@,1,g' \
+    -e 's,@''HAVE_NEWLOCALE''@,1,g' \
+    -e 's,@''HAVE_SNPRINTF''@,1,g' \
+    -e 's,@''HAVE_WPRINTF''@,0,g' \
+  < ./libgnuintl.in.h \
+| if test 'no' = yes; then \
+    sed -e 's/extern \([^()]*\);/extern __declspec (dllimport) \1;/'; \
+  else \
+    cat; \
+  fi \
+| sed -e 's/extern \([^"]\)/extern LIBINTL_DLL_EXPORTED \1/' \
+      -e "/#define _LIBINTL_H/r ./export.h" \
+| sed -e 's,@''HAVE_VISIBILITY''@,1,g' \
+  > libgnuintl.h
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  bindtextdom.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  dcgettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  dgettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  gettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  finddomain.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  hash-string.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  loadmsgcat.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  localealias.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  textdomain.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  l10nflist.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  explodename.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  dcigettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  dcngettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  dngettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  ngettext.c
+sed -e '/IN_LIBGLOCALE/d' \
+    -e 's,@''HAVE_POSIX_PRINTF''@,1,g' \
+    -e 's,@''HAVE_ASPRINTF''@,1,g' \
+    -e 's,@''HAVE_NEWLOCALE''@,1,g' \
+    -e 's,@''HAVE_SNPRINTF''@,1,g' \
+    -e 's,@''HAVE_WPRINTF''@,0,g' \
+  < ./libgnuintl.in.h > libintl.h
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  plural.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  plural-exp.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  localcharset.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  threadlib.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  lock.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  relocatable.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  langprefs.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  localename.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  log.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  printf.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  setlocale.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  version.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  xsize.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  osdep.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/lib\" -DBUILDING_LIBINTL -DBUILDING_DLL -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -I. -I. -I..  -g -O2 -fvisibility=hidden  intl-compat.c
+rm -f libintl.a
+ar cru libintl.a bindtextdom.o dcgettext.o dgettext.o gettext.o finddomain.o hash-string.o loadmsgcat.o localealias.o textdomain.o l10nflist.o explodename.o dcigettext.o dcngettext.o dngettext.o ngettext.o plural.o plural-exp.o localcharset.o threadlib.o lock.o relocatable.o langprefs.o localename.o log.o printf.o setlocale.o version.o xsize.o osdep.o intl-compat.o
+ranlib libintl.a
+/bin/sh ./config.charset 'i386-pc-fiwix' > t-charset.alias
+mv t-charset.alias charset.alias
+sed -e '/^#/d' -e 's/@''PACKAGE''@/indent/g' ./ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/indent/g' ./ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/intl'
+Making all in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make  all-am
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT indent.o -MD -MP -MF .deps/indent.Tpo -c -o indent.o indent.c
+mv -f .deps/indent.Tpo .deps/indent.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT args.o -MD -MP -MF .deps/args.Tpo -c -o args.o args.c
+mv -f .deps/args.Tpo .deps/args.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT backup.o -MD -MP -MF .deps/backup.Tpo -c -o backup.o backup.c
+mv -f .deps/backup.Tpo .deps/backup.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT comments.o -MD -MP -MF .deps/comments.Tpo -c -o comments.o comments.c
+mv -f .deps/comments.Tpo .deps/comments.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT lexi.o -MD -MP -MF .deps/lexi.Tpo -c -o lexi.o lexi.c
+mv -f .deps/lexi.Tpo .deps/lexi.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT parse.o -MD -MP -MF .deps/parse.Tpo -c -o parse.o parse.c
+mv -f .deps/parse.Tpo .deps/parse.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT globs.o -MD -MP -MF .deps/globs.Tpo -c -o globs.o globs.c
+mv -f .deps/globs.Tpo .deps/globs.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT code_io.o -MD -MP -MF .deps/code_io.Tpo -c -o code_io.o code_io.c
+mv -f .deps/code_io.Tpo .deps/code_io.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT output.o -MD -MP -MF .deps/output.Tpo -c -o output.o output.c
+mv -f .deps/output.Tpo .deps/output.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT utils.o -MD -MP -MF .deps/utils.Tpo -c -o utils.o utils.c
+mv -f .deps/utils.Tpo .deps/utils.Po
+gcc -DHAVE_CONFIG_H -DLOCALEDIR=\"/usr/share/locale\" -I. -I..  -I. -I. -I../intl  -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2 -MT handletoken.o -MD -MP -MF .deps/handletoken.Tpo -c -o handletoken.o handletoken.c
+mv -f .deps/handletoken.Tpo .deps/handletoken.Po
+gcc -Wall -W -Werror -Wredundant-decls -Wshadow -Wno-char-subscripts -Wno-type-limits -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Wmissing-declarations -Wcomment -Wbad-function-cast -Wcast-align  -g -O2  -s -o indent indent.o args.o backup.o comments.o lexi.o parse.o globs.o code_io.o output.o utils.o handletoken.o ../intl/libintl.a /usr/lib/libiconv.a  ../intl/libintl.a /usr/lib/libiconv.a  
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+env LANG= LANGUAGE= /bin/sh /mnt/builds-fiwix-3.3/indent-2.2.12/config/missing makeinfo --html --ifinfo --number-sections --no-split `if test -f indent.texi; then echo indent.texi; else echo ./indent.texi; fi`
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+Making all in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/po'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/po'
+Making all in man
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+gcc -o texinfo2man ./texinfo2man.c
+./texinfo2man ./indent.1.in ./../doc/indent.texi > indent.1
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+Making all in regression
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/regression'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/regression'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make  install-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+Making install in intl
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/intl'
+if { test "indent" = "gettext-runtime" || test "indent" = "gettext-tools"; } \
+   && test 'yes' = yes; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/lib /mnt/builds-fiwix-3.3/installation/usr/include; \
+  /bin/install -c -m 644 libintl.h /mnt/builds-fiwix-3.3/installation/usr/include/libintl.h; \
+  @LIBTOOL@ --mode=install \
+    /bin/install -c -m 644 libintl.a /mnt/builds-fiwix-3.3/installation/usr/lib/libintl.a; \
+  if test "@RELOCATABLE@" = yes; then \
+    dependencies=`sed -n -e 's,^dependency_libs=\(.*\),\1,p' < /mnt/builds-fiwix-3.3/installation/usr/lib/libintl.la | sed -e "s,^',," -e "s,'\$,,"`; \
+    if test -n "$dependencies"; then \
+      rm -f /mnt/builds-fiwix-3.3/installation/usr/lib/libintl.la; \
+    fi; \
+  fi; \
+else \
+  : ; \
+fi
+if test "indent" = "gettext-tools" \
+   && test 'yes' = no \
+   && test no != no; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/lib; \
+  @LIBTOOL@ --mode=install \
+    /bin/install -c -m 644 libgnuintl.a /mnt/builds-fiwix-3.3/installation/usr/lib/libgnuintl.a; \
+  rm -f /mnt/builds-fiwix-3.3/installation/usr/lib/preloadable_libintl.so; \
+  /bin/install -c -m 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libgnuintl.so /mnt/builds-fiwix-3.3/installation/usr/lib/preloadable_libintl.so; \
+  @LIBTOOL@ --mode=uninstall \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/lib/libgnuintl.a; \
+else \
+  : ; \
+fi
+if test 'yes' = yes; then \
+  if test no = no; then \
+    case 'fiwix' in \
+      darwin[56]*) \
+        need_charset_alias=true ;; \
+      darwin* | cygwin* | mingw* | pw32* | cegcc*) \
+        need_charset_alias=false ;; \
+      *) \
+        need_charset_alias=true ;; \
+    esac; \
+  else \
+    need_charset_alias=false; \
+  fi; \
+  if $need_charset_alias; then \
+    /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/lib; \
+  fi; \
+  temp=/mnt/builds-fiwix-3.3/installation/usr/lib/t-charset.alias; \
+  dest=/mnt/builds-fiwix-3.3/installation/usr/lib/charset.alias; \
+  if test -f /mnt/builds-fiwix-3.3/installation/usr/lib/charset.alias; then \
+    orig=/mnt/builds-fiwix-3.3/installation/usr/lib/charset.alias; \
+    sed -f ref-add.sed $orig > $temp; \
+    /bin/install -c -m 644 $temp $dest; \
+    rm -f $temp; \
+  else \
+    if $need_charset_alias; then \
+      orig=charset.alias; \
+      sed -f ref-add.sed $orig > $temp; \
+      /bin/install -c -m 644 $temp $dest; \
+      rm -f $temp; \
+    fi; \
+  fi; \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/locale; \
+  test -f /mnt/builds-fiwix-3.3/installation/usr/share/locale/locale.alias \
+    && orig=/mnt/builds-fiwix-3.3/installation/usr/share/locale/locale.alias \
+    || orig=./locale.alias; \
+  temp=/mnt/builds-fiwix-3.3/installation/usr/share/locale/t-locale.alias; \
+  dest=/mnt/builds-fiwix-3.3/installation/usr/share/locale/locale.alias; \
+  sed -f ref-add.sed $orig > $temp; \
+  /bin/install -c -m 644 $temp $dest; \
+  rm -f $temp; \
+else \
+  : ; \
+fi
+if test "indent" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl; \
+  /bin/install -c -m 644 VERSION /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/VERSION; \
+  /bin/install -c -m 644 ChangeLog.inst /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/ChangeLog; \
+  dists="COPYING.LIB Makefile.in config.charset locale.alias ref-add.sin ref-del.sin export.h libintl.rc gmo.h gettextP.h hash-string.h loadinfo.h plural-exp.h eval-plural.h localcharset.h lock.h relocatable.h tsearch.h tsearch.c verify.h xsize.h printf-args.h printf-args.c printf-parse.h wprintf-parse.h printf-parse.c vasnprintf.h vasnwprintf.h vasnprintf.c os2compat.h libgnuintl.in.h bindtextdom.c dcgettext.c dgettext.c gettext.c finddomain.c hash-string.c loadmsgcat.c localealias.c textdomain.c l10nflist.c explodename.c dcigettext.c dcngettext.c dngettext.c ngettext.c plural.y plural-exp.c localcharset.c threadlib.c lock.c relocatable.c langprefs.c localename.c log.c printf.c setlocale.c version.c xsize.c osdep.c os2compat.c intl-exports.c intl-compat.c"; \
+  for file in $dists; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/$file; \
+  done; \
+  chmod a+x /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/config.charset; \
+  dists="plural.c"; \
+  for file in $dists; do \
+    if test -f $file; then dir=.; else dir=.; fi; \
+    /bin/install -c -m 644 $dir/$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/$file; \
+  done; \
+  dists="xopen-msg.sed linux-msg.sed po2tbl.sed.in cat-compat.c COPYING.LIB-2 COPYING.LIB-2.0 COPYING.LIB-2.1 gettext.h libgettext.h plural-eval.c libgnuintl.h libgnuintl.h_vms Makefile.vms libgnuintl.h.msvc-static libgnuintl.h.msvc-shared Makefile.msvc"; \
+  for file in $dists; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/intl/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/intl'
+Making install in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make  install-am
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/install -c indent '/mnt/builds-fiwix-3.3/installation/usr/bin'
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/src'
+Making install in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+/bin/sh /mnt/builds-fiwix-3.3/indent-2.2.12/config/install-sh -d /mnt/builds-fiwix-3.3/installation/usr/doc/indent
+/bin/install -c -m 644 `if test -f indent.html; then echo .; else echo .; fi`/indent.html /mnt/builds-fiwix-3.3/installation/usr/doc/indent/indent.html
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ /bin/install -c -m 644 ./indent.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/indent.info'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/doc'
+Making install in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/po'
+installing bg.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/bg/LC_MESSAGES/indent.mo
+installing ca.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ca/LC_MESSAGES/indent.mo
+installing cs.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/cs/LC_MESSAGES/indent.mo
+installing da.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/da/LC_MESSAGES/indent.mo
+installing de.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/de/LC_MESSAGES/indent.mo
+installing el.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/el/LC_MESSAGES/indent.mo
+installing eo.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/eo/LC_MESSAGES/indent.mo
+installing es.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/es/LC_MESSAGES/indent.mo
+installing et.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/et/LC_MESSAGES/indent.mo
+installing eu.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/eu/LC_MESSAGES/indent.mo
+installing fi.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/fi/LC_MESSAGES/indent.mo
+installing fr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/fr/LC_MESSAGES/indent.mo
+installing ga.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ga/LC_MESSAGES/indent.mo
+installing gl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/gl/LC_MESSAGES/indent.mo
+installing hr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/hr/LC_MESSAGES/indent.mo
+installing hu.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/hu/LC_MESSAGES/indent.mo
+installing id.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/id/LC_MESSAGES/indent.mo
+installing it.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/it/LC_MESSAGES/indent.mo
+installing ja.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ja/LC_MESSAGES/indent.mo
+installing ko.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ko/LC_MESSAGES/indent.mo
+installing nl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/nl/LC_MESSAGES/indent.mo
+installing pl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/pl/LC_MESSAGES/indent.mo
+installing pt_BR.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/pt_BR/LC_MESSAGES/indent.mo
+installing ro.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ro/LC_MESSAGES/indent.mo
+installing ru.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ru/LC_MESSAGES/indent.mo
+installing sk.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sk/LC_MESSAGES/indent.mo
+installing sr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sr/LC_MESSAGES/indent.mo
+installing sv.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sv/LC_MESSAGES/indent.mo
+installing tr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/tr/LC_MESSAGES/indent.mo
+installing uk.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/uk/LC_MESSAGES/indent.mo
+installing vi.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/vi/LC_MESSAGES/indent.mo
+installing zh_CN.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_CN/LC_MESSAGES/indent.mo
+installing zh_TW.Big5.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_TW.Big5/LC_MESSAGES/indent.mo
+installing zh_TW.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_TW/LC_MESSAGES/indent.mo
+if test "indent" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/po'
+Making install in man
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 indent.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/man'
+Making install in regression
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12/regression'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12/regression'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/indent-2.2.12'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/lib/
+./usr/lib/charset.alias
+./usr/share/
+./usr/share/locale/
+./usr/share/locale/bg/
+./usr/share/locale/bg/LC_MESSAGES/
+./usr/share/locale/bg/LC_MESSAGES/indent.mo
+./usr/share/locale/locale.alias
+./usr/share/locale/ca/
+./usr/share/locale/ca/LC_MESSAGES/
+./usr/share/locale/ca/LC_MESSAGES/indent.mo
+./usr/share/locale/cs/
+./usr/share/locale/cs/LC_MESSAGES/
+./usr/share/locale/cs/LC_MESSAGES/indent.mo
+./usr/share/locale/da/
+./usr/share/locale/da/LC_MESSAGES/
+./usr/share/locale/da/LC_MESSAGES/indent.mo
+./usr/share/locale/de/
+./usr/share/locale/de/LC_MESSAGES/
+./usr/share/locale/de/LC_MESSAGES/indent.mo
+./usr/share/locale/el/
+./usr/share/locale/el/LC_MESSAGES/
+./usr/share/locale/el/LC_MESSAGES/indent.mo
+./usr/share/locale/eo/
+./usr/share/locale/eo/LC_MESSAGES/
+./usr/share/locale/eo/LC_MESSAGES/indent.mo
+./usr/share/locale/es/
+./usr/share/locale/es/LC_MESSAGES/
+./usr/share/locale/es/LC_MESSAGES/indent.mo
+./usr/share/locale/et/
+./usr/share/locale/et/LC_MESSAGES/
+./usr/share/locale/et/LC_MESSAGES/indent.mo
+./usr/share/locale/eu/
+./usr/share/locale/eu/LC_MESSAGES/
+./usr/share/locale/eu/LC_MESSAGES/indent.mo
+./usr/share/locale/fi/
+./usr/share/locale/fi/LC_MESSAGES/
+./usr/share/locale/fi/LC_MESSAGES/indent.mo
+./usr/share/locale/fr/
+./usr/share/locale/fr/LC_MESSAGES/
+./usr/share/locale/fr/LC_MESSAGES/indent.mo
+./usr/share/locale/ga/
+./usr/share/locale/ga/LC_MESSAGES/
+./usr/share/locale/ga/LC_MESSAGES/indent.mo
+./usr/share/locale/gl/
+./usr/share/locale/gl/LC_MESSAGES/
+./usr/share/locale/gl/LC_MESSAGES/indent.mo
+./usr/share/locale/hr/
+./usr/share/locale/hr/LC_MESSAGES/
+./usr/share/locale/hr/LC_MESSAGES/indent.mo
+./usr/share/locale/hu/
+./usr/share/locale/hu/LC_MESSAGES/
+./usr/share/locale/hu/LC_MESSAGES/indent.mo
+./usr/share/locale/id/
+./usr/share/locale/id/LC_MESSAGES/
+./usr/share/locale/id/LC_MESSAGES/indent.mo
+./usr/share/locale/it/
+./usr/share/locale/it/LC_MESSAGES/
+./usr/share/locale/it/LC_MESSAGES/indent.mo
+./usr/share/locale/ja/
+./usr/share/locale/ja/LC_MESSAGES/
+./usr/share/locale/ja/LC_MESSAGES/indent.mo
+./usr/share/locale/ko/
+./usr/share/locale/ko/LC_MESSAGES/
+./usr/share/locale/ko/LC_MESSAGES/indent.mo
+./usr/share/locale/nl/
+./usr/share/locale/nl/LC_MESSAGES/
+./usr/share/locale/nl/LC_MESSAGES/indent.mo
+./usr/share/locale/pl/
+./usr/share/locale/pl/LC_MESSAGES/
+./usr/share/locale/pl/LC_MESSAGES/indent.mo
+./usr/share/locale/pt_BR/
+./usr/share/locale/pt_BR/LC_MESSAGES/
+./usr/share/locale/pt_BR/LC_MESSAGES/indent.mo
+./usr/share/locale/ro/
+./usr/share/locale/ro/LC_MESSAGES/
+./usr/share/locale/ro/LC_MESSAGES/indent.mo
+./usr/share/locale/ru/
+./usr/share/locale/ru/LC_MESSAGES/
+./usr/share/locale/ru/LC_MESSAGES/indent.mo
+./usr/share/locale/sk/
+./usr/share/locale/sk/LC_MESSAGES/
+./usr/share/locale/sk/LC_MESSAGES/indent.mo
+./usr/share/locale/sr/
+./usr/share/locale/sr/LC_MESSAGES/
+./usr/share/locale/sr/LC_MESSAGES/indent.mo
+./usr/share/locale/sv/
+./usr/share/locale/sv/LC_MESSAGES/
+./usr/share/locale/sv/LC_MESSAGES/indent.mo
+./usr/share/locale/tr/
+./usr/share/locale/tr/LC_MESSAGES/
+./usr/share/locale/tr/LC_MESSAGES/indent.mo
+./usr/share/locale/uk/
+./usr/share/locale/uk/LC_MESSAGES/
+./usr/share/locale/uk/LC_MESSAGES/indent.mo
+./usr/share/locale/vi/
+./usr/share/locale/vi/LC_MESSAGES/
+./usr/share/locale/vi/LC_MESSAGES/indent.mo
+./usr/share/locale/zh_CN/
+./usr/share/locale/zh_CN/LC_MESSAGES/
+./usr/share/locale/zh_CN/LC_MESSAGES/indent.mo
+./usr/share/locale/zh_TW.Big5/
+./usr/share/locale/zh_TW.Big5/LC_MESSAGES/
+./usr/share/locale/zh_TW.Big5/LC_MESSAGES/indent.mo
+./usr/share/locale/zh_TW/
+./usr/share/locale/zh_TW/LC_MESSAGES/
+./usr/share/locale/zh_TW/LC_MESSAGES/indent.mo
+./usr/share/info/
+./usr/share/info/indent.info
+./usr/share/info/dir
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/indent.1
+./usr/bin/
+./usr/bin/indent
+./usr/doc/
+./usr/doc/indent/
+./usr/doc/indent/indent.html
+/mnt/builds-fiwix-3.3
+
+real	0m13.220s
+user	0m6.720s
+sys	0m4.540s

@@ -1,0 +1,1097 @@
+/mnt/builds-fiwix-3.3/grep-3.8 /mnt/builds-fiwix-3.3
+patching grep-3.8
+patching file gnulib-tests/inet_pton.c
+patching file gnulib-tests/sys_select.in.h
+checking for a BSD-compatible install... /bin/install -c
+checking whether sleep supports fractional seconds... true
+checking the filesystem timestamp resolution... 0.4
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for gawk... (cached) gawk
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether the compiler is clang... no
+checking for compiler option needed when checking for declarations... none
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking for sys/param.h... yes
+checking for sys/socket.h... no
+checking for dirent.h... yes
+checking for fnmatch.h... yes
+checking for stdio_ext.h... yes
+checking for sys/vfs.h... yes
+checking for getopt.h... yes
+checking for sys/cdefs.h... yes
+checking for threads.h... no
+checking for iconv.h... yes
+checking for limits.h... yes
+checking for crtdefs.h... no
+checking for wctype.h... yes
+checking for langinfo.h... yes
+checking for xlocale.h... no
+checking for sys/mman.h... yes
+checking for malloc.h... yes
+checking for sys/time.h... yes
+checking for features.h... yes
+checking for arpa/inet.h... no
+checking for netdb.h... no
+checking for netinet/in.h... no
+checking for sys/select.h... yes
+checking for sys/wait.h... yes
+checking for pthread.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/uio.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+checking for egrep -e... /bin/grep -E
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking for ranlib... (cached) ranlib
+checking for pkg-config... /bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for size_t... yes
+checking for an ANSI C-conforming const... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for btowc... yes
+checking for _set_invalid_parameter_handler... no
+checking for fchdir... yes
+checking for fcntl... yes
+checking for symlink... yes
+checking for fdopendir... yes
+checking for mempcpy... yes
+checking for fnmatch... yes
+checking for mbsrtowcs... yes
+checking for fstatat... no
+checking for openat... no
+checking for fstatfs... yes
+checking for getdtablesize... no
+checking for getprogname... no
+checking for getexecname... no
+checking for isblank... yes
+checking for iswcntrl... yes
+checking for iswblank... yes
+checking for lstat... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for mbrlen... yes
+checking for mbslen... no
+checking for mprotect... yes
+checking for nl_langinfo... yes
+checking for pipe... yes
+checking for iswctype... yes
+checking for sigaltstack... no
+checking for setrlimit... yes
+checking for getrlimit... yes
+checking for strerror_r... yes
+checking for __xpg_strerror_r... yes
+checking for strtoimax... yes
+checking for strtoumax... yes
+checking for wcrtomb... yes
+checking for wctob... yes
+checking for wcwidth... yes
+checking for wmempcpy... yes
+checking for ftruncate... yes
+checking for gettimeofday... yes
+checking for duplocale... yes
+checking for newlocale... yes
+checking for uselocale... yes
+checking for freelocale... yes
+checking for pselect... no
+checking for pthread_sigmask... no
+checking for setenv... yes
+checking for sleep... yes
+checking for snprintf... yes
+checking for catgets... no
+checking for shutdown... no
+checking for vasnprintf... yes
+checking for isascii... yes
+checking for setlocale... yes
+checking for nl_langinfo and CODESET... yes
+checking for a traditional french locale... none
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... yes
+checking for ELF binary format... yes
+checking for the common suffixes of directories in the library search path... lib,lib,lib
+checking whether malloc is ptrdiff_t safe... no
+checking whether malloc, realloc, calloc set errno on failure... yes
+checking whether the preprocessor supports include_next... yes
+checking whether source code line length is unlimited... yes
+checking for inline... inline
+checking for gcc -std=gnu11 options needed to detect all undeclared functions... none needed
+checking for complete errno.h... no
+checking for EMULTIHOP value... yes
+checking for ENOLINK value... yes
+checking for EOVERFLOW value... yes
+checking whether strerror_r is declared... yes
+checking whether strerror_r returns char *... yes
+checking whether ctype.h defines __header_inline... no
+checking whether fchdir is declared... yes
+checking for working fcntl.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for promoted mode_t type... mode_t
+checking for mbstate_t... yes
+checking whether stat file-mode macros are broken... no
+checking for C/C++ restrict keyword... __restrict__
+checking for nlink_t... yes
+checking whether lstat correctly handles trailing slash... no
+checking for O_CLOEXEC... yes
+checking whether getcwd (NULL, 0) allocates memory for result... yes
+checking for getcwd with POSIX signature... yes
+checking whether getdtablesize is declared... yes
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... no
+checking for pthread.h... (cached) yes
+checking for pthread_kill in -lpthread... no
+checking for pthread_kill in -lc_r... no
+checking whether POSIX threads API is available... no
+checking for sched_yield in -lrt... no
+checking for sched_yield in -lposix4... no
+checking whether setlocale (LC_ALL, NULL) is multithread-safe... guessing no
+checking whether setlocale (category, NULL) is multithread-safe... guessing no
+checking host CPU and C ABI... i386
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking whether iconv is compatible with its POSIX signature... yes
+checking whether limits.h has WORD_BIT, BOOL_WIDTH etc.... no
+checking for wint_t... yes
+checking whether wint_t is large enough... yes
+checking whether the compiler produces multi-arch binaries... no
+checking whether stdint.h conforms to C99... no
+checking for sys/inttypes.h... no
+checking for sys/bitypes.h... no
+checking for bit size of ptrdiff_t... 32
+checking for bit size of size_t... 32
+checking for bit size of sig_atomic_t... 32
+checking for bit size of wchar_t... 32
+checking for bit size of wint_t... 32
+checking whether sig_atomic_t is signed... yes
+checking whether wchar_t is signed... yes
+checking whether wint_t is signed... no
+checking for ptrdiff_t integer literal suffix... l
+checking for size_t integer literal suffix... ul
+checking for sig_atomic_t integer literal suffix... 
+checking for wchar_t integer literal suffix... 
+checking for wint_t integer literal suffix... u
+checking whether INT32_MAX < INTMAX_MAX... yes
+checking whether INT64_MAX == LONG_MAX... no
+checking whether UINT32_MAX < UINTMAX_MAX... yes
+checking whether UINT64_MAX == ULONG_MAX... no
+checking whether iswcntrl works... yes
+checking for towlower... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking for a traditional japanese locale... none
+checking for a french Unicode locale... none
+checking for a transitional chinese locale... none
+checking whether langinfo.h defines CODESET... yes
+checking whether langinfo.h defines T_FMT_AMPM... yes
+checking whether langinfo.h defines ALTMON_1... no
+checking whether langinfo.h defines ERA... yes
+checking whether langinfo.h defines YESEXPR... yes
+checking for wchar_t... yes
+checking for good max_align_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking whether locale.h defines locale_t... yes
+checking whether locale.h conforms to POSIX:2001... yes
+checking whether struct lconv is properly defined... yes
+checking whether imported symbols can be declared weak... no
+checking for multithread API to use... none
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking whether malloc (0) returns nonnull... yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc stores incomplete characters... guessing no
+checking whether mbrtowc works on empty input... (cached) assume yes
+checking whether the C locale is free of encoding errors... yes
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking whether memrchr is declared... yes
+checking whether <limits.h> defines MIN and MAX... no
+checking whether <sys/param.h> defines MIN and MAX... yes
+checking for sigset_t... yes
+checking whether alarm is declared... yes
+checking for ssize_t... yes
+checking for uid_t in sys/types.h... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether fcloseall is declared... yes
+checking which flavor of printf attribute matches inttypes macros... system
+checking whether ecvt is declared... no
+checking whether fcvt is declared... no
+checking whether gcvt is declared... no
+checking whether strdup is declared... yes
+checking whether strerror(0) succeeds... yes
+checking whether strnlen is declared... yes
+checking whether strstr works... yes
+checking whether strtoimax is declared... yes
+checking whether strtoumax is declared... yes
+checking for struct timespec in <time.h>... yes
+checking for TIME_UTC in <time.h>... no
+checking whether execvpe is declared... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking whether wcsdup is declared... yes
+checking for C compiler option to allow warnings... -Wno-error
+checking for ws2tcpip.h... no
+checking whether <sys/socket.h> is self-contained... no
+checking for struct sockaddr_storage... no
+checking for sa_family_t... no
+checking for winsock2.h... no
+checking if environ is properly declared... yes
+checking for winsock2.h... (cached) no
+checking for struct timeval... yes
+checking for wide-enough struct timeval.tv_sec member... yes
+checking for IPv4 sockets... no
+checking for IPv6 sockets... no
+checking for off_t... yes
+checking for LC_MESSAGES... yes
+checking whether uselocale works... yes
+checking for fake locale system (OpenBSD)... no
+checking for Solaris 11.4 locale system... no
+checking for getlocalename_l... no
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking whether <sys/select.h> is self-contained... yes
+checking for winsock2.h... (cached) no
+checking for pthread_t... yes
+checking for pthread_spinlock_t... no
+checking for PTHREAD_CREATE_DETACHED... yes
+checking for PTHREAD_MUTEX_RECURSIVE... no
+checking for PTHREAD_MUTEX_ROBUST... no
+checking for PTHREAD_PROCESS_SHARED... no
+checking for sched.h... yes
+checking for struct sched_param... yes
+checking for winsock2.h... (cached) no
+checking for library containing setsockopt... none needed
+checking whether setenv is declared... yes
+checking for search.h... yes
+checking for tsearch... yes
+checking whether snprintf returns a byte count as in C99... yes
+checking whether snprintf is declared... yes
+checking whether <sys/ioctl.h> declares ioctl... yes
+checking whether unsetenv is declared... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for intmax_t... yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking whether snprintf truncates the result as in C99... yes
+checking for snprintf... (cached) yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... (cached) yes
+checking whether _snprintf is declared... no
+checking for alloca as a compiler built-in... yes
+checking whether to enable assertions... yes
+checking whether btowc(0) is correct... yes
+checking whether btowc(EOF) is correct... guessing yes
+checking for __builtin_expect... yes
+checking whether this system supports file names of any length... no
+checking for winsock2.h... (cached) no
+checking for closedir... yes
+checking for d_ino member in directory struct... yes
+checking for d_type member in directory struct... no
+checking for dirfd... yes
+checking whether dirfd is declared... yes
+checking whether dirfd is a macro... no
+checking whether // is distinct from /... no
+checking whether dup works... yes
+checking whether dup2 works... no
+checking for setdtablesize... no
+checking for error_at_line... no
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... yes
+checking whether fdopendir is declared... yes
+checking whether fdopendir works... no
+checking for flexible array member... yes
+checking for working POSIX fnmatch... yes
+checking whether fopen recognizes a trailing slash... yes
+checking whether fopen supports the mode character 'x'... yes
+checking whether fopen supports the mode character 'e'... no
+checking for __fpending... yes
+checking whether __fpending is declared... yes
+checking whether free is known to preserve errno... no
+checking for struct statfs.f_type... yes
+checking for __fsword_t... no
+checking for fts_open... no
+checking for getpagesize... yes
+checking whether getpagesize is declared... yes
+checking whether program_invocation_name is declared... no
+checking whether program_invocation_short_name is declared... no
+checking whether __argv is declared... no
+checking whether __progname is defined in default libraries... yes
+checking whether the compiler generally respects inline... yes
+checking whether iswblank is declared... yes
+checking whether iswdigit is ISO C compliant... guessing yes
+checking whether iswxdigit is ISO C compliant... guessing yes
+checking whether the compiler supports the __inline keyword... yes
+checking whether lseek detects pipes... yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles a NULL pwc argument... (cached) guessing yes
+checking whether mbrtowc handles a NULL string argument... (cached) guessing yes
+checking whether mbrtowc has a correct return value... (cached) guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... (cached) guessing yes
+checking whether mbrtowc stores incomplete characters... (cached) guessing no
+checking whether mbrtowc works on empty input... (cached) assume yes
+checking whether the C locale is free of encoding errors... (cached) yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbsrtowcs works... guessing yes
+checking for mbtowc... yes
+checking for mempcpy... (cached) yes
+checking for memrchr... yes
+checking whether YESEXPR works... yes
+checking for obstacks that work with any size object... no
+checking whether open recognizes a trailing slash... no
+checking for opendir... yes
+checking for Perl 5.005 or newer... perl
+checking for raise... yes
+checking for sigprocmask... yes
+checking for rawmemchr... yes
+checking for readdir... yes
+checking whether realloc (0, 0) returns nonnull... yes
+checking for reallocarray... yes
+checking for working re_compile_pattern... no
+checking for libintl.h... no
+checking whether isblank is declared... yes
+checking whether setlocale (LC_ALL, NULL) is multithread-safe... (cached) trivially yes
+checking whether setlocale (category, NULL) is multithread-safe... (cached) trivially yes
+checking for stack direction... grows down
+checking for working sigaltstack... no
+checking for ssize_t... (cached) yes
+checking whether stat handles trailing slashes on files... no
+checking for struct stat.st_atim.tv_nsec... no
+checking for struct stat.st_atimespec.tv_nsec... no
+checking for struct stat.st_atimensec... no
+checking for struct stat.st_atim.st__tim.tv_nsec... no
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for working stdalign.h... no
+checking for va_copy... yes
+checking for stpcpy... yes
+checking for winsock2.h... (cached) no
+checking for working strnlen... yes
+checking whether strstr works in linear time... yes
+checking whether strstr works... (cached) yes
+checking whether strtoimax works... yes
+checking for strtoll... yes
+checking whether strtoll works... no
+checking for strtoull... yes
+checking whether strtoull works... no
+checking for variable-length arrays... yes
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether wcrtomb works in the C locale... yes
+checking whether wcrtomb return value is correct... guessing yes
+checking whether wctob works... guessing yes
+checking whether wctob is declared... yes
+checking whether wcwidth is declared... yes
+checking whether wcwidth works reasonably in UTF-8 locales... yes
+checking for wmemchr... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a turkish Unicode locale... none
+checking whether fdopen sets errno... yes
+checking whether conversion from 'int' to 'long double' works... yes
+checking for gettimeofday with POSIX signature... yes
+checking for winsock2.h... (cached) no
+checking for library containing inet_pton... no
+checking for inet_pton... no
+checking whether inet_pton is declared... no
+checking whether byte ordering is bigendian... no
+checking for ioctl... yes
+checking for ioctl with POSIX signature... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a turkish Unicode locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for library containing nanosleep... none required
+checking for working nanosleep... no
+checking whether <netinet/in.h> is self-contained... no
+checking for netinet/in.h... (cached) no
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking whether perror matches strerror... yes
+checking whether pthread_create exists as a global function... no
+checking whether pthread_sigmask is a macro... no
+checking for putenv compatible with GNU and SVID... no
+checking whether _putenv is declared... no
+checking whether select supports a 0 argument... yes
+checking whether select detects invalid fds... yes
+checking whether setenv validates arguments... no
+checking whether setlocale supports the C locale... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for sigprocmask... (cached) yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking whether sleep is declared... yes
+checking for working sleep... yes
+checking for snprintf... (cached) yes
+checking whether snprintf respects a size of 1... yes
+checking whether printf supports POSIX/XSI format strings with positions... yes
+checking for socklen_t... no
+checking for socklen_t equivalent... (cached) int
+checking whether symlink handles trailing slash correctly... yes
+checking for sys/single_threaded.h... no
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking whether unsetenv obeys POSIX... yes
+checking for a traditional french locale... (cached) none
+checking for a french Unicode locale... (cached) none
+checking for a traditional japanese locale... (cached) none
+checking for a transitional chinese locale... (cached) none
+checking for stdint.h... (cached) yes
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether closedir returns void... no
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyPreferredLanguages... (cached) no
+checking for GNU gettext in libc... no
+checking for iconv... (cached) yes
+checking for working iconv... (cached) yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking for PCRE... no
+checking for pcre2_compile... no
+configure: WARNING: GNU grep will be built without PCRE support.
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating po/Makefile.in
+config.status: creating doc/Makefile
+config.status: creating gnulib-tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8'
+Making all in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/po'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/po'
+Making all in lib
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+  GEN      alloca.h
+  GEN      configmake.h
+  GEN      ctype.h
+  GEN      dirent.h
+  GEN      malloc/dynarray.gl.h
+  GEN      malloc/dynarray-skeleton.gl.h
+  GEN      errno.h
+  GEN      fcntl.h
+  GEN      getopt.h
+  GEN      getopt-cdefs.h
+  GEN      iconv.h
+  GEN      inttypes.h
+  GEN      langinfo.h
+  GEN      limits.h
+  GEN      locale.h
+  GEN      signal.h
+  GEN      sigsegv.h
+  GEN      stdalign.h
+  GEN      stdint.h
+  GEN      stdio.h
+  GEN      stdlib.h
+  GEN      string.h
+  GEN      sys/stat.h
+  GEN      sys/types.h
+  GEN      time.h
+  GEN      unistd.h
+  GEN      unistr.h
+  GEN      unitypes.h
+  GEN      uniwidth.h
+  GEN      wchar.h
+  GEN      wctype.h
+make  all-am
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+  CC       libgreputils_a-argmatch.o
+  CC       libgreputils_a-openat-proc.o
+  CC       libgreputils_a-basename-lgpl.o
+  CC       libgreputils_a-binary-io.o
+  CC       libgreputils_a-bitrotate.o
+  CC       libgreputils_a-c-ctype.o
+  CC       libgreputils_a-c-stack.o
+  CC       libgreputils_a-c-strcasecmp.o
+  CC       libgreputils_a-c-strncasecmp.o
+  CC       libgreputils_a-chdir-long.o
+  CC       libgreputils_a-cloexec.o
+  CC       libgreputils_a-close-stream.o
+  CC       libgreputils_a-closeout.o
+  CC       libgreputils_a-cycle-check.o
+  CC       libgreputils_a-dfa.o
+  CC       libgreputils_a-localeinfo.o
+  CC       libgreputils_a-dirname-lgpl.o
+  CC       libgreputils_a-stripslash.o
+  CC       libgreputils_a-dup2.o
+  CC       malloc/libgreputils_a-dynarray_at_failure.o
+  CC       malloc/libgreputils_a-dynarray_emplace_enlarge.o
+  CC       malloc/libgreputils_a-dynarray_finalize.o
+  CC       malloc/libgreputils_a-dynarray_resize.o
+  CC       malloc/libgreputils_a-dynarray_resize_clear.o
+  CC       libgreputils_a-error.o
+  CC       libgreputils_a-exclude.o
+  CC       libgreputils_a-exitfail.o
+  CC       libgreputils_a-creat-safer.o
+  CC       libgreputils_a-open-safer.o
+  CC       libgreputils_a-fd-hook.o
+  CC       libgreputils_a-fd-safer-flag.o
+  CC       libgreputils_a-dup-safer-flag.o
+  CC       libgreputils_a-fdopendir.o
+  CC       libgreputils_a-filenamecat-lgpl.o
+  CC       libgreputils_a-free.o
+  CC       libgreputils_a-fstatat.o
+  CC       libgreputils_a-fts.o
+  CC       libgreputils_a-getdtablesize.o
+getdtablesize.c: In function 'getdtablesize':
+getdtablesize.c:114:3: warning: implicit declaration of function 'getrlimit' [-Wimplicit-function-declaration]
+  CC       libgreputils_a-getopt.o
+  CC       libgreputils_a-getopt1.o
+  CC       libgreputils_a-getprogname.o
+  CC       libgreputils_a-hard-locale.o
+  CC       libgreputils_a-hash.o
+  CC       libgreputils_a-i-ring.o
+  CC       libgreputils_a-ialloc.o
+  CC       libgreputils_a-localcharset.o
+  CC       glthread/libgreputils_a-lock.o
+  CC       libgreputils_a-lstat.o
+  CC       libgreputils_a-malloca.o
+  CC       libgreputils_a-mbchar.o
+  CC       libgreputils_a-mbiter.o
+  CC       libgreputils_a-mbscasecmp.o
+  CC       libgreputils_a-mbslen.o
+  CC       libgreputils_a-mbsstr.o
+  CC       libgreputils_a-mbuiter.o
+  CC       libgreputils_a-memchr2.o
+  CC       libgreputils_a-nl_langinfo.o
+  CC       libgreputils_a-obstack.o
+  CC       libgreputils_a-open.o
+  CC       libgreputils_a-openat.o
+  CC       libgreputils_a-openat-die.o
+  CC       libgreputils_a-openat-safer.o
+  CC       libgreputils_a-opendirat.o
+  CC       libgreputils_a-propername.o
+  CC       libgreputils_a-quotearg.o
+  CC       libgreputils_a-reallocarray.o
+  CC       libgreputils_a-regex.o
+  CC       libgreputils_a-safe-read.o
+  CC       libgreputils_a-save-cwd.o
+  CC       libgreputils_a-setlocale_null.o
+  CC       libgreputils_a-sigsegv.o
+  CC       libgreputils_a-stackvma.o
+  CC       libgreputils_a-stat.o
+  CC       libgreputils_a-stat-time.o
+  CC       libgreputils_a-strerror.o
+  CC       libgreputils_a-strerror-override.o
+  CC       libgreputils_a-striconv.o
+  CC       libgreputils_a-strnlen1.o
+  CC       libgreputils_a-strtoll.o
+  CC       libgreputils_a-strtoull.o
+  CC       glthread/libgreputils_a-threadlib.o
+  CC       libgreputils_a-trim.o
+  CC       libgreputils_a-unistd.o
+  CC       libgreputils_a-dup-safer.o
+  CC       libgreputils_a-fd-safer.o
+  CC       libgreputils_a-pipe-safer.o
+  CC       unistr/libgreputils_a-u8-mbtoucr.o
+  CC       unistr/libgreputils_a-u8-uctomb.o
+  CC       unistr/libgreputils_a-u8-uctomb-aux.o
+  CC       uniwidth/libgreputils_a-width.o
+  CC       libgreputils_a-version-etc.o
+  CC       libgreputils_a-version-etc-fsf.o
+  CC       libgreputils_a-wctype-h.o
+  CC       libgreputils_a-xmalloc.o
+  CC       libgreputils_a-xalloc-die.o
+  CC       libgreputils_a-xbinary-io.o
+  CC       libgreputils_a-xstriconv.o
+  CC       libgreputils_a-xstrtoimax.o
+  CC       libgreputils_a-xstrtol.o
+  CC       libgreputils_a-xstrtoul.o
+  CC       libgreputils_a-colorize.o
+  CC       calloc.o
+  CC       fopen.o
+  CC       malloc.o
+  CC       realloc.o
+  AR       libgreputils.a
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+Making all in doc
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+  GEN      grep.1
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+Making all in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+  CC       dfasearch.o
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2071:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2073:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2124:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2122:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2133:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2131:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2143:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2141:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2158:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2153:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2171:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2169:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2205:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2203:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2220:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2214:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2221:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2215:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2230:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2228:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2260:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2258:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2271:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2269:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2280:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2278:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2291:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2289:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2325:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2323:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2334:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2332:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2345:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2343:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2366:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2364:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2378:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2376:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2391:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2389:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2411:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2409:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from dfasearch.c:23:
+../config.h:2418:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from dfasearch.c:21:0:
+../config.h:2416:0: note: this is the location of the previous definition
+  CC       grep.o
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2071:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2073:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2124:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2122:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2133:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2131:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2143:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2141:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2158:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2153:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2171:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2169:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2205:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2203:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2220:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2214:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2221:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2215:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2230:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2228:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2260:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2258:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2271:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2269:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2280:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2278:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2291:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2289:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2325:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2323:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2334:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2332:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2345:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2343:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2366:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2364:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2378:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2376:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2391:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2389:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2411:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2409:0: note: this is the location of the previous definition
+In file included from search.h:22:0,
+                 from grep.c:49:
+../config.h:2418:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from grep.c:21:0:
+../config.h:2416:0: note: this is the location of the previous definition
+  CC       kwsearch.o
+  CC       kwset.o
+  CC       searchutils.o
+  CCLD     grep
+  GEN      egrep
+  GEN      fgrep
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+Making all in tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+Making all in gnulib-tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+  GEN      arpa/inet.h
+  GEN      netinet/in.h
+  GEN      pthread.h
+  GEN      sched.h
+  GEN      sys/ioctl.h
+  GEN      sys/select.h
+  GEN      sys/socket.h
+  GEN      sys/time.h
+  GEN      sys/uio.h
+## ---------------------------------------------------- ##
+## ------------------- Gnulib tests ------------------- ##
+## You can ignore compiler warnings in this directory.  ##
+## ---------------------------------------------------- ##
+make  all-recursive
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+Making all in .
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+  CC       locale.o
+  CC       hash-pjw.o
+  CC       inet_pton.o
+  CC       imaxtostr.o
+  CC       inttostr.o
+  CC       offtostr.o
+  CC       uinttostr.o
+  CC       umaxtostr.o
+  CC       localename.o
+  CC       localename-table.o
+  CC       nanosleep.o
+  CC       perror.o
+  CC       pselect.o
+  CC       pthread-thread.o
+pthread-thread.c: In function 'rpl_pthread_create':
+pthread-thread.c:122:3: warning: implicit declaration of function 'pthread_create' [-Wimplicit-function-declaration]
+pthread-thread.c: In function 'rpl_pthread_attr_init':
+pthread-thread.c:129:3: warning: implicit declaration of function 'pthread_attr_init' [-Wimplicit-function-declaration]
+  CC       pthread_sigmask.o
+  CC       putenv.o
+  CC       setenv.o
+  CC       sockets.o
+  CC       sys_socket.o
+  CC       glthread/thread.o
+  CC       xsize.o
+  CC       xstrtol-error.o
+  CC       strerror_r.o
+  AR       libtests.a
+  CCLD     current-locale
+  CC       test-localcharset.o
+  CCLD     test-localcharset
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8'
+Making install in po
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/po'
+if test "grep" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/po'
+Making install in lib
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make  install-am
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/lib'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ /bin/install -c -m 644 ./grep.info '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/grep.info'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 grep.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/doc'
+Making install in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/install -c grep '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/install -c egrep fgrep '/mnt/builds-fiwix-3.3/installation/usr/bin'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/src'
+Making install in tests
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/tests'
+Making install in gnulib-tests
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make  install-recursive
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+Making install in .
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8/gnulib-tests'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/grep-3.8'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/grep-3.8'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/egrep: File format not recognized
+strip:./usr/bin/fgrep: File format not recognized
+./
+./usr/
+./usr/share/
+./usr/share/info/
+./usr/share/info/grep.info
+./usr/share/info/dir
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/grep.1
+./usr/bin/
+./usr/bin/grep
+./usr/bin/egrep
+./usr/bin/fgrep
+/mnt/builds-fiwix-3.3
+
+real	0m40.381s
+user	0m21.200s
+sys	0m13.900s

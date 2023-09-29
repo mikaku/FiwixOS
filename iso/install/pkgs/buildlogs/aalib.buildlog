@@ -1,0 +1,546 @@
+/mnt/builds-fiwix-3.3/aalib-1.4.0 /mnt/builds-fiwix-3.3
+patching aalib-1.4.0
+patching file config.guess
+patching file config.sub
+creating cache ./config.cache
+checking for a BSD compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking whether make sets ${MAKE}... yes
+checking for working aclocal... found
+checking for working autoconf... found
+checking for working automake... found
+checking for working autoheader... found
+checking for working makeinfo... found
+checking host system type... i386-pc-fiwix
+checking target system type... i386-pc-fiwix
+checking for gcc... gcc
+checking whether the C compiler (gcc  -s) works... yes
+checking whether the C compiler (gcc  -s) is a cross-compiler... no
+checking whether we are using GNU C... yes
+checking whether gcc accepts -g... yes
+checking build system type... i386-pc-fiwix
+checking for ranlib... ranlib
+checking for ld used by GCC... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for BSD-compatible nm... egrep: warning: egrep is obsolescent; using grep -E
+/bin/nm -B
+checking whether ln -s works... yes
+updating cache ./config.cache
+loading cache ./config.cache within ltconfig
+checking for object suffix... o
+checking for executable suffix... no
+checking for gcc option to produce PIC... -fPIC
+checking if gcc PIC flag -fPIC works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.lo... yes
+checking if gcc supports -fno-rtti -fno-exceptions ... no
+checking if gcc static flag -static works... -static
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking whether the linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking command to parse /bin/nm -B output... egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+egrep: warning: egrep is obsolescent; using grep -E
+ok
+checking how to hardcode library paths into programs... immediate
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking dynamic linker characteristics... no
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for objdir... .libs
+creating libtool
+updating cache ./config.cache
+loading cache ./config.cache
+checking whether make sets ${MAKE}... (cached) yes
+checking for a BSD compatible install... /bin/install -c
+checking for uname... Fiwix
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for pow in -lm... yes
+checking for X... no
+checking for Gpm_Repeat in -lgpm... no
+checking for SLsmg_init_smg in -lslang... yes
+Found slang on /usr/include/slang.h
+Disabling curses driver since slang is available
+checking for ANSI C header files... (cached) yes
+checking for fcntl.h... yes
+checking for limits.h... yes
+checking for malloc.h... yes
+checking for sys/ioctl.h... yes
+checking for sys/time.h... yes
+checking for unistd.h... yes
+checking for st_rdev in struct stat... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking whether gcc needs -traditional... no
+checking return type of signal handlers... void
+checking for strdup... yes
+-----------------------------------------------------
+CFLAGS  -g -O2 -I/usr/include 
+LDFLAGS -lslang -lm   
+AA-LIBD -laa -lm  -lslang
+CC      gcc
+-----------------------------------------------------
+Display drivers:
+ slang
+Keyboard drivers:
+ slang
+Mouse drivers:
+-----------------------------------------------------
+updating cache ./config.cache
+creating ./config.status
+creating Makefile
+creating man/Makefile
+creating doc/Makefile
+creating src/Makefile
+creating aalib-config
+creating src/config.h
+Making all in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aafont.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aafont.c -o aafont.o
+echo timestamp > aafont.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aafonts.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aafonts.c -o aafonts.o
+echo timestamp > aafonts.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aavyhen.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aavyhen.c -o aavyhen.o
+echo timestamp > aavyhen.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aamktabl.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aamktabl.c -o aamktabl.o
+echo timestamp > aamktabl.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aamem.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aamem.c -o aamem.o
+echo timestamp > aamem.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaprintf.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaprintf.c -o aaprintf.o
+echo timestamp > aaprintf.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aahelp.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aahelp.c -o aahelp.o
+echo timestamp > aahelp.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaslnkbd.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaslnkbd.c -o aaslnkbd.o
+echo timestamp > aaslnkbd.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaslang.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaslang.c -o aaslang.o
+aaslang.c: In function 'slang_print':
+aaslang.c:83:5: warning: passing argument 1 of 'SLsmg_write_string' discards 'const' qualifier from pointer target type [enabled by default]
+In file included from aaslang.c:6:0:
+/usr/include/slang.h:1823:16: note: expected 'char *' but argument is of type 'const char *'
+echo timestamp > aaslang.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aafastre.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aafastre.c -o aafastre.o
+echo timestamp > aafastre.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aalinux.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aalinux.c -o aalinux.o
+echo timestamp > aalinux.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aalinuxkbd.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aalinuxkbd.c -o aalinuxkbd.o
+echo timestamp > aalinuxkbd.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aax.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aax.c -o aax.o
+echo timestamp > aax.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaxkbd.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaxkbd.c -o aaxkbd.o
+echo timestamp > aaxkbd.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaxmouse.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaxmouse.c -o aaxmouse.o
+echo timestamp > aaxmouse.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontgl.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontgl.c -o fontgl.o
+echo timestamp > fontgl.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c font16.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c font16.c -o font16.o
+echo timestamp > font16.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c font14.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c font14.c -o font14.o
+echo timestamp > font14.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontx16.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontx16.c -o fontx16.o
+echo timestamp > fontx16.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontx13.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontx13.c -o fontx13.o
+echo timestamp > fontx13.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontx13b.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontx13b.c -o fontx13b.o
+echo timestamp > fontx13b.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontcour.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontcour.c -o fontcour.o
+echo timestamp > fontcour.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aarec.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aarec.c -o aarec.o
+echo timestamp > aarec.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c font9.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c font9.c -o font9.o
+echo timestamp > font9.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c font8.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c font8.c -o font8.o
+echo timestamp > font8.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c fontline.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c fontline.c -o fontline.o
+echo timestamp > fontline.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aacurses.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aacurses.c -o aacurses.o
+echo timestamp > aacurses.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aacurkbd.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aacurkbd.c -o aacurkbd.o
+echo timestamp > aacurkbd.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aacurmou.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aacurmou.c -o aacurmou.o
+echo timestamp > aacurmou.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aalib.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aalib.c -o aalib.o
+aalib.c: In function 'aa_resize':
+aalib.c:42:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+echo timestamp > aalib.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaflush.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaflush.c -o aaflush.o
+echo timestamp > aaflush.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aarender.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aarender.c -o aarender.o
+echo timestamp > aarender.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaout.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaout.c -o aaout.o
+echo timestamp > aaout.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aain.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aain.c -o aain.o
+echo timestamp > aain.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaedit.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaedit.c -o aaedit.o
+echo timestamp > aaedit.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaregist.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaregist.c -o aaregist.o
+echo timestamp > aaregist.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aakbdreg.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aakbdreg.c -o aakbdreg.o
+echo timestamp > aakbdreg.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aagpm.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aagpm.c -o aagpm.o
+echo timestamp > aagpm.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aamoureg.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aamoureg.c -o aamoureg.o
+echo timestamp > aamoureg.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aasave.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aasave.c -o aasave.o
+echo timestamp > aasave.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aastdout.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aastdout.c -o aastdout.o
+echo timestamp > aastdout.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aastdin.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aastdin.c -o aastdin.o
+echo timestamp > aastdin.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaparse.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaparse.c -o aaparse.o
+echo timestamp > aaparse.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaimgwidth.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaimgwidth.c -o aaimgwidth.o
+echo timestamp > aaimgwidth.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaimgheight.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaimgheight.c -o aaimgheight.o
+echo timestamp > aaimgheight.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aascrwidth.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aascrwidth.c -o aascrwidth.o
+echo timestamp > aascrwidth.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aascrheight.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aascrheight.c -o aascrheight.o
+echo timestamp > aascrheight.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aammwidth.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aammwidth.c -o aammwidth.o
+echo timestamp > aammwidth.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aammheight.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aammheight.c -o aammheight.o
+echo timestamp > aammheight.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaimage.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaimage.c -o aaimage.o
+echo timestamp > aaimage.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aatext.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aatext.c -o aatext.o
+echo timestamp > aatext.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aacurrfnt.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aacurrfnt.c -o aacurrfnt.o
+echo timestamp > aacurrfnt.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaattrs.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaattrs.c -o aaattrs.o
+echo timestamp > aaattrs.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aaputpixel.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aaputpixel.c -o aaputpixel.o
+echo timestamp > aaputpixel.lo
+/bin/sh ../libtool --mode=compile gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aarecfunc.c
+gcc -DHAVE_CONFIG_H -I. -I. -I. -g -O2 -I/usr/include -c aarecfunc.c -o aarecfunc.o
+echo timestamp > aarecfunc.lo
+/bin/sh ../libtool --mode=link gcc  -g -O2 -I/usr/include  -s -o libaa.la -rpath /usr/lib -s -version-info 1:4:0 aafont.lo aafonts.lo aavyhen.lo aamktabl.lo aamem.lo aaprintf.lo aahelp.lo aaslnkbd.lo aaslang.lo aafastre.lo aalinux.lo aalinuxkbd.lo aax.lo aaxkbd.lo aaxmouse.lo fontgl.lo font16.lo font14.lo fontx16.lo fontx13.lo fontx13b.lo fontcour.lo aarec.lo font9.lo font8.lo fontline.lo aacurses.lo aacurkbd.lo aacurmou.lo aalib.lo aaflush.lo aarender.lo aaout.lo aain.lo aaedit.lo aaregist.lo aakbdreg.lo aagpm.lo aamoureg.lo aasave.lo aastdout.lo aastdin.lo aaparse.lo aaimgwidth.lo aaimgheight.lo aascrwidth.lo aascrheight.lo aammwidth.lo aammheight.lo aaimage.lo aatext.lo aacurrfnt.lo aaattrs.lo aaputpixel.lo aarecfunc.lo  -lslang -lm   
+mkdir .libs
+ar cru .libs/libaa.a  aafont.o aafonts.o aavyhen.o aamktabl.o aamem.o aaprintf.o aahelp.o aaslnkbd.o aaslang.o aafastre.o aalinux.o aalinuxkbd.o aax.o aaxkbd.o aaxmouse.o fontgl.o font16.o font14.o fontx16.o fontx13.o fontx13b.o fontcour.o aarec.o font9.o font8.o fontline.o aacurses.o aacurkbd.o aacurmou.o aalib.o aaflush.o aarender.o aaout.o aain.o aaedit.o aaregist.o aakbdreg.o aagpm.o aamoureg.o aasave.o aastdout.o aastdin.o aaparse.o aaimgwidth.o aaimgheight.o aascrwidth.o aascrheight.o aammwidth.o aammheight.o aaimage.o aatext.o aacurrfnt.o aaattrs.o aaputpixel.o aarecfunc.o 
+ranlib .libs/libaa.a
+creating libaa.la
+(cd .libs && rm -f libaa.la && ln -s ../libaa.la libaa.la)
+gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aainfo.c
+aainfo.c: In function 'main':
+aainfo.c:12:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+aainfo.c:17:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+/bin/sh ../libtool --mode=link gcc  -g -O2 -I/usr/include  -s -o aainfo -s aainfo.o libaa.la -lslang -lm   
+gcc -g -O2 -I/usr/include -s -o aainfo -s aainfo.o .libs/libaa.a -lslang -lm -lslang -lm
+gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aatest.c
+aatest.c: In function 'main':
+aatest.c:8:5: warning: incompatible implicit declaration of built-in function 'strcpy' [enabled by default]
+aatest.c:11:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+aatest.c:16:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+aatest.c:21:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+/bin/sh ../libtool --mode=link gcc  -g -O2 -I/usr/include  -s -o aatest -s aatest.o libaa.la -lslang -lm   
+gcc -g -O2 -I/usr/include -s -o aatest -s aatest.o .libs/libaa.a -lslang -lm -lslang -lm
+gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aafire.c
+aafire.c: In function 'initialize':
+aafire.c:55:7: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+aafire.c: In function 'uninitialize':
+aafire.c:68:3: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+aafire.c: In function 'main':
+aafire.c:154:7: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+/bin/sh ../libtool --mode=link gcc  -g -O2 -I/usr/include  -s -o aafire -s aafire.o libaa.la -lslang -lm   
+gcc -g -O2 -I/usr/include -s -o aafire -s aafire.o .libs/libaa.a -lslang -lm -lslang -lm
+gcc -DHAVE_CONFIG_H -I. -I. -I.     -g -O2 -I/usr/include  -c aasavefont.c
+aasavefont.c: In function 'main':
+aasavefont.c:10:2: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+/bin/sh ../libtool --mode=link gcc  -g -O2 -I/usr/include  -s -o aasavefont -s aasavefont.o libaa.la -lslang -lm   
+gcc -g -O2 -I/usr/include -s -o aasavefont -s aasavefont.o .libs/libaa.a -lslang -lm -lslang -lm
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+Making all in man
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+Making all in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+Making install in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/lib
+mkdir /mnt/builds-fiwix-3.3/installation/usr
+mkdir /mnt/builds-fiwix-3.3/installation/usr/lib
+/bin/sh ../libtool  --mode=install /bin/install -c libaa.la /mnt/builds-fiwix-3.3/installation/usr/lib/libaa.la
+/bin/install -c .libs/libaa.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libaa.la
+/bin/install -c .libs/libaa.a /mnt/builds-fiwix-3.3/installation/usr/lib/libaa.a
+ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libaa.a
+chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libaa.a
+libtool: install: warning: remember to run `libtool --finish /usr/lib'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/bin
+mkdir /mnt/builds-fiwix-3.3/installation/usr/bin
+ /bin/sh ../libtool  --mode=install /bin/install -c  aainfo /mnt/builds-fiwix-3.3/installation/usr/bin/aainfo
+/bin/install -c aainfo /mnt/builds-fiwix-3.3/installation/usr/bin/aainfo
+ /bin/sh ../libtool  --mode=install /bin/install -c  aatest /mnt/builds-fiwix-3.3/installation/usr/bin/aatest
+/bin/install -c aatest /mnt/builds-fiwix-3.3/installation/usr/bin/aatest
+ /bin/sh ../libtool  --mode=install /bin/install -c  aafire /mnt/builds-fiwix-3.3/installation/usr/bin/aafire
+/bin/install -c aafire /mnt/builds-fiwix-3.3/installation/usr/bin/aafire
+ /bin/sh ../libtool  --mode=install /bin/install -c  aasavefont /mnt/builds-fiwix-3.3/installation/usr/bin/aasavefont
+/bin/install -c aasavefont /mnt/builds-fiwix-3.3/installation/usr/bin/aasavefont
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/include
+mkdir /mnt/builds-fiwix-3.3/installation/usr/include
+ /bin/install -c -m 644 aalib.h /mnt/builds-fiwix-3.3/installation/usr/include/aalib.h
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/src'
+Making install in man
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+make[2]: Nothing to be done for 'install-exec-am'.
+make  install-man1 install-man3
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/man/man1
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man/man1
+ /bin/install -c -m 644 ./aafire.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/aafire.1
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/man/man3
+mkdir /mnt/builds-fiwix-3.3/installation/usr/man/man3
+ /bin/install -c -m 644 ./aa_attrs.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_attrs.3
+ /bin/install -c -m 644 ./aa_autoinit.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_autoinit.3
+ /bin/install -c -m 644 ./aa_autoinitkbd.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_autoinitkbd.3
+ /bin/install -c -m 644 ./aa_autoinitmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_autoinitmouse.3
+ /bin/install -c -m 644 ./aa_close.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_close.3
+ /bin/install -c -m 644 ./aa_createedit.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_createedit.3
+ /bin/install -c -m 644 ./aa_currentfont.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_currentfont.3
+ /bin/install -c -m 644 ./aa_defparams.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_defparams.3
+ /bin/install -c -m 644 ./aa_defrenderparams.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_defrenderparams.3
+ /bin/install -c -m 644 ./aa_displayrecommended.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_displayrecommended.3
+ /bin/install -c -m 644 ./aa_dithernames.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_dithernames.3
+ /bin/install -c -m 644 ./aa_drivers.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_drivers.3
+ /bin/install -c -m 644 ./aa_edit.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_edit.3
+ /bin/install -c -m 644 ./aa_editkey.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_editkey.3
+ /bin/install -c -m 644 ./aa_fastrender.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_fastrender.3
+ /bin/install -c -m 644 ./aa_fonts.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_fonts.3
+ /bin/install -c -m 644 ./aa_formats.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_formats.3
+ /bin/install -c -m 644 ./aa_getevent.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_getevent.3
+ /bin/install -c -m 644 ./aa_getkey.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_getkey.3
+ /bin/install -c -m 644 ./aa_getmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_getmouse.3
+ /bin/install -c -m 644 ./aa_gotoxy.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_gotoxy.3
+ /bin/install -c -m 644 ./aa_help.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_help.3
+ /bin/install -c -m 644 ./aa_hidecursor.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_hidecursor.3
+ /bin/install -c -m 644 ./aa_hidemouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_hidemouse.3
+ /bin/install -c -m 644 ./aa_image.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_image.3
+ /bin/install -c -m 644 ./aa_imgheight.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_imgheight.3
+ /bin/install -c -m 644 ./aa_imgwidth.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_imgwidth.3
+ /bin/install -c -m 644 ./aa_init.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_init.3
+ /bin/install -c -m 644 ./aa_initkbd.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_initkbd.3
+ /bin/install -c -m 644 ./aa_initmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_initmouse.3
+ /bin/install -c -m 644 ./aa_kbddrivers.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_kbddrivers.3
+ /bin/install -c -m 644 ./aa_kbdrecommended.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_kbdrecommended.3
+ /bin/install -c -m 644 ./aa_mmheight.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_mmheight.3
+ /bin/install -c -m 644 ./aa_mmwidth.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_mmwidth.3
+ /bin/install -c -m 644 ./aa_mousedrivers.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_mousedrivers.3
+ /bin/install -c -m 644 ./aa_mouserecommended.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_mouserecommended.3
+ /bin/install -c -m 644 ./aa_parseoptions.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_parseoptions.3
+ /bin/install -c -m 644 ./aa_printf.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_printf.3
+ /bin/install -c -m 644 ./aa_putpixel.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_putpixel.3
+ /bin/install -c -m 644 ./aa_puts.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_puts.3
+ /bin/install -c -m 644 ./aa_recommendhi.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendhi.3
+ /bin/install -c -m 644 ./aa_recommendhidisplay.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendhidisplay.3
+ /bin/install -c -m 644 ./aa_recommendhikbd.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendhikbd.3
+ /bin/install -c -m 644 ./aa_recommendhimouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendhimouse.3
+ /bin/install -c -m 644 ./aa_recommendlow.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendlow.3
+ /bin/install -c -m 644 ./aa_recommendlowdisplay.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendlowdisplay.3
+ /bin/install -c -m 644 ./aa_recommendlowkbd.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendlowkbd.3
+ /bin/install -c -m 644 ./aa_recommendlowmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_recommendlowmouse.3
+ /bin/install -c -m 644 ./aa_registerfont.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_registerfont.3
+ /bin/install -c -m 644 ./aa_render.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_render.3
+ /bin/install -c -m 644 ./aa_resize.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_resize.3
+ /bin/install -c -m 644 ./aa_resizehandler.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_resizehandler.3
+ /bin/install -c -m 644 ./aa_scrheight.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_scrheight.3
+ /bin/install -c -m 644 ./aa_scrwidth.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_scrwidth.3
+ /bin/install -c -m 644 ./aa_setfont.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_setfont.3
+ /bin/install -c -m 644 ./aa_setsupported.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_setsupported.3
+ /bin/install -c -m 644 ./aa_showcursor.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_showcursor.3
+ /bin/install -c -m 644 ./aa_showmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_showmouse.3
+ /bin/install -c -m 644 ./aa_text.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_text.3
+ /bin/install -c -m 644 ./aa_uninitkbd.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_uninitkbd.3
+ /bin/install -c -m 644 ./aa_uninitmouse.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/aa_uninitmouse.3
+ /bin/install -c -m 644 ./mem_d.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/mem_d.3
+ /bin/install -c -m 644 ./save_d.3 /mnt/builds-fiwix-3.3/installation/usr/man/man3/save_d.3
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/man'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+/bin/sh ../mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/info
+mkdir /mnt/builds-fiwix-3.3/installation/usr/info
+ /bin/install -c -m 644 ./aalib.info /mnt/builds-fiwix-3.3/installation/usr/info/aalib.info
+ /bin/install -c -m 644 ./aalib.info-1 /mnt/builds-fiwix-3.3/installation/usr/info/aalib.info-1
+ /bin/install -c -m 644 ./aalib.info-2 /mnt/builds-fiwix-3.3/installation/usr/info/aalib.info-2
+ /bin/install -c -m 644 ./aalib.info-3 /mnt/builds-fiwix-3.3/installation/usr/info/aalib.info-3
+ install-info --info-dir=/mnt/builds-fiwix-3.3/installation/usr/info /mnt/builds-fiwix-3.3/installation/usr/info/aalib.info
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0/doc'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+/bin/sh ./mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/bin
+ /bin/install -c  aalib-config /mnt/builds-fiwix-3.3/installation/usr/bin/aalib-config
+/bin/sh ./mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/aclocal
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share
+mkdir /mnt/builds-fiwix-3.3/installation/usr/share/aclocal
+ /bin/install -c -m 644 ./aalib.m4 /mnt/builds-fiwix-3.3/installation/usr/share/aclocal/aalib.m4
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/aalib-1.4.0'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libaa.la: File format not recognized
+strip:./usr/bin/aalib-config: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/libaa.la
+./usr/lib/libaa.a
+./usr/bin/
+./usr/bin/aainfo
+./usr/bin/aatest
+./usr/bin/aafire
+./usr/bin/aasavefont
+./usr/bin/aalib-config
+./usr/include/
+./usr/include/aalib.h
+./usr/man/
+./usr/man/man1/
+./usr/man/man1/aafire.1
+./usr/man/man3/
+./usr/man/man3/aa_attrs.3
+./usr/man/man3/aa_autoinit.3
+./usr/man/man3/aa_autoinitkbd.3
+./usr/man/man3/aa_autoinitmouse.3
+./usr/man/man3/aa_close.3
+./usr/man/man3/aa_createedit.3
+./usr/man/man3/aa_currentfont.3
+./usr/man/man3/aa_defparams.3
+./usr/man/man3/aa_defrenderparams.3
+./usr/man/man3/aa_displayrecommended.3
+./usr/man/man3/aa_dithernames.3
+./usr/man/man3/aa_drivers.3
+./usr/man/man3/aa_edit.3
+./usr/man/man3/aa_editkey.3
+./usr/man/man3/aa_fastrender.3
+./usr/man/man3/aa_fonts.3
+./usr/man/man3/aa_formats.3
+./usr/man/man3/aa_getevent.3
+./usr/man/man3/aa_getkey.3
+./usr/man/man3/aa_getmouse.3
+./usr/man/man3/aa_gotoxy.3
+./usr/man/man3/aa_help.3
+./usr/man/man3/aa_hidecursor.3
+./usr/man/man3/aa_hidemouse.3
+./usr/man/man3/aa_image.3
+./usr/man/man3/aa_imgheight.3
+./usr/man/man3/aa_imgwidth.3
+./usr/man/man3/aa_init.3
+./usr/man/man3/aa_initkbd.3
+./usr/man/man3/aa_initmouse.3
+./usr/man/man3/aa_kbddrivers.3
+./usr/man/man3/aa_kbdrecommended.3
+./usr/man/man3/aa_mmheight.3
+./usr/man/man3/aa_mmwidth.3
+./usr/man/man3/aa_mousedrivers.3
+./usr/man/man3/aa_mouserecommended.3
+./usr/man/man3/aa_parseoptions.3
+./usr/man/man3/aa_printf.3
+./usr/man/man3/aa_putpixel.3
+./usr/man/man3/aa_puts.3
+./usr/man/man3/aa_recommendhi.3
+./usr/man/man3/aa_recommendhidisplay.3
+./usr/man/man3/aa_recommendhikbd.3
+./usr/man/man3/aa_recommendhimouse.3
+./usr/man/man3/aa_recommendlow.3
+./usr/man/man3/aa_recommendlowdisplay.3
+./usr/man/man3/aa_recommendlowkbd.3
+./usr/man/man3/aa_recommendlowmouse.3
+./usr/man/man3/aa_registerfont.3
+./usr/man/man3/aa_render.3
+./usr/man/man3/aa_resize.3
+./usr/man/man3/aa_resizehandler.3
+./usr/man/man3/aa_scrheight.3
+./usr/man/man3/aa_scrwidth.3
+./usr/man/man3/aa_setfont.3
+./usr/man/man3/aa_setsupported.3
+./usr/man/man3/aa_showcursor.3
+./usr/man/man3/aa_showmouse.3
+./usr/man/man3/aa_text.3
+./usr/man/man3/aa_uninitkbd.3
+./usr/man/man3/aa_uninitmouse.3
+./usr/man/man3/mem_d.3
+./usr/man/man3/save_d.3
+./usr/info/
+./usr/info/aalib.info
+./usr/info/aalib.info-1
+./usr/info/aalib.info-2
+./usr/info/aalib.info-3
+./usr/info/dir
+./usr/share/
+./usr/share/aclocal/
+./usr/share/aclocal/aalib.m4
+/mnt/builds-fiwix-3.3
+
+real	0m10.087s
+user	0m3.950s
+sys	0m3.560s

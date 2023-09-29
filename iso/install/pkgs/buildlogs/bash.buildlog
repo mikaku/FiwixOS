@@ -1,0 +1,1410 @@
+/mnt/builds-fiwix-3.3/bash-4.4.18 /mnt/builds-fiwix-3.3
+patching bash-4.4.18
+patching file support/config.guess
+patching file support/config.sub
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+
+Beginning configuration for bash-4.4-release for i386-pc-fiwix
+
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for strerror in -lcposix... no
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking whether gcc needs -traditional... no
+checking for a BSD-compatible install... /bin/install -c
+checking for ar... ar
+checking for ranlib... ranlib
+checking for bison... no
+checking for byacc... byacc
+checking whether make sets $(MAKE)... yes
+configure: WARNING: bison not available; needed to process parse.y
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking whether byte ordering is bigendian... no
+checking for preprocessor stringizing operator... yes
+checking for long double with more range or precision than double... yes
+checking for function prototypes... yes
+checking whether char is unsigned... no
+checking for working volatile... yes
+checking for C/C++ restrict keyword... __restrict
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for off_t... yes
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for sys/time.h... yes
+checking for getpagesize... yes
+checking for working mmap... yes
+checking whether we are using the GNU C Library 2.1 or newer... no
+checking whether integer division by zero raises SIGFPE... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unsigned long long... yes
+checking for inttypes.h... yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking for ld used by GCC... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... egrep: warning: egrep is obsolescent; using grep -E
+yes
+checking for shared library run path origin... egrep: warning: egrep is obsolescent; using grep -E
+done
+checking argz.h usability... yes
+checking argz.h presence... yes
+checking for argz.h... yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking nl_types.h usability... no
+checking nl_types.h presence... no
+checking for nl_types.h... no
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for feof_unlocked... yes
+checking for fgets_unlocked... yes
+checking for getc_unlocked... yes
+checking for getcwd... yes
+checking for getegid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getuid... yes
+checking for mempcpy... yes
+checking for munmap... yes
+checking for putenv... yes
+checking for setenv... yes
+checking for setlocale... yes
+checking for localeconv... yes
+checking for stpcpy... yes
+checking for strcasecmp... yes
+checking for strdup... yes
+checking for strtoul... yes
+checking for tsearch... yes
+checking for __argz_count... no
+checking for __argz_stringify... no
+checking for __argz_next... no
+checking for __fsetlocking... yes
+checking for iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for iconv declaration... 
+         extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);
+checking for nl_langinfo and CODESET... yes
+checking for LC_MESSAGES... yes
+checking for bison... no
+checking whether NLS is requested... yes
+checking whether included gettext is requested... no
+checking for GNU gettext in libc... no
+checking for GNU gettext in libintl... no
+checking whether to use NLS... yes
+checking where the gettext function comes from... included intl directory
+checking for dirent.h that defines DIR... yes
+checking for library containing opendir... none required
+checking whether time.h and sys/time.h may both be included... yes
+checking for inttypes.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking varargs.h usability... no
+checking varargs.h presence... no
+checking for varargs.h... no
+checking for limits.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for locale.h... (cached) yes
+checking termcap.h usability... yes
+checking termcap.h presence... yes
+checking for termcap.h... yes
+checking termio.h usability... no
+checking termio.h presence... no
+checking for termio.h... no
+checking termios.h usability... yes
+checking termios.h presence... yes
+checking for termios.h... yes
+checking dlfcn.h usability... no
+checking dlfcn.h presence... no
+checking for dlfcn.h... no
+checking stdbool.h usability... yes
+checking stdbool.h presence... yes
+checking for stdbool.h... yes
+checking for stddef.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking netdb.h usability... no
+checking netdb.h presence... no
+checking for netdb.h... no
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking grp.h usability... yes
+checking grp.h presence... yes
+checking for grp.h... yes
+checking for strings.h... (cached) yes
+checking regex.h usability... yes
+checking regex.h presence... yes
+checking for regex.h... yes
+checking syslog.h usability... no
+checking syslog.h presence... no
+checking for syslog.h... no
+checking ulimit.h usability... no
+checking ulimit.h presence... no
+checking for ulimit.h... no
+checking sys/pte.h usability... no
+checking sys/pte.h presence... no
+checking for sys/pte.h... no
+checking sys/stream.h usability... no
+checking sys/stream.h presence... no
+checking for sys/stream.h... no
+checking sys/select.h usability... yes
+checking sys/select.h presence... yes
+checking for sys/select.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/ioctl.h usability... yes
+checking sys/ioctl.h presence... yes
+checking for sys/ioctl.h... yes
+checking for sys/param.h... (cached) yes
+checking sys/socket.h usability... no
+checking sys/socket.h presence... no
+checking for sys/socket.h... no
+checking for sys/stat.h... (cached) yes
+checking for sys/time.h... (cached) yes
+checking sys/times.h usability... yes
+checking sys/times.h presence... yes
+checking for sys/times.h... yes
+checking for sys/types.h... (cached) yes
+checking sys/wait.h usability... yes
+checking sys/wait.h presence... yes
+checking for sys/wait.h... yes
+checking netinet/in.h usability... no
+checking netinet/in.h presence... no
+checking for netinet/in.h... no
+checking arpa/inet.h usability... no
+checking arpa/inet.h presence... no
+checking for arpa/inet.h... no
+checking for sys/ptem.h... no
+checking for sys/resource.h... yes
+checking for working alloca.h... (cached) yes
+checking for alloca... (cached) yes
+checking for uid_t in sys/types.h... yes
+checking for unistd.h... (cached) yes
+checking for working chown... yes
+checking whether getpgrp requires zero arguments... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for working strcoll... yes
+checking return type of signal handlers... void
+checking for __setostype... no
+checking for wait3... no
+checking for mkfifo... yes
+checking for dup2... yes
+checking for eaccess... no
+checking for fcntl... yes
+checking for getdtablesize... no
+checking for getgroups... yes
+checking for gethostname... yes
+checking for getpagesize... (cached) yes
+checking for getpeername... no
+checking for getrlimit... yes
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for kill... yes
+checking for killpg... no
+checking for lstat... yes
+checking for pselect... no
+checking for readlink... yes
+checking for sbrk... yes
+checking for select... yes
+checking for setdtablesize... no
+checking for setitimer... yes
+checking for tcgetpgrp... yes
+checking for uname... yes
+checking for ulimit... no
+checking for waitpid... yes
+checking for rename... yes
+checking for bcopy... yes
+checking for bzero... yes
+checking for confstr... no
+checking for faccessat... no
+checking for fnmatch... yes
+checking for getaddrinfo... no
+checking for gethostbyname... no
+checking for getservbyname... no
+checking for getservent... no
+checking for inet_aton... no
+checking for imaxdiv... yes
+checking for memmove... yes
+checking for pathconf... yes
+checking for putenv... (cached) yes
+checking for raise... yes
+checking for random... yes
+checking for regcomp... yes
+checking for regexec... yes
+checking for setenv... (cached) yes
+checking for setlinebuf... yes
+checking for setlocale... (cached) yes
+checking for setvbuf... yes
+checking for siginterrupt... no
+checking for strchr... yes
+checking for sysconf... yes
+checking for syslog... no
+checking for tcgetattr... yes
+checking for times... yes
+checking for ttyname... yes
+checking for tzset... yes
+checking for unsetenv... yes
+checking for vasprintf... yes
+checking for asprintf... yes
+checking for isascii... yes
+checking for isblank... yes
+checking for isgraph... yes
+checking for isprint... yes
+checking for isspace... yes
+checking for isxdigit... yes
+checking for getpwent... yes
+checking for getpwnam... yes
+checking for getpwuid... yes
+checking for mkstemp... yes
+checking for getcwd... (cached) yes
+checking for memset... yes
+checking for strcasecmp... (cached) yes
+checking for strcasestr... yes
+checking for strerror... yes
+checking for strftime... yes
+checking for strnlen... yes
+checking for strpbrk... yes
+checking for strstr... yes
+checking for strtod... yes
+checking for strtol... yes
+checking for strtoul... (cached) yes
+checking for strtoll... yes
+checking for strtoull... yes
+checking for strtoimax... yes
+checking for strtoumax... yes
+checking for dprintf... yes
+checking for strchrnul... yes
+checking for strdup... (cached) yes
+checking libaudit.h usability... no
+checking libaudit.h presence... no
+checking for libaudit.h... no
+checking whether AUDIT_USER_TTY is declared... no
+checking whether confstr is declared... yes
+checking whether printf is declared... yes
+checking whether sbrk is declared... yes
+checking whether setregid is declared... yes
+checking whether strcpy is declared... yes
+checking whether strsignal is declared... yes
+checking whether strtold is declared... yes
+checking for broken strtold... no
+checking for declaration of strtoimax... yes
+checking for declaration of strtol... yes
+checking for declaration of strtoll... yes
+checking for declaration of strtoul... yes
+checking for declaration of strtoull... yes
+checking for declaration of strtoumax... yes
+checking for alarm... yes
+checking for fpurge... yes
+checking for __fpurge... yes
+checking for snprintf... yes
+checking for vsnprintf... yes
+checking for working mktime... no
+checking for argz.h... (cached) yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for malloc.h... (cached) yes
+checking stdio_ext.h usability... yes
+checking stdio_ext.h presence... yes
+checking for stdio_ext.h... yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for __argz_count... (cached) no
+checking for __argz_next... (cached) no
+checking for __argz_stringify... (cached) no
+checking for dcgettext... no
+checking for mempcpy... (cached) yes
+checking for munmap... (cached) yes
+checking for stpcpy... (cached) yes
+checking for strcspn... yes
+checking wctype.h usability... yes
+checking wctype.h presence... yes
+checking for wctype.h... yes
+checking wchar.h usability... yes
+checking wchar.h presence... yes
+checking for wchar.h... yes
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking mbstr.h usability... no
+checking mbstr.h presence... no
+checking for mbstr.h... no
+checking for mbrlen... yes
+checking for mbscasecmp... no
+checking for mbscmp... no
+checking for mbsnrtowcs... yes
+checking for mbsrtowcs... yes
+checking for mbschr... no
+checking for wcrtomb... yes
+checking for wcscoll... yes
+checking for wcsdup... yes
+checking for wcwidth... yes
+checking for wctype... yes
+checking for wcswidth... yes
+checking whether mbrtowc and mbstate_t are properly declared... yes
+checking for iswlower... yes
+checking for iswupper... yes
+checking for towlower... yes
+checking for towupper... yes
+checking for iswctype... yes
+checking for nl_langinfo and CODESET... yes
+checking for wchar_t in wchar.h... yes
+checking for wctype_t in wctype.h... yes
+checking for wint_t in wctype.h... yes
+checking for wcwidth broken with unicode combining characters... yes
+checking for locale_charset... no
+checking for dlopen in -ldl... no
+checking for dlopen... no
+checking for dlclose... no
+checking for dlsym... no
+checking whether sys_siglist is declared... no
+checking for inet_aton... no
+checking for getpeername in -lsocket... no
+checking for gethostbyname in socket library... no
+checking type of array argument to getgroups... gid_t
+checking for off_t... (cached) yes
+checking for mode_t... yes
+checking for uid_t in sys/types.h... (cached) yes
+checking for pid_t... yes
+checking for size_t... (cached) yes
+checking for uintptr_t... yes
+checking for ssize_t... yes
+checking for time_t... yes
+checking for long long... long long
+checking for unsigned long long... unsigned long long
+checking return type of signal handlers... (cached) void
+checking for sig_atomic_t in signal.h... yes
+checking size of char... 1
+checking size of short... 2
+checking size of int... 4
+checking size of long... 4
+checking size of char *... 4
+checking size of double... 8
+checking size of long long... 8
+checking for u_int... yes
+checking for u_long... yes
+checking for bits16_t... no
+checking for u_bits16_t... no
+checking for bits32_t... no
+checking for u_bits32_t... no
+checking for bits64_t... no
+checking for ptrdiff_t... yes
+checking whether stat file-mode macros are broken... no
+checking whether #! works in shell scripts... yes
+checking whether the ctype macros accept non-ascii characters... no
+checking if dup2 fails to clear the close-on-exec flag... no
+checking whether pgrps need synchronization... no
+checking for type of signal functions... posix
+checking for sys_errlist and sys_nerr... yes
+checking for sys_siglist in system C library... no
+checking for _sys_siglist in signal.h or unistd.h... no
+checking for _sys_siglist in system C library... no
+checking whether signal handlers are of type void... yes
+checking for clock_t... yes
+checking for sigset_t... yes
+checking for sig_atomic_t... yes
+checking for quad_t... no
+checking for intmax_t... yes
+checking for uintmax_t... yes
+checking for size and type of struct rlimit fields... rlim_t
+checking size of intmax_t... 8
+checking for struct termios.c_line... yes
+checking for struct termio.c_line... no
+checking for struct dirent.d_ino... yes
+checking for struct dirent.d_fileno... no
+checking for struct dirent.d_namlen... no
+checking for struct winsize in sys/ioctl.h and termios.h... sys/ioctl.h
+checking for struct timeval in sys/time.h and time.h... yes
+checking for struct stat.st_blocks... yes
+checking whether struct tm is in sys/time.h or time.h... time.h
+checking for struct tm.tm_zone... no
+checking whether tzname is declared... yes
+checking for tzname... yes
+checking for struct timezone in sys/time.h and time.h... yes
+checking for offset of exit status in return status from wait... 8
+checking for struct timespec in <time.h>... yes
+checking for struct stat.st_atim.tv_nsec... no
+checking for struct stat.st_atimespec.tv_nsec... no
+checking for struct stat.st_atimensec... no
+checking for struct stat.st_atim.st__tim.tv_nsec... no
+checking for the existence of strsignal... yes
+checking if opendir() opens non-directories... no
+checking whether ulimit can substitute for getdtablesize... no
+checking whether fpurge is declared... yes
+checking to see if getenv can be redefined... yes
+checking if getcwd() will dynamically allocate memory with 0 size... yes
+checking for presence of POSIX-style sigsetjmp/siglongjmp... missing
+checking whether or not strcoll and strcmp differ... no
+checking for standard-conformant snprintf... yes
+checking for standard-conformant vsnprintf... yes
+checking for standard-conformant putenv declaration... yes
+checking for standard-conformant unsetenv declaration... yes
+checking for printf floating point output in hex notation... yes
+checking if signal handlers must be reinstalled when invoked... no
+checking for presence of necessary job control definitions... present
+checking for presence of named pipes... present
+checking whether termios.h defines TIOCGWINSZ... no
+checking whether sys/ioctl.h defines TIOCGWINSZ... yes
+checking for TIOCSTAT in sys/ioctl.h... no
+checking for FIONREAD in sys/ioctl.h... yes
+checking whether WCONTINUED flag to waitpid is unavailable or available but broken... yes
+checking for speed_t in sys/types.h... no
+checking whether getpw functions are declared in pwd.h... yes
+checking for unusable real-time signals due to large values... no
+checking for tgetent... no
+checking for tgetent in -ltermcap... yes
+checking which library has the termcap functions... using libtermcap
+checking whether /dev/fd is available... standard
+checking whether /dev/stdin stdout stderr are available... present
+checking for default mail directory... unknown
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating builtins/Makefile
+config.status: creating lib/readline/Makefile
+config.status: creating lib/glob/Makefile
+config.status: creating lib/intl/Makefile
+config.status: creating lib/malloc/Makefile
+config.status: creating lib/sh/Makefile
+config.status: creating lib/termcap/Makefile
+config.status: creating lib/tilde/Makefile
+config.status: creating doc/Makefile
+config.status: creating support/Makefile
+config.status: creating po/Makefile.in
+config.status: creating examples/loadables/Makefile
+config.status: creating examples/loadables/Makefile.inc
+config.status: creating examples/loadables/perl/Makefile
+config.status: creating support/bash.pc
+config.status: creating config.h
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
+rm -f mksyntax
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -s    -g -O2 -Wno-parentheses -Wno-format-security  -g -O2 -Wno-parentheses -Wno-format-security  -o mksyntax ./mksyntax.c 
+rm -f syntax.c
+./mksyntax -o syntax.c
+/bin/sh ./support/mkversion.sh -b -S . -s release -d 4.4 -o newversion.h \
+	&& mv newversion.h version.h
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -DBUILDTOOL -c -o buildversion.o ./version.c
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -s    -g -O2 -Wno-parentheses -Wno-format-security  -g -O2 -Wno-parentheses -Wno-format-security  -o bashversion ./support/bashversion.c buildversion.o 
+
+	  ***********************************************************
+	  *                                                         *
+	  * GNU bash, version 4.4.18(1)-release (i386-pc-fiwix)
+	  *                                                         *
+	  ***********************************************************
+
+making lib/intl/libintl.a in ./lib/intl
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl'
+cp ./libgnuintl.h.in libgnuintl.h
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  bindtextdom.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  dcgettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  dgettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  gettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  finddomain.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  loadmsgcat.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  localealias.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  textdomain.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  l10nflist.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  explodename.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  dcigettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  dcngettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  dngettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  ngettext.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  plural.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  plural-exp.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  localcharset.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  relocatable.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  localename.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  log.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  osdep.c
+gcc -c -DLOCALEDIR=\"/usr/share/locale\" -DLOCALE_ALIAS_PATH=\"/usr/share/locale\" -DLIBDIR=\"/usr/libdata\" -DIN_LIBINTL -DENABLE_RELOCATABLE=1 -DIN_LIBRARY -DINSTALLDIR=\"/usr/lib\" -DNO_XMALLOC -Dset_relocation_prefix=libintl_set_relocation_prefix -Drelocate=libintl_relocate -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H -DSHELL -I. -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security  intl-compat.c
+rm -f libintl.a
+ar cr libintl.a bindtextdom.o dcgettext.o dgettext.o gettext.o finddomain.o loadmsgcat.o localealias.o textdomain.o l10nflist.o explodename.o dcigettext.o dcngettext.o dngettext.o ngettext.o plural.o plural-exp.o localcharset.o relocatable.o localename.o log.o osdep.o intl-compat.o
+ranlib libintl.a
+cmp libgnuintl.h libintl.h || cp libgnuintl.h libintl.h
+cmp: libintl.h: No such file or directory
+/bin/sh ./config.charset 'i386-pc-fiwix' > t-charset.alias
+mv t-charset.alias charset.alias
+sed -e '/^#/d' -e 's/@''PACKAGE''@/@PACKAGE@/g' ./ref-add.sin > t-ref-add.sed
+mv t-ref-add.sed ref-add.sed
+sed -e '/^#/d' -e 's/@''PACKAGE''@/@PACKAGE@/g' ./ref-del.sin > t-ref-del.sed
+mv t-ref-del.sed ref-del.sed
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl'
+rm -f shell.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c shell.c
+rm -f eval.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c eval.c
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+rm -f mkbuiltins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  mkbuiltins.c
+gcc -s  -g -O2 -Wno-parentheses -Wno-format-security  -g -O2 -Wno-parentheses -Wno-format-security  -o mkbuiltins mkbuiltins.o 
+./mkbuiltins -externfile builtext.h -structfile builtins.c \
+    -noproduction -D .   ./alias.def ./bind.def ./break.def ./builtin.def ./caller.def ./cd.def ./colon.def ./command.def ./declare.def ./echo.def ./enable.def ./eval.def ./getopts.def ./exec.def ./exit.def ./fc.def ./fg_bg.def ./hash.def ./help.def ./history.def ./jobs.def ./kill.def ./let.def ./read.def ./return.def ./set.def ./setattr.def ./shift.def ./source.def ./suspend.def ./test.def ./times.def ./trap.def ./type.def ./ulimit.def ./umask.def ./wait.def ./reserved.def ./pushd.def ./shopt.def ./printf.def ./complete.def ./mapfile.def
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+rm -f y.tab.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c y.tab.c
+rm -f general.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c general.c
+rm -f make_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c make_cmd.c
+rm -f print_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c print_cmd.c
+rm -f dispose_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c dispose_cmd.c
+rm -f execute_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c execute_cmd.c
+rm -f variables.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c variables.c
+rm -f copy_cmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c copy_cmd.c
+rm -f error.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c error.c
+rm -f expr.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c expr.c
+expr.c:210:17: warning: conflicting types for built-in function 'exp2' [enabled by default]
+rm -f flags.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c flags.c
+rm -f jobs.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c jobs.c
+rm -f subst.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c subst.c
+rm -f hashcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c hashcmd.c
+rm -f hashlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c hashlib.c
+rm -f mailcheck.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c mailcheck.c
+rm -f mksignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -DBUILDTOOL -c ./support/mksignames.c
+rm -f buildsignames.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -DBUILDTOOL -o buildsignames.o -c ./support/signames.c
+rm -f mksignames
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -s    -g -O2 -Wno-parentheses -Wno-format-security  -g -O2 -Wno-parentheses -Wno-format-security  -o mksignames mksignames.o buildsignames.o 
+rm -f lsignames.h
+./mksignames lsignames.h
+if cmp -s lsignames.h signames.h ; then :; else rm -f signames.h ; cp lsignames.h signames.h ; fi
+rm -f trap.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c trap.c
+rm -f input.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c input.c
+rm -f unwind_prot.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c unwind_prot.c
+rm -f pathexp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c pathexp.c
+rm -f sig.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c sig.c
+rm -f test.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c test.c
+rm -f version.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c version.c
+rm -f alias.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c alias.c
+rm -f array.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c array.c
+rm -f arrayfunc.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c arrayfunc.c
+rm -f assoc.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c assoc.c
+rm -f braces.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c braces.c
+rm -f bracecomp.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c bracecomp.c
+rm -f bashhist.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c bashhist.c
+rm -f bashline.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c bashline.c
+rm -f list.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c list.c
+rm -f stringlib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c stringlib.c
+rm -f locale.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c locale.c
+rm -f findcmd.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c findcmd.c
+rm -f redir.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c redir.c
+rm -f pcomplete.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c pcomplete.c
+rm -f pcomplib.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c pcomplib.c
+rm -f syntax.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c syntax.c
+rm -f xmalloc.o
+gcc  -DPROGRAM='"bash"' -DCONF_HOSTTYPE='"i386"' -DCONF_OSTYPE='"fiwix"' -DCONF_MACHTYPE='"i386-pc-fiwix"' -DCONF_VENDOR='"pc"' -DLOCALEDIR='"/usr/share/locale"' -DPACKAGE='"bash"' -DSHELL -DHAVE_CONFIG_H   -I.  -I. -I./include -I./lib -I./lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security -c xmalloc.c
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+rm -f builtins.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security builtins.c
+rm -f alias.o
+./mkbuiltins -D . alias.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security alias.c || ( rm -f alias.c ; exit 1 )
+rm -f alias.c
+rm -f bind.o
+./mkbuiltins -D . bind.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security bind.c || ( rm -f bind.c ; exit 1 )
+rm -f bind.c
+rm -f break.o
+./mkbuiltins -D . break.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security break.c || ( rm -f break.c ; exit 1 )
+rm -f break.c
+rm -f builtin.o
+./mkbuiltins -D . builtin.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security builtin.c || ( rm -f builtin.c ; exit 1 )
+rm -f builtin.c
+rm -f caller.o
+./mkbuiltins -D . caller.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security caller.c || ( rm -f caller.c ; exit 1 )
+rm -f caller.c
+rm -f cd.o
+./mkbuiltins -D . cd.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security cd.c || ( rm -f cd.c ; exit 1 )
+rm -f cd.c
+rm -f colon.o
+./mkbuiltins -D . colon.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security colon.c || ( rm -f colon.c ; exit 1 )
+rm -f colon.c
+rm -f command.o
+./mkbuiltins -D . command.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security command.c || ( rm -f command.c ; exit 1 )
+rm -f command.c
+rm -f common.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security common.c
+rm -f declare.o
+./mkbuiltins -D . declare.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security declare.c || ( rm -f declare.c ; exit 1 )
+rm -f declare.c
+rm -f echo.o
+./mkbuiltins -D . echo.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security echo.c || ( rm -f echo.c ; exit 1 )
+rm -f echo.c
+rm -f enable.o
+./mkbuiltins -D . enable.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security enable.c || ( rm -f enable.c ; exit 1 )
+rm -f enable.c
+rm -f eval.o
+./mkbuiltins -D . eval.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security eval.c || ( rm -f eval.c ; exit 1 )
+rm -f eval.c
+rm -f evalfile.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security evalfile.c
+rm -f evalstring.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security evalstring.c
+rm -f exec.o
+./mkbuiltins -D . exec.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security exec.c || ( rm -f exec.c ; exit 1 )
+rm -f exec.c
+rm -f exit.o
+./mkbuiltins -D . exit.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security exit.c || ( rm -f exit.c ; exit 1 )
+rm -f exit.c
+rm -f fc.o
+./mkbuiltins -D . fc.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security fc.c || ( rm -f fc.c ; exit 1 )
+rm -f fc.c
+rm -f fg_bg.o
+./mkbuiltins -D . fg_bg.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security fg_bg.c || ( rm -f fg_bg.c ; exit 1 )
+rm -f fg_bg.c
+rm -f hash.o
+./mkbuiltins -D . hash.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security hash.c || ( rm -f hash.c ; exit 1 )
+rm -f hash.c
+rm -f help.o
+./mkbuiltins -D . help.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security help.c || ( rm -f help.c ; exit 1 )
+rm -f help.c
+rm -f history.o
+./mkbuiltins -D . history.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security history.c || ( rm -f history.c ; exit 1 )
+rm -f history.c
+rm -f jobs.o
+./mkbuiltins -D . jobs.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security jobs.c || ( rm -f jobs.c ; exit 1 )
+rm -f jobs.c
+rm -f kill.o
+./mkbuiltins -D . kill.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security kill.c || ( rm -f kill.c ; exit 1 )
+rm -f kill.c
+rm -f let.o
+./mkbuiltins -D . let.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security let.c || ( rm -f let.c ; exit 1 )
+rm -f let.c
+rm -f mapfile.o
+./mkbuiltins -D . mapfile.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security mapfile.c || ( rm -f mapfile.c ; exit 1 )
+rm -f mapfile.c
+rm -f pushd.o
+./mkbuiltins -D . pushd.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security pushd.c || ( rm -f pushd.c ; exit 1 )
+rm -f pushd.c
+rm -f read.o
+./mkbuiltins -D . read.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security read.c || ( rm -f read.c ; exit 1 )
+rm -f read.c
+rm -f return.o
+./mkbuiltins -D . return.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security return.c || ( rm -f return.c ; exit 1 )
+rm -f return.c
+rm -f set.o
+./mkbuiltins -D . set.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security set.c || ( rm -f set.c ; exit 1 )
+rm -f set.c
+rm -f setattr.o
+./mkbuiltins -D . setattr.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security setattr.c || ( rm -f setattr.c ; exit 1 )
+rm -f setattr.c
+rm -f shift.o
+./mkbuiltins -D . shift.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security shift.c || ( rm -f shift.c ; exit 1 )
+rm -f shift.c
+rm -f source.o
+./mkbuiltins -D . source.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security source.c || ( rm -f source.c ; exit 1 )
+rm -f source.c
+rm -f suspend.o
+./mkbuiltins -D . suspend.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security suspend.c || ( rm -f suspend.c ; exit 1 )
+rm -f suspend.c
+rm -f test.o
+./mkbuiltins -D . test.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security test.c || ( rm -f test.c ; exit 1 )
+rm -f test.c
+rm -f times.o
+./mkbuiltins -D . times.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security times.c || ( rm -f times.c ; exit 1 )
+rm -f times.c
+rm -f trap.o
+./mkbuiltins -D . trap.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security trap.c || ( rm -f trap.c ; exit 1 )
+rm -f trap.c
+rm -f type.o
+./mkbuiltins -D . type.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security type.c || ( rm -f type.c ; exit 1 )
+rm -f type.c
+gcc  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security  -s  -g -O2 -Wno-parentheses -Wno-format-security  -g -O2 -Wno-parentheses -Wno-format-security  -o psize.aux ./psize.c
+/bin/sh ./psize.sh > pipesize.h
+rm -f ulimit.o
+./mkbuiltins -D . ulimit.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security ulimit.c || ( rm -f ulimit.c ; exit 1 )
+rm -f ulimit.c
+rm -f umask.o
+./mkbuiltins -D . umask.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security umask.c || ( rm -f umask.c ; exit 1 )
+rm -f umask.c
+rm -f wait.o
+./mkbuiltins -D . wait.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security wait.c || ( rm -f wait.c ; exit 1 )
+rm -f wait.c
+rm -f getopts.o
+./mkbuiltins -D . getopts.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security getopts.c || ( rm -f getopts.c ; exit 1 )
+rm -f getopts.c
+rm -f shopt.o
+./mkbuiltins -D . shopt.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security shopt.c || ( rm -f shopt.c ; exit 1 )
+rm -f shopt.c
+rm -f printf.o
+./mkbuiltins -D . printf.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security printf.c || ( rm -f printf.c ; exit 1 )
+rm -f printf.c
+rm -f getopt.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security getopt.c
+rm -f bashgetopt.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security bashgetopt.c
+rm -f complete.o
+./mkbuiltins -D . complete.def
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I. -I..  -I.. -I../include -I../lib -I. -I../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -g -O2 -Wno-parentheses -Wno-format-security complete.c || ( rm -f complete.c ; exit 1 )
+rm -f complete.c
+rm -f libbuiltins.a
+ar cr libbuiltins.a builtins.o alias.o bind.o break.o builtin.o caller.o cd.o colon.o command.o common.o declare.o echo.o enable.o eval.o evalfile.o evalstring.o exec.o exit.o fc.o fg_bg.o hash.o help.o history.o jobs.o kill.o let.o mapfile.o pushd.o read.o return.o set.o setattr.o shift.o source.o suspend.o test.o times.o trap.o type.o ulimit.o umask.o wait.o getopts.o shopt.o printf.o getopt.o bashgetopt.o complete.o
+ranlib libbuiltins.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+making lib/glob/libglob.a in ./lib/glob
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/glob'
+rm -f glob.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL -I. -I../.. -I../.. -I../../include -I../../lib -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  -g -O2 -Wno-parentheses -Wno-format-security glob.c
+rm -f strmatch.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL -I. -I../.. -I../.. -I../../include -I../../lib -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  -g -O2 -Wno-parentheses -Wno-format-security strmatch.c
+rm -f smatch.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL -I. -I../.. -I../.. -I../../include -I../../lib -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  -g -O2 -Wno-parentheses -Wno-format-security smatch.c
+rm -f xmbsrtowcs.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL -I. -I../.. -I../.. -I../../include -I../../lib -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  -g -O2 -Wno-parentheses -Wno-format-security xmbsrtowcs.c
+rm -f gmisc.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL -I. -I../.. -I../.. -I../../include -I../../lib -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  -g -O2 -Wno-parentheses -Wno-format-security gmisc.c
+rm -f -f libglob.a
+ar cr libglob.a glob.o strmatch.o smatch.o xmbsrtowcs.o gmisc.o
+test -n "ranlib" && ranlib libglob.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/glob'
+making lib/sh/libsh.a in ./lib/sh
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/sh'
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  clktck.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  clock.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  getenv.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  oslib.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  setlinebuf.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  strnlen.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  itos.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  zread.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  zwrite.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  shtty.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  shmatch.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  eaccess.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  netconn.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  netopen.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  timeval.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  makepath.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  pathcanon.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  pathphys.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  tmpfile.c
+tmpfile.c: In function 'sh_mktmpname':
+tmpfile.c:152:3: warning: 'mktemp' is deprecated (declared at /usr/lib/gcc/i386-pc-fiwix/4.7.4/../../../../i386-pc-fiwix/include/stdlib.h:134): the use of `mktemp' is dangerous; use `mkstemp' instead [-Wdeprecated-declarations]
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  stringlist.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  stringvec.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  spell.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  shquote.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  strtrans.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  snprintf.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  mailstat.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  fmtulong.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  fmtullong.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  fmtumax.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  zcatfd.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  zmapfd.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  winsize.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  wcsdup.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  fpurge.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  zgetline.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  mbscmp.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  uconvert.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  ufuncs.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  casemod.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  input_avail.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  mbscasecmp.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  fnxform.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  unicode.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  shmbchar.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  wcsnwidth.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  mktime.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  mbschr.c
+gcc -c  -I. -I../.. -I../.. -I../../lib -I../../include -I. -I../../lib/intl -I/mnt/builds-fiwix-3.3/bash-4.4.18/lib/intl -DHAVE_CONFIG_H -DSHELL  -g -O2 -Wno-parentheses -Wno-format-security -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H  inet_aton.c
+rm -f libsh.a
+ar cr libsh.a clktck.o clock.o getenv.o oslib.o setlinebuf.o strnlen.o itos.o zread.o zwrite.o shtty.o shmatch.o eaccess.o netconn.o netopen.o timeval.o makepath.o pathcanon.o pathphys.o tmpfile.o stringlist.o stringvec.o spell.o shquote.o strtrans.o snprintf.o mailstat.o fmtulong.o fmtullong.o fmtumax.o zcatfd.o zmapfd.o winsize.o wcsdup.o fpurge.o zgetline.o mbscmp.o uconvert.o ufuncs.o casemod.o input_avail.o mbscasecmp.o fnxform.o unicode.o shmbchar.o wcsnwidth.o mktime.o mbschr.o inet_aton.o
+test -n "ranlib" && ranlib libsh.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/sh'
+making lib/readline/libreadline.a in ./lib/readline
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/readline'
+rm -f readline.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security readline.c
+rm -f vi_mode.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security vi_mode.c
+rm -f funmap.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security funmap.c
+rm -f keymaps.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security keymaps.c
+rm -f parens.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security parens.c
+rm -f search.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security search.c
+rm -f rltty.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security rltty.c
+rm -f complete.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security complete.c
+rm -f bind.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security bind.c
+rm -f isearch.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security isearch.c
+rm -f display.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security display.c
+rm -f signals.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security signals.c
+rm -f util.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security util.c
+rm -f kill.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security kill.c
+rm -f undo.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security undo.c
+rm -f macro.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security macro.c
+rm -f input.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security input.c
+rm -f callback.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security callback.c
+rm -f terminal.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security terminal.c
+rm -f text.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security text.c
+rm -f nls.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security nls.c
+rm -f misc.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security misc.c
+rm -f history.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security history.c
+rm -f histexpand.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security histexpand.c
+rm -f histfile.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security histfile.c
+rm -f histsearch.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security histsearch.c
+rm -f shell.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security shell.c
+rm -f savestring.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security savestring.c
+rm -f mbutil.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security mbutil.c
+rm -f tilde.o
+gcc -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security -DREADLINE_LIBRARY -c ./tilde.c
+rm -f colors.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security colors.c
+rm -f parse-colors.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security parse-colors.c
+rm -f xmalloc.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security xmalloc.c
+rm -f xfree.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security xfree.c
+rm -f compat.o
+gcc -c -DHAVE_CONFIG_H -DSHELL  -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I../.. -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security compat.c
+rm -f libreadline.a
+ar cr libreadline.a readline.o vi_mode.o funmap.o keymaps.o parens.o search.o rltty.o complete.o bind.o isearch.o display.o signals.o util.o kill.o undo.o macro.o input.o callback.o terminal.o text.o nls.o misc.o history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o tilde.o colors.o parse-colors.o xmalloc.o xfree.o compat.o 
+test -n "ranlib" && ranlib libreadline.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/readline'
+making lib/readline/libhistory.a in ./lib/readline
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/readline'
+rm -f libhistory.a
+ar cr libhistory.a history.o histexpand.o histfile.o histsearch.o shell.o savestring.o mbutil.o xmalloc.o xfree.o
+test -n "ranlib" && ranlib libhistory.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/readline'
+making lib/tilde/libtilde.a in ./lib/tilde
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/tilde'
+gcc -c  -DHAVE_CONFIG_H -DSHELL -D_POSIX_VERSION -DHAVE_UNISTD_H -DHAVE_TERMIOS_H -I. -I../.. -I../.. -I../../include -I../../lib  -g -O2 -Wno-parentheses -Wno-format-security tilde.c
+rm -f libtilde.a
+ar cr libtilde.a tilde.o
+test -n "ranlib" && ranlib libtilde.a
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/tilde'
+rm -f bash
+gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde  -L./lib/sh -s    -g -O2 -Wno-parentheses -Wno-format-security -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o assoc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o  -lbuiltins -lglob -lsh -lreadline -lhistory -ltermcap -ltilde  lib/intl/libintl.a /usr/lib/libiconv.a /usr/lib/libiconv.a  
+ls -l bash
+-rwxr-xr-x 1 root root 2034864 Sep 25 13:53 bash
+size bash
+   text	   data	    bss	    dec	    hex	filename
+2011569	  22488	  39392	2073449	 1fa369	bash
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/support'
+rm -f man2html.o
+gcc -c  -DHAVE_CONFIG_H -DSHELL  -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I..  -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security man2html.c
+gcc  -DHAVE_CONFIG_H -DSHELL  -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I..  -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security man2html.o -o man2html 		
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/support'
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/bin
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/info
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash
+( cd ./po/ ; make  DESTDIR=/mnt/builds-fiwix-3.3/installation installdirs )
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+/bin/sh /mnt/builds-fiwix-3.3/bash-4.4.18/./support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/en@quot/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/en@boldquot/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/af/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/bg/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/ca/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/cs/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/da/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/de/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/el/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/eo/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/es/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/et/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/fi/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/fr/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/ga/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/gl/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/hr/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/hu/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/id/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/it/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/ja/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/lt/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/nb/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/nl/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/pl/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/pt_BR/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/ro/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/ru/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/sk/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/sl/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/sr/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/sv/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/tr/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/uk/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/vi/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_CN/LC_MESSAGES
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_TW/LC_MESSAGES
+if test "bash" = "gettext-tools"; then \
+  /bin/sh /mnt/builds-fiwix-3.3/bash-4.4.18/./support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+/bin/install -c -m 0755 bash /mnt/builds-fiwix-3.3/installation/usr/bin/bash
+/bin/install -c -m 0555 bashbug /mnt/builds-fiwix-3.3/installation/usr/bin/bashbug
+/bin/install -c -m 644 ./CHANGES ./COMPAT ./NEWS ./POSIX ./RBASH ./README /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash
+( cd ./doc ; make  \
+	man1dir=/usr/share/man/man1 man1ext=.1 \
+	man3dir=/usr/share/man/man3 man3ext=.3 \
+	infodir=/usr/share/info htmldir=/usr/share/doc/bash DESTDIR=/mnt/builds-fiwix-3.3/installation install )
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/doc'
+/bin/sh ../support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+/bin/sh ../support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/info
+/bin/sh ../support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash
+if test -n "/usr/share/doc/bash" ; then \
+	/bin/sh ../support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash ; \
+fi
+/bin/install -c -m 644 ./bash.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/bash.1
+/bin/install -c -m 644 ./bashbug.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/bashbug.1
+/bin/install -c -m 644 ./FAQ ./INTRO /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash
+if test -f bash.info; then d=.; else d=.; fi; \
+  /bin/install -c -m 644 $d/bash.info /mnt/builds-fiwix-3.3/installation/usr/share/info/bash.info
+if /bin/sh -c 'install-info --version' >/dev/null 2>&1; then \
+	install-info --dir-file=/mnt/builds-fiwix-3.3/installation/usr/share/info/dir /mnt/builds-fiwix-3.3/installation/usr/share/info/bash.info; \
+else true; fi
+if test -n "/usr/share/doc/bash" ; then \
+	/bin/install -c -m 644 ./bash.html /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash ; \
+	/bin/install -c -m 644 ./bashref.html /mnt/builds-fiwix-3.3/installation/usr/share/doc/bash ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/doc'
+( cd ./builtins ; make  DESTDIR=/mnt/builds-fiwix-3.3/installation install )
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+make[1]: Nothing to be done for 'install'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/builtins'
+( cd ./po/ ; make  DESTDIR=/mnt/builds-fiwix-3.3/installation install )
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+test -z "en@quot.gmo en@boldquot.gmo af.gmo bg.gmo ca.gmo cs.gmo da.gmo de.gmo el.gmo eo.gmo es.gmo et.gmo fi.gmo fr.gmo ga.gmo gl.gmo hr.gmo hu.gmo id.gmo it.gmo ja.gmo lt.gmo nb.gmo nl.gmo pl.gmo pt_BR.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo zh_CN.gmo zh_TW.gmo" || make en@quot.gmo en@boldquot.gmo af.gmo bg.gmo ca.gmo cs.gmo da.gmo de.gmo el.gmo eo.gmo es.gmo et.gmo fi.gmo fr.gmo ga.gmo gl.gmo hr.gmo hu.gmo id.gmo it.gmo ja.gmo lt.gmo nb.gmo nl.gmo pl.gmo pt_BR.gmo ro.gmo ru.gmo sk.gmo sl.gmo sr.gmo sv.gmo tr.gmo uk.gmo vi.gmo zh_CN.gmo zh_TW.gmo
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+make[2]: 'en@quot.gmo' is up to date.
+make[2]: 'en@boldquot.gmo' is up to date.
+make[2]: 'af.gmo' is up to date.
+make[2]: 'bg.gmo' is up to date.
+make[2]: 'ca.gmo' is up to date.
+make[2]: 'cs.gmo' is up to date.
+make[2]: 'da.gmo' is up to date.
+make[2]: 'de.gmo' is up to date.
+make[2]: 'el.gmo' is up to date.
+make[2]: 'eo.gmo' is up to date.
+make[2]: 'es.gmo' is up to date.
+make[2]: 'et.gmo' is up to date.
+make[2]: 'fi.gmo' is up to date.
+make[2]: 'fr.gmo' is up to date.
+make[2]: 'ga.gmo' is up to date.
+make[2]: 'gl.gmo' is up to date.
+make[2]: 'hr.gmo' is up to date.
+make[2]: 'hu.gmo' is up to date.
+make[2]: 'id.gmo' is up to date.
+make[2]: 'it.gmo' is up to date.
+make[2]: 'ja.gmo' is up to date.
+make[2]: 'lt.gmo' is up to date.
+make[2]: 'nb.gmo' is up to date.
+make[2]: 'nl.gmo' is up to date.
+make[2]: 'pl.gmo' is up to date.
+make[2]: 'pt_BR.gmo' is up to date.
+make[2]: 'ro.gmo' is up to date.
+make[2]: 'ru.gmo' is up to date.
+make[2]: 'sk.gmo' is up to date.
+make[2]: 'sl.gmo' is up to date.
+make[2]: 'sr.gmo' is up to date.
+make[2]: 'sv.gmo' is up to date.
+make[2]: 'tr.gmo' is up to date.
+make[2]: 'uk.gmo' is up to date.
+make[2]: 'vi.gmo' is up to date.
+make[2]: 'zh_CN.gmo' is up to date.
+make[2]: 'zh_TW.gmo' is up to date.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+touch stamp-po
+/bin/sh /mnt/builds-fiwix-3.3/bash-4.4.18/./support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share
+installing en@quot.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/en@quot/LC_MESSAGES/bash.mo
+installing en@boldquot.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/en@boldquot/LC_MESSAGES/bash.mo
+installing af.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/af/LC_MESSAGES/bash.mo
+installing bg.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/bg/LC_MESSAGES/bash.mo
+installing ca.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ca/LC_MESSAGES/bash.mo
+installing cs.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/cs/LC_MESSAGES/bash.mo
+installing da.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/da/LC_MESSAGES/bash.mo
+installing de.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/de/LC_MESSAGES/bash.mo
+installing el.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/el/LC_MESSAGES/bash.mo
+installing eo.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/eo/LC_MESSAGES/bash.mo
+installing es.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/es/LC_MESSAGES/bash.mo
+installing et.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/et/LC_MESSAGES/bash.mo
+installing fi.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/fi/LC_MESSAGES/bash.mo
+installing fr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/fr/LC_MESSAGES/bash.mo
+installing ga.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ga/LC_MESSAGES/bash.mo
+installing gl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/gl/LC_MESSAGES/bash.mo
+installing hr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/hr/LC_MESSAGES/bash.mo
+installing hu.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/hu/LC_MESSAGES/bash.mo
+installing id.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/id/LC_MESSAGES/bash.mo
+installing it.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/it/LC_MESSAGES/bash.mo
+installing ja.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ja/LC_MESSAGES/bash.mo
+installing lt.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/lt/LC_MESSAGES/bash.mo
+installing nb.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/nb/LC_MESSAGES/bash.mo
+installing nl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/nl/LC_MESSAGES/bash.mo
+installing pl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/pl/LC_MESSAGES/bash.mo
+installing pt_BR.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
+installing ro.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ro/LC_MESSAGES/bash.mo
+installing ru.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/ru/LC_MESSAGES/bash.mo
+installing sk.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sk/LC_MESSAGES/bash.mo
+installing sl.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sl/LC_MESSAGES/bash.mo
+installing sr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sr/LC_MESSAGES/bash.mo
+installing sv.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/sv/LC_MESSAGES/bash.mo
+installing tr.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/tr/LC_MESSAGES/bash.mo
+installing uk.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/uk/LC_MESSAGES/bash.mo
+installing vi.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/vi/LC_MESSAGES/bash.mo
+installing zh_CN.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
+installing zh_TW.gmo as /mnt/builds-fiwix-3.3/installation/usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
+if test "bash" = "gettext-tools"; then \
+  /bin/sh /mnt/builds-fiwix-3.3/bash-4.4.18/./support/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/po'
+( cd /mnt/builds-fiwix-3.3/bash-4.4.18/examples/loadables && make  DESTDIR=/mnt/builds-fiwix-3.3/installation install )
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/examples/loadables'
+make[1]: *** No rule to make target 'install-', needed by 'install'.  Stop.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/examples/loadables'
+make: [Makefile:799: install] Error 2 (ignored)
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation/usr/bin /mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/bashbug: File format not recognized
+strip:./usr/bin/alias: File format not recognized
+strip:./usr/bin/bg: File format not recognized
+strip:./usr/bin/cd: File format not recognized
+strip:./usr/bin/command: File format not recognized
+strip:./usr/bin/fc: File format not recognized
+strip:./usr/bin/fg: File format not recognized
+strip:./usr/bin/getopts: File format not recognized
+strip:./usr/bin/hash: File format not recognized
+strip:./usr/bin/jobs: File format not recognized
+strip:./usr/bin/read: File format not recognized
+strip:./usr/bin/type: File format not recognized
+strip:./usr/bin/ulimit: File format not recognized
+strip:./usr/bin/umask: File format not recognized
+strip:./usr/bin/unalias: File format not recognized
+strip:./usr/bin/wait: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/bash
+./usr/bin/bashbug
+./usr/bin/sh
+./usr/bin/alias
+./usr/bin/bg
+./usr/bin/cd
+./usr/bin/command
+./usr/bin/fc
+./usr/bin/fg
+./usr/bin/getopts
+./usr/bin/hash
+./usr/bin/jobs
+./usr/bin/read
+./usr/bin/type
+./usr/bin/ulimit
+./usr/bin/umask
+./usr/bin/unalias
+./usr/bin/wait
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/bash.1
+./usr/share/man/man1/bashbug.1
+./usr/share/info/
+./usr/share/info/bash.info
+./usr/share/info/dir
+./usr/share/doc/
+./usr/share/doc/bash/
+./usr/share/doc/bash/CHANGES
+./usr/share/doc/bash/COMPAT
+./usr/share/doc/bash/NEWS
+./usr/share/doc/bash/POSIX
+./usr/share/doc/bash/RBASH
+./usr/share/doc/bash/README
+./usr/share/doc/bash/FAQ
+./usr/share/doc/bash/INTRO
+./usr/share/doc/bash/bash.html
+./usr/share/doc/bash/bashref.html
+./usr/share/locale/
+./usr/share/locale/en@quot/
+./usr/share/locale/en@quot/LC_MESSAGES/
+./usr/share/locale/en@quot/LC_MESSAGES/bash.mo
+./usr/share/locale/en@boldquot/
+./usr/share/locale/en@boldquot/LC_MESSAGES/
+./usr/share/locale/en@boldquot/LC_MESSAGES/bash.mo
+./usr/share/locale/af/
+./usr/share/locale/af/LC_MESSAGES/
+./usr/share/locale/af/LC_MESSAGES/bash.mo
+./usr/share/locale/bg/
+./usr/share/locale/bg/LC_MESSAGES/
+./usr/share/locale/bg/LC_MESSAGES/bash.mo
+./usr/share/locale/ca/
+./usr/share/locale/ca/LC_MESSAGES/
+./usr/share/locale/ca/LC_MESSAGES/bash.mo
+./usr/share/locale/cs/
+./usr/share/locale/cs/LC_MESSAGES/
+./usr/share/locale/cs/LC_MESSAGES/bash.mo
+./usr/share/locale/da/
+./usr/share/locale/da/LC_MESSAGES/
+./usr/share/locale/da/LC_MESSAGES/bash.mo
+./usr/share/locale/de/
+./usr/share/locale/de/LC_MESSAGES/
+./usr/share/locale/de/LC_MESSAGES/bash.mo
+./usr/share/locale/el/
+./usr/share/locale/el/LC_MESSAGES/
+./usr/share/locale/el/LC_MESSAGES/bash.mo
+./usr/share/locale/eo/
+./usr/share/locale/eo/LC_MESSAGES/
+./usr/share/locale/eo/LC_MESSAGES/bash.mo
+./usr/share/locale/es/
+./usr/share/locale/es/LC_MESSAGES/
+./usr/share/locale/es/LC_MESSAGES/bash.mo
+./usr/share/locale/et/
+./usr/share/locale/et/LC_MESSAGES/
+./usr/share/locale/et/LC_MESSAGES/bash.mo
+./usr/share/locale/fi/
+./usr/share/locale/fi/LC_MESSAGES/
+./usr/share/locale/fi/LC_MESSAGES/bash.mo
+./usr/share/locale/fr/
+./usr/share/locale/fr/LC_MESSAGES/
+./usr/share/locale/fr/LC_MESSAGES/bash.mo
+./usr/share/locale/ga/
+./usr/share/locale/ga/LC_MESSAGES/
+./usr/share/locale/ga/LC_MESSAGES/bash.mo
+./usr/share/locale/gl/
+./usr/share/locale/gl/LC_MESSAGES/
+./usr/share/locale/gl/LC_MESSAGES/bash.mo
+./usr/share/locale/hr/
+./usr/share/locale/hr/LC_MESSAGES/
+./usr/share/locale/hr/LC_MESSAGES/bash.mo
+./usr/share/locale/hu/
+./usr/share/locale/hu/LC_MESSAGES/
+./usr/share/locale/hu/LC_MESSAGES/bash.mo
+./usr/share/locale/id/
+./usr/share/locale/id/LC_MESSAGES/
+./usr/share/locale/id/LC_MESSAGES/bash.mo
+./usr/share/locale/it/
+./usr/share/locale/it/LC_MESSAGES/
+./usr/share/locale/it/LC_MESSAGES/bash.mo
+./usr/share/locale/ja/
+./usr/share/locale/ja/LC_MESSAGES/
+./usr/share/locale/ja/LC_MESSAGES/bash.mo
+./usr/share/locale/lt/
+./usr/share/locale/lt/LC_MESSAGES/
+./usr/share/locale/lt/LC_MESSAGES/bash.mo
+./usr/share/locale/nb/
+./usr/share/locale/nb/LC_MESSAGES/
+./usr/share/locale/nb/LC_MESSAGES/bash.mo
+./usr/share/locale/nl/
+./usr/share/locale/nl/LC_MESSAGES/
+./usr/share/locale/nl/LC_MESSAGES/bash.mo
+./usr/share/locale/pl/
+./usr/share/locale/pl/LC_MESSAGES/
+./usr/share/locale/pl/LC_MESSAGES/bash.mo
+./usr/share/locale/pt_BR/
+./usr/share/locale/pt_BR/LC_MESSAGES/
+./usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
+./usr/share/locale/ro/
+./usr/share/locale/ro/LC_MESSAGES/
+./usr/share/locale/ro/LC_MESSAGES/bash.mo
+./usr/share/locale/ru/
+./usr/share/locale/ru/LC_MESSAGES/
+./usr/share/locale/ru/LC_MESSAGES/bash.mo
+./usr/share/locale/sk/
+./usr/share/locale/sk/LC_MESSAGES/
+./usr/share/locale/sk/LC_MESSAGES/bash.mo
+./usr/share/locale/sl/
+./usr/share/locale/sl/LC_MESSAGES/
+./usr/share/locale/sl/LC_MESSAGES/bash.mo
+./usr/share/locale/sr/
+./usr/share/locale/sr/LC_MESSAGES/
+./usr/share/locale/sr/LC_MESSAGES/bash.mo
+./usr/share/locale/sv/
+./usr/share/locale/sv/LC_MESSAGES/
+./usr/share/locale/sv/LC_MESSAGES/bash.mo
+./usr/share/locale/tr/
+./usr/share/locale/tr/LC_MESSAGES/
+./usr/share/locale/tr/LC_MESSAGES/bash.mo
+./usr/share/locale/uk/
+./usr/share/locale/uk/LC_MESSAGES/
+./usr/share/locale/uk/LC_MESSAGES/bash.mo
+./usr/share/locale/vi/
+./usr/share/locale/vi/LC_MESSAGES/
+./usr/share/locale/vi/LC_MESSAGES/bash.mo
+./usr/share/locale/zh_CN/
+./usr/share/locale/zh_CN/LC_MESSAGES/
+./usr/share/locale/zh_CN/LC_MESSAGES/bash.mo
+./usr/share/locale/zh_TW/
+./usr/share/locale/zh_TW/LC_MESSAGES/
+./usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
+/mnt/builds-fiwix-3.3
+
+real	1m22.181s
+user	0m45.970s
+sys	0m20.950s

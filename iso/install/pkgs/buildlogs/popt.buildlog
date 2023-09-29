@@ -1,0 +1,263 @@
+/mnt/builds-fiwix-3.3/popt-1.19 /mnt/builds-fiwix-3.3
+patching popt-1.19
+patching file build-aux/config.guess
+patching file build-aux/config.sub
+patching file src/poptconfig.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... -std=gnu11
+checking whether gcc -std=gnu11 understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc -std=gnu11... gcc3
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for wchar.h... yes
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu11 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu11 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu11 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu11 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu11 static flag -static works... yes
+checking if gcc -std=gnu11 supports -c -o file.o... yes
+checking if gcc -std=gnu11 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu11 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+checking for fnmatch.h... yes
+checking for glob.h... yes
+checking for langinfo.h... yes
+checking for libintl.h... no
+checking for mcheck.h... no
+checking for stdalign.h... yes
+checking for library containing setreuid... none required
+checking for getuid... yes
+checking for geteuid... yes
+checking for iconv... no
+checking for mtrace... no
+checking for secure_getenv... no
+checking for __secure_getenv... no
+checking for setreuid... yes
+checking for setuid... yes
+checking for stpcpy... yes
+checking for strerror... yes
+checking for vasprintf... yes
+checking for srandom... yes
+checking for glob_pattern_p... no
+checking for mbsrtowcs... yes
+checking whether NLS is requested... yes
+checking for msgfmt... no
+checking for gmsgfmt... :
+checking for xgettext... no
+checking for msgmerge... no
+checking for ld used by gcc -std=gnu11... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking how to run the C preprocessor... gcc -std=gnu11 -E
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... no
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking for GNU gettext in libintl... no
+checking whether to use NLS... no
+checking for iconv... (cached) yes
+checking for working iconv... (cached) yes
+checking how to link with libiconv... /usr/lib/libiconv.a
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating po/Makefile.in
+config.status: creating Doxyfile
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating popt.pc
+config.status: creating tests/test-poptrc
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19'
+Making all in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/usr/etc\""   -g -O2 -MT popt.lo -MD -MP -MF .deps/popt.Tpo -c -o popt.lo popt.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/usr/etc\" -g -O2 -MT popt.lo -MD -MP -MF .deps/popt.Tpo -c popt.c -o popt.o
+mv -f .deps/popt.Tpo .deps/popt.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/usr/etc\""   -g -O2 -MT poptparse.lo -MD -MP -MF .deps/poptparse.Tpo -c -o poptparse.lo poptparse.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/usr/etc\" -g -O2 -MT poptparse.lo -MD -MP -MF .deps/poptparse.Tpo -c poptparse.c -o poptparse.o
+mv -f .deps/poptparse.Tpo .deps/poptparse.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/usr/etc\""   -g -O2 -MT poptconfig.lo -MD -MP -MF .deps/poptconfig.Tpo -c -o poptconfig.lo poptconfig.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/usr/etc\" -g -O2 -MT poptconfig.lo -MD -MP -MF .deps/poptconfig.Tpo -c poptconfig.c -o poptconfig.o
+mv -f .deps/poptconfig.Tpo .deps/poptconfig.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/usr/etc\""   -g -O2 -MT popthelp.lo -MD -MP -MF .deps/popthelp.Tpo -c -o popthelp.lo popthelp.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/usr/etc\" -g -O2 -MT popthelp.lo -MD -MP -MF .deps/popthelp.Tpo -c popthelp.c -o popthelp.o
+mv -f .deps/popthelp.Tpo .deps/popthelp.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I.. -DPOPT_SYSCONFDIR="\"/usr/etc\""   -g -O2 -MT poptint.lo -MD -MP -MF .deps/poptint.Tpo -c -o poptint.lo poptint.c
+libtool: compile:  gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I.. -I. -I.. -DPOPT_SYSCONFDIR=\"/usr/etc\" -g -O2 -MT poptint.lo -MD -MP -MF .deps/poptint.Tpo -c poptint.c -o poptint.o
+mv -f .deps/poptint.Tpo .deps/poptint.Plo
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2 -no-undefined  -L/usr/lib -liconv -version-info 0:2:0  -s -o libpopt.la -rpath /usr/lib popt.lo poptparse.lo poptconfig.lo popthelp.lo poptint.lo  
+libtool: link: ar cru .libs/libpopt.a  popt.o poptparse.o poptconfig.o popthelp.o poptint.o
+libtool: link: ranlib .libs/libpopt.a
+libtool: link: ( cd ".libs" && rm -f "libpopt.la" && ln -s "../libpopt.la" "libpopt.la" )
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+Making all in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/po'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/po'
+Making all in tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -g -O2 -MT test1.o -MD -MP -MF .deps/test1.Tpo -c -o test1.o test1.c
+mv -f .deps/test1.Tpo .deps/test1.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o test1 test1.o ../src/libpopt.la 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o test1 test1.o  ../src/.libs/libpopt.a -L/usr/lib /usr/lib/libiconv.a
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -g -O2 -MT test2.o -MD -MP -MF .deps/test2.Tpo -c -o test2.o test2.c
+mv -f .deps/test2.Tpo .deps/test2.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o test2 test2.o ../src/libpopt.la 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o test2 test2.o  ../src/.libs/libpopt.a -L/usr/lib /usr/lib/libiconv.a
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -g -O2 -MT tdict.o -MD -MP -MF .deps/tdict.Tpo -c -o tdict.o tdict.c
+mv -f .deps/tdict.Tpo .deps/tdict.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o tdict tdict.o ../src/libpopt.la 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o tdict tdict.o  ../src/.libs/libpopt.a -L/usr/lib /usr/lib/libiconv.a
+gcc -std=gnu11 -DHAVE_CONFIG_H -I. -I..  -I. -I../src   -g -O2 -MT test3.o -MD -MP -MF .deps/test3.Tpo -c -o test3.o test3.c
+mv -f .deps/test3.Tpo .deps/test3.Po
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu11  -g -O2  -s -o test3 test3.o ../src/libpopt.la 
+libtool: link: gcc -std=gnu11 -g -O2 -s -o test3 test3.o  ../src/.libs/libpopt.a -L/usr/lib /usr/lib/libiconv.a
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make  install-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19'
+Making install in src
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ../libtool   --mode=install /bin/install -c   libpopt.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c .libs/libpopt.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libpopt.la
+libtool: install: /bin/install -c .libs/libpopt.a /mnt/builds-fiwix-3.3/installation/usr/lib/libpopt.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libpopt.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libpopt.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/install -c -m 644 popt.h '/mnt/builds-fiwix-3.3/installation/usr/include'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/src'
+Making install in po
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/po'
+if test "popt" = "gettext-tools"; then \
+  /bin/mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /bin/install -c -m 644 ./$file \
+		    /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /mnt/builds-fiwix-3.3/installation/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/po'
+Making install in tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19/tests'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+ /bin/install -c -m 644 popt.3 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man3'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+ /bin/install -c -m 644 popt.pc '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/popt-1.19'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/libpopt.la: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/libpopt.la
+./usr/lib/libpopt.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/popt.pc
+./usr/include/
+./usr/include/popt.h
+./usr/share/
+./usr/share/man/
+./usr/share/man/man3/
+./usr/share/man/man3/popt.3
+/mnt/builds-fiwix-3.3
+
+real	0m5.780s
+user	0m3.110s
+sys	0m2.370s

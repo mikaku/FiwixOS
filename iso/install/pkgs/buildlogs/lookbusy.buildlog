@@ -1,0 +1,112 @@
+/mnt/builds-fiwix-3.3/lookbusy-1.4 /mnt/builds-fiwix-3.3
+patching lookbusy-1.4
+patching file lb.c
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/wait.h that is POSIX.1 compatible... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking for unistd.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for size_t... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking return type of signal handlers... void
+checking whether lstat correctly handles trailing slash... no
+checking whether stat accepts an empty string... no
+checking for vprintf... yes
+checking for _doprnt... no
+checking for sysconf... yes
+checking for gettimeofday... yes
+checking for memmove... yes
+checking for regcomp... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strcasecmp... yes
+checking for strtol... yes
+checking for strtoll... yes
+checking for tzset... yes
+checking for cos in -lm... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... unknown
+checking for _LARGE_FILES value needed for large files... unknown
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+make  all-am
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lookbusy-1.4'
+gcc -DHAVE_CONFIG_H -I.     -g -O2 -MT lb.o -MD -MP -MF .deps/lb.Tpo -c -o lb.o lb.c
+lb.c: In function 'parse_large_size':
+lb.c:230:13: warning: left shift count >= width of type [enabled by default]
+mv -f .deps/lb.Tpo .deps/lb.Po
+gcc  -g -O2  -s -o lookbusy lb.o  -lm 
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lookbusy-1.4'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lookbusy-1.4'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/install -c lookbusy '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 lookbusy.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lookbusy-1.4'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/lookbusy
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/lookbusy.1
+/mnt/builds-fiwix-3.3
+
+real	0m3.834s
+user	0m1.480s
+sys	0m1.250s

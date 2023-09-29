@@ -1,0 +1,46 @@
+/mnt/builds-fiwix-3.3/tree-2.1.1 /mnt/builds-fiwix-3.3
+patching tree-2.1.1
+patching file Makefile
+gcc -O2 -Wall -c -o tree.o tree.c
+tree.c: In function 'main':
+tree.c:131:9: warning: unused variable 'stddata_fd' [-Wunused-variable]
+tree.c: In function 'cond_lower':
+tree.c:1120:3: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -O2 -Wall -c -o list.o list.c
+gcc -O2 -Wall -c -o hash.o hash.c
+gcc -O2 -Wall -c -o color.o color.c
+gcc -O2 -Wall -c -o file.o file.c
+gcc -O2 -Wall -c -o filter.o filter.c
+gcc -O2 -Wall -c -o info.o info.c
+gcc -O2 -Wall -c -o unix.o unix.c
+gcc -O2 -Wall -c -o xml.o xml.c
+xml.c: In function 'xml_fillinfo':
+xml.c:78:3: warning: format '%o' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat]
+xml.c:78:3: warning: format '%o' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat]
+gcc -O2 -Wall -c -o json.o json.c
+json.c: In function 'json_fillinfo':
+json.c:86:3: warning: format '%o' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat]
+json.c:86:3: warning: format '%o' expects argument of type 'unsigned int', but argument 3 has type 'long unsigned int' [-Wformat]
+json.c:95:7: warning: array subscript has type 'char' [-Wchar-subscripts]
+gcc -O2 -Wall -c -o html.o html.c
+gcc -O2 -Wall -c -o strverscmp.o strverscmp.c
+gcc -s -o tree tree.o list.o hash.o color.o file.o filter.o info.o unix.o xml.o json.o html.o strverscmp.o
+install -d /mnt/builds-fiwix-3.3/installation/usr/bin
+install -d /mnt/builds-fiwix-3.3/installation/usr/man/man1
+install tree /mnt/builds-fiwix-3.3/installation/usr/bin/tree; \
+install -m 644 doc/tree.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1/tree.1
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/tree
+./usr/man/
+./usr/man/man1/
+./usr/man/man1/tree.1
+/mnt/builds-fiwix-3.3
+
+real	0m2.014s
+user	0m1.540s
+sys	0m0.400s

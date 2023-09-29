@@ -1,0 +1,803 @@
+/mnt/builds-fiwix-3.3/SDL-1.2.15 /mnt/builds-fiwix-3.3
+patching SDL-1.2.15
+patching file build-scripts/config.guess
+patching file build-scripts/config.sub
+patching file configure.in
+patching file src/video/svga/SDL_svgaevents.c
+patching file src/video/svga/SDL_svgavideo.c
+Generating build information using autoconf
+This may take a while ...
+configure.in:33: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2661: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2678: AC_LINK_IFELSE is expanded from...
+aclocal.m4:1337: _LT_SYS_MODULE_PATH_AIX is expanded from...
+aclocal.m4:4483: _LT_LINKER_SHLIBS is expanded from...
+aclocal.m4:5558: _LT_LANG_C_CONFIG is expanded from...
+aclocal.m4:453: _LT_SETUP is expanded from...
+aclocal.m4:382: LT_INIT is expanded from...
+configure.in:33: the top level
+configure.in:33: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2661: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2678: AC_LINK_IFELSE is expanded from...
+aclocal.m4:4483: _LT_LINKER_SHLIBS is expanded from...
+aclocal.m4:5558: _LT_LANG_C_CONFIG is expanded from...
+aclocal.m4:453: _LT_SETUP is expanded from...
+aclocal.m4:382: LT_INIT is expanded from...
+configure.in:33: the top level
+configure.in:59: warning: AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body
+../../lib/autoconf/lang.m4:193: AC_LANG_CONFTEST is expanded from...
+../../lib/autoconf/general.m4:2661: _AC_LINK_IFELSE is expanded from...
+../../lib/autoconf/general.m4:2678: AC_LINK_IFELSE is expanded from...
+aclocal.m4:1337: _LT_SYS_MODULE_PATH_AIX is expanded from...
+aclocal.m4:5665: _LT_LANG_CXX_CONFIG is expanded from...
+aclocal.m4:1100: _LT_LANG is expanded from...
+aclocal.m4:1083: LT_LANG is expanded from...
+configure.in:59: the top level
+Now you are ready to run ./configure
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc object... ok
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether byte ordering is bigendian... no
+checking for gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking for a BSD-compatible install... /bin/install -c
+checking whether make sets $(MAKE)... yes
+checking for windres... no
+checking for an ANSI C-conforming const... yes
+checking for inline... inline
+checking for working volatile... yes
+checking for ANSI C header files... (cached) yes
+checking for sys/types.h... (cached) yes
+checking stdio.h usability... yes
+checking stdio.h presence... yes
+checking for stdio.h... yes
+checking for stdlib.h... (cached) yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for memory.h... (cached) yes
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking math.h usability... yes
+checking math.h presence... yes
+checking for math.h... yes
+checking iconv.h usability... yes
+checking iconv.h presence... yes
+checking for iconv.h... yes
+checking signal.h usability... yes
+checking signal.h presence... yes
+checking for signal.h... yes
+checking for size_t... yes
+checking for int64_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking for working memcmp... yes
+checking for working strtod... yes
+checking for mprotect... yes
+checking for malloc... yes
+checking for calloc... yes
+checking for realloc... yes
+checking for free... yes
+checking for getenv... yes
+checking for putenv... yes
+checking for unsetenv... yes
+checking for qsort... yes
+checking for abs... yes
+checking for bcopy... yes
+checking for memset... yes
+checking for memcpy... yes
+checking for memmove... yes
+checking for strlen... yes
+checking for strlcpy... yes
+checking for strlcat... yes
+checking for strdup... yes
+checking for _strrev... no
+checking for _strupr... no
+checking for _strlwr... no
+checking for strchr... yes
+checking for strrchr... yes
+checking for strstr... yes
+checking for itoa... yes
+checking for _ltoa... no
+checking for _uitoa... no
+checking for _ultoa... no
+checking for strtol... yes
+checking for strtoul... yes
+checking for _i64toa... no
+checking for _ui64toa... no
+checking for strtoll... yes
+checking for strtoull... yes
+checking for atoi... yes
+checking for atof... yes
+checking for strcmp... yes
+checking for strncmp... yes
+checking for _stricmp... no
+checking for strcasecmp... yes
+checking for _strnicmp... no
+checking for strncasecmp... yes
+checking for sscanf... yes
+checking for snprintf... yes
+checking for vsnprintf... yes
+checking for iconv... no
+checking for sigaction... yes
+checking for setjmp... yes
+checking for nanosleep... yes
+checking for libiconv_open in -liconv... yes
+checking for pow in -lm... yes
+checking for struct sigaction.sa_sigaction... yes
+checking for GCC -fvisibility=hidden option... yes
+checking for dlopen... no
+checking size of void *... 4
+checking for nasm... /bin/nasm
+checking to see if /bin/nasm supports unquoted-sections... yes
+checking to see if /bin/nasm supports symbol-visibility... yes
+checking for Altivec with GCC altivec.h and -maltivec option... no
+checking for Altivec with GCC -maltivec option... no
+checking for Altivec with GCC altivec.h and -faltivec option... no
+checking for Altivec with GCC -faltivec option... no
+checking for OSS audio support... no
+checking for dmedia audio support... no
+checking for ALSA CFLAGS... 
+checking for ALSA LDFLAGS...  -lasound -lm -ldl -lpthread
+checking for libasound headers version >= 0.9.0... not present.
+checking for snd_ctl_open in -lasound... no
+checking for artsc-config... no
+checking for esd-config... no
+checking for ESD - version >= 0.2.8... no
+*** The esd-config script installed by ESD could not be found
+*** If ESD was installed in PREFIX, make sure PREFIX/bin is in
+*** your path, or set the ESD_CONFIG environment variable to the
+*** full path to esd-config.
+checking for pkg-config... /bin/pkg-config
+checking for PulseAudio 0.9 support... no
+checking audio/audiolib.h usability... no
+checking audio/audiolib.h presence... no
+checking for audio/audiolib.h... no
+checking for AuOpenServer in -laudio... no
+checking for NAS audio support... no
+checking for X... no
+checking for framebuffer console support... no
+checking for directfb-config... no
+checking for pkg-config... (cached) /bin/pkg-config
+checking for DirectFB 0.9.15 support... no
+checking for PlayStation 2 GS support... no
+checking for PlayStation 3 Cell support... no
+checking for SVGAlib (1.4.0+) support... yes
+checking for libVGL support... no
+checking for wscons support... no
+checking for OpenGL (GLX) support... no
+checking for Linux 2.4 unified input interface... no
+checking for Touchscreen library support... no
+checking for hid_init in -lusbhid... no
+checking usb.h usability... no
+checking usb.h presence... no
+checking for usb.h... no
+checking libusb.h usability... no
+checking libusb.h presence... no
+checking for libusb.h... no
+checking for hid_init in -lusb... no
+checking for usbhid... no
+checking linux/version.h usability... no
+checking linux/version.h presence... no
+checking for linux/version.h... no
+checking for GCC -Wall option... yes
+checking for necessary GCC -Wno-multichar option... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating sdl-config
+config.status: creating SDL.spec
+config.status: creating SDL.qpg
+config.status: creating sdl.pc
+config.status: creating include/SDL_config.h
+config.status: executing libtool commands
+config.status: executing default commands
+Generating dependencies for ./src/SDL.c
+Generating dependencies for ./src/SDL_error.c
+Generating dependencies for ./src/SDL_fatal.c
+Generating dependencies for ./src/audio/SDL_audio.c
+Generating dependencies for ./src/audio/SDL_audiocvt.c
+Generating dependencies for ./src/audio/SDL_audiodev.c
+Generating dependencies for ./src/audio/SDL_mixer.c
+Generating dependencies for ./src/audio/SDL_mixer_MMX.c
+Generating dependencies for ./src/audio/SDL_mixer_MMX_VC.c
+Generating dependencies for ./src/audio/SDL_mixer_m68k.c
+Generating dependencies for ./src/audio/SDL_wave.c
+Generating dependencies for ./src/cdrom/SDL_cdrom.c
+Generating dependencies for ./src/cpuinfo/SDL_cpuinfo.c
+Generating dependencies for ./src/events/SDL_active.c
+Generating dependencies for ./src/events/SDL_events.c
+Generating dependencies for ./src/events/SDL_expose.c
+Generating dependencies for ./src/events/SDL_keyboard.c
+Generating dependencies for ./src/events/SDL_mouse.c
+Generating dependencies for ./src/events/SDL_quit.c
+Generating dependencies for ./src/events/SDL_resize.c
+Generating dependencies for ./src/file/SDL_rwops.c
+Generating dependencies for ./src/stdlib/SDL_getenv.c
+Generating dependencies for ./src/stdlib/SDL_iconv.c
+Generating dependencies for ./src/stdlib/SDL_malloc.c
+Generating dependencies for ./src/stdlib/SDL_qsort.c
+Generating dependencies for ./src/stdlib/SDL_stdlib.c
+Generating dependencies for ./src/stdlib/SDL_string.c
+Generating dependencies for ./src/thread/SDL_thread.c
+Generating dependencies for ./src/timer/SDL_timer.c
+Generating dependencies for ./src/video/SDL_RLEaccel.c
+Generating dependencies for ./src/video/SDL_blit.c
+Generating dependencies for ./src/video/SDL_blit_0.c
+Generating dependencies for ./src/video/SDL_blit_1.c
+Generating dependencies for ./src/video/SDL_blit_A.c
+Generating dependencies for ./src/video/SDL_blit_N.c
+Generating dependencies for ./src/video/SDL_bmp.c
+Generating dependencies for ./src/video/SDL_cursor.c
+Generating dependencies for ./src/video/SDL_gamma.c
+Generating dependencies for ./src/video/SDL_pixels.c
+Generating dependencies for ./src/video/SDL_stretch.c
+Generating dependencies for ./src/video/SDL_surface.c
+Generating dependencies for ./src/video/SDL_video.c
+Generating dependencies for ./src/video/SDL_yuv.c
+Generating dependencies for ./src/video/SDL_yuv_mmx.c
+Generating dependencies for ./src/video/SDL_yuv_sw.c
+Generating dependencies for ./src/joystick/SDL_joystick.c
+Generating dependencies for ./src/video/dummy/SDL_nullevents.c
+Generating dependencies for ./src/video/dummy/SDL_nullmouse.c
+Generating dependencies for ./src/video/dummy/SDL_nullvideo.c
+Generating dependencies for ./src/audio/disk/SDL_diskaudio.c
+Generating dependencies for ./src/audio/dummy/SDL_dummyaudio.c
+Generating dependencies for ./src/hermes/mmx_main.asm
+Generating dependencies for ./src/hermes/mmxp2_32.asm
+Generating dependencies for ./src/hermes/x86_main.asm
+Generating dependencies for ./src/hermes/x86p_16.asm
+Generating dependencies for ./src/hermes/x86p_32.asm
+Generating dependencies for ./src/video/svga/SDL_svgaevents.c
+Generating dependencies for ./src/video/svga/SDL_svgamouse.c
+Generating dependencies for ./src/video/svga/SDL_svgavideo.c
+Generating dependencies for ./src/timer/unix/SDL_systimer.c
+Generating dependencies for ./src/joystick/dummy/SDL_sysjoystick.c
+Generating dependencies for ./src/cdrom/dummy/SDL_syscdrom.c
+Generating dependencies for ./src/thread/generic/SDL_syscond.c
+Generating dependencies for ./src/thread/generic/SDL_sysmutex.c
+Generating dependencies for ./src/thread/generic/SDL_syssem.c
+Generating dependencies for ./src/thread/generic/SDL_systhread.c
+Generating dependencies for ./src/loadso/dummy/SDL_sysloadso.c
+Generating dependencies for ./src/main/dummy/SDL_dummy_main.c
+/bin/sh build-scripts/mkinstalldirs build
+mkdir -p -- build
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL.c  -o build/SDL.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL.c -o build/SDL.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL_error.c  -o build/SDL_error.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL_error.c -o build/SDL_error.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL_fatal.c  -o build/SDL_fatal.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/SDL_fatal.c -o build/SDL_fatal.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audio.c  -o build/SDL_audio.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audio.c -o build/SDL_audio.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audiocvt.c  -o build/SDL_audiocvt.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audiocvt.c -o build/SDL_audiocvt.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audiodev.c  -o build/SDL_audiodev.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_audiodev.c -o build/SDL_audiodev.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer.c  -o build/SDL_mixer.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer.c -o build/SDL_mixer.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_MMX.c  -o build/SDL_mixer_MMX.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_MMX.c -o build/SDL_mixer_MMX.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_MMX_VC.c  -o build/SDL_mixer_MMX_VC.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_MMX_VC.c -o build/SDL_mixer_MMX_VC.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_m68k.c  -o build/SDL_mixer_m68k.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_mixer_m68k.c -o build/SDL_mixer_m68k.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_wave.c  -o build/SDL_wave.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/SDL_wave.c -o build/SDL_wave.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cdrom/SDL_cdrom.c  -o build/SDL_cdrom.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cdrom/SDL_cdrom.c -o build/SDL_cdrom.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cpuinfo/SDL_cpuinfo.c  -o build/SDL_cpuinfo.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cpuinfo/SDL_cpuinfo.c -o build/SDL_cpuinfo.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_active.c  -o build/SDL_active.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_active.c -o build/SDL_active.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_events.c  -o build/SDL_events.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_events.c -o build/SDL_events.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_expose.c  -o build/SDL_expose.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_expose.c -o build/SDL_expose.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_keyboard.c  -o build/SDL_keyboard.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_keyboard.c -o build/SDL_keyboard.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_mouse.c  -o build/SDL_mouse.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_mouse.c -o build/SDL_mouse.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_quit.c  -o build/SDL_quit.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_quit.c -o build/SDL_quit.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_resize.c  -o build/SDL_resize.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/events/SDL_resize.c -o build/SDL_resize.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/file/SDL_rwops.c  -o build/SDL_rwops.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/file/SDL_rwops.c -o build/SDL_rwops.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_getenv.c  -o build/SDL_getenv.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_getenv.c -o build/SDL_getenv.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_iconv.c  -o build/SDL_iconv.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_iconv.c -o build/SDL_iconv.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_malloc.c  -o build/SDL_malloc.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_malloc.c -o build/SDL_malloc.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_qsort.c  -o build/SDL_qsort.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_qsort.c -o build/SDL_qsort.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_stdlib.c  -o build/SDL_stdlib.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_stdlib.c -o build/SDL_stdlib.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_string.c  -o build/SDL_string.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/stdlib/SDL_string.c -o build/SDL_string.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/SDL_thread.c  -o build/SDL_thread.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/SDL_thread.c -o build/SDL_thread.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/timer/SDL_timer.c  -o build/SDL_timer.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/timer/SDL_timer.c -o build/SDL_timer.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_RLEaccel.c  -o build/SDL_RLEaccel.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_RLEaccel.c -o build/SDL_RLEaccel.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit.c  -o build/SDL_blit.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit.c -o build/SDL_blit.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_0.c  -o build/SDL_blit_0.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_0.c -o build/SDL_blit_0.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_1.c  -o build/SDL_blit_1.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_1.c -o build/SDL_blit_1.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_A.c  -o build/SDL_blit_A.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_A.c -o build/SDL_blit_A.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_N.c  -o build/SDL_blit_N.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_blit_N.c -o build/SDL_blit_N.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_bmp.c  -o build/SDL_bmp.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_bmp.c -o build/SDL_bmp.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_cursor.c  -o build/SDL_cursor.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_cursor.c -o build/SDL_cursor.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_gamma.c  -o build/SDL_gamma.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_gamma.c -o build/SDL_gamma.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_pixels.c  -o build/SDL_pixels.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_pixels.c -o build/SDL_pixels.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_stretch.c  -o build/SDL_stretch.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_stretch.c -o build/SDL_stretch.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_surface.c  -o build/SDL_surface.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_surface.c -o build/SDL_surface.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_video.c  -o build/SDL_video.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_video.c -o build/SDL_video.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv.c  -o build/SDL_yuv.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv.c -o build/SDL_yuv.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv_mmx.c  -o build/SDL_yuv_mmx.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv_mmx.c -o build/SDL_yuv_mmx.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv_sw.c  -o build/SDL_yuv_sw.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/SDL_yuv_sw.c -o build/SDL_yuv_sw.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/joystick/SDL_joystick.c  -o build/SDL_joystick.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/joystick/SDL_joystick.c -o build/SDL_joystick.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullevents.c  -o build/SDL_nullevents.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullevents.c -o build/SDL_nullevents.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullmouse.c  -o build/SDL_nullmouse.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullmouse.c -o build/SDL_nullmouse.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullvideo.c  -o build/SDL_nullvideo.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/dummy/SDL_nullvideo.c -o build/SDL_nullvideo.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/disk/SDL_diskaudio.c  -o build/SDL_diskaudio.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/disk/SDL_diskaudio.c -o build/SDL_diskaudio.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/dummy/SDL_dummyaudio.c  -o build/SDL_dummyaudio.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/audio/dummy/SDL_dummyaudio.c -o build/SDL_dummyaudio.o
+/bin/sh ./libtool --tag=CC --mode=compile build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmx_main.asm -o build/mmx_main.lo
+libtool: compile:  build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmx_main.asm -o build/mmx_main.o
+/bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmx_main.asm -o build/mmx_main.o
+/bin/sh ./libtool --tag=CC --mode=compile build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmxp2_32.asm -o build/mmxp2_32.lo
+libtool: compile:  build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmxp2_32.asm -o build/mmxp2_32.o
+/bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/mmxp2_32.asm -o build/mmxp2_32.o
+/bin/sh ./libtool --tag=CC --mode=compile build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86_main.asm -o build/x86_main.lo
+libtool: compile:  build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86_main.asm -o build/x86_main.o
+/bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86_main.asm -o build/x86_main.o
+/bin/sh ./libtool --tag=CC --mode=compile build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_16.asm -o build/x86p_16.lo
+libtool: compile:  build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_16.asm -o build/x86p_16.o
+/bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_16.asm -o build/x86p_16.o
+/bin/sh ./libtool --tag=CC --mode=compile build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_32.asm -o build/x86p_32.lo
+libtool: compile:  build-scripts/strip_fPIC.sh /bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_32.asm -o build/x86p_32.o
+/bin/nasm -f elf32 -I ./src/hermes/ -DHIDDEN_VISIBILITY -I./src/hermes/ ./src/hermes/x86p_32.asm -o build/x86p_32.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgaevents.c  -o build/SDL_svgaevents.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgaevents.c -o build/SDL_svgaevents.o
+./src/video/svga/SDL_svgaevents.c:54:15: warning: 'vga_keymap' defined but not used [-Wunused-variable]
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgamouse.c  -o build/SDL_svgamouse.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgamouse.c -o build/SDL_svgamouse.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgavideo.c  -o build/SDL_svgavideo.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/video/svga/SDL_svgavideo.c -o build/SDL_svgavideo.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/timer/unix/SDL_systimer.c  -o build/SDL_systimer.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/timer/unix/SDL_systimer.c -o build/SDL_systimer.o
+./src/timer/unix/SDL_systimer.c: In function 'SDL_Delay':
+./src/timer/unix/SDL_systimer.c:118:3: warning: implicit declaration of function 'nanosleep' [-Wimplicit-function-declaration]
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/joystick/dummy/SDL_sysjoystick.c  -o build/SDL_sysjoystick.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/joystick/dummy/SDL_sysjoystick.c -o build/SDL_sysjoystick.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cdrom/dummy/SDL_syscdrom.c  -o build/SDL_syscdrom.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/cdrom/dummy/SDL_syscdrom.c -o build/SDL_syscdrom.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_syscond.c  -o build/SDL_syscond.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_syscond.c -o build/SDL_syscond.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_sysmutex.c  -o build/SDL_sysmutex.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_sysmutex.c -o build/SDL_sysmutex.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_syssem.c  -o build/SDL_syssem.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_syssem.c -o build/SDL_syssem.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_systhread.c  -o build/SDL_systhread.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/thread/generic/SDL_systhread.c -o build/SDL_systhread.o
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/loadso/dummy/SDL_sysloadso.c  -o build/SDL_sysloadso.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/loadso/dummy/SDL_sysloadso.c -o build/SDL_sysloadso.o
+/bin/sh ./libtool --mode=link gcc -o build/libSDL.la build/SDL.lo build/SDL_error.lo build/SDL_fatal.lo build/SDL_audio.lo build/SDL_audiocvt.lo build/SDL_audiodev.lo build/SDL_mixer.lo build/SDL_mixer_MMX.lo build/SDL_mixer_MMX_VC.lo build/SDL_mixer_m68k.lo build/SDL_wave.lo build/SDL_cdrom.lo build/SDL_cpuinfo.lo build/SDL_active.lo build/SDL_events.lo build/SDL_expose.lo build/SDL_keyboard.lo build/SDL_mouse.lo build/SDL_quit.lo build/SDL_resize.lo build/SDL_rwops.lo build/SDL_getenv.lo build/SDL_iconv.lo build/SDL_malloc.lo build/SDL_qsort.lo build/SDL_stdlib.lo build/SDL_string.lo build/SDL_thread.lo build/SDL_timer.lo build/SDL_RLEaccel.lo build/SDL_blit.lo build/SDL_blit_0.lo build/SDL_blit_1.lo build/SDL_blit_A.lo build/SDL_blit_N.lo build/SDL_bmp.lo build/SDL_cursor.lo build/SDL_gamma.lo build/SDL_pixels.lo build/SDL_stretch.lo build/SDL_surface.lo build/SDL_video.lo build/SDL_yuv.lo build/SDL_yuv_mmx.lo build/SDL_yuv_sw.lo build/SDL_joystick.lo build/SDL_nullevents.lo build/SDL_nullmouse.lo build/SDL_nullvideo.lo build/SDL_diskaudio.lo build/SDL_dummyaudio.lo build/mmx_main.lo build/mmxp2_32.lo build/x86_main.lo build/x86p_16.lo build/x86p_32.lo build/SDL_svgaevents.lo build/SDL_svgamouse.lo build/SDL_svgavideo.lo build/SDL_systimer.lo build/SDL_sysjoystick.lo build/SDL_syscdrom.lo build/SDL_syscond.lo build/SDL_sysmutex.lo build/SDL_syssem.lo build/SDL_systhread.lo build/SDL_sysloadso.lo -s -liconv -lm -lvga -no-undefined -rpath /mnt/builds-fiwix-3.3/installation/usr/lib -release 1.2 -version-info 11:4:11
+libtool: link: ar cru build/.libs/libSDL.a  build/SDL.o build/SDL_error.o build/SDL_fatal.o build/SDL_audio.o build/SDL_audiocvt.o build/SDL_audiodev.o build/SDL_mixer.o build/SDL_mixer_MMX.o build/SDL_mixer_MMX_VC.o build/SDL_mixer_m68k.o build/SDL_wave.o build/SDL_cdrom.o build/SDL_cpuinfo.o build/SDL_active.o build/SDL_events.o build/SDL_expose.o build/SDL_keyboard.o build/SDL_mouse.o build/SDL_quit.o build/SDL_resize.o build/SDL_rwops.o build/SDL_getenv.o build/SDL_iconv.o build/SDL_malloc.o build/SDL_qsort.o build/SDL_stdlib.o build/SDL_string.o build/SDL_thread.o build/SDL_timer.o build/SDL_RLEaccel.o build/SDL_blit.o build/SDL_blit_0.o build/SDL_blit_1.o build/SDL_blit_A.o build/SDL_blit_N.o build/SDL_bmp.o build/SDL_cursor.o build/SDL_gamma.o build/SDL_pixels.o build/SDL_stretch.o build/SDL_surface.o build/SDL_video.o build/SDL_yuv.o build/SDL_yuv_mmx.o build/SDL_yuv_sw.o build/SDL_joystick.o build/SDL_nullevents.o build/SDL_nullmouse.o build/SDL_nullvideo.o build/SDL_diskaudio.o build/SDL_dummyaudio.o build/mmx_main.o build/mmxp2_32.o build/x86_main.o build/x86p_16.o build/x86p_32.o build/SDL_svgaevents.o build/SDL_svgamouse.o build/SDL_svgavideo.o build/SDL_systimer.o build/SDL_sysjoystick.o build/SDL_syscdrom.o build/SDL_syscond.o build/SDL_sysmutex.o build/SDL_syssem.o build/SDL_systhread.o build/SDL_sysloadso.o
+libtool: link: ranlib build/.libs/libSDL.a
+libtool: link: ( cd "build/.libs" && rm -f "libSDL.la" && ln -s "../libSDL.la" "libSDL.la" )
+/bin/sh ./libtool --mode=compile gcc -g -O2  -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/main/dummy/SDL_dummy_main.c  -o build/SDL_dummy_main.lo
+libtool: compile:  gcc -g -O2 -I./include -D_GNU_SOURCE=1 -fvisibility=hidden -Wall -c ./src/main/dummy/SDL_dummy_main.c -o build/SDL_dummy_main.o
+/bin/sh ./libtool --mode=link gcc -o build/libSDLmain.la build/SDL_dummy_main.lo -s -liconv -lm -lvga -no-undefined -rpath /mnt/builds-fiwix-3.3/installation/usr/lib -release 1.2 -version-info 11:4:11 -static
+libtool: link: ar cru build/.libs/libSDLmain.a  build/SDL_dummy_main.o
+libtool: link: ranlib build/.libs/libSDLmain.a
+libtool: link: ( cd "build/.libs" && rm -f "libSDLmain.la" && ln -s "../libSDLmain.la" "libSDLmain.la" )
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/bin
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/bin
+/bin/install -c -m 755 sdl-config /mnt/builds-fiwix-3.3/installation/usr/bin/sdl-config
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/include/SDL
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/include/SDL
+for file in SDL.h SDL_active.h SDL_audio.h SDL_byteorder.h SDL_cdrom.h SDL_cpuinfo.h SDL_endian.h SDL_error.h SDL_events.h SDL_getenv.h SDL_joystick.h SDL_keyboard.h SDL_keysym.h SDL_loadso.h SDL_main.h SDL_mouse.h SDL_mutex.h SDL_name.h SDL_opengl.h SDL_platform.h SDL_quit.h SDL_rwops.h SDL_stdinc.h SDL_syswm.h SDL_thread.h SDL_timer.h SDL_types.h SDL_version.h SDL_video.h begin_code.h close_code.h; do \
+    /bin/install -c -m 644 ./include/$file /mnt/builds-fiwix-3.3/installation/usr/include/SDL/$file; \
+done
+/bin/install -c -m 644 include/SDL_config.h /mnt/builds-fiwix-3.3/installation/usr/include/SDL/SDL_config.h
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/lib
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/lib
+/bin/sh ./libtool --mode=install /bin/install -c build/libSDL.la /mnt/builds-fiwix-3.3/installation/usr/lib/libSDL.la
+libtool: install: /bin/install -c build/.libs/libSDL.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libSDL.la
+libtool: install: /bin/install -c build/.libs/libSDL.a /mnt/builds-fiwix-3.3/installation/usr/lib/libSDL.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libSDL.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libSDL.a
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /mnt/builds-fiwix-3.3/installation/usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+/bin/sh ./libtool --mode=install /bin/install -c build/libSDLmain.la /mnt/builds-fiwix-3.3/installation/usr/lib/libSDLmain.la
+libtool: install: /bin/install -c build/.libs/libSDLmain.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libSDLmain.la
+libtool: install: /bin/install -c build/.libs/libSDLmain.a /mnt/builds-fiwix-3.3/installation/usr/lib/libSDLmain.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libSDLmain.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libSDLmain.a
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /mnt/builds-fiwix-3.3/installation/usr/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/aclocal
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/aclocal
+/bin/install -c -m 644 ./sdl.m4 /mnt/builds-fiwix-3.3/installation/usr/share/aclocal/sdl.m4
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig
+/bin/install -c -m 644 sdl.pc /mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig
+/bin/sh build-scripts/mkinstalldirs /mnt/builds-fiwix-3.3/installation/usr/share/man/man3
+mkdir -p -- /mnt/builds-fiwix-3.3/installation/usr/share/man/man3
+for src in ./docs/man3/*.3; do \
+    file=`echo $src | sed -e 's|^.*/||'`; \
+    /bin/install -c -m 644 $src /mnt/builds-fiwix-3.3/installation/usr/share/man/man3/$file; \
+done
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/sdl-config: File format not recognized
+strip:./usr/lib/libSDL.la: File format not recognized
+strip:./usr/lib/libSDLmain.la: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/sdl-config
+./usr/include/
+./usr/include/SDL/
+./usr/include/SDL/SDL.h
+./usr/include/SDL/SDL_active.h
+./usr/include/SDL/SDL_audio.h
+./usr/include/SDL/SDL_byteorder.h
+./usr/include/SDL/SDL_cdrom.h
+./usr/include/SDL/SDL_cpuinfo.h
+./usr/include/SDL/SDL_endian.h
+./usr/include/SDL/SDL_error.h
+./usr/include/SDL/SDL_events.h
+./usr/include/SDL/SDL_getenv.h
+./usr/include/SDL/SDL_joystick.h
+./usr/include/SDL/SDL_keyboard.h
+./usr/include/SDL/SDL_keysym.h
+./usr/include/SDL/SDL_loadso.h
+./usr/include/SDL/SDL_main.h
+./usr/include/SDL/SDL_mouse.h
+./usr/include/SDL/SDL_mutex.h
+./usr/include/SDL/SDL_name.h
+./usr/include/SDL/SDL_opengl.h
+./usr/include/SDL/SDL_platform.h
+./usr/include/SDL/SDL_quit.h
+./usr/include/SDL/SDL_rwops.h
+./usr/include/SDL/SDL_stdinc.h
+./usr/include/SDL/SDL_syswm.h
+./usr/include/SDL/SDL_thread.h
+./usr/include/SDL/SDL_timer.h
+./usr/include/SDL/SDL_types.h
+./usr/include/SDL/SDL_version.h
+./usr/include/SDL/SDL_video.h
+./usr/include/SDL/begin_code.h
+./usr/include/SDL/close_code.h
+./usr/include/SDL/SDL_config.h
+./usr/lib/
+./usr/lib/libSDL.la
+./usr/lib/libSDL.a
+./usr/lib/libSDLmain.la
+./usr/lib/libSDLmain.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/sdl.pc
+./usr/share/
+./usr/share/aclocal/
+./usr/share/aclocal/sdl.m4
+./usr/share/man/
+./usr/share/man/man3/
+./usr/share/man/man3/SDLKey.3
+./usr/share/man/man3/SDL_ActiveEvent.3
+./usr/share/man/man3/SDL_AddTimer.3
+./usr/share/man/man3/SDL_AudioCVT.3
+./usr/share/man/man3/SDL_AudioSpec.3
+./usr/share/man/man3/SDL_BlitSurface.3
+./usr/share/man/man3/SDL_BuildAudioCVT.3
+./usr/share/man/man3/SDL_CD.3
+./usr/share/man/man3/SDL_CDClose.3
+./usr/share/man/man3/SDL_CDEject.3
+./usr/share/man/man3/SDL_CDName.3
+./usr/share/man/man3/SDL_CDNumDrives.3
+./usr/share/man/man3/SDL_CDOpen.3
+./usr/share/man/man3/SDL_CDPause.3
+./usr/share/man/man3/SDL_CDPlay.3
+./usr/share/man/man3/SDL_CDPlayTracks.3
+./usr/share/man/man3/SDL_CDResume.3
+./usr/share/man/man3/SDL_CDStatus.3
+./usr/share/man/man3/SDL_CDStop.3
+./usr/share/man/man3/SDL_CDtrack.3
+./usr/share/man/man3/SDL_CloseAudio.3
+./usr/share/man/man3/SDL_Color.3
+./usr/share/man/man3/SDL_CondBroadcast.3
+./usr/share/man/man3/SDL_CondSignal.3
+./usr/share/man/man3/SDL_CondWait.3
+./usr/share/man/man3/SDL_CondWaitTimeout.3
+./usr/share/man/man3/SDL_ConvertAudio.3
+./usr/share/man/man3/SDL_ConvertSurface.3
+./usr/share/man/man3/SDL_CreateCond.3
+./usr/share/man/man3/SDL_CreateCursor.3
+./usr/share/man/man3/SDL_CreateMutex.3
+./usr/share/man/man3/SDL_CreateRGBSurface.3
+./usr/share/man/man3/SDL_CreateRGBSurfaceFrom.3
+./usr/share/man/man3/SDL_CreateSemaphore.3
+./usr/share/man/man3/SDL_CreateThread.3
+./usr/share/man/man3/SDL_CreateYUVOverlay.3
+./usr/share/man/man3/SDL_Delay.3
+./usr/share/man/man3/SDL_DestroyCond.3
+./usr/share/man/man3/SDL_DestroyMutex.3
+./usr/share/man/man3/SDL_DestroySemaphore.3
+./usr/share/man/man3/SDL_DisplayFormat.3
+./usr/share/man/man3/SDL_DisplayFormatAlpha.3
+./usr/share/man/man3/SDL_DisplayYUVOverlay.3
+./usr/share/man/man3/SDL_EnableKeyRepeat.3
+./usr/share/man/man3/SDL_EnableUNICODE.3
+./usr/share/man/man3/SDL_Event.3
+./usr/share/man/man3/SDL_EventState.3
+./usr/share/man/man3/SDL_ExposeEvent.3
+./usr/share/man/man3/SDL_FillRect.3
+./usr/share/man/man3/SDL_Flip.3
+./usr/share/man/man3/SDL_FreeCursor.3
+./usr/share/man/man3/SDL_FreeSurface.3
+./usr/share/man/man3/SDL_FreeWAV.3
+./usr/share/man/man3/SDL_FreeYUVOverlay.3
+./usr/share/man/man3/SDL_GL_GetAttribute.3
+./usr/share/man/man3/SDL_GL_GetProcAddress.3
+./usr/share/man/man3/SDL_GL_LoadLibrary.3
+./usr/share/man/man3/SDL_GL_SetAttribute.3
+./usr/share/man/man3/SDL_GL_SwapBuffers.3
+./usr/share/man/man3/SDL_GLattr.3
+./usr/share/man/man3/SDL_GetAppState.3
+./usr/share/man/man3/SDL_GetAudioStatus.3
+./usr/share/man/man3/SDL_GetClipRect.3
+./usr/share/man/man3/SDL_GetCursor.3
+./usr/share/man/man3/SDL_GetError.3
+./usr/share/man/man3/SDL_GetEventFilter.3
+./usr/share/man/man3/SDL_GetGamma.3
+./usr/share/man/man3/SDL_GetGammaRamp.3
+./usr/share/man/man3/SDL_GetKeyName.3
+./usr/share/man/man3/SDL_GetKeyState.3
+./usr/share/man/man3/SDL_GetModState.3
+./usr/share/man/man3/SDL_GetMouseState.3
+./usr/share/man/man3/SDL_GetRGB.3
+./usr/share/man/man3/SDL_GetRGBA.3
+./usr/share/man/man3/SDL_GetRelativeMouseState.3
+./usr/share/man/man3/SDL_GetThreadID.3
+./usr/share/man/man3/SDL_Init.3
+./usr/share/man/man3/SDL_GetTicks.3
+./usr/share/man/man3/SDL_GetVideoInfo.3
+./usr/share/man/man3/SDL_GetVideoSurface.3
+./usr/share/man/man3/SDL_InitSubSystem.3
+./usr/share/man/man3/SDL_JoyAxisEvent.3
+./usr/share/man/man3/SDL_JoyBallEvent.3
+./usr/share/man/man3/SDL_JoyButtonEvent.3
+./usr/share/man/man3/SDL_JoyHatEvent.3
+./usr/share/man/man3/SDL_JoystickClose.3
+./usr/share/man/man3/SDL_JoystickEventState.3
+./usr/share/man/man3/SDL_JoystickGetAxis.3
+./usr/share/man/man3/SDL_JoystickGetBall.3
+./usr/share/man/man3/SDL_JoystickGetButton.3
+./usr/share/man/man3/SDL_JoystickGetHat.3
+./usr/share/man/man3/SDL_JoystickIndex.3
+./usr/share/man/man3/SDL_JoystickName.3
+./usr/share/man/man3/SDL_JoystickNumAxes.3
+./usr/share/man/man3/SDL_JoystickNumBalls.3
+./usr/share/man/man3/SDL_JoystickNumButtons.3
+./usr/share/man/man3/SDL_JoystickNumHats.3
+./usr/share/man/man3/SDL_JoystickOpen.3
+./usr/share/man/man3/SDL_JoystickOpened.3
+./usr/share/man/man3/SDL_JoystickUpdate.3
+./usr/share/man/man3/SDL_KeyboardEvent.3
+./usr/share/man/man3/SDL_KillThread.3
+./usr/share/man/man3/SDL_ListModes.3
+./usr/share/man/man3/SDL_LoadBMP.3
+./usr/share/man/man3/SDL_LoadWAV.3
+./usr/share/man/man3/SDL_LockAudio.3
+./usr/share/man/man3/SDL_LockSurface.3
+./usr/share/man/man3/SDL_LockYUVOverlay.3
+./usr/share/man/man3/SDL_MapRGB.3
+./usr/share/man/man3/SDL_MapRGBA.3
+./usr/share/man/man3/SDL_MixAudio.3
+./usr/share/man/man3/SDL_MouseButtonEvent.3
+./usr/share/man/man3/SDL_MouseMotionEvent.3
+./usr/share/man/man3/SDL_NumJoysticks.3
+./usr/share/man/man3/SDL_OpenAudio.3
+./usr/share/man/man3/SDL_Overlay.3
+./usr/share/man/man3/SDL_Palette.3
+./usr/share/man/man3/SDL_PauseAudio.3
+./usr/share/man/man3/SDL_PeepEvents.3
+./usr/share/man/man3/SDL_PixelFormat.3
+./usr/share/man/man3/SDL_PollEvent.3
+./usr/share/man/man3/SDL_PumpEvents.3
+./usr/share/man/man3/SDL_PushEvent.3
+./usr/share/man/man3/SDL_Quit.3
+./usr/share/man/man3/SDL_QuitEvent.3
+./usr/share/man/man3/SDL_QuitSubSystem.3
+./usr/share/man/man3/SDL_RWFromFile.3
+./usr/share/man/man3/SDL_Rect.3
+./usr/share/man/man3/SDL_RemoveTimer.3
+./usr/share/man/man3/SDL_ResizeEvent.3
+./usr/share/man/man3/SDL_SaveBMP.3
+./usr/share/man/man3/SDL_SemPost.3
+./usr/share/man/man3/SDL_SemTryWait.3
+./usr/share/man/man3/SDL_SemValue.3
+./usr/share/man/man3/SDL_SemWait.3
+./usr/share/man/man3/SDL_SemWaitTimeout.3
+./usr/share/man/man3/SDL_SetAlpha.3
+./usr/share/man/man3/SDL_SetClipRect.3
+./usr/share/man/man3/SDL_SetColorKey.3
+./usr/share/man/man3/SDL_SetColors.3
+./usr/share/man/man3/SDL_SetCursor.3
+./usr/share/man/man3/SDL_SetEventFilter.3
+./usr/share/man/man3/SDL_SetGamma.3
+./usr/share/man/man3/SDL_SetGammaRamp.3
+./usr/share/man/man3/SDL_SetModState.3
+./usr/share/man/man3/SDL_SetPalette.3
+./usr/share/man/man3/SDL_SetTimer.3
+./usr/share/man/man3/SDL_SetVideoMode.3
+./usr/share/man/man3/SDL_ShowCursor.3
+./usr/share/man/man3/SDL_Surface.3
+./usr/share/man/man3/SDL_SysWMEvent.3
+./usr/share/man/man3/SDL_ThreadID.3
+./usr/share/man/man3/SDL_UnlockAudio.3
+./usr/share/man/man3/SDL_keysym.3
+./usr/share/man/man3/SDL_UnlockSurface.3
+./usr/share/man/man3/SDL_UnlockYUVOverlay.3
+./usr/share/man/man3/SDL_UpdateRect.3
+./usr/share/man/man3/SDL_UpdateRects.3
+./usr/share/man/man3/SDL_UserEvent.3
+./usr/share/man/man3/SDL_VideoDriverName.3
+./usr/share/man/man3/SDL_VideoInfo.3
+./usr/share/man/man3/SDL_VideoModeOK.3
+./usr/share/man/man3/SDL_WM_GetCaption.3
+./usr/share/man/man3/SDL_WM_GrabInput.3
+./usr/share/man/man3/SDL_WM_IconifyWindow.3
+./usr/share/man/man3/SDL_WM_SetCaption.3
+./usr/share/man/man3/SDL_WM_SetIcon.3
+./usr/share/man/man3/SDL_WM_ToggleFullScreen.3
+./usr/share/man/man3/SDL_WaitEvent.3
+./usr/share/man/man3/SDL_WaitThread.3
+./usr/share/man/man3/SDL_WarpMouse.3
+./usr/share/man/man3/SDL_WasInit.3
+./usr/share/man/man3/SDL_mutexP.3
+./usr/share/man/man3/SDL_mutexV.3
+/mnt/builds-fiwix-3.3
+
+real	0m33.951s
+user	0m15.100s
+sys	0m9.370s

@@ -1,0 +1,76 @@
+/mnt/builds-fiwix-3.3/lua-5.4.6 /mnt/builds-fiwix-3.3
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lua-5.4.6/src'
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lapi.o lapi.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3    -c lcode.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lctype.o lctype.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ldebug.o ldebug.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ldo.o ldo.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ldump.o ldump.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lfunc.o lfunc.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lgc.o lgc.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3    -c llex.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lmem.o lmem.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lobject.o lobject.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lopcodes.o lopcodes.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3    -c lparser.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lstate.o lstate.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lstring.o lstring.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ltable.o ltable.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ltm.o ltm.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lundump.o lundump.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lvm.o lvm.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lzio.o lzio.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lauxlib.o lauxlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lbaselib.o lbaselib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lcorolib.o lcorolib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ldblib.o ldblib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o liolib.o liolib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lmathlib.o lmathlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o loadlib.o loadlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o loslib.o loslib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lstrlib.o lstrlib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o ltablib.o ltablib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lutf8lib.o lutf8lib.c
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o linit.o linit.c
+ar rcu liblua.a lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o lundump.o lvm.o lzio.o lauxlib.o lbaselib.o lcorolib.o ldblib.o liolib.o lmathlib.o loadlib.o loslib.o lstrlib.o ltablib.o lutf8lib.o linit.o 
+ranlib liblua.a
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o lua.o lua.c
+gcc -std=gnu99 -o lua   lua.o liblua.a -lm  
+gcc -std=gnu99 -O2 -Wall -Wextra -DLUA_COMPAT_5_3     -c -o luac.o luac.c
+gcc -std=gnu99 -o luac   luac.o liblua.a -lm  
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lua-5.4.6/src'
+cd src && mkdir -p /mnt/builds-fiwix-3.3/installation/usr/bin /mnt/builds-fiwix-3.3/installation/usr/include /mnt/builds-fiwix-3.3/installation/usr/lib /mnt/builds-fiwix-3.3/installation/usr/man/man1 /mnt/builds-fiwix-3.3/installation/usr/share/lua/5.4 /mnt/builds-fiwix-3.3/installation/usr/lib/lua/5.4
+cd src && install -p -m 0755 lua luac /mnt/builds-fiwix-3.3/installation/usr/bin
+cd src && install -p -m 0644 lua.h luaconf.h lualib.h lauxlib.h lua.hpp /mnt/builds-fiwix-3.3/installation/usr/include
+cd src && install -p -m 0644 liblua.a /mnt/builds-fiwix-3.3/installation/usr/lib
+cd doc && install -p -m 0644 lua.1 luac.1 /mnt/builds-fiwix-3.3/installation/usr/man/man1
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/lua
+./usr/bin/luac
+./usr/include/
+./usr/include/lua.h
+./usr/include/luaconf.h
+./usr/include/lualib.h
+./usr/include/lauxlib.h
+./usr/include/lua.hpp
+./usr/lib/
+./usr/lib/lua/
+./usr/lib/lua/5.4/
+./usr/lib/liblua.a
+./usr/man/
+./usr/man/man1/
+./usr/man/man1/lua.1
+./usr/man/man1/luac.1
+./usr/share/
+./usr/share/lua/
+./usr/share/lua/5.4/
+/mnt/builds-fiwix-3.3
+
+real	0m9.362s
+user	0m7.970s
+sys	0m1.130s

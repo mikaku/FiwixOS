@@ -1,0 +1,109 @@
+/mnt/builds-fiwix-3.3/stress-1.0.4 /mnt/builds-fiwix-3.3
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for unistd.h... (cached) yes
+checking for sqrt in -lm... yes
+checking for basename in -lgen... no
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating doc/Makefile
+config.status: creating test/Makefile
+config.status: executing depfiles commands
+Making all in .
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+Making all in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+gcc -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE=\"stress\" -DVERSION=\"1.0.4\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DHAVE_UNISTD_H=1 -DHAVE_LIBM=1 -I.    -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -g -O2 -MT stress.o -MD -MP -MF .deps/stress.Tpo -c -o stress.o stress.c
+mv -f .deps/stress.Tpo .deps/stress.Po
+gcc -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -g -O2  -s -o stress stress.o  -lm 
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+Making all in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+Making all in test
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+Making install in .
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4'
+Making install in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+test -z "/usr/bin" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/install -c 'stress' '/mnt/builds-fiwix-3.3/installation/usr/bin/stress'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/src'
+Making install in doc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+make[2]: Nothing to be done for 'install-exec-am'.
+test -z "/usr/share/info" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/info"
+ /bin/install -c -m 644 './stress.info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/stress.info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/stress.info'
+test -z "/usr/share/man/man1" || /bin/mkdir -p "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1"
+ /bin/install -c -m 644 'stress.1' '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1/stress.1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/doc'
+Making install in test
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/stress-1.0.4/test'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/stress
+./usr/share/
+./usr/share/info/
+./usr/share/info/stress.info
+./usr/share/info/dir
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/stress.1
+/mnt/builds-fiwix-3.3
+
+real	0m2.749s
+user	0m0.850s
+sys	0m0.790s

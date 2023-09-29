@@ -1,0 +1,120 @@
+/mnt/builds-fiwix-3.3/vttest-20230201 /mnt/builds-fiwix-3.3
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+Configuring for fiwix
+checking for gcc... gcc
+checking for C compiler default output... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for executable suffix... 
+checking for object suffix... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking version of gcc... 4.7.4
+checking if this is really Clang C compiler... no
+checking for gcc option to accept ANSI C... none needed
+checking $CFLAGS variable... ok
+checking $CC variable... ok
+checking for a BSD compatible install... /bin/install -c
+checking for ".PHONY" make-support... yes
+checking if filesystem supports mixed-case filenames... yes
+checking for exctags... no
+checking for ctags... no
+checking for exetags... no
+checking for etags... no
+checking for ctags... no
+checking for etags... no
+checking for lint... no
+checking for cppcheck... no
+checking for splint... no
+checking for groff... /bin/groff
+checking for nroff... /bin/nroff
+checking for tbl... /bin/tbl
+checking for ggrep... no
+checking for grep... grep
+checking for fgrep... grep -F
+checking for man2html... no
+checking for program to convert manpage to html... /bin/groff
+checking if you want to see long compiling messages... yes
+checking if you want to use C11 _Noreturn feature... no
+checking if you want to turn on gcc warnings... no
+checking if the POSIX test-macros are already defined... no
+checking if we should define _XOPEN_SOURCE... no
+checking if we should define _POSIX_C_SOURCE... no
+checking for egrep... grep -E
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking whether exit is declared... yes
+checking return type of signal handlers... void
+checking for fcntl.h... yes
+checking for ioctl.h... no
+checking for sgtty.h... no
+checking for sys/filio.h... no
+checking for sys/ioctl.h... yes
+checking for termio.h... no
+checking for termios.h... yes
+checking for alarm... yes
+checking for rdchk... no
+checking for tcgetattr... yes
+checking for usleep... yes
+checking for vfprintf... yes
+checking for strerror... yes
+checking if POSIX VDISABLE symbol should be used... no
+checking if we may use FIONREAD... yes
+configure: creating ./config.status
+config.status: creating makefile
+config.status: creating config.h
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  charsets.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  color.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  draw.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  esc.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  keyboard.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  main.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  mouse.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  nonvt100.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  printer.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  reports.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  reset.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  setup.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  sixel.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  status.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  tek4014.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  ttymodes.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  unix_io.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  utf8.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  vt220.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  vt320.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  vt420.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  vt52.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  vt520.c
+gcc -c -DHAVE_CONFIG_H -I. -I.  -g -O2  xterm.c
+gcc -g -O2  -s -o vttest charsets.o color.o draw.o esc.o keyboard.o main.o mouse.o nonvt100.o printer.o reports.o reset.o setup.o sixel.o status.o tek4014.o ttymodes.o unix_io.o utf8.o vt220.o vt320.o vt420.o vt52.o vt520.o xterm.o 
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/bin
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+/bin/install -c vttest /mnt/builds-fiwix-3.3/installation/usr/bin/`echo vttest        | sed 's/$//'         |sed 's,x,x,'|sed 's/$//'`
+/bin/install -c -m 644 ./vttest.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/`echo vttest.1| sed 's/\.1$//'|sed 's,x,x,'|sed 's/$/.1/'`
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/vttest
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/vttest.1
+/mnt/builds-fiwix-3.3
+
+real	0m7.679s
+user	0m5.700s
+sys	0m1.500s

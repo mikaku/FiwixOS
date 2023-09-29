@@ -1,0 +1,78 @@
+/mnt/builds-fiwix-3.3/vixie-cron-4.1 /mnt/builds-fiwix-3.3
+patching vixie-cron-4.1
+patching file config.h
+patching file cron.c
+patching file do_command.c
+patching file Makefile
+patching file pathnames.h
+patching file popen.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o cron.o cron.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o database.o database.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o user.o user.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o entry.o entry.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o job.o job.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o do_command.o do_command.c
+do_command.c: In function 'child_process':
+do_command.c:415:5: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+do_command.c:415:5: warning: zero-length gnu_printf format string [-Wformat-zero-length]
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o misc.o misc.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o env.o env.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o popen.o popen.c
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o pw_dup.o pw_dup.c
+gcc -Wall -Wno-unused -Wno-comment  -o cron cron.o database.o user.o entry.o job.o do_command.o misc.o env.o popen.o pw_dup.o 
+gcc -Wall -Wno-unused -Wno-comment -g -I.    -c -o crontab.o crontab.c
+gcc -Wall -Wno-unused -Wno-comment  -o crontab crontab.o misc.o entry.o env.o pw_dup.o 
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/sbin
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/bin
+install -c -m  111 -o root -s cron    /mnt/builds-fiwix-3.3/installation/usr/sbin/
+install -c -m 4111 -o root -s crontab /mnt/builds-fiwix-3.3/installation/usr/bin/
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/man/man8
+mkdir -p /mnt/builds-fiwix-3.3/installation/usr/share/man/man5
+sh putman.sh crontab.1 /mnt/builds-fiwix-3.3/installation/usr/share/man
++ cp crontab.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1/crontab.1
++ set +x
+sh putman.sh cron.8    /mnt/builds-fiwix-3.3/installation/usr/share/man
++ cp cron.8 /mnt/builds-fiwix-3.3/installation/usr/share/man/man8/cron.8
++ set +x
+sh putman.sh crontab.5 /mnt/builds-fiwix-3.3/installation/usr/share/man
++ cp crontab.5 /mnt/builds-fiwix-3.3/installation/usr/share/man/man5/crontab.5
++ set +x
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation/usr/sbin /mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./etc/rc.d/init.d/crond: File format not recognized
+./
+./usr/
+./usr/sbin/
+./usr/sbin/cron
+./usr/sbin/crond
+./usr/bin/
+./usr/bin/crontab
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/crontab.1
+./usr/share/man/man8/
+./usr/share/man/man8/cron.8
+./usr/share/man/man5/
+./usr/share/man/man5/crontab.5
+./var/
+./var/cron/
+./var/cron/tabs/
+./etc/
+./etc/cron.d/
+./etc/rc.d/
+./etc/rc.d/init.d/
+./etc/rc.d/init.d/crond
+./etc/logrotate.d/
+./etc/logrotate.d/cron
+/mnt/builds-fiwix-3.3
+
+real	0m2.525s
+user	0m0.510s
+sys	0m0.800s

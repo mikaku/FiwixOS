@@ -1,0 +1,1205 @@
+/mnt/builds-fiwix-3.3/libtool-2.4.7 /mnt/builds-fiwix-3.3
+## ------------------------- ##
+## Configuring libtool 2.4.7 ##
+## ------------------------- ##
+
+checking for GNU M4 that supports accurate traces... /bin/m4
+checking whether /bin/m4 accepts --gnu... yes
+checking how m4 supports trace files... --debugfile
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+configure: autobuild project... GNU Libtool
+configure: autobuild revision... 2.4.7
+configure: autobuild hostname... (none)
+configure: autobuild mode... default
+configure: autobuild timestamp... 20230925T142514Z
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking whether the compiler is clang... no
+checking for compiler option needed when checking for declarations... none
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for Minix Amsterdam compiler... no
+checking for ar... ar
+checking for ranlib... ranlib
+checking how to run the C preprocessor... gcc -E
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for file... file
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... (cached) ranlib
+checking command to parse /bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... no
+checking for dlopen in -lsvld... no
+checking for dld_link in -ldld... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking what extension is used for runtime loadable modules... .so
+checking what variable specifies run-time module search path... 
+checking for the default library search path... /lib /usr/lib
+checking for library containing dlopen... no
+checking for dlopen in -lsvld... (cached) no
+checking for shl_load... (cached) no
+checking for shl_load in -ldld... (cached) no
+checking for dld_link in -ldld... (cached) no
+checking for _ prefix in compiled symbols... no
+checking whether deplibs are loaded by dlopen... unknown
+checking for argz.h... yes
+checking for error_t... yes
+checking for argz_add... yes
+checking for argz_append... yes
+checking for argz_count... yes
+checking for argz_create_sep... yes
+checking for argz_insert... yes
+checking for argz_next... yes
+checking for argz_stringify... yes
+checking if argz actually works... yes
+checking whether libtool supports -dlopen/-dlpreopen... yes
+checking for unistd.h... (cached) yes
+checking for dl.h... no
+checking for sys/dl.h... no
+checking for dld.h... no
+checking for mach-o/dyld.h... no
+checking for dirent.h... yes
+checking for closedir... yes
+checking for opendir... yes
+checking for readdir... yes
+checking for strlcat... yes
+checking for strlcpy... yes
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking for g77... no
+checking for xlf... no
+checking for f77... no
+checking for frt... no
+checking for pgf77... no
+checking for cf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking for xlf90... no
+checking for f90... no
+checking for pgf90... no
+checking for pghpf... no
+checking for epcf90... no
+checking for gfortran... no
+checking for g95... no
+checking for xlf95... no
+checking for f95... no
+checking for fort... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgfortran... no
+checking for pgf95... no
+checking for lf95... no
+checking for ftn... no
+checking for nagfor... no
+checking whether we are using the GNU Fortran 77 compiler... no
+checking whether  accepts -g... no
+checking for gfortran... no
+checking for g95... no
+checking for xlf95... no
+checking for f95... no
+checking for fort... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgfortran... no
+checking for pgf95... no
+checking for lf95... no
+checking for ftn... no
+checking for nagfor... no
+checking for xlf90... no
+checking for f90... no
+checking for pgf90... no
+checking for pghpf... no
+checking for epcf90... no
+checking for g77... no
+checking for xlf... no
+checking for f77... no
+checking for frt... no
+checking for pgf77... no
+checking for cf77... no
+checking for fort77... no
+checking for fl32... no
+checking for af77... no
+checking whether we are using the GNU Fortran compiler... no
+checking whether  accepts -g... no
+checking for gccgo... no
+checking for gcj... no
+checking for windres... no
+checking for C compiler option to allow warnings... -Wno-error
+checking for C++ compiler option to allow warnings... -Wno-error
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating gnulib-tests/Makefile
+config.status: creating config.h
+config.status: executing tests/atconfig commands
+config.status: executing depfiles commands
+config.status: executing libtool commands
+  GEN      libtoolize
+make  all-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+Making all in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+  CC       libltdl/loaders/libltdl_la-preopen.lo
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:251:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:253:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:300:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:298:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:309:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:307:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:319:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:317:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:334:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:329:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:347:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:345:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:381:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:379:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:396:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:390:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:397:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:391:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:406:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:404:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:436:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:434:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:447:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:445:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:456:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:454:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:467:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:465:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:501:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:499:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:510:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:508:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:521:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:519:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:542:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:540:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:554:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:552:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:567:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:565:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:587:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:585:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:594:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/loaders/preopen.c:32:
+./config.h:592:0: note: this is the location of the previous definition
+  CC       libltdl/libltdl_la-lt__alloc.lo
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:251:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:253:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:300:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:298:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:309:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:307:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:319:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:317:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:334:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:329:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:347:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:345:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:381:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:379:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:396:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:390:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:397:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:391:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:406:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:404:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:436:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:434:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:447:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:445:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:456:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:454:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:467:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:465:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:501:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:499:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:510:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:508:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:521:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:519:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:542:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:540:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:554:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:552:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:567:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:565:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:587:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:585:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt__alloc.c:32:
+./config.h:594:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt__alloc.c:32:
+./config.h:592:0: note: this is the location of the previous definition
+  CC       libltdl/libltdl_la-lt_dlloader.lo
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:251:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:253:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:300:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:298:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:309:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:307:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:319:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:317:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:334:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:329:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:347:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:345:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:381:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:379:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:396:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:390:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:397:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:391:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:406:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:404:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:436:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:434:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:447:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:445:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:456:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:454:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:467:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:465:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:501:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:499:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:510:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:508:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:521:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:519:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:542:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:540:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:554:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:552:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:567:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:565:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:587:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:585:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:594:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_dlloader.c:32:
+./config.h:592:0: note: this is the location of the previous definition
+  CC       libltdl/libltdl_la-lt_error.lo
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:251:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:253:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:300:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:298:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:309:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:307:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:319:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:317:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:334:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:329:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:347:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:345:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:381:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:379:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:396:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:390:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:397:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:391:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:406:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:404:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:436:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:434:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:447:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:445:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:456:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:454:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:467:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:465:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:501:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:499:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:510:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:508:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:521:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:519:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:542:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:540:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:554:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:552:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:567:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:565:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:587:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:585:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/lt_error.c:32:
+./config.h:594:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/lt_error.c:32:
+./config.h:592:0: note: this is the location of the previous definition
+  CC       libltdl/libltdl_la-ltdl.lo
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:251:0: warning: "_GL_HAS_ATTRIBUTE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:253:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:300:0: warning: "_GL_ATTRIBUTE_ALLOC_SIZE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:298:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:309:0: warning: "_GL_ATTRIBUTE_ALWAYS_INLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:307:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:319:0: warning: "_GL_ATTRIBUTE_ARTIFICIAL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:317:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:334:0: warning: "_GL_ATTRIBUTE_COLD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:329:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:347:0: warning: "_GL_ATTRIBUTE_CONST" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:345:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:381:0: warning: "_GL_ATTRIBUTE_DEPRECATED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:379:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:396:0: warning: "_GL_ATTRIBUTE_ERROR" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:390:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:397:0: warning: "_GL_ATTRIBUTE_WARNING" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:391:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:406:0: warning: "_GL_ATTRIBUTE_EXTERNALLY_VISIBLE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:404:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:436:0: warning: "_GL_ATTRIBUTE_FORMAT" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:434:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:447:0: warning: "_GL_ATTRIBUTE_LEAF" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:445:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:456:0: warning: "_GL_ATTRIBUTE_MALLOC" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:454:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:467:0: warning: "_GL_ATTRIBUTE_MAY_ALIAS" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:465:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:501:0: warning: "_GL_ATTRIBUTE_NODISCARD" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:499:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:510:0: warning: "_GL_ATTRIBUTE_NOINLINE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:508:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:521:0: warning: "_GL_ATTRIBUTE_NONNULL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:519:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:542:0: warning: "_GL_ATTRIBUTE_NOTHROW" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:540:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:554:0: warning: "_GL_ATTRIBUTE_PACKED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:552:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:567:0: warning: "_GL_ATTRIBUTE_PURE" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:565:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:587:0: warning: "_GL_ATTRIBUTE_SENTINEL" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:585:0: note: this is the location of the previous definition
+In file included from libltdl/libltdl/lt__dirent.h:36:0,
+                 from libltdl/libltdl/lt__private.h:53,
+                 from libltdl/ltdl.c:32:
+./config.h:594:0: warning: "_GL_ATTRIBUTE_UNUSED" redefined [enabled by default]
+In file included from libltdl/libltdl/lt__private.h:36:0,
+                 from libltdl/ltdl.c:32:
+./config.h:592:0: note: this is the location of the previous definition
+  CC       libltdl/libltdl_la-slist.lo
+  CCLD     libltdl/libltdl.la
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+Making all in gnulib-tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+## ---------------------------------------------------- ##
+## ------------------- Gnulib tests ------------------- ##
+## You can ignore compiler warnings in this directory.  ##
+## ---------------------------------------------------- ##
+make  all-recursive
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+Making all in .
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+make  install-recursive
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+Making install in .
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/install -c libtool '/mnt/builds-fiwix-3.3/installation/usr/bin'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ./libtool   --mode=install /bin/install -c   libltdl/libltdl.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c libltdl/.libs/libltdl.lai /mnt/builds-fiwix-3.3/installation/usr/lib/libltdl.la
+libtool: install: /bin/install -c libltdl/.libs/libltdl.a /mnt/builds-fiwix-3.3/installation/usr/lib/libltdl.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/libltdl.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/libltdl.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+ GREP='/bin/grep' SED='/bin/sed' './build-aux/inline-source' libtoolize > '/mnt/builds-fiwix-3.3/installation/usr/bin/libtoolize'
+rm -rf '/mnt/builds-fiwix-3.3/installation/usr/share/libtool'/*
+ /bin/install -c -m 644 './m4/libtool.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/libtool.m4'
+ /bin/install -c -m 644 './m4/ltargz.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/ltargz.m4'
+ /bin/install -c -m 644 './m4/ltdl.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/ltdl.m4'
+ /bin/install -c -m 644 './m4/ltoptions.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/ltoptions.m4'
+ /bin/install -c -m 644 './m4/ltsugar.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/ltsugar.m4'
+ /bin/install -c -m 644 './m4/ltversion.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/ltversion.m4'
+ /bin/install -c -m 644 './m4/lt~obsolete.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/aclocal/lt~obsolete.m4'
+ /bin/install -c './build-aux/compile' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/compile'
+ /bin/install -c './build-aux/config.guess' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/config.guess'
+ /bin/install -c './build-aux/config.sub' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/config.sub'
+ /bin/install -c './build-aux/depcomp' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/depcomp'
+ /bin/install -c './build-aux/install-sh' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/install-sh'
+ /bin/install -c './build-aux/missing' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/missing'
+ /bin/install -c -m 644 './build-aux/ltmain.sh' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/build-aux/ltmain.sh'
+ /bin/install -c -m 644 './libltdl/COPYING.LIB' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/COPYING.LIB'
+ /bin/install -c -m 644 './libltdl/Makefile.am' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/Makefile.am'
+ /bin/install -c -m 644 './libltdl/README' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/README'
+ /bin/install -c -m 644 './libltdl/configure.ac' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/configure.ac'
+ /bin/install -c -m 644 './libltdl/aclocal.m4' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/aclocal.m4'
+ /bin/install -c -m 644 './libltdl/Makefile.in' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/Makefile.in'
+ /bin/install -c -m 644 './libltdl/config-h.in' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/config-h.in'
+ /bin/install -c -m 644 './libltdl/configure' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/configure'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__alloc.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__alloc.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__argz_.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__argz_.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__dirent.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__dirent.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__glibc.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__glibc.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__private.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__private.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt__strl.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt__strl.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt_dlloader.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt_dlloader.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt_error.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt_error.h'
+ /bin/install -c -m 644 './libltdl/libltdl/lt_system.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/lt_system.h'
+ /bin/install -c -m 644 './libltdl/libltdl/slist.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/libltdl/slist.h'
+ /bin/install -c -m 644 './libltdl/loaders/dld_link.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/dld_link.c'
+ /bin/install -c -m 644 './libltdl/loaders/dlopen.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/dlopen.c'
+ /bin/install -c -m 644 './libltdl/loaders/dyld.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/dyld.c'
+ /bin/install -c -m 644 './libltdl/loaders/load_add_on.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/load_add_on.c'
+ /bin/install -c -m 644 './libltdl/loaders/loadlibrary.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/loadlibrary.c'
+ /bin/install -c -m 644 './libltdl/loaders/preopen.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/preopen.c'
+ /bin/install -c -m 644 './libltdl/loaders/shl_load.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/loaders/shl_load.c'
+ /bin/install -c -m 644 './libltdl/lt__alloc.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt__alloc.c'
+ /bin/install -c -m 644 './libltdl/lt__argz.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt__argz.c'
+ /bin/install -c -m 644 './libltdl/lt__dirent.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt__dirent.c'
+ /bin/install -c -m 644 './libltdl/lt__strl.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt__strl.c'
+ /bin/install -c -m 644 './libltdl/lt_dlloader.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt_dlloader.c'
+ /bin/install -c -m 644 './libltdl/lt_error.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/lt_error.c'
+ /bin/install -c -m 644 './libltdl/ltdl.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/ltdl.c'
+ /bin/install -c -m 644 './libltdl/ltdl.h' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/ltdl.h'
+ /bin/install -c -m 644 './libltdl/ltdl.mk' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/ltdl.mk'
+ /bin/install -c -m 644 './libltdl/slist.c' '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/slist.c'
+chmod a+x '/mnt/builds-fiwix-3.3/installation/usr/share/libtool/configure'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/install -c -m 644 libltdl/ltdl.h '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ /bin/install -c -m 644 ./doc/libtool.info ./doc/libtool.info-1 ./doc/libtool.info-2 '/mnt/builds-fiwix-3.3/installation/usr/share/info'
+ install-info --info-dir='/mnt/builds-fiwix-3.3/installation/usr/share/info' '/mnt/builds-fiwix-3.3/installation/usr/share/info/libtool.info'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include/libltdl'
+ /bin/install -c -m 644 libltdl/libltdl/lt_system.h libltdl/libltdl/lt_error.h libltdl/libltdl/lt_dlloader.h '/mnt/builds-fiwix-3.3/installation/usr/include/libltdl'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 ./doc/libtool.1 ./doc/libtoolize.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+Making install in gnulib-tests
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make  install-recursive
+make[3]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+Making install in .
+make[4]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[5]: Entering directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[4]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[3]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7/gnulib-tests'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/libtool-2.4.7'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/libtool: File format not recognized
+strip:./usr/bin/libtoolize: File format not recognized
+strip:./usr/lib/libltdl.la: File format not recognized
+strip:./usr/share/libtool/build-aux/compile: File format not recognized
+strip:./usr/share/libtool/build-aux/config.guess: File format not recognized
+strip:./usr/share/libtool/build-aux/config.sub: File format not recognized
+strip:./usr/share/libtool/build-aux/depcomp: File format not recognized
+strip:./usr/share/libtool/build-aux/install-sh: File format not recognized
+strip:./usr/share/libtool/build-aux/missing: File format not recognized
+strip:./usr/share/libtool/configure: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/libtool
+./usr/bin/libtoolize
+./usr/lib/
+./usr/lib/libltdl.la
+./usr/lib/libltdl.a
+./usr/share/
+./usr/share/aclocal/
+./usr/share/aclocal/libtool.m4
+./usr/share/aclocal/ltargz.m4
+./usr/share/aclocal/ltdl.m4
+./usr/share/aclocal/ltoptions.m4
+./usr/share/aclocal/ltsugar.m4
+./usr/share/aclocal/ltversion.m4
+./usr/share/aclocal/lt~obsolete.m4
+./usr/share/libtool/
+./usr/share/libtool/build-aux/
+./usr/share/libtool/build-aux/compile
+./usr/share/libtool/build-aux/config.guess
+./usr/share/libtool/build-aux/config.sub
+./usr/share/libtool/build-aux/depcomp
+./usr/share/libtool/build-aux/install-sh
+./usr/share/libtool/build-aux/missing
+./usr/share/libtool/build-aux/ltmain.sh
+./usr/share/libtool/COPYING.LIB
+./usr/share/libtool/Makefile.am
+./usr/share/libtool/README
+./usr/share/libtool/configure.ac
+./usr/share/libtool/aclocal.m4
+./usr/share/libtool/Makefile.in
+./usr/share/libtool/config-h.in
+./usr/share/libtool/configure
+./usr/share/libtool/libltdl/
+./usr/share/libtool/libltdl/lt__alloc.h
+./usr/share/libtool/libltdl/lt__argz_.h
+./usr/share/libtool/libltdl/lt__dirent.h
+./usr/share/libtool/libltdl/lt__glibc.h
+./usr/share/libtool/libltdl/lt__private.h
+./usr/share/libtool/libltdl/lt__strl.h
+./usr/share/libtool/libltdl/lt_dlloader.h
+./usr/share/libtool/libltdl/lt_error.h
+./usr/share/libtool/libltdl/lt_system.h
+./usr/share/libtool/libltdl/slist.h
+./usr/share/libtool/loaders/
+./usr/share/libtool/loaders/dld_link.c
+./usr/share/libtool/loaders/dlopen.c
+./usr/share/libtool/loaders/dyld.c
+./usr/share/libtool/loaders/load_add_on.c
+./usr/share/libtool/loaders/loadlibrary.c
+./usr/share/libtool/loaders/preopen.c
+./usr/share/libtool/loaders/shl_load.c
+./usr/share/libtool/lt__alloc.c
+./usr/share/libtool/lt__argz.c
+./usr/share/libtool/lt__dirent.c
+./usr/share/libtool/lt__strl.c
+./usr/share/libtool/lt_dlloader.c
+./usr/share/libtool/lt_error.c
+./usr/share/libtool/ltdl.c
+./usr/share/libtool/ltdl.h
+./usr/share/libtool/ltdl.mk
+./usr/share/libtool/slist.c
+./usr/share/info/
+./usr/share/info/libtool.info
+./usr/share/info/libtool.info-1
+./usr/share/info/libtool.info-2
+./usr/share/info/dir
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/libtool.1
+./usr/share/man/man1/libtoolize.1
+./usr/include/
+./usr/include/ltdl.h
+./usr/include/libltdl/
+./usr/include/libltdl/lt_system.h
+./usr/include/libltdl/lt_error.h
+./usr/include/libltdl/lt_dlloader.h
+/mnt/builds-fiwix-3.3
+
+real	0m8.702s
+user	0m2.910s
+sys	0m4.330s

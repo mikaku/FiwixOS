@@ -1,0 +1,52 @@
+/mnt/builds-fiwix-3.3/dmidecode-2.12 /mnt/builds-fiwix-3.3
+patching dmidecode-2.12
+patching file Makefile
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c dmidecode.c -o dmidecode.o
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c dmiopt.c -o dmiopt.o
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c dmioem.c -o dmioem.o
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c util.c -o util.o
+gcc  dmidecode.o dmiopt.o dmioem.o util.o -o dmidecode
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c biosdecode.c -o biosdecode.o
+gcc  biosdecode.o util.o -o biosdecode
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c ownership.c -o ownership.o
+gcc  ownership.o util.o -o ownership
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c vpddecode.c -o vpddecode.o
+gcc -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual -Wcast-align -Wwrite-strings -Wmissing-prototypes -Winline -Wundef -O2 -c vpdopt.c -o vpdopt.o
+gcc  vpddecode.o vpdopt.o util.o -o vpddecode
+install -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/sbin
+for program in dmidecode biosdecode ownership vpddecode ; do \
+install -m 755 $program /mnt/builds-fiwix-3.3/installation/usr/sbin ; done
+install -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/share/man/man8
+for program in dmidecode biosdecode ownership vpddecode ; do \
+install -m 644 man/$program.8 /mnt/builds-fiwix-3.3/installation/usr/share/man/man8 ; done
+install -m 755 -d /mnt/builds-fiwix-3.3/installation/usr/share/doc/dmidecode
+install -m 644 README /mnt/builds-fiwix-3.3/installation/usr/share/doc/dmidecode
+install -m 644 CHANGELOG /mnt/builds-fiwix-3.3/installation/usr/share/doc/dmidecode
+install -m 644 AUTHORS /mnt/builds-fiwix-3.3/installation/usr/share/doc/dmidecode
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/sbin/
+./usr/sbin/dmidecode
+./usr/sbin/biosdecode
+./usr/sbin/ownership
+./usr/sbin/vpddecode
+./usr/share/
+./usr/share/man/
+./usr/share/man/man8/
+./usr/share/man/man8/dmidecode.8
+./usr/share/man/man8/biosdecode.8
+./usr/share/man/man8/ownership.8
+./usr/share/man/man8/vpddecode.8
+./usr/share/doc/
+./usr/share/doc/dmidecode/
+./usr/share/doc/dmidecode/README
+./usr/share/doc/dmidecode/CHANGELOG
+./usr/share/doc/dmidecode/AUTHORS
+/mnt/builds-fiwix-3.3
+
+real	0m2.299s
+user	0m1.720s
+sys	0m0.430s

@@ -1,0 +1,68 @@
+/mnt/builds-fiwix-3.3/dos2unix-7.5.0 /mnt/builds-fiwix-3.3
+patching dos2unix-7.5.0
+patching file Makefile
+cc   -DVER_REVISION=\"7.5.0\" -DVER_DATE=\"2023-05-17\" -DVER_AUTHOR=\"'Erwin Waterlander'\" -DDEBUG=0   -DD2U_UNICODE  -O2 -Wall -Wextra -Wconversion    -c dos2unix.c -o dos2unix.o
+cc   -DVER_REVISION=\"7.5.0\" -DVER_DATE=\"2023-05-17\" -DVER_AUTHOR=\"'Erwin Waterlander'\" -DDEBUG=0   -DD2U_UNICODE  -O2 -Wall -Wextra -Wconversion    -c querycp.c -o querycp.o
+cc   -DVER_REVISION=\"7.5.0\" -DVER_DATE=\"2023-05-17\" -DVER_AUTHOR=\"'Erwin Waterlander'\" -DDEBUG=0   -DD2U_UNICODE  -O2 -Wall -Wextra -Wconversion    -c common.c -o common.o
+common.c: In function 'PrintVersion':
+common.c:720:53: warning: unused parameter 'localedir' [-Wunused-parameter]
+cc dos2unix.o querycp.o common.o     -o dos2unix
+ln -sf dos2unix mac2unix
+cc   -DVER_REVISION=\"7.5.0\" -DVER_DATE=\"2023-05-17\" -DVER_AUTHOR=\"'Erwin Waterlander'\" -DDEBUG=0   -DD2U_UNICODE  -O2 -Wall -Wextra -Wconversion    -c unix2dos.c -o unix2dos.o
+cc unix2dos.o querycp.o common.o     -o unix2dos
+ln -sf unix2dos unix2mac
+mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation/usr/bin
+install -m 755 dos2unix /mnt/builds-fiwix-3.3/installation/usr/bin
+install -m 755 unix2dos /mnt/builds-fiwix-3.3/installation/usr/bin
+cd /mnt/builds-fiwix-3.3/installation/usr/bin; ln -sf dos2unix mac2unix
+cd /mnt/builds-fiwix-3.3/installation/usr/bin; ln -sf unix2dos unix2mac
+mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+install -m 644 man/man1/dos2unix.1 /mnt/builds-fiwix-3.3/installation/usr/share/man/man1
+cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man1; ln -sf dos2unix.1 mac2unix.1
+cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man1; ln -sf dos2unix.1 unix2dos.1
+cd /mnt/builds-fiwix-3.3/installation/usr/share/man/man1; ln -sf dos2unix.1 unix2mac.1
+-- install-doc
+mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/doc/dos2unix-7.5.0
+install -m 644 README.txt INSTALL.txt NEWS.txt ChangeLog.txt COPYING.txt TODO.txt BUGS.txt /mnt/builds-fiwix-3.3/installation/usr/share/doc/dos2unix-7.5.0
+install -m 644 man/man1/dos2unix.txt /mnt/builds-fiwix-3.3/installation/usr/share/doc/dos2unix-7.5.0
+install -m 644 man/man1/dos2unix.htm /mnt/builds-fiwix-3.3/installation/usr/share/doc/dos2unix-7.5.0
+# Run a new instance of 'make' otherwise the $(wildcard ) function my not have been expanded,
+# because the files may not have been there when make was started.
+make install-pdf
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/dos2unix-7.5.0'
+-- install-pdf
+mkdir -p -m 755 /mnt/builds-fiwix-3.3/installation/usr/share/doc/dos2unix-7.5.0
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/dos2unix-7.5.0'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/dos2unix
+./usr/bin/unix2dos
+./usr/bin/mac2unix
+./usr/bin/unix2mac
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/dos2unix.1
+./usr/share/man/man1/mac2unix.1
+./usr/share/man/man1/unix2dos.1
+./usr/share/man/man1/unix2mac.1
+./usr/share/doc/
+./usr/share/doc/dos2unix-7.5.0/
+./usr/share/doc/dos2unix-7.5.0/README.txt
+./usr/share/doc/dos2unix-7.5.0/INSTALL.txt
+./usr/share/doc/dos2unix-7.5.0/NEWS.txt
+./usr/share/doc/dos2unix-7.5.0/ChangeLog.txt
+./usr/share/doc/dos2unix-7.5.0/COPYING.txt
+./usr/share/doc/dos2unix-7.5.0/TODO.txt
+./usr/share/doc/dos2unix-7.5.0/BUGS.txt
+./usr/share/doc/dos2unix-7.5.0/dos2unix.txt
+./usr/share/doc/dos2unix-7.5.0/dos2unix.htm
+/mnt/builds-fiwix-3.3
+
+real	0m1.845s
+user	0m0.960s
+sys	0m0.600s

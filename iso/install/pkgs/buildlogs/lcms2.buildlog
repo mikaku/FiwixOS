@@ -1,0 +1,454 @@
+/mnt/builds-fiwix-3.3/lcms2-2.15 /mnt/builds-fiwix-3.3
+patching lcms2-2.15
+patching file config.guess
+patching file config.sub
+patching file utils/jpgicc/jpgicc.c
+checking build system type... i386-pc-fiwix
+checking host system type... i386-pc-fiwix
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '0' is supported by ustar format... yes
+checking whether GID '0' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for gcc option to accept ISO C99... -std=gnu99
+checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu99
+checking how to run the C preprocessor... gcc -std=gnu99 -E
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by gcc -std=gnu99... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /bin/nm -B
+checking the name lister (/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 32768
+checking how to convert i386-pc-fiwix file names to i386-pc-fiwix format... func_convert_file_noop
+checking how to convert i386-pc-fiwix file names to toolchain format... func_convert_file_noop
+checking for /usr/i386-pc-fiwix/bin/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... unknown
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /bin/nm -B output from gcc -std=gnu99 object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... no
+checking for objdir... .libs
+checking if gcc -std=gnu99 supports -fno-rtti -fno-exceptions... no
+checking for gcc -std=gnu99 option to produce PIC... -fPIC -DPIC
+checking if gcc -std=gnu99 PIC flag -fPIC -DPIC works... yes
+checking if gcc -std=gnu99 static flag -static works... yes
+checking if gcc -std=gnu99 supports -c -o file.o... yes
+checking if gcc -std=gnu99 supports -c -o file.o... (cached) yes
+checking whether the gcc -std=gnu99 linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... yes
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... no
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for ld used by g++... /usr/i386-pc-fiwix/bin/ld
+checking if the linker (/usr/i386-pc-fiwix/bin/ld) is GNU ld... yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+/bin/grep: warning: stray \ before -
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... yes
+checking if g++ static flag -static works... yes
+checking if g++ supports -c -o file.o... yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/i386-pc-fiwix/bin/ld) supports shared libraries... no
+checking dynamic linker characteristics... no
+checking how to hardcode library paths into programs... immediate
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for inline... inline
+checking for __attribute__((visibility))... yes
+checking whether C compiler accepts -fvisibility=hidden... yes
+checking whether byte ordering is bigendian... no
+checking for gmtime_r... yes
+checking whether gcc -std=gnu99 is Clang... no
+checking whether pthreads work with "-pthread" and "-lpthread"... no
+checking whether pthreads work with -pthread... no
+checking whether pthreads work with -pthreads... no
+checking for the pthreads library -lpthreads... no
+checking whether pthreads work without any flags... no
+checking whether pthreads work with -Kthread... no
+checking whether pthreads work with -pthread... no
+checking whether pthreads work with -pthreads... no
+checking whether pthreads work with -mthreads... no
+checking for the pthreads library -lpthread... no
+checking whether pthreads work with --thread-safe... no
+checking whether pthreads work with -mt... no
+checking for pthread-config... no
+checking whether compiler supports SSE2... no
+checking for sqrt in -lm... yes
+checking for JPEG support... 
+checking jconfig.h usability... yes
+checking jconfig.h presence... yes
+checking for jconfig.h... yes
+checking jerror.h usability... yes
+checking jerror.h presence... yes
+checking for jerror.h... yes
+checking for jmorecfg.h... yes
+checking jpeglib.h usability... yes
+checking jpeglib.h presence... yes
+checking for jpeglib.h... yes
+checking for jpeg_read_header in -ljpeg... yes
+checking for JPEG library is version 6b or later... yes
+yes
+checking if JPEG package is complete... yes
+checking for ZLIB support ... 
+checking zconf.h usability... yes
+checking zconf.h presence... yes
+checking for zconf.h... yes
+checking zlib.h usability... yes
+checking zlib.h presence... yes
+checking for zlib.h... yes
+checking for compress in -lz... yes
+checking for uncompress in -lz... yes
+checking for deflate in -lz... yes
+checking for inflate in -lz... yes
+checking for gzseek in -lz... yes
+checking for gztell in -lz... yes
+checking if ZLIB package is complete... yes
+checking for TIFF support... 
+checking tiff.h usability... yes
+checking tiff.h presence... yes
+checking for tiff.h... yes
+checking tiffio.h usability... yes
+checking tiffio.h presence... yes
+checking for tiffio.h... yes
+checking for TIFFOpen in -ltiff... no
+checking for TIFFClientOpen in -ltiff... no
+checking for TIFFIsByteSwapped in -ltiff... no
+checking if TIFF package is complete... no -- some components failed test
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lcms2.pc
+config.status: creating include/Makefile
+config.status: creating src/Makefile
+config.status: creating utils/tificc/Makefile
+config.status: creating utils/transicc/Makefile
+config.status: creating utils/linkicc/Makefile
+config.status: creating utils/jpgicc/Makefile
+config.status: creating utils/psicc/Makefile
+config.status: creating testbed/Makefile
+config.status: creating plugins/Makefile
+config.status: creating plugins/fast_float/Makefile
+config.status: creating plugins/fast_float/src/Makefile
+config.status: creating plugins/fast_float/include/Makefile
+config.status: creating plugins/fast_float/testbed/Makefile
+config.status: creating plugins/threaded/Makefile
+config.status: creating plugins/threaded/src/Makefile
+config.status: creating plugins/threaded/include/Makefile
+config.status: creating plugins/threaded/testbed/Makefile
+config.status: executing depfiles commands
+config.status: executing libtool commands
+Making all in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+depbase=`echo cmscnvrt.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmscnvrt.lo -MD -MP -MF $depbase.Tpo -c -o cmscnvrt.lo cmscnvrt.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmscnvrt.lo -MD -MP -MF .deps/cmscnvrt.Tpo -c cmscnvrt.c -o cmscnvrt.o
+depbase=`echo cmserr.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmserr.lo -MD -MP -MF $depbase.Tpo -c -o cmserr.lo cmserr.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmserr.lo -MD -MP -MF .deps/cmserr.Tpo -c cmserr.c -o cmserr.o
+depbase=`echo cmsgamma.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsgamma.lo -MD -MP -MF $depbase.Tpo -c -o cmsgamma.lo cmsgamma.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsgamma.lo -MD -MP -MF .deps/cmsgamma.Tpo -c cmsgamma.c -o cmsgamma.o
+depbase=`echo cmsgmt.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsgmt.lo -MD -MP -MF $depbase.Tpo -c -o cmsgmt.lo cmsgmt.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsgmt.lo -MD -MP -MF .deps/cmsgmt.Tpo -c cmsgmt.c -o cmsgmt.o
+depbase=`echo cmsintrp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsintrp.lo -MD -MP -MF $depbase.Tpo -c -o cmsintrp.lo cmsintrp.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsintrp.lo -MD -MP -MF .deps/cmsintrp.Tpo -c cmsintrp.c -o cmsintrp.o
+depbase=`echo cmsio0.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsio0.lo -MD -MP -MF $depbase.Tpo -c -o cmsio0.lo cmsio0.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsio0.lo -MD -MP -MF .deps/cmsio0.Tpo -c cmsio0.c -o cmsio0.o
+depbase=`echo cmsio1.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsio1.lo -MD -MP -MF $depbase.Tpo -c -o cmsio1.lo cmsio1.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsio1.lo -MD -MP -MF .deps/cmsio1.Tpo -c cmsio1.c -o cmsio1.o
+depbase=`echo cmslut.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmslut.lo -MD -MP -MF $depbase.Tpo -c -o cmslut.lo cmslut.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmslut.lo -MD -MP -MF .deps/cmslut.Tpo -c cmslut.c -o cmslut.o
+depbase=`echo cmsplugin.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsplugin.lo -MD -MP -MF $depbase.Tpo -c -o cmsplugin.lo cmsplugin.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsplugin.lo -MD -MP -MF .deps/cmsplugin.Tpo -c cmsplugin.c -o cmsplugin.o
+depbase=`echo cmssm.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmssm.lo -MD -MP -MF $depbase.Tpo -c -o cmssm.lo cmssm.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmssm.lo -MD -MP -MF .deps/cmssm.Tpo -c cmssm.c -o cmssm.o
+depbase=`echo cmsmd5.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsmd5.lo -MD -MP -MF $depbase.Tpo -c -o cmsmd5.lo cmsmd5.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsmd5.lo -MD -MP -MF .deps/cmsmd5.Tpo -c cmsmd5.c -o cmsmd5.o
+depbase=`echo cmsmtrx.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsmtrx.lo -MD -MP -MF $depbase.Tpo -c -o cmsmtrx.lo cmsmtrx.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsmtrx.lo -MD -MP -MF .deps/cmsmtrx.Tpo -c cmsmtrx.c -o cmsmtrx.o
+depbase=`echo cmspack.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmspack.lo -MD -MP -MF $depbase.Tpo -c -o cmspack.lo cmspack.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmspack.lo -MD -MP -MF .deps/cmspack.Tpo -c cmspack.c -o cmspack.o
+depbase=`echo cmspcs.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmspcs.lo -MD -MP -MF $depbase.Tpo -c -o cmspcs.lo cmspcs.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmspcs.lo -MD -MP -MF .deps/cmspcs.Tpo -c cmspcs.c -o cmspcs.o
+depbase=`echo cmswtpnt.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmswtpnt.lo -MD -MP -MF $depbase.Tpo -c -o cmswtpnt.lo cmswtpnt.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmswtpnt.lo -MD -MP -MF .deps/cmswtpnt.Tpo -c cmswtpnt.c -o cmswtpnt.o
+depbase=`echo cmsxform.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsxform.lo -MD -MP -MF $depbase.Tpo -c -o cmsxform.lo cmsxform.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsxform.lo -MD -MP -MF .deps/cmsxform.Tpo -c cmsxform.c -o cmsxform.o
+depbase=`echo cmssamp.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmssamp.lo -MD -MP -MF $depbase.Tpo -c -o cmssamp.lo cmssamp.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmssamp.lo -MD -MP -MF .deps/cmssamp.Tpo -c cmssamp.c -o cmssamp.o
+depbase=`echo cmsnamed.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsnamed.lo -MD -MP -MF $depbase.Tpo -c -o cmsnamed.lo cmsnamed.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsnamed.lo -MD -MP -MF .deps/cmsnamed.Tpo -c cmsnamed.c -o cmsnamed.o
+depbase=`echo cmscam02.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmscam02.lo -MD -MP -MF $depbase.Tpo -c -o cmscam02.lo cmscam02.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmscam02.lo -MD -MP -MF .deps/cmscam02.Tpo -c cmscam02.c -o cmscam02.o
+depbase=`echo cmsvirt.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsvirt.lo -MD -MP -MF $depbase.Tpo -c -o cmsvirt.lo cmsvirt.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsvirt.lo -MD -MP -MF .deps/cmsvirt.Tpo -c cmsvirt.c -o cmsvirt.o
+depbase=`echo cmstypes.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmstypes.lo -MD -MP -MF $depbase.Tpo -c -o cmstypes.lo cmstypes.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmstypes.lo -MD -MP -MF .deps/cmstypes.Tpo -c cmstypes.c -o cmstypes.o
+depbase=`echo cmscgats.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmscgats.lo -MD -MP -MF $depbase.Tpo -c -o cmscgats.lo cmscgats.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmscgats.lo -MD -MP -MF .deps/cmscgats.Tpo -c cmscgats.c -o cmscgats.o
+depbase=`echo cmsps2.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsps2.lo -MD -MP -MF $depbase.Tpo -c -o cmsps2.lo cmsps2.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsps2.lo -MD -MP -MF .deps/cmsps2.Tpo -c cmsps2.c -o cmsps2.o
+depbase=`echo cmsopt.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsopt.lo -MD -MP -MF $depbase.Tpo -c -o cmsopt.lo cmsopt.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsopt.lo -MD -MP -MF .deps/cmsopt.Tpo -c cmsopt.c -o cmsopt.o
+depbase=`echo cmshalf.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmshalf.lo -MD -MP -MF $depbase.Tpo -c -o cmshalf.lo cmshalf.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmshalf.lo -MD -MP -MF .deps/cmshalf.Tpo -c cmshalf.c -o cmshalf.o
+depbase=`echo cmsalpha.lo | sed 's|[^/]*$|.deps/&|;s|\.lo$||'`;\
+/bin/sh ../libtool  --tag=CC   --mode=compile gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../include -I../include   -g -O2 -fvisibility=hidden -MT cmsalpha.lo -MD -MP -MF $depbase.Tpo -c -o cmsalpha.lo cmsalpha.c &&\
+mv -f $depbase.Tpo $depbase.Plo
+libtool: compile:  gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" "-DPACKAGE_STRING=\"lcms2 2.15\"" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I. -I../include -I../include -g -O2 -fvisibility=hidden -MT cmsalpha.lo -MD -MP -MF .deps/cmsalpha.Tpo -c cmsalpha.c -o cmsalpha.o
+/bin/sh ../libtool  --tag=CC   --mode=link gcc -std=gnu99  -g -O2 -fvisibility=hidden -no-undefined -version-info 2:15:0 -s -o liblcms2.la -rpath /usr/lib cmscnvrt.lo cmserr.lo cmsgamma.lo cmsgmt.lo cmsintrp.lo cmsio0.lo cmsio1.lo cmslut.lo cmsplugin.lo cmssm.lo cmsmd5.lo cmsmtrx.lo cmspack.lo cmspcs.lo cmswtpnt.lo cmsxform.lo cmssamp.lo cmsnamed.lo cmscam02.lo cmsvirt.lo cmstypes.lo cmscgats.lo cmsps2.lo cmsopt.lo cmshalf.lo cmsalpha.lo -lm 
+libtool: link: ar cr .libs/liblcms2.a  cmscnvrt.o cmserr.o cmsgamma.o cmsgmt.o cmsintrp.o cmsio0.o cmsio1.o cmslut.o cmsplugin.o cmssm.o cmsmd5.o cmsmtrx.o cmspack.o cmspcs.o cmswtpnt.o cmsxform.o cmssamp.o cmsnamed.o cmscam02.o cmsvirt.o cmstypes.o cmscgats.o cmsps2.o cmsopt.o cmshalf.o cmsalpha.o
+libtool: link: ranlib .libs/liblcms2.a
+libtool: link: ( cd ".libs" && rm -f "liblcms2.la" && ln -s "../liblcms2.la" "liblcms2.la" )
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+Making all in include
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+Making all in utils/tificc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+Making all in utils/transicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o transicc.o transicc.c
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o ../common/xgetopt.o ../common/xgetopt.c
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o ../common/vprf.o ../common/vprf.c
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99  -g -O2 -fvisibility=hidden -s -s -o transicc transicc.o ../common/xgetopt.o ../common/vprf.o ../../src/liblcms2.la -lm 
+libtool: link: gcc -std=gnu99 -g -O2 -fvisibility=hidden -s -s -o transicc transicc.o ../common/xgetopt.o ../common/vprf.o  ../../src/.libs/liblcms2.a -lm
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+Making all in utils/linkicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o linkicc.o linkicc.c
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99  -g -O2 -fvisibility=hidden -s -s -o linkicc linkicc.o ../common/xgetopt.o ../common/vprf.o ../../src/liblcms2.la  
+libtool: link: gcc -std=gnu99 -g -O2 -fvisibility=hidden -s -s -o linkicc linkicc.o ../common/xgetopt.o ../common/vprf.o  ../../src/.libs/liblcms2.a -lm
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+Making all in utils/jpgicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o jpgicc.o jpgicc.c
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o iccjpeg.o iccjpeg.c
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99  -g -O2 -fvisibility=hidden -s -s -o jpgicc jpgicc.o iccjpeg.o ../common/xgetopt.o ../common/vprf.o ../../src/liblcms2.la -ljpeg -lm 
+libtool: link: gcc -std=gnu99 -g -O2 -fvisibility=hidden -s -s -o jpgicc jpgicc.o iccjpeg.o ../common/xgetopt.o ../common/vprf.o  ../../src/.libs/liblcms2.a /usr/lib/libjpeg.a -lm
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+Making all in utils/psicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+gcc -std=gnu99 -DPACKAGE_NAME=\"lcms2\" -DPACKAGE_TARNAME=\"lcms2\" -DPACKAGE_VERSION=\"2.15\" -DPACKAGE_STRING=\"lcms2\ 2.15\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DSTDC_HEADERS=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_MEMORY_H=1 -DHAVE_STRINGS_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_UNISTD_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_FUNC_ATTRIBUTE_VISIBILITY=1 -DHAVE_GMTIME_R=1 -DCMS_DONT_USE_SSE2=1 -DHasTHREADS=0 -DHasJPEG=1 -DHasZLIB=1 -I.  -I../../include -I../../include -I../../utils/common -I../../utils/common   -g -O2 -fvisibility=hidden -c -o psicc.o psicc.c
+/bin/sh ../../libtool  --tag=CC   --mode=link gcc -std=gnu99  -g -O2 -fvisibility=hidden -s -s -o psicc psicc.o ../common/xgetopt.o ../common/vprf.o ../../src/liblcms2.la -lm 
+libtool: link: gcc -std=gnu99 -g -O2 -fvisibility=hidden -s -s -o psicc psicc.o ../common/xgetopt.o ../common/vprf.o  ../../src/.libs/liblcms2.a -lm
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+Making all in testbed
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+Making install in src
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib'
+ /bin/sh ../libtool   --mode=install /bin/install -c   liblcms2.la '/mnt/builds-fiwix-3.3/installation/usr/lib'
+libtool: install: /bin/install -c .libs/liblcms2.lai /mnt/builds-fiwix-3.3/installation/usr/lib/liblcms2.la
+libtool: install: /bin/install -c .libs/liblcms2.a /mnt/builds-fiwix-3.3/installation/usr/lib/liblcms2.a
+libtool: install: chmod 644 /mnt/builds-fiwix-3.3/installation/usr/lib/liblcms2.a
+libtool: install: ranlib /mnt/builds-fiwix-3.3/installation/usr/lib/liblcms2.a
+libtool: warning: remember to run 'libtool --finish /usr/lib'
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/src'
+Making install in include
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/include'
+ /bin/install -c -m 644 lcms2.h lcms2_plugin.h '/mnt/builds-fiwix-3.3/installation/usr/include'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/include'
+Making install in utils/tificc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 tificc.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/tificc'
+Making install in utils/transicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c transicc '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c transicc /mnt/builds-fiwix-3.3/installation/usr/bin/transicc
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 transicc.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/transicc'
+Making install in utils/linkicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c linkicc '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c linkicc /mnt/builds-fiwix-3.3/installation/usr/bin/linkicc
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 linkicc.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/linkicc'
+Making install in utils/jpgicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c jpgicc '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c jpgicc /mnt/builds-fiwix-3.3/installation/usr/bin/jpgicc
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 jpgicc.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/jpgicc'
+Making install in utils/psicc
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/bin'
+  /bin/sh ../../libtool   --mode=install /bin/install -c psicc '/mnt/builds-fiwix-3.3/installation/usr/bin'
+libtool: install: /bin/install -c psicc /mnt/builds-fiwix-3.3/installation/usr/bin/psicc
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+ /bin/install -c -m 644 psicc.1 '/mnt/builds-fiwix-3.3/installation/usr/share/man/man1'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/utils/psicc'
+Making install in testbed
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[2]: Nothing to be done for 'install-exec-am'.
+make[2]: Nothing to be done for 'install-data-am'.
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15/testbed'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+ /bin/install -c -m 644 lcms2.pc '/mnt/builds-fiwix-3.3/installation/usr/lib/pkgconfig'
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/lcms2-2.15'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/lib/liblcms2.la: File format not recognized
+./
+./usr/
+./usr/lib/
+./usr/lib/liblcms2.la
+./usr/lib/liblcms2.a
+./usr/lib/pkgconfig/
+./usr/lib/pkgconfig/lcms2.pc
+./usr/include/
+./usr/include/lcms2.h
+./usr/include/lcms2_plugin.h
+./usr/share/
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/tificc.1
+./usr/share/man/man1/transicc.1
+./usr/share/man/man1/linkicc.1
+./usr/share/man/man1/jpgicc.1
+./usr/share/man/man1/psicc.1
+./usr/bin/
+./usr/bin/transicc
+./usr/bin/linkicc
+./usr/bin/jpgicc
+./usr/bin/psicc
+/mnt/builds-fiwix-3.3
+
+real	1m14.177s
+user	0m14.660s
+sys	0m7.860s

@@ -1,0 +1,102 @@
+/mnt/builds-fiwix-3.3/xml2-0.5 /mnt/builds-fiwix-3.3
+checking for a BSD-compatible install... /bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for pkg-config... /bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for XML... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking for size_t... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible realloc... yes
+checking for vprintf... yes
+checking for _doprnt... no
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for strchr... yes
+checking for strcspn... yes
+checking for strdup... yes
+checking for strrchr... yes
+checking for strstr... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+make  all-am
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -I/usr/include/libxml2   -g -O2 -MT xml2.o -MD -MP -MF ".deps/xml2.Tpo" -c -o xml2.o xml2.c; \
+then mv -f ".deps/xml2.Tpo" ".deps/xml2.Po"; else rm -f ".deps/xml2.Tpo"; exit 1; fi
+gcc -I/usr/include/libxml2   -g -O2  -s -o xml2  xml2.o -lxml2   -liconv -llzma -lz
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -I/usr/include/libxml2   -g -O2 -MT 2xml.o -MD -MP -MF ".deps/2xml.Tpo" -c -o 2xml.o 2xml.c; \
+then mv -f ".deps/2xml.Tpo" ".deps/2xml.Po"; else rm -f ".deps/2xml.Tpo"; exit 1; fi
+gcc -I/usr/include/libxml2   -g -O2  -s -o 2xml  2xml.o -lxml2   -liconv -llzma -lz
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -I/usr/include/libxml2   -g -O2 -MT csv2.o -MD -MP -MF ".deps/csv2.Tpo" -c -o csv2.o csv2.c; \
+then mv -f ".deps/csv2.Tpo" ".deps/csv2.Po"; else rm -f ".deps/csv2.Tpo"; exit 1; fi
+gcc -I/usr/include/libxml2   -g -O2  -s -o csv2  csv2.o  -liconv -llzma -lz
+if gcc -DHAVE_CONFIG_H -I. -I. -I.    -I/usr/include/libxml2   -g -O2 -MT 2csv.o -MD -MP -MF ".deps/2csv.Tpo" -c -o 2csv.o 2csv.c; \
+then mv -f ".deps/2csv.Tpo" ".deps/2csv.Po"; else rm -f ".deps/2csv.Tpo"; exit 1; fi
+gcc -I/usr/include/libxml2   -g -O2  -s -o 2csv  2csv.o  -liconv -llzma -lz
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+make[1]: Entering directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+test -z "/usr/bin" || mkdir -p -- "/mnt/builds-fiwix-3.3/installation/usr/bin"
+  /bin/install -c 'xml2' '/mnt/builds-fiwix-3.3/installation/usr/bin/xml2'
+  /bin/install -c '2xml' '/mnt/builds-fiwix-3.3/installation/usr/bin/2xml'
+  /bin/install -c 'csv2' '/mnt/builds-fiwix-3.3/installation/usr/bin/csv2'
+  /bin/install -c '2csv' '/mnt/builds-fiwix-3.3/installation/usr/bin/2csv'
+make  install-exec-hook
+make[2]: Entering directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+ln -sf /mnt/builds-fiwix-3.3/installation/usr/bin/xml2 /mnt/builds-fiwix-3.3/installation/usr/bin/html2
+ln -sf /mnt/builds-fiwix-3.3/installation/usr/bin/2xml /mnt/builds-fiwix-3.3/installation/usr/bin/2html
+make[2]: Leaving directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+make[1]: Nothing to be done for 'install-data-am'.
+make[1]: Leaving directory '/mnt/builds-fiwix-3.3/xml2-0.5'
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+./
+./usr/
+./usr/bin/
+./usr/bin/xml2
+./usr/bin/2xml
+./usr/bin/csv2
+./usr/bin/2csv
+./usr/bin/html2
+./usr/bin/2html
+/mnt/builds-fiwix-3.3
+
+real	0m4.957s
+user	0m1.380s
+sys	0m2.100s

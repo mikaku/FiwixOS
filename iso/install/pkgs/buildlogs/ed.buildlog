@@ -1,0 +1,67 @@
+/mnt/builds-fiwix-3.3/ed-1.19 /mnt/builds-fiwix-3.3
+patching ed-1.19
+patching file regex.c
+
+creating config.status
+creating Makefile
+VPATH = .
+prefix = /usr
+exec_prefix = $(prefix)
+bindir = $(exec_prefix)/bin
+datarootdir = $(prefix)/share
+infodir = $(datarootdir)/info
+mandir = $(datarootdir)/man
+program_prefix = 
+CC = gcc
+CPPFLAGS = 
+CFLAGS = -Wall -W -O2
+LDFLAGS = 
+MAKEINFO = makeinfo
+OK. Now you can run make.
+gcc  -Wall -W -O2 -c -o buffer.o buffer.c
+gcc  -Wall -W -O2 -c -o carg_parser.o carg_parser.c
+gcc  -Wall -W -O2 -c -o global.o global.c
+gcc  -Wall -W -O2 -c -o io.o io.c
+gcc  -Wall -W -O2 -DPROGVERSION=\"1.19\" -c -o main.o main.c
+gcc  -Wall -W -O2 -c -o main_loop.o main_loop.c
+gcc  -Wall -W -O2 -c -o regex.o regex.c
+gcc  -Wall -W -O2 -c -o signal.o signal.c
+gcc -Wall -W -O2  -o ed buffer.o carg_parser.o global.o io.o main.o main_loop.o regex.o signal.o
+cat ./red.in > red
+chmod a+x red
+if [ ! -d "/mnt/builds-fiwix-3.3/installation/usr/bin" ] ; then install -d -m 755 "/mnt/builds-fiwix-3.3/installation/usr/bin" ; fi
+install -m 755 ./ed "/mnt/builds-fiwix-3.3/installation/usr/bin/ed"
+install -m 755 ./red "/mnt/builds-fiwix-3.3/installation/usr/bin/red"
+if [ ! -d "/mnt/builds-fiwix-3.3/installation/usr/share/info" ] ; then install -d -m 755 "/mnt/builds-fiwix-3.3/installation/usr/share/info" ; fi
+rm -f "/mnt/builds-fiwix-3.3/installation/usr/share/info/ed.info"*
+install -m 644 ./doc/ed.info "/mnt/builds-fiwix-3.3/installation/usr/share/info/ed.info"
+if /bin/sh -c "install-info --version" > /dev/null 2>&1 ; then \
+  install-info --info-dir="/mnt/builds-fiwix-3.3/installation/usr/share/info" "/mnt/builds-fiwix-3.3/installation/usr/share/info/ed.info" ; \
+fi
+if [ ! -d "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1" ] ; then install -d -m 755 "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1" ; fi
+rm -f "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1/ed.1"*
+rm -f "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1/red.1"*
+install -m 644 ./doc/ed.1 "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1/ed.1"
+cd "/mnt/builds-fiwix-3.3/installation/usr/share/man/man1" && ln -s "ed.1" "red.1"
+/mnt/builds-fiwix-3.3
+/mnt/builds-fiwix-3.3/installation /mnt/builds-fiwix-3.3
+stripping debug symbols ...
+strip:./usr/bin/red: File format not recognized
+./
+./usr/
+./usr/bin/
+./usr/bin/ed
+./usr/bin/red
+./usr/share/
+./usr/share/info/
+./usr/share/info/ed.info
+./usr/share/info/dir
+./usr/share/man/
+./usr/share/man/man1/
+./usr/share/man/man1/ed.1
+./usr/share/man/man1/red.1
+/mnt/builds-fiwix-3.3
+
+real	0m1.774s
+user	0m1.270s
+sys	0m0.330s
