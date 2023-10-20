@@ -562,6 +562,6 @@ strip:./usr/share/ncurses-examples/bin/tracemunch: File format not recognized
 ./usr/share/ncurses-examples/bin/tracemunch
 /mnt/builds-fiwix-3.3
 
-real	0m41.134s
-user	0m19.480s
-sys	0m13.720s
+real	0m54.888s
+user	0m20.150s
+sys	0m14.440s

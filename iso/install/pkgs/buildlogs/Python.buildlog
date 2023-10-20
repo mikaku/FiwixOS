@@ -13210,6 +13210,6 @@ strip:./usr/lib/python3.6/config-3.6m/python-config.py: File format not recogniz
 ./usr/share/man/man1/python3.1
 /mnt/builds-fiwix-3.3
 
-real	6m36.548s
-user	3m55.360s
-sys	1m10.880s
+real	9m0.328s
+user	4m0.220s
+sys	1m4.100s

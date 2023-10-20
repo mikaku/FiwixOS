@@ -485,6 +485,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/ndisasm.1
 /mnt/builds-fiwix-3.3
 
-real	0m35.290s
-user	0m22.200s
-sys	0m9.900s
+real	0m40.818s
+user	0m22.610s
+sys	0m10.330s

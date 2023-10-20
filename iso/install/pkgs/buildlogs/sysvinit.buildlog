@@ -135,6 +135,6 @@ stripping debug symbols ...
 ./dev/initctl
 /mnt/builds-fiwix-3.3
 
-real	0m3.268s
-user	0m1.700s
-sys	0m0.910s
+real	0m3.994s
+user	0m1.640s
+sys	0m0.720s

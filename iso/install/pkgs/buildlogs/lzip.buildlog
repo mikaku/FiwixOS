@@ -50,6 +50,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/lzip.1
 /mnt/builds-fiwix-3.3
 
-real	0m8.268s
-user	0m6.350s
-sys	0m0.860s
+real	0m10.325s
+user	0m6.500s
+sys	0m0.450s

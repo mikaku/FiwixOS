@@ -236,6 +236,6 @@ strip:./usr/lib/libjpeg.la: File format not recognized
 ./usr/share/man/man1/wrjpgcom.1
 /mnt/builds-fiwix-3.3
 
-real	0m22.238s
-user	0m16.680s
-sys	0m4.250s
+real	0m23.912s
+user	0m17.030s
+sys	0m5.000s

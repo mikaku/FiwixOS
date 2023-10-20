@@ -114,6 +114,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/diffstat.1
 /mnt/builds-fiwix-3.3
 
-real	0m3.110s
-user	0m2.010s
-sys	0m1.050s
+real	0m3.165s
+user	0m2.180s
+sys	0m0.920s

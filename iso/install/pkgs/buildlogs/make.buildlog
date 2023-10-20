@@ -381,6 +381,6 @@ stripping debug symbols ...
 ./usr/include/gnumake.h
 /mnt/builds-fiwix-3.3
 
-real	0m15.286s
-user	0m10.000s
+real	0m15.915s
+user	0m10.140s
 sys	0m4.670s

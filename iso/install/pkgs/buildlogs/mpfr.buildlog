@@ -934,6 +934,6 @@ strip:./usr/lib/libmpfr.la: File format not recognized
 ./usr/include/mpf2mpfr.h
 /mnt/builds-fiwix-3.3
 
-real	0m53.516s
-user	0m33.870s
-sys	0m18.950s
+real	0m55.909s
+user	0m34.840s
+sys	0m20.050s

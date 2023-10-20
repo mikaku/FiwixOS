@@ -133,6 +133,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/whiptail.1
 /mnt/builds-fiwix-3.3
 
-real	0m11.191s
-user	0m5.180s
-sys	0m2.870s
+real	0m15.639s
+user	0m5.320s
+sys	0m1.960s

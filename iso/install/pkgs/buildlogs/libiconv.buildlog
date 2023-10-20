@@ -1579,6 +1579,6 @@ strip:./usr/lib/libiconv.la: File format not recognized
 ./usr/share/doc/iconvctl.3.html
 /mnt/builds-fiwix-3.3
 
-real	0m29.907s
-user	0m12.770s
-sys	0m10.460s
+real	0m37.563s
+user	0m12.670s
+sys	0m11.150s

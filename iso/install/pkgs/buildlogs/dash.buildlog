@@ -212,6 +212,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/dash.1
 /mnt/builds-fiwix-3.3
 
-real	0m7.979s
-user	0m5.280s
-sys	0m2.540s
+real	0m8.191s
+user	0m5.590s
+sys	0m2.320s

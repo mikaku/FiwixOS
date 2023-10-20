@@ -2266,6 +2266,6 @@ strip:./usr/bin/pdftexi2dvi: File format not recognized
 ./usr/share/man/man5/texinfo.5
 /mnt/builds-fiwix-3.3
 
-real	1m2.810s
-user	0m26.740s
-sys	0m19.140s
+real	1m23.492s
+user	0m26.660s
+sys	0m19.210s

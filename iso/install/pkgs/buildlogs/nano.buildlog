@@ -2196,6 +2196,6 @@ stripping debug symbols ...
 ./usr/bin/rnano
 /mnt/builds-fiwix-3.3
 
-real	0m31.983s
-user	0m18.620s
-sys	0m10.550s
+real	0m35.223s
+user	0m18.890s
+sys	0m11.240s

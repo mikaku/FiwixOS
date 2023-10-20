@@ -808,6 +808,6 @@ strip:./usr/bin/xml2-config: File format not recognized
 ./usr/share/gtk-doc/html/libxml2/style.css
 /mnt/builds-fiwix-3.3
 
-real	1m26.048s
-user	0m52.800s
-sys	0m16.070s
+real	1m58.532s
+user	0m53.970s
+sys	0m16.830s

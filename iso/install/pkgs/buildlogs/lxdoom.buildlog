@@ -1068,6 +1068,6 @@ stripping debug symbols ...
 ./usr/games/lsdoom
 /mnt/builds-fiwix-3.3
 
-real	0m17.879s
-user	0m12.450s
-sys	0m3.400s
+real	0m20.113s
+user	0m12.690s
+sys	0m3.610s

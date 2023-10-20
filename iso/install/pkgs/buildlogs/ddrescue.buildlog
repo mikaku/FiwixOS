@@ -62,6 +62,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/ddrescuelog.1
 /mnt/builds-fiwix-3.3
 
-real	0m9.955s
-user	0m7.070s
-sys	0m1.260s
+real	0m12.576s
+user	0m7.350s
+sys	0m1.160s

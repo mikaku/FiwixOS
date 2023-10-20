@@ -4,7 +4,7 @@ patching file gnulib-tests/inet_pton.c
 patching file gnulib-tests/sys_select.in.h
 checking for a BSD-compatible install... /bin/install -c
 checking whether sleep supports fractional seconds... true
-checking the filesystem timestamp resolution... 0.4
+checking the filesystem timestamp resolution... 0.9
 checking whether build environment is sane... yes
 checking for a race-free mkdir -p... /bin/mkdir -p
 checking for gawk... gawk
@@ -1092,6 +1092,6 @@ strip:./usr/bin/fgrep: File format not recognized
 ./usr/bin/fgrep
 /mnt/builds-fiwix-3.3
 
-real	0m40.381s
-user	0m21.200s
-sys	0m13.900s
+real	0m46.708s
+user	0m21.730s
+sys	0m13.740s

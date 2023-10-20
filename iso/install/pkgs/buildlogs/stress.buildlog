@@ -104,6 +104,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/stress.1
 /mnt/builds-fiwix-3.3
 
-real	0m2.749s
-user	0m0.850s
-sys	0m0.790s
+real	0m2.804s
+user	0m0.900s
+sys	0m0.750s

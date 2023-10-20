@@ -1036,12 +1036,12 @@ ar cr libtilde.a tilde.o
 test -n "ranlib" && ranlib libtilde.a
 make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/tilde'
 rm -f bash
-gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde  -L./lib/sh -s    -g -O2 -Wno-parentheses -Wno-format-security -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o assoc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o  -lbuiltins -lglob -lsh -lreadline -lhistory -ltermcap -ltilde  lib/intl/libintl.a /usr/lib/libiconv.a /usr/lib/libiconv.a  
+gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde  -L./lib/sh -s    -g -O2 -Wno-parentheses -Wno-format-security -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o assoc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o  -lbuiltins -lglob -lsh -lreadline -lhistory -lcurses -ltilde  lib/intl/libintl.a /usr/lib/libiconv.a /usr/lib/libiconv.a  
 ls -l bash
--rwxr-xr-x 1 root root 2034864 Sep 25 13:53 bash
+-rwxr-xr-x 1 root root 2090640 Oct 19 19:15 bash
 size bash
    text	   data	    bss	    dec	    hex	filename
-2011569	  22488	  39392	2073449	 1fa369	bash
+2066845	  23000	  39712	2129557	 207e95	bash
 make[1]: Entering directory '/mnt/builds-fiwix-3.3/bash-4.4.18/support'
 rm -f man2html.o
 gcc -c  -DHAVE_CONFIG_H -DSHELL  -I/mnt/builds-fiwix-3.3/bash-4.4.18 -I..  -D_POSIX_VERSION=1 -g -O2 -Wno-parentheses -Wno-format-security man2html.c
@@ -1405,6 +1405,6 @@ strip:./usr/bin/wait: File format not recognized
 ./usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
 /mnt/builds-fiwix-3.3
 
-real	1m22.181s
-user	0m45.970s
-sys	0m20.950s
+real	1m40.336s
+user	0m46.970s
+sys	0m20.010s

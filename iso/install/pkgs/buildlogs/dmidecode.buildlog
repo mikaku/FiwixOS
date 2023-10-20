@@ -47,6 +47,6 @@ stripping debug symbols ...
 ./usr/share/doc/dmidecode/AUTHORS
 /mnt/builds-fiwix-3.3
 
-real	0m2.299s
-user	0m1.720s
-sys	0m0.430s
+real	0m2.237s
+user	0m1.790s
+sys	0m0.420s

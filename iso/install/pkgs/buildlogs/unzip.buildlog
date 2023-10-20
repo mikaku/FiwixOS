@@ -126,6 +126,6 @@ strip:./usr/bin/zipgrep: File format not recognized
 ./usr/man/man1/zipinfo.1
 /mnt/builds-fiwix-3.3
 
-real	0m10.712s
-user	0m7.570s
-sys	0m2.070s
+real	0m12.858s
+user	0m7.810s
+sys	0m2.140s

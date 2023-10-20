@@ -16,6 +16,6 @@ stripping debug symbols ...
 ./usr/man/man8/symlinks.8
 /mnt/builds-fiwix-3.3
 
-real	0m1.894s
-user	0m0.200s
-sys	0m0.320s
+real	0m4.474s
+user	0m0.190s
+sys	0m0.110s

@@ -379,6 +379,6 @@ strip:./usr/share/opkg/intercept/update-modules: File format not recognized
 ./etc/opkg/opkg.conf
 /mnt/builds-fiwix-3.3
 
-real	0m16.059s
-user	0m10.180s
-sys	0m5.160s
+real	0m17.821s
+user	0m10.760s
+sys	0m6.340s

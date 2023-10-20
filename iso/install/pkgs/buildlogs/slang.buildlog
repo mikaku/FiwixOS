@@ -594,6 +594,6 @@ strip:./usr/share/slsh/scripts/slcov: File format not recognized
 ./etc/slsh.rc
 /mnt/builds-fiwix-3.3
 
-real	1m10.537s
-user	0m56.610s
-sys	0m9.760s
+real	1m15.662s
+user	0m55.880s
+sys	0m11.400s

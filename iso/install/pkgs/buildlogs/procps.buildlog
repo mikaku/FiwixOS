@@ -319,6 +319,6 @@ stripping debug symbols ...
 ./usr/share/man/man8/vmstat.8
 /mnt/builds-fiwix-3.3
 
-real	0m4.521s
-user	0m2.360s
-sys	0m1.890s
+real	0m4.906s
+user	0m2.480s
+sys	0m2.160s

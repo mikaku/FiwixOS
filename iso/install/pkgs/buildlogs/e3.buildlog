@@ -36,6 +36,6 @@ install -m 644 e3.man '/mnt/builds-fiwix-3.3/installation/man/man'1''/e3.'1'
 ./usr/man/man1/e3.1
 /mnt/builds-fiwix-3.3
 
-real	0m0.279s
-user	0m0.040s
-sys	0m0.100s
+real	0m0.568s
+user	0m0.060s
+sys	0m0.040s

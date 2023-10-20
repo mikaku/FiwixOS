@@ -293,6 +293,6 @@ strip:./usr/lib/libffi.la: File format not recognized
 ./usr/lib/pkgconfig/libffi.pc
 /mnt/builds-fiwix-3.3
 
-real	0m7.875s
-user	0m1.970s
-sys	0m3.240s
+real	0m11.664s
+user	0m1.990s
+sys	0m2.500s
