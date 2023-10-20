@@ -1,0 +1,25 @@
+diff -ru aalib-1.4.0/config.guess aalib-1.4.0.new/config.guess
+--- aalib-1.4.0/config.guess	2001-04-26 14:37:31 +0000
++++ aalib-1.4.0.new/config.guess	2021-11-05 11:13:49 +0000
+@@ -1169,6 +1169,9 @@
+     *:ITS:*:*)
+ 	echo pdp10-unknown-its
+ 	exit 0 ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru aalib-1.4.0/config.sub aalib-1.4.0.new/config.sub
+--- aalib-1.4.0/config.sub	2001-04-26 14:37:31 +0000
++++ aalib-1.4.0.new/config.sub	2021-11-05 11:14:01 +0000
+@@ -1020,7 +1020,7 @@
+ 	      | -mingw32* | -linux-gnu* | -uxpv* | -beos* | -mpeix* | -udk* \
+ 	      | -interix* | -uwin* | -rhapsody* | -darwin* | -opened* \
+ 	      | -openstep* | -oskit* | -conix* | -pw32* | -nonstopux* \
+-	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* | -os2*)
++	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* | -os2* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

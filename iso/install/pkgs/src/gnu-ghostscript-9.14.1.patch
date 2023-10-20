@@ -1,0 +1,25 @@
+diff -ru gnu-ghostscript-9.14.1/config.guess gnu-ghostscript-9.14.1.new/config.guess
+--- gnu-ghostscript-9.14.1/config.guess	2016-11-06 18:27:33.000000000 +0100
++++ gnu-ghostscript-9.14.1.new/config.guess	2020-09-11 23:01:00.000000000 +0200
+@@ -1414,6 +1414,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ cat >&2 <<EOF
+diff -ru gnu-ghostscript-9.14.1/config.sub gnu-ghostscript-9.14.1.new/config.sub
+--- gnu-ghostscript-9.14.1/config.sub	2016-11-06 18:27:33.000000000 +0100
++++ gnu-ghostscript-9.14.1.new/config.sub	2020-09-11 23:01:10.000000000 +0200
+@@ -1417,7 +1417,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos*)
++	      | -onefs* | -tirtos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

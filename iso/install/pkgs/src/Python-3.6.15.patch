@@ -1,0 +1,226 @@
+diff -ru Python-3.6.15/Makefile.pre.in Python-3.6.15.new/Makefile.pre.in
+--- Python-3.6.15/Makefile.pre.in	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Makefile.pre.in	2022-07-05 10:51:07 +0000
+@@ -20,6 +20,7 @@
+ 
+ # === Variables set by makesetup ===
+ 
++MODBUILT_NAMES= _MODBUILT_NAMES_
+ MODNAMES=       _MODNAMES_
+ MODOBJS=        _MODOBJS_
+ MODLIBS=        _MODLIBS_
+diff -ru Python-3.6.15/Modules/_ctypes/libffi/config.guess Python-3.6.15.new/Modules/_ctypes/libffi/config.guess
+--- Python-3.6.15/Modules/_ctypes/libffi/config.guess	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Modules/_ctypes/libffi/config.guess	2022-07-05 09:33:30 +0000
+@@ -1359,6 +1359,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru Python-3.6.15/Modules/_ctypes/libffi/config.sub Python-3.6.15.new/Modules/_ctypes/libffi/config.sub
+--- Python-3.6.15/Modules/_ctypes/libffi/config.sub	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Modules/_ctypes/libffi/config.sub	2022-07-05 09:33:30 +0000
+@@ -1374,7 +1374,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru Python-3.6.15/Modules/makesetup Python-3.6.15.new/Modules/makesetup
+--- Python-3.6.15/Modules/makesetup	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Modules/makesetup	2022-07-05 10:42:25 +0000
+@@ -111,6 +111,7 @@
+ # Rules appended by makedepend
+ " >$rulesf
+ 	DEFS=
++	BUILT=
+ 	NAMES=
+ 	MODS=
+ 	SHAREDMODS=
+@@ -192,6 +193,10 @@
+ 		yes)
+ 			LIBS="$LIBS $libs"
+ 			MODS="$MODS $mods"
++			BUILT="$BUILT $mods"
++			;;
++		no)
++			BUILT="$BUILT $mods"
+ 			;;
+ 		esac
+ 		case $noobjects in
+@@ -282,6 +287,7 @@
+ 		echo "1i\\" >$sedf
+ 		str="# Generated automatically from $makepre by makesetup."
+ 		echo "$str" >>$sedf
++		echo "s%_MODBUILT_NAMES_%$BUILT%" >>$sedf
+ 		echo "s%_MODNAMES_%$NAMES%" >>$sedf
+ 		echo "s%_MODOBJS_%$OBJS%" >>$sedf
+ 		echo "s%_MODLIBS_%$LIBS%" >>$sedf
+diff -ru Python-3.6.15/Modules/posixmodule.c Python-3.6.15.new/Modules/posixmodule.c
+--- Python-3.6.15/Modules/posixmodule.c	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Modules/posixmodule.c	2022-07-05 09:33:30 +0000
+@@ -5596,8 +5596,10 @@
+ os_sched_yield_impl(PyObject *module)
+ /*[clinic end generated code: output=902323500f222cac input=e54d6f98189391d4]*/
+ {
++#ifdef WITH_THREAD
+     if (sched_yield())
+         return posix_error();
++#endif
+     Py_RETURN_NONE;
+ }
+ 
+diff -ru Python-3.6.15/Modules/timemodule.c Python-3.6.15.new/Modules/timemodule.c
+--- Python-3.6.15/Modules/timemodule.c	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Modules/timemodule.c	2022-07-05 09:33:30 +0000
+@@ -30,6 +30,9 @@
+ #endif /* MS_WINDOWS */
+ #endif /* !__WATCOMC__ || __QNX__ */
+ 
++#define timezone _timezone
++#define daylight _daylight
++
+ /* Forward declarations */
+ static int pysleep(_PyTime_t);
+ static PyObject* floattime(_Py_clock_info_t *info);
+diff -ru Python-3.6.15/Objects/object.c Python-3.6.15.new/Objects/object.c
+--- Python-3.6.15/Objects/object.c	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Objects/object.c	2022-07-05 09:33:30 +0000
+@@ -469,14 +469,18 @@
+ 
+     fprintf(stderr, "object  : ");
+     fflush(stderr);
++#ifdef WITH_THREAD
+     gil = PyGILState_Ensure();
++#endif
+ 
+     PyErr_Fetch(&error_type, &error_value, &error_traceback);
+     (void)PyObject_Print(op, stderr, 0);
+     fflush(stderr);
+     PyErr_Restore(error_type, error_value, error_traceback);
+ 
++#ifdef WITH_THREAD
+     PyGILState_Release(gil);
++#endif
+     /* XXX(twouters) cast refcount to long until %zd is
+        universally available */
+     fprintf(stderr, "\n"
+diff -ru Python-3.6.15/Python/pylifecycle.c Python-3.6.15.new/Python/pylifecycle.c
+--- Python-3.6.15/Python/pylifecycle.c	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/Python/pylifecycle.c	2022-07-05 09:33:30 +0000
+@@ -1422,6 +1422,7 @@
+     fprintf(stderr, "Fatal Python error: %s\n", msg);
+     fflush(stderr); /* it helps in Windows debug build */
+ 
++#ifdef WITH_THREAD
+     /* Check if the current thread has a Python thread state
+        and holds the GIL */
+     PyThreadState *tss_tstate = PyGILState_GetThisThreadState();
+@@ -1437,6 +1438,9 @@
+            which has no Python thread state. */
+     }
+     int has_tstate_and_gil = (tss_tstate != NULL);
++#else
++    int has_tstate_and_gil = NULL;
++#endif
+ 
+     if (has_tstate_and_gil) {
+         /* If an exception is set, print the exception with its traceback */
+diff -ru Python-3.6.15/config.guess Python-3.6.15.new/config.guess
+--- Python-3.6.15/config.guess	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/config.guess	2022-07-05 09:33:30 +0000
+@@ -1423,6 +1423,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ cat >&2 <<EOF
+diff -ru Python-3.6.15/config.sub Python-3.6.15.new/config.sub
+--- Python-3.6.15/config.sub	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/config.sub	2022-07-05 09:33:30 +0000
+@@ -1417,7 +1417,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox*)
++	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru Python-3.6.15/setup.py Python-3.6.15.new/setup.py
+--- Python-3.6.15/setup.py	2021-09-04 03:49:41 +0000
++++ Python-3.6.15.new/setup.py	2022-07-05 11:06:41 +0000
+@@ -48,7 +48,7 @@
+ COMPILED_WITH_PYDEBUG = ('--with-pydebug' in sysconfig.get_config_var("CONFIG_ARGS"))
+ 
+ # This global variable is used to hold the list of modules to be disabled.
+-disabled_module_list = []
++disabled_module_list = ['_ctypes_test', '_ctypes', '_socket']
+ 
+ def add_dir_to_list(dirlist, dir):
+     """Add the directory 'dir' to the list 'dirlist' (after any relative
+@@ -261,8 +261,10 @@
+ 
+         # The sysconfig variable built by makesetup, listing the already
+         # built modules as configured by the Setup files.
++        sysconf_built = sysconfig.get_config_var('MODBUILT_NAMES').split()
+         modnames = sysconfig.get_config_var('MODNAMES').split()
+ 
++        mods_built = []
+         removed_modules = []
+         for ext in self.extensions:
+             ext.sources = [ find_module_file(filename, moddirlist)
+@@ -275,6 +277,9 @@
+             # re-compile extensions if a header file has been changed
+             ext.depends.extend(headers)
+ 
++            if ext.name in sysconf_built:
++                mods_built.append(ext)
++
+             # If a module has already been built by the Makefile,
+             # don't build it here.
+             if ext.name in modnames:
+@@ -284,6 +289,15 @@
+             self.extensions = [x for x in self.extensions if x not in
+                                removed_modules]
+ 
++        if mods_built:
++            self.extensions = [x for x in self.extensions if x not in
++                               mods_built]
++            # Remove the shared libraries built by a previous build.
++            for ext in mods_built:
++                fullpath = self.get_ext_fullpath(ext.name)
++                if os.path.exists(fullpath):
++                    os.unlink(fullpath)
++
+         # When you run "make CC=altcc" or something similar, you really want
+         # those environment variables passed into the setup.py phase.  Here's
+         # a small set of useful ones.
+@@ -332,6 +346,15 @@
+             " Setup files:")
+             print_three_column([ext.name for ext in removed_modules])
+ 
++        if mods_built:
++            print()
++            print("The following modules found by detect_modules() in"
++            " setup.py, have been")
++            print("built by the Makefile instead, as configured by the"
++            " Setup files:")
++            print_three_column([ext.name for ext in mods_built])
++            print()
++
+         if self.failed:
+             failed = self.failed[:]
+             print()

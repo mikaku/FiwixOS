@@ -1,0 +1,12 @@
+diff -ru logrotate-3.21.0/logrotate.c logrotate-3.21.0.new/logrotate.c
+--- logrotate-3.21.0/logrotate.c	2022-12-13 17:29:43 +0000
++++ logrotate-3.21.0.new/logrotate.c	2023-08-05 06:57:08 +0000
+@@ -27,6 +27,8 @@
+ #include "log.h"
+ #include "logrotate.h"
+ 
++#define GLOB_NOMATCH	3
++
+ static char *prev_context;
+ #ifdef WITH_SELINUX
+ #include <selinux/selinux.h>

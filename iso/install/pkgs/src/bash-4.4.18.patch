@@ -1,0 +1,26 @@
+diff -ru bash-4.4.18/support/config.guess bash-4.4.18.new/support/config.guess
+--- bash-4.4.18/support/config.guess	2013-12-16 22:02:33.000000000 +0100
++++ bash-4.4.18.new/support/config.guess	2020-01-12 14:11:36.000000000 +0100
+@@ -1369,6 +1369,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru bash-4.4.18/support/config.sub bash-4.4.18.new/support/config.sub
+--- bash-4.4.18/support/config.sub	2013-12-17 16:49:47.000000000 +0100
++++ bash-4.4.18.new/support/config.sub	2020-01-12 14:11:48.000000000 +0100
+@@ -1376,7 +1376,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

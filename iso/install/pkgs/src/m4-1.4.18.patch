@@ -1,0 +1,25 @@
+diff -ru m4-1.4.18/build-aux/config.guess m4-1.4.18.new/build-aux/config.guess
+--- m4-1.4.18/build-aux/config.guess	2016-12-29 20:32:31 +0000
++++ m4-1.4.18.new/build-aux/config.guess	2022-04-02 09:57:47 +0000
+@@ -1412,6 +1412,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ cat >&2 <<EOF
+diff -ru m4-1.4.18/build-aux/config.sub m4-1.4.18.new/build-aux/config.sub
+--- m4-1.4.18/build-aux/config.sub	2016-12-29 20:32:31 +0000
++++ m4-1.4.18.new/build-aux/config.sub	2022-04-02 09:57:59 +0000
+@@ -1409,7 +1409,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox*)
++	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

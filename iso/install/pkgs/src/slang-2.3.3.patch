@@ -1,0 +1,138 @@
+diff -ruN slang-2.3.3/Makefile slang-2.3.3.new/Makefile
+--- slang-2.3.3/Makefile	1970-01-01 00:00:00 +0000
++++ slang-2.3.3.new/Makefile	2023-08-05 16:57:57 +0000
+@@ -0,0 +1,109 @@
++# -*- make -*-
++
++#This is a UNIX-only makefile.  For other systems, get a makefile from
++#src/mkfiles/
++
++# If you want to change these variables, re-run the configure script.
++INSTALL= /bin/install -c
++INSTALL_DATA = ${INSTALL} -m 644
++prefix = /usr
++exec_prefix = ${prefix}
++libdir = ${exec_prefix}/lib
++pkgconfigdir = ${libdir}/pkgconfig
++#---------------------------------------------------------------------------
++# DESTDIR is designed to facilitate making packages.  Normally it is empty
++#---------------------------------------------------------------------------
++#DESTDIR =
++DEST_PKGCONFIGDIR = $(DESTDIR)$(pkgconfigdir)
++#
++MKINSDIR = autoconf/mkinsdir.sh
++
++
++SHELL = /bin/sh
++
++all: elf
++Makefile: configure autoconf/Makefile.in
++	@echo "Makefile is older than the configure script".
++	@echo "Please re-run the configure script."
++	@exit 1
++slsh/Makefile: configure slsh/Makefile.in
++	@echo "slsh/Makefile is older than its dependencies".
++	@echo "Please re-run the configure script."
++	@exit 1
++modules/Makefile: configure modules/Makefile.in
++	@echo "modules/Makefile is older than its dependencies".
++	@echo "Please re-run the configure script."
++	@exit 1
++src/Makefile: configure src/Makefile.in src/config.hin
++	@echo "src/Makefile is older than its dependencies".
++	@echo "Please re-run the configure script."
++	@exit 1
++#
++makefiles: Makefile slsh/Makefile modules/Makefile src/Makefile
++help:
++	@echo "make install ==> shared version of the library, slsh and modules"
++	@echo "make install-static ==> static version of the library and slsh; no modules"
++	@echo "make install-all ==> shared/static versions of the library/modules + shared slsh."
++	@echo "make install-modules ==> install the modules"
++	@echo "make check ==> Build the library and run the regression tests"
++slang.pc: configure autoconf/slangpc.in
++	@echo "slang.pc needs to be updated -- rerun configure"
++	@exit 1
++static: makefiles slang.pc
++	cd src; $(MAKE) static
++	cd slsh; $(MAKE) static
++modules:
++	cd modules; $(MAKE) all
++elf: makefiles slang.pc
++	cd src; $(MAKE) elf
++	cd slsh; $(MAKE) all
++	cd modules; $(MAKE) all
++	@echo Use make install to install it.
++runtests: all
++	@failed=0; \
++	cd src; $(MAKE) runtests || failed=1; cd ..; \
++	cd modules; $(MAKE) runtests || failed=1; cd ..; \
++	cd slsh; $(MAKE) runtests || failed=1; cd ..; \
++	exit $$failed
++check: runtests
++
++demos:
++	cd demo; $(MAKE)
++clean:
++	/bin/rm -f *~
++	cd src; $(MAKE) clean
++	cd modules; $(MAKE) clean
++	cd slsh; $(MAKE) clean
++	cd demo; $(MAKE) clean
++install-static: install-pkgconfig
++	cd src; $(MAKE) install-static
++	cd slsh; $(MAKE) install-static
++install-pkgconfig: slang.pc
++	$(MKINSDIR) $(DEST_PKGCONFIGDIR)
++	$(INSTALL_DATA) slang.pc $(DEST_PKGCONFIGDIR)/
++install-elf: install-pkgconfig
++	cd src; $(MAKE) install-elf
++	@echo Now installing slsh
++	cd slsh; $(MAKE) install
++	@echo Now installing the modules
++	cd modules; $(MAKE) install
++	@echo ""
++	@echo "On some systems, e.g., linux, you may also have to run ldconfig."
++	@echo ""
++install: install-elf install-pkgconfig
++install-all: install-elf
++	cd src; $(MAKE) install-static
++install-modules:
++	cd modules; $(MAKE) install
++install-links:
++	cd src; $(MAKE) install-links
++#
++distclean:
++	/bin/rm -f *~ Makefile config.status config.log config.cache files.pck slang.pc
++	cd src; $(MAKE) distclean
++	cd demo; $(MAKE) distclean
++	cd modules; $(MAKE) distclean
++	cd slsh; $(MAKE) distclean
++#
++.PHONY: all help static elf install clean check install-elf install-static makefiles install-pkgconfig
++#
+diff -ruN slang-2.3.3/autoconf/config.guess slang-2.3.3.new/autoconf/config.guess
+--- slang-2.3.3/autoconf/config.guess	2022-08-05 10:33:27 +0000
++++ slang-2.3.3.new/autoconf/config.guess	2023-08-05 16:57:57 +0000
+@@ -1403,6 +1403,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ cat >&2 <<EOF
+diff -ruN slang-2.3.3/autoconf/config.sub slang-2.3.3.new/autoconf/config.sub
+--- slang-2.3.3/autoconf/config.sub	2022-08-05 10:33:27 +0000
++++ slang-2.3.3.new/autoconf/config.sub	2023-08-05 16:57:57 +0000
+@@ -1399,7 +1399,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos*)
++	      | -onefs* | -tirtos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

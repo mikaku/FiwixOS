@@ -1,0 +1,12 @@
+diff -ru libiconv-1.17/lib/iconv.c libiconv-1.17.new/lib/iconv.c
+--- libiconv-1.17/lib/iconv.c	2022-01-23 22:36:33 +0000
++++ libiconv-1.17.new/lib/iconv.c	2022-07-15 15:53:30 +0000
+@@ -612,7 +612,7 @@
+ 
+ int _libiconv_version = _LIBICONV_VERSION;
+ 
+-#if defined __FreeBSD__ && !defined __gnu_freebsd__
++#if defined __FreeBSD__ && !defined __gnu_freebsd__ || __fiwix__
+ /* GNU libiconv is the native FreeBSD iconv implementation since 2002.
+    It wants to define the symbols 'iconv_open', 'iconv', 'iconv_close'.  */
+ #define strong_alias(name, aliasname) _strong_alias(name, aliasname)

@@ -1,0 +1,60 @@
+diff -ru flex-2.6.4/build-aux/config.guess flex-2.6.4.new/build-aux/config.guess
+--- flex-2.6.4/build-aux/config.guess	2017-05-06 16:49:09.000000000 +0200
++++ flex-2.6.4.new/build-aux/config.guess	2020-09-07 21:25:30.000000000 +0200
+@@ -1390,6 +1390,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ cat >&2 <<EOF
+diff -ru flex-2.6.4/build-aux/config.sub flex-2.6.4.new/build-aux/config.sub
+--- flex-2.6.4/build-aux/config.sub	2017-05-06 16:49:09.000000000 +0200
++++ flex-2.6.4.new/build-aux/config.sub	2020-09-07 21:25:41.000000000 +0200
+@@ -1399,7 +1399,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -tirtos*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -tirtos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru flex-2.6.4/src/tables.c flex-2.6.4.new/src/tables.c
+--- flex-2.6.4/src/tables.c	2016-10-21 02:43:44.000000000 +0200
++++ flex-2.6.4.new/src/tables.c	2020-09-07 21:31:14.000000000 +0200
+@@ -36,6 +36,31 @@
+ #include "flexdef.h"
+ #include "tables.h"
+ 
++/* included static functions of htonl and htons */
++static unsigned int htonl(unsigned int hostlong) {
++	unsigned char tmp[4];
++	unsigned int result;
++
++	tmp[0] = (unsigned char)((hostlong >> 24) & 0xFF);
++	tmp[1] = (unsigned char)((hostlong >> 16) & 0xFF);
++	tmp[2] = (unsigned char)((hostlong >> 8) & 0xFF);
++	tmp[3] = (unsigned char)(hostlong & 0xFF);
++
++	memcpy(&result, tmp, sizeof(tmp));
++	return result;
++}
++
++static unsigned short htons(unsigned short hostshort) {
++	unsigned char tmp[2];
++	unsigned short result;
++
++	tmp[0] = (unsigned char)((hostshort >> 8) & 0xFF);
++	tmp[1] = (unsigned char)(hostshort & 0xFF);
++
++	memcpy(&result, tmp, sizeof(tmp));
++	return result;
++}
++
+ /** Convert size_t to t_flag.
+  *  @param n in {1,2,4}
+  *  @return YYTD_DATA*. 

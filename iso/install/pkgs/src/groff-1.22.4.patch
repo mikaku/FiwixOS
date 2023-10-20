@@ -1,0 +1,36 @@
+diff -ru groff-1.22.4/build-aux/config.guess groff-1.22.4.new/build-aux/config.guess
+--- groff-1.22.4/build-aux/config.guess	2018-10-10 22:39:38.000000000 +0200
++++ groff-1.22.4.new/build-aux/config.guess	2020-09-12 08:05:39.000000000 +0200
+@@ -1424,6 +1424,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ echo "$0: unable to guess system type" >&2
+diff -ru groff-1.22.4/build-aux/config.sub groff-1.22.4.new/build-aux/config.sub
+--- groff-1.22.4/build-aux/config.sub	2018-10-10 22:39:38.000000000 +0200
++++ groff-1.22.4.new/build-aux/config.sub	2020-09-12 08:05:54.000000000 +0200
+@@ -1360,7 +1360,7 @@
+ 	     | powermax* | dnix* | nx6 | nx7 | sei* | dragonfly* \
+ 	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
+ 	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
+-	     | midnightbsd*)
++	     | midnightbsd* | fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	qnx*)
+diff -ru groff-1.22.4/src/include/nonposix.h groff-1.22.4.new/src/include/nonposix.h
+--- groff-1.22.4/src/include/nonposix.h	2018-12-23 15:36:16.000000000 +0100
++++ groff-1.22.4.new/src/include/nonposix.h	2020-09-12 09:39:26.000000000 +0200
+@@ -223,6 +223,7 @@
+ # define GS_NAME	"gs"
+ #endif
+ #ifndef WAIT
++#include <sys/wait.h>
+ # define WAIT(s,p,m)	wait(s)
+ #endif
+ #ifndef _WAIT_CHILD

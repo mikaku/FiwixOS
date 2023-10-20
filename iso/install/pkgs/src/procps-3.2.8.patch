@@ -1,0 +1,623 @@
+diff -ru procps-3.2.8/Makefile procps-3.2.8.new/Makefile
+--- procps-3.2.8/Makefile	2009-05-10 18:50:48 +0000
++++ procps-3.2.8.new/Makefile	2022-07-26 15:43:29 +0000
+@@ -46,22 +46,19 @@
+ #SKIP     := $(bin)kill $(man1)kill.1
+ 
+ BINFILES := $(usr/bin)uptime $(usr/bin)tload $(usr/bin)free $(usr/bin)w \
+-            $(usr/bin)top $(usr/bin)vmstat $(usr/bin)watch $(usr/bin)skill \
+-            $(usr/bin)snice $(bin)kill $(sbin)sysctl $(usr/bin)pmap \
+-            $(usr/proc/bin)pgrep $(usr/proc/bin)pkill $(usr/bin)slabtop \
++            $(usr/bin)top $(usr/bin)vmstat $(usr/bin)watch \
+             $(usr/proc/bin)pwdx
+ 
+ MANFILES := $(man1)uptime.1 $(man1)tload.1 $(man1)free.1 $(man1)w.1 \
+-            $(man1)top.1 $(man1)watch.1 $(man1)skill.1 $(man1)kill.1 \
+-            $(man1)snice.1 $(man1)pgrep.1 $(man1)pkill.1 $(man1)pmap.1 \
+-            $(man5)sysctl.conf.5 $(man8)vmstat.8 $(man8)sysctl.8 \
+-            $(man1)slabtop.1 $(man1)pwdx.1
++            $(man1)top.1 $(man1)watch.1 \
++            $(man8)vmstat.8 \
++            $(man1)pwdx.1
+ 
+ TARFILES := AUTHORS BUGS NEWS README TODO COPYING COPYING.LIB \
+             Makefile procps.lsm procps.spec v t README.top CodingStyle \
+             sysctl.conf minimal.c $(notdir $(MANFILES)) dummy.c \
+-            uptime.c tload.c free.c w.c top.c vmstat.c watch.c skill.c \
+-            sysctl.c pgrep.c top.h pmap.c slabtop.c pwdx.c
++            uptime.c tload.c free.c w.c top.c vmstat.c watch.c \
++            top.h pwdx.c
+ 
+ # Stuff (tests, temporary hacks, etc.) left out of the standard tarball
+ # plus the top-level Makefile to make it work stand-alone.
+@@ -102,7 +99,7 @@
+   -Wstrict-prototypes -Wmissing-prototypes
+ # Note that some stuff below is conditional on CFLAGS containing
+ # an option that starts with "-g". (-g, -g2, -g3, -ggdb, etc.)
+-CFLAGS       := -O2 -s
++CFLAGS       := -s
+ ALL_CFLAGS   := $(PKG_CFLAGS) $(CFLAGS)
+ 
+ PKG_LDFLAGS  := -Wl,-warn-common
+@@ -155,7 +152,7 @@
+ 
+ ############ misc.
+ 
+-# free.c pmap.c sysctl.c uptime.c vmstat.c watch.c pgrep.c skill.c tload.c top.c w.c
++# free.c uptime.c vmstat.c watch.c tload.c top.c w.c
+ # utmp.c oldtop.c tmp-junk.c minimal.c
+ 
+ .SUFFIXES:
+@@ -228,8 +225,8 @@
+ 	$(install) --mode a=r $(notdir $@) $@
+ 
+ install: $(filter-out $(SKIP) $(addprefix $(DESTDIR),$(SKIP)),$(INSTALL))
+-	cd $(usr/bin) && $(ln_f) skill snice
+-	cd $(usr/proc/bin) && $(ln_f) pgrep pkill
++	cd $(usr/bin)
++	cd $(usr/proc/bin)
+ 
+ ############ prog.c --> prog.o
+ 
+@@ -243,10 +240,10 @@
+ 
+ ############ prog.o --> prog
+ 
+-pmap w uptime tload free sysctl vmstat utmp pgrep skill pwdx: % : %.o $(LIBPROC)
++w uptime tload free vmstat utmp pwdx: % : %.o $(LIBPROC)
+ 	$(CC) $(ALL_CFLAGS) $^ $(ALL_LDFLAGS) -o $@
+ 
+-slabtop top: % : %.o $(LIBPROC)
++top: % : %.o $(LIBPROC)
+ 	$(CC) $(ALL_CFLAGS) $^ $(ALL_LDFLAGS) -o $@ $(CURSES)
+ 
+ watch: % : %.o
+@@ -254,8 +251,3 @@
+ 
+ ############ progX --> progY
+ 
+-snice kill: skill
+-	$(ln_f) skill $@
+-
+-pkill: pgrep
+-	$(ln_f) pgrep pkill
+diff -ru procps-3.2.8/free.c procps-3.2.8.new/free.c
+--- procps-3.2.8/free.c	2004-01-30 02:30:29 +0000
++++ procps-3.2.8.new/free.c	2022-07-26 15:47:53 +0000
+@@ -61,15 +61,28 @@
+ 
+     do {
+         meminfo();
++        kb_main_total = S(kb_main_total);
++        kb_main_used = S(kb_main_used);
++        kb_main_free = S(kb_main_free);
++        kb_main_shared = S(kb_main_shared);
++        kb_main_buffers = S(kb_main_buffers);
++        kb_main_cached = S(kb_main_cached);
++	kb_low_total = S(kb_low_total);
++	kb_low_free = S(kb_low_free);
++	kb_high_total = S(kb_high_total);
++	kb_high_free = S(kb_high_free);
++	kb_swap_total = S(kb_swap_total);
++	kb_swap_used = S(kb_swap_used);
++	kb_swap_free = S(kb_swap_free);
+         printf("             total       used       free     shared    buffers     cached\n");
+         printf(
+-            "%-7s %10Lu %10Lu %10Lu %10Lu %10Lu %10Lu\n", "Mem:",
+-            S(kb_main_total),
+-            S(kb_main_used),
+-            S(kb_main_free),
+-            S(kb_main_shared),
+-            S(kb_main_buffers),
+-            S(kb_main_cached)
++            "%-7s %10lu %10lu %10lu %10lu %10lu %10lu\n", "Mem:",
++            kb_main_total,
++            kb_main_used,
++            kb_main_free,
++            kb_main_shared,
++            kb_main_buffers,
++            kb_main_cached
+         );
+         // Print low vs. high information, if the user requested it.
+         // Note we check if low_total==0: if so, then this kernel does
+@@ -78,37 +91,37 @@
+         if (show_high) {
+             printf(
+                 "%-7s %10Lu %10Lu %10Lu\n", "Low:",
+-                S(kb_low_total),
+-                S(kb_low_total - kb_low_free),
+-                S(kb_low_free)
++                kb_low_total,
++                kb_low_total - kb_low_free,
++                kb_low_free
+             );
+             printf(
+                 "%-7s %10Lu %10Lu %10Lu\n", "High:",
+-                S(kb_high_total),
+-                S(kb_high_total - kb_high_free),
+-                S(kb_high_free)
++                kb_high_total,
++                kb_high_total - kb_high_free,
++                kb_high_free
+             );
+         }
+         if(!old_fmt){
+-            unsigned KLONG buffers_plus_cached = kb_main_buffers + kb_main_cached;
++            unsigned KLONG buffers_plus_cached = kb_main_buffers; /* + kb_main_cached; */
+             printf(
+                 "-/+ buffers/cache: %10Lu %10Lu\n", 
+-                S(kb_main_used - buffers_plus_cached),
+-                S(kb_main_free + buffers_plus_cached)
++                kb_main_used - buffers_plus_cached,
++                kb_main_free + buffers_plus_cached
+             );
+         }
+         printf(
+             "%-7s %10Lu %10Lu %10Lu\n", "Swap:",
+-            S(kb_swap_total),
+-            S(kb_swap_used),
+-            S(kb_swap_free)
++            kb_swap_total,
++            kb_swap_used,
++            kb_swap_free
+         );
+         if(show_total){
+             printf(
+                 "%-7s %10Lu %10Lu %10Lu\n", "Total:",
+-                S(kb_main_total + kb_swap_total),
+-                S(kb_main_used  + kb_swap_used),
+-                S(kb_main_free  + kb_swap_free)
++                kb_main_total + kb_swap_total,
++                kb_main_used  + kb_swap_used,
++                kb_main_free  + kb_swap_free
+             );
+         }
+         if(pause_length){
+diff -ru procps-3.2.8/proc/ksym.c procps-3.2.8.new/proc/ksym.c
+--- procps-3.2.8/proc/ksym.c	2006-06-25 06:57:18 +0000
++++ procps-3.2.8.new/proc/ksym.c	2022-07-26 15:43:29 +0000
+@@ -374,7 +374,7 @@
+       char *vstart;
+       if(endp - sysmap_data >= sbuf.st_size){   /* if we reached the end */
+         int i = VCNT;            /* check VCNT times to verify this file */
+-        if(*Version) goto bad_version;
++/*        if(*Version) goto bad_version; */
+         if(!ksyms_index) return 1; /* if can not verify, assume success */
+         while(i--){
+ #if 1
+diff -ru procps-3.2.8/proc/pwcache.c procps-3.2.8.new/proc/pwcache.c
+--- procps-3.2.8/proc/pwcache.c	2004-08-10 02:14:47 +0000
++++ procps-3.2.8.new/proc/pwcache.c	2022-07-26 15:43:29 +0000
+@@ -14,7 +14,9 @@
+ #include <pwd.h>
+ #include "alloc.h"
+ #include "pwcache.h"
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ 
+ // might as well fill cache lines... else we waste memory anyway
+ 
+diff -ru procps-3.2.8/proc/readproc.c procps-3.2.8.new/proc/readproc.c
+--- procps-3.2.8/proc/readproc.c	2006-06-16 08:18:13 +0000
++++ procps-3.2.8.new/proc/readproc.c	2022-07-26 15:43:29 +0000
+@@ -26,6 +26,7 @@
+ #include <sys/dir.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <limits.h>
+ 
+ // sometimes it's easier to do this manually, w/o gcc helping
+ #ifdef PROF
+diff -ru procps-3.2.8/proc/sysinfo.c procps-3.2.8.new/proc/sysinfo.c
+--- procps-3.2.8/proc/sysinfo.c	2008-03-24 04:33:43 +0000
++++ procps-3.2.8.new/proc/sysinfo.c	2022-07-26 15:43:29 +0000
+@@ -20,10 +20,6 @@
+ #include "version.h"
+ #include "sysinfo.h" /* include self to verify prototypes */
+ 
+-#ifndef HZ
+-#include <netinet/in.h>  /* htons */
+-#endif
+-
+ long smp_num_cpus;     /* number of CPUs */
+ 
+ #define BAD_OPEN_MESSAGE					\
+diff -ru procps-3.2.8/ps/display.c procps-3.2.8.new/ps/display.c
+--- procps-3.2.8/ps/display.c	2005-01-05 23:44:37 +0000
++++ procps-3.2.8.new/ps/display.c	2022-07-26 15:43:29 +0000
+@@ -21,10 +21,12 @@
+ /* username lookups */
+ #include <sys/types.h>
+ #include <pwd.h>
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ 
+ /* major/minor number */
+-#include <sys/sysmacros.h>
++/* #include <sys/sysmacros.h> */
+ 
+ #include <signal.h>   /* catch signals */
+ 
+@@ -310,6 +312,7 @@
+   unsigned long long used_jiffies;
+   unsigned long pcpu = 0;
+   unsigned long long avail_jiffies;
++  Hertz = 100;
+ 
+   if(!want_this_proc(buf)) return 0;
+ 
+diff -ru procps-3.2.8/ps/global.c procps-3.2.8.new/ps/global.c
+--- procps-3.2.8/ps/global.c	2005-10-29 23:43:34 +0000
++++ procps-3.2.8.new/ps/global.c	2022-07-26 15:43:29 +0000
+@@ -15,7 +15,9 @@
+ #include <sys/ioctl.h>
+ #include <sys/types.h>
+ #include <pwd.h>
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ #include <string.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+@@ -23,11 +25,13 @@
+ 
+ #include "common.h"
+ 
+-#include <sys/sysmacros.h>
++/* #include <sys/sysmacros.h> */
+ #include "../proc/wchan.h"
+ #include "../proc/version.h"
+ #include "../proc/sysinfo.h"
+ 
++#define minor(dev)	(((dev_t) (dev)) >> 8)
++#define major(dev)	(((dev_t) (dev)) & 0xFF)
+ 
+ #ifndef __GNU_LIBRARY__
+ #define __GNU_LIBRARY__ -1
+@@ -65,7 +69,7 @@
+ int             negate_selection = -1;
+ int             running_only = -1;
+ int             page_size = -1;  // "int" for math reasons?
+-unsigned        personality = 0xffffffff;
++unsigned        personality_type = 0xffffffff;
+ int             prefer_bsd_defaults = -1;
+ int             screen_cols = -1;
+ int             screen_rows = -1;
+@@ -211,7 +215,7 @@
+   };
+   const int personality_table_count = sizeof(personality_table)/sizeof(personality_table_struct);
+ 
+-  personality = 0;
++  personality_type = 0;
+   prefer_bsd_defaults = 0;
+ 
+   bsd_j_format = "OL_j";
+@@ -245,7 +249,7 @@
+   goto *(found->jump);    /* See gcc extension info.  :-)   */
+ 
+   case_bsd:
+-    personality = PER_FORCE_BSD | PER_BSD_h | PER_BSD_m;
++    personality_type = PER_FORCE_BSD | PER_BSD_h | PER_BSD_m;
+     prefer_bsd_defaults = 1;
+     bsd_j_format = "FB_j";
+     bsd_l_format = "FB_l";
+@@ -255,13 +259,13 @@
+     return NULL;
+ 
+   case_old:
+-    personality = PER_FORCE_BSD | PER_OLD_m;
++    personality_type = PER_FORCE_BSD | PER_OLD_m;
+     prefer_bsd_defaults = 1;
+     return NULL;
+ 
+   case_debian:  /* Toss this? They don't seem to care much. */
+   case_gnu:
+-    personality = PER_GOOD_o | PER_OLD_m;
++    personality_type = PER_GOOD_o | PER_OLD_m;
+     prefer_bsd_defaults = 1;
+     sysv_f_format  = "RD_f";
+     /* sysv_fl_format = "RD_fl"; */   /* old Debian ps can't do this! */
+@@ -270,7 +274,7 @@
+     return NULL;
+ 
+   case_linux:
+-    personality = PER_GOOD_o | PER_ZAP_ADDR | PER_SANE_USER;
++    personality_type = PER_GOOD_o | PER_ZAP_ADDR | PER_SANE_USER;
+     return NULL;
+ 
+   case_default: /* use defaults for ps, ignoring other environment variables */
+@@ -281,7 +285,7 @@
+       getenv("UNIX95")     /* Irix */
+       || getenv("POSIXLY_CORRECT")  /* most gnu stuff */
+       || (getenv("POSIX2") && !strcmp(getenv("POSIX2"), "on")) /* Unixware 7 */
+-    ) personality = PER_BROKEN_o;
++    ) personality_type = PER_BROKEN_o;
+     return NULL;
+ 
+   case_aix:
+@@ -297,7 +301,7 @@
+   case_digital:
+     // no PER_NO_DEFAULT_g even though man page claims it
+     // Reality: the g is a NOP
+-    personality = PER_GOOD_o | PER_BSD_h;
++    personality_type = PER_GOOD_o | PER_BSD_h;
+     prefer_bsd_defaults = 1;
+     sysv_f_format  = "F5FMT";
+     sysv_fl_format = "FL5FMT";
+@@ -311,7 +315,7 @@
+     return NULL;
+ 
+   case_sunos4:
+-    personality = PER_NO_DEFAULT_g;
++    personality_type = PER_NO_DEFAULT_g;
+     prefer_bsd_defaults = 1;
+     bsd_j_format = "FB_j";
+     bsd_l_format = "FB_l";
+@@ -323,8 +327,8 @@
+   case_irix:
+   case_sgi:
+     s = getenv("_XPG");
+-    if(s && s[0]>'0' && s[0]<='9') personality = PER_BROKEN_o;
+-    else personality = PER_IRIX_l;
++    if(s && s[0]>'0' && s[0]<='9') personality_type = PER_BROKEN_o;
++    else personality_type = PER_IRIX_l;
+     return NULL;
+ 
+   case_os390:  /* IBM's OS/390 OpenEdition on the S/390 mainframe */
+@@ -335,13 +339,13 @@
+ 
+   case_hp:
+   case_hpux:
+-    personality = PER_BROKEN_o | PER_HPUX_x;
++    personality_type = PER_BROKEN_o | PER_HPUX_x;
+     return NULL;
+ 
+   case_svr4:
+   case_sysv:
+   case_sco:
+-    personality = PER_BROKEN_o | PER_SVR4_x;
++    personality_type = PER_BROKEN_o | PER_SVR4_x;
+     return NULL;
+ 
+   case_posix:
+@@ -349,7 +353,7 @@
+   case_unix95:
+   case_unix98:
+   case_unix:
+-    personality = PER_BROKEN_o;
++    personality_type = PER_BROKEN_o;
+     return NULL;
+ }
+ 
+@@ -437,6 +441,8 @@
+ 
+ /*********** spew variables ***********/
+ void self_info(void){
++  Hertz = 100;
++
+   fprintf(stderr,
+     "BSD j    %s\n"
+     "BSD l    %s\n"
+@@ -479,9 +485,9 @@
+   );
+ 
+   fprintf(stderr,
+-    "personality=0x%08x (from \"%s\")\n"
++    "personality_type=0x%08x (from \"%s\")\n"
+     "EUID=%d TTY=%d,%d Hertz=%Ld page_size=%d\n",
+-    personality, saved_personality_text,
++    personality_type, saved_personality_text,
+     cached_euid, (int)major(cached_tty), (int)minor(cached_tty), Hertz,
+     (int)(page_size)
+   );
+diff -ru procps-3.2.8/ps/output.c procps-3.2.8.new/ps/output.c
+--- procps-3.2.8/ps/output.c	2009-05-10 19:24:50 +0000
++++ procps-3.2.8.new/ps/output.c	2022-07-26 15:43:29 +0000
+@@ -41,7 +41,9 @@
+  
+ #include <ctype.h>
+ #include <fcntl.h>
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ #include <limits.h>
+ #include <pwd.h>
+ #include <stdio.h>
+@@ -53,7 +55,7 @@
+ #include <sys/mman.h>
+ #include <time.h>
+ #include <unistd.h>
+-#include <dlfcn.h>
++/* #include <dlfcn.h> */
+ 
+ #include "../proc/readproc.h"
+ #include "../proc/sysinfo.h"
+@@ -408,6 +410,8 @@
+   unsigned long t;
+   unsigned dd,hh,mm,ss;
+   char *cp = outbuf;
++  Hertz = 100;
++
+   t = seconds_since_boot - (unsigned long)(pp->start_time / Hertz);
+   ss = t%60;
+   t /= 60;
+@@ -428,6 +432,7 @@
+   unsigned pcpu = 0;               /* scaled %cpu, 99 means 99% */
+   unsigned long long seconds;      /* seconds of process life */
+   total_time = pp->utime + pp->stime;
++  Hertz = 100;
+   if(include_dead_children) total_time += (pp->cutime + pp->cstime);
+   seconds = seconds_since_boot - pp->start_time / Hertz;
+   if(seconds) pcpu = (total_time * 100ULL / Hertz) / seconds;
+@@ -439,6 +444,7 @@
+   unsigned long long total_time;   /* jiffies used by this process */
+   unsigned pcpu = 0;               /* scaled %cpu, 999 means 99.9% */
+   unsigned long long seconds;      /* seconds of process life */
++  Hertz = 100;
+   total_time = pp->utime + pp->stime;
+   if(include_dead_children) total_time += (pp->cutime + pp->cstime);
+   seconds = seconds_since_boot - pp->start_time / Hertz;
+@@ -452,6 +458,7 @@
+   unsigned long long total_time;   /* jiffies used by this process */
+   unsigned pcpu = 0;               /* scaled %cpu, 999 means 99.9% */
+   unsigned long long seconds;      /* seconds of process life */
++  Hertz = 100;
+   total_time = pp->utime + pp->stime;
+   if(include_dead_children) total_time += (pp->cutime + pp->cstime);
+   seconds = seconds_since_boot - pp->start_time / Hertz ;
+@@ -476,6 +483,7 @@
+   unsigned long t;
+   unsigned dd,hh,mm,ss;
+   int c;
++  Hertz = 100;
+   t = (pp->utime + pp->stime) / Hertz;
+   ss = t%60;
+   t /= 60;
+@@ -784,6 +792,7 @@
+ static int pr_bsdtime(char *restrict const outbuf, const proc_t *restrict const pp){
+     unsigned long long t;
+     unsigned u;
++  Hertz = 100;
+     t = pp->utime + pp->stime;
+     if(include_dead_children) t += (pp->cutime + pp->cstime);
+     u = t / Hertz;
+@@ -793,6 +802,7 @@
+ static int pr_bsdstart(char *restrict const outbuf, const proc_t *restrict const pp){
+   time_t start;
+   time_t seconds_ago;
++  Hertz = 100;
+   start = time_of_boot + pp->start_time / Hertz;
+   seconds_ago = seconds_since_1970 - start;
+   if(seconds_ago < 0) seconds_ago=0;
+@@ -907,6 +917,7 @@
+ 
+ static int pr_lstart(char *restrict const outbuf, const proc_t *restrict const pp){
+   time_t t;
++  Hertz = 100;
+   t = time_of_boot + pp->start_time / Hertz;
+   return snprintf(outbuf, COLWID, "%24.24s", ctime(&t));
+ }
+@@ -927,6 +938,7 @@
+   const char *fmt;
+   int tm_year;
+   int tm_yday;
++  Hertz = 100;
+   our_time = localtime(&seconds_since_1970);   /* not reentrant */
+   tm_year = our_time->tm_year;
+   tm_yday = our_time->tm_yday;
+@@ -941,6 +953,7 @@
+ static int pr_start(char *restrict const outbuf, const proc_t *restrict const pp){
+   time_t t;
+   char *str;
++  Hertz = 100;
+   t = time_of_boot + pp->start_time / Hertz;
+   str = ctime(&t);
+   if(str[8]==' ')  str[8]='0';
+diff -ru procps-3.2.8/ps/parser.c procps-3.2.8.new/ps/parser.c
+--- procps-3.2.8/ps/parser.c	2007-05-28 19:28:06 +0000
++++ procps-3.2.8.new/ps/parser.c	2022-07-26 15:43:29 +0000
+@@ -20,7 +20,9 @@
+ /* username lookups */
+ #include <sys/types.h>
+ #include <pwd.h>
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ 
+ #include <sys/stat.h>
+ #include <unistd.h>
+diff -ru procps-3.2.8/ps/sortformat.c procps-3.2.8.new/ps/sortformat.c
+--- procps-3.2.8/ps/sortformat.c	2007-05-28 03:40:30 +0000
++++ procps-3.2.8.new/ps/sortformat.c	2022-07-26 15:43:29 +0000
+@@ -16,7 +16,9 @@
+ /* username lookups */
+ #include <sys/types.h>
+ #include <pwd.h>
++#define _POSIX_SOURCE
+ #include <grp.h>
++#undef _POSIX_SOURCE
+ 
+ #include "../proc/readproc.h"
+ #include "../proc/sysinfo.h"
+diff -ru procps-3.2.8/top.c procps-3.2.8.new/top.c
+--- procps-3.2.8/top.c	2007-05-28 16:04:00 +0000
++++ procps-3.2.8.new/top.c	2022-07-26 15:43:29 +0000
+@@ -41,7 +41,7 @@
+ #include <termios.h>
+ #include <time.h>
+ #include <unistd.h>
+-#include <values.h>
++//#include <values.h>
+ 
+ #include "proc/devname.h"
+ #include "proc/wchan.h"
+@@ -55,6 +55,12 @@
+ 
+ #include "top.h"
+ 
++#define INT_MAX		2147483647
++#define MAXINT		INT_MAX
++#define MAXFLOAT	3.40282347e+38F
++
++#define PRIO_PROCESS	0
++
+ /*######  Miscellaneous global stuff  ####################################*/
+ 
+         /* The original and new terminal attributes */
+@@ -323,6 +329,8 @@
+ static void bye_bye (FILE *fp, int eno, const char *str) NORETURN;
+ static void bye_bye (FILE *fp, int eno, const char *str)
+ {
++   Hertz = 100;
++
+    if (!Batch)
+       tcsetattr(STDIN_FILENO, TCSAFLUSH, &Savedtty);
+    putp(tg2(0, Screen_rows));
+@@ -807,6 +815,7 @@
+    unsigned long nt;    // narrow time, for speed on 32-bit
+    unsigned cc;         // centiseconds
+    unsigned nn;         // multi-purpose whatever
++   Hertz = 100;
+ 
+    nt  = (tics * 100ull) / Hertz;
+    cc  = nt % 100;                              // centiseconds past second
+@@ -994,6 +1003,7 @@
+    static unsigned  hist_siz = 0;       // number of structs
+    static unsigned  maxt_sav;           // prior frame's max tasks
+    TIC_t tics;
++   Hertz = 100;
+ 
+    if (unlikely(!this)) {
+       static struct timeval oldtimev;
+@@ -2682,8 +2692,10 @@
+             int val, pid = get_int("PID to renice");
+             if (pid > 0) {
+                val = get_int(fmtmk("Renice PID %d to value", pid));
++/*
+                if (setpriority(PRIO_PROCESS, (unsigned)pid, val))
+                   show_msg(fmtmk("\aRenice of PID %d to %d failed: %s", pid, val, strerror(errno)));
++*/
+             }
+          }
+          break;
+diff -ru procps-3.2.8/w.c procps-3.2.8.new/w.c
+--- procps-3.2.8/w.c	2006-06-17 10:40:47 +0000
++++ procps-3.2.8.new/w.c	2022-07-26 15:43:29 +0000
+@@ -43,7 +43,6 @@
+ /* Uh... same thing as UT_NAMESIZE */
+ #define USERSZ (sizeof u->ut_user)
+ 
+-
+ /* This routine is careful since some programs leave utmp strings
+  * unprintable.  Always outputs at least 16 chars padded with spaces
+  * on the right if necessary.
+@@ -175,6 +174,7 @@
+     char uname[USERSZ + 1] = "",
+ 	tty[5 + sizeof u->ut_line + 1] = "/dev/";
+     const proc_t *best;
++    Hertz = 100;
+ 
+     for (i=0; i < sizeof(u->ut_line); i++)	/* clean up tty if garbled */
+ 	if (isalnum(u->ut_line[i]) || (u->ut_line[i]=='/'))

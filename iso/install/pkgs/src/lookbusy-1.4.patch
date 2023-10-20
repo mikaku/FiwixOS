@@ -1,0 +1,13 @@
+Only in lookbusy-1.4: .lb.c.swp
+diff -ru lookbusy-1.4/lb.c lookbusy-1.4.new/lb.c
+--- lookbusy-1.4/lb.c	2013-04-22 05:12:27 +0000
++++ lookbusy-1.4.new/lb.c	2021-11-20 07:50:16 +0000
+@@ -136,6 +136,8 @@
+ static size_t n_disk_pids;
+ static pid_t mem_pid;
+ 
++#define timezone _timezone
++
+ typedef void (*spinner_fn)(long long, long long, long long, void*, void *);
+ 
+ static int say(int level, const char *fmt, ...)

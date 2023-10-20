@@ -1,0 +1,15 @@
+diff -ru dos2unix-7.5.0/Makefile dos2unix-7.5.0.new/Makefile
+--- dos2unix-7.5.0/Makefile	2023-05-17 20:57:30 +0000
++++ dos2unix-7.5.0.new/Makefile	2023-08-04 08:35:42 +0000
+@@ -50,9 +50,9 @@
+ UNIX2MAC        = unix2mac
+ 
+ # Native Language Support (NLS)
+-ENABLE_NLS      = 1
++ENABLE_NLS      =
+ # Large File Support (LFS)
+-LFS             = 1
++LFS             =
+ # DEBUG=1 adds the -g option to CFLAGS, for adding debug symbols.
+ DEBUG = 0
+ # DEBUGMSG=1 adds -DDEBUG=1 to CFLAGS, for extra verbose messages.

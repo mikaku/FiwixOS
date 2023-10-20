@@ -1,0 +1,25 @@
+diff -ru gawk-3.1.8/config.guess gawk-3.1.8.new/config.guess
+--- gawk-3.1.8/config.guess	2007-08-11 21:39:49.000000000 +0200
++++ gawk-3.1.8.new/config.guess	2020-01-05 09:37:20.000000000 +0100
+@@ -1298,6 +1298,9 @@
+     i*86:rdos:*:*)
+ 	echo ${UNAME_MACHINE}-pc-rdos
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru gawk-3.1.8/config.sub gawk-3.1.8.new/config.sub
+--- gawk-3.1.8/config.sub	2007-08-11 21:39:49.000000000 +0200
++++ gawk-3.1.8.new/config.sub	2020-01-05 09:37:33.000000000 +0100
+@@ -1219,7 +1219,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

@@ -1,0 +1,146 @@
+diff -ru chkconfig-1.3.30.2/Makefile chkconfig-1.3.30.2.new/Makefile
+--- chkconfig-1.3.30.2/Makefile	2009-11-02 19:31:01 +0000
++++ chkconfig-1.3.30.2.new/Makefile	2021-11-04 20:51:28 +0000
+@@ -10,7 +10,7 @@
+ MANDIR = /usr/man
+ ALTDIR = /var/lib/alternatives
+ ALTDATADIR = /etc/alternatives
+-SUBDIRS = po
++SUBDIRS = #po
+ 
+ OBJS=chkconfig.o leveldb.o
+ NTOBJS=ntsysv.o leveldb.o
+@@ -24,12 +24,12 @@
+ 	done && test -z "$$fail"
+ 
+ chkconfig: $(OBJS)
+-	$(CC) $(LDFLAGS) -o chkconfig $(OBJS) -Wl,-Bstatic -lpopt -Wl,-Bdynamic
++	$(CC) $(LDFLAGS) -o chkconfig $(OBJS) -Wl,-Bstatic -lpopt -Wl,-Bdynamic -liconv
+ 
+ alternativs: alternatives.o
+ 
+ ntsysv: $(NTOBJS)
+-	$(CC) $(LDFLAGS) -o ntsysv $(NTOBJS) -lnewt -lpopt $(LIBMHACK)
++	$(CC) $(LDFLAGS) -o ntsysv $(NTOBJS) -lnewt -lpopt $(LIBMHACK) -liconv -lslang
+ 
+ chkconfig.o: chkconfig.c leveldb.h
+ 	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c chkconfig.c
+diff -ru chkconfig-1.3.30.2/alternatives.c chkconfig-1.3.30.2.new/alternatives.c
+--- chkconfig-1.3.30.2/alternatives.c	2009-11-02 19:31:01 +0000
++++ chkconfig-1.3.30.2.new/alternatives.c	2021-11-04 21:02:33 +0000
+@@ -12,7 +12,6 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <locale.h>
+-#include <libintl.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+@@ -26,7 +25,7 @@
+ #define FL_TEST(flags)	    ((flags) & FLAGS_TEST)
+ #define FL_VERBOSE(flags)   ((flags) & FLAGS_VERBOSE)
+ 
+-#define _(foo) gettext(foo)
++#define _(foo) foo
+ 
+ struct linkSet {
+     char * title;			/* print */
+@@ -700,7 +699,8 @@
+ 
+     do {
+ 	printf("\n");
+-	printf(ngettext(_("There is %d program that provides '%s'.\n"), _("There are %d programs which provide '%s'.\n"), set.numAlts), set.numAlts, set.alts[0].master.title);
++	printf(_("There is %d program that provides '%s'.\n"), set.numAlts, set.alts[0].master.title);
++	printf(_("There are %d programs which provide '%s'.\n"), set.numAlts, set.alts[0].master.title);
+ 	printf("\n");
+ 	printf(_("  Selection    Command\n"));
+ 	printf("-----------------------------------------------\n");
+@@ -830,8 +830,6 @@
+     struct stat sb;
+ 
+     setlocale(LC_ALL, ""); 
+-    bindtextdomain("chkconfig","/usr/share/locale"); 
+-    textdomain("chkconfig"); 
+ 
+     if (!argv[1])
+ 	return usage(2);
+diff -ru chkconfig-1.3.30.2/chkconfig.c chkconfig-1.3.30.2.new/chkconfig.c
+--- chkconfig-1.3.30.2/chkconfig.c	2009-11-02 19:31:01 +0000
++++ chkconfig-1.3.30.2.new/chkconfig.c	2021-11-04 20:50:54 +0000
+@@ -12,7 +12,6 @@
+ #include <dirent.h>
+ #include <errno.h>
+ #include <glob.h>
+-#include <libintl.h> 
+ #include <locale.h> 
+ #include <popt.h>
+ #include <stdio.h>
+@@ -23,7 +22,7 @@
+ 
+ static char *progname;
+ 
+-#define _(String) gettext((String)) 
++#define _(String) String
+ 
+ #include "leveldb.h"
+ 
+@@ -510,8 +509,6 @@
+     }
+ 
+     setlocale(LC_ALL, ""); 
+-    bindtextdomain("chkconfig","/usr/share/locale"); 
+-    textdomain("chkconfig"); 
+ 
+     optCon = poptGetContext("chkconfig", argc, argv, optionsTable, 0);
+     poptReadDefaultConfig(optCon, 1);
+diff -ru chkconfig-1.3.30.2/leveldb.c chkconfig-1.3.30.2.new/leveldb.c
+--- chkconfig-1.3.30.2/leveldb.c	2009-11-02 19:31:01 +0000
++++ chkconfig-1.3.30.2.new/leveldb.c	2021-11-04 20:50:54 +0000
+@@ -13,7 +13,6 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <glob.h>
+-#include <libintl.h> 
+ #include <locale.h> 
+ #include <sys/mman.h>
+ #include <sys/stat.h>
+@@ -28,7 +27,9 @@
+ 		portuguese description for the package) 
+ */
+ 
+-#define _(String) gettext((String)) 
++#define _(String) String
++
++#define GLOB_NOMATCH 3
+ 
+ #include "leveldb.h"
+ 
+diff -ru chkconfig-1.3.30.2/ntsysv.c chkconfig-1.3.30.2.new/ntsysv.c
+--- chkconfig-1.3.30.2/ntsysv.c	2009-11-02 19:31:01 +0000
++++ chkconfig-1.3.30.2.new/ntsysv.c	2021-11-04 20:51:48 +0000
+@@ -12,7 +12,6 @@
+ #include <ctype.h>
+ #include <dirent.h>
+ #include <errno.h>
+-#include <libintl.h> 
+ #include <locale.h> 
+ #include <newt.h>
+ #include <popt.h>
+@@ -22,7 +21,7 @@
+ #include <sys/stat.h>
+ #include <unistd.h>
+ 
+-#define _(String) gettext((String)) 
++#define _(String) String
+ 
+ #include "leveldb.h"
+ 
+@@ -279,8 +278,6 @@
+     };
+ 
+     setlocale(LC_ALL, ""); 
+-    bindtextdomain("chkconfig", "/usr/share/locale"); 
+-    textdomain("chkconfig"); 
+ 
+     progName = argv[0];
+ 

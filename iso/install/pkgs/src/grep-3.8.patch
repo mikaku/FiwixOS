@@ -1,0 +1,34 @@
+diff -ru grep-3.8/gnulib-tests/inet_pton.c grep-3.8.new/gnulib-tests/inet_pton.c
+--- grep-3.8/gnulib-tests/inet_pton.c	2022-03-20 17:29:05 +0000
++++ grep-3.8.new/gnulib-tests/inet_pton.c	2023-08-04 16:30:11 +0000
+@@ -32,6 +32,8 @@
+  * SOFTWARE.
+  */
+ 
++#ifndef __fiwix__
++
+ #include <config.h>
+ 
+ /* Specification.  */
+@@ -266,3 +268,5 @@
+ # endif
+ 
+ #endif
++
++#endif /* ! __fiwix__ */
+diff -ru grep-3.8/gnulib-tests/sys_select.in.h grep-3.8.new/gnulib-tests/sys_select.in.h
+--- grep-3.8/gnulib-tests/sys_select.in.h	2022-03-20 17:29:05 +0000
++++ grep-3.8.new/gnulib-tests/sys_select.in.h	2023-08-04 16:30:11 +0000
+@@ -84,9 +84,11 @@
+    in <sys/time.h>.
+    But avoid namespace pollution on glibc systems and "unknown type
+    name" problems on Cygwin.  */
++/*
+ # if !(defined __GLIBC__ || defined __CYGWIN__)
+ #  include <sys/time.h>
+ # endif
++*/
+ 
+ /* On AIX 7 and Solaris 10, <sys/select.h> provides an FD_ZERO implementation
+    that relies on memset(), but without including <string.h>.
+Only in grep-3.8.new/gnulib-tests: sys_select.in.h.orig

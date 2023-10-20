@@ -1,0 +1,12 @@
+diff -ru tree-2.1.1/Makefile tree-2.1.1.new/Makefile
+--- tree-2.1.1/Makefile	2023-05-31 20:06:18 +0000
++++ tree-2.1.1.new/Makefile	2023-08-05 17:31:01 +0000
+@@ -32,7 +32,7 @@
+ # Uncomment options below for your particular OS:
+ 
+ # Linux defaults:
+-CFLAGS+=-ggdb -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
++CFLAGS+=-O2 -Wall
+ #CFLAGS+=-O3 -std=c11 -pedantic -Wall -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+ #LDFLAGS+=-s
+ 

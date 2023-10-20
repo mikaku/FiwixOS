@@ -1,0 +1,25 @@
+diff -ru readline-7.0/support/config.guess readline-7.0.new/support/config.guess
+--- readline-7.0/support/config.guess	2013-12-16 21:02:33 +0000
++++ readline-7.0.new/support/config.guess	2022-07-16 10:24:23 +0000
+@@ -1369,6 +1369,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru readline-7.0/support/config.sub readline-7.0.new/support/config.sub
+--- readline-7.0/support/config.sub	2013-12-17 15:49:47 +0000
++++ readline-7.0.new/support/config.sub	2022-07-16 10:24:35 +0000
+@@ -1376,7 +1376,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

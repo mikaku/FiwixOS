@@ -1,0 +1,518 @@
+diff -ru svgalib-1.4.3/demos/fun.c svgalib-1.4.3.new/demos/fun.c
+--- svgalib-1.4.3/demos/fun.c	2000-08-11 21:55:51.000000000 +0200
++++ svgalib-1.4.3.new/demos/fun.c	2020-12-09 21:20:08.000000000 +0100
+@@ -19,15 +19,15 @@
+ /* This can be changed into any 256 color mode. */
+ /* For planar 256 color modes, enable page flipping. */
+ /* Even 16 color modes work (ugly colors). */
+-#define VGAMODE G800x600x256
++#define VGAMODE G320x200x256
+ 
+ #define USE_PAGEFLIPPING
+ 
+ /* #define USE_SMALLOC */
+ 
+ /* This is the size of the animated window. */
+-#define MAPWIDTH 800
+-#define MAPHEIGHT 560
++#define MAPWIDTH 320
++#define MAPHEIGHT 190
+ 
+ #define MAXMOVERS 2000
+ #define MAXCITIES 1000
+diff -ru svgalib-1.4.3/demos/lineart.c svgalib-1.4.3.new/demos/lineart.c
+--- svgalib-1.4.3/demos/lineart.c	2000-02-19 10:12:52.000000000 +0100
++++ svgalib-1.4.3.new/demos/lineart.c	2020-12-09 21:19:33.000000000 +0100
+@@ -19,8 +19,8 @@
+   
+   if(mode == 0)
+     {
+-      printf("Usage:linp [mode mode ...]\n
+-              where mode is an integer.\n");
++      printf("Usage:linp [mode mode ...]\n"
++              "where mode is an integer.\n");
+       return;
+     }
+   if(! vga_hasmode(mode)) {
+diff -ru svgalib-1.4.3/demos/Makefile svgalib-1.4.3.new/demos/Makefile
+--- svgalib-1.4.3/demos/Makefile	2000-08-06 12:30:21.000000000 +0200
++++ svgalib-1.4.3.new/demos/Makefile	2020-12-09 21:19:33.000000000 +0100
+@@ -28,13 +28,7 @@
+ 	   svidtune linearfork vgatweak
+ 
+ # Determine what library (static or shared) we will be linking programs with
+-ifdef INSTALLSHAREDLIB
+   LIBS = -lvgagl -lvga
+-endif
+-ifndef LIBS
+-  LIBS    = ../staticlib/libvgagl.a ../staticlib/libvga.a -lm
+-  LVGADEP = $(LIBS)
+-endif
+ 
+ all:	$(PROGS)
+ 
+diff -ru svgalib-1.4.3/doc/Makefile svgalib-1.4.3.new/doc/Makefile
+--- svgalib-1.4.3/doc/Makefile	2000-08-06 12:29:12.000000000 +0200
++++ svgalib-1.4.3.new/doc/Makefile	2020-12-09 21:19:33.000000000 +0100
+@@ -87,11 +87,6 @@
+ endif
+ 
+ uninstall:
+-	@echo Removing all svgalib man pages.
+-	@for dir in $(mandir) /usr/man /usr/local/man; do \
+-		cd $$dir; \
+-		rm -f $(MANPAGES) $(UNCOMANPAGES); \
+-	done;\
+ 
+ clean:
+ #	-gzip -9 man?/* 2>/dev/null
+diff -ru svgalib-1.4.3/gl/inlstring.h svgalib-1.4.3.new/gl/inlstring.h
+--- svgalib-1.4.3/gl/inlstring.h	1999-09-20 20:45:31.000000000 +0200
++++ svgalib-1.4.3.new/gl/inlstring.h	2020-12-09 21:19:33.000000000 +0100
+@@ -1,7 +1,5 @@
+ /* Based on functions in linux/string.h */
+ 
+-#include <linux/types.h>	/* for size_t */
+-
+ #if defined(__alpha__) || defined (NO_ASSEMBLY)
+ 
+ #define __memcpy(dst,src,n)			memcpy((dst),(src),(n))
+@@ -98,7 +96,7 @@
+ 	       "cmpl $12,%%edx\n\t"
+ 	       "jl 1f\n\t"	/* if (count >= 12) */
+ 
+-	       "movzbl %%al,%%ax\n\t"
++	       "movzbl %%al,%%eax\n\t"
+ 	       "movl %%eax,%%ecx\n\t"
+ 	       "shll $8,%%ecx\n\t"	/* c |= c << 8 */
+ 	       "orl %%ecx,%%eax\n\t"
+diff -ru svgalib-1.4.3/Makefile svgalib-1.4.3.new/Makefile
+--- svgalib-1.4.3/Makefile	2001-04-18 19:35:51.000000000 +0200
++++ svgalib-1.4.3.new/Makefile	2020-12-09 21:19:33.000000000 +0100
+@@ -110,10 +110,6 @@
+ 
+ installheaders:
+ 	@echo Installing header files in $(includedir).
+-	@if [ -f /usr/include/vga.h ]; then \
+-		rm -f /usr/include/vga.h /usr/include/vgagl.h; \
+-		echo Old header files in /usr/include removed.; \
+-	fi
+ 	mkdir -p $(includedir)
+ 	@cp $(srcdir)/src/vga.h $(includedir)/vga.h
+ 	@chmod a+r $(includedir)/vga.h
+@@ -153,7 +149,6 @@
+ 		(cd $(sharedlibdir); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
+ 
+ ifdef INSTALLAOUTDIR
+ 
+@@ -169,7 +164,6 @@
+ 		(cd $(TOPDIR)/$(INSTALLAOUTDIR); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
+ 
+ else
+ 
+@@ -180,26 +174,16 @@
+ 
+ installstaticlib: static
+ 	@echo Installing static libraries in $(libdir).
+-	@rm -f /usr/lib/libvga.a
+ 	@$(INSTALL_DATA) staticlib/libvga.a $(libdir)/libvga.a
+ 	@chmod a+r $(libdir)/libvga.a
+-	@rm -f /usr/lib/libvgagl.a
+ 	@$(INSTALL_DATA) staticlib/libvgagl.a $(libdir)/libvgagl.a
+ 	@chmod a+r $(libdir)/libvgagl.a
+ 
+-installutils: textutils lrmi
++installutils: textutils
+ 	@if [ ! -d $(bindir) ]; then \
+ 		echo No $(bindir) directory, creating it.; \
+ 		mkdir $(bindir); \
+ 	fi
+-	@if [ -f /usr/bin/restorefont ]; then \
+-		echo Removing old utilities in /usr/bin.; \
+-		for x in $(UTILS); do rm -f /usr/bin/$$x; done; \
+-	fi
+-	@if [ -f /usr/bin/convfont ]; then \
+-		echo Removing inappropriate utilities in /usr/bin.; \
+-		rm -f /usr/bin/convfont /usr/bin/setmclk; \
+-	fi
+ 	@echo Installing textmode utilities in $(bindir):
+ 	@echo "restorefont:      Save/restore textmode font."
+ 	@cp utils/restorefont $(bindir)
+@@ -214,7 +198,6 @@
+ 	@echo "savetextmode:     Script that saves textmode information used by 'textmode'."
+ 	@cp utils/savetextmode $(bindir)
+ 	@echo "mode3:       Restore textmode by setting VESA mode 3."
+-	@cp lrmi-0.6m/mode3 $(bindir)
+ 	@echo "Installing keymap utilities in $(bindir):"
+ 	@echo "svgakeymap:       Perl script that generates scancode conversion maps."
+ 	@cp utils/svgakeymap $(bindir)
+@@ -269,48 +252,6 @@
+ 	@echo demos/ and threedkit/.
+ 
+ uninstall:
+-	@echo "Removing textmode utilities..."
+-	@for i in $(OBSOLETEBDIRS); do \
+-          for prog in $(UTILS); do \
+-            rm -f $$i$$prog ; \
+-          done ; \
+-         done
+-	@echo "Removing shared library stubs (old & current)..."
+-	@for i in $(OBSOLETELDIRS); do \
+-	    rm -f `echo /lib/libvga.so.$(VERSION) /lib/libvgagl.so.$(VERSION) \
+-			$(OBSOLETELIBLINKS) /lib/libvga.sa /lib/libvgagl.sa \
+-		     | sed s?/lib/?$$i?g`; \
+-         done
+-ifndef KEEPSHAREDLIBS
+-	@echo "Removing shared library images (old & current)..."
+-	@for i in $(OBSOLETELDIRS); do \
+-	    rm -f `echo $(OBSOLETESHAREDIMAGES) | sed s?/lib/?$$i?g`; \
+-         done
+-endif
+-ifneq ($(INSTALLAOUTDIR), )
+-	@echo "Removing shared a.out library stubs (old & current)..."
+-	@for i in $(OBSOLETEAOUTDIRS); do \
+-	    rm -f `echo /lib/libvga.so.$(VERSION) /lib/libvgagl.so.$(VERSION) \
+-			$(OBSOLETELIBLINKS) /lib/libvga.sa /lib/libvgagl.sa \
+-		     | sed s?/lib/?$$i?g`; \
+-         done
+-ifndef KEEPSHAREDLIBS
+-	@echo "Removing shared a.out library images (old & current)..."
+-	@for i in $(OBSOLETEAOUTDIRS); do \
+-	    rm -f `echo $(OBSOLETESHAREDIMAGES) | sed s?/lib/?$$i?g`; \
+-         done
+-endif
+-endif
+-	@echo "Removing static libraries..."
+-	@for i in $(OBSOLETELDIRS); do \
+-	    rm -f `echo /lib/libvga.a /lib/libvgagl.a | sed s?/lib/?$$i?g`; \
+-	done
+-	@echo "Removing header files..."
+-	@for i in $(OBSOLETEHDIRS); do \
+-	    rm -f `echo $(OBSOLETEHEADERS) | sed s?/inc/?$$i?g`; \
+-	done
+-	(cd doc; $(MAKE) -f $(srcdir)/doc/Makefile srcdir="$(srcdir)" uninstall)
+-	 
+ 
+ SHAREDDIRS0 = sharedlib/mouse sharedlib/keyboard sharedlib/ramdac \
+ 		sharedlib/clockchip sharedlib/joystick
+diff -ru svgalib-1.4.3/Makefile.cfg svgalib-1.4.3.new/Makefile.cfg
+--- svgalib-1.4.3/Makefile.cfg	2001-05-29 16:39:13.000000000 +0200
++++ svgalib-1.4.3.new/Makefile.cfg	2020-12-09 21:19:33.000000000 +0100
+@@ -25,7 +25,7 @@
+ # Common prefix for installation directories.
+ # NOTE: This directory must exist when you start the install.
+ TOPDIR=
+-prefix = $(TOPDIR)/usr/local
++prefix = $(TOPDIR)/usr
+ exec_prefix = $(prefix)
+ 
+ # Directory where the shared stubs and static library will be installed.
+@@ -82,19 +82,19 @@
+ # BACKGROUND = y
+ 
+ # Uncomment this if you want to compile and install the static libs.
+-# INSTALLSTATICLIB = installstaticlib
++INSTALLSTATICLIB = installstaticlib
+ 
+ # Comment this out if you don't want to install the shared libs.
+ # If you do not install the shared nor the static libs, 'make static'
+ # first to enforce just building the static lib, then the demos will
+ # use this local static library!
+-INSTALLSHAREDLIB = installsharedlib
++# INSTALLSHAREDLIB = installsharedlib
+ 
+ # In case your TARGET_FORMAT is elf and if a pre-compiled shared library
+ # a.out image is available install it in the first directory named something
+ # like *aout/ in /etc/ld.so.conf.
+ # If you want this, do not comment out the next line:
+-INSTALLAOUTLIB = installaoutcompat
++# INSTALLAOUTLIB = installaoutcompat
+ 
+ # Comment this out if you want to keep old shared images. Old header files,
+ # library stubs and static libraries CANNOT be kept in public locations
+@@ -113,7 +113,7 @@
+ # pages and install them when possible.
+ 
+ # MANFORMAT = compressed
+-# MANFORMAT = uncompressed
++MANFORMAT = uncompressed
+ 
+ # This is the command to update the man pages whatis database.
+ # This is a slow command. If you are not very patient, simple
+@@ -133,13 +133,13 @@
+ #INCLUDE_ET3000_DRIVER = y
+ #INCLUDE_GVGA6400_DRIVER = y
+ #INCLUDE_ARK_DRIVER = y
+-#INCLUDE_ATI_DRIVER = y
++INCLUDE_ATI_DRIVER = y
+ #INCLUDE_ALI_DRIVER = y
+ INCLUDE_CHIPS_DRIVER = y
+ INCLUDE_APM_DRIVER = y
+ INCLUDE_NV3_DRIVER = y
+-INCLUDE_ET6000_DRIVER = y
+-INCLUDE_VESA_DRIVER = y
++#INCLUDE_ET6000_DRIVER = y
++#INCLUDE_VESA_DRIVER = y
+ INCLUDE_MX_DRIVER = y
+ INCLUDE_PARADISE_DRIVER = y
+ INCLUDE_RAGE_DRIVER = y
+@@ -150,7 +150,7 @@
+ INCLUDE_NEO_DRIVER = y
+ INCLUDE_R128_DRIVER = y
+ INCLUDE_G400_DRIVER = y
+-INCLUDE_FBDEV_DRIVER = y
++#INCLUDE_FBDEV_DRIVER = y
+ INCLUDE_SAVAGE_DRIVER = y
+ #
+ # Comment out any adapter you don't want to autodetect.
+@@ -165,12 +165,12 @@
+ INCLUDE_S3_DRIVER_TEST = y
+ #INCLUDE_ET3000_DRIVER_TEST = y
+ #INCLUDE_ARK_DRIVER_TEST = y
+-#INCLUDE_ATI_DRIVER_TEST = y
++INCLUDE_ATI_DRIVER_TEST = y
+ #INCLUDE_ALI_DRIVER_TEST = y
+ INCLUDE_CHIPS_DRIVER_TEST = y
+ INCLUDE_APM_DRIVER_TEST = y
+ INCLUDE_NV3_DRIVER_TEST = y
+-INCLUDE_ET6000_DRIVER_TEST = y
++#INCLUDE_ET6000_DRIVER_TEST = y
+ INCLUDE_MX_DRIVER_TEST = y
+ INCLUDE_PARADISE_DRIVER_TEST = y
+ INCLUDE_RAGE_DRIVER_TEST = y
+@@ -185,7 +185,7 @@
+ INCLUDE_SAVAGE_DRIVER_TEST = y
+ 
+ #Might be too dangerous:
+-INCLUDE_VESA_DRIVER_TEST = y
++#INCLUDE_VESA_DRIVER_TEST = y
+ 
+ #
+ # Comment out any dac support that you don't want included in the library.
+diff -ru svgalib-1.4.3/src/apm.c svgalib-1.4.3.new/src/apm.c
+--- svgalib-1.4.3/src/apm.c	2000-10-11 18:35:18.000000000 +0200
++++ svgalib-1.4.3.new/src/apm.c	2020-12-09 21:19:33.000000000 +0100
+@@ -151,12 +151,12 @@
+    regs[APMREG_SAVE(15)] = (k >> 8)&0xff;
+    regs[APMREG_SAVE(16)] = (k >> 16) & 0xff ;
+    regs[APMREG_SAVE(17)] = ( k >> 24 ) & 0xff ;
+-   (unsigned long)regs[APMREG_SAVE(18)] = inlXR(0xf0) ;
+-   (unsigned long)regs[APMREG_SAVE(22)] = inlXR(0xf4) ;
+-   (unsigned long)regs[APMREG_SAVE(26)] = inlXR(0x140) ;
+-   (unsigned short)regs[APMREG_SAVE(30)] = inlXR(0x144) ;
+-   (unsigned long)regs[APMREG_SAVE(32)] = inXR(0x148) ;
+-   (unsigned short)regs[APMREG_SAVE(36)] = inXR(0x14c) ;
++   regs[APMREG_SAVE(18)] = inlXR(0xf0) ;
++   regs[APMREG_SAVE(22)] = inlXR(0xf4) ;
++   regs[APMREG_SAVE(26)] = inlXR(0x140) ;
++   regs[APMREG_SAVE(30)] = inlXR(0x144) ;
++   regs[APMREG_SAVE(32)] = inXR(0x148) ;
++   regs[APMREG_SAVE(36)] = inXR(0x14c) ;
+ 
+     return APM_TOTAL_REGS - VGA_TOTAL_REGS;
+ }
+diff -ru svgalib-1.4.3/src/joystick/joydev.h svgalib-1.4.3.new/src/joystick/joydev.h
+--- svgalib-1.4.3/src/joystick/joydev.h	1999-09-28 18:38:01.000000000 +0200
++++ svgalib-1.4.3.new/src/joystick/joydev.h	2020-12-09 21:19:33.000000000 +0100
+@@ -1,4 +1,4 @@
+-#include <linux/version.h>
++//#include <linux/version.h>
+ 
+ #if ( LINUX_VESION_CODE >= 131584) 
+ #include <linux/joystick.h>
+diff -ru svgalib-1.4.3/src/keyboard/keyboard.c svgalib-1.4.3.new/src/keyboard/keyboard.c
+--- svgalib-1.4.3/src/keyboard/keyboard.c	2000-10-08 14:37:40.000000000 +0200
++++ svgalib-1.4.3.new/src/keyboard/keyboard.c	2020-12-09 21:19:33.000000000 +0100
+@@ -28,11 +28,13 @@
+ #include <sys/ioctl.h>
+ #include <fcntl.h>
+ #include <termios.h>
+-#include <linux/kd.h>
++#include <fiwix/kd.h>
+ /* linux/keyboard.h defines NR_KEYS and some scancode-like constants, so it */
+ /* should also be useful for svgalib programs using the keyboard. It misses */
+ /* a few KERNEL ifdefs around kernel data structures though. */
+-#include <linux/keyboard.h>
++#include <fiwix/keyboard.h>
++
++#define NR_KEYS		128
+ #include <sys/vt.h>
+ /* Needed to check uid of keymap files */
+ #include <sys/stat.h>
+diff -ru svgalib-1.4.3/src/mach32.c svgalib-1.4.3.new/src/mach32.c
+--- svgalib-1.4.3/src/mach32.c	1999-09-29 18:52:14.000000000 +0200
++++ svgalib-1.4.3.new/src/mach32.c	2020-12-09 21:19:33.000000000 +0100
+@@ -1268,12 +1268,9 @@
+     char hstrt, hsync;
+     int htotndisp, vdisp, vtotal, vstrt, vsync, clck, i;
+ 
+-    int count, saved_nice, loop;
++    int count, loop;
+     double scale;
+ 
+-    saved_nice = nice(0);
+-    nice(-20 - saved_nice);
+-
+     puts("Warning, about to measure clocks. Wait until system is completely idle!\n"
+ 	 "Any activity will disturb measuring, and therefor hinder correct driver\n"
+ 	 "function. Test will need about 3-4 seconds.\n"
+@@ -1353,7 +1350,6 @@
+     outw(V_TOTAL, vtotal);
+     outw(V_SYNC_STRT, vstrt);
+     outw(V_SYNC_WID, vsync);
+-    nice(20 + saved_nice);
+ 
+ /*Recalculation: */
+     scale = ((double) mach32_clocks[knownind]) * knownfreq;
+@@ -1545,6 +1541,7 @@
+ 	    printf("mach32: Notice: new EEPROM file >%s< succesful created.\n",
+ 		   eeprom_fname);
+ 	  finish_w_eeprom:
++		;
+ 	}
+ 	/* Change eeprom contents if requested: */
+ 	if (!(eeprom_option & EEPROM_USE_MEMCFG))
+diff -ru svgalib-1.4.3/src/mouse/ms.c svgalib-1.4.3.new/src/mouse/ms.c
+--- svgalib-1.4.3/src/mouse/ms.c	2000-08-21 07:10:15.000000000 +0200
++++ svgalib-1.4.3.new/src/mouse/ms.c	2020-12-09 21:19:33.000000000 +0100
+@@ -459,17 +459,21 @@
+ 	    /* Prepare new stat: */
+ 
+ 	    /*set DTR as ordered.. */
++/*
+ 	    if (m_modem_ctl & MOUSE_CHG_DTR) {
+ 		param &= ~TIOCM_DTR;
+ 		if (m_modem_ctl & MOUSE_DTR_HIGH)
+ 		    param |= TIOCM_DTR;
+ 	    }
++*/
+ 	    /*set RTS as ordered.. */
++/*
+ 	    if (m_modem_ctl & MOUSE_CHG_RTS) {
+ 		param &= ~TIOCM_RTS;
+ 		if (m_modem_ctl & MOUSE_RTS_HIGH)
+ 		    param |= TIOCM_RTS;
+ 	    }
++*/
+ 	    if (ioctl(__svgalib_mouse_fd, TIOCMSET, &param))
+ 		m_modem_info_valid = 0;	/* No try to restore if this failed */
+ 	}
+diff -ru svgalib-1.4.3/src/s3.c svgalib-1.4.3.new/src/s3.c
+--- svgalib-1.4.3/src/s3.c	2000-05-03 14:23:57.000000000 +0200
++++ svgalib-1.4.3.new/src/s3.c	2020-12-09 21:19:33.000000000 +0100
+@@ -475,6 +475,7 @@
+ 	    return old_values;
+ 	}
+     default:
++	break;
+     }
+     return 0;
+ }
+diff -ru svgalib-1.4.3/src/vga.c svgalib-1.4.3.new/src/vga.c
+--- svgalib-1.4.3/src/vga.c	2001-05-29 16:37:55.000000000 +0200
++++ svgalib-1.4.3.new/src/vga.c	2020-12-09 21:19:33.000000000 +0100
+@@ -2118,9 +2118,6 @@
+ 	    if (WIFEXITED(child_status))
+ 		exit(WEXITSTATUS(child_status));
+ 
+-	    if (WCOREDUMP(child_status))
+-		puts("svgalib:vga_safety_fork: Core dumped!");
+-
+ 	    if (WIFSIGNALED(child_status)) {
+ 		printf("svgalib:vga_safety_fork: Killed by signal %d, %s.\n",
+ 		       WTERMSIG(child_status),
+@@ -3914,7 +3911,7 @@
+ 
+ #define ML_GETINT(x) \
+ 	ptr = strtok(NULL, " "); if(!ptr) break; \
+-	mmt.##x = atoi(ptr);
++	mmt.x = atoi(ptr);
+ 
+ 	    ML_GETINT(HDisplay);
+ 	    ML_GETINT(HSyncStart);
+diff -ru svgalib-1.4.3/src/vgamisc.c svgalib-1.4.3.new/src/vgamisc.c
+--- svgalib-1.4.3/src/vgamisc.c	1999-07-27 18:36:19.000000000 +0200
++++ svgalib-1.4.3.new/src/vgamisc.c	2020-12-09 21:19:33.000000000 +0100
+@@ -47,7 +47,7 @@
+ }
+ 
+ #ifndef BACKGROUND
+-static void *__svgalib_linearframebuffer;
++void *__svgalib_linearframebuffer;
+ #endif
+ #ifdef BACKGROUND
+ void *__svgalib_linearframebuffer;
+@@ -73,8 +73,7 @@
+     return __svgalib_graph_mem;
+ }
+ 
+-#include <syscall.h>
+-#include <linux/kernel.h>
++#include <fiwix/system.h>
+ 
+ int __svgalib_physmem(void)
+ {
+@@ -84,7 +83,7 @@
+ #else
+     struct sysinfo si;
+     si.totalram = 0;
+-    syscall(SYS_sysinfo, &si);
++    sysinfo(&si);
+     return si.totalram;
+ #endif
+ }
+diff -ru svgalib-1.4.3/threeDKit/quickmath.c svgalib-1.4.3.new/threeDKit/quickmath.c
+--- svgalib-1.4.3/threeDKit/quickmath.c	1997-10-03 20:34:13.000000000 +0200
++++ svgalib-1.4.3.new/threeDKit/quickmath.c	2020-12-09 21:19:33.000000000 +0100
+@@ -83,7 +83,7 @@
+     return c;
+ }
+ 
+-Vec times (Vec a, double f)
++Vec _times (Vec a, double f)
+ {
+     Vec c;
+     c.x = a.x * f;
+@@ -108,10 +108,10 @@
+ 	r1->y = -X.x / sqrt (X.x * X.x + X.y * X.y);
+ 	r1->z = 0;
+     }
+-    *r1 = times (*r1, r);		/* r1 now has length r */
++    *r1 = _times (*r1, r);		/* r1 now has length r */
+ 
+     *r2 = cross (X, *r1);
+-    *r2 = times (*r2, r / norm (*r2));	/* r2 now has length r */
++    *r2 = _times (*r2, r / norm (*r2));	/* r2 now has length r */
+ 
+ /* r1 and r2 are now two vectors prependicular to each other and to (x,y,z) */
+ }
+diff -ru svgalib-1.4.3/utils/gtf/gtfcalc.c svgalib-1.4.3.new/utils/gtf/gtfcalc.c
+--- svgalib-1.4.3/utils/gtf/gtfcalc.c	1999-07-17 14:13:02.000000000 +0200
++++ svgalib-1.4.3.new/utils/gtf/gtfcalc.c	2020-12-09 21:19:33.000000000 +0100
+@@ -64,7 +64,7 @@
+ 
+ /*-------------------------- Implementation -------------------------------*/
+ 
+-static double round(double v)
++double round(double v)
+ {
+ 	return floor(v + 0.5);
+ }
+diff -ru svgalib-1.4.3/utils/gtf/scitech.h svgalib-1.4.3.new/utils/gtf/scitech.h
+--- svgalib-1.4.3/utils/gtf/scitech.h	1999-07-09 12:47:24.000000000 +0200
++++ svgalib-1.4.3.new/utils/gtf/scitech.h	2020-12-09 21:19:33.000000000 +0100
+@@ -216,7 +216,7 @@
+ #endif
+ 
+ /* 32-bit Linux compile environment */
+-#elif	defined(__LINUX__) || defined(linux)
++#elif	defined(__LINUX__) || defined(linux) || defined(__fiwix__)
+ #ifndef	__LINUX__
+ #define	__LINUX__
+ #endif

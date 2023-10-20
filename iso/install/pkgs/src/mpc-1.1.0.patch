@@ -1,0 +1,25 @@
+diff -ru mpc-1.1.0/config.guess mpc-1.1.0.new/config.guess
+--- mpc-1.1.0/config.guess	2016-01-12 18:30:16.000000000 +0100
++++ mpc-1.1.0.new/config.guess	2023-08-05 14:39:22.000000000 +0200
+@@ -1367,6 +1367,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
+diff -ru mpc-1.1.0/config.sub mpc-1.1.0.new/config.sub
+--- mpc-1.1.0/config.sub	2016-01-12 18:30:16.000000000 +0100
++++ mpc-1.1.0.new/config.sub	2023-08-05 14:39:35.000000000 +0200
+@@ -1393,7 +1393,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -tirtos*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -tirtos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

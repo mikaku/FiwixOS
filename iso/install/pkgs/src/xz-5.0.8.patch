@@ -1,0 +1,26 @@
+diff -ru xz-5.0.8/build-aux/config.guess xz-5.0.8.new/build-aux/config.guess
+--- xz-5.0.8/build-aux/config.guess	2014-12-21 15:16:17 +0000
++++ xz-5.0.8.new/build-aux/config.guess	2019-12-26 21:38:15 +0000
+@@ -1369,6 +1369,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru xz-5.0.8/build-aux/config.sub xz-5.0.8.new/build-aux/config.sub
+--- xz-5.0.8/build-aux/config.sub	2014-12-21 15:16:17 +0000
++++ xz-5.0.8.new/build-aux/config.sub	2019-12-26 21:38:41 +0000
+@@ -1376,7 +1376,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

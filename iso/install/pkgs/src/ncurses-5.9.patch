@@ -1,0 +1,26 @@
+diff -ru ncurses-5.9/config.guess ncurses-5.9.new/config.guess
+--- ncurses-5.9/config.guess	2010-09-29 01:11:39.000000000 +0200
++++ ncurses-5.9.new/config.guess	2019-12-29 21:54:48.000000000 +0100
+@@ -1306,6 +1306,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru ncurses-5.9/config.sub ncurses-5.9.new/config.sub
+--- ncurses-5.9/config.sub	2010-09-11 00:25:58.000000000 +0200
++++ ncurses-5.9.new/config.sub	2019-12-29 21:55:01.000000000 +0100
+@@ -1325,7 +1325,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

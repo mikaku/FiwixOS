@@ -1,0 +1,47 @@
+diff -ru enscript-1.6.6/config.guess enscript-1.6.6.new//config.guess
+--- enscript-1.6.6/config.guess	2012-09-25 19:23:31 +0000
++++ enscript-1.6.6.new//config.guess	2018-02-28 16:53:06 +0000
+@@ -1328,6 +1328,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru enscript-1.6.6/config.sub enscript-1.6.6.new//config.sub
+--- enscript-1.6.6/config.sub	2012-09-25 19:23:31 +0000
++++ enscript-1.6.6.new//config.sub	2018-02-28 16:53:30 +0000
+@@ -1368,7 +1368,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru enscript-1.6.6/src/util.c enscript-1.6.6.new//src/util.c
+--- enscript-1.6.6/src/util.c	2011-10-30 16:48:42 +0000
++++ enscript-1.6.6.new//src/util.c	2018-02-28 17:05:02 +0000
+@@ -1423,7 +1423,7 @@
+ 		  break;
+ 
+ 		case 'm':	/* `%m' the hostname up to the first `.' */
+-		  (void) gethostname (buf, sizeof (buf));
++		  /* (void) gethostname (buf, sizeof (buf)); */
+ 		  cp = strchr (buf, '.');
+ 		  if (cp)
+ 		    *cp = '\0';
+@@ -1431,7 +1431,7 @@
+ 		  break;
+ 
+ 		case 'M':	/* `%M' the full hostname */
+-		  (void) gethostname (buf, sizeof (buf));
++		  /* (void) gethostname (buf, sizeof (buf)); */
+ 		  APPEND_STR (buf);
+ 		  break;
+ 

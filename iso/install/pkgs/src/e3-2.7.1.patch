@@ -1,0 +1,12 @@
+diff -ru e3-2.7.1/Makefile e3-2.7.1.new/Makefile
+--- e3-2.7.1/Makefile	2007-10-27 17:50:38 +0000
++++ e3-2.7.1.new/Makefile	2019-12-29 21:31:16 +0000
+@@ -14,7 +14,7 @@
+ 
+ # 2. edit dest dir prefix if you want....
+ 
+-PREFIX='/usr/local'
++#PREFIX='/usr/local'
+ #PREFIX=/boot/home
+ 
+ 

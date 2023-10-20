@@ -1,0 +1,117 @@
+diff -ru vixie-cron-4.1/config.h vixie-cron-4.1.new/config.h
+--- vixie-cron-4.1/config.h	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/config.h	2021-11-20 19:33:27.000000000 +0100
+@@ -29,7 +29,7 @@
+  */
+ 
+ #ifndef DEBUGGING
+-#define DEBUGGING 1	/* 1 or 0 -- do you want debugging code built in? */
++#define DEBUGGING 0	/* 1 or 0 -- do you want debugging code built in? */
+ #endif
+ 
+ 			/*
+@@ -41,14 +41,17 @@
+ 			 * (hint: MAILTO= was added for this reason).
+ 			 */
+ 
+-#define MAILFMT "%s -FCronDaemon -odi -oem -oi -t" /*-*/
++#define MAILFMT ""
++#define MAILARG ""
++
++/*#define MAILFMT "%s -FCronDaemon -odi -oem -oi -t" /*-*/
+ 			/* -Fx	 = Set full-name of sender
+ 			 * -odi	 = Option Deliverymode Interactive
+ 			 * -oem	 = Option Errors Mailedtosender
+ 			 * -oi   = Ignore "." alone on a line
+ 			 * -t    = Get recipient from headers
+ 			 */
+-#define MAILARG _PATH_SENDMAIL				/*-*/
++/*#define MAILARG _PATH_SENDMAIL				/*-*/
+ 
+ /* #define MAILFMT "%s -d %s"				/*-*/
+ 			/* -d = undocumented but common flag: deliver locally?
+@@ -78,7 +81,7 @@
+ 			 * are both defined, then logging will go to both
+ 			 * places.
+ 			 */
+-#define SYSLOG	 			/*-*/
++/*#define SYSLOG	 			/*-*/
+ 
+ 			/* if you want cron to capitalize its name in ps
+ 			 * when running a job.  Does not work on SYSV.
+diff -ru vixie-cron-4.1/cron.c vixie-cron-4.1.new/cron.c
+--- vixie-cron-4.1/cron.c	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/cron.c	2021-11-20 19:29:42.000000000 +0100
+@@ -49,8 +49,10 @@
+ 	const char **dflags;
+ 
+ 	fprintf(stderr, "usage:  %s [-n] [-x [", ProgramName);
++/*
+ 	for (dflags = DebugFlagNames; *dflags; dflags++)
+ 		fprintf(stderr, "%s%s", *dflags, dflags[1] ? "," : "]");
++*/
+ 	fprintf(stderr, "]\n");
+ 	exit(ERROR_EXIT);
+ }
+diff -ru vixie-cron-4.1/do_command.c vixie-cron-4.1.new/do_command.c
+--- vixie-cron-4.1/do_command.c	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/do_command.c	2021-11-20 19:34:00.000000000 +0100
+@@ -241,7 +241,7 @@
+ 		}
+ #else
+ 		setgid(e->pwd->pw_gid);
+-		initgroups(usernm, e->pwd->pw_gid);
++/*		initgroups(usernm, e->pwd->pw_gid); */
+ #if (defined(BSD)) && (BSD >= 199103)
+ 		setlogin(usernm);
+ #endif /* BSD */
+diff -ru vixie-cron-4.1/Makefile vixie-cron-4.1.new/Makefile
+--- vixie-cron-4.1/Makefile	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/Makefile	2021-11-20 19:29:42.000000000 +0100
+@@ -110,10 +110,15 @@
+ 			$(CC) $(LDFLAGS) -o crontab $(CRONTAB_OBJ) $(LIBS)
+ 
+ install		:	all
++			mkdir -p $(DESTSBIN)
++			mkdir -p $(DESTBIN)
+ 			$(INSTALL) -c -m  111 -o root -s cron    $(DESTSBIN)/
+ 			$(INSTALL) -c -m 4111 -o root -s crontab $(DESTBIN)/
+ #			$(INSTALL) -c -m  111 -o root -g crontab -s cron $(DESTSBIN)/
+ #			$(INSTALL) -c -m 2111 -o root -g crontab -s crontab $(DESTBIN)/
++			mkdir -p $(DESTMAN)/man1
++			mkdir -p $(DESTMAN)/man8
++			mkdir -p $(DESTMAN)/man5
+ 			sh putman.sh crontab.1 $(DESTMAN)
+ 			sh putman.sh cron.8    $(DESTMAN)
+ 			sh putman.sh crontab.5 $(DESTMAN)
+diff -ru vixie-cron-4.1/pathnames.h vixie-cron-4.1.new/pathnames.h
+--- vixie-cron-4.1/pathnames.h	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/pathnames.h	2021-11-20 19:29:42.000000000 +0100
+@@ -26,7 +26,7 @@
+ #ifndef _PATHNAMES_H_
+ #define _PATHNAMES_H_
+ 
+-#if (defined(BSD)) && (BSD >= 199103) || defined(__linux) || defined(AIX)
++#if (defined(BSD)) && (BSD >= 199103) || defined(__linux) || defined(AIX) || defined(__fiwix__)
+ # include <paths.h>
+ #endif /*BSD*/
+ 
+diff -ru vixie-cron-4.1/popen.c vixie-cron-4.1.new/popen.c
+--- vixie-cron-4.1/popen.c	2004-07-21 15:31:55.000000000 +0200
++++ vixie-cron-4.1.new/popen.c	2021-11-20 19:29:42.000000000 +0100
+@@ -100,6 +100,7 @@
+ 				_exit(ERROR_EXIT);
+ 			}
+ #else
++/*
+ 			if (setgid(pw->pw_gid) < 0 ||
+ 			    initgroups(pw->pw_name, pw->pw_gid) < 0) {
+ 				fprintf(stderr,
+@@ -107,6 +108,7 @@
+ 				    pw->pw_name);
+ 				_exit(1);
+ 			}
++*/
+ #if (defined(BSD)) && (BSD >= 199103)
+ 			setlogin(pw->pw_name);
+ #endif /* BSD */

@@ -1,0 +1,56 @@
+diff -ru zgv-5.9/src/Makefile zgv-5.9.new/src/Makefile
+--- zgv-5.9/src/Makefile	2004-02-21 17:47:44.000000000 +0100
++++ zgv-5.9.new/src/Makefile	2020-09-17 16:02:35.000000000 +0200
+@@ -13,8 +13,8 @@
+ # having /usr/local/{include,lib} like this is apparently needed for
+ # FreeBSD, but shouldn't cause problems on Linux.
+ #
+-CFLAGS+=-I/usr/local/include
+-ZGV_LIBS=-L/usr/local/lib
++#CFLAGS+=-I/usr/local/include
++#ZGV_LIBS=-L/usr/local/lib
+ 
+ CFLAGS+=-DBACKEND_$(BACKEND)
+ 
+@@ -27,7 +27,7 @@
+ 
+ CFLAGS+=-DRGB_DB_FILE=\"$(RGB_DB)\" -DETC_RCFILE=\"$(RCFILE)\"
+ 
+-ZGV_LIBS+=-ljpeg -lpng -ltiff -lz -lm
++ZGV_LIBS+=-lpng -ltiff -ljpeg -lz -lm -llzma
+ ifeq ($(PCDDEF),-DPCD_SUPPORT)
+ ZGV_LIBS+=-lpcd
+ endif
+diff -ru zgv-5.9/src/readnbkey.c zgv-5.9.new/src/readnbkey.c
+--- zgv-5.9/src/readnbkey.c	2005-01-20 23:29:26.000000000 +0100
++++ zgv-5.9.new/src/readnbkey.c	2020-09-16 17:17:17.000000000 +0200
+@@ -85,7 +85,7 @@
+ 
+ #include <vgakeyboard.h>	/* for SCANCODE_{F1,F11} */
+ #ifdef OSTYPE_LINUX
+-#include <linux/kd.h>
++#include <fiwix/kd.h>
+ #endif
+ #ifdef OSTYPE_FREEBSD
+ #include <sys/consio.h>
+diff -ru zgv-5.9/src/readpng.c zgv-5.9.new/src/readpng.c
+--- zgv-5.9/src/readpng.c	2004-10-31 16:00:23.000000000 +0100
++++ zgv-5.9.new/src/readpng.c	2020-09-17 16:16:38.000000000 +0200
+@@ -63,7 +63,7 @@
+ use_errmsg=1;
+ 
+ /* cleanup is done after jump back, so just do that now... */
+-longjmp(png_ptr->jmpbuf,1);
++png_longjmp(png_ptr, 1);
+ }
+ 
+ 
+@@ -132,7 +132,7 @@
+   return(_PICERR_NOMEM);
+   }
+ 
+-if(setjmp(png_ptr->jmpbuf))
++if(setjmp(png_jmpbuf(png_ptr)))
+   {
+   /* if we get here, there was an error. */
+   /* don't use local variables here, they may have been blasted */

@@ -1,0 +1,244 @@
+diff -ru lxdoom-1.4.4/config.guess lxdoom-1.4.4.new/config.guess
+--- lxdoom-1.4.4/config.guess	1999-10-01 08:23:37 +0000
++++ lxdoom-1.4.4.new/config.guess	2020-05-05 18:58:57 +0000
+@@ -799,6 +799,9 @@
+     BePC:BeOS:*:*)	# BeOS running on Intel PC compatible.
+ 	echo i586-pc-beos
+ 	exit 0 ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit 0 ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru lxdoom-1.4.4/config.sub lxdoom-1.4.4.new/config.sub
+--- lxdoom-1.4.4/config.sub	1999-10-01 08:23:37 +0000
++++ lxdoom-1.4.4.new/config.sub	2020-05-05 18:59:08 +0000
+@@ -714,7 +714,7 @@
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+ 	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
+ 	      | -cygwin32* | -pe* | -psos* | -moss* | -proelf* | -rtems* \
+-	      | -mingw32* | -linux-gnu* | -uxpv* | -beos*)
++	      | -mingw32* | -linux-gnu* | -uxpv* | -beos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-linux*)
+diff -ru lxdoom-1.4.4/src/Makefile.in lxdoom-1.4.4.new/src/Makefile.in
+--- lxdoom-1.4.4/src/Makefile.in	2000-04-01 09:25:49 +0000
++++ lxdoom-1.4.4.new/src/Makefile.in	2020-05-05 19:49:55 +0000
+@@ -83,8 +83,8 @@
+ VERSION = @VERSION@
+ 
+ gamesdir = $(prefix)/games
+-EXTRA_PROGRAMS = lsdoom lxdoom sndserv
+-games_PROGRAMS = @BUILD_LSDOOM@ @BUILD_LXDOOM@ @BUILD_SNDSERV@ lxdoom-game-server
++EXTRA_PROGRAMS = lsdoom lxdoom
++games_PROGRAMS = @BUILD_LSDOOM@ @BUILD_LXDOOM@
+ @I386_ASM_TRUE@ASMS = drawspan.s drawcol.s
+ @I386_ASM_FALSE@ASMS = 
+ 
+diff -ru lxdoom-1.4.4/src/d_main.c lxdoom-1.4.4.new/src/d_main.c
+--- lxdoom-1.4.4/src/d_main.c	2000-03-27 10:33:49 +0000
++++ lxdoom-1.4.4.new/src/d_main.c	2020-05-05 19:00:19 +0000
+@@ -229,6 +229,7 @@
+     case GS_LEVEL:
+       V_SetPalette(0); // cph - use default (basic) palette  
+     default:
++      break;
+     }
+ 
+     switch (gamestate) {
+@@ -242,6 +243,7 @@
+       D_PageDrawer();
+       break;
+     default:
++      break;
+     }
+   } else if (gametic) { // In a level
+     boolean redrawborderstuff;
+diff -ru lxdoom-1.4.4/src/g_game.c lxdoom-1.4.4.new/src/g_game.c
+--- lxdoom-1.4.4/src/g_game.c	2000-03-17 20:50:30 +0000
++++ lxdoom-1.4.4.new/src/g_game.c	2020-05-05 19:01:15 +0000
+@@ -869,6 +869,7 @@
+     case GS_INTERMISSION:
+       WI_End();
+     default:
++      break;
+     }
+     prevgamestate = gamestate;
+   }
+@@ -1426,7 +1427,7 @@
+     // killough 2/22/98: "proprietary" version string :-)
+     sprintf (vcheck, version_headers[i].ver_printf, version_headers[i].version);
+ 
+-    if (!strncmp(save_p, vcheck, VERSIONSIZE)) {
++    if (!strncmp((char *)save_p, vcheck, VERSIONSIZE)) {
+       savegame_compatibility = version_headers[i].comp_level;
+       i = num_version_headers;
+     }
+@@ -1449,10 +1450,10 @@
+ 
+     if (memcmp(&checksum, save_p, sizeof checksum)) {
+       if (!forced_loadgame) {
+-        char *msg = malloc(strlen(save_p + sizeof checksum) + 128);
++        char *msg = malloc(strlen((char *)save_p + sizeof checksum) + 128);
+         strcpy(msg,"Incompatible Savegame!!!\n");
+         if (save_p[sizeof checksum])
+-          strcat(strcat(msg,"Wads expected:\n\n"), save_p + sizeof checksum);
++          strcat(strcat(msg,"Wads expected:\n\n"), (char *)save_p + sizeof checksum);
+         strcat(msg, "\nAre you sure?");
+         G_LoadGameErr(msg);
+         free(msg);
+@@ -1463,7 +1464,7 @@
+    }
+ 
+   save_p += sizeof(unsigned long);
+-  save_p += strlen(save_p)+1;
++  save_p += strlen((char *)save_p)+1;
+ 
+   if (savegame_compatibility == boom_compatibility)
+     compatibility_level = 2 - *save_p++; // CPhipps - Load compatibility level
+@@ -1614,9 +1615,9 @@
+       {
+ 	const char *const w = wadfiles[i].name;
+         CheckSaveGame(strlen(w)+2);
+-        strcat(strcat(save_p, w), "\n");
++        strcat(strcat((char *)save_p, w), "\n");
+       }
+-    save_p += strlen(save_p)+1;
++    save_p += strlen((char *)save_p)+1;
+   }
+ 
+   CheckSaveGame(GAME_OPTION_SIZE+MIN_MAXPLAYERS+10);
+diff -ru lxdoom-1.4.4/src/i_main.h lxdoom-1.4.4.new/src/i_main.h
+--- lxdoom-1.4.4/src/i_main.h	2000-03-16 13:27:29 +0000
++++ lxdoom-1.4.4.new/src/i_main.h	2020-05-05 19:23:09 +0000
+@@ -44,9 +44,7 @@
+ extern int broken_pipe;
+ extern int (*I_GetTime)(void);
+ 
+-#ifdef SECURE_UID
+ extern uid_t stored_euid; /* UID that the SVGALib I_InitGraphics switches to before vga_init() */
+-#endif
+ 
+ #endif
+ 
+diff -ru lxdoom-1.4.4/src/l_main.c lxdoom-1.4.4.new/src/l_main.c
+--- lxdoom-1.4.4/src/l_main.c	2000-03-16 13:27:29 +0000
++++ lxdoom-1.4.4.new/src/l_main.c	2020-05-05 19:22:46 +0000
+@@ -314,9 +314,7 @@
+   }
+ }
+ 
+-#ifdef SECURE_UID
+ uid_t stored_euid = -1;
+-#endif
+ 
+ int main(int argc, const char * const * argv)
+ {
+diff -ru lxdoom-1.4.4/src/l_udp.c lxdoom-1.4.4.new/src/l_udp.c
+--- lxdoom-1.4.4/src/l_udp.c	2000-01-26 08:44:24 +0000
++++ lxdoom-1.4.4.new/src/l_udp.c	2020-05-05 19:35:48 +0000
+@@ -31,6 +31,7 @@
+  *-----------------------------------------------------------------------------*/
+ 
+ #include <sys/types.h>
++#ifndef __fiwix__
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ 
+@@ -56,7 +57,9 @@
+ #include <string.h>
+ #include <stdio.h>
+ 
++#endif /* ! __fiwix __ */
+ #include "protocol.h"
++#ifndef __fiwix__
+ #include "i_network.h"
+ #include "m_argv.h"
+ #include "lprintf.h"
+@@ -133,26 +136,36 @@
+ }
+ 
+ struct sockaddr_in sentfrom;
++#endif /* ! __fiwix__ */
+ 
+ size_t I_GetPacket(packet_header_t* buffer, size_t buflen)
+ {
++#ifndef __fiwix__
+   size_t sfsize = sizeof(sentfrom);
+   int n = recvfrom(recvsocket, buffer, buflen, 0, 
+ 		   (struct sockaddr*)&sentfrom, &sfsize);
+   if (n >= 0) recvdbytes += n;
+   else if (errno != EWOULDBLOCK) perror("I_Getpacket:recvfrom");
+   return ((n>0 && (buffer->checksum == ChecksumPacket(buffer, n))) ? n : 0);
++#else
++  return 0;
++#endif /* ! __fiwix__ */
+ }
+ 
+ void I_SendPacket(packet_header_t* packet, size_t len)
+ {
++#ifndef __fiwix__
+   packet->checksum = ChecksumPacket(packet, len);
+   if (sendto(sendsocket, packet, len, 0, (struct sockaddr *)&sendtoaddr, 
+ 	     sizeof sendtoaddr) < 0)
+     perror("I_SendPacket: sendto");
+   else sentbytes+=len;
++#else
++  return 0;
++#endif /* ! __fiwix__ */
+ }
+ 
++#ifndef __fiwix__
+ void I_SendPacketTo(packet_header_t* packet, size_t len, struct sockaddr_in* to)
+ {
+   packet->checksum = ChecksumPacket(packet, len);
+@@ -200,6 +213,15 @@
+   I_SendPacket(&initpacket.head, sizeof(initpacket));
+   return 1;
+ }
++#else /* __fiwix__ */
++
++#include "doomtype.h"
++
++boolean I_InitNetwork(void)
++{
++  return false;
++}
++#endif /* ! __fiwix__ */
+ 
+ /*
+  * $Log: l_udp.c,v $
+diff -ru lxdoom-1.4.4/src/p_maputl.c lxdoom-1.4.4.new/src/p_maputl.c
+--- lxdoom-1.4.4/src/p_maputl.c	1999-10-12 13:01:13 +0000
++++ lxdoom-1.4.4.new/src/p_maputl.c	2020-05-05 19:03:23 +0000
+@@ -322,7 +322,7 @@
+ //
+ // A fast function for testing intersections between things and linedefs.
+ 
+-boolean CONSTFUNC ThingIsOnLine(const mobj_t *t, const line_t *l)
++boolean ThingIsOnLine(const mobj_t *t, const line_t *l)
+ {
+   int dx = l->dx >> FRACBITS;                             // Linedef vector
+   int dy = l->dy >> FRACBITS;
+diff -ru lxdoom-1.4.4/src/r_bsp.h lxdoom-1.4.4.new/src/r_bsp.h
+--- lxdoom-1.4.4/src/r_bsp.h	1999-10-12 13:00:57 +0000
++++ lxdoom-1.4.4.new/src/r_bsp.h	2020-05-05 19:04:00 +0000
+@@ -41,11 +41,11 @@
+ extern line_t   *linedef;
+ extern sector_t *frontsector;
+ extern sector_t *backsector;
+-extern int      rw_x;
+-extern int      rw_stopx;
+-extern boolean  segtextured;
+-extern boolean  markfloor;      /* false if the back side is the same plane */
+-extern boolean  markceiling;
++static int      rw_x;
++static int      rw_stopx;
++static boolean  segtextured;
++static boolean  markfloor;      /* false if the back side is the same plane */
++static boolean  markceiling;
+ 
+ /* old code -- killough:
+  * extern drawseg_t drawsegs[MAXDRAWSEGS];

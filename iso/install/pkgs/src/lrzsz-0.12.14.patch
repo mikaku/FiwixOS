@@ -1,0 +1,82 @@
+diff -ru lrzsz-0.12.14/config.guess lrzsz-0.12.14.new/config.guess
+--- lrzsz-0.12.14/config.guess	1997-01-01 23:07:07.000000000 +0100
++++ lrzsz-0.12.14.new/config.guess	2020-10-04 19:23:37.000000000 +0200
+@@ -459,6 +459,9 @@
+ 	        echo mips-unknown-sysv${UNAME_RELEASE}
+ 	fi
+         exit 0 ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru lrzsz-0.12.14/config.sub lrzsz-0.12.14.new/config.sub
+--- lrzsz-0.12.14/config.sub	1997-01-01 23:07:07.000000000 +0100
++++ lrzsz-0.12.14.new/config.sub	2020-10-04 19:24:25.000000000 +0200
+@@ -641,7 +641,7 @@
+ 	      | -hiux* | -386bsd* | -netbsd* | -freebsd* | -riscix* \
+ 	      | -lynxos* | -bosx* | -nextstep* | -cxux* | -aout* | -elf* \
+ 	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
+-	      | -udi* | -eabi* | -lites* )
++	      | -udi* | -eabi* | -lites* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-sunos5*)
+diff -ru lrzsz-0.12.14/Makefile.am lrzsz-0.12.14.new/Makefile.am
+--- lrzsz-0.12.14/Makefile.am	1997-01-01 23:08:06.000000000 +0100
++++ lrzsz-0.12.14.new/Makefile.am	2020-10-04 19:21:25.000000000 +0200
+@@ -1,4 +1,4 @@
+-SUBDIRS = lib intl src po man
++SUBDIRS = lib src po man
+ EXTRA_DIST = @README_ALPHA@ check.lrzsz COMPATABILITY
+ 
+ 
+diff -ru lrzsz-0.12.14/Makefile.in lrzsz-0.12.14.new/Makefile.in
+--- lrzsz-0.12.14/Makefile.in	1997-01-07 08:21:57.000000000 +0100
++++ lrzsz-0.12.14.new/Makefile.in	2020-10-04 19:21:25.000000000 +0200
+@@ -38,7 +38,7 @@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ transform = @program_transform_name@
+ 
+-SUBDIRS = lib intl src po man
++SUBDIRS = lib src po man
+ EXTRA_DIST = @README_ALPHA@ check.lrzsz COMPATABILITY
+ ACLOCAL = aclocal.m4
+ ACCONFIG = acconfig.h
+diff -ru lrzsz-0.12.14/src/lsz.c lrzsz-0.12.14.new/src/lsz.c
+--- lrzsz-0.12.14/src/lsz.c	1997-01-04 17:27:20.000000000 +0100
++++ lrzsz-0.12.14.new/src/lsz.c	2020-10-04 20:36:01.000000000 +0200
+@@ -43,6 +43,8 @@
+ extern char *stpcpy();
+ #endif
+ 
++#include <limits.h>
++
+ extern int errno;
+ 
+ unsigned Baudrate=2400;	/* Default, should be set by first mode() call */
+diff -ru lrzsz-0.12.14/src/Makefile.am lrzsz-0.12.14.new/src/Makefile.am
+--- lrzsz-0.12.14/src/Makefile.am	1997-01-01 23:07:47.000000000 +0100
++++ lrzsz-0.12.14.new/src/Makefile.am	2020-10-04 19:21:25.000000000 +0200
+@@ -9,7 +9,7 @@
+ LDADD = ../lib/libzmodem.a @INTLLIBS@
+ AUTOMAKE_OPTIONS=ansi2knr
+ EXTRA_DIST = ansi2knr.1 ansi2knr.c
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/src -I../intl -I$(top_srcdir)/lib
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/src -I$(top_srcdir)/lib
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DOS=\"@host_os@\" -DCPU=\"@host_cpu@\" \
+ 	-DNFGVMIN @DEFS@
+ 
+diff -ru lrzsz-0.12.14/src/Makefile.in lrzsz-0.12.14.new/src/Makefile.in
+--- lrzsz-0.12.14/src/Makefile.in	1997-01-07 08:21:58.000000000 +0100
++++ lrzsz-0.12.14.new/src/Makefile.in	2020-10-04 19:21:25.000000000 +0200
+@@ -49,7 +49,7 @@
+ LDADD = ../lib/libzmodem.a @INTLLIBS@
+ AUTOMAKE_OPTIONS=ansi2knr
+ EXTRA_DIST = ansi2knr.1 ansi2knr.c
+-INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/src -I../intl -I$(top_srcdir)/lib
++INCLUDES = -I.. -I$(srcdir) -I$(top_srcdir)/src -I$(top_srcdir)/lib
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DOS=\"@host_os@\" -DCPU=\"@host_cpu@\" \
+ 	-DNFGVMIN @DEFS@
+ mkinstalldirs = $(top_srcdir)/mkinstalldirs

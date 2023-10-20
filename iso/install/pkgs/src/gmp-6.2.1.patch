@@ -1,0 +1,25 @@
+diff -ru gmp-6.2.1/configfsf.guess gmp-6.2.1.new/configfsf.guess
+--- gmp-6.2.1/configfsf.guess	2020-11-14 18:45:09 +0000
++++ gmp-6.2.1.new/configfsf.guess	2023-08-04 17:06:20 +0000
+@@ -1471,6 +1471,9 @@
+     i*86:AROS:*:*)
+ 	echo "$UNAME_MACHINE"-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+     x86_64:VMkernel:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-esx
+ 	exit ;;
+diff -ru gmp-6.2.1/configfsf.sub gmp-6.2.1.new/configfsf.sub
+--- gmp-6.2.1/configfsf.sub	2020-11-14 18:45:09 +0000
++++ gmp-6.2.1.new/configfsf.sub	2023-08-04 17:06:34 +0000
+@@ -1720,7 +1720,7 @@
+ 	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
+ 	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
+ 	     | midnightbsd* | amdhsa* | unleashed* | emscripten* | wasi* \
+-	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx*)
++	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx* | fiwix*)
+ 		;;
+ 	# This one is extra strict with allowed versions
+ 	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)

@@ -1,0 +1,961 @@
+diff -ru busybox-1.01/archival/libunarchive/data_extract_all.c busybox-1.01.new/archival/libunarchive/data_extract_all.c
+--- busybox-1.01/archival/libunarchive/data_extract_all.c	2005-08-17 01:29:11 +0000
++++ busybox-1.01.new/archival/libunarchive/data_extract_all.c	2021-11-19 20:33:15 +0000
+@@ -111,7 +111,7 @@
+ 		}
+ 	}
+ 
+-	lchown(file_header->name, file_header->uid, file_header->gid);
++	chown(file_header->name, file_header->uid, file_header->gid);
+ 	if ((file_header->mode & S_IFMT) != S_IFLNK) {
+ 		chmod(file_header->name, file_header->mode);
+ 	}
+diff -ru busybox-1.01/archival/tar.c busybox-1.01.new/archival/tar.c
+--- busybox-1.01/archival/tar.c	2005-08-17 01:29:11 +0000
++++ busybox-1.01.new/archival/tar.c	2021-11-19 20:33:15 +0000
+@@ -48,7 +48,6 @@
+ #include <errno.h>
+ #include <signal.h>
+ #include <sys/wait.h>
+-#include <sys/socket.h>
+ #include <sys/sysmacros.h>     /* major() and minor() */
+ #include "unarchive.h"
+ #include "busybox.h"
+diff -ru busybox-1.01/console-tools/loadfont.c busybox-1.01.new/console-tools/loadfont.c
+--- busybox-1.01/console-tools/loadfont.c	2005-08-17 01:29:12 +0000
++++ busybox-1.01.new/console-tools/loadfont.c	2021-11-19 20:33:16 +0000
+@@ -18,7 +18,6 @@
+ #include <errno.h>
+ #include <sys/ioctl.h>
+ #include <sys/kd.h>
+-#include <endian.h>
+ #include "busybox.h"
+ 
+ static const int PSF_MAGIC1 = 0x36;
+diff -ru busybox-1.01/include/grp_.h busybox-1.01.new/include/grp_.h
+--- busybox-1.01/include/grp_.h	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/include/grp_.h	2021-11-19 20:33:16 +0000
+@@ -98,7 +98,7 @@
+ 			struct group **__restrict __result);
+ 
+ /* Set the group set for the current user to GROUPS (N of them).  */
+-extern int setgroups (size_t __n, __const gid_t *__groups);
++extern int setgroups (int __n, __const gid_t *__groups);
+ 
+ /* Store at most *NGROUPS members of the group set for USER into
+    *GROUPS.  Also include GROUP.  The actual number of groups found is
+diff -ru busybox-1.01/include/libbb.h busybox-1.01.new/include/libbb.h
+--- busybox-1.01/include/libbb.h	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/include/libbb.h	2021-11-19 20:33:16 +0000
+@@ -33,9 +33,6 @@
+ #include <termios.h>
+ #include <stdint.h>
+ 
+-#include <netdb.h>
+-#include <netinet/in.h>
+-
+ #ifdef DMALLOC
+ #include <dmalloc.h>
+ #endif
+@@ -299,9 +296,7 @@
+ extern struct hostent *xgethostbyname2(const char *name, int af);
+ extern int create_icmp_socket(void);
+ extern int create_icmp6_socket(void);
+-extern int xconnect(struct sockaddr_in *s_addr);
+ extern unsigned short bb_lookup_port(const char *port, const char *protocol, unsigned short default_port);
+-extern void bb_lookup_host(struct sockaddr_in *s_in, const char *host);
+ 
+ //#warning wrap this?
+ char *dirname (char *path);
+diff -ru busybox-1.01/init/init.c busybox-1.01.new/init/init.c
+--- busybox-1.01/init/init.c	2005-08-17 01:29:16 +0000
++++ busybox-1.01.new/init/init.c	2021-11-19 20:33:16 +0000
+@@ -47,10 +47,6 @@
+ #include "init_shared.h"
+ 
+ 
+-#ifdef CONFIG_SYSLOGD
+-# include <sys/syslog.h>
+-#endif
+-
+ 
+ #define INIT_BUFFS_SIZE 256
+ 
+@@ -224,9 +220,6 @@
+ 	/* Log the message to syslogd */
+ 	if (device & LOG) {
+ 		/* don`t out "\r\n" */
+-		openlog(bb_applet_name, 0, LOG_DAEMON);
+-		syslog(LOG_INFO, "%s", msg);
+-		closelog();
+ 	}
+ 
+ 	msg[l++] = '\n';
+@@ -678,7 +671,7 @@
+ 	 * linux/kernel/sys.c, which can cause the machine to panic when
+ 	 * the init process is killed.... */
+ 	if ((pid = fork()) == 0) {
+-		reboot(magic);
++		reboot(0xfee1dead, 672274793, magic);
+ 		_exit(0);
+ 	}
+ 	waitpid (pid, NULL, 0);
+diff -ru busybox-1.01/init/init_shared.c busybox-1.01.new/init/init_shared.c
+--- busybox-1.01/init/init_shared.c	2005-08-17 01:29:16 +0000
++++ busybox-1.01.new/init/init_shared.c	2021-11-19 20:33:16 +0000
+@@ -25,7 +25,6 @@
+ #include <unistd.h>
+ #include <getopt.h>
+ #include <sys/reboot.h>
+-#include <sys/syslog.h>
+ #include "busybox.h"
+ #include "init_shared.h"
+ 
+@@ -63,17 +62,13 @@
+ #endif
+ 	reboot(RB_ENABLE_CAD);
+ 
+-	openlog(bb_applet_name, 0, pri);
+-
+ 	message = "\nThe system is going down NOW !!";
+-	syslog(pri, "%s", message);
+ 	printf(bb_shutdown_format, message);
+ 
+ 	sync();
+ 
+ 	/* Send signals to every process _except_ pid 1 */
+ 	message = "Sending SIGTERM to all processes.";
+-	syslog(pri, "%s", message);
+ 	printf(bb_shutdown_format, message);
+ 
+ 	kill(-1, SIGTERM);
+@@ -81,7 +76,6 @@
+ 	sync();
+ 
+ 	message = "Sending SIGKILL to all processes.";
+-	syslog(pri, "%s", message);
+ 	printf(bb_shutdown_format, message);
+ 
+ 	kill(-1, SIGKILL);
+diff -ru busybox-1.01/libbb/change_identity.c busybox-1.01.new/libbb/change_identity.c
+--- busybox-1.01/libbb/change_identity.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/change_identity.c	2021-11-19 20:33:16 +0000
+@@ -33,7 +33,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <syslog.h>
+ #include <ctype.h>
+ 
+ #include "libbb.h"
+diff -ru busybox-1.01/libbb/correct_password.c busybox-1.01.new/libbb/correct_password.c
+--- busybox-1.01/libbb/correct_password.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/correct_password.c	2021-11-19 20:33:16 +0000
+@@ -33,7 +33,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <syslog.h>
+ #include <ctype.h>
+ #include <crypt.h>
+ 
+diff -ru busybox-1.01/libbb/create_icmp6_socket.c busybox-1.01.new/libbb/create_icmp6_socket.c
+--- busybox-1.01/libbb/create_icmp6_socket.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/create_icmp6_socket.c	2021-11-19 20:33:16 +0000
+@@ -7,6 +7,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <sys/types.h>
+ #include <netdb.h>
+ #include <sys/socket.h>
+@@ -37,3 +39,5 @@
+ 	return sock;
+ }
+ #endif
++
++#endif
+diff -ru busybox-1.01/libbb/create_icmp_socket.c busybox-1.01.new/libbb/create_icmp_socket.c
+--- busybox-1.01/libbb/create_icmp_socket.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/create_icmp_socket.c	2021-11-19 20:33:16 +0000
+@@ -7,6 +7,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <sys/types.h>
+ #include <netdb.h>
+ #include <sys/socket.h>
+@@ -35,3 +37,5 @@
+ 
+ 	return sock;
+ }
++
++#endif
+diff -ru busybox-1.01/libbb/hash_fd.c busybox-1.01.new/libbb/hash_fd.c
+--- busybox-1.01/libbb/hash_fd.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/hash_fd.c	2021-11-19 20:33:16 +0000
+@@ -20,8 +20,6 @@
+  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+  */
+ 
+-#include <byteswap.h>
+-#include <endian.h>
+ #include <fcntl.h>
+ #include <limits.h>
+ #include <stdio.h>
+diff -ru busybox-1.01/libbb/inet_common.c busybox-1.01.new/libbb/inet_common.c
+--- busybox-1.01/libbb/inet_common.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/inet_common.c	2021-11-19 20:33:16 +0000
+@@ -8,6 +8,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include "inet_common.h"
+ #include <stdio.h>
+ #include <errno.h>
+@@ -247,3 +249,5 @@
+ }
+ 
+ #endif							/* CONFIG_FEATURE_IPV6 */
++
++#endif
+diff -ru busybox-1.01/libbb/interface.c busybox-1.01.new/libbb/interface.c
+--- busybox-1.01/libbb/interface.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/interface.c	2021-11-19 20:33:16 +0000
+@@ -38,6 +38,8 @@
+ 
+ /* #define KEEP_UNUSED */
+ 
++#ifndef __fiwix__
++
+ /*
+  *
+  * Protocol Families.
+@@ -2093,3 +2095,5 @@
+ #endif
+ 	exit(status < 0);
+ }
++
++#endif
+diff -ru busybox-1.01/libbb/login.c busybox-1.01.new/libbb/login.c
+--- busybox-1.01/libbb/login.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/login.c	2021-11-19 20:33:16 +0000
+@@ -29,6 +29,7 @@
+ #include <time.h>
+ 
+ #define LOGIN " login: "
++#define MAXHOSTNAMELEN	64
+ 
+ static const char fmtstr_d[] = "%A, %d %B %Y";
+ static const char fmtstr_t[] = "%H:%M:%S";
+@@ -81,10 +82,12 @@
+ 						break;
+ 
+ 					case 'D':
++					/*
+ 					case 'o':
+ 						getdomainname(buf, sizeof(buf));
+ 						buf[sizeof(buf) - 1] = '\0';
+ 						break;
++					*/
+ 
+ 					case 'd':
+ 						strftime(buf, sizeof(buf), fmtstr_d, localtime(&t));
+diff -ru busybox-1.01/libbb/loop.c busybox-1.01.new/libbb/loop.c
+--- busybox-1.01/libbb/loop.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/loop.c	2021-11-19 20:33:16 +0000
+@@ -19,6 +19,8 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+  */
+ 
++#ifndef __fiwix__
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <fcntl.h>
+@@ -145,7 +147,7 @@
+ 	}
+ 	return NULL;
+ }
+-
++#endif
+ 
+ /* END CODE */
+ /*
+diff -ru busybox-1.01/libbb/module_syscalls.c busybox-1.01.new/libbb/module_syscalls.c
+--- busybox-1.01/libbb/module_syscalls.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/module_syscalls.c	2021-11-19 20:33:16 +0000
+@@ -20,6 +20,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <unistd.h>
+@@ -105,6 +107,8 @@
+ 
+ #endif /* __UCLIBC__ */
+ 
++#endif
++
+ /* END CODE */
+ /*
+ Local Variables:
+diff -ru busybox-1.01/libbb/procps.c busybox-1.01.new/libbb/procps.c
+--- busybox-1.01/libbb/procps.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/procps.c	2021-11-19 20:33:16 +0000
+@@ -12,7 +12,6 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <asm/page.h>
+ 
+ #include "libbb.h"
+ 
+diff -ru busybox-1.01/libbb/restricted_shell.c busybox-1.01.new/libbb/restricted_shell.c
+--- busybox-1.01/libbb/restricted_shell.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/restricted_shell.c	2021-11-19 20:33:16 +0000
+@@ -33,7 +33,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <syslog.h>
+ #include <ctype.h>
+ #include "libbb.h"
+ 
+diff -ru busybox-1.01/libbb/run_shell.c busybox-1.01.new/libbb/run_shell.c
+--- busybox-1.01/libbb/run_shell.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/run_shell.c	2021-11-19 20:33:16 +0000
+@@ -33,7 +33,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <syslog.h>
+ #include <ctype.h>
+ #include "libbb.h"
+ #ifdef CONFIG_SELINUX
+diff -ru busybox-1.01/libbb/setup_environment.c busybox-1.01.new/libbb/setup_environment.c
+--- busybox-1.01/libbb/setup_environment.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/setup_environment.c	2021-11-19 20:33:16 +0000
+@@ -33,7 +33,6 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+-#include <syslog.h>
+ #include <ctype.h>
+ #include "libbb.h"
+ 
+@@ -61,7 +60,6 @@
+ 		 */		
+ 		if ( chdir ( pw-> pw_dir )) {
+ 			if ( chdir ( "/" )) {
+-				syslog ( LOG_WARNING, "unable to cd to %s' for user %s'\n", pw-> pw_dir, pw-> pw_name );
+ 				bb_error_msg_and_die ( "cannot cd to home directory or /" );
+ 			}
+ 			fputs ( "warning: cannot change to home directory\n", stderr );
+@@ -70,7 +68,6 @@
+ 		/* Leave TERM unchanged.  Set HOME, SHELL, USER, LOGNAME, PATH.
+ 		   Unset all other environment variables.  */
+ 		term = getenv ("TERM");
+-		clearenv ( );
+ 		if ( term )
+ 			xsetenv ( "TERM", term );
+ 		xsetenv ( "HOME",    pw-> pw_dir );
+diff -ru busybox-1.01/libbb/syscalls.c busybox-1.01.new/libbb/syscalls.c
+--- busybox-1.01/libbb/syscalls.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/syscalls.c	2021-11-19 20:33:16 +0000
+@@ -20,6 +20,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <unistd.h>
+@@ -93,6 +95,7 @@
+ 
+ #endif /* old glibc check */
+ 
++#endif
+ 
+ /* END CODE */
+ /*
+diff -ru busybox-1.01/libbb/vherror_msg.c busybox-1.01.new/libbb/vherror_msg.c
+--- busybox-1.01/libbb/vherror_msg.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/vherror_msg.c	2021-11-19 20:33:16 +0000
+@@ -20,7 +20,6 @@
+  */
+ 
+ #include <stdarg.h>
+-#include <netdb.h>
+ #include <stdio.h>
+ 
+ #include "libbb.h"
+diff -ru busybox-1.01/libbb/xconnect.c busybox-1.01.new/libbb/xconnect.c
+--- busybox-1.01/libbb/xconnect.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/xconnect.c	2021-11-19 20:33:16 +0000
+@@ -6,6 +6,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <unistd.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -69,3 +71,5 @@
+ 	}
+ 	return s;
+ }
++
++#endif
+diff -ru busybox-1.01/libbb/xgethostbyname.c busybox-1.01.new/libbb/xgethostbyname.c
+--- busybox-1.01/libbb/xgethostbyname.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/xgethostbyname.c	2021-11-19 20:33:16 +0000
+@@ -20,7 +20,6 @@
+  *
+  */
+ 
+-#include <netdb.h>
+ #include "libbb.h"
+ 
+ 
+diff -ru busybox-1.01/libbb/xgethostbyname2.c busybox-1.01.new/libbb/xgethostbyname2.c
+--- busybox-1.01/libbb/xgethostbyname2.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/xgethostbyname2.c	2021-11-19 20:33:16 +0000
+@@ -20,7 +20,6 @@
+  *
+  */
+ 
+-#include <netdb.h>
+ #include "libbb.h"
+ 
+ 
+diff -ru busybox-1.01/loginutils/getty.c busybox-1.01.new/loginutils/getty.c
+--- busybox-1.01/loginutils/getty.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/loginutils/getty.c	2021-11-19 20:33:40 +0000
+@@ -27,6 +27,7 @@
+ #include <ctype.h>
+ #include <getopt.h>
+ #include <termios.h>
++#include <paths.h>
+ #include "busybox.h"
+ 
+ #ifdef CONFIG_FEATURE_UTMP
+@@ -36,11 +37,6 @@
+ #define _PATH_LOGIN     "/bin/login"
+ 
+  /* If USE_SYSLOG is undefined all diagnostics go directly to /dev/console. */
+-#ifdef CONFIG_SYSLOGD
+-#include <sys/param.h>
+-#define USE_SYSLOG
+-#include <syslog.h>
+-#endif
+ 
+ 
+  /*
+@@ -50,9 +46,6 @@
+ 
+ #ifdef LOGIN_PROCESS			/* defined in System V utmp.h */
+ #define	SYSV_STYLE				/* select System V style getty */
+-#ifdef CONFIG_FEATURE_WTMP
+-extern void updwtmp(const char *filename, const struct utmp *ut);
+-#endif
+ #endif  /* LOGIN_PROCESS */
+ 
+  /*
+diff -ru busybox-1.01/loginutils/login.c busybox-1.01.new/loginutils/login.c
+--- busybox-1.01/loginutils/login.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/loginutils/login.c	2021-11-19 20:33:16 +0000
+@@ -4,7 +4,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <syslog.h>
+ #include <termios.h>
+ #include <unistd.h>
+ #include <utmp.h>
+@@ -14,6 +13,7 @@
+ #include <sys/types.h>
+ #include <ctype.h>
+ #include <time.h>
++#include <paths.h>
+ 
+ #include "busybox.h"
+ #ifdef CONFIG_SELINUX
+@@ -148,9 +148,7 @@
+ 	else
+ 		snprintf ( fromhost, sizeof( fromhost ) - 1, " on `%.100s'", tty );
+ 
+-	setpgrp();
+-
+-	openlog ( "login", LOG_PID | LOG_CONS | LOG_NOWAIT, LOG_AUTH );
++	setpgid(0, 0);
+ 
+ 	while ( 1 ) {
+ 		failed = 0;
+@@ -213,7 +211,6 @@
+ 		puts("Login incorrect");
+ 		username[0] = 0;
+ 		if ( ++count == 3 ) {
+-			syslog ( LOG_WARNING, "invalid password for `%s'%s\n", pw->pw_name, fromhost);
+ 			return EXIT_FAILURE;
+ 	}
+ 	}
+@@ -260,9 +257,6 @@
+ 	else
+ 		safe_strncpy ( full_tty, tty, sizeof( full_tty ) - 1 );
+ 
+-	if ( !is_my_tty ( full_tty ))
+-		syslog ( LOG_ERR, "unable to determine TTY name, got %s\n", full_tty );
+-
+ 	/* Try these, but don't complain if they fail
+ 	 * (for example when the root fs is read only) */
+ 	chown ( full_tty, pw-> pw_uid, pw-> pw_gid );
+@@ -277,8 +271,6 @@
+ 	motd ( );
+ 	signal ( SIGALRM, SIG_DFL );	/* default alarm signal */
+ 
+-	if ( pw-> pw_uid == 0 )
+-		syslog ( LOG_INFO, "root login %s\n", fromhost );
+ 	run_shell ( tmp, 1, 0, 0
+ #ifdef CONFIG_SELINUX
+ 	, sid
+diff -ru busybox-1.01/loginutils/passwd.c busybox-1.01.new/loginutils/passwd.c
+--- busybox-1.01/loginutils/passwd.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/loginutils/passwd.c	2021-11-19 20:33:16 +0000
+@@ -7,7 +7,6 @@
+ #include <sys/types.h>
+ #include <unistd.h>
+ #include <utime.h>
+-#include <syslog.h>
+ #include <time.h>
+ #include <sys/resource.h>
+ #include <errno.h>
+@@ -149,7 +148,6 @@
+ 	const struct spwd *sp;
+ #endif							/* CONFIG_FEATURE_SHADOWPASSWDS */
+ 	amroot = (getuid() == 0);
+-	openlog("passwd", LOG_PID | LOG_CONS | LOG_NOWAIT, LOG_AUTH);
+ 	while ((flag = getopt(argc, argv, "a:dlu")) != EOF) {
+ 		switch (flag) {
+ 		case 'a':
+@@ -183,7 +181,6 @@
+ 		bb_error_msg_and_die("Unknown user %s\n", name);
+ 	}
+ 	if (!amroot && pw->pw_uid != getuid()) {
+-		syslog(LOG_WARNING, "can't change pwd for `%s'", name);
+ 		bb_error_msg_and_die("Permission denied.\n");
+ 	}
+ #ifdef CONFIG_FEATURE_SHADOWPASSWDS
+@@ -202,7 +199,6 @@
+ 	if (!(dflg || lflg || uflg)) {
+ 		if (!amroot) {
+ 			if (cp[0] == '!') {
+-				syslog(LOG_WARNING, "password locked for `%s'", np);
+ 				bb_error_msg_and_die( "The password for `%s' cannot be changed.\n", np);
+ 			}
+ 		}
+@@ -231,15 +227,11 @@
+ 	signal(SIGQUIT, SIG_IGN);
+ 	umask(077);
+ 	if (setuid(0)) {
+-		syslog(LOG_ERR, "can't setuid(0)");
+ 		bb_error_msg_and_die( "Cannot change ID to root.\n");
+ 	}
+ 	if (!update_passwd(pw, crypt_passwd)) {
+-		syslog(LOG_INFO, "password for `%s' changed by user `%s'", name,
+-			   myname);
+ 		printf("Password changed.\n");
+ 	} else {
+-		syslog(LOG_WARNING, "an error occurred updating the password file");
+ 		bb_error_msg_and_die("An error occurred updating the password file.\n");
+ 	}
+ 	return (0);
+@@ -332,8 +324,6 @@
+ 		}
+ 		cipher = pw_encrypt(clear, crypt_passwd);
+ 		if (strcmp(cipher, crypt_passwd) != 0) {
+-			syslog(LOG_WARNING, "incorrect password for `%s'",
+-				   pw->pw_name);
+ 			time(&start);
+ 			now = start;
+ 			while (difftime(now, start) < FAIL_DELAY) {
+diff -ru busybox-1.01/loginutils/su.c busybox-1.01.new/loginutils/su.c
+--- busybox-1.01/loginutils/su.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/loginutils/su.c	2021-11-19 20:33:16 +0000
+@@ -5,7 +5,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <syslog.h>
+ #include <termios.h>
+ #include <unistd.h>
+ #include <utmp.h>
+@@ -33,7 +32,6 @@
+ # if defined( SYSLOG_SUCCESS ) && defined( SYSLOG_FAILURE )
+ static void log_su (const char *successful, const char *old_user, const char *tty)
+ {
+-	syslog ( LOG_NOTICE, "%s%s on %s", successful, old_user, tty);
+ }
+ #  define log_su_successful(cu, u, tty) if(!cu) log_su("", u, tty)
+ #  define log_su_failure(cu, u, tty)    if(!cu) log_su("FAILED SU ", u, tty)
+@@ -41,11 +39,9 @@
+ 	/* partial logging */
+ #  if !defined( SYSLOG_SUCESS )
+ #   define log_su_successful(cu, u, tty)
+-#   define log_su_failure(cu, u, t) if(!cu) \
+-			syslog(LOG_NOTICE, "FAILED SU %s on %s", u, t)
++#   define log_su_failure(cu, u, t) 
+ #  else
+-#   define log_su_successful(cu, u, t) if(!cu) \
+-			syslog(LOG_NOTICE, "%s on %s", u, t)
++#   define log_su_successful(cu, u, t) 
+ #   define log_su_failure(cu, u, tty)
+ #  endif
+ # endif
+@@ -106,7 +102,6 @@
+ 	if(!tty)
+ 		tty = "none";
+ 
+-	openlog ( bb_applet_name, 0, LOG_AUTH );
+ #endif
+ 
+ 	pw = getpwnam ( opt_username );
+@@ -127,7 +122,6 @@
+ 	}
+ 
+ #if defined( SYSLOG_SUCCESS ) || defined( SYSLOG_FAILURE )
+-	closelog();
+ #endif
+ 
+ 	if ( !opt_shell && opt_preserve )
+diff -ru busybox-1.01/miscutils/last.c busybox-1.01.new/miscutils/last.c
+--- busybox-1.01/miscutils/last.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/miscutils/last.c	2021-11-19 20:33:16 +0000
+@@ -29,6 +29,7 @@
+ #include <errno.h>
+ #include <string.h>
+ #include <time.h>
++#include <paths.h>
+ #include "busybox.h"
+ 
+ #ifndef SHUTDOWN_TIME
+diff -ru busybox-1.01/miscutils/time.c busybox-1.01.new/miscutils/time.c
+--- busybox-1.01/miscutils/time.c	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/miscutils/time.c	2021-11-19 20:33:16 +0000
+@@ -107,7 +107,7 @@
+ 
+     /* Ignore signals, but don't ignore the children.  When wait3
+        returns the child process, set the time the command finished. */
+-    while ((caught = wait3 (&status, 0, &resp->ru)) != pid)
++    while ((caught = waitpid (-1, &status, 0)) != pid)
+     {
+ 	if (caught == -1)
+ 	    return 0;
+diff -ru busybox-1.01/procps/top.c busybox-1.01.new/procps/top.c
+--- busybox-1.01/procps/top.c	2005-08-17 01:29:16 +0000
++++ busybox-1.01.new/procps/top.c	2021-11-19 20:33:16 +0000
+@@ -34,7 +34,6 @@
+ #include <string.h>
+ #include <sys/ioctl.h>
+ /* get page info */
+-#include <asm/page.h>
+ #include "busybox.h"
+ 
+ //#define FEATURE_CPU_USAGE_PERCENTAGE  /* + 2k */
+@@ -43,9 +42,10 @@
+ #include <time.h>
+ #include <sys/time.h>
+ #include <fcntl.h>
+-#include <netinet/in.h>  /* htons */
+ #endif
+ 
++#define __USE_MISC
++
+ 
+ typedef int (*cmp_t)(procps_status_t *P, procps_status_t *Q);
+ 
+diff -ru busybox-1.01/scripts/mkdep.c busybox-1.01.new/scripts/mkdep.c
+--- busybox-1.01/scripts/mkdep.c	2005-08-17 01:29:09 +0000
++++ busybox-1.01.new/scripts/mkdep.c	2021-11-19 20:33:16 +0000
+@@ -37,6 +37,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
++#include <paths.h>
+ 
+ #include <sys/fcntl.h>
+ #include <sys/mman.h>
+diff -ru busybox-1.01/shell/ash.c busybox-1.01.new/shell/ash.c
+--- busybox-1.01/shell/ash.c	2005-08-17 01:29:12 +0000
++++ busybox-1.01.new/shell/ash.c	2021-11-19 20:33:16 +0000
+@@ -1282,7 +1282,6 @@
+ static int umaskcmd(int, char **);
+ static int unsetcmd(int, char **);
+ static int waitcmd(int, char **);
+-static int ulimitcmd(int, char **);
+ #ifdef JOBS
+ static int killcmd(int, char **);
+ #endif
+@@ -1404,7 +1403,6 @@
+ 	{ BUILTIN_SPEC_REG      "trap", trapcmd },
+ 	{ BUILTIN_REGULAR       "true", truecmd },
+ 	{ BUILTIN_NOSPEC        "type", typecmd },
+-	{ BUILTIN_NOSPEC        "ulimit", ulimitcmd },
+ 	{ BUILTIN_REGULAR       "umask", umaskcmd },
+ #ifdef CONFIG_ASH_ALIAS
+ 	{ BUILTIN_REGULAR       "unalias", unaliascmd },
+@@ -2562,9 +2560,11 @@
+ static void
+ onint(void) {
+ 	int i;
++	sigset_t sigmask;
+ 
+ 	intpending = 0;
+-	sigsetmask(0);
++	sigemptyset(&sigmask);
++	sigprocmask(SIG_SETMASK, &sigmask, NULL);
+ 	i = EXSIG;
+ 	if (gotsig[SIGINT - 1] && !trap[SIGINT]) {
+ 		if (!(rootshell && iflag)) {
+@@ -6530,7 +6530,7 @@
+ 			}
+ 			if (pgrp == getpgrp())
+ 				break;
+-			killpg(0, SIGTTIN);
++			kill(0, SIGTTIN);
+ 		} while (1);
+ 		initialpgrp = pgrp;
+ 
+@@ -6698,7 +6698,7 @@
+ 	pgid = jp->ps->pid;
+ 	if (mode == FORK_FG)
+ 		xtcsetpgrp(ttyfd, pgid);
+-	killpg(pgid, SIGCONT);
++	kill(-pgid, SIGCONT);
+ 	ps = jp->ps;
+ 	i = jp->nprocs;
+ 	do {
+@@ -6737,9 +6737,6 @@
+ 		}
+ 		st &= 0x7f;
+ 		col = fmtstr(s, 32, strsignal(st));
+-		if (WCOREDUMP(status)) {
+-			col += fmtstr(s + col, 16, " (core dumped)");
+-		}
+ 	} else if (!sigonly) {
+ 		st = WEXITSTATUS(status);
+ 		if (st)
+@@ -7343,7 +7340,7 @@
+ #endif
+ 	if (block == 0)
+ 		flags |= WNOHANG;
+-	return wait3(status, flags, (struct rusage *)NULL);
++	return waitpid(-1, status, flags);
+ }
+ 
+ /*
+@@ -12784,133 +12781,6 @@
+ 
+ enum limtype { SOFT = 0x1, HARD = 0x2 };
+ 
+-static void printlim(enum limtype how, const struct rlimit *limit,
+-			const struct limits *l)
+-{
+-	rlim_t val;
+-
+-	val = limit->rlim_max;
+-	if (how & SOFT)
+-		val = limit->rlim_cur;
+-
+-	if (val == RLIM_INFINITY)
+-		out1fmt("unlimited\n");
+-	else {
+-		val /= l->factor;
+-		out1fmt("%lld\n", (long long) val);
+-	}
+-}
+-
+-int
+-ulimitcmd(int argc, char **argv)
+-{
+-	int     c;
+-	rlim_t val = 0;
+-	enum limtype how = SOFT | HARD;
+-	const struct limits     *l;
+-	int             set, all = 0;
+-	int             optc, what;
+-	struct rlimit   limit;
+-
+-	what = 'f';
+-	while ((optc = nextopt("HSa"
+-#ifdef RLIMIT_CPU
+-				"t"
+-#endif
+-#ifdef RLIMIT_FSIZE
+-				"f"
+-#endif
+-#ifdef RLIMIT_DATA
+-				"d"
+-#endif
+-#ifdef RLIMIT_STACK
+-				"s"
+-#endif
+-#ifdef RLIMIT_CORE
+-				"c"
+-#endif
+-#ifdef RLIMIT_RSS
+-				"m"
+-#endif
+-#ifdef RLIMIT_MEMLOCK
+-				"l"
+-#endif
+-#ifdef RLIMIT_NPROC
+-				"p"
+-#endif
+-#ifdef RLIMIT_NOFILE
+-				"n"
+-#endif
+-#ifdef RLIMIT_AS
+-				"v"
+-#endif
+-#ifdef RLIMIT_LOCKS
+-				"w"
+-#endif
+-						)) != '\0')
+-		switch (optc) {
+-		case 'H':
+-			how = HARD;
+-			break;
+-		case 'S':
+-			how = SOFT;
+-			break;
+-		case 'a':
+-			all = 1;
+-			break;
+-		default:
+-			what = optc;
+-		}
+-
+-	for (l = limits; l->option != what; l++)
+-		;
+-
+-	set = *argptr ? 1 : 0;
+-	if (set) {
+-		char *p = *argptr;
+-
+-		if (all || argptr[1])
+-			error("too many arguments");
+-		if (strncmp(p, "unlimited\n", 9) == 0)
+-			val = RLIM_INFINITY;
+-		else {
+-			val = (rlim_t) 0;
+-
+-			while ((c = *p++) >= '0' && c <= '9')
+-			{
+-				val = (val * 10) + (long)(c - '0');
+-				if (val < (rlim_t) 0)
+-					break;
+-			}
+-			if (c)
+-				error("bad number");
+-			val *= l->factor;
+-		}
+-	}
+-	if (all) {
+-		for (l = limits; l->name; l++) {
+-			getrlimit(l->cmd, &limit);
+-			out1fmt("%-20s ", l->name);
+-			printlim(how, &limit, l);
+-		}
+-		return 0;
+-	}
+-
+-	getrlimit(l->cmd, &limit);
+-	if (set) {
+-		if (how & HARD)
+-			limit.rlim_max = val;
+-		if (how & SOFT)
+-			limit.rlim_cur = val;
+-		if (setrlimit(l->cmd, &limit) < 0)
+-			error("error setting limit (%m)");
+-	} else {
+-		printlim(how, &limit, l);
+-	}
+-	return 0;
+-}
+-
+-
+ #ifdef CONFIG_ASH_MATH_SUPPORT
+ 
+ /* Copyright (c) 2001 Aaron Lehmann <aaronl@vitelus.com>
+diff -ru busybox-1.01/util-linux/fdisk.c busybox-1.01.new/util-linux/fdisk.c
+--- busybox-1.01/util-linux/fdisk.c	2005-08-17 01:29:17 +0000
++++ busybox-1.01.new/util-linux/fdisk.c	2021-11-19 20:33:16 +0000
+@@ -27,7 +27,6 @@
+ #include <setjmp.h>
+ #include <assert.h>             /* assert */
+ #include <getopt.h>
+-#include <endian.h>
+ #include <sys/ioctl.h>
+ #include <sys/param.h>
+ #include <sys/sysmacros.h>     /* major */
+@@ -4126,9 +4125,11 @@
+ #endif /* CONFIG_FEATURE_FDISK_WRITABLE */
+ 	}
+ 
++/*
+ #ifdef CONFIG_FEATURE_FDISK_WRITABLE
+ 	warn_cylinders();
+ #endif
++*/
+ 	warn_geometry();
+ 
+ 	for (i = 0; i < 4; i++) {
+@@ -5390,8 +5391,10 @@
+ 			if (sun_label)
+ 				sun_set_ncyl(cylinders);
+ #endif
++			/*
+ 			if (dos_label)
+ 				warn_cylinders();
++			*/
+ 			break;
+ 		case 'd':
+ 			print_raw();
+diff -ru busybox-1.01/util-linux/fsck_minix.c busybox-1.01.new/util-linux/fsck_minix.c
+--- busybox-1.01/util-linux/fsck_minix.c	2005-08-17 01:29:17 +0000
++++ busybox-1.01.new/util-linux/fsck_minix.c	2021-11-19 20:33:16 +0000
+@@ -98,6 +98,9 @@
+ #include <sys/param.h>
+ #include "busybox.h"
+ 
++#define setbit(a,i)	(((unsigned char *)(a))[(i)/8] |= 1<<((i)%8))
++#define clrbit(a,i)	(((unsigned char *)(a))[(i)/8] &= ~(1<<((i)%8)))
++
+ static const int MINIX_ROOT_INO = 1;
+ static const int MINIX_LINK_MAX = 250;
+ static const int MINIX2_LINK_MAX = 65530;
+diff -ru busybox-1.01/util-linux/mkfs_minix.c busybox-1.01.new/util-linux/mkfs_minix.c
+--- busybox-1.01/util-linux/mkfs_minix.c	2005-08-17 01:29:17 +0000
++++ busybox-1.01.new/util-linux/mkfs_minix.c	2021-11-19 20:33:16 +0000
+@@ -77,6 +77,9 @@
+ #include <mntent.h>
+ #include "busybox.h"
+ 
++#define setbit(a,i)	(((unsigned char *)(a))[(i)/8] |= 1<<((i)%8))
++#define clrbit(a,i)	(((unsigned char *)(a))[(i)/8] &= ~(1<<((i)%8)))
++
+ #define MINIX_ROOT_INO 1
+ #define MINIX_LINK_MAX	250
+ #define MINIX2_LINK_MAX	65530

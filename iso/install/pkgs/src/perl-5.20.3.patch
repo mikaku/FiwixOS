@@ -1,0 +1,15 @@
+diff -ru perl-5.20.3/pp.c perl-5.20.3.new/pp.c
+--- perl-5.20.3/pp.c	2014-12-27 12:49:23.000000000 +0100
++++ perl-5.20.3.new/pp.c	2020-01-11 18:30:54.000000000 +0100
+@@ -42,10 +42,10 @@
+ /*
+  * Some BSDs and Cygwin default to POSIX math instead of IEEE.
+  * This switches them over to IEEE.
+- */
+ #if defined(LIBM_LIB_VERSION)
+     _LIB_VERSION_TYPE _LIB_VERSION = _IEEE_;
+ #endif
++ */
+ 
+ static const STRLEN small_mu_len = sizeof(GREEK_SMALL_LETTER_MU_UTF8) - 1;
+ static const STRLEN capital_iota_len = sizeof(GREEK_CAPITAL_LETTER_IOTA_UTF8) - 1;

@@ -1,0 +1,72 @@
+diff -ru nano-4.9.3/config.guess nano-4.9.3.new/config.guess
+--- nano-4.9.3/config.guess	2019-11-21 12:27:36 +0000
++++ nano-4.9.3.new/config.guess	2023-08-05 14:40:38 +0000
+@@ -1408,6 +1408,9 @@
+     i*86:AROS:*:*)
+ 	echo "$UNAME_MACHINE"-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+     x86_64:VMkernel:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-esx
+ 	exit ;;
+diff -ru nano-4.9.3/config.sub nano-4.9.3.new/config.sub
+--- nano-4.9.3/config.sub	2019-11-21 12:27:36 +0000
++++ nano-4.9.3.new/config.sub	2023-08-05 14:40:48 +0000
+@@ -1390,7 +1390,7 @@
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+ 	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox* | -bme* \
+-	      | -midnightbsd*)
++	      | -midnightbsd* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru nano-4.9.3/src/files.c nano-4.9.3.new/src/files.c
+--- nano-4.9.3/src/files.c	2020-04-07 09:12:13 +0000
++++ nano-4.9.3.new/src/files.c	2023-08-05 15:10:21 +0000
+@@ -668,10 +668,6 @@
+ 	block_sigwinch(TRUE);
+ #endif
+ 
+-	/* Lock the file before starting to read it, to avoid the overhead
+-	 * of locking it for each single byte that we read from it. */
+-	flockfile(f);
+-
+ 	control_C_was_pressed = FALSE;
+ 
+ 	/* Read the entire file into the new buffer. */
+@@ -750,9 +746,6 @@
+ 
+ 	errornumber = errno;
+ 
+-	/* We are done with the file, unlock it. */
+-	funlockfile(f);
+-
+ #ifndef NANO_TINY
+ 	block_sigwinch(FALSE);
+ #endif
+diff -ru nano-4.9.3/src/text.c nano-4.9.3.new/src/text.c
+--- nano-4.9.3/src/text.c	2020-04-07 09:21:48 +0000
++++ nano-4.9.3.new/src/text.c	2023-08-05 15:05:39 +0000
+@@ -2362,8 +2362,7 @@
+ 
+ 	/* Get the timestamp and the size of the temporary file. */
+ 	stat(tempfile_name, &fileinfo);
+-	timestamp_sec = (long)fileinfo.st_mtim.tv_sec;
+-	timestamp_nsec = (long)fileinfo.st_mtim.tv_nsec;
++	timestamp_sec = (long)fileinfo.st_mtime;
+ 
+ 	/* If the number of bytes to check is zero, get out. */
+ 	if (fileinfo.st_size == 0)
+@@ -2403,8 +2402,7 @@
+ 	stat(tempfile_name, &fileinfo);
+ 
+ 	/* When the temporary file wasn't touched, say so and leave. */
+-	if ((long)fileinfo.st_mtim.tv_sec == timestamp_sec &&
+-				(long)fileinfo.st_mtim.tv_nsec == timestamp_nsec) {
++	if ((long)fileinfo.st_mtime == timestamp_sec) {
+ 		statusbar(_("Nothing changed"));
+ 		return NULL;
+ 	}

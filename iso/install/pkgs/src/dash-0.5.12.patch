@@ -1,0 +1,24 @@
+diff -ru dash-0.5.12/src/jobs.c dash-0.5.12.new/src/jobs.c
+--- dash-0.5.12/src/jobs.c	2022-01-20 05:54:13 +0000
++++ dash-0.5.12.new/src/jobs.c	2023-08-04 07:40:08 +0000
+@@ -1176,7 +1176,7 @@
+ 	do {
+ 		gotsigchld = 0;
+ 		do
+-			err = wait3(status, flags, NULL);
++			err = waitpid(-1, status, flags);
+ 		while (err < 0 && errno == EINTR);
+ 
+ 		if (err || (err = -!block))
+Only in dash-0.5.12.new/src: jobs.c.orig
+diff -ru dash-0.5.12/src/miscbltin.c dash-0.5.12.new/src/miscbltin.c
+--- dash-0.5.12/src/miscbltin.c	2020-06-03 01:19:23 +0000
++++ dash-0.5.12.new/src/miscbltin.c	2023-08-04 07:40:08 +0000
+@@ -61,6 +61,7 @@
+ 
+ #undef rflag
+ 
++typedef unsigned long int rlim_t;
+ 
+ /** handle one line of the read command.
+  *  more fields than variables -> remainder shall be part of last variable.

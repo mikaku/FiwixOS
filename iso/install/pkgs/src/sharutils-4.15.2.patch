@@ -1,0 +1,84 @@
+diff -ru sharutils-4.15.2/config.guess sharutils-4.15.2.new/config.guess
+--- sharutils-4.15.2/config.guess	2015-05-30 15:35:31 +0000
++++ sharutils-4.15.2.new/config.guess	2022-07-16 17:43:47 +0000
+@@ -1369,6 +1369,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru sharutils-4.15.2/config.sub sharutils-4.15.2.new/config.sub
+--- sharutils-4.15.2/config.sub	2015-05-30 15:35:31 +0000
++++ sharutils-4.15.2.new/config.sub	2022-07-16 17:43:57 +0000
+@@ -1376,7 +1376,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru sharutils-4.15.2/src/shar.c sharutils-4.15.2.new/src/shar.c
+--- sharutils-4.15.2/src/shar.c	2015-05-22 15:27:34 +0000
++++ sharutils-4.15.2.new/src/shar.c	2022-07-16 17:44:26 +0000
+@@ -2327,9 +2327,10 @@
+   sharpid = (int) getpid ();
+   setlocale (LC_ALL, "");
+ 
+-  /* Set the text message domain.  */
++  /* Set the text message domain.
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
++  */
+   scribble_init ();
+ 
+   opt_idx = optionProcess (&sharOptions, *argcp, *argvp);
+diff -ru sharutils-4.15.2/src/unshar.c sharutils-4.15.2.new/src/unshar.c
+--- sharutils-4.15.2/src/unshar.c	2015-01-07 02:14:10 +0000
++++ sharutils-4.15.2.new/src/unshar.c	2022-07-16 17:44:38 +0000
+@@ -439,8 +439,10 @@
+ init_unshar (void)
+ {
+   setlocale (LC_ALL, "");
++/*
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
++*/
+ #ifdef __MSDOS__
+   setbuf (stdout, NULL);
+   setbuf (stderr, NULL);
+diff -ru sharutils-4.15.2/src/uudecode.c sharutils-4.15.2.new/src/uudecode.c
+--- sharutils-4.15.2/src/uudecode.c	2015-05-22 15:17:10 +0000
++++ sharutils-4.15.2.new/src/uudecode.c	2022-07-16 17:44:48 +0000
+@@ -510,9 +510,10 @@
+ 
+   setlocale (LC_ALL, "");
+ 
+-  /* Set the text message domain.  */
++  /* Set the text message domain.
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
++  */
+ 
+   {
+     int ct = optionProcess (&uudecodeOptions, argc, (char **)(void *)argv);
+diff -ru sharutils-4.15.2/src/uuencode.c sharutils-4.15.2.new/src/uuencode.c
+--- sharutils-4.15.2/src/uuencode.c	2015-05-22 15:17:26 +0000
++++ sharutils-4.15.2.new/src/uuencode.c	2022-07-16 17:44:57 +0000
+@@ -200,9 +200,10 @@
+   /* Set global variables.  */
+   setlocale (LC_ALL, "");
+ 
+-  /* Set the text message domain.  */
++  /* Set the text message domain.
+   bindtextdomain (PACKAGE, LOCALEDIR);
+   textdomain (PACKAGE);
++  */
+ 
+   input_name = _("standard input");
+ 

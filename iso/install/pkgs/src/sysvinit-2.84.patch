@@ -1,0 +1,919 @@
+diff -ru sysvinit-2.84/src/dowall.c sysvinit-2.84.new/src/dowall.c
+--- sysvinit-2.84/src/dowall.c	2000-09-11 13:34:24.000000000 +0200
++++ sysvinit-2.84.new/src/dowall.c	2021-11-19 19:25:24.000000000 +0100
+@@ -78,6 +78,7 @@
+ 	time_t t;
+ 	struct utmp *utmp;
+ 	uid_t uid;
++	struct sigaction sa;
+ 
+ 	setutent();
+ 
+@@ -124,7 +125,12 @@
+ 	if (fork() != 0)
+ 		return;
+ 	
+-	siginterrupt (SIGALRM, 1);
++	memset(&sa, 0, sizeof(sa));
++	sa.sa_handler = handler;
++	sa.sa_flags = 0;
++	sigemptyset(&sa.sa_mask);
++	sigaction(SIGALRM, &sa, NULL);
++
+ 	while ((utmp = getutent()) != NULL) {
+ 		if(utmp->ut_type != USER_PROCESS ||
+ 		   utmp->ut_user[0] == 0) continue;
+diff -ru sysvinit-2.84/src/halt.c sysvinit-2.84.new/src/halt.c
+--- sysvinit-2.84/src/halt.c	2001-11-27 13:12:03.000000000 +0100
++++ sysvinit-2.84.new/src/halt.c	2021-11-19 19:25:24.000000000 +0100
+@@ -243,11 +243,13 @@
+ 		sleep(2);
+ 	}
+ 
++/*
+ 	if (do_ifdown)
+ 		(void)ifdown();
+ 
+ 	if (do_hddown)
+ 		(void)hddown();
++*/
+ 
+ 	if (do_reboot) {
+ 		init_reboot(BMAGIC_REBOOT);
+diff -ru sysvinit-2.84/src/init.c sysvinit-2.84.new/src/init.c
+--- sysvinit-2.84/src/init.c	2001-11-27 13:12:23.000000000 +0100
++++ sysvinit-2.84.new/src/init.c	2021-11-19 19:25:24.000000000 +0100
+@@ -46,7 +46,7 @@
+ #include <utmp.h>
+ #include <ctype.h>
+ #include <stdarg.h>
+-#include <sys/syslog.h>
++/*#include <sys/syslog.h>*/
+ #include <sys/time.h>
+ 
+ #ifdef __i386__
+@@ -346,7 +346,7 @@
+ 	} while (cmd != C_REC);
+ 
+ 	while ((p = (CHILD *)malloc(sizeof(CHILD))) == NULL ) {
+-		log(L_VB, "out of memory");
++		logger(L_VB, "out of memory");
+ 		do_sleep(5);
+ 	}
+ 	memset(p, 0, sizeof(CHILD));
+@@ -527,7 +527,7 @@
+ 		for( ch = family; ch; ch = ch->next )
+ 			if ( ch->pid == pid && (ch->flags & RUNNING) ) {
+ #if DEBUG
+-				log(L_VB, "chld_handler: marked %d as zombie",
++				logger(L_VB, "chld_handler: marked %d as zombie",
+ 					ch->pid);
+ #endif
+ 				ADDSET(got_signals, SIGCHLD);
+@@ -541,7 +541,7 @@
+ 			}
+ #if DEBUG
+ 		if (ch == NULL)
+-			log(L_VB, "chld_handler: unknown child %d exited.",
++			logger(L_VB, "chld_handler: unknown child %d exited.",
+ 				pid);
+ #endif
+ 	}
+@@ -599,7 +599,7 @@
+ 	if ((void *)ctx.eip >= (void *)do_sleep &&
+ 	    (void *)ctx.eip < (void *)main)
+ 		p = " (code)";
+-	log(L_VB, "PANIC: segmentation violation at %p%s! "
++	logger(L_VB, "PANIC: segmentation violation at %p%s! "
+ 		  "sleeping for 30 seconds.", (void *)ctx.eip, p);
+ 	if (coredump() != 0)
+ 		do_sleep(30);
+@@ -610,7 +610,7 @@
+ {
+ 	int	saved_errno = errno;
+ 
+-	log(L_VB, "PANIC: segmentation violation! sleeping for 30 seconds.");
++	logger(L_VB, "PANIC: segmentation violation! sleeping for 30 seconds.");
+ 	if (coredump() != 0)
+ 		do_sleep(30);
+ 	errno = saved_errno;
+@@ -640,7 +640,7 @@
+ 	int restore_ok = 0;
+ 
+ 	if ((fd = console_open(O_RDWR|O_NOCTTY)) < 0) {
+-		log(L_VB, "can't open %s", console_dev);
++		logger(L_VB, "can't open %s", console_dev);
+ 		return;
+ 	}
+ 
+@@ -654,7 +654,7 @@
+ 		(void) tcgetattr(fd, &tty);
+ 		if ((fd2 = open(IOSAVE, O_WRONLY|O_CREAT|O_TRUNC, 0600)) < 0) {
+ 			if (errno != EROFS)
+-				log(L_VB, "can't open(%s, O_WRONLY): %s",
++				logger(L_VB, "can't open(%s, O_WRONLY): %s",
+ 					IOSAVE, strerror(errno));
+ 			(void) close(fd);
+ 			(void) close(fd2);
+@@ -732,7 +732,7 @@
+ #ifdef __GNUC__
+ __attribute__ ((format (printf, 2, 3)))
+ #endif
+-void log(int loglevel, char *s, ...)
++void logger(int loglevel, char *s, ...)
+ {
+ 	va_list va_alist;
+ 	char buf[256];
+@@ -745,9 +745,11 @@
+ 		/*
+ 		 *	Re-etablish connection with syslogd every time.
+ 		 */
++/*
+ 		openlog("init", 0, LOG_DAEMON);
+ 		syslog(LOG_INFO, "%s", buf);
+ 		closelog();
++*/
+ 	}
+ 
+ 	/*
+@@ -816,7 +818,7 @@
+ 	/* Do we try to respawn too fast? */
+ 	if (ch->count >= MAXSPAWN) {
+ 
+-	  log(L_VB, "Id \"%s\" respawning too fast: disabled for %d minutes",
++	  logger(L_VB, "Id \"%s\" respawning too fast: disabled for %d minutes",
+ 			ch->id, SLEEPTIME / 60);
+ 	  ch->flags &= ~RUNNING;
+ 	  ch->flags |= FAILING;
+@@ -931,7 +933,7 @@
+   				dup(f);
+ 			}
+ 			if ((pid = fork()) < 0) {
+-  				log(L_VB, "cannot fork");
++  				logger(L_VB, "cannot fork");
+ 				exit(1);
+ 			}
+ 			if (pid > 0) {
+@@ -961,7 +963,7 @@
+ 				 *	this with a temporary process.
+ 				 */
+ 				if ((pid = fork()) < 0) {
+-  					log(L_VB, "cannot fork");
++  					logger(L_VB, "cannot fork");
+ 					exit(1);
+ 				}
+ 				if (pid == 0) {
+@@ -981,7 +983,7 @@
+   		} else {
+ 			setsid();
+ 			if ((f = console_open(O_RDWR|O_NOCTTY)) < 0) {
+-				log(L_VB, "open(%s): %s", console_dev,
++				logger(L_VB, "open(%s): %s", console_dev,
+ 					strerror(errno));
+ 				f = open("/dev/null", O_RDWR);
+ 			}
+@@ -1007,18 +1009,18 @@
+   			args[4] = NULL;
+ 			execvp(args[1], args + 1);
+ 		}
+-  		log(L_VB, "cannot execute \"%s\"", args[1]);
++  		logger(L_VB, "cannot execute \"%s\"", args[1]);
+   		exit(1);
+   	}
+ 	*res = pid;
+   	sigprocmask(SIG_SETMASK, &omask, NULL);
+ 
+ #if DEBUG
+-	log(L_VB, "Started id %s (pid %d)", ch->id, pid);
++	logger(L_VB, "Started id %s (pid %d)", ch->id, pid);
+ #endif
+ 
+ 	if (pid == -1) {
+-		log(L_VB, "cannot fork, retry..");
++		logger(L_VB, "cannot fork, retry..");
+ 		do_sleep(5);
+ 		continue;
+ 	}
+@@ -1116,17 +1118,17 @@
+ 
+ #if DEBUG
+   if (newFamily != NULL) {
+-	log(L_VB, "PANIC newFamily != NULL");
++	logger(L_VB, "PANIC newFamily != NULL");
+ 	exit(1);
+   }
+-  log(L_VB, "Reading inittab");
++  logger(L_VB, "Reading inittab");
+ #endif
+ 
+   /*
+    *	Open INITTAB and real line by line.
+    */
+   if ((fp = fopen(INITTAB, "r")) == NULL)
+-	log(L_VB, "No inittab file found");
++	logger(L_VB, "No inittab file found");
+ 
+   while(!done) {
+ 	/*
+@@ -1180,9 +1182,9 @@
+ 	if (action && strlen(action) > 32)
+ 		strcpy(err, "action field too long");
+ 	if (err[0] != 0) {
+-		log(L_VB, "%s[%d]: %s", INITTAB, lineNo, err);
++		logger(L_VB, "%s[%d]: %s", INITTAB, lineNo, err);
+ #if DEBUG
+-		log(L_VB, "%s:%s:%s:%s", id, rlevel, action, process);
++		logger(L_VB, "%s:%s:%s:%s", id, rlevel, action, process);
+ #endif
+ 		continue;
+ 	}
+@@ -1197,7 +1199,7 @@
+ 			break;
+ 		}
+ 	if (actionNo == -1) {
+-		log(L_VB, "%s[%d]: %s: unknown action field",
++		logger(L_VB, "%s[%d]: %s: unknown action field",
+ 			INITTAB, lineNo, action);
+ 		continue;
+ 	}
+@@ -1207,7 +1209,7 @@
+ 	 */
+ 	for(old = newFamily; old; old = old->next) {
+ 		if(strcmp(old->id, id) == 0 && strcmp(id, "~~")) {
+-			log(L_VB, "%s[%d]: duplicate ID field \"%s\"",
++			logger(L_VB, "%s[%d]: duplicate ID field \"%s\"",
+ 				INITTAB, lineNo, id);
+ 			break;
+ 		}
+@@ -1218,7 +1220,7 @@
+ 	 *	Allocate a CHILD structure
+ 	 */
+ 	while ((ch = malloc(sizeof(CHILD))) == NULL) {
+-		log(L_VB, "out of memory");
++		logger(L_VB, "out of memory");
+ 		do_sleep(5);
+ 	}
+ 	memset(ch, 0, sizeof(CHILD));
+@@ -1311,7 +1313,7 @@
+    */
+ 
+ #if DEBUG
+-  log(L_VB, "Checking for children to kill");
++  logger(L_VB, "Checking for children to kill");
+ #endif
+   for(round = 0; round < 2; round++) {
+     talk = 1;
+@@ -1364,18 +1366,18 @@
+ 		continue;
+ 	}
+ #if DEBUG
+-	log(L_VB, "Killing \"%s\"", ch->process);
++	logger(L_VB, "Killing \"%s\"", ch->process);
+ #endif
+ 	switch(round) {
+ 		case 0: /* Send TERM signal */
+ 			if (talk)
+-				log(L_CO, "Sending processes the TERM signal");
++				logger(L_CO, "Sending processes the TERM signal");
+ 			kill(-(ch->pid), SIGTERM);
+ 			foundOne = 1;
+ 			break;
+ 		case 1: /* Send KILL signal and collect status */
+ 			if (talk)
+-				log(L_CO, "Sending processes the KILL signal");
++				logger(L_CO, "Sending processes the KILL signal");
+ 			kill(-(ch->pid), SIGKILL);
+ 			break;
+ 	}
+@@ -1415,11 +1417,11 @@
+   for(ch = family; ch; ch = ch->next)
+ 	if (ch->flags & KILLME) {
+ 		if (!(ch->flags & ZOMBIE))
+-		    log(L_CO, "Pid %d [id %s] seems to hang", ch->pid,
++		    logger(L_CO, "Pid %d [id %s] seems to hang", ch->pid,
+ 				ch->id);
+ 		else {
+ #if DEBUG
+-		    log(L_VB, "Updating utmp for pid %d [id %s]", ch->pid, ch->id);
++		    logger(L_VB, "Updating utmp for pid %d [id %s]", ch->pid, ch->id);
+ #endif
+ 		    ch->flags &= ~RUNNING;
+ 		    if (ch->process[0] != '+')
+@@ -1487,14 +1489,14 @@
+ 	int delete;		/* Delete this entry from list? */
+ 
+ #if DEBUG
+-	log(L_VB, "Checking for children to start");
++	logger(L_VB, "Checking for children to start");
+ #endif
+ 
+ 	for(ch = family; ch; ch = ch->next) {
+ 
+ #if DEBUG
+ 		if (ch->rlevel[0] == 'C') {
+-			log(L_VB, "%s: flags %d", ch->process, ch->flags);
++			logger(L_VB, "%s: flags %d", ch->process, ch->flags);
+ 		}
+ #endif
+ 
+@@ -1580,7 +1582,7 @@
+ 	if (lvl > 0) {
+ 		if (islower(lvl)) lvl = toupper(lvl);
+ 		if (strchr("0123456789S", lvl) == NULL) {
+-			log(L_VB, "Initdefault level '%c' is invalid", lvl);
++			logger(L_VB, "Initdefault level '%c' is invalid", lvl);
+ 			lvl = 0;
+ 		}
+ 	}
+@@ -1627,7 +1629,7 @@
+ #endif
+ 	if (fp == NULL) {
+ 		/* INITLVL file is empty or not there - act as 'init q' */
+-		log(L_SY, "Re-reading inittab");
++		logger(L_SY, "Re-reading inittab");
+   		return(runlevel);
+ 	}
+ 	ok = fscanf(fp, "%c %d", &foo, &st);
+@@ -1643,28 +1645,28 @@
+ 
+   if (islower(foo)) foo = toupper(foo);
+   if (ok < 1 || ok > 2 || strchr("QS0123456789ABCU", foo) == NULL) {
+- 	log(L_VB, "bad runlevel: %c", foo);
++ 	logger(L_VB, "bad runlevel: %c", foo);
+   	return(runlevel);
+   }
+ 
+   /* Log this action */
+   switch(foo) {
+ 	case 'S':
+-  		log(L_VB, "Going single user");
++  		logger(L_VB, "Going single user");
+ 		break;
+ 	case 'Q':
+-		log(L_SY, "Re-reading inittab");
++		logger(L_SY, "Re-reading inittab");
+ 		break;
+ 	case 'A':
+ 	case 'B':
+ 	case 'C':
+-		log(L_SY, "Activating demand-procedures for '%c'", foo);
++		logger(L_SY, "Activating demand-procedures for '%c'", foo);
+ 		break;
+ 	case 'U':
+-		log(L_SY, "Trying to re-exec init");
++		logger(L_SY, "Trying to re-exec init");
+ 		return 'U';
+ 	default:
+-	  	log(L_VB, "Switching to runlevel: %c", foo);
++	  	logger(L_VB, "Switching to runlevel: %c", foo);
+   }
+ 
+   if (foo == 'Q') return(runlevel);
+@@ -1683,7 +1685,7 @@
+ 			ch->flags |= DEMAND;
+ 			ch->flags &= ~XECUTED;
+ #if DEBUG
+-			log(L_VB, "Marking (%s) as ondemand, flags %d",
++			logger(L_VB, "Marking (%s) as ondemand, flags %d",
+ 				ch->id, ch->flags);
+ #endif
+ 		}
+@@ -1859,7 +1861,7 @@
+ 	for(ch = family; ch; ch = ch->next)
+ 	    if (ch->flags & ZOMBIE) {
+ #if DEBUG
+-		log(L_VB, "Child died, PID= %d", ch->pid);
++		logger(L_VB, "Child died, PID= %d", ch->pid);
+ #endif
+ 		ch->flags &= ~(RUNNING|ZOMBIE|WAITING);
+ 		if (ch->process[0] != '+')
+@@ -1886,7 +1888,7 @@
+ 	close(fd);
+ 	close(STATE_PIPE);
+ 	sigprocmask(SIG_SETMASK, &oldset, NULL);
+-	log(L_CO, "Attempt to re-exec failed");
++	logger(L_CO, "Attempt to re-exec failed");
+ }
+ 
+ 
+@@ -1973,7 +1975,7 @@
+ 	if ((pipe_fd = open(INIT_FIFO, O_RDWR|O_NONBLOCK)) >= 0) {
+ 		fstat(pipe_fd, &st);
+ 		if (!S_ISFIFO(st.st_mode)) {
+-			log(L_VB, "%s is not a fifo", INIT_FIFO);
++			logger(L_VB, "%s is not a fifo", INIT_FIFO);
+ 			close(pipe_fd);
+ 			pipe_fd = -1;
+ 		}
+@@ -2020,7 +2022,7 @@
+ 	}
+ 	if (n <= 0) {
+ 		if (errno == EINTR) return;
+-		log(L_VB, "error reading initrequest");
++		logger(L_VB, "error reading initrequest");
+ 		continue;
+ 	}
+ 
+@@ -2034,7 +2036,7 @@
+ 	 *	Process request.
+ 	 */
+ 	if (request.magic != INIT_MAGIC || n != sizeof(request)) {
+-		log(L_VB, "got bogus initrequest");
++		logger(L_VB, "got bogus initrequest");
+ 		continue;
+ 	}
+ 	switch(request.cmd) {
+@@ -2059,7 +2061,7 @@
+ 			quit = 1;
+ 			break;
+ 		default:
+-			log(L_VB, "got unimplemented initrequest.");
++			logger(L_VB, "got unimplemented initrequest.");
+ 			break;
+ 	}
+   }
+@@ -2095,7 +2097,7 @@
+ 	switch(runlevel) {
+ 		case '#': /* SYSINIT -> BOOT */
+ #if DEBUG
+-			log(L_VB, "SYSINIT -> BOOT");
++			logger(L_VB, "SYSINIT -> BOOT");
+ #endif
+ 			/* Save tty modes. */
+ 			set_term(1);
+@@ -2116,7 +2118,7 @@
+ 			break;
+ 		case '*': /* BOOT -> NORMAL */
+ #if DEBUG
+-			log(L_VB, "BOOT -> NORMAL");
++			logger(L_VB, "BOOT -> NORMAL");
+ #endif
+ 			/* Save tty modes. */
+ 			set_term(1);
+@@ -2130,7 +2132,7 @@
+ 		case 'S': /* Ended SU mode */
+ 		case 's':
+ #if DEBUG
+-			log(L_VB, "END SU MODE");
++			logger(L_VB, "END SU MODE");
+ #endif
+ 			/* Save tty modes. */
+ 			set_term(1);
+@@ -2151,7 +2153,7 @@
+ 			break;
+ 		default:
+ 			if (warn)
+-			  log(L_VB, "no more processes left in this runlevel");
++			  logger(L_VB, "no more processes left in this runlevel");
+ 			warn = 0;
+ 			loglevel = -1;
+ 			if (got_signals == 0)
+@@ -2159,7 +2161,7 @@
+ 			break;
+ 	}
+ 	if (loglevel > 0) {
+-		log(L_VB, "Entering runlevel: %c", runlevel);
++		logger(L_VB, "Entering runlevel: %c", runlevel);
+ 		write_utmp_wtmp("runlevel", "~~", runlevel + 256 * oldlevel, RUN_LVL, "~");
+ 		thislevel = runlevel;
+ 		prevlevel = oldlevel;
+@@ -2182,7 +2184,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGPWR)) {
+ #if DEBUG
+-	log(L_VB, "got SIGPWR");
++	logger(L_VB, "got SIGPWR");
+ #endif
+ 	/* See _what_ kind of SIGPWR this is. */
+ 	pwrstat = 0;
+@@ -2199,7 +2201,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGINT)) {
+ #if DEBUG
+-	log(L_VB, "got SIGINT");
++	logger(L_VB, "got SIGINT");
+ #endif
+ 	/* Tell ctrlaltdel entry to start up */
+ 	for(ch = family; ch; ch = ch->next)
+@@ -2210,7 +2212,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGWINCH)) {
+ #if DEBUG
+-	log(L_VB, "got SIGWINCH");
++	logger(L_VB, "got SIGWINCH");
+ #endif
+ 	/* Tell kbrequest entry to start up */
+ 	for(ch = family; ch; ch = ch->next)
+@@ -2221,7 +2223,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGALRM)) {
+ #if DEBUG
+-	log(L_VB, "got SIGALRM");
++	logger(L_VB, "got SIGALRM");
+ #endif
+ 	/* The timer went off: check it out */
+ 	DELSET(got_signals, SIGALRM);
+@@ -2229,7 +2231,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGCHLD)) {
+ #if DEBUG
+-	log(L_VB, "got SIGCHLD");
++	logger(L_VB, "got SIGCHLD");
+ #endif
+ 	/* First set flag to 0 */
+ 	DELSET(got_signals, SIGCHLD);
+@@ -2238,7 +2240,7 @@
+ 	for(ch = family; ch; ch = ch->next)
+ 	    if (ch->flags & ZOMBIE) {
+ #if DEBUG
+-		log(L_VB, "Child died, PID= %d", ch->pid);
++		logger(L_VB, "Child died, PID= %d", ch->pid);
+ #endif
+ 		ch->flags &= ~(RUNNING|ZOMBIE|WAITING);
+ 		if (ch->process[0] != '+')
+@@ -2249,7 +2251,7 @@
+ 
+   if (ISMEMBER(got_signals, SIGHUP)) {
+ #if DEBUG
+-	log(L_VB, "got SIGHUP");
++	logger(L_VB, "got SIGHUP");
+ #endif
+ #if CHANGE_WAIT
+ 	/* Are we waiting for a child? */
+@@ -2281,7 +2283,7 @@
+ 	 *	SIGUSR1 means close and reopen /dev/initctl
+ 	 */
+ #if DEBUG
+-	log(L_VB, "got SIGUSR1");
++	logger(L_VB, "got SIGUSR1");
+ #endif
+ 	close(pipe_fd);
+ 	pipe_fd = -1;
+@@ -2370,7 +2372,7 @@
+   	/*
+ 	 *	Say hello to the world
+ 	 */
+-  	log(L_CO, bootmsg, "booting");
++  	logger(L_CO, bootmsg, "booting");
+ 
+   	/*
+ 	 *	See if we have to start an emergency shell.
+@@ -2394,7 +2396,7 @@
+ 	/*
+ 	 *	Restart: unblock signals and let the show go on
+ 	 */
+-	log(L_CO, bootmsg, "reloading");
++	logger(L_CO, bootmsg, "reloading");
+ 	sigfillset(&sgt);
+ 	sigprocmask(SIG_UNBLOCK, &sgt, NULL);
+   }
+@@ -2405,7 +2407,7 @@
+      /* See if we need to make the boot transitions. */
+      boot_transitions();
+ #if DEBUG
+-     log(L_VB, "init_main: waiting..");
++     logger(L_VB, "init_main: waiting..");
+ #endif
+ 
+      /* Check if there are processes to be waited on. */
+diff -ru sysvinit-2.84/src/init.h sysvinit-2.84.new/src/init.h
+--- sysvinit-2.84/src/init.h	1999-06-03 21:22:59.000000000 +0200
++++ sysvinit-2.84.new/src/init.h	2021-11-19 19:25:24.000000000 +0100
+@@ -31,7 +31,7 @@
+ /* Prototypes. */
+ void write_utmp_wtmp(char *user, char *id, int pid, int type, char *line);
+ void write_wtmp(char *user, char *id, int pid, int type, char *line);
+-void log(int loglevel, char *fmt, ...);
++void logger(int loglevel, char *fmt, ...);
+ void set_term(int how);
+ void print(char *fmt);
+ 
+diff -ru sysvinit-2.84/src/killall5.c sysvinit-2.84.new/src/killall5.c
+--- sysvinit-2.84/src/killall5.c	2001-07-31 16:06:27.000000000 +0200
++++ sysvinit-2.84.new/src/killall5.c	2021-11-19 19:25:24.000000000 +0100
+@@ -36,10 +36,16 @@
+ #include <sys/stat.h>
+ #include <signal.h>
+ #include <dirent.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ #include <getopt.h>
+ #include <stdarg.h>
+ 
++/* fake values */
++#define LOG_ERR		1
++#define LOG_CONS	1
++#define LOG_PID		1
++#define LOG_DAEMON	1
++
+ char *Version = "@(#)killall5 2.81 31-Jul-2001 miquels@cistron.nl";
+ 
+ /* Info about a process. */
+@@ -372,7 +378,7 @@
+ void usage(void)
+ {
+ 	nsyslog(LOG_ERR, "only one argument, a signal number, allowed");
+-	closelog();
++/*	closelog();*/
+ 	exit(1);
+ }
+ 
+@@ -387,7 +393,7 @@
+ 	va_start(args, fmt);
+ 
+ 	if (ttyname(0) == NULL) {
+-		vsyslog(pri, fmt, args);
++/*		vsyslog(pri, fmt, args);*/
+ 	} else {
+ 		fprintf(stderr, "%s: ",progname);
+ 		vfprintf(stderr, fmt, args);
+@@ -421,13 +427,13 @@
+ 	while ((opt = getopt(argc,argv,"ho:sx")) != EOF) switch (opt) {
+ 		case '?':
+ 			nsyslog(LOG_ERR,"invalid options on command line!\n");
+-			closelog();
++/*			closelog();*/
+ 			exit(1);
+ 		case 'o':
+ 			if (oind >= PIDOF_OMITSZ -1) {
+ 				nsyslog(LOG_ERR,"omit pid buffer size %d "
+ 					"exceeded!\n", PIDOF_OMITSZ);
+-				closelog();
++/*				closelog();*/
+ 				exit(1);
+ 			}
+ 			if (strcmp("%PPID",optarg) == 0)
+@@ -436,7 +442,7 @@
+ 				nsyslog(LOG_ERR,
+ 					"illegal omit pid value (%s)!\n",
+ 					optarg);
+-				closelog();
++/*				closelog();*/
+ 				exit(1);
+ 			}
+ 			oind++;
+@@ -486,7 +492,7 @@
+ 		}
+ 	}
+ 	printf("\n");
+-	closelog();
++/*	closelog();*/
+ 	return(first ? 1 : 0);
+ }
+ 
+@@ -506,7 +512,7 @@
+ 		progname++;
+ 
+ 	/* Now connect to syslog. */
+-	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);
++/*	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);*/
+ 
+ 	/* First get the /proc filesystem online. */
+ 	mount_proc();
+@@ -558,7 +564,7 @@
+ 	kill(-1, SIGCONT);
+ 
+ 	/* Done. */
+-	closelog();
++/*	closelog();*/
+ 
+ 	return 0;
+ }
+diff -ru sysvinit-2.84/src/last.c sysvinit-2.84.new/src/last.c
+--- sysvinit-2.84/src/last.c	2001-06-13 14:13:21.000000000 +0200
++++ sysvinit-2.84.new/src/last.c	2021-11-19 19:27:15.000000000 +0100
+@@ -31,9 +31,11 @@
+ #include <string.h>
+ #include <signal.h>
+ #include <getopt.h>
++/*
+ #include <netinet/in.h>
+ #include <netdb.h>
+ #include <arpa/inet.h>
++*/
+ #include "oldutmp.h"
+ 
+ #ifndef SHUTDOWN_TIME
+@@ -89,7 +91,7 @@
+ 	utn->ut_type = oldut->ut_type;
+ 	utn->ut_pid  = oldut->ut_pid;
+ 	utn->ut_time = oldut->ut_oldtime;
+-	utn->ut_addr = oldut->ut_oldaddr;
++/*	utn->ut_addr = oldut->ut_oldaddr;*/
+ 	strncpy(utn->ut_line, oldut->ut_line, OLD_LINESIZE);
+ 	strncpy(utn->ut_user, oldut->ut_user, OLD_NAMESIZE);
+ 	strncpy(utn->ut_host, oldut->ut_host, OLD_HOSTSIZE);
+@@ -297,6 +299,7 @@
+ 	return p;
+ }
+ 
++#ifndef __fiwix__
+ /*
+  *	Lookup a host with DNS.
+  */
+@@ -324,13 +327,14 @@
+ 
+ 	return 0;
+ }
++#endif
+ 
+ /*
+  *	Show one line of information on screen
+  */
+ int list(struct utmp *p, time_t t, int what)
+ {
+-	struct in_addr in;
++/*	struct in_addr in;*/
+ 	char logintime[32];
+ 	char logouttime[32];
+ 	char length[32];
+@@ -412,15 +416,16 @@
+ 	/*
+ 	 *	Look up host with DNS if needed.
+ 	 */
++/*
+ 	if (usedns)
+ 		dns_lookup(domain, sizeof(domain), p->ut_host, p->ut_addr);
+ 	if (useip) {
+ 		in.s_addr = p->ut_addr;
+ 		strcpy(domain, inet_ntoa(in));
+-	} else {
++	} else {*/
+ 		strncpy(domain, p->ut_host, UT_HOSTSIZE);
+ 		domain[UT_HOSTSIZE-1] = 0;
+-	}
++/*	}*/
+ 
+ 	if (showhost) {
+ #if CHOP_DOMAIN
+diff -ru sysvinit-2.84/src/Makefile sysvinit-2.84.new/src/Makefile
+--- sysvinit-2.84/src/Makefile	2001-11-06 12:58:16.000000000 +0100
++++ sysvinit-2.84.new/src/Makefile	2021-11-19 19:28:54.000000000 +0100
+@@ -8,17 +8,17 @@
+ # Version:	@(#)Makefile  2.83-3  06-Nov-2001  miquels@cistron.nl
+ #
+ 
+-CC	= cc
++CC	= gcc
+ CFLAGS	= -Wall -O2 -D_GNU_SOURCE
+ LDFLAGS	= -s
+ STATIC	=
+ 
+ # For Debian we do not build all programs, otherwise we do.
+ ifeq ($(DEBIAN),)
+-PROGS	= init halt shutdown killall5 runlevel sulogin utmpdump \
++PROGS	= init halt shutdown killall5 runlevel utmpdump \
+ 		last mesg wall
+ else
+-PROGS	= init halt shutdown killall5 runlevel sulogin last mesg
++PROGS	= init halt shutdown killall5 runlevel last mesg
+ endif
+ 
+ BIN_OWNER	= root
+@@ -37,8 +37,8 @@
+ init:		init.o init_utmp.o
+ 		$(CC) $(LDFLAGS) $(STATIC) -o $@ init.o init_utmp.o
+ 
+-halt:		halt.o ifdown.o hddown.o utmp.o reboot.h
+-		$(CC) $(LDFLAGS) -o $@ halt.o ifdown.o hddown.o utmp.o
++halt:		halt.o utmp.o reboot.h
++		$(CC) $(LDFLAGS) -o $@ halt.o utmp.o
+ 
+ last:		last.o oldutmp.h
+ 		$(CC) $(LDFLAGS) -o $@ last.o
+@@ -85,8 +85,11 @@
+ distclean:	clobber
+ 
+ install:
+-		$(INSTALL) -m 755 halt init killall5 sulogin \
++		mkdir -p $(ROOT)/sbin
++		$(INSTALL) -m 755 halt init killall5 \
+ 			runlevel shutdown $(ROOT)/sbin
++		mkdir -p $(ROOT)/usr/bin
++		mkdir -p $(ROOT)/bin
+ 		# These are not installed by default
+ ifeq ($(DEBIAN),)
+ 		$(INSTALL) -m 555 utmpdump wall $(ROOT)/usr/bin
+@@ -98,9 +101,13 @@
+ 		cd $(ROOT)/sbin; ln -sf init telinit; chown $(BIN_COMBO) telinit
+ 		cd $(ROOT)/bin; ln -sf ../sbin/killall5 pidof; chown $(BIN_COMBO) pidof
+ 		cd $(ROOT)/usr/bin; ln -sf last lastb; chown $(BIN_COMBO) lastb
++		mkdir -p $(ROOT)/usr/include
+ 		$(INSTALL) -m 644 initreq.h $(ROOT)/usr/include
++		mkdir -p $(ROOT)$(MANDIR)/man8
++		mkdir -p $(ROOT)$(MANDIR)/man5
+ 		$(INSTALL) -m 644 ../man/*.8 $(ROOT)$(MANDIR)/man8
+ 		$(INSTALL) -m 644 ../man/*.5 $(ROOT)$(MANDIR)/man5
++		mkdir -p $(ROOT)$(MANDIR)/man1
+ ifeq ($(DEBIAN),)
+ 		$(INSTALL) -m 644 ../man/wall.1 $(ROOT)$(MANDIR)/man1
+ endif
+@@ -112,4 +119,7 @@
+ 		@if [ ! -p /dev/initctl ]; then \
+ 		 echo "Creating /dev/initctl"; \
+ 		 rm -f /dev/initctl; \
+-		 mknod -m 600 /dev/initctl p; fi
++		 mknod -m 600 $(ROOT)/dev/initctl p; fi
++
++		mkdir -p $(ROOT)/dev
++		mknod -m 600 $(ROOT)/dev/initctl p
+diff -ru sysvinit-2.84/src/utmp.c sysvinit-2.84.new/src/utmp.c
+--- sysvinit-2.84/src/utmp.c	1999-06-09 13:11:33.000000000 +0200
++++ sysvinit-2.84.new/src/utmp.c	2021-11-19 19:30:45.000000000 +0100
+@@ -30,7 +30,7 @@
+ #    define HAVE_UPDWTMP 1
+ #  endif
+ #else
+-#  define HAVE_UPDWTMP 0
++#  define HAVE_UPDWTMP 1
+ #endif
+ 
+ 
+diff -ru sysvinit-2.84/src/utmpdump.c sysvinit-2.84.new/src/utmpdump.c
+--- sysvinit-2.84/src/utmpdump.c	2000-09-12 23:14:24.000000000 +0200
++++ sysvinit-2.84.new/src/utmpdump.c	2021-11-19 19:25:24.000000000 +0100
+@@ -25,8 +25,10 @@
+ #include <time.h>
+ #include <ctype.h>
+ #include <unistd.h>
++/*
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++*/
+ #include "oldutmp.h"
+ 
+ struct utmp
+@@ -38,7 +40,7 @@
+ 	dest.ut_type = src.ut_type;
+ 	dest.ut_pid  = src.ut_pid;
+ 	dest.ut_time = src.ut_oldtime;
+-	dest.ut_addr = src.ut_oldaddr;
++/*	dest.ut_addr = src.ut_oldaddr;*/
+ 	strncpy(dest.ut_id,   src.ut_id,   4);
+ 	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
+ 	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
+@@ -56,7 +58,7 @@
+ 	dest.ut_type    = src.ut_type;
+ 	dest.ut_pid     = src.ut_pid;
+ 	dest.ut_oldtime = src.ut_time;
+-	dest.ut_oldaddr = src.ut_addr;
++/*	dest.ut_oldaddr = src.ut_addr;*/
+ 	strncpy(dest.ut_id,   src.ut_id,   4);
+ 	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
+ 	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
+@@ -118,10 +120,10 @@
+ print_utline(struct utmp ut)
+ {
+ 	char *addr_string, *time_string;
+-	struct in_addr in;
++/*	struct in_addr in;
+ 
+ 	in.s_addr = ut.ut_addr;
+-	addr_string = inet_ntoa(in);
++	addr_string = inet_ntoa(in);*/
+ 	time_string = timetostr(ut.ut_time);
+ 	cleanse(ut.ut_id);
+ 	cleanse(ut.ut_user);
+@@ -132,7 +134,7 @@
+ 	printf("[%d] [%05d] [%-4.4s] [%-*.*s] [%-*.*s] [%-*.*s] [%-15.15s] [%-28.28s]\n",
+ 	       ut.ut_type, ut.ut_pid, ut.ut_id, 8, UT_NAMESIZE, ut.ut_user,
+ 	       12, UT_LINESIZE, ut.ut_line, 20, UT_HOSTSIZE, ut.ut_host,
+-               addr_string, time_string);
++               "0.0.0.0", time_string);
+ }
+ 
+ void
+@@ -213,7 +215,7 @@
+ 		line += gettok(line, s_addr, sizeof(s_addr)-1, 1);
+ 		line += gettok(line, s_time, sizeof(s_time)-1, 0);
+ 
+-                ut.ut_addr = inet_addr(s_addr);
++/*                ut.ut_addr = inet_addr(s_addr);*/
+                 ut.ut_time = strtotime(s_time);
+ 
+                 if (oldfmt) {
+diff -ru sysvinit-2.84/src/wall.c sysvinit-2.84.new/src/wall.c
+--- sysvinit-2.84/src/wall.c	2000-09-15 11:16:18.000000000 +0200
++++ sysvinit-2.84.new/src/wall.c	2021-11-19 19:25:24.000000000 +0100
+@@ -19,7 +19,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <pwd.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ 
+ 
+ char *Version = "@(#) wall 2.79 12-Sep-2000 miquels@cistron.nl";
+@@ -100,10 +100,12 @@
+ 	}
+   }
+ 
++/*
+   openlog("wall", LOG_PID, LOG_USER);
+   syslog(LOG_INFO, "wall: user %s broadcasted %d lines (%d chars)",
+ 	whoami, i, strlen(buf));
+   closelog();
++*/
+ 
+   unsetenv("TZ");
+   wall(buf, 0, remote);

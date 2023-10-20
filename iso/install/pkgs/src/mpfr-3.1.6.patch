@@ -1,0 +1,25 @@
+diff -ru mpfr-3.1.6/config.guess mpfr-3.1.6.new/config.guess
+--- mpfr-3.1.6/config.guess	2017-09-07 11:47:07 +0000
++++ mpfr-3.1.6.new/config.guess	2023-08-05 14:29:35 +0000
+@@ -1406,6 +1406,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
+diff -ru mpfr-3.1.6/config.sub mpfr-3.1.6.new/config.sub
+--- mpfr-3.1.6/config.sub	2017-09-07 11:47:07 +0000
++++ mpfr-3.1.6.new/config.sub	2023-08-05 14:29:50 +0000
+@@ -1409,7 +1409,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos* | -phoenix* | -fuchsia*)
++	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

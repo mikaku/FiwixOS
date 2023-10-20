@@ -1,0 +1,108 @@
+diff -ru SDL-1.2.15/build-scripts/config.guess SDL-1.2.15.new/build-scripts/config.guess
+--- SDL-1.2.15/build-scripts/config.guess	2012-01-19 07:30:05.000000000 +0100
++++ SDL-1.2.15.new/build-scripts/config.guess	2020-05-08 20:41:25.000000000 +0200
+@@ -1292,6 +1292,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru SDL-1.2.15/build-scripts/config.sub SDL-1.2.15.new/build-scripts/config.sub
+--- SDL-1.2.15/build-scripts/config.sub	2012-01-19 07:30:05.000000000 +0100
++++ SDL-1.2.15.new/build-scripts/config.sub	2020-05-08 20:41:25.000000000 +0200
+@@ -1297,7 +1297,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru SDL-1.2.15/configure.in SDL-1.2.15.new/configure.in
+--- SDL-1.2.15/configure.in	2012-01-19 07:30:05.000000000 +0100
++++ SDL-1.2.15.new/configure.in	2020-05-08 20:41:25.000000000 +0200
+@@ -2325,7 +2325,7 @@
+             have_timers=yes
+         fi
+         ;;
+-    *-*-linux*|*-*-uclinux*|*-*-gnu*|*-*-k*bsd*-gnu|*-*-bsdi*|*-*-freebsd*|*-*-dragonfly*|*-*-netbsd*|*-*-openbsd*|*-*-sysv5*|*-*-solaris*|*-*-hpux*|*-*-irix*|*-*-aix*|*-*-osf*)
++    *-*-linux*|*-*-uclinux*|*-*-gnu*|*-*-k*bsd*-gnu|*-*-bsdi*|*-*-freebsd*|*-*-dragonfly*|*-*-netbsd*|*-*-openbsd*|*-*-sysv5*|*-*-solaris*|*-*-hpux*|*-*-irix*|*-*-aix*|*-*-osf*|*-*-fiwix*)
+         case "$host" in
+             *-*-linux*)         ARCH=linux ;;
+             *-*-uclinux*)       ARCH=linux ;;
+@@ -2344,6 +2344,7 @@
+             *-*-irix*)          ARCH=irix ;;
+             *-*-aix*)           ARCH=aix ;;
+             *-*-osf*)           ARCH=osf ;;
++            *-*-fiwix*)         ARCH=fiwix ;;
+         esac
+         CheckVisibilityHidden
+         CheckDummyVideo
+diff -ru SDL-1.2.15/src/video/svga/SDL_svgaevents.c SDL-1.2.15.new/src/video/svga/SDL_svgaevents.c
+--- SDL-1.2.15/src/video/svga/SDL_svgaevents.c	2012-01-19 07:30:06.000000000 +0100
++++ SDL-1.2.15.new/src/video/svga/SDL_svgaevents.c	2020-05-08 23:05:53.000000000 +0200
+@@ -31,6 +31,9 @@
+ #include <linux/keyboard.h>
+ #elif defined(__FREEBSD__)
+ #include <sys/kbio.h>
++#elif defined(__fiwix__)
++#include <fiwix/kd.h>
++#include <fiwix/keyboard.h>
+ #else
+ #error You must choose your operating system here
+ #endif
+@@ -47,6 +50,8 @@
+ #elif defined(__FREEBSD__)
+ /* FIXME: Free the keymap when we shut down the video mode */
+ static keymap_t *vga_keymap = NULL;
++#elif defined(__fiwix__)
++static Uint16 vga_keymap[256][128];
+ #else
+ #error You must choose your operating system here
+ #endif
+@@ -143,6 +148,11 @@
+ 	}
+ 	return(0);
+ }
++#elif defined(__fiwix__)
++int SVGA_initkeymaps(int fd)
++{
++	return 0;
++}
+ #else
+ #error You must choose your operating system here
+ #endif
+@@ -407,6 +417,15 @@
+ 	}
+ 	return(keysym);
+ }
++#elif defined(__fiwix__)
++static SDL_keysym *TranslateKey(int scancode, SDL_keysym *keysym)
++{
++	/* Set the keysym information */
++	keysym->scancode = scancode;
++	keysym->sym = keymap[scancode];
++	keysym->mod = KMOD_NONE;
++	return(keysym);
++}
+ #else
+ #error You must choose your operating system here
+ #endif
+diff -ru SDL-1.2.15/src/video/svga/SDL_svgavideo.c SDL-1.2.15.new/src/video/svga/SDL_svgavideo.c
+--- SDL-1.2.15/src/video/svga/SDL_svgavideo.c	2012-01-19 07:30:06.000000000 +0100
++++ SDL-1.2.15.new/src/video/svga/SDL_svgavideo.c	2020-05-08 23:06:30.000000000 +0200
+@@ -34,6 +34,8 @@
+ #include <linux/vt.h>
+ #elif defined(__FREEBSD__)
+ #include <sys/consio.h>
++#elif defined(__fiwix__)
++#include <fiwix/vt.h>
+ #else
+ #error You must choose your operating system here
+ #endif

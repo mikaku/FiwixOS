@@ -1,0 +1,12 @@
+diff -ru unzip60/fileio.c unzip60.new/fileio.c
+--- unzip60/fileio.c	2009-04-20 00:03:44 +0000
++++ unzip60.new/fileio.c	2018-06-03 18:04:47 +0000
+@@ -1821,7 +1821,7 @@
+ #else /* !(BSD || MTS || __GO32__) */
+     /* tzset was already called at start of process_zipfiles() */
+     /* tzset(); */              /* set `timezone' variable */
+-#ifndef __BEOS__                /* BeOS DR8 has no timezones... */
++#if !defined(__BEOS__) && !defined(__fiwix__) /* BeOS DR8 has no timezones... */
+     m_time += timezone;         /* seconds WEST of GMT:  add */
+ #endif
+ #endif /* ?(BSD || MTS || __GO32__) */

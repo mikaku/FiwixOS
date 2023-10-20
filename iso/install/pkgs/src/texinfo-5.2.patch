@@ -1,0 +1,26 @@
+diff -ru texinfo-5.2/build-aux/config.guess texinfo-5.2.new/build-aux/config.guess
+--- texinfo-5.2/build-aux/config.guess	2013-08-15 19:23:35.000000000 +0200
++++ texinfo-5.2.new/build-aux/config.guess	2020-01-11 04:48:23.000000000 +0100
+@@ -1359,6 +1359,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ eval $set_cc_for_build
+diff -ru texinfo-5.2/build-aux/config.sub texinfo-5.2.new/build-aux/config.sub
+--- texinfo-5.2/build-aux/config.sub	2013-09-13 18:52:11.000000000 +0200
++++ texinfo-5.2.new/build-aux/config.sub	2020-01-11 04:48:37.000000000 +0100
+@@ -1374,7 +1374,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

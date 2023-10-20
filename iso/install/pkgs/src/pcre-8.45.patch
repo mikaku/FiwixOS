@@ -1,0 +1,25 @@
+diff -ru pcre-8.45/config.guess pcre-8.45.new/config.guess
+--- pcre-8.45/config.guess	2021-06-15 15:52:53 +0000
++++ pcre-8.45.new/config.guess	2021-11-02 20:34:04 +0000
+@@ -1477,6 +1477,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+     *:Unleashed:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-unleashed"$UNAME_RELEASE"
+ 	exit ;;
+diff -ru pcre-8.45/config.sub pcre-8.45.new/config.sub
+--- pcre-8.45/config.sub	2021-06-15 15:52:53 +0000
++++ pcre-8.45.new/config.sub	2021-11-02 20:34:15 +0000
+@@ -1720,7 +1720,7 @@
+ 	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
+ 	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
+ 	     | midnightbsd* | amdhsa* | unleashed* | emscripten* | wasi* \
+-	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx*)
++	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx* | fiwix*)
+ 		;;
+ 	# This one is extra strict with allowed versions
+ 	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)

@@ -1,0 +1,96 @@
+diff -ru opkg-0.6.2/libopkg/file_util.c opkg-0.6.2.new/libopkg/file_util.c
+--- opkg-0.6.2/libopkg/file_util.c	2023-07-11 21:09:39 +0000
++++ opkg-0.6.2.new/libopkg/file_util.c	2023-08-06 15:50:46 +0000
+@@ -517,16 +517,16 @@
+         opkg_perror(ERROR, "Failed to change to dir %s/..", path);
+     }
+ 
+-    r = rmdir(path);
++    r = closedir(dir);
+     if (r == -1) {
+         ret = -1;
+-        opkg_perror(ERROR, "Failed to remove dir %s", path);
++        opkg_perror(ERROR, "Failed to close dir %s", path);
+     }
+ 
+-    r = closedir(dir);
++    r = rmdir(path);
+     if (r == -1) {
+         ret = -1;
+-        opkg_perror(ERROR, "Failed to close dir %s", path);
++        opkg_perror(ERROR, "Failed to remove dir %s", path);
+     }
+ 
+     return ret;
+Only in opkg-0.6.2.new/libopkg: file_util.c.orig
+diff -ru opkg-0.6.2/libopkg/opkg_conf.c opkg-0.6.2.new/libopkg/opkg_conf.c
+--- opkg-0.6.2/libopkg/opkg_conf.c	2023-07-11 21:09:39 +0000
++++ opkg-0.6.2.new/libopkg/opkg_conf.c	2023-08-06 15:50:46 +0000
+@@ -38,6 +38,8 @@
+ #include "file_util.h"
+ #include "xfuncs.h"
+ 
++#define GLOB_NOMATCH	3
++
+ static int lock_fd;
+ 
+ static opkg_conf_t _conf;
+@@ -620,7 +622,7 @@
+         return -1;
+     }
+ 
+-    r = lockf(lock_fd, F_TLOCK, (off_t) 0);
++    r = flock(lock_fd, LOCK_EX | LOCK_NB);
+     if (r == -1) {
+         opkg_perror(ERROR, "Could not lock %s", opkg_config->lock_file);
+         r = close(lock_fd);
+@@ -640,7 +642,7 @@
+     int err = 0;
+ 
+     if (lock_fd != -1) {
+-        r = lockf(lock_fd, F_ULOCK, (off_t) 0);
++        r = flock(lock_fd, LOCK_UN);
+         if (r == -1) {
+             opkg_perror(ERROR, "Couldn't unlock %s", opkg_config->lock_file);
+             err = -1;
+diff -ru opkg-0.6.2/libopkg/opkg_utils.c opkg-0.6.2.new/libopkg/opkg_utils.c
+--- opkg-0.6.2/libopkg/opkg_utils.c	2023-07-11 21:09:39 +0000
++++ opkg-0.6.2.new/libopkg/opkg_utils.c	2023-08-06 15:50:46 +0000
+@@ -21,7 +21,7 @@
+ #include "config.h"
+ 
+ #include <ctype.h>
+-#include <sys/statvfs.h>
++#include <sys/statfs.h>
+ #include <string.h>
+ 
+ #include "opkg_message.h"
+@@ -29,24 +29,16 @@
+ 
+ unsigned long get_available_kbytes(char *filesystem)
+ {
+-    struct statvfs f;
++    struct statfs f;
+     int r;
+ 
+-    r = statvfs(filesystem, &f);
++    r = statfs(filesystem, &f);
+     if (r == -1) {
+-        opkg_perror(ERROR, "Failed to statvfs for %s", filesystem);
++        opkg_perror(ERROR, "Failed to statfs for %s", filesystem);
+         return 0;
+     }
+-    // Actually ((sfs.f_bavail * sfs.f_frsize) / 1024)
+-    // and here we try to avoid overflow.
+-    if (f.f_frsize >= 1024)
+-        return (f.f_bavail * (f.f_frsize / 1024));
+-    else if (f.f_frsize > 0)
+-        return f.f_bavail / (1024 / f.f_frsize);
+ 
+-    opkg_msg(ERROR, "Unknown block size for target filesystem.\n");
+-
+-    return 0;
++    return (f.f_bavail * f.f_bsize) / 1024;
+ }
+ 
+ /* something to remove whitespace, a hash pooper */

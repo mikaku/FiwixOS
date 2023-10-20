@@ -1,0 +1,403 @@
+diff -ru grub-0.97/ChangeLog grub-0.97.new/ChangeLog
+--- grub-0.97/ChangeLog	2005-05-08 04:47:02.000000000 +0200
++++ grub-0.97.new/ChangeLog	2021-11-21 19:31:35.000000000 +0100
+@@ -1,3 +1,23 @@
++2006-11-23  Brynet-Inc <brynet@gmail.com>
++
++	* updated grub 0.97 with a VBE patch by Durand J. Miller 
++	<djmiller@djm.co.za> from 2004-05-09.
++	* stage2/builtins.c (vbeset_func): New function to set the VBE
++	mode and mbi information during the booting sequence.
++	* stage2/builtins.c (vbematch_func): New function to locate a
++	matching Direct color VBE mode. If a multiboot kernel is loaded,
++	then the mode is passed on to the kernel on boot.
++	* stage2/builtins.c (builtin_table): Added a pointer to the
++	new VBE functions.
++	* stage2/common.c (mbi_vbe_controller): New variable and in ...
++	* stage2/shared.h (mbi_vbe_controller): ... this.
++	* stage2/common.c (mbi_vbe_mode_info): New variable and in ...
++	* stage2/shared.h (mbi_vbe_mode_info): ... this.
++	* docs/grub.texi (vbeset): Added some documentation for the 
++	vbeset command.
++	* docs/grub.texi (vbematch): Added some documentation for the 
++	vbematch command.
++
+ 2005-05-08  Yoshinori K. Okuji  <okuji@enbug.org>
+ 
+ 	* configure.ac (AC_INIT): Upgraded to 0.97.
+diff -ru grub-0.97/config.guess grub-0.97.new/config.guess
+--- grub-0.97/config.guess	2005-05-08 04:42:40.000000000 +0200
++++ grub-0.97.new/config.guess	2021-11-21 19:34:43.000000000 +0100
+@@ -1254,6 +1254,9 @@
+     *:XENIX:*:SysV)
+ 	echo i386-pc-xenix
+ 	exit 0 ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit 0 ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru grub-0.97/config.sub grub-0.97.new/config.sub
+--- grub-0.97/config.sub	2005-05-08 04:42:40.000000000 +0200
++++ grub-0.97.new/config.sub	2021-11-21 19:25:58.000000000 +0100
+@@ -1178,7 +1178,7 @@
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+-	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly*)
++	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru grub-0.97/lib/device.c grub-0.97.new/lib/device.c
+--- grub-0.97/lib/device.c	2005-03-28 01:14:25.000000000 +0200
++++ grub-0.97.new/lib/device.c	2021-11-21 19:26:58.000000000 +0100
+@@ -36,12 +36,16 @@
+ #include <limits.h>
+ #include <stdarg.h>
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__fiwix__)
++#ifndef __fiwix__
+ # if !defined(__GLIBC__) || \
+         ((__GLIBC__ < 2) || ((__GLIBC__ == 2) && (__GLIBC_MINOR__ < 1)))
+ /* Maybe libc doesn't have large file support.  */
+ #  include <linux/unistd.h>     /* _llseek */
+ # endif /* (GLIBC < 2) || ((__GLIBC__ == 2) && (__GLIBC_MINOR < 1)) */
++#else
++# include <fiwix/part.h>	/* hd_geometry */
++#endif
+ # include <sys/ioctl.h>		/* ioctl */
+ # ifndef HDIO_GETGEO
+ #  define HDIO_GETGEO	0x0301	/* get device geometry */
+diff -ru grub-0.97/stage2/boot.c grub-0.97.new/stage2/boot.c
+--- grub-0.97/stage2/boot.c	2004-03-30 13:44:08.000000000 +0200
++++ grub-0.97.new/stage2/boot.c	2021-11-21 19:31:35.000000000 +0100
+@@ -87,6 +87,13 @@
+ 	    }
+ 	  type = KERNEL_TYPE_MULTIBOOT;
+ 	  str2 = "Multiboot";
++	  
++      /* Check to see if the kernel wants a video mode */
++	  if ( (flags & MULTIBOOT_VIDEO_MODE) != 0 )
++	  {
++	  	// ... give it to the kernel
++	  }
++
+ 	  break;
+ 	}
+     }
+diff -ru grub-0.97/stage2/builtins.c grub-0.97.new/stage2/builtins.c
+--- grub-0.97/stage2/builtins.c	2005-02-15 22:58:23.000000000 +0100
++++ grub-0.97.new/stage2/builtins.c	2021-11-21 19:31:35.000000000 +0100
+@@ -298,6 +298,16 @@
+ 
+     case KERNEL_TYPE_MULTIBOOT:
+       /* Multiboot */
++	  
++	  /* Switch to graphics mode if requested.  */
++	  if ( (mbi.flags & MB_INFO_VIDEO_INFO) != 0 )
++         if (set_vbe_mode (mbi.vbe_mode | (1 << 14)) != 0x004F)
++         {
++			grub_printf (" Switching to VBE Mode 0x%x failed.\n", mbi.vbe_mode);
++			errnum = ERR_BOOT_COMMAND;
++			return 1;
++         }
++
+       multi_boot ((int) entry_addr, (int) &mbi);
+       break;
+ 
+@@ -2690,18 +2700,8 @@
+ };
+ 
+ 
+-/* partnew PART TYPE START LEN */
+-static int
+-partnew_func (char *arg, int flags)
+-{
+-  int new_type, new_start, new_len;
+-  int start_cl, start_ch, start_dh;
+-  int end_cl, end_ch, end_dh;
+-  int entry;
+-  char mbr[512];
+-
+   /* Convert a LBA address to a CHS address in the INT 13 format.  */
+-  auto void lba_to_chs (int lba, int *cl, int *ch, int *dh);
++  void lba_to_chs (int lba, int *cl, int *ch, int *dh);
+   void lba_to_chs (int lba, int *cl, int *ch, int *dh)
+     {
+       int cylinder, head, sector;
+@@ -2718,6 +2718,16 @@
+       *dh = head;
+     }
+       
++/* partnew PART TYPE START LEN */
++static int
++partnew_func (char *arg, int flags)
++{
++  int new_type, new_start, new_len;
++  int start_cl, start_ch, start_dh;
++  int end_cl, end_ch, end_dh;
++  int entry;
++  char mbr[512];
++
+   /* Get the drive and the partition.  */
+   if (! set_device (arg))
+     return 1;
+@@ -4684,6 +4694,126 @@
+ };
+ 
+ 
++/* vbematch */
++static int
++vbematch_func (char *arg, int flags)
++{
++	struct vbe_controller controller;
++	unsigned short *mode_list;
++	int mode_number = -1;
++
++	int width;
++	int height;
++	int depth;
++ 
++	auto unsigned long vbe_far_ptr_to_linear (unsigned long);
++  
++	unsigned long vbe_far_ptr_to_linear (unsigned long ptr)
++	{
++		unsigned short seg = (ptr >> 16);
++		unsigned short off = (ptr & 0xFFFF);
++
++		return (seg << 4) + off;
++	}
++  
++	if (! safe_parse_maxint (&arg, &width))
++	{
++		errnum = ERR_BAD_ARGUMENT;
++		return 1;
++	}
++	arg = skip_to (0,arg);
++	if (! safe_parse_maxint (&arg, &height))
++	{
++		errnum = ERR_BAD_ARGUMENT;
++		return 1;
++	}
++	arg = skip_to (0,arg);
++	if (! safe_parse_maxint (&arg, &depth))
++	{
++		errnum = ERR_BAD_ARGUMENT;
++		return 1;
++	}
++ 
++	/* Set the signature to `VBE2', to obtain VBE 3.0 information.  */
++	grub_memmove (controller.signature, "VBE2", 4);
++  
++	if (get_vbe_controller_info (&controller) != 0x004F)
++	{
++		grub_printf (" VBE BIOS is not present.\n");
++		return 0;
++	}
++
++	/* Check the version.  */
++	if (controller.version < 0x0200)
++	{
++		grub_printf (" VBE version %d.%d is not supported.\n",
++		(int) (controller.version >> 8),
++		(int) (controller.version & 0xFF));
++		return 0;
++	}
++
++	/* Iterate probing modes.  */
++	for (mode_list = (unsigned short *) vbe_far_ptr_to_linear (controller.video_mode); *mode_list != 0xFFFF; mode_list++)
++	{
++		struct vbe_mode mode;
++
++		if (get_vbe_mode_info (*mode_list, &mode) != 0x004F)
++			continue;
++
++		/* Skip this, if this is not supported or linear frame buffer mode is not support.  */
++		if ((mode.mode_attributes & 0x0081) != 0x0081)
++			continue;
++		
++		if ( mode.memory_model == 0x06 )
++		{
++			if ( (mode.x_resolution == width) && (mode.y_resolution == height) && (mode.bits_per_pixel == depth ) )
++			{
++				grub_printf ("  0x%x: %s, %ux%ux%u\n",
++				(unsigned) *mode_list,
++				"Direct color",
++				(unsigned) mode.x_resolution,
++				(unsigned) mode.y_resolution,
++				(unsigned) mode.bits_per_pixel);
++
++				if ( kernel_type == KERNEL_TYPE_MULTIBOOT )
++				{
++					grub_memmove (mbi_vbe_controller.signature, "VBE2", 4);
++					get_vbe_controller_info (&mbi_vbe_controller);
++					get_vbe_mode_info (*mode_list, &mbi_vbe_mode_info);
++
++					mbi.flags |= MB_INFO_VIDEO_INFO;
++					mbi.vbe_control_info = (unsigned long) &mbi_vbe_controller;
++					mbi.vbe_mode_info = (unsigned long) &mbi_vbe_mode_info;
++					mbi.vbe_mode = (unsigned) *mode_list;
++					mbi.vbe_interface_seg = 0;
++					mbi.vbe_interface_off = 0;
++					mbi.vbe_interface_len = 0;
++					grub_printf ("  VBE Mode 0x%x set for multiboot kernel.\n", (unsigned) *mode_list);
++				}
++				break;
++			}
++		}
++	}
++
++	if (mode_number != -1 && mode_number != *mode_list)
++		grub_printf ("  Mode 0x%x is not found or supported.\n", mode_number);
++
++	return 0;
++}
++
++static struct builtin builtin_vbematch =
++{
++  "vbematch",
++  vbematch_func,
++  BUILTIN_CMDLINE | BUILTIN_SCRIPT | BUILTIN_HELP_LIST,
++  "vbematch [WIDTH] [HEIGHT] [DEPTH]",
++  "Locates a direct color VBE mode which matches the requested "
++  "dimensions. If used after having loaded a multiboot kernel, "
++  "this command also sets the video mode to be loaded once the "
++  "kernel boots."
++};
++
++
+ /* vbeprobe */
+ static int
+ vbeprobe_func (char *arg, int flags)
+@@ -4790,7 +4920,85 @@
+   "Probe VBE information. If the mode number MODE is specified, show only"
+   " the information about only the mode."
+ };
+-  
++
++/* vbeset MODE */
++static int
++vbeset_func (char *arg, int flags)
++{
++	int mode_number;
++
++	if (! *arg)
++	{
++		errnum = ERR_BAD_ARGUMENT;
++		return 1;
++	}
++
++	if (! safe_parse_maxint (&arg, &mode_number))
++	{
++		errnum = ERR_BAD_ARGUMENT;
++		return 1;
++	}
++
++	if ( kernel_type != KERNEL_TYPE_MULTIBOOT )
++	{
++		grub_printf (" Multiboot kernel not yet loaded.\n");
++		return 1;
++	}
++
++	/* Preset `VBE2'.  */
++	grub_memmove (mbi_vbe_controller.signature, "VBE2", 4);
++
++	/* Detect VBE BIOS.  */
++	if (get_vbe_controller_info (&mbi_vbe_controller) != 0x004F)
++	{
++		grub_printf (" VBE BIOS is not present.\n");
++		return 1;
++	}
++
++	if (mbi_vbe_controller.version < 0x0200)
++	{
++		grub_printf (" VBE version %d.%d is not supported.\n",
++		(int) (mbi_vbe_controller.version >> 8),
++		(int) (mbi_vbe_controller.version & 0xFF));
++		return 1;
++	}
++
++	if (get_vbe_mode_info (mode_number, &mbi_vbe_mode_info) != 0x004F || (mbi_vbe_mode_info.mode_attributes & 0x0091) != 0x0091)
++	{
++		grub_printf (" Mode 0x%x is not supported.\n", mode_number);
++		return 1;
++	}
++
++	/* Back to the default text mode if not in a script.  */
++	if (! (flags & BUILTIN_SCRIPT))
++	{
++		grub_printf (" VBE Mode 0x%x found and accepted.\n", mode_number);
++	}
++
++	/* set the multiboot information */
++	mbi.flags |= MB_INFO_VIDEO_INFO;
++	mbi.vbe_control_info = (unsigned long) &mbi_vbe_controller;
++	mbi.vbe_mode_info = (unsigned long) &mbi_vbe_mode_info;
++	mbi.vbe_mode = mode_number;
++	mbi.vbe_interface_seg = 0;
++	mbi.vbe_interface_off = 0;
++	mbi.vbe_interface_len = 0;
++
++	return 0;
++}
++
++static struct builtin builtin_vbeset =
++{
++  "vbeset",
++  vbeset_func,
++  BUILTIN_CMDLINE | BUILTIN_SCRIPT | BUILTIN_HELP_LIST,
++  "vbeset MODE",
++  "Sets the VBE mode for multiboot kernels. The video mode only "
++  "switches after a kernel has been successfully loaded and is "
++  "about to boot. This command overrides the VBE mode specified in "
++  "the multiboot header of the loaded kernel."
++};
++
+ 
+ /* The table of builtin commands. Sorted in dictionary order.  */
+ struct builtin *builtin_table[] =
+@@ -4879,6 +5087,8 @@
+   &builtin_title,
+   &builtin_unhide,
+   &builtin_uppermem,
++  &builtin_vbematch,
+   &builtin_vbeprobe,
++  &builtin_vbeset,
+   0
+ };
+diff -ru grub-0.97/stage2/common.c grub-0.97.new/stage2/common.c
+--- grub-0.97/stage2/common.c	2004-03-27 17:25:44.000000000 +0100
++++ grub-0.97.new/stage2/common.c	2021-11-21 19:31:35.000000000 +0100
+@@ -30,6 +30,8 @@
+  */
+ 
+ struct multiboot_info mbi;
++struct vbe_controller mbi_vbe_controller;
++struct vbe_mode mbi_vbe_mode_info;
+ unsigned long saved_drive;
+ unsigned long saved_partition;
+ unsigned long cdrom_drive;
+diff -ru grub-0.97/stage2/shared.h grub-0.97.new/stage2/shared.h
+--- grub-0.97/stage2/shared.h	2004-06-19 18:40:09.000000000 +0200
++++ grub-0.97.new/stage2/shared.h	2021-11-21 19:33:02.000000000 +0100
+@@ -499,7 +499,7 @@
+   unsigned char linear_reserved_field_position;
+   unsigned long max_pixel_clock;
+ 
+-  unsigned char reserved3[189];
++  unsigned char reserved3[190];
+ } __attribute__ ((packed));
+ 
+ 
+@@ -671,6 +671,8 @@
+  */
+ 
+ extern struct multiboot_info mbi;
++extern struct vbe_controller mbi_vbe_controller;
++extern struct vbe_mode mbi_vbe_mode_info;
+ extern unsigned long saved_drive;
+ extern unsigned long saved_partition;
+ extern unsigned long cdrom_drive;

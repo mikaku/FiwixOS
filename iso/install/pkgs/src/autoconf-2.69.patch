@@ -1,0 +1,26 @@
+diff -ru autoconf-2.69/build-aux/config.guess autoconf-2.69.new/build-aux/config.guess
+--- autoconf-2.69/build-aux/config.guess	2012-04-25 02:15:10 +0000
++++ autoconf-2.69.new/build-aux/config.guess	2022-03-26 11:07:33 +0000
+@@ -1328,6 +1328,9 @@
+     x86_64:VMkernel:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-esx
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru autoconf-2.69/build-aux/config.sub autoconf-2.69.new/build-aux/config.sub
+--- autoconf-2.69/build-aux/config.sub	2012-04-25 02:37:26 +0000
++++ autoconf-2.69.new/build-aux/config.sub	2022-03-26 11:08:12 +0000
+@@ -1368,7 +1368,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

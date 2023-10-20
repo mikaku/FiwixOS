@@ -1,0 +1,25 @@
+diff -ru gnuit-4.9.5/config.guess gnuit-4.9.5.new/config.guess
+--- gnuit-4.9.5/config.guess	2009-02-18 03:31:25.000000000 +0100
++++ gnuit-4.9.5.new/config.guess	2020-09-08 21:10:03.000000000 +0200
+@@ -1324,6 +1324,9 @@
+     i*86:rdos:*:*)
+ 	echo ${UNAME_MACHINE}-pc-rdos
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru gnuit-4.9.5/config.sub gnuit-4.9.5.new/config.sub
+--- gnuit-4.9.5/config.sub	2009-02-18 03:31:25.000000000 +0100
++++ gnuit-4.9.5.new/config.sub	2020-09-08 21:10:16.000000000 +0200
+@@ -1258,7 +1258,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

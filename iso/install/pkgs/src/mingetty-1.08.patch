@@ -1,0 +1,73 @@
+diff -ru mingetty-1.08/Makefile mingetty-1.08.new/Makefile
+--- mingetty-1.08/Makefile	2003-05-24 21:21:17.000000000 +0200
++++ mingetty-1.08.new/Makefile	2021-11-19 19:16:59.000000000 +0100
+@@ -1,4 +1,3 @@
+-DESTDIR=
+ CC=gcc
+ CFLAGS=-O2 -Wall -W -pipe -D_GNU_SOURCE
+ MANDIR=/usr/share/man/man8
+@@ -7,7 +6,9 @@
+ all:		mingetty
+ 
+ install:	all
++		install -d $(DESTDIR)$(SBINDIR)
+ 		install -m 0755 mingetty $(DESTDIR)$(SBINDIR)
++		install -d $(DESTDIR)$(MANDIR)
+ 		install -m 0644 mingetty.8 $(DESTDIR)$(MANDIR)
+ 
+ mingetty:	mingetty.o
+diff -ru mingetty-1.08/mingetty.c mingetty-1.08.new/mingetty.c
+--- mingetty-1.08/mingetty.c	2008-01-18 12:13:07.000000000 +0100
++++ mingetty-1.08.new/mingetty.c	2021-11-19 19:20:22.000000000 +0100
+@@ -36,7 +36,7 @@
+ #include <utmp.h>
+ #include <getopt.h>
+ #include <sys/param.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ #include <sys/utsname.h>
+ #include <time.h>
+ 
+@@ -83,8 +83,9 @@
+ 	va_list va_alist;
+ 
+ 	va_start (va_alist, fmt);
+-	openlog (progname, LOG_PID, LOG_AUTH);
+-	vsyslog (LOG_ERR, fmt, va_alist);
++/*	openlog (progname, LOG_PID, LOG_AUTH);
++	vsyslog (LOG_ERR, fmt, va_alist);*/
++	vprintf (fmt, va_alist);
+ 	/* no need, we exit anyway: closelog (); */
+ 	va_end (va_alist);
+ 	sleep (5);
+@@ -122,7 +123,7 @@
+ 	ut.ut_time = cur_time;
+ 	ut.ut_type = LOGIN_PROCESS;
+ 	ut.ut_pid = pid;
+-	ut.ut_session = sid;
++/*	ut.ut_session = sid;*/
+ 
+ 	pututline (&ut);
+ 	endutent ();
+@@ -169,8 +170,10 @@
+ 		error ("%s: not a tty", tty);
+ 
+ 	if (nohangup == 0) {
++		/*
+ 		if (vhangup ())
+ 			error ("%s: vhangup() failed", tty);
++		*/
+ 		/* Get rid of the present stdout/stderr. */
+ 		close (2);
+ 		close (1);
+@@ -426,8 +429,10 @@
+ 		chroot (ch_root);
+ 	if (ch_dir)
+ 		chdir (ch_dir);
++	/*
+ 	if (priority)
+ 		nice (priority);
++	*/
+ 
+ 	execl (loginprog, loginprog, autologin? "-f" : "--", logname, NULL);
+ 	error ("%s: can't exec %s: %s", tty, loginprog, strerror (errno));

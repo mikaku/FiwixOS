@@ -1,0 +1,25 @@
+diff -ru time-1.9/build-aux/config.guess time-1.9.new/build-aux/config.guess
+--- time-1.9/build-aux/config.guess	2018-03-12 22:26:15.000000000 +0100
++++ time-1.9.new/build-aux/config.guess	2020-01-11 05:05:06.000000000 +0100
+@@ -1414,6 +1414,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ echo "$0: unable to guess system type" >&2
+diff -ru time-1.9/build-aux/config.sub time-1.9.new/build-aux/config.sub
+--- time-1.9/build-aux/config.sub	2018-03-12 22:26:15.000000000 +0100
++++ time-1.9.new/build-aux/config.sub	2020-01-11 05:05:15.000000000 +0100
+@@ -1390,7 +1390,7 @@
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+ 	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox* | -bme* \
+-	      | -midnightbsd*)
++	      | -midnightbsd* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)

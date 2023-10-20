@@ -1,0 +1,89 @@
+diff -ruN pciutils-3.8.0/lib/configure pciutils-3.8.0.new/lib/configure
+--- pciutils-3.8.0/lib/configure	2022-04-15 23:57:59.000000000 +0200
++++ pciutils-3.8.0.new/lib/configure	2022-05-01 19:37:19.000000000 +0200
+@@ -181,6 +181,10 @@
+ 		IDSDIR="/etc/pci"
+ 		LIBRESOLV=
+ 		;;
++	fiwix)
++		echo_n " i386-ports"
++		echo >>$c '#define PCI_HAVE_PM_INTEL_CONF'
++		;;
+ 	*)
+ 		echo " Unfortunately, your OS is not supported by the PCI Library"
+ 		exit 1
+diff -ruN pciutils-3.8.0/lib/i386-io-fiwix.h pciutils-3.8.0.new/lib/i386-io-fiwix.h
+--- pciutils-3.8.0/lib/i386-io-fiwix.h	1970-01-01 01:00:00.000000000 +0100
++++ pciutils-3.8.0.new/lib/i386-io-fiwix.h	2022-05-01 19:37:19.000000000 +0200
+@@ -0,0 +1,33 @@
++/*
++ *	The PCI Library -- Access to i386 I/O ports on FiwixOS (same as in Hurd)
++ *
++ *	Copyright (c) 2003 Marco Gerards <metgerards@student.han.nl>
++ *	Copyright (c) 2003 Martin Mares <mj@ucw.cz>
++ *	Copyright (c) 2006 Samuel Thibault <samuel.thibault@ens-lyon.org> and
++ *	                   Thomas Schwinge <tschwinge@gnu.org>
++ *	Copyright (c) 2007 Thomas Schwinge <tschwinge@gnu.org>
++ *
++ *	Can be freely distributed and used under the terms of the GNU GPL.
++ */
++
++#include <sys/io.h>
++
++static inline int
++intel_setup_io(struct pci_access *a UNUSED)
++{
++  return (ioperm (0, 65535, 1) == -1) ? 0 : 1;
++}
++
++static inline void
++intel_cleanup_io(struct pci_access *a UNUSED)
++{
++  ioperm (0, 65535, 0);
++}
++
++static inline void intel_io_lock(void)
++{
++}
++
++static inline void intel_io_unlock(void)
++{
++}
+diff -ruN pciutils-3.8.0/lib/i386-ports.c pciutils-3.8.0.new/lib/i386-ports.c
+--- pciutils-3.8.0/lib/i386-ports.c	2022-02-10 13:46:16.000000000 +0100
++++ pciutils-3.8.0.new/lib/i386-ports.c	2022-05-01 19:37:19.000000000 +0200
+@@ -28,6 +28,8 @@
+ #include "i386-io-beos.h"
+ #elif defined(PCI_OS_DJGPP)
+ #include "i386-io-djgpp.h"
++#elif defined(PCI_OS_FIWIX)
++#include "i386-io-fiwix.h"
+ #else
+ #error Do not know how to access I/O ports on this OS.
+ #endif
+diff -ruN pciutils-3.8.0/ls-ecaps.c pciutils-3.8.0.new/ls-ecaps.c
+--- pciutils-3.8.0/ls-ecaps.c	2022-04-16 00:08:23.000000000 +0200
++++ pciutils-3.8.0.new/ls-ecaps.c	2022-05-01 19:37:19.000000000 +0200
+@@ -653,8 +653,9 @@
+       int prevmatched=0;
+       int adjcount=0;
+       int prevdev=0;
++      int dev;
+       printf("RCiEP at Device(s):");
+-      for (int dev=0; dev < 32; dev++)
++      for (dev=0; dev < 32; dev++)
+         {
+ 	  if (BITS(bmap, dev, 1))
+ 	    {
+diff -ruN pciutils-3.8.0/Makefile pciutils-3.8.0.new/Makefile
+--- pciutils-3.8.0/Makefile	2022-04-18 18:47:28.000000000 +0200
++++ pciutils-3.8.0.new/Makefile	2022-05-01 19:37:37.000000000 +0200
+@@ -32,7 +32,7 @@
+ ABI_VERSION=.3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
