@@ -921,7 +921,7 @@ EOF
 
 Welcome to FiwixOS $OSVERSION for the i386 architecture.
 
-    - Read the /root/README file to know about all the files installed.
+    - Read the /root/README file to know about all the packages installed.
     - Refer to the Installation CD-ROM for the source code and the license of
       every single package installed in this system.
 
