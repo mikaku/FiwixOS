@@ -757,7 +757,6 @@ Please wait while the software is installed, this may take a few minutes.
 
 	if [ "$software" = "min" ] ; then
 		softlist=$(ls ${SOURCE}/install/base/* 2>/dev/null \
-			${SOURCE}/install/pkgs/bin/at_* \
 			${SOURCE}/install/pkgs/bin/bash_* \
 			${SOURCE}/install/pkgs/bin/bc_* \
 			${SOURCE}/install/pkgs/bin/busybox_* \
@@ -773,22 +772,19 @@ Please wait while the software is installed, this may take a few minutes.
 			${SOURCE}/install/pkgs/bin/grub_* \
 			${SOURCE}/install/pkgs/bin/gzip_* \
 			${SOURCE}/install/pkgs/bin/less_* \
-			${SOURCE}/install/pkgs/bin/lrzsz_* \
 			${SOURCE}/install/pkgs/bin/mandoc_* \
 			${SOURCE}/install/pkgs/bin/mingetty_* \
 			${SOURCE}/install/pkgs/bin/nano_* \
 			${SOURCE}/install/pkgs/bin/ncurses_* \
 			${SOURCE}/install/pkgs/bin/pciutils_* \
 			${SOURCE}/install/pkgs/bin/perl_* \
-			${SOURCE}/install/pkgs/bin/picocom_* \
 			${SOURCE}/install/pkgs/bin/procps_* \
 			${SOURCE}/install/pkgs/bin/sed_* \
 			${SOURCE}/install/pkgs/bin/sysvinit_* \
 			${SOURCE}/install/pkgs/bin/tar_* \
 			${SOURCE}/install/pkgs/bin/termcap_* \
 			${SOURCE}/install/pkgs/bin/util-linux-ng_* \
-			${SOURCE}/install/pkgs/bin/vim_* \
-			${SOURCE}/install/pkgs/bin/vixie-cron_*)
+			${SOURCE}/install/pkgs/bin/vim_*)
 	else
 		# we need to keep the alphabetic order (base, bin, extras)
 		softlist=$(ls ${SOURCE}/install/base/* ; \
@@ -953,9 +949,11 @@ EOF
 
 	sed -i 's/VERSION/'$OSVERSION'/' etc/issue etc/rc.d/rc.sysinit
 
-	# activate system daemons
-	/mnt/disk/usr/bin/chroot /mnt/disk sbin/chkconfig --add atd
-	/mnt/disk/usr/bin/chroot /mnt/disk sbin/chkconfig --add crond
+	if [ "$software" != "min" ] ; then
+		# activate system daemons
+		/mnt/disk/usr/bin/chroot /mnt/disk sbin/chkconfig --add atd
+		/mnt/disk/usr/bin/chroot /mnt/disk sbin/chkconfig --add crond
+	fi
 	sync
 }
 
