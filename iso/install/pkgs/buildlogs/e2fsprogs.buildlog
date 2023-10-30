@@ -697,6 +697,6 @@ stripping debug symbols ...
 ./usr/info/libext2fs.info.gz
 /mnt/builds-fiwix-3.3
 
-real	0m47.116s
-user	0m18.080s
-sys	0m13.770s
+real	0m37.914s
+user	0m17.310s
+sys	0m12.030s

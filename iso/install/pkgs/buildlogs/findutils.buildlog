@@ -1335,6 +1335,6 @@ strip:./usr/bin/updatedb: File format not recognized
 ./usr/var/
 /mnt/builds-fiwix-3.3
 
-real	0m35.606s
-user	0m19.000s
-sys	0m13.080s
+real	0m35.350s
+user	0m18.670s
+sys	0m12.820s

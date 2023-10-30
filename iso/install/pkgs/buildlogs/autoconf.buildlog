@@ -12,7 +12,7 @@ checking host system type... i386-pc-fiwix
 configure: autobuild project... GNU Autoconf
 configure: autobuild revision... 2.69
 configure: autobuild hostname... (none)
-configure: autobuild timestamp... 20231019T191415Z
+configure: autobuild timestamp... 20231027T104759Z
 checking whether /bin/sh -n is known to work... yes
 checking for characters that cannot appear in file names... none
 checking whether directories can have trailing spaces... yes
@@ -472,6 +472,6 @@ strip:./usr/bin/autoupdate: File format not recognized
 ./usr/share/man/man1/config.sub.1
 /mnt/builds-fiwix-3.3
 
-real	0m7.139s
-user	0m0.880s
-sys	0m1.600s
+real	0m5.501s
+user	0m0.740s
+sys	0m1.670s

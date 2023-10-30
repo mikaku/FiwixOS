@@ -504,6 +504,6 @@ strip:./usr/lib/libmagic.la: File format not recognized
 ./usr/share/man/man5/
 /mnt/builds-fiwix-3.3
 
-real	0m20.205s
-user	0m9.390s
-sys	0m6.070s
+real	0m19.384s
+user	0m9.340s
+sys	0m6.210s

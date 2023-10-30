@@ -382,6 +382,6 @@ strip:./usr/bin/libpng16-config: File format not recognized
 ./usr/include/pngconf.h
 /mnt/builds-fiwix-3.3
 
-real	0m25.372s
-user	0m16.420s
-sys	0m4.700s
+real	0m23.621s
+user	0m16.090s
+sys	0m4.280s

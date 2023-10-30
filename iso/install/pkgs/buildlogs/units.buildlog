@@ -99,6 +99,6 @@ strip:./usr/bin/units_cur: File format not recognized
 ./var/lib/units/currency.units
 /mnt/builds-fiwix-3.3
 
-real	0m6.358s
-user	0m3.200s
-sys	0m1.410s
+real	0m6.095s
+user	0m3.220s
+sys	0m1.150s

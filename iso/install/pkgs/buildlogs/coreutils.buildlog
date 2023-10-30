@@ -84,7 +84,7 @@ checking for selinux/selinux.h... no
 checking for sys/ioctl.h... yes
 checking for sys/random.h... no
 checking for sys/resource.h... yes
-checking for sys/uio.h... no
+checking for sys/uio.h... yes
 checking for sys/utsname.h... yes
 checking for sys/wait.h... yes
 checking for utime.h... yes
@@ -113,7 +113,7 @@ checking for _LARGE_FILES value needed for large files... unknown
 configure: autobuild project... GNU coreutils
 configure: autobuild revision... 9.1
 configure: autobuild hostname... (none)
-configure: autobuild timestamp... 20231019T191827Z
+configure: autobuild timestamp... 20231027T105148Z
 checking for fchmod... yes
 checking for posix_memalign... no
 checking for pathconf... yes
@@ -6352,6 +6352,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/su.1
 /mnt/builds-fiwix-3.3
 
-real	4m13.210s
-user	1m33.850s
-sys	0m53.060s
+real	3m52.784s
+user	1m31.960s
+sys	0m55.470s

@@ -106,9 +106,9 @@ checking for sched.h... yes
 checking spawn.h usability... no
 checking spawn.h presence... no
 checking for spawn.h... no
-checking sys/uio.h usability... no
-checking sys/uio.h presence... no
-checking for sys/uio.h... no
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
 checking sys/utsname.h usability... yes
 checking sys/utsname.h presence... yes
 checking for sys/utsname.h... yes
@@ -832,7 +832,7 @@ checking whether with-libregex-cflags was specified... no
 checking whether with-libregex-libs was specified... no
 checking whether libregex functions properly... yes
 checking whether pathfind(3) works... no
-checking whether /dev/zero is readable device... crw-rw-rw- 1 root root 1, 5 Sep 26 15:24 /dev/zero
+checking whether /dev/zero is readable device... crw-rw-rw- 1 root root 1, 5 Oct 20 06:53 /dev/zero
 checking whether we have a functional realpath(3C)... yes
 checking whether strftime() works... yes
 checking whether fopen accepts "b" mode... yes
@@ -1557,7 +1557,7 @@ rm -f sys/uio.h-t sys/uio.h && \
       -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
       -e 's|@''PRAGMA_COLUMNS''@||g' \
       -e 's|@''NEXT_SYS_UIO_H''@|<sys/uio.h>|g' \
-      -e 's|@''HAVE_SYS_UIO_H''@|0|g' \
+      -e 's|@''HAVE_SYS_UIO_H''@|1|g' \
       < ./sys_uio.in.h; \
 } > sys/uio.h-t && \
 mv -f sys/uio.h-t sys/uio.h
@@ -2357,6 +2357,6 @@ stripping debug symbols ...
 ./usr/share/man/man5/uuencode.5
 /mnt/builds-fiwix-3.3
 
-real	0m40.405s
-user	0m20.240s
-sys	0m16.510s
+real	0m38.992s
+user	0m20.390s
+sys	0m15.410s

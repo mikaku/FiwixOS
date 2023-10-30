@@ -4138,6 +4138,6 @@ strip:./usr/bin/unix-lpr.sh: File format not recognized
 ./usr/bin/unix-lpr.sh
 /mnt/builds-fiwix-3.3
 
-real	5m25.004s
-user	2m10.600s
-sys	0m58.890s
+real	4m48.271s
+user	2m7.220s
+sys	0m57.830s

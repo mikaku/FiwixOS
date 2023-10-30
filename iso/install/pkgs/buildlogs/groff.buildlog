@@ -1902,6 +1902,6 @@ strip:./usr/bin/nroff: File format not recognized
 ./usr/lib/charset.alias
 /mnt/builds-fiwix-3.3
 
-real	2m26.342s
-user	1m7.630s
-sys	0m23.560s
+real	2m13.193s
+user	1m6.030s
+sys	0m23.050s

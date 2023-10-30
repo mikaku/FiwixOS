@@ -159,6 +159,6 @@ strip:./etc/cron.daily/logrotate: File format not recognized
 ./etc/logrotate.d/
 /mnt/builds-fiwix-3.3
 
-real	0m5.424s
-user	0m3.190s
-sys	0m1.700s
+real	0m4.743s
+user	0m3.030s
+sys	0m1.410s

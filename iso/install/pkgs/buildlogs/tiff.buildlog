@@ -1200,6 +1200,6 @@ strip:./usr/lib/libtiffxx.la: File format not recognized
 ./usr/share/doc/tiff-4.4.0/VERSION
 /mnt/builds-fiwix-3.3
 
-real	1m22.860s
-user	0m32.280s
-sys	0m15.980s
+real	1m16.951s
+user	0m31.740s
+sys	0m16.070s

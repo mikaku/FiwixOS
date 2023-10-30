@@ -996,6 +996,6 @@ strip:./usr/bin/svgakeymap: File format not recognized
 ./etc/vga/dvorak-us.keymap
 /mnt/builds-fiwix-3.3
 
-real	0m40.658s
-user	0m21.020s
-sys	0m11.450s
+real	0m38.165s
+user	0m20.940s
+sys	0m10.760s

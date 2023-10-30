@@ -51,6 +51,6 @@ stripping debug symbols ...
 ./etc/termcap
 /mnt/builds-fiwix-3.3
 
-real	0m0.794s
-user	0m0.280s
-sys	0m0.390s
+real	0m0.744s
+user	0m0.350s
+sys	0m0.270s

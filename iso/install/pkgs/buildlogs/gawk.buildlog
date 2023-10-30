@@ -429,6 +429,6 @@ strip:./usr/bin/igawk: File format not recognized
 ./usr/share/man/man1/igawk.1
 /mnt/builds-fiwix-3.3
 
-real	0m24.128s
-user	0m16.650s
-sys	0m5.550s
+real	0m23.717s
+user	0m16.410s
+sys	0m5.480s

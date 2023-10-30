@@ -117,6 +117,6 @@ stripping debug symbols ...
 ./usr/man/man1/zipsplit.1
 /mnt/builds-fiwix-3.3
 
-real	0m11.321s
-user	0m8.500s
-sys	0m2.320s
+real	0m10.810s
+user	0m8.620s
+sys	0m1.840s

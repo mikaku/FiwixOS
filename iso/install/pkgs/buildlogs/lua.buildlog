@@ -71,6 +71,6 @@ stripping debug symbols ...
 ./usr/share/lua/5.4/
 /mnt/builds-fiwix-3.3
 
-real	0m9.644s
-user	0m8.320s
+real	0m9.308s
+user	0m8.070s
 sys	0m1.030s

@@ -51,7 +51,7 @@ checking for netdb.h... no
 checking for netinet/in.h... no
 checking for sys/select.h... yes
 checking for sys/ioctl.h... yes
-checking for sys/uio.h... no
+checking for sys/uio.h... yes
 checking for vfork.h... no
 checking for minix/config.h... no
 checking whether it is safe to define __EXTENSIONS__... yes
@@ -1062,6 +1062,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/sdiff.1
 /mnt/builds-fiwix-3.3
 
-real	0m52.393s
-user	0m24.850s
-sys	0m17.310s
+real	0m49.794s
+user	0m23.920s
+sys	0m18.330s

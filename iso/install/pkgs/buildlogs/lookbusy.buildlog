@@ -107,6 +107,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/lookbusy.1
 /mnt/builds-fiwix-3.3
 
-real	0m3.998s
-user	0m1.420s
-sys	0m1.340s
+real	0m3.953s
+user	0m1.470s
+sys	0m1.370s

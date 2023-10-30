@@ -152,6 +152,6 @@ strip:./usr/bin/bzdiff: File format not recognized
 ./usr/include/bzlib.h
 /mnt/builds-fiwix-3.3
 
-real	0m6.330s
-user	0m4.990s
-sys	0m0.960s
+real	0m6.014s
+user	0m4.820s
+sys	0m1.030s

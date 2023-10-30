@@ -299,6 +299,6 @@ stripping debug symbols ...
 ./usr/lib/libdialog.a
 /mnt/builds-fiwix-3.3
 
-real	0m16.304s
-user	0m10.970s
-sys	0m4.960s
+real	0m16.229s
+user	0m10.810s
+sys	0m5.030s

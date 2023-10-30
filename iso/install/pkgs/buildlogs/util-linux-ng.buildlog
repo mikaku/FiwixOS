@@ -875,6 +875,6 @@ strip:./usr/share/getopt/getopt-test.tcsh: File format not recognized
 ./usr/share/info/dir
 /mnt/builds-fiwix-3.3
 
-real	0m42.645s
-user	0m16.310s
-sys	0m11.460s
+real	0m39.802s
+user	0m16.230s
+sys	0m11.100s

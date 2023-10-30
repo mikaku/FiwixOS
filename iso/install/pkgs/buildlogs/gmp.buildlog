@@ -5497,6 +5497,6 @@ strip:./usr/lib/libgmp.la: File format not recognized
 ./usr/include/gmp.h
 /mnt/builds-fiwix-3.3
 
-real	1m23.397s
-user	0m48.690s
-sys	0m28.810s
+real	1m21.796s
+user	0m48.130s
+sys	0m28.850s

@@ -230,9 +230,9 @@ checking sys/times.h usability... yes
 checking sys/times.h presence... yes
 checking for sys/times.h... yes
 checking for sys/types.h... (cached) yes
-checking sys/uio.h usability... no
-checking sys/uio.h presence... no
-checking for sys/uio.h... no
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
 checking sys/un.h usability... no
 checking sys/un.h presence... no
 checking for sys/un.h... no
@@ -440,7 +440,7 @@ checking for putenv... yes
 checking for pwrite... yes
 checking for readlink... yes
 checking for readlinkat... no
-checking for readv... no
+checking for readv... yes
 checking for realpath... yes
 checking for renameat... no
 checking for select... yes
@@ -505,7 +505,7 @@ checking for wcscoll... yes
 checking for wcsftime... yes
 checking for wcsxfrm... yes
 checking for wmemcmp... yes
-checking for writev... no
+checking for writev... yes
 checking for _getpty... no
 checking for lchmod... no
 checking whether dirfd is declared... yes
@@ -13210,6 +13210,6 @@ strip:./usr/lib/python3.6/config-3.6m/python-config.py: File format not recogniz
 ./usr/share/man/man1/python3.1
 /mnt/builds-fiwix-3.3
 
-real	9m0.328s
-user	4m0.220s
-sys	1m4.100s
+real	7m55.471s
+user	3m52.810s
+sys	1m2.700s

@@ -124,6 +124,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/yacc.1
 /mnt/builds-fiwix-3.3
 
-real	0m6.553s
-user	0m4.670s
-sys	0m1.540s
+real	0m6.516s
+user	0m4.410s
+sys	0m1.830s

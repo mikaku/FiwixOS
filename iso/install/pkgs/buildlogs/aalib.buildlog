@@ -541,6 +541,6 @@ strip:./usr/bin/aalib-config: File format not recognized
 ./usr/share/aclocal/aalib.m4
 /mnt/builds-fiwix-3.3
 
-real	0m10.914s
-user	0m4.000s
-sys	0m3.410s
+real	0m10.569s
+user	0m3.990s
+sys	0m3.610s

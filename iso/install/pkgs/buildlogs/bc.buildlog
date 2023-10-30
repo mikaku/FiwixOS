@@ -253,6 +253,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/dc.1
 /mnt/builds-fiwix-3.3
 
-real	0m10.266s
-user	0m5.610s
-sys	0m2.100s
+real	0m10.308s
+user	0m5.470s
+sys	0m2.170s

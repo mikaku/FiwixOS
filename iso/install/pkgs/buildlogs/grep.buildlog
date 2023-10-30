@@ -4,7 +4,7 @@ patching file gnulib-tests/inet_pton.c
 patching file gnulib-tests/sys_select.in.h
 checking for a BSD-compatible install... /bin/install -c
 checking whether sleep supports fractional seconds... true
-checking the filesystem timestamp resolution... 0.9
+checking the filesystem timestamp resolution... 0.3
 checking whether build environment is sane... yes
 checking for a race-free mkdir -p... /bin/mkdir -p
 checking for gawk... gawk
@@ -65,7 +65,7 @@ checking for sys/select.h... yes
 checking for sys/wait.h... yes
 checking for pthread.h... yes
 checking for sys/ioctl.h... yes
-checking for sys/uio.h... no
+checking for sys/uio.h... yes
 checking whether it is safe to define __EXTENSIONS__... yes
 checking whether _XOPEN_SOURCE should be defined... no
 checking how to run the C preprocessor... gcc -std=gnu11 -E
@@ -1092,6 +1092,6 @@ strip:./usr/bin/fgrep: File format not recognized
 ./usr/bin/fgrep
 /mnt/builds-fiwix-3.3
 
-real	0m46.708s
-user	0m21.730s
-sys	0m13.740s
+real	0m43.905s
+user	0m21.090s
+sys	0m13.990s

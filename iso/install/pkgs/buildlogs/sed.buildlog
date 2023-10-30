@@ -814,6 +814,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/sed.1
 /mnt/builds-fiwix-3.3
 
-real	0m33.122s
-user	0m17.630s
-sys	0m11.610s
+real	0m31.352s
+user	0m17.540s
+sys	0m10.490s

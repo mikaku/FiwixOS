@@ -199,6 +199,6 @@ stripping debug symbols ...
 ./usr/include/mandoc/tbl.h
 /mnt/builds-fiwix-3.3
 
-real	0m11.200s
-user	0m4.710s
-sys	0m3.560s
+real	0m9.258s
+user	0m4.400s
+sys	0m3.200s

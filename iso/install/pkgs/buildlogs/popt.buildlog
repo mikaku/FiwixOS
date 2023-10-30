@@ -258,6 +258,6 @@ strip:./usr/lib/libpopt.la: File format not recognized
 ./usr/share/man/man3/popt.3
 /mnt/builds-fiwix-3.3
 
-real	0m6.147s
-user	0m3.210s
-sys	0m2.580s
+real	0m5.908s
+user	0m3.140s
+sys	0m2.450s

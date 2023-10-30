@@ -57,6 +57,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/pwgen.1
 /mnt/builds-fiwix-3.3
 
-real	0m1.702s
-user	0m0.980s
-sys	0m0.720s
+real	0m1.661s
+user	0m0.990s
+sys	0m0.640s

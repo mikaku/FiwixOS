@@ -55,7 +55,7 @@ checking for gcc -std=gnu99 option to accept ISO Standard C... (cached) -std=gnu
 configure: autobuild project... GNU M4
 configure: autobuild revision... 1.4.18
 configure: autobuild hostname... (none)
-configure: autobuild timestamp... 20231019T195633Z
+configure: autobuild timestamp... 20231027T112617Z
 checking for unsigned long long int... yes
 checking for long long int... yes
 checking for unsigned long long int... (cached) yes
@@ -818,6 +818,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/m4.1
 /mnt/builds-fiwix-3.3
 
-real	0m40.245s
-user	0m19.910s
-sys	0m11.980s
+real	0m38.224s
+user	0m19.050s
+sys	0m12.700s

@@ -41,6 +41,6 @@ stripping debug symbols ...
 ./usr/man/man1/tree.1
 /mnt/builds-fiwix-3.3
 
-real	0m2.051s
+real	0m2.089s
 user	0m1.630s
-sys	0m0.320s
+sys	0m0.270s

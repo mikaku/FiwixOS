@@ -279,6 +279,6 @@ stripping debug symbols ...
 ./usr/share/info/dir
 /mnt/builds-fiwix-3.3
 
-real	0m14.715s
-user	0m6.870s
-sys	0m2.820s
+real	0m13.303s
+user	0m6.840s
+sys	0m2.780s
