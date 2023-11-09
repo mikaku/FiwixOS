@@ -449,6 +449,6 @@ strip:./usr/lib/liblcms2.la: File format not recognized
 ./usr/bin/psicc
 /mnt/builds-fiwix-3.3
 
-real	0m30.702s
-user	0m14.800s
-sys	0m7.450s
+real	0m29.997s
+user	0m15.400s
+sys	0m7.640s

@@ -1776,6 +1776,6 @@ stripping debug symbols ...
 ./usr/sbin/chroot
 /mnt/builds-fiwix-3.3
 
-real	0m34.801s
-user	0m20.080s
-sys	0m13.310s
+real	0m37.514s
+user	0m21.380s
+sys	0m14.860s

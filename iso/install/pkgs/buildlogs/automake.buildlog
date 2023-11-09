@@ -338,6 +338,6 @@ strip:./usr/share/automake-1.15/tap-driver.sh: File format not recognized
 ./usr/share/man/man1/automake-1.15.1
 /mnt/builds-fiwix-3.3
 
-real	0m6.165s
-user	0m1.030s
-sys	0m2.100s
+real	0m5.983s
+user	0m0.980s
+sys	0m2.190s

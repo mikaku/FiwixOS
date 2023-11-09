@@ -847,6 +847,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/zile.1
 /mnt/builds-fiwix-3.3
 
-real	0m35.148s
-user	0m19.180s
-sys	0m12.240s
+real	0m35.743s
+user	0m19.960s
+sys	0m12.150s

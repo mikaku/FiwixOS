@@ -36,6 +36,6 @@ strip:./usr/bin/pczm: File format not recognized
 ./usr/share/man/man1/picocom.1
 /mnt/builds-fiwix-3.3
 
-real	0m3.273s
-user	0m0.410s
-sys	0m0.230s
+real	0m2.937s
+user	0m0.470s
+sys	0m0.220s

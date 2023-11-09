@@ -281,6 +281,6 @@ stripping debug symbols ...
 ./usr/share/man/man8/tmpwatch.8
 /mnt/builds-fiwix-3.3
 
-real	0m4.467s
-user	0m1.530s
-sys	0m1.760s
+real	0m4.490s
+user	0m1.760s
+sys	0m1.550s

@@ -21,6 +21,6 @@ stripping debug symbols ...
 ./usr/share/man/man8/mingetty.8
 /mnt/builds-fiwix-3.3
 
-real	0m0.225s
+real	0m0.248s
 user	0m0.150s
-sys	0m0.060s
+sys	0m0.080s

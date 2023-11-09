@@ -327,6 +327,6 @@ strip:./usr/sbin/update-pciids: File format not recognized
 ./usr/share/pci.ids.gz
 /mnt/builds-fiwix-3.3
 
-real	0m4.646s
-user	0m3.340s
-sys	0m1.170s
+real	0m4.861s
+user	0m3.410s
+sys	0m1.340s

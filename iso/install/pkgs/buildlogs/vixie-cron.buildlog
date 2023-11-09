@@ -73,6 +73,6 @@ strip:./etc/rc.d/init.d/crond: File format not recognized
 ./etc/logrotate.d/cron
 /mnt/builds-fiwix-3.3
 
-real	0m3.819s
-user	0m0.570s
-sys	0m0.580s
+real	0m3.248s
+user	0m0.600s
+sys	0m0.610s

@@ -867,6 +867,6 @@ stripping debug symbols ...
 ./usr/bin/cpio
 /mnt/builds-fiwix-3.3
 
-real	0m46.703s
-user	0m19.900s
-sys	0m13.320s
+real	0m45.691s
+user	0m20.440s
+sys	0m14.420s

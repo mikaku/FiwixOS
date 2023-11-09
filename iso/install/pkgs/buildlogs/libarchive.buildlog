@@ -657,6 +657,6 @@ strip:./usr/lib/libarchive.la: File format not recognized
 ./usr/share/man/man5/tar.5
 /mnt/builds-fiwix-3.3
 
-real	1m18.924s
-user	0m40.800s
-sys	0m18.760s
+real	1m16.440s
+user	0m41.800s
+sys	0m19.010s

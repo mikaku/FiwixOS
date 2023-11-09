@@ -3933,6 +3933,6 @@ strip:./usr/bin/gsl-config: File format not recognized
 ./usr/bin/gsl-config
 /mnt/builds-fiwix-3.3
 
-real	4m15.705s
-user	2m18.900s
-sys	0m50.600s
+real	4m8.419s
+user	2m24.120s
+sys	0m53.340s

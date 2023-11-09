@@ -63,6 +63,6 @@ stripping debug symbols ...
 ./usr/include/zconf.h
 /mnt/builds-fiwix-3.3
 
-real	0m5.391s
-user	0m4.110s
-sys	0m0.860s
+real	0m5.384s
+user	0m4.180s
+sys	0m0.950s

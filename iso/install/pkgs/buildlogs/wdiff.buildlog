@@ -1572,6 +1572,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/wdiff.1
 /mnt/builds-fiwix-3.3
 
-real	0m24.347s
-user	0m11.230s
-sys	0m9.140s
+real	0m25.284s
+user	0m11.860s
+sys	0m10.500s

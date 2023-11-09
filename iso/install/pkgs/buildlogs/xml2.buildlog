@@ -97,6 +97,6 @@ stripping debug symbols ...
 ./usr/bin/2html
 /mnt/builds-fiwix-3.3
 
-real	0m5.582s
+real	0m5.105s
 user	0m1.530s
-sys	0m2.090s
+sys	0m2.030s

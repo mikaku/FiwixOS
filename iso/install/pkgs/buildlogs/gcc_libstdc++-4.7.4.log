@@ -238,9 +238,9 @@ checking sys/filio.h presence... no
 checking for sys/filio.h... no
 checking for poll... no
 checking for S_ISREG or S_IFREG... S_ISREG
-checking sys/uio.h usability... no
-checking sys/uio.h presence... no
-checking for sys/uio.h... no
+checking sys/uio.h usability... yes
+checking sys/uio.h presence... yes
+checking for sys/uio.h... yes
 checking for writev... no
 checking for complex.h... (cached) yes
 checking for ISO C99 support to TR1 in <complex.h>... no

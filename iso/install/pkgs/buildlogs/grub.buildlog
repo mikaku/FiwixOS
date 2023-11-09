@@ -774,6 +774,6 @@ strip:./usr/sbin/grub-set-default: File format not recognized
 ./usr/man/man8/grub-terminfo.8
 /mnt/builds-fiwix-3.3
 
-real	0m27.968s
-user	0m13.160s
-sys	0m6.120s
+real	0m27.990s
+user	0m13.680s
+sys	0m6.740s

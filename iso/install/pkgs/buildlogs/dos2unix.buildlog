@@ -63,6 +63,6 @@ stripping debug symbols ...
 ./usr/share/doc/dos2unix-7.5.0/dos2unix.htm
 /mnt/builds-fiwix-3.3
 
-real	0m1.849s
-user	0m1.000s
-sys	0m0.680s
+real	0m1.916s
+user	0m1.020s
+sys	0m0.650s

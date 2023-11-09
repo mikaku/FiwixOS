@@ -102,6 +102,6 @@ stripping debug symbols ...
 ./etc/alternatives/
 /mnt/builds-fiwix-3.3
 
-real	0m4.583s
-user	0m0.770s
-sys	0m1.470s
+real	0m4.455s
+user	0m0.810s
+sys	0m1.620s

@@ -1220,6 +1220,6 @@ stripping debug symbols ...
 ./usr/bin/gtar
 /mnt/builds-fiwix-3.3
 
-real	1m7.293s
-user	0m34.450s
-sys	0m18.940s
+real	1m7.085s
+user	0m35.890s
+sys	0m19.730s

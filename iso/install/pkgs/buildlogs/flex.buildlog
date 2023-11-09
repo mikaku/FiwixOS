@@ -476,6 +476,6 @@ strip:./usr/lib/libfl.la: File format not recognized
 ./usr/share/doc/flex/README.md
 /mnt/builds-fiwix-3.3
 
-real	0m20.529s
-user	0m13.430s
-sys	0m5.150s
+real	0m20.876s
+user	0m13.990s
+sys	0m5.350s

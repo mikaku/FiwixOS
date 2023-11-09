@@ -115,6 +115,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/vttest.1
 /mnt/builds-fiwix-3.3
 
-real	0m8.346s
-user	0m5.570s
-sys	0m1.570s
+real	0m8.052s
+user	0m5.820s
+sys	0m1.510s

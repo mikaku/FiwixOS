@@ -353,6 +353,6 @@ strip:./usr/lib/libexpat.la: File format not recognized
 ./usr/bin/xmlwf
 /mnt/builds-fiwix-3.3
 
-real	0m13.996s
-user	0m8.190s
-sys	0m3.610s
+real	0m13.626s
+user	0m8.180s
+sys	0m3.770s
