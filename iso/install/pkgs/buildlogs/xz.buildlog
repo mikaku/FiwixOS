@@ -819,6 +819,6 @@ strip:./usr/bin/xzless: File format not recognized
 ./usr/share/doc/xz/examples_old/xz_pipe_decomp.c
 /mnt/builds-fiwix-3.3
 
-real	0m31.789s
-user	0m19.780s
-sys	0m10.620s
+real	0m30.920s
+user	0m19.230s
+sys	0m10.320s

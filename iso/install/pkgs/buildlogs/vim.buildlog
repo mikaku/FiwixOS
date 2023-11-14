@@ -2506,6 +2506,6 @@ strip:./usr/share/vim/vim74/tools/vimspell.sh: File format not recognized
 ./etc/profile.d/vim.sh
 /mnt/builds-fiwix-3.3
 
-real	1m57.689s
-user	1m16.760s
-sys	0m16.700s
+real	1m54.441s
+user	1m14.530s
+sys	0m16.090s

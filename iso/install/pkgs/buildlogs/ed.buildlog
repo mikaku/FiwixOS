@@ -62,6 +62,6 @@ strip:./usr/bin/red: File format not recognized
 ./usr/share/man/man1/red.1
 /mnt/builds-fiwix-3.3
 
-real	0m1.833s
-user	0m1.360s
-sys	0m0.280s
+real	0m1.789s
+user	0m1.270s
+sys	0m0.300s

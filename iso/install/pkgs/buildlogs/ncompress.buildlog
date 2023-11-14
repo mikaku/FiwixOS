@@ -52,6 +52,6 @@ strip:./usr/bin/zmore: File format not recognized
 ./usr/share/man/man1/zmore.1
 /mnt/builds-fiwix-3.3
 
-real	0m0.599s
+real	0m0.626s
 user	0m0.360s
-sys	0m0.180s
+sys	0m0.150s

@@ -200,6 +200,6 @@ strip:./usr/lib/libuuid.la: File format not recognized
 ./usr/include/uuid/uuid.h
 /mnt/builds-fiwix-3.3
 
-real	0m4.158s
-user	0m1.680s
-sys	0m2.220s
+real	0m3.783s
+user	0m1.850s
+sys	0m1.850s

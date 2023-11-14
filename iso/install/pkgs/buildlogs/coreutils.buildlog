@@ -113,7 +113,7 @@ checking for _LARGE_FILES value needed for large files... unknown
 configure: autobuild project... GNU coreutils
 configure: autobuild revision... 9.1
 configure: autobuild hostname... (none)
-configure: autobuild timestamp... 20231107T200916Z
+configure: autobuild timestamp... 20231114T135603Z
 checking for fchmod... yes
 checking for posix_memalign... no
 checking for pathconf... yes
@@ -6352,6 +6352,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/su.1
 /mnt/builds-fiwix-3.3
 
-real	3m44.116s
-user	1m35.080s
-sys	0m59.040s
+real	3m34.979s
+user	1m31.710s
+sys	0m55.260s

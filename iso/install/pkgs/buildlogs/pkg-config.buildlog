@@ -735,6 +735,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/pkg-config.1
 /mnt/builds-fiwix-3.3
 
-real	0m25.123s
-user	0m12.980s
-sys	0m6.560s
+real	0m24.720s
+user	0m12.670s
+sys	0m6.250s

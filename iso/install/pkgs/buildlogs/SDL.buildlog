@@ -798,6 +798,6 @@ strip:./usr/lib/libSDLmain.la: File format not recognized
 ./usr/share/man/man3/SDL_mutexV.3
 /mnt/builds-fiwix-3.3
 
-real	0m39.890s
-user	0m15.720s
-sys	0m8.960s
+real	0m38.928s
+user	0m15.440s
+sys	0m8.440s

@@ -869,6 +869,6 @@ strip:./usr/bin/xslt-config: File format not recognized
 ./usr/bin/xslt-config
 /mnt/builds-fiwix-3.3
 
-real	0m37.439s
-user	0m17.370s
-sys	0m8.560s
+real	0m36.830s
+user	0m16.840s
+sys	0m8.050s

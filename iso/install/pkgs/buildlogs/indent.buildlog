@@ -618,6 +618,6 @@ stripping debug symbols ...
 ./usr/doc/indent/indent.html
 /mnt/builds-fiwix-3.3
 
-real	0m14.584s
-user	0m6.790s
-sys	0m5.580s
+real	0m13.644s
+user	0m6.870s
+sys	0m4.700s

@@ -483,6 +483,6 @@ strip:./usr/lib/libopenjpeg.la: File format not recognized
 ./usr/share/man/man3/libopenjpeg.3
 /mnt/builds-fiwix-3.3
 
-real	0m30.858s
-user	0m18.890s
-sys	0m6.000s
+real	0m30.404s
+user	0m18.480s
+sys	0m5.630s

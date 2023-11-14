@@ -6,7 +6,7 @@ patching file lib/i386-ports.c
 patching file ls-ecaps.c
 patching file Makefile
 cd lib && ./configure
-Configuring libpci for your system... i386--fiwix 1.4.0 i386 fiwix
+Configuring libpci for your system... i386--fiwix 1.5.0 i386 fiwix
 Looking for access methods... i386-ports dump
 Checking for zlib support... yes (auto-detected)
 Checking for DNS support... no (auto-detected)
@@ -327,6 +327,6 @@ strip:./usr/sbin/update-pciids: File format not recognized
 ./usr/share/pci.ids.gz
 /mnt/builds-fiwix-3.3
 
-real	0m4.861s
-user	0m3.410s
-sys	0m1.340s
+real	0m4.796s
+user	0m3.470s
+sys	0m1.240s

@@ -1038,7 +1038,7 @@ make[1]: Leaving directory '/mnt/builds-fiwix-3.3/bash-4.4.18/lib/tilde'
 rm -f bash
 gcc -L./builtins -L./lib/readline -L./lib/readline -L./lib/glob -L./lib/tilde  -L./lib/sh -s    -g -O2 -Wno-parentheses -Wno-format-security -o bash shell.o eval.o y.tab.o general.o make_cmd.o print_cmd.o  dispose_cmd.o execute_cmd.o variables.o copy_cmd.o error.o expr.o flags.o jobs.o subst.o hashcmd.o hashlib.o mailcheck.o trap.o input.o unwind_prot.o pathexp.o sig.o test.o version.o alias.o array.o arrayfunc.o assoc.o braces.o bracecomp.o bashhist.o bashline.o  list.o stringlib.o locale.o findcmd.o redir.o pcomplete.o pcomplib.o syntax.o xmalloc.o  -lbuiltins -lglob -lsh -lreadline -lhistory -lcurses -ltilde  lib/intl/libintl.a /usr/lib/libiconv.a /usr/lib/libiconv.a  
 ls -l bash
--rwxr-xr-x 1 root root 2092144 Nov  7 20:06 bash
+-rwxr-xr-x 1 root root 2092144 Nov 14 13:53 bash
 size bash
    text	   data	    bss	    dec	    hex	filename
 2067109	  23000	  39712	2129821	 207f9d	bash
@@ -1405,6 +1405,6 @@ strip:./usr/bin/wait: File format not recognized
 ./usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
 /mnt/builds-fiwix-3.3
 
-real	1m29.557s
-user	0m46.880s
-sys	0m20.530s
+real	1m32.638s
+user	0m46.920s
+sys	0m20.720s

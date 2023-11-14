@@ -542,6 +542,6 @@ strip:./usr/bin/pcre-config: File format not recognized
 ./usr/include/pcre_stringpiece.h
 /mnt/builds-fiwix-3.3
 
-real	0m26.354s
-user	0m16.480s
-sys	0m5.720s
+real	0m25.651s
+user	0m15.800s
+sys	0m5.520s

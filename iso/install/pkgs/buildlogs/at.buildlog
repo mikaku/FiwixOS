@@ -263,6 +263,6 @@ strip:./etc/rc.d/init.d/atd: File format not recognized
 ./etc/at.deny
 /mnt/builds-fiwix-3.3
 
-real	0m6.350s
-user	0m3.450s
+real	0m5.958s
+user	0m3.190s
 sys	0m2.400s

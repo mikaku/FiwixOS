@@ -19,7 +19,7 @@ configure: autobuild project... GNU Libtool
 configure: autobuild revision... 2.4.7
 configure: autobuild hostname... (none)
 configure: autobuild mode... default
-configure: autobuild timestamp... 20231107T203834Z
+configure: autobuild timestamp... 20231114T142409Z
 checking for gcc... gcc
 checking whether the C compiler works... yes
 checking for C compiler default output file name... a.out
@@ -1200,6 +1200,6 @@ strip:./usr/share/libtool/configure: File format not recognized
 ./usr/include/libltdl/lt_dlloader.h
 /mnt/builds-fiwix-3.3
 
-real	0m9.666s
-user	0m2.760s
-sys	0m4.930s
+real	0m8.802s
+user	0m2.720s
+sys	0m4.480s

@@ -1062,6 +1062,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/sdiff.1
 /mnt/builds-fiwix-3.3
 
-real	0m50.383s
-user	0m25.190s
-sys	0m18.870s
+real	0m47.709s
+user	0m23.800s
+sys	0m17.650s

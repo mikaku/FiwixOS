@@ -3,7 +3,7 @@ patching ncurses-5.9
 patching file config.guess
 patching file config.sub
 checking for egrep... grep -E
-Configuring NCURSES 5.9 ABI 5 (Tue Nov  7 20:46:07 GMT 2023)
+Configuring NCURSES 5.9 ABI 5 (Tue Nov 14 14:31:30 GMT 2023)
 checking build system type... i386-pc-fiwix
 checking host system type... i386-pc-fiwix
 checking target system type... i386-pc-fiwix
@@ -5644,6 +5644,6 @@ strip:./usr/bin/ncurses5-config: File format not recognized
 ./usr/share/terminfo/Q/Q310-vip-Hw
 /mnt/builds-fiwix-3.3
 
-real	1m4.575s
-user	0m33.340s
-sys	0m19.630s
+real	1m2.735s
+user	0m32.390s
+sys	0m18.890s

@@ -394,6 +394,6 @@ stripping debug symbols ...
 ./usr/share/readline/hist_purgecmd.c
 /mnt/builds-fiwix-3.3
 
-real	0m13.205s
-user	0m7.560s
-sys	0m4.220s
+real	0m12.983s
+user	0m7.550s
+sys	0m4.050s

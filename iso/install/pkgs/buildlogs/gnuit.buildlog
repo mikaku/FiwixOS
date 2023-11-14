@@ -1223,6 +1223,6 @@ strip:./usr/bin/gitdpkgname: File format not recognized
 ./usr/share/man/man1/gitxgrep.1
 /mnt/builds-fiwix-3.3
 
-real	0m29.540s
-user	0m12.290s
-sys	0m8.630s
+real	0m28.227s
+user	0m11.700s
+sys	0m8.010s

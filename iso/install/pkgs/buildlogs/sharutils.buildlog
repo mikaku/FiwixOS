@@ -832,7 +832,7 @@ checking whether with-libregex-cflags was specified... no
 checking whether with-libregex-libs was specified... no
 checking whether libregex functions properly... yes
 checking whether pathfind(3) works... no
-checking whether /dev/zero is readable device... crw-rw-rw- 1 root root 1, 5 Oct 27 16:47 /dev/zero
+checking whether /dev/zero is readable device... crw-rw-rw- 1 root root 1, 5 Nov 8 08:34 /dev/zero
 checking whether we have a functional realpath(3C)... yes
 checking whether strftime() works... yes
 checking whether fopen accepts "b" mode... yes
@@ -2357,6 +2357,6 @@ stripping debug symbols ...
 ./usr/share/man/man5/uuencode.5
 /mnt/builds-fiwix-3.3
 
-real	0m40.895s
-user	0m20.620s
-sys	0m17.310s
+real	0m39.647s
+user	0m20.360s
+sys	0m16.410s

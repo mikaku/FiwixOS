@@ -180,6 +180,6 @@ stripping debug symbols ...
 ./usr/share/man/man1/lessecho.1
 /mnt/builds-fiwix-3.3
 
-real	0m11.049s
-user	0m7.390s
-sys	0m3.390s
+real	0m10.543s
+user	0m7.420s
+sys	0m2.790s

@@ -475,6 +475,6 @@ strip:./usr/lib/libmpc.la: File format not recognized
 ./usr/include/mpc.h
 /mnt/builds-fiwix-3.3
 
-real	0m12.508s
-user	0m7.510s
-sys	0m4.530s
+real	0m11.916s
+user	0m7.500s
+sys	0m3.990s

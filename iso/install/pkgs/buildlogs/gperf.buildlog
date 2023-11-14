@@ -148,6 +148,6 @@ stripping debug symbols ...
 ./usr/share/doc/gperf.html
 /mnt/builds-fiwix-3.3
 
-real	0m7.077s
-user	0m3.410s
-sys	0m1.880s
+real	0m6.816s
+user	0m3.540s
+sys	0m1.470s

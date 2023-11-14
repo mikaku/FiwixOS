@@ -605,6 +605,6 @@ strip:./usr/bin/uncompress: File format not recognized
 ./usr/bin/uncompress
 /mnt/builds-fiwix-3.3
 
-real	0m25.755s
-user	0m12.130s
-sys	0m9.130s
+real	0m25.050s
+user	0m11.700s
+sys	0m8.730s

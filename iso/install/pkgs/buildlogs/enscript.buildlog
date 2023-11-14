@@ -856,6 +856,6 @@ strip:./usr/bin/over: File format not recognized
 ./etc/enscript.cfg
 /mnt/builds-fiwix-3.3
 
-real	0m25.345s
-user	0m13.140s
-sys	0m7.240s
+real	0m23.999s
+user	0m12.680s
+sys	0m6.770s
