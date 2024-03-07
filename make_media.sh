@@ -589,6 +589,10 @@ EOF
 # Main
 # ----------------------------------------------------------------------------
 
+# FIXME: pending to upgrade with new file structure
+echo "This version does not recognize yet the current directory tree."
+exit 0
+
 if [ $# != 3 ] ; then
 	echo "$0 <os_version> <iso_dir> <kernel_dir>"
 	exit 1
