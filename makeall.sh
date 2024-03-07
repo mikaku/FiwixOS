@@ -320,7 +320,8 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr ac_cv_path_SED="/bin/sed" || exit 1
+#				./configure --prefix=/usr ac_cv_path_SED="/bin/sed" || exit 1
+				./configure --prefix=/usr || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -440,7 +441,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr --disable-threads --disable-acl --disable-xattr --without-selinux --enable-install-program=arch,hostname --enable-no-install-program=chcon,runcon,uptime gl_cv_socklen_t_equiv=int gl_cv_func_printf_infinite_long_double=yes || exit 1
+				FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr --disable-threads --disable-acl --disable-xattr --without-selinux --enable-install-program=arch,hostname --enable-no-install-program=chcon,runcon,uptime || exit 1
 				make DESTDIR=${PREFIX} "CPPFLAGS=-DSTAT_STATFS2_BSIZE" || exit 1
 				make DESTDIR=${PREFIX} "CPPFLAGS=-DSTAT_STATFS2_BSIZE" install || exit 1
 				# build the su command as it was in coreutils-8.17
@@ -506,7 +507,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr gl_cv_socklen_t_equiv=int || exit 1
+				./configure --prefix=/usr || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -642,6 +643,7 @@ EOF
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
+				sed -i 's|^#define HAVE_SOCKETS 1$|/* #undef HAVE_SOCKETS */|' config.h
 				_make "-DGETPGRP_VOID=1 -DELIDE_CODE=1"
 			popd
 			_pack $prg-$ver
@@ -704,7 +706,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr gl_cv_socklen_t_equiv=int || exit 1
+				./configure --prefix=/usr || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1271,7 +1273,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-threads --disable-nls gl_cv_socklen_t_equiv=int || exit 1
+				./configure --prefix=/usr --disable-threads --disable-nls || exit 1
 				_make
 			popd
 			_pack $prg-$ver
