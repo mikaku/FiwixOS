@@ -1,0 +1,52 @@
+#AUTOMAKE_OPTIONS = cygnus
+INCLUDES = $(NEWLIB_CFLAGS) $(CROSS_CFLAGS) $(TARGET_CFLAGS)
+AM_CCASFLAGS = $(INCLUDES)
+ 
+noinst_LIBRARIES = lib.a
+ 
+#
+# Every time you add a new object in this list, you must run 'autoconf' in
+# the parent directory (newlib/libc/sys/), and then 'autoreconf' in this
+# directory.
+#
+SOURCES = \
+	syscalls.c \
+	wrappers.c \
+	system.c \
+	cfspeed.c \
+	termios.c \
+	utmp.c \
+	grp.c \
+	usershell.c \
+	mntent.c \
+	realpath.c \
+	sigwait.c \
+	ftok.c \
+	clock_functions.c \
+	ipc.c
+#	net/inet_ntoa.c
+
+ADD_OBJS =
+
+lib_a_SOURCES = $(SOURCES)
+lib_a_LIBADD = $(ADD_OBJS)
+EXTRA_lib_a_SOURCES = syscalls.c crt0.c	# add more source files here if you split up
+lib_a_DEPENDENCIES = $(ADD_OBJS)	# syscalls.c into multiple files
+lib_a_CCASFLAGS = $(AM_CCASFLAGS)
+lib_a_CFLAGS = $(AM_CFLAGS)
+ 
+all: crt0.o
+ 
+ACLOCAL_AMFLAGS = -I ../../..
+CONFIG_STATUS_DEPENDENCIES = $(newlib_basedir)/configure.host
+
+#install-data-local:
+#	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/arpa; \
+#	for i in $(srcdir)/include/arpa/*.h; do \
+#	  $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/arpa/`basename $$i`; \
+#	done; \
+#	$(mkinstalldirs) $(DESTDIR)$(tooldir)/include/netinet; \
+#	for i in $(srcdir)/include/netinet/*.h; do \
+#	  $(INSTALL_DATA) $$i $(DESTDIR)$(tooldir)/include/netinet/`basename $$i`; \
+#	done;
+
