@@ -1,0 +1,464 @@
+diff -ru sysvinit-2.87dsf/src/Makefile sysvinit-2.87dsf.new/src/Makefile
+--- sysvinit-2.87dsf/src/Makefile	2009-07-10 21:47:28 +0000
++++ sysvinit-2.87dsf.new/src/Makefile	2024-03-29 10:47:36 +0000
+@@ -25,10 +25,10 @@
+ 
+ ifeq ($(DISTRO),)
+ BIN	+= mountpoint
+-SBIN	+= sulogin bootlogd
++#SBIN	+= sulogin bootlogd
+ USRBIN	+= utmpdump wall
+ MAN1	+= mountpoint.1 wall.1
+-MAN8	+= sulogin.8 bootlogd.8
++#MAN8	+= sulogin.8 bootlogd.8
+ endif
+ 
+ ifeq ($(DISTRO),Debian)
+@@ -73,8 +73,8 @@
+ init:		init.o init_utmp.o
+ 		$(CC) $(LDFLAGS) $(STATIC) -o $@ init.o init_utmp.o $(INIT_SELIBS)
+ 
+-halt:		halt.o ifdown.o hddown.o utmp.o reboot.h
+-		$(CC) $(LDFLAGS) -o $@ halt.o ifdown.o hddown.o utmp.o
++halt:		halt.o hddown.o utmp.o reboot.h
++		$(CC) $(LDFLAGS) -o $@ halt.o hddown.o utmp.o
+ 
+ last:		last.o oldutmp.h
+ 		$(CC) $(LDFLAGS) -o $@ last.o
+@@ -127,14 +127,17 @@
+ distclean:	clobber
+ 
+ install:
++		mkdir -p $(ROOT)/bin
+ 		for i in $(BIN); do \
+ 			$(STRIP) $$i ; \
+ 			$(INSTALL_EXEC) $$i $(ROOT)/bin/ ; \
+ 		done
++		mkdir -p $(ROOT)/sbin
+ 		for i in $(SBIN); do \
+ 			$(STRIP) $$i ; \
+ 			$(INSTALL_EXEC) $$i $(ROOT)/sbin/ ; \
+ 		done
++		mkdir -p $(ROOT)/usr/bin
+ 		for i in $(USRBIN); do \
+ 			$(STRIP) $$i ; \
+ 			$(INSTALL_EXEC) $$i $(ROOT)/usr/bin/ ; \
+@@ -147,7 +150,11 @@
+ 		if [ ! -f $(ROOT)/usr/bin/lastb ]; then \
+ 			ln -sf last $(ROOT)/usr/bin/lastb; \
+ 		fi
++		mkdir -p $(ROOT)/usr/include
+ 		$(INSTALL_DATA) initreq.h $(ROOT)/usr/include/
++		mkdir -p $(ROOT)$(MANDIR)/man1
++		mkdir -p $(ROOT)$(MANDIR)/man5
++		mkdir -p $(ROOT)$(MANDIR)/man8
+ 		for i in $(MAN1); do \
+ 			$(INSTALL_DATA) ../man/$$i $(ROOT)$(MANDIR)/man1/; \
+ 		done
+diff -ru sysvinit-2.87dsf/src/dowall.c sysvinit-2.87dsf.new/src/dowall.c
+--- sysvinit-2.87dsf/src/dowall.c	2009-07-12 13:30:31 +0000
++++ sysvinit-2.87dsf.new/src/dowall.c	2024-03-29 10:47:36 +0000
+@@ -28,7 +28,7 @@
+ #include <signal.h>
+ #include <setjmp.h>
+ 
+-static sigjmp_buf jbuf;
++static jmp_buf jbuf;
+ 
+ /*
+  *	Alarm handler
+@@ -36,7 +36,7 @@
+ /*ARGSUSED*/
+ static void handler(int arg)
+ {
+-	siglongjmp(jbuf, 1);
++	longjmp(jbuf, 1);
+ }
+ 
+ 
+@@ -203,7 +203,7 @@
+ 		/*
+ 		 *	Open it non-delay
+ 		 */
+-		if (sigsetjmp(jbuf, 1) == 0) {
++		if (setjmp(jbuf) == 0) {
+ 			alarm(2);
+ 			flags = O_WRONLY|O_NDELAY|O_NOCTTY;
+ 			if (file_isatty(term) &&
+diff -ru sysvinit-2.87dsf/src/halt.c sysvinit-2.87dsf.new/src/halt.c
+--- sysvinit-2.87dsf/src/halt.c	2009-07-12 15:06:19 +0000
++++ sysvinit-2.87dsf.new/src/halt.c	2024-03-29 10:47:36 +0000
+@@ -256,9 +256,6 @@
+ 		sleep(2);
+ 	}
+ 
+-	if (do_ifdown)
+-		(void)ifdown();
+-
+ 	if (do_hddown)
+ 		(void)hddown();
+ 
+diff -ru sysvinit-2.87dsf/src/init.c sysvinit-2.87dsf.new/src/init.c
+--- sysvinit-2.87dsf/src/init.c	2009-07-12 17:52:46 +0000
++++ sysvinit-2.87dsf.new/src/init.c	2024-03-29 10:47:36 +0000
+@@ -7,7 +7,7 @@
+  *
+  * Version:	@(#)init.c  2.86  30-Jul-2004  miquels@cistron.nl
+  */
+-#define VERSION "2.86"
++#define VERSION "2.87"
+ #define DATE    "31-Jul-2004"
+ /*
+  *		This file is part of the sysvinit suite,
+@@ -40,7 +40,7 @@
+ #include <utmp.h>
+ #include <ctype.h>
+ #include <stdarg.h>
+-#include <sys/syslog.h>
++/*#include <sys/syslog.h>*/
+ #include <sys/time.h>
+ 
+ #ifdef WITH_SELINUX
+@@ -763,9 +763,11 @@
+ 		 */
+ 		sigfillset(&nmask);
+ 		sigprocmask(SIG_BLOCK, &nmask, &omask);
++/*
+ 		openlog("init", 0, LOG_DAEMON);
+ 		syslog(LOG_INFO, "%s", buf);
+ 		closelog();
++*/
+ 		sigprocmask(SIG_SETMASK, &omask, NULL);
+ 	}
+ 
+diff -ru sysvinit-2.87dsf/src/killall5.c sysvinit-2.87dsf.new/src/killall5.c
+--- sysvinit-2.87dsf/src/killall5.c	2009-07-12 14:59:06 +0000
++++ sysvinit-2.87dsf.new/src/killall5.c	2024-03-29 10:47:36 +0000
+@@ -37,11 +37,17 @@
+ #include <sys/stat.h>
+ #include <signal.h>
+ #include <dirent.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ #include <getopt.h>
+ #include <stdarg.h>
+ #include <sys/mman.h>
+ 
++/* fake values */
++#define LOG_ERR		1
++#define LOG_CONS	1
++#define LOG_PID		1
++#define LOG_DAEMON	1
++
+ char *Version = "@(#)killall5 2.86 31-Jul-2004 miquels@cistron.nl";
+ 
+ #define STATNAMELEN	15
+@@ -470,7 +476,7 @@
+ void usage(void)
+ {
+ 	nsyslog(LOG_ERR, "only one argument, a signal number, allowed");
+-	closelog();
++/*	closelog();*/
+ 	exit(1);
+ }
+ 
+@@ -485,7 +491,7 @@
+ 	va_start(args, fmt);
+ 
+ 	if (ttyname(0) == NULL) {
+-		vsyslog(pri, fmt, args);
++/*		vsyslog(pri, fmt, args);*/
+ 	} else {
+ 		fprintf(stderr, "%s: ",progname);
+ 		vfprintf(stderr, fmt, args);
+@@ -522,7 +528,7 @@
+ 	while ((opt = getopt(argc,argv,"hco:sx")) != EOF) switch (opt) {
+ 		case '?':
+ 			nsyslog(LOG_ERR,"invalid options on command line!\n");
+-			closelog();
++/*			closelog();*/
+ 			exit(1);
+ 		case 'c':
+ 			if (geteuid() == 0) chroot_check = 1;
+@@ -531,7 +537,7 @@
+ 			if (oind >= PIDOF_OMITSZ -1) {
+ 				nsyslog(LOG_ERR,"omit pid buffer size %d "
+ 					"exceeded!\n", PIDOF_OMITSZ);
+-				closelog();
++/*				closelog();*/
+ 				exit(1);
+ 			}
+ 			if (strcmp("%PPID",optarg) == 0)
+@@ -540,7 +546,7 @@
+ 				nsyslog(LOG_ERR,
+ 					"illegal omit pid value (%s)!\n",
+ 					optarg);
+-				closelog();
++/*				closelog();*/
+ 				exit(1);
+ 			}
+ 			oind++;
+@@ -564,7 +570,7 @@
+ 		snprintf(tmp, 512, "/proc/%d/root", getpid());
+ 		if (stat(tmp, &st) < 0) {
+ 			nsyslog(LOG_ERR, "stat failed for %s!\n", tmp);
+-			closelog();
++/*			closelog();*/
+ 			exit(1);
+ 		}
+ 	}
+@@ -611,7 +617,7 @@
+ 	}
+ 	if (!first)
+ 		printf("\n");
+-	closelog();
++/*	closelog();*/
+ 	return(first ? 1 : 0);
+ }
+ 
+@@ -638,7 +644,7 @@
+ 		progname++;
+ 
+ 	/* Now connect to syslog. */
+-	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);
++/*	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);*/
+ 
+ 	/* Were we called as 'pidof' ? */
+ 	if (strcmp(progname, "pidof") == 0)
+@@ -657,14 +663,14 @@
+ 					nsyslog(LOG_ERR,"omit pid buffer size "
+ 						"%d exceeded!\n",
+ 						KILLALL_OMITSZ);
+-					closelog();
++/*					closelog();*/
+ 					exit(1);
+ 				}
+ 				if ((opid[oind] = atoi(argv[i])) < 1) {
+ 					nsyslog(LOG_ERR,
+ 						"illegal omit pid value "
+ 						"(%s)!\n", argv[i]);
+-					closelog();
++/*					closelog();*/
+ 					exit(1);
+ 				}
+ 				oind++;
+@@ -689,7 +695,7 @@
+ 	signal(SIGKILL, SIG_IGN);
+ 
+ 	/* lock us into memory */
+-	mlockall(MCL_CURRENT | MCL_FUTURE);
++/*	mlockall(MCL_CURRENT | MCL_FUTURE);*/
+ 
+ 	/* Now stop all processes. */
+ 	kill(-1, SIGSTOP);
+@@ -723,7 +729,7 @@
+ 	kill(-1, SIGCONT);
+ 
+ 	/* Done. */
+-	closelog();
++/*	closelog();*/
+ 
+ 	/* Force the kernel to run the scheduler */
+ 	usleep(1);
+diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
+--- sysvinit-2.87dsf/src/last.c	2009-07-12 17:52:46 +0000
++++ sysvinit-2.87dsf.new/src/last.c	2024-03-29 10:47:36 +0000
+@@ -31,9 +31,11 @@
+ #include <string.h>
+ #include <signal.h>
+ #include <getopt.h>
++/*
+ #include <netinet/in.h>
+ #include <netdb.h>
+ #include <arpa/inet.h>
++*/
+ #include "oldutmp.h"
+ 
+ #ifndef SHUTDOWN_TIME
+@@ -90,7 +92,7 @@
+ 	utn->ut_type = oldut->ut_type;
+ 	utn->ut_pid  = oldut->ut_pid;
+ 	utn->ut_time = oldut->ut_oldtime;
+-	utn->ut_addr = oldut->ut_oldaddr;
++/*	utn->ut_addr = oldut->ut_oldaddr;*/
+ 	strncpy(utn->ut_line, oldut->ut_line, OLD_LINESIZE);
+ 	strncpy(utn->ut_user, oldut->ut_user, OLD_NAMESIZE);
+ 	strncpy(utn->ut_host, oldut->ut_host, OLD_HOSTSIZE);
+@@ -298,6 +300,7 @@
+ 	return p;
+ }
+ 
++#ifndef __fiwix__
+ /*
+  *	Lookup a host with DNS.
+  */
+@@ -349,6 +352,7 @@
+ 
+ 	return getnameinfo(sa, salen, result, size, NULL, 0, flags);
+ }
++#endif
+ 
+ /*
+  *	Show one line of information on screen
+@@ -449,8 +453,10 @@
+ 	 *	Look up host with DNS if needed.
+ 	 */
+ 	r = -1;
++/*
+ 	if (usedns || useip)
+ 		r = dns_lookup(domain, sizeof(domain), useip, p->ut_addr_v6);
++*/
+ 	if (r < 0) {
+ 		len = UT_HOSTSIZE;
+ 		if (len >= sizeof(domain)) len = sizeof(domain) - 1;
+diff -ru sysvinit-2.87dsf/src/mountpoint.c sysvinit-2.87dsf.new/src/mountpoint.c
+--- sysvinit-2.87dsf/src/mountpoint.c	2005-09-10 09:32:27 +0000
++++ sysvinit-2.87dsf.new/src/mountpoint.c	2024-03-29 10:47:36 +0000
+@@ -22,6 +22,7 @@
+ #include <stdarg.h>
+ #include <getopt.h>
+ #include <stdio.h>
++#include <sys/sysmacros.h>	/* major() and minor() */
+ 
+ int dostat(char *path, struct stat *st, int do_lstat, int quiet)
+ {
+diff -ru sysvinit-2.87dsf/src/reboot.h sysvinit-2.87dsf.new/src/reboot.h
+--- sysvinit-2.87dsf/src/reboot.h	2005-09-10 09:32:27 +0000
++++ sysvinit-2.87dsf.new/src/reboot.h	2024-03-29 10:47:36 +0000
+@@ -32,5 +32,5 @@
+ #  define BMAGIC_POWEROFF	BMAGIC_HALT
+ #endif
+ 
+-#define init_reboot(magic)	reboot(magic)
++#define init_reboot(magic)	reboot(0xfee1dead, 672274793, magic)	/* still uses old format */
+ 
+diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
+--- sysvinit-2.87dsf/src/shutdown.c	2009-07-12 15:03:07 +0000
++++ sysvinit-2.87dsf.new/src/shutdown.c	2024-03-29 10:47:36 +0000
+@@ -36,7 +36,7 @@
+ #include <fcntl.h>
+ #include <stdarg.h>
+ #include <utmp.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ #include "paths.h"
+ #include "reboot.h"
+ #include "initreq.h"
+@@ -356,7 +356,7 @@
+ /*
+  *	Go to runlevel 0, 1 or 6.
+  */
+-void shutdown(char *halttype)
++void do_shutdown(char *halttype)
+ {
+ 	char	*args[8];
+ 	int	argp = 0;
+@@ -368,12 +368,14 @@
+ 		hardsleep(1);
+ 		stopit(0);
+ 	}
++/*
+ 	openlog("shutdown", LOG_PID, LOG_USER);
+ 	if (do_halt)
+   		syslog(LOG_NOTICE, "shutting down for system halt");
+ 	else
+ 		syslog(LOG_NOTICE, "shutting down for system reboot");
+ 	closelog();
++*/
+ 
+ 	/* See if we have to do it ourself. */
+ 	if (doself) fastdown();
+@@ -400,9 +402,11 @@
+ 	unlink(FASTBOOT);
+ 	unlink(FORCEFSCK);
+ 	init_setenv("INIT_HALT", NULL);
++/*
+ 	openlog("shutdown", LOG_PID, LOG_USER);
+ 	syslog(LOG_NOTICE, "shutdown failed");
+ 	closelog();
++*/
+ 	exit(1);
+ }
+ 
+@@ -699,7 +703,7 @@
+ 		if (wt < 0) wt += 1440;
+ 	}
+ 	/* Shutdown NOW if time == 0 */
+-	if (wt == 0) shutdown(halttype);
++	if (wt == 0) do_shutdown(halttype);
+ 
+ 	/* Give warnings on regular intervals and finally shutdown. */
+ 	if (wt < 15 && !needwarning(wt)) warn(wt);
+@@ -712,7 +716,7 @@
+ 		hardsleep(60);
+ 		wt--;
+ 	}
+-	shutdown(halttype);
++	do_shutdown(halttype);
+ 
+ 	return 0; /* Never happens */
+ }
+diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
+--- sysvinit-2.87dsf/src/utmpdump.c	2009-07-10 21:26:04 +0000
++++ sysvinit-2.87dsf.new/src/utmpdump.c	2024-03-29 10:47:36 +0000
+@@ -38,7 +38,7 @@
+ 	dest.ut_type = src.ut_type;
+ 	dest.ut_pid  = src.ut_pid;
+ 	dest.ut_time = src.ut_oldtime;
+-	dest.ut_addr = src.ut_oldaddr;
++/*	dest.ut_addr = src.ut_oldaddr;*/
+ 	strncpy(dest.ut_id,   src.ut_id,   4);
+ 	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
+ 	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
+@@ -56,7 +56,7 @@
+ 	dest.ut_type    = src.ut_type;
+ 	dest.ut_pid     = src.ut_pid;
+ 	dest.ut_oldtime = src.ut_time;
+-	dest.ut_oldaddr = src.ut_addr;
++/*	dest.ut_oldaddr = src.ut_addr;*/
+ 	strncpy(dest.ut_id,   src.ut_id,   4);
+ 	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
+ 	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
+@@ -122,7 +122,7 @@
+ 	char *addr_string, *time_string;
+ 	struct in_addr in;
+ 
+-	in.s_addr = ut.ut_addr;
++/*	in.s_addr = ut.ut_addr;*/
+ 	addr_string = inet_ntoa(in);
+ 	time_string = timetostr(ut.ut_time);
+ 	cleanse(ut.ut_id);
+@@ -215,7 +215,7 @@
+ 		line += gettok(line, s_addr, sizeof(s_addr)-1, 1);
+ 		line += gettok(line, s_time, sizeof(s_time)-1, 0);
+ 
+-                ut.ut_addr = inet_addr(s_addr);
++/*                ut.ut_addr = inet_addr(s_addr);*/
+                 ut.ut_time = strtotime(s_time);
+ 
+                 if (oldfmt) {
+diff -ru sysvinit-2.87dsf/src/wall.c sysvinit-2.87dsf.new/src/wall.c
+--- sysvinit-2.87dsf/src/wall.c	2005-09-10 09:32:27 +0000
++++ sysvinit-2.87dsf.new/src/wall.c	2024-03-29 10:47:36 +0000
+@@ -19,7 +19,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <pwd.h>
+-#include <syslog.h>
++/*#include <syslog.h>*/
+ 
+ 
+ char *Version = "@(#) wall 2.79 12-Sep-2000 miquels@cistron.nl";
+@@ -100,10 +100,12 @@
+ 	}
+   }
+ 
++/*
+   openlog("wall", LOG_PID, LOG_USER);
+   syslog(LOG_INFO, "wall: user %s broadcasted %d lines (%d chars)",
+ 	whoami, i, strlen(buf));
+   closelog();
++*/
+ 
+   unsetenv("TZ");
+   wall(buf, 0, remote);
