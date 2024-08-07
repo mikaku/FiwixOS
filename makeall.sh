@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # FiwixOS 3.3
-# Copyright 2018-2023, Jordi Sanfeliu. All rights reserved.
+# Copyright 2018-2024, Jordi Sanfeliu. All rights reserved.
 # Distributed under the terms of the Fiwix License.
 #
 # Package building script
@@ -531,20 +531,32 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		e2fsprogs-libs)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr --disable-htree --disable-nls || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		e2fsprogs)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr || exit 1
-				_make "-DBLKGETSIZE=0x1260 -DHAS_LONG_LONG=1 -DHAVE_EXT2_INODE_VERSION"
+				./configure --prefix=/usr --disable-htree --disable-nls || exit 1
+				_make
 			popd
 			pushd $PREFIX
 				rm -f usr/sbin/fsck
 				rm -f usr/sbin/fsck.ext3
 				rm -f usr/sbin/mkfs.ext3
+				rm -f usr/sbin/filefrag
 				rm -f usr/man/man8/fsck.8
 				rm -f usr/man/man8/fsck.ext3.8
 				rm -f usr/man/man8/mkfs.ext3.8
+				rm -f usr/man/man8/filefrag.8
 			popd
 			_pack $prg-$ver
 			;;
@@ -1860,7 +1872,8 @@ build diffutils 3.6 i386 "" "GNU collection of diff utilities"
 build dmidecode 2.12 i386 "" "Tool to analyse BIOS DMI data"
 build dos2unix 7.5.0 i386 "" "Text file format converters"
 #build e2fsprogs 1.29 i386 "" "Utilities for managing ext2 and ext3 file systems"
-build e2fsprogs 1.32 i386 "" "Utilities for managing ext2 and ext3 file systems"
+build e2fsprogs-libs 1.37 i386 "" "Ext2/3/4 file system specific libraries"
+build e2fsprogs 1.37 i386 "" "Utilities for managing ext2 and ext3 file systems"
 build e3 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi"
 build ed 1.19 i386 "" "The GNU line editor"
 build enscript 1.6.6 i386 "" "A plain ASCII to PostScript converter"
