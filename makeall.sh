@@ -513,7 +513,7 @@ EOF
 			;;
 
 		dmidecode)
-			_unpack $prg-$ver z
+			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
 				_make
@@ -1872,7 +1872,8 @@ build dialog 1.3-20240619 i386 "" "A utility for creating TTY dialog boxes"
 #build diffstat 1.65 i386 "" "A utility which provides statistics based on the output of diff"
 build diffstat 1.66 i386 "" "A utility which provides statistics based on the output of diff"
 build diffutils 3.6 i386 "" "GNU collection of diff utilities"
-build dmidecode 2.12 i386 "" "Tool to analyse BIOS DMI data"
+#build dmidecode 2.12 i386 "" "Tool to analyse BIOS DMI data"
+build dmidecode 3.6 i386 "" "Tool to analyse BIOS DMI data"
 build dos2unix 7.5.0 i386 "" "Text file format converters"
 #build e2fsprogs 1.29 i386 "" "Utilities for managing ext2 and ext3 file systems"
 build e2fsprogs-libs 1.37 i386 "" "Ext2/3/4 file system specific libraries"
