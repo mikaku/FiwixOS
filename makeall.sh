@@ -478,6 +478,7 @@ EOF
 		ddrescue)
 			_unpack $prg-$ver l
 			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
 				_make
 			popd
@@ -1866,7 +1867,8 @@ build coreutils 9.1 i386 "" "A set of basic GNU tools commonly used in shell scr
 #build cpio 2.14 i386 "" "A GNU archiving program"
 build cpio 2.15 i386 "" "A GNU archiving program"
 build dash 0.5.12 i386 "" "Small and fast POSIX-compliant shell"
-build ddrescue 1.25 i386 "" "Data recovery tool trying hard to rescue data in case of read errors"
+#build ddrescue 1.25 i386 "" "Data recovery tool trying hard to rescue data in case of read errors"
+build ddrescue 1.28 i386 "" "Data recovery tool trying hard to rescue data in case of read errors"
 #build dialog 1.3-20230209 i386 "" "A utility for creating TTY dialog boxes"
 build dialog 1.3-20240619 i386 "" "A utility for creating TTY dialog boxes"
 #build diffstat 1.65 i386 "" "A utility which provides statistics based on the output of diff"
