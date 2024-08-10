@@ -804,7 +804,6 @@ EOF
 		less)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
 				_make
 			popd
@@ -1912,7 +1911,8 @@ build indent 2.2.12 i386 "" "A GNU program for formatting C code"
 build jpeg 9f i386 "" "The Independent JPEG Group's JPEG software"
 #build lcms2 2.15 i386 "" "Color Management System"
 build lcms2 2.16 i386 "" "Color Management System"
-build less 633 i386 "" "A text file browser similar to more, but better"
+#build less 633 i386 "" "A text file browser similar to more, but better"
+build less 661 i386 "" "A text file browser similar to more, but better"
 build libarchive 3.6.2 i386 "" "A library for handling streaming archive formats"
 build libffi 3.4.4 i386 "" "A portable foreign function interface library"
 build libiconv 1.17 i386 "" "A character set conversion library"
