@@ -884,19 +884,19 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		libxslt)
+		libxml2)
 			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
-				./autogen.sh --prefix=/usr
+				./autogen.sh --prefix=/usr --with-http=no --with-ftp=no --with-python=no
 				_make
 			popd
 			_pack $prg-$ver
 			;;
 
-		libxml2)
+		libxslt)
 			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
-				./autogen.sh --prefix=/usr --with-http=no --with-ftp=no --with-python=no
+				./autogen.sh --prefix=/usr
 				_make
 			popd
 			_pack $prg-$ver
@@ -1921,7 +1921,8 @@ build libiconv 1.17 i386 "" "A character set conversion library"
 build libpng 1.6.43 i386 "" "A library of functions for manipulating PNG image format files"
 build libtool 2.4.7 i386 "" "The GNU Portable Library Tool"
 build libuuid 1.0.3 i386 "" "Universally unique ID library"
-build libxcrypt 4.4.33 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
+#build libxcrypt 4.4.33 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
+build libxcrypt 4.4.36 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
 build libxml2 v2.9.14 i386 "" "Library providing XML and HTML support"
 build libxslt v1.1.34 i386 "" "Library providing the Gnome XSLT engine"
 build logrotate 3.21.0 i386 "" "Rotates, compresses, removes and mails system log files"
