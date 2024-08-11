@@ -850,7 +850,6 @@ EOF
 		libpng)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr --enable-static || exit 1
 				_make
 			popd
@@ -1918,7 +1917,8 @@ build libarchive 3.7.4 i386 "" "A library for handling streaming archive formats
 #build libffi 3.4.4 i386 "" "A portable foreign function interface library"
 build libffi 3.4.6 i386 "" "A portable foreign function interface library"
 build libiconv 1.17 i386 "" "A character set conversion library"
-build libpng 1.6.37 i386 "" "A library of functions for manipulating PNG image format files"
+#build libpng 1.6.37 i386 "" "A library of functions for manipulating PNG image format files"
+build libpng 1.6.43 i386 "" "A library of functions for manipulating PNG image format files"
 build libtool 2.4.7 i386 "" "The GNU Portable Library Tool"
 build libuuid 1.0.3 i386 "" "Universally unique ID library"
 build libxcrypt 4.4.33 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
