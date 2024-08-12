@@ -1035,6 +1035,15 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		moe)
+			_unpack $prg-$ver l
+			pushd $prg-$ver || exit 1
+				./configure --prefix=/usr || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		mpc)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -1938,6 +1947,7 @@ build m4 1.4.18 i386 "" "GNU macro processor"
 build make 4.2.1 i386 "" "A GNU tool which simplifies the build process for users"
 build mandoc 1.14.6 i386 "" "A suite of tools for compiling mdoc and man"
 build mingetty 1.08 i386 "" "A compact getty program for virtual consoles only"
+build moe 1.14 i386 "" "A powerful clean text editor"
 build mpc 1.1.0 i386 "" "GNU MPC is a complex floating-point library with exact rounding"
 build mpfr 3.1.6 i386 "" "C library for multiple-precision floating-point computations"
 build nano 4.9.3 i386 "" "A small text editor"
