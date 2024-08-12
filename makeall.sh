@@ -1057,7 +1057,6 @@ EOF
 		mpfr)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr --disable-thread-safe || exit 1
 				_make
 			popd
@@ -1950,7 +1949,8 @@ build mingetty 1.08 i386 "" "A compact getty program for virtual consoles only"
 build moe 1.14 i386 "" "A powerful clean text editor"
 #build mpc 1.1.0 i386 "" "GNU MPC is a complex floating-point library with exact rounding"
 build mpc 1.3.1 i386 "" "GNU MPC is a complex floating-point library with exact rounding"
-build mpfr 3.1.6 i386 "" "C library for multiple-precision floating-point computations"
+#build mpfr 3.1.6 i386 "" "C library for multiple-precision floating-point computations"
+build mpfr 4.2.1 i386 "" "C library for multiple-precision floating-point computations"
 build nano 4.9.3 i386 "" "A small text editor"
 build nasm 2.16.01 i386 "" "A portable x86 assembler which uses Intel-like syntax"
 build ncompress 4.2.4.6 i386 "" "Fast compression and decompression utilities"
