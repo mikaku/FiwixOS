@@ -1368,7 +1368,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				FORCE_UNSAFE_CONFIGURE=1 ./configure --prefix=/usr || exit 1
+				FORCE_UNSAFE_CONFIGURE=1 LIBS="-liconv" ./configure --prefix=/usr --disable-year2038 || exit 1
 				_make
 			popd
 			pushd $PREFIX
@@ -1985,7 +1985,8 @@ build symlinks 1.4.3 i386 "" "A utility which maintains a system's symbolic link
 #build sysvinit 2.84 i386 "" "Programs which control basic system processes"
 #build sysvinit 2.86 i386 "" "Programs which control basic system processes"
 build sysvinit 2.87dsf i386 "" "Programs which control basic system processes"
-build tar 1.34 i386 "" "GNU file archiving program"
+#build tar 1.34 i386 "" "GNU file archiving program"
+build tar 1.35 i386 "" "GNU file archiving program"
 build termcap 1.3.1 i386 "" "The terminal feature database used by certain applications"
 build texinfo 5.2 i386 "" "Tools needed to create Texinfo format documentation files"
 build tiff 4.4.0 i386 "" "Library of functions for manipulating TIFF format image files"
