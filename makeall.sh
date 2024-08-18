@@ -1312,7 +1312,7 @@ EOF
 			;;
 
 		stress)
-			_unpack $prg-$ver z
+			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
 				./configure --prefix=/usr || exit 1
 				_make
@@ -1978,7 +1978,8 @@ build readline 7.0 i386 "" "A library for editing typed command lines"
 build sed 4.7 i386 "" "A GNU stream text editor"
 build sharutils 4.15.2 i386 "" "The GNU shar utilities for packaging and unpackaging shell archives"
 build slang 2.3.3 i386 "" "Shared library for the S-Lang extension language"
-build stress 1.0.4 i386 "" "A tool to put given subsystems under a specified load"
+#build stress 1.0.4 i386 "" "A tool to put given subsystems under a specified load"
+build stress 1.0.7 i386 "" "A tool to put given subsystems under a specified load"
 build svgalib 1.4.3 i386 "" "Low-level fullscreen SVGA graphics library"
 build symlinks 1.4.3 i386 "" "A utility which maintains a system's symbolic links"
 #build sysvinit 2.84 i386 "" "Programs which control basic system processes"
