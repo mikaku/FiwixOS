@@ -1571,6 +1571,8 @@ endif
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
+
+set writedelay=1     " fix vim 7.4 ^D/^U/^C scroll bug
 EOF
 				mkdir -p etc/profile.d
 				cat > etc/profile.d/vim.sh << "EOF"
