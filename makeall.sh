@@ -1803,7 +1803,7 @@ EOF
 			;;
 
 		zlib)
-			_unpack $prg-$ver J
+			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				./configure --prefix=/usr || exit 1
 				_make
@@ -2010,7 +2010,8 @@ build xz 5.0.8 i386 "" "LZMA compression utilities"
 build zgv 5.9 i386 "" "Picture viewer for SVGAlib"
 build zile 2.3.24 i386 "" "Zile Is Lossy Emacs"
 build zip 30 i386 "" "A file compression and packaging utility compatible with PKZIP"
-build zlib 1.2.13 i386 "" "Compression and decompression library"
+#build zlib 1.2.13 i386 "" "Compression and decompression library"
+build zlib 1.3.1 i386 "" "Compression and decompression library"
 echo
 echo "DONE."
 exit
