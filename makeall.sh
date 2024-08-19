@@ -865,16 +865,6 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		libuuid)
-			_unpack $prg-$ver z
-			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
-				./configure --prefix=/usr || exit 1
-				_make
-			popd
-			_pack $prg-$ver
-			;;
-
 		libxcrypt)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
@@ -1928,7 +1918,6 @@ build libiconv 1.17 i386 "" "A character set conversion library"
 #build libpng 1.6.37 i386 "" "A library of functions for manipulating PNG image format files"
 build libpng 1.6.43 i386 "" "A library of functions for manipulating PNG image format files"
 build libtool 2.4.7 i386 "" "The GNU Portable Library Tool"
-build libuuid 1.0.3 i386 "" "Universally unique ID library"
 #build libxcrypt 4.4.33 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
 build libxcrypt 4.4.36 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
 build libxml2 v2.9.14 i386 "" "Library providing XML and HTML support"
