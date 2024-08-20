@@ -1,0 +1,11 @@
+diff -ru groff-1.23.0/src/include/nonposix.h groff-1.23.0.new/src/include/nonposix.h
+--- groff-1.23.0/src/include/nonposix.h	2023-07-05 23:06:43.000000000 +0200
++++ groff-1.23.0.new/src/include/nonposix.h	2024-08-09 08:57:24.000000000 +0200
+@@ -223,6 +223,7 @@
+ # define GS_NAME	"gs"
+ #endif
+ #ifndef WAIT
++#include <sys/wait.h>
+ # define WAIT(s,p,m)	wait(s)
+ #endif
+ #ifndef _WAIT_CHILD

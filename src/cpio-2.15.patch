@@ -1,0 +1,29 @@
+diff -ru cpio-2.15/lib/rtapelib.c cpio-2.15.new/lib/rtapelib.c
+--- cpio-2.15/lib/rtapelib.c	2023-04-27 12:39:40.000000000 +0200
++++ cpio-2.15.new/lib/rtapelib.c	2024-08-07 18:17:39.000000000 +0200
+@@ -360,8 +360,8 @@
+ 
+   if (!pw)
+     return "getpwuid";
+-  if (initgroups (pw->pw_name, gid) != 0)
+-    return "initgroups";
++/*  if (initgroups (pw->pw_name, gid) != 0)
++    return "initgroups";*/
+   if (gid != getegid () && setgid (gid) != 0 && errno != EPERM)
+     return "setgid";
+   if (uid != geteuid () && setuid (uid) != 0 && errno != EPERM)
+@@ -446,11 +446,14 @@
+   assume (remote_file);
+ 
+   /* FIXME: Should somewhat validate the decoding, here.  */
++  /*
+   if (gethostbyname (remote_host) == NULL)
+     error (EXIT_ON_EXEC_ERROR, 0, _("Cannot connect to %s: resolve failed"),
+ 	   remote_host);
+ 
+   if (remote_user && *remote_user == '\0')
++  */
++    remote_host = '\0';
+     remote_user = 0;
+ 
+ #if WITH_REXEC

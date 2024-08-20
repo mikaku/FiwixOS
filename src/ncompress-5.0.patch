@@ -1,0 +1,12 @@
+diff -ru ncompress-5.0/Makefile.def ncompress-5.0.new/Makefile.def
+--- ncompress-5.0/Makefile.def	2021-02-02 09:16:16.000000000 +0100
++++ ncompress-5.0.new/Makefile.def	2024-08-10 14:53:43.000000000 +0200
+@@ -7,7 +7,7 @@
+ DESTDIR=
+ 
+ # Base install directory
+-PREFIX=/usr/local
++PREFIX=/usr
+ 
+ # Install directory for binaries
+ BINDIR=$(PREFIX)/bin

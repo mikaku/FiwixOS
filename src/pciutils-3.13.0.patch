@@ -1,0 +1,515 @@
+diff -ruN pciutils-3.13.0/lib/configure pciutils-3.13.0.new/lib/configure
+--- pciutils-3.13.0/lib/configure	2024-03-13 18:55:25.000000000 +0100
++++ pciutils-3.13.0.new/lib/configure	2024-08-10 16:40:08.000000000 +0200
+@@ -226,6 +226,10 @@
+ 		IDSDIR="DEVS:"
+ 		echo >>$m 'CC=gcc'
+ 		;;
++	fiwix)
++		echo_n " i386-ports"
++		echo >>$c '#define PCI_HAVE_PM_INTEL_CONF'
++		;;
+ 	*)
+ 		echo " Unfortunately, your OS is not supported by the PCI Library"
+ 		exit 1
+diff -ruN pciutils-3.13.0/lib/i386-io-fiwix.h pciutils-3.13.0.new/lib/i386-io-fiwix.h
+--- pciutils-3.13.0/lib/i386-io-fiwix.h	1970-01-01 01:00:00.000000000 +0100
++++ pciutils-3.13.0.new/lib/i386-io-fiwix.h	2024-08-10 16:42:43.000000000 +0200
+@@ -0,0 +1,35 @@
++/*
++ *	The PCI Library -- Access to i386 I/O ports on FiwixOS (same as in Hurd)
++ *
++ *	Copyright (c) 2003 Marco Gerards <metgerards@student.han.nl>
++ *	Copyright (c) 2003 Martin Mares <mj@ucw.cz>
++ *	Copyright (c) 2006 Samuel Thibault <samuel.thibault@ens-lyon.org> and
++ *	                   Thomas Schwinge <tschwinge@gnu.org>
++ *	Copyright (c) 2007 Thomas Schwinge <tschwinge@gnu.org>
++ *
++ *	Can be freely distributed and used under the terms of the GNU GPL.
++ */
++
++#include <sys/io.h>
++
++#include "i386-io-access.h"
++
++static inline int
++intel_setup_io(struct pci_access *a UNUSED)
++{
++  return (ioperm (0, 65535, 1) == -1) ? 0 : 1;
++}
++
++static inline void
++intel_cleanup_io(struct pci_access *a UNUSED)
++{
++  ioperm (0, 65535, 0);
++}
++
++static inline void intel_io_lock(void)
++{
++}
++
++static inline void intel_io_unlock(void)
++{
++}
+diff -ruN pciutils-3.13.0/lib/i386-ports.c pciutils-3.13.0.new/lib/i386-ports.c
+--- pciutils-3.13.0/lib/i386-ports.c	2024-03-29 22:46:00.000000000 +0100
++++ pciutils-3.13.0.new/lib/i386-ports.c	2024-08-10 16:40:08.000000000 +0200
+@@ -32,6 +32,8 @@
+ #include "i386-io-djgpp.h"
+ #elif defined(PCI_OS_OPENBSD)
+ #include "i386-io-openbsd.h"
++#elif defined(PCI_OS_FIWIX)
++#include "i386-io-fiwix.h"
+ #else
+ #error Do not know how to access I/O ports on this OS.
+ #endif
+diff -ruN pciutils-3.13.0/lmr/margin_args.c pciutils-3.13.0.new/lmr/margin_args.c
+--- pciutils-3.13.0/lmr/margin_args.c	2024-05-27 14:35:56.000000000 +0200
++++ pciutils-3.13.0.new/lmr/margin_args.c	2024-08-10 16:51:30.000000000 +0200
+@@ -40,6 +40,7 @@
+ dev_for_filter(struct pci_access *pacc, char *filter)
+ {
+   struct pci_filter pci_filter;
++  struct pci_dev *p;
+   pci_filter_init(pacc, &pci_filter);
+   if (pci_filter_parse_slot(&pci_filter, filter))
+     die("Invalid device ID: %s\n", filter);
+@@ -50,7 +51,7 @@
+   if (pci_filter.domain == -1)
+     pci_filter.domain = 0;
+ 
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (pci_filter_match(&pci_filter, p))
+         return p;
+@@ -77,7 +78,8 @@
+ find_ready_links(struct pci_access *pacc, struct margin_link *links, bool cnt_only)
+ {
+   u8 cnt = 0;
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  struct pci_dev *p;
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (pci_find_cap(p, PCI_EXT_CAP_ID_LMR, PCI_CAP_EXTENDED) && margin_port_is_down(p))
+         {
+@@ -155,7 +157,8 @@
+                 }
+ 
+               int consumed = 0;
+-              for (int i = 0; i < 3; i++)
++              int i;
++              for (i = 0; i < 3; i++)
+                 if (cons[i] > consumed)
+                   consumed = cons[i];
+               if ((size_t)consumed != strlen(optarg))
+@@ -261,7 +264,8 @@
+         {
+           links = xmalloc(ports_n * sizeof(*links));
+           find_ready_links(pacc, links, false);
+-          for (int i = 0; i < ports_n; i++)
++          int i;
++          for (i = 0; i < ports_n; i++)
+             init_link_args(&(links[i].args), com_args);
+         }
+     }
+diff -ruN pciutils-3.13.0/lmr/margin.c pciutils-3.13.0.new/lmr/margin.c
+--- pciutils-3.13.0/lmr/margin.c	2024-05-27 18:22:21.000000000 +0200
++++ pciutils-3.13.0.new/lmr/margin.c	2024-08-10 16:48:14.000000000 +0200
+@@ -221,6 +221,7 @@
+   u8 marg_type;
+   margin_cmd step_cmd;
+   bool timing = (arg.dir == TIM_LEFT || arg.dir == TIM_RIGHT);
++  int i;
+ 
+   if (timing)
+     {
+@@ -236,7 +237,7 @@
+   bool failed_lanes[32] = { 0 };
+   u8 alive_lanes = arg.lanes_n;
+ 
+-  for (int i = 0; i < arg.lanes_n; i++)
++  for (i = 0; i < arg.lanes_n; i++)
+     {
+       margin_set_cmd(arg.recv->dev, arg.results[i].lane, NO_COMMAND);
+       margin_set_cmd(arg.recv->dev, arg.results[i].lane,
+@@ -255,7 +256,7 @@
+       else
+         step_cmd = SET_REG_MASK(step_cmd, LMR_PLD_MARGIN_V_STEPS, steps_done);
+ 
+-      for (int i = 0; i < arg.lanes_n; i++)
++      for (i = 0; i < arg.lanes_n; i++)
+         {
+           if (!failed_lanes[i])
+             {
+@@ -266,7 +267,7 @@
+         }
+       msleep(arg.recv->dwell_time * 1000);
+ 
+-      for (int i = 0; i < arg.lanes_n; i++)
++      for (i = 0; i < arg.lanes_n; i++)
+         {
+           if (!failed_lanes[i])
+             {
+@@ -292,7 +293,7 @@
+       margin_log_margining(arg);
+     }
+ 
+-  for (int i = 0; i < arg.lanes_n; i++)
++  for (i = 0; i < arg.lanes_n; i++)
+     {
+       margin_set_cmd(arg.recv->dev, arg.results[i].lane, NO_COMMAND);
+       margin_set_cmd(arg.recv->dev, arg.results[i].lane, CLEAR_ERROR_LOG(arg.recv->recvn));
+@@ -318,6 +319,7 @@
+                               .parallel_lanes = args->parallel_lanes ? args->parallel_lanes : 1,
+                               .error_limit = args->common->error_limit,
+                               .dwell_time = args->common->dwell_time };
++  int i;
+ 
+   results->recvn = recvn;
+   results->lanes_n = lanes_n;
+@@ -363,7 +365,7 @@
+   margin_log_receiver(&recv);
+ 
+   results->lanes = xmalloc(sizeof(struct margin_res_lane) * lanes_n);
+-  for (int i = 0; i < lanes_n; i++)
++  for (i = 0; i < lanes_n; i++)
+     {
+       results->lanes[i].lane
+         = recv.lane_reversal ? dev->max_width - lanes_to_margin[i] - 1 : lanes_to_margin[i];
+@@ -392,7 +394,7 @@
+           lanes_data.lanes_n = use_lanes;
+           lanes_data.results = results->lanes + lanes_done;
+ 
+-          for (int i = 0; i < 4; i++)
++          for (i = 0; i < 4; i++)
+             {
+               bool timing = dir[i] == TIM_LEFT || dir[i] == TIM_RIGHT;
+               if (!timing && !params.volt_support)
+@@ -417,7 +419,7 @@
+         margin_log("\n");
+       if (recv.lane_reversal)
+         {
+-          for (int i = 0; i < lanes_n; i++)
++          for (i = 0; i < lanes_n; i++)
+             results->lanes[i].lane = lanes_to_margin[i];
+         }
+     }
+@@ -486,19 +488,20 @@
+ {
+   struct margin_dev *dev = &link->down_port;
+   struct margin_link_args *args = &link->args;
++  int i;
+ 
+   u8 receivers_n = 2 + 2 * dev->retimers_n;
+ 
+   if (!args->recvs_n)
+     {
+-      for (int i = 1; i < receivers_n; i++)
++      for (i = 1; i < receivers_n; i++)
+         args->recvs[i - 1] = i;
+       args->recvs[receivers_n - 1] = 6;
+       args->recvs_n = receivers_n;
+     }
+   else
+     {
+-      for (int i = 0; i < args->recvs_n; i++)
++      for (i = 0; i < args->recvs_n; i++)
+         {
+           u8 recvn = args->recvs[i];
+           if (recvn < 1 || recvn > 6 || (recvn != 6 && recvn > receivers_n - 1))
+@@ -511,12 +514,12 @@
+   if (!args->lanes_n)
+     {
+       args->lanes_n = dev->neg_width;
+-      for (int i = 0; i < args->lanes_n; i++)
++      for (i = 0; i < args->lanes_n; i++)
+         args->lanes[i] = i;
+     }
+   else
+     {
+-      for (int i = 0; i < args->lanes_n; i++)
++      for (i = 0; i < args->lanes_n; i++)
+         {
+           if (args->lanes[i] >= dev->neg_width)
+             {
+@@ -534,6 +537,7 @@
+   struct margin_link_args *args = &link->args;
+ 
+   bool status = margin_prep_link(link);
++  int i;
+ 
+   u8 receivers_n = status ? args->recvs_n : 1;
+   u8 *receivers = args->recvs;
+@@ -551,7 +555,7 @@
+   if (status)
+     {
+       struct margin_dev *dut;
+-      for (int i = 0; i < receivers_n; i++)
++      for (i = 0; i < receivers_n; i++)
+         {
+           dut = receivers[i] == 6 ? &link->up_port : &link->down_port;
+           margin_test_receiver(dut, receivers[i], args, &results[i]);
+@@ -567,7 +571,9 @@
+ void
+ margin_free_results(struct margin_results *results, u8 results_n)
+ {
+-  for (int i = 0; i < results_n; i++)
++  int i;
++
++  for (i = 0; i < results_n; i++)
+     {
+       if (results[i].test_status == MARGIN_TEST_OK)
+         free(results[i].lanes);
+diff -ruN pciutils-3.13.0/lmr/margin_hw.c pciutils-3.13.0.new/lmr/margin_hw.c
+--- pciutils-3.13.0/lmr/margin_hw.c	2024-05-27 18:22:21.000000000 +0200
++++ pciutils-3.13.0.new/lmr/margin_hw.c	2024-08-10 16:45:24.000000000 +0200
+@@ -24,8 +24,9 @@
+   u16 vendor = pci_read_word(dev, PCI_VENDOR_ID);
+   u16 device = pci_read_word(dev, PCI_DEVICE_ID);
+   u8 revision = pci_read_byte(dev, PCI_REVISION_ID);
++  int i;
+ 
+-  for (int i = 0; special_hw[i][0] != 0xFFFF; i++)
++  for (i = 0; special_hw[i][0] != 0xFFFF; i++)
+     {
+       if (vendor == special_hw[i][0] && device == special_hw[i][1] && revision == special_hw[i][2])
+         return special_hw[i][3];
+@@ -54,11 +55,12 @@
+                  struct pci_dev **up_port)
+ {
+   struct pci_cap *cap = pci_find_cap(dev, PCI_CAP_ID_EXP, PCI_CAP_NORMAL);
++  struct pci_dev *p;
+   if (!cap)
+     return false;
+   bool given_down = margin_port_is_down(dev);
+ 
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (given_down && pci_read_byte(dev, PCI_SECONDARY_BUS) == p->bus && dev->domain == p->domain
+           && p->func == 0)
+diff -ruN pciutils-3.13.0/lmr/margin_log.c pciutils-3.13.0.new/lmr/margin_log.c
+--- pciutils-3.13.0/lmr/margin_log.c	2024-05-27 18:22:21.000000000 +0200
++++ pciutils-3.13.0.new/lmr/margin_log.c	2024-08-10 16:48:52.000000000 +0200
+@@ -51,6 +51,8 @@
+ void
+ margin_log_link(struct margin_link *link)
+ {
++  int i;
++
+   margin_log("Link ");
+   margin_log_bdfs(link->down_port.dev, link->up_port.dev);
+   margin_log("\nNegotiated Link Width: %d\n", link->down_port.neg_width);
+@@ -58,7 +60,7 @@
+              link->down_port.link_speed);
+   margin_log("Available receivers: ");
+   int receivers_n = 2 + 2 * link->down_port.retimers_n;
+-  for (int i = 1; i < receivers_n; i++)
++  for (i = 1; i < receivers_n; i++)
+     margin_log("Rx(%X) - %d, ", 10 + i - 1, i);
+   margin_log("Rx(F) - 6\n");
+ }
+@@ -112,6 +114,7 @@
+ {
+   char *ind_dirs[] = { "Up", "Down", "Left", "Right" };
+   char *non_ind_dirs[] = { "Voltage", "", "Timing" };
++  int i;
+ 
+   if (arg.verbosity > 0)
+     {
+@@ -124,7 +127,7 @@
+       u8 lanes_counter = 0;
+       margin_log(" - Lanes ");
+       margin_log("[%d", arg.lanes_numbers[0]);
+-      for (int i = 1; i < arg.lanes_n; i++)
++      for (i = 1; i < arg.lanes_n; i++)
+         {
+           if (arg.lanes_numbers[i] - 1 == arg.lanes_numbers[i - 1])
+             {
+diff -ruN pciutils-3.13.0/lmr/margin_results.c pciutils-3.13.0.new/lmr/margin_results.c
+--- pciutils-3.13.0/lmr/margin_results.c	2024-05-27 14:35:56.000000000 +0200
++++ pciutils-3.13.0.new/lmr/margin_results.c	2024-08-10 16:50:28.000000000 +0200
+@@ -68,8 +68,9 @@
+                            "Invalid lanes specified with arguments",
+                            "Invalid receivers specified with arguments",
+                            "Couldn't disable ASPM" };
++  int i;
+ 
+-  for (int i = 0; i < recvs_n; i++)
++  for (i = 0; i < recvs_n; i++)
+     {
+       res = &(results[i]);
+       params = res->params;
+@@ -160,7 +161,8 @@
+                "reliable.\n\n",
+                10 + res->recvn - 1);
+ 
+-      for (int j = 0; j < res->lanes_n; j++)
++      int j;
++      for (j = 0; j < res->lanes_n; j++)
+         {
+           if (spec_ref_only)
+             lane_rating = INIT;
+@@ -250,8 +252,9 @@
+   double eh_rec;
+ 
+   struct pci_dev *port;
++  int i;
+ 
+-  for (int i = 0; i < recvs_n; i++)
++  for (i = 0; i < recvs_n; i++)
+     {
+       res = &(results[i]);
+       params = res->params;
+@@ -297,7 +300,8 @@
+           eh_rec = margin_eh_rec[link_speed];
+         }
+ 
+-      for (int j = 0; j < res->lanes_n; j++)
++      int j;
++      for (j = 0; j < res->lanes_n; j++)
+         {
+           if (spec_ref_only)
+             lane_rating = INIT;
+@@ -357,7 +361,8 @@
+                     lane->steps[TIM_RIGHT], sts_strings[lane->statuses[TIM_RIGHT]]);
+           else
+             {
+-              for (int k = 0; k < 4; k++)
++              int k;
++              for (k = 0; k < 4; k++)
+                 fprintf(csv, "NA,");
+             }
+           if (params.volt_support)
+@@ -372,7 +377,8 @@
+             }
+           else
+             {
+-              for (int k = 0; k < 5; k++)
++              int k;
++              for (k = 0; k < 5; k++)
+                 fprintf(csv, "NA,");
+               fprintf(csv, "NA\n");
+             }
+diff -ruN pciutils-3.13.0/ls-ecaps.c pciutils-3.13.0.new/ls-ecaps.c
+--- pciutils-3.13.0/ls-ecaps.c	2024-04-29 09:36:21.000000000 +0200
++++ pciutils-3.13.0.new/ls-ecaps.c	2024-08-10 16:40:08.000000000 +0200
+@@ -677,8 +677,9 @@
+       int prevmatched=0;
+       int adjcount=0;
+       int prevdev=0;
++      int dev;
+       printf("RCiEP at Device(s):");
+-      for (int dev=0; dev < 32; dev++)
++      for (dev=0; dev < 32; dev++)
+         {
+ 	  if (BITS(bmap, dev, 1))
+ 	    {
+@@ -878,8 +879,9 @@
+     "CXL device registers",
+     "CPMU registers",
+   };
++  int i;
+ 
+-  for (int i=0; ; i++)
++  for (i=0; ; i++)
+     {
+       int pos = where + PCI_CXL_RL_BLOCK1_LO + 8*i;
+       if (pos + 7 >= where + len)
+diff -ruN pciutils-3.13.0/Makefile pciutils-3.13.0.new/Makefile
+--- pciutils-3.13.0/Makefile	2024-05-30 17:58:01.000000000 +0200
++++ pciutils-3.13.0.new/Makefile	2024-08-10 16:40:08.000000000 +0200
+@@ -32,7 +32,7 @@
+ ABI_VERSION=3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
+diff -ruN pciutils-3.13.0/pcilmr.c pciutils-3.13.0.new/pcilmr.c
+--- pciutils-3.13.0/pcilmr.c	2024-05-27 14:35:56.000000000 +0200
++++ pciutils-3.13.0.new/pcilmr.c	2024-08-10 16:44:43.000000000 +0200
+@@ -19,12 +19,14 @@
+ static void
+ scan_links(struct pci_access *pacc, bool only_ready)
+ {
++  struct pci_dev *p;
++
+   if (only_ready)
+     printf("Links ready for margining:\n");
+   else
+     printf("Links with Lane Margining at the Receiver capabilities:\n");
+   bool flag = true;
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (pci_find_cap(p, PCI_EXT_CAP_ID_LMR, PCI_CAP_EXTENDED) && margin_port_is_down(p))
+         {
+@@ -52,6 +54,8 @@
+ main(int argc, char **argv)
+ {
+   struct pci_access *pacc;
++  struct pci_dev *dev;
++  int i;
+ 
+   u8 links_n = 0;
+   struct margin_link *links;
+@@ -68,7 +72,7 @@
+   pci_scan_bus(pacc);
+ 
+   margin_print_domain = false;
+-  for (struct pci_dev *dev = pacc->devices; dev; dev = dev->next)
++  for (dev = pacc->devices; dev; dev = dev->next)
+     {
+       if (dev->domain != 0)
+         {
+@@ -121,7 +125,7 @@
+   results_n = xmalloc(links_n * sizeof(*results_n));
+   checks_status_ports = xmalloc(links_n * sizeof(*checks_status_ports));
+ 
+-  for (int i = 0; i < links_n; i++)
++  for (i = 0; i < links_n; i++)
+     {
+       enum margin_test_status args_status;
+ 
+@@ -136,8 +140,9 @@
+       checks_status_ports[i] = true;
+       struct margin_params params;
+       struct margin_link_args *link_args = &links[i].args;
++      int j;
+ 
+-      for (int j = 0; j < link_args->recvs_n; j++)
++      for (j = 0; j < link_args->recvs_n; j++)
+         {
+           if (margin_read_params(
+                 pacc, link_args->recvs[j] == 6 ? links[i].up_port.dev : links[i].down_port.dev,
+@@ -165,7 +170,7 @@
+         }
+     }
+ 
+-  for (int i = 0; i < links_n; i++)
++  for (i = 0; i < links_n; i++)
+     {
+       if (checks_status_ports[i])
+         results[i] = margin_test_link(&links[i], &results_n[i]);
+@@ -195,7 +200,7 @@
+       printf("THR -\tThe set (using the utility options) \n\tstep threshold has been reached\n\n");
+       printf("Notations:\nst - steps\n\n");
+ 
+-      for (int i = 0; i < links_n; i++)
++      for (i = 0; i < links_n; i++)
+         {
+           printf("Link ");
+           margin_log_bdfs(links[i].down_port.dev, links[i].up_port.dev);
+@@ -207,7 +212,7 @@
+         }
+     }
+ 
+-  for (int i = 0; i < links_n; i++)
++  for (i = 0; i < links_n; i++)
+     margin_free_results(results[i], results_n[i]);
+   free(results_n);
+   free(results);

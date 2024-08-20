@@ -1,0 +1,26 @@
+diff -ru dmidecode-3.6/dmidecode.c dmidecode-3.6.new/dmidecode.c
+--- dmidecode-3.6/dmidecode.c	2024-04-24 11:26:16.000000000 +0200
++++ dmidecode-3.6.new/dmidecode.c	2024-08-08 09:16:51.000000000 +0200
+@@ -3926,10 +3926,6 @@
+  */
+ static const char *dmi_address_decode(u8 *data, char *storage, u8 addrtype)
+ {
+-	if (addrtype == 0x1) /* IPv4 */
+-		return inet_ntop(AF_INET, data, storage, 64);
+-	if (addrtype == 0x2) /* IPv6 */
+-		return inet_ntop(AF_INET6, data, storage, 64);
+ 	return out_of_spec;
+ }
+ 
+diff -ru dmidecode-3.6/Makefile dmidecode-3.6.new/Makefile
+--- dmidecode-3.6/Makefile	2024-04-24 11:26:16.000000000 +0200
++++ dmidecode-3.6.new/Makefile	2024-08-08 09:16:40.000000000 +0200
+@@ -31,7 +31,7 @@
+ LDFLAGS ?=
+ 
+ DESTDIR =
+-prefix  = /usr/local
++prefix  = /usr
+ sbindir = $(prefix)/sbin
+ mandir  = $(prefix)/share/man
+ man8dir = $(mandir)/man8

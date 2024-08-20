@@ -1,0 +1,36 @@
+diff -ru lcms2-2.16/config.guess lcms2-2.16.new/config.guess
+--- lcms2-2.16/config.guess	2023-12-03 20:03:10.000000000 +0100
++++ lcms2-2.16.new/config.guess	2024-08-09 10:06:29.000000000 +0200
+@@ -1418,6 +1418,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ echo "$0: unable to guess system type" >&2
+diff -ru lcms2-2.16/config.sub lcms2-2.16.new/config.sub
+--- lcms2-2.16/config.sub	2023-12-03 20:03:10.000000000 +0100
++++ lcms2-2.16.new/config.sub	2024-08-09 10:06:29.000000000 +0200
+@@ -1390,7 +1390,7 @@
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+ 	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -redox* | -bme* \
+-	      | -midnightbsd*)
++	      | -midnightbsd* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru lcms2-2.16/utils/jpgicc/jpgicc.c lcms2-2.16.new/utils/jpgicc/jpgicc.c
+--- lcms2-2.16/utils/jpgicc/jpgicc.c	2023-12-03 20:03:10.000000000 +0100
++++ lcms2-2.16.new/utils/jpgicc/jpgicc.c	2024-08-09 10:06:29.000000000 +0200
+@@ -356,7 +356,6 @@
+ 
+ typedef unsigned short uint16_t;
+ typedef unsigned char uint8_t;
+-typedef unsigned int uint32_t;
+ 
+ #define INTEL_BYTE_ORDER 0x4949
+ #define XRESOLUTION 0x011a

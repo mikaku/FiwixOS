@@ -1,0 +1,72 @@
+diff -ru global-6.6.13/libglibc/obstack.c global-6.6.13.new/libglibc/obstack.c
+--- global-6.6.13/libglibc/obstack.c	2024-07-02 00:03:49 +0000
++++ global-6.6.13.new/libglibc/obstack.c	2024-08-08 14:51:22 +0000
+@@ -57,8 +57,6 @@
+ # include <wchar.h>
+ #endif
+ 
+-#ifndef ELIDE_CODE
+-
+ 
+ /* Determine default alignment.  */
+ struct fooalign {char x; double d;};
+@@ -425,5 +423,3 @@
+     fprintf (stderr, "%s\n", _("memory exhausted"));
+   exit (obstack_exit_failure);
+ }
+-
+-#endif	/* !ELIDE_CODE */
+diff -ru global-6.6.13/plugin-factory/Makefile.am global-6.6.13.new/plugin-factory/Makefile.am
+--- global-6.6.13/plugin-factory/Makefile.am	2024-07-02 00:03:49 +0000
++++ global-6.6.13.new/plugin-factory/Makefile.am	2024-08-08 14:46:24 +0000
+@@ -19,19 +19,19 @@
+ 
+ # Exuberant Ctags parser
+ exuberant_ctags_la_SOURCES = exuberant-ctags.c
+-exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ # Univercal Ctags parser
+ universal_ctags_la_SOURCES = exuberant-ctags.c
+ universal_ctags_la_CFLAGS  = -DUSE_EXTRA_FIELDS
+-universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # Pygments parser
+ pygments_parser_la_SOURCES = pygments-parser.c
+-pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # skeleton
+ user_custom_la_SOURCES = user-custom.c
+-user_custom_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++user_custom_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ gtagsdir = ${datadir}/gtags
+ gtags_DATA = PLUGIN_HOWTO PLUGIN_HOWTO.pygments PLUGIN_HOWTO.universal-ctags \
+diff -ru global-6.6.13/plugin-factory/Makefile.in global-6.6.13.new/plugin-factory/Makefile.in
+--- global-6.6.13/plugin-factory/Makefile.in	2024-07-02 00:03:56 +0000
++++ global-6.6.13.new/plugin-factory/Makefile.in	2024-08-08 14:49:30 +0000
+@@ -411,19 +411,19 @@
+ 
+ # Exuberant Ctags parser
+ exuberant_ctags_la_SOURCES = exuberant-ctags.c
+-exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++exuberant_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ # Univercal Ctags parser
+ universal_ctags_la_SOURCES = exuberant-ctags.c
+ universal_ctags_la_CFLAGS = -DUSE_EXTRA_FIELDS
+-universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++universal_ctags_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # Pygments parser
+ pygments_parser_la_SOURCES = pygments-parser.c
+-pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++pygments_parser_la_LDFLAGS = -module -avoid-version -no-undefined
+ 
+ # skeleton
+ user_custom_la_SOURCES = user-custom.c
+-user_custom_la_LDFLAGS = -module -avoid-version -no-undefined -shared
++user_custom_la_LDFLAGS = -module -avoid-version -no-undefined
+ gtagsdir = ${datadir}/gtags
+ gtags_DATA = PLUGIN_HOWTO PLUGIN_HOWTO.pygments PLUGIN_HOWTO.universal-ctags \
+ 	     	uctags-scheme.c-diff

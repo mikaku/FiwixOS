@@ -1,0 +1,12 @@
+diff -ru zip30/unix/Makefile zip30.new/unix/Makefile
+--- zip30/unix/Makefile	2008-05-07 08:33:56.000000000 +0200
++++ zip30.new/unix/Makefile	2024-08-19 11:07:27.000000000 +0200
+@@ -41,7 +41,7 @@
+ prefix = /usr/local
+ BINDIR = $(prefix)/bin
+ MANEXT=1
+-MANDIR = $(prefix)/man/man$(MANEXT)
++MANDIR = $(prefix)/share/man/man$(MANEXT)
+ ZIPMANUAL = zip.txt
+ ZIPMANUALcloak = zipcloak.txt
+ ZIPMANUALnote = zipnote.txt

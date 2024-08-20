@@ -1,0 +1,96 @@
+diff -ru e2fsprogs-1.37/config/config.guess e2fsprogs-1.37.new/config/config.guess
+--- e2fsprogs-1.37/config/config.guess	2004-12-06 22:45:50 +0000
++++ e2fsprogs-1.37.new/config/config.guess	2024-04-12 17:57:58 +0000
+@@ -1260,6 +1260,9 @@
+     *:DragonFly:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-dragonfly`echo ${UNAME_RELEASE}|sed -e 's/[-(].*//'`
+ 	exit 0 ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit 0 ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru e2fsprogs-1.37/config/config.sub e2fsprogs-1.37.new/config/config.sub
+--- e2fsprogs-1.37/config/config.sub	2004-12-06 22:45:50 +0000
++++ e2fsprogs-1.37.new/config/config.sub	2024-04-12 17:58:10 +0000
+@@ -1167,7 +1167,7 @@
+ 	      | -storm-chaos* | -tops10* | -tenex* | -tops20* | -its* \
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+-	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly*)
++	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru e2fsprogs-1.37/debugfs/util.c e2fsprogs-1.37.new/debugfs/util.c
+--- e2fsprogs-1.37/debugfs/util.c	2005-03-21 14:27:13 +0000
++++ e2fsprogs-1.37.new/debugfs/util.c	2024-04-12 17:37:54 +0000
+@@ -20,7 +20,7 @@
+ extern char *optarg;
+ #endif
+ #ifdef HAVE_OPTRESET
+-extern int optreset;		/* defined by BSD, but not others */
++int optreset;		/* defined by BSD, but not others */
+ #endif
+ 
+ #include "debugfs.h"
+diff -ru e2fsprogs-1.37/lib/ext2fs/llseek.c e2fsprogs-1.37.new/lib/ext2fs/llseek.c
+--- e2fsprogs-1.37/lib/ext2fs/llseek.c	2004-09-17 21:47:12 +0000
++++ e2fsprogs-1.37.new/lib/ext2fs/llseek.c	2024-04-12 17:38:58 +0000
+@@ -119,18 +119,29 @@
+ #define EINVAL EXT2_ET_INVALID_ARGUMENT
+ #endif
+ 
++static ext2_loff_t my_llseek (int fd, ext2_loff_t offset, int origin)
++{
++	ext2_loff_t result;
++	int retval;
++
++	retval = llseek(fd, (unsigned long long) (offset >> 32),
++			  ((unsigned long long) offset) & 0xffffffff,
++			&result, origin);
++	return (retval == -1 ? (ext2_loff_t) retval : result);
++}
+ ext2_loff_t ext2fs_llseek (int fd, ext2_loff_t offset, int origin)
+ {
+-#if defined(HAVE_LSEEK64) && defined(HAVE_LSEEK64_PROTOTYPE)
+-	return lseek64 (fd, offset, origin);
+-#else
+-	if ((sizeof(off_t) < sizeof(ext2_loff_t)) &&
+-	    (offset >= ((ext2_loff_t) 1 << ((sizeof(off_t)*8) -1)))) {
+-		errno = EINVAL;
+-		return -1;
+-	}
+-	return lseek (fd, (off_t) offset, origin);
+-#endif
++	ext2_loff_t result;
++
++	if ((sizeof(off_t) >= sizeof(ext2_loff_t)) ||
++	    (offset < ((ext2_loff_t) 1 << ((sizeof(off_t)*8) -1))))
++		return lseek(fd, (off_t) offset, origin);
++
++	result = my_llseek (fd, offset, origin);
++	if (result == -1 && errno == ENOSYS) {
++ 		errno = EINVAL;
++ 	}
++	return result;
+ }
+ 
+ #endif 	/* linux */
+diff -ru e2fsprogs-1.37/misc/mke2fs.c e2fsprogs-1.37.new/misc/mke2fs.c
+--- e2fsprogs-1.37/misc/mke2fs.c	2005-03-21 06:10:13 +0000
++++ e2fsprogs-1.37.new/misc/mke2fs.c	2024-04-12 17:39:23 +0000
+@@ -964,6 +964,12 @@
+ 		param.s_feature_ro_compat = 0;
+ 	}
+ #endif
++#ifdef __fiwix__
++	param.s_rev_level = 0;
++	param.s_feature_incompat = 0;
++	param.s_feature_compat = 0;
++	param.s_feature_ro_compat = 0;
++#endif /* __fiwix__ */
+ 
+ 	if (argc && *argv) {
+ 		program_name = get_progname(*argv);

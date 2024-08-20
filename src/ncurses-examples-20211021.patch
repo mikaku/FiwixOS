@@ -1,0 +1,25 @@
+diff -ru ncurses-examples-20211021/config.guess ncurses-examples-20211021.new/config.guess
+--- ncurses-examples-20211021/config.guess	2021-06-04 06:01:25.000000000 +0200
++++ ncurses-examples-20211021.new/config.guess	2024-08-10 15:02:10.000000000 +0200
+@@ -1531,6 +1531,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	GUESS=x86_64-unknown-onefs
+ 	;;
++    i*86:Fiwix:*:*)
++	GUESS=$UNAME_MACHINE-pc-fiwix
++	;;
+     *:Unleashed:*:*)
+ 	GUESS=$UNAME_MACHINE-unknown-unleashed$UNAME_RELEASE
+ 	;;
+diff -ru ncurses-examples-20211021/config.sub ncurses-examples-20211021.new/config.sub
+--- ncurses-examples-20211021/config.sub	2021-08-14 18:20:38.000000000 +0200
++++ ncurses-examples-20211021.new/config.sub	2024-08-10 15:02:18.000000000 +0200
+@@ -1748,7 +1748,7 @@
+ 	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
+ 	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
+ 	     | midnightbsd* | amdhsa* | unleashed* | emscripten* | wasi* \
+-	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx* | zephyr*)
++	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx* | zephyr* | fiwix*)
+ 		;;
+ 	# This one is extra strict with allowed versions
+ 	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)

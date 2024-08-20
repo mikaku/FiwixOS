@@ -1,0 +1,24 @@
+diff -ru nano-8.1/src/text.c nano-8.1.new/src/text.c
+--- nano-8.1/src/text.c	2024-07-01 11:15:11.000000000 +0200
++++ nano-8.1.new/src/text.c	2024-08-10 14:42:15.000000000 +0200
+@@ -2140,8 +2140,7 @@
+ 			return;
+ 		}
+ 
+-		timestamp_sec = (long)fileinfo.st_mtim.tv_sec;
+-		timestamp_nsec = (long)fileinfo.st_mtim.tv_nsec;
++		timestamp_sec = (long)fileinfo.st_mtime;
+ 	}
+ 
+ 	/* The spell checker needs the screen, so exit from curses mode. */
+@@ -2190,9 +2189,7 @@
+ 	free(arguments[0]);
+ 
+ 	/* When the temporary file wasn't touched, say so and leave. */
+-	if (timestamp_sec > 0 && stat(tempfile_name, &fileinfo) == 0 &&
+-					(long)fileinfo.st_mtim.tv_sec == timestamp_sec &&
+-					(long)fileinfo.st_mtim.tv_nsec == timestamp_nsec) {
++	if ((long)fileinfo.st_mtime == timestamp_sec) {
+ 		statusline(REMARK, _("Nothing changed"));
+ 		return;
+ 	}
