@@ -496,15 +496,3 @@ diff -ruN mandoc-1.14.6/configure.local mandoc-1.14.6.new/configure.local
 +HAVE_NANOSLEEP=1
 +HAVE_NTOHL=1
 +
-diff -ruN mandoc-1.14.6/main.c mandoc-1.14.6.new/main.c
---- mandoc-1.14.6/main.c	2021-09-23 18:03:23 +0000
-+++ mandoc-1.14.6.new/main.c	2021-11-20 09:56:27 +0000
-@@ -60,6 +60,8 @@
- #include "manconf.h"
- #include "mansearch.h"
- 
-+#define GLOB_NOMATCH	3
-+
- enum	outmode {
- 	OUTMODE_DEF = 0,
- 	OUTMODE_FLN,

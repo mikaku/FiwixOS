@@ -23,15 +23,3 @@ diff -ru popt-1.19/build-aux/config.sub popt-1.19.new/build-aux/config.sub
  	# Remember, each alternative MUST END IN *, to match a version number.
  		;;
  	qnx*)
-diff -ru popt-1.19/src/poptconfig.c popt-1.19.new/src/poptconfig.c
---- popt-1.19/src/poptconfig.c	2022-01-03 13:47:49.000000000 +0100
-+++ popt-1.19.new/src/poptconfig.c	2023-08-05 18:07:33.000000000 +0200
-@@ -18,6 +18,8 @@
- 
- #endif
- 
-+#define GLOB_NOMATCH	3
-+
- #if defined(HAVE_GLOB_H)
- #include <glob.h>
- 

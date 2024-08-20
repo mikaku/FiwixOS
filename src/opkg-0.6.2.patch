@@ -22,19 +22,9 @@ diff -ru opkg-0.6.2/libopkg/file_util.c opkg-0.6.2.new/libopkg/file_util.c
      }
  
      return ret;
-Only in opkg-0.6.2.new/libopkg: file_util.c.orig
 diff -ru opkg-0.6.2/libopkg/opkg_conf.c opkg-0.6.2.new/libopkg/opkg_conf.c
 --- opkg-0.6.2/libopkg/opkg_conf.c	2023-07-11 21:09:39 +0000
 +++ opkg-0.6.2.new/libopkg/opkg_conf.c	2023-08-06 15:50:46 +0000
-@@ -38,6 +38,8 @@
- #include "file_util.h"
- #include "xfuncs.h"
- 
-+#define GLOB_NOMATCH	3
-+
- static int lock_fd;
- 
- static opkg_conf_t _conf;
 @@ -620,7 +622,7 @@
          return -1;
      }

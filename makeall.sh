@@ -201,7 +201,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr || exit 1
+				./configure --prefix=/usr --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -410,6 +410,7 @@ EOF
 		bzip2)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
 				make || exit 1
 				make install PREFIX=${PREFIX}/usr || exit 1
 			popd
@@ -535,7 +536,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-htree --disable-nls || exit 1
+				./configure --prefix=/usr --disable-htree --disable-nls --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -545,7 +546,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-htree --disable-nls || exit 1
+				./configure --prefix=/usr --disable-htree --disable-nls --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			pushd $PREFIX
@@ -738,7 +739,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-fat --disable-ffs --disable-ufs2 --disable-reiserfs --disable-vstafs --disable-jfs --disable-xfs --disable-gunzip --disable-serial --disable-auto-linux-mem-opt --disable-packet-retransmission --without-curses || exit 1
+				./configure --prefix=/usr --disable-fat --disable-ffs --disable-ufs2 --disable-reiserfs --disable-vstafs --disable-jfs --disable-xfs --disable-gunzip --disable-serial --disable-auto-linux-mem-opt --disable-packet-retransmission --without-curses --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			pushd $PREFIX
@@ -895,7 +896,6 @@ EOF
 		logrotate)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				LIBS="-liconv" ./configure --prefix=/usr || exit 1
 				_make
 				mkdir -p ${PREFIX}/etc/cron.daily
@@ -942,7 +942,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=${PREFIX}/usr --disable-pubdir --disable-syslog --disable-nls || exit 1
+				./configure --prefix=${PREFIX}/usr --disable-pubdir --disable-syslog --disable-nls --mandir=${PREFIX}/usr/share/man || exit 1
 				_make
 			popd
 			pushd $PREFIX
@@ -962,6 +962,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				sed -i 's@INSTALL_TOP= /usr/local@INSTALL_TOP = '$PREFIX'/usr@' Makefile || exit 1
+				sed -i 's@/man/man1@/share/man/man1@' Makefile || exit 1
 				make DESTDIR=${PREFIX} generic || exit 1
 				make DESTDIR=${PREFIX} install || exit 1
 			popd
@@ -972,7 +973,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-cpu-opt || exit 1
+				./configure --prefix=/usr --disable-cpu-opt --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1028,7 +1029,7 @@ EOF
 		moe)
 			_unpack $prg-$ver l
 			pushd $prg-$ver || exit 1
-				./configure --prefix=/usr || exit 1
+				./configure --prefix=/usr --mandir=/usr/share/man --sysconfdir=/etc || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1085,7 +1086,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --with-share=no --with-debug=no || exit 1
+				./configure --prefix=/usr --with-share=no --with-debug=no --mandir=/usr/share/man || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1260,7 +1261,6 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-#				./configure --prefix=/usr --with-curses --disable-shared CPPFLAGS="-D_POSIX_VERSION" || exit 1
 				./configure --prefix=/usr --disable-shared CPPFLAGS="-D_POSIX_VERSION" || exit 1
 				_make "-D_POSIX_VERSION -DHAVE_TERMIOS_H"
 			popd
@@ -1337,7 +1337,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				sed -i 's@MANDIR  = /usr/man/man8/symlinks.8@MANDIR  = '$PREFIX'/usr/man/man8/symlinks.8@' Makefile || exit 1
+				sed -i 's@MANDIR  = /usr/man/man8/symlinks.8@MANDIR  = '$PREFIX'/usr/share/man/man8/symlinks.8@' Makefile || exit 1
 				sed -i 's@BINDIR  = /usr/local/bin@BINDIR  = '$PREFIX'/usr/bin@' Makefile || exit 1
 				_make
 			popd
@@ -1435,8 +1435,6 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				sed -i 's@MANDIR=\${PREFIX}@MANDIR=\${DESTDIR}/usr@' Makefile || exit 1
-				sed -i 's@\$(DESTDIR)@\$(DESTDIR)/usr/bin@g' Makefile || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1458,7 +1456,6 @@ EOF
 				sed -i 's@prefix = /usr/local@prefix = '$PREFIX'/usr@' unix/Makefile || exit 1
 				make -f unix/Makefile generic_gcc "LOCAL_UNZIP=-DHAVE_TERMIOS_H -D_POSIX_VERSION" || exit 1
 				make -f unix/Makefile install "LOCAL_UNZIP=-DHAVE_TERMIOS_H -D_POSIX_VERSION" || exit 1
-
 			popd
 			_pack $prg-$ver
 			rm -rf $prg$ver
@@ -1785,6 +1782,7 @@ EOF
 		zip)
 			_unpack $prg$ver z
 			pushd $prg$ver || exit 1
+				_patch $prg$ver
 				sed -i 's@prefix = /usr/local@prefix = '$PREFIX'/usr@' unix/Makefile || exit 1
 				make -f unix/Makefile generic_gcc "LOCAL_ZIP=-DHAVE_TERMIOS_H -D_POSIX_VERSION" || exit 1
 				make -f unix/Makefile install "LOCAL_ZIP=-DHAVE_TERMIOS_H -D_POSIX_VERSION" || exit 1

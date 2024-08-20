@@ -1,6 +1,6 @@
 diff -ru svgalib-1.4.3/demos/fun.c svgalib-1.4.3.new/demos/fun.c
 --- svgalib-1.4.3/demos/fun.c	2000-08-11 21:55:51.000000000 +0200
-+++ svgalib-1.4.3.new/demos/fun.c	2020-12-09 21:20:08.000000000 +0100
++++ svgalib-1.4.3.new/demos/fun.c	2024-08-19 09:03:39.000000000 +0200
 @@ -19,15 +19,15 @@
  /* This can be changed into any 256 color mode. */
  /* For planar 256 color modes, enable page flipping. */
@@ -22,7 +22,7 @@ diff -ru svgalib-1.4.3/demos/fun.c svgalib-1.4.3.new/demos/fun.c
  #define MAXCITIES 1000
 diff -ru svgalib-1.4.3/demos/lineart.c svgalib-1.4.3.new/demos/lineart.c
 --- svgalib-1.4.3/demos/lineart.c	2000-02-19 10:12:52.000000000 +0100
-+++ svgalib-1.4.3.new/demos/lineart.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/demos/lineart.c	2024-08-19 09:03:39.000000000 +0200
 @@ -19,8 +19,8 @@
    
    if(mode == 0)
@@ -36,7 +36,7 @@ diff -ru svgalib-1.4.3/demos/lineart.c svgalib-1.4.3.new/demos/lineart.c
    if(! vga_hasmode(mode)) {
 diff -ru svgalib-1.4.3/demos/Makefile svgalib-1.4.3.new/demos/Makefile
 --- svgalib-1.4.3/demos/Makefile	2000-08-06 12:30:21.000000000 +0200
-+++ svgalib-1.4.3.new/demos/Makefile	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/demos/Makefile	2024-08-19 09:03:39.000000000 +0200
 @@ -28,13 +28,7 @@
  	   svidtune linearfork vgatweak
  
@@ -53,7 +53,7 @@ diff -ru svgalib-1.4.3/demos/Makefile svgalib-1.4.3.new/demos/Makefile
  
 diff -ru svgalib-1.4.3/doc/Makefile svgalib-1.4.3.new/doc/Makefile
 --- svgalib-1.4.3/doc/Makefile	2000-08-06 12:29:12.000000000 +0200
-+++ svgalib-1.4.3.new/doc/Makefile	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/doc/Makefile	2024-08-19 09:03:39.000000000 +0200
 @@ -87,11 +87,6 @@
  endif
  
@@ -68,7 +68,7 @@ diff -ru svgalib-1.4.3/doc/Makefile svgalib-1.4.3.new/doc/Makefile
  #	-gzip -9 man?/* 2>/dev/null
 diff -ru svgalib-1.4.3/gl/inlstring.h svgalib-1.4.3.new/gl/inlstring.h
 --- svgalib-1.4.3/gl/inlstring.h	1999-09-20 20:45:31.000000000 +0200
-+++ svgalib-1.4.3.new/gl/inlstring.h	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/gl/inlstring.h	2024-08-19 09:03:39.000000000 +0200
 @@ -1,7 +1,5 @@
  /* Based on functions in linux/string.h */
  
@@ -88,7 +88,7 @@ diff -ru svgalib-1.4.3/gl/inlstring.h svgalib-1.4.3.new/gl/inlstring.h
  	       "orl %%ecx,%%eax\n\t"
 diff -ru svgalib-1.4.3/Makefile svgalib-1.4.3.new/Makefile
 --- svgalib-1.4.3/Makefile	2001-04-18 19:35:51.000000000 +0200
-+++ svgalib-1.4.3.new/Makefile	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/Makefile	2024-08-19 09:03:39.000000000 +0200
 @@ -110,10 +110,6 @@
  
  installheaders:
@@ -203,7 +203,7 @@ diff -ru svgalib-1.4.3/Makefile svgalib-1.4.3.new/Makefile
  		sharedlib/clockchip sharedlib/joystick
 diff -ru svgalib-1.4.3/Makefile.cfg svgalib-1.4.3.new/Makefile.cfg
 --- svgalib-1.4.3/Makefile.cfg	2001-05-29 16:39:13.000000000 +0200
-+++ svgalib-1.4.3.new/Makefile.cfg	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/Makefile.cfg	2024-08-19 09:05:49.000000000 +0200
 @@ -25,7 +25,7 @@
  # Common prefix for installation directories.
  # NOTE: This directory must exist when you start the install.
@@ -213,6 +213,15 @@ diff -ru svgalib-1.4.3/Makefile.cfg svgalib-1.4.3.new/Makefile.cfg
  exec_prefix = $(prefix)
  
  # Directory where the shared stubs and static library will be installed.
+@@ -44,7 +44,7 @@
+ includedir = $(prefix)/include
+ 
+ # Directory where the man files will be installed.
+-mandir = $(prefix)/man
++mandir = $(prefix)/share/man
+ 
+ # Target binary format.
+ # TARGET_FORMAT = a.out
 @@ -82,19 +82,19 @@
  # BACKGROUND = y
  
@@ -297,7 +306,7 @@ diff -ru svgalib-1.4.3/Makefile.cfg svgalib-1.4.3.new/Makefile.cfg
  # Comment out any dac support that you don't want included in the library.
 diff -ru svgalib-1.4.3/src/apm.c svgalib-1.4.3.new/src/apm.c
 --- svgalib-1.4.3/src/apm.c	2000-10-11 18:35:18.000000000 +0200
-+++ svgalib-1.4.3.new/src/apm.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/apm.c	2024-08-19 09:03:39.000000000 +0200
 @@ -151,12 +151,12 @@
     regs[APMREG_SAVE(15)] = (k >> 8)&0xff;
     regs[APMREG_SAVE(16)] = (k >> 16) & 0xff ;
@@ -319,7 +328,7 @@ diff -ru svgalib-1.4.3/src/apm.c svgalib-1.4.3.new/src/apm.c
  }
 diff -ru svgalib-1.4.3/src/joystick/joydev.h svgalib-1.4.3.new/src/joystick/joydev.h
 --- svgalib-1.4.3/src/joystick/joydev.h	1999-09-28 18:38:01.000000000 +0200
-+++ svgalib-1.4.3.new/src/joystick/joydev.h	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/joystick/joydev.h	2024-08-19 09:03:39.000000000 +0200
 @@ -1,4 +1,4 @@
 -#include <linux/version.h>
 +//#include <linux/version.h>
@@ -328,7 +337,7 @@ diff -ru svgalib-1.4.3/src/joystick/joydev.h svgalib-1.4.3.new/src/joystick/joyd
  #include <linux/joystick.h>
 diff -ru svgalib-1.4.3/src/keyboard/keyboard.c svgalib-1.4.3.new/src/keyboard/keyboard.c
 --- svgalib-1.4.3/src/keyboard/keyboard.c	2000-10-08 14:37:40.000000000 +0200
-+++ svgalib-1.4.3.new/src/keyboard/keyboard.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/keyboard/keyboard.c	2024-08-19 09:03:39.000000000 +0200
 @@ -28,11 +28,13 @@
  #include <sys/ioctl.h>
  #include <fcntl.h>
@@ -347,7 +356,7 @@ diff -ru svgalib-1.4.3/src/keyboard/keyboard.c svgalib-1.4.3.new/src/keyboard/ke
  #include <sys/stat.h>
 diff -ru svgalib-1.4.3/src/mach32.c svgalib-1.4.3.new/src/mach32.c
 --- svgalib-1.4.3/src/mach32.c	1999-09-29 18:52:14.000000000 +0200
-+++ svgalib-1.4.3.new/src/mach32.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/mach32.c	2024-08-19 09:03:39.000000000 +0200
 @@ -1268,12 +1268,9 @@
      char hstrt, hsync;
      int htotndisp, vdisp, vtotal, vstrt, vsync, clck, i;
@@ -380,7 +389,7 @@ diff -ru svgalib-1.4.3/src/mach32.c svgalib-1.4.3.new/src/mach32.c
  	if (!(eeprom_option & EEPROM_USE_MEMCFG))
 diff -ru svgalib-1.4.3/src/mouse/ms.c svgalib-1.4.3.new/src/mouse/ms.c
 --- svgalib-1.4.3/src/mouse/ms.c	2000-08-21 07:10:15.000000000 +0200
-+++ svgalib-1.4.3.new/src/mouse/ms.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/mouse/ms.c	2024-08-19 09:03:39.000000000 +0200
 @@ -459,17 +459,21 @@
  	    /* Prepare new stat: */
  
@@ -405,7 +414,7 @@ diff -ru svgalib-1.4.3/src/mouse/ms.c svgalib-1.4.3.new/src/mouse/ms.c
  	}
 diff -ru svgalib-1.4.3/src/s3.c svgalib-1.4.3.new/src/s3.c
 --- svgalib-1.4.3/src/s3.c	2000-05-03 14:23:57.000000000 +0200
-+++ svgalib-1.4.3.new/src/s3.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/s3.c	2024-08-19 09:03:39.000000000 +0200
 @@ -475,6 +475,7 @@
  	    return old_values;
  	}
@@ -416,7 +425,7 @@ diff -ru svgalib-1.4.3/src/s3.c svgalib-1.4.3.new/src/s3.c
  }
 diff -ru svgalib-1.4.3/src/vga.c svgalib-1.4.3.new/src/vga.c
 --- svgalib-1.4.3/src/vga.c	2001-05-29 16:37:55.000000000 +0200
-+++ svgalib-1.4.3.new/src/vga.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/vga.c	2024-08-19 09:03:39.000000000 +0200
 @@ -2118,9 +2118,6 @@
  	    if (WIFEXITED(child_status))
  		exit(WEXITSTATUS(child_status));
@@ -438,7 +447,7 @@ diff -ru svgalib-1.4.3/src/vga.c svgalib-1.4.3.new/src/vga.c
  	    ML_GETINT(HSyncStart);
 diff -ru svgalib-1.4.3/src/vgamisc.c svgalib-1.4.3.new/src/vgamisc.c
 --- svgalib-1.4.3/src/vgamisc.c	1999-07-27 18:36:19.000000000 +0200
-+++ svgalib-1.4.3.new/src/vgamisc.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/src/vgamisc.c	2024-08-19 09:03:39.000000000 +0200
 @@ -47,7 +47,7 @@
  }
  
@@ -469,7 +478,7 @@ diff -ru svgalib-1.4.3/src/vgamisc.c svgalib-1.4.3.new/src/vgamisc.c
  }
 diff -ru svgalib-1.4.3/threeDKit/quickmath.c svgalib-1.4.3.new/threeDKit/quickmath.c
 --- svgalib-1.4.3/threeDKit/quickmath.c	1997-10-03 20:34:13.000000000 +0200
-+++ svgalib-1.4.3.new/threeDKit/quickmath.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/threeDKit/quickmath.c	2024-08-19 09:03:39.000000000 +0200
 @@ -83,7 +83,7 @@
      return c;
  }
@@ -494,7 +503,7 @@ diff -ru svgalib-1.4.3/threeDKit/quickmath.c svgalib-1.4.3.new/threeDKit/quickma
  }
 diff -ru svgalib-1.4.3/utils/gtf/gtfcalc.c svgalib-1.4.3.new/utils/gtf/gtfcalc.c
 --- svgalib-1.4.3/utils/gtf/gtfcalc.c	1999-07-17 14:13:02.000000000 +0200
-+++ svgalib-1.4.3.new/utils/gtf/gtfcalc.c	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/utils/gtf/gtfcalc.c	2024-08-19 09:03:39.000000000 +0200
 @@ -64,7 +64,7 @@
  
  /*-------------------------- Implementation -------------------------------*/
@@ -506,7 +515,7 @@ diff -ru svgalib-1.4.3/utils/gtf/gtfcalc.c svgalib-1.4.3.new/utils/gtf/gtfcalc.c
  }
 diff -ru svgalib-1.4.3/utils/gtf/scitech.h svgalib-1.4.3.new/utils/gtf/scitech.h
 --- svgalib-1.4.3/utils/gtf/scitech.h	1999-07-09 12:47:24.000000000 +0200
-+++ svgalib-1.4.3.new/utils/gtf/scitech.h	2020-12-09 21:19:33.000000000 +0100
++++ svgalib-1.4.3.new/utils/gtf/scitech.h	2024-08-19 09:03:39.000000000 +0200
 @@ -216,7 +216,7 @@
  #endif
  
