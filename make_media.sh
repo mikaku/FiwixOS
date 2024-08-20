@@ -194,8 +194,8 @@ install_busybox() {
 		do_install_busybox $media usr/sbin chroot crond
 
 		# extract a file from a tarfile inside a tar and removing the 'dirname' part
-		gzip -dc ${SOURCE_ISO}/install/pkgs/bin/busybox_1.01_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/bin\///" -zxf - ./bin/busybox
-		#tar --transform "s/^.\/bin\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/busybox-1.01.tar.bz2 ./bin/busybox
+		gzip -dc ${BASE_DIR}/builds/busybox_1.01_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/bin\///" -zxf - ./bin/busybox
+		#tar --transform "s/^.\/bin\///" -jxf ${BASE_DIR}/builds/busybox-1.01.tar.bz2 ./bin/busybox
 		mv busybox /tmp/$media/busybox
 	else
 		echo "installing a reduced-size of Busybox ..."
@@ -211,8 +211,8 @@ install_busybox() {
 		do_install_busybox $media usr/sbin chroot
 
 		# extract a file from a tarfile inside a tar and removing the 'dirname' part
-		gzip -dc ${SOURCE_ISO}/install/pkgs/bin/busybox-mini_1.01_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/bin\///" -zxf - ./bin/busybox
-		#tar --transform "s/^.\/bin\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/busybox-mini-1.01.tar.bz2 ./bin/busybox
+		gzip -dc ${BASE_DIR}/builds/busybox-mini_1.01_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/bin\///" -zxf - ./bin/busybox
+		#tar --transform "s/^.\/bin\///" -jxf ${BASE_DIR}/builds/busybox-mini-1.01.tar.bz2 ./bin/busybox
 		mv busybox /tmp/$media/busybox
 	fi
 }
@@ -222,7 +222,7 @@ setup_grub_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2023, Jordi Sanfeliu.
+# Copyright (C) 2018-2024, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -257,7 +257,7 @@ setup_grub_initrd_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2023, Jordi Sanfeliu.
+# Copyright (C) 2018-2024, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -297,7 +297,7 @@ setup_grub_iso() {
 	mkdir -p /tmp/iso/boot/grub
 	cat > /tmp/iso/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2023, Jordi Sanfeliu.
+# Copyright (C) 2018-2024, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -322,8 +322,8 @@ EOF
 	ln -s menu.lst /tmp/iso/boot/grub/grub.conf
 
 	mkdir -p /tmp/iso/install/grub
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/grub_0.97_i386.ipk | tar -xOf - ./data.tar.gz | tar -C /tmp/iso/install/grub -zxf - ./usr/lib/grub/ ./usr/sbin/
-	#tar -C /tmp/iso/install/grub -jxf ${SOURCE_ISO}/install/pkgs/bin/grub-0.97.tar.bz2 ./usr/lib/grub/ ./usr/sbin/
+	gzip -dc ${BASE_DIR}/builds/grub_0.97_i386.ipk | tar -xOf - ./data.tar.gz | tar -C /tmp/iso/install/grub -zxf - ./usr/lib/grub/ ./usr/sbin/
+	#tar -C /tmp/iso/install/grub -jxf ${BASE_DIR}/builds/grub-0.97.tar.bz2 ./usr/lib/grub/ ./usr/sbin/
 	ln -s usr/sbin /tmp/iso/install/grub/sbin
 }
 
@@ -487,28 +487,28 @@ EOF
 
 	# extract some necessary programs for the installation
 
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/sed_4.4_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/sed
-#	tar --transform "s/^.\/usr\/bin\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/sed-4.4.tar.bz2 ./usr/bin/sed
+	gzip -dc ${BASE_DIR}/builds/sed_4.7_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/sed
+#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/sed-4.4.tar.bz2 ./usr/bin/sed
 	mv sed /tmp/iso/usr/bin
 
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/dialog_1.3-20230209_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/dialog
-#	tar --transform "s/^.\/usr\/bin\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/dialog-1.3-20230209.tar.bz2 ./usr/bin/dialog
+	gzip -dc ${BASE_DIR}/builds/dialog_1.3-20240619_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/dialog
+#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/dialog-1.3-20240619.tar.bz2 ./usr/bin/dialog
 	mv dialog /tmp/iso/usr/bin
 
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/ncurses_5.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/share\/tabset\///" -zxf - ./usr/share/tabset/vt100
-#	tar --transform "s/^.\/usr\/share\/tabset\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/ncurses-5.9.tar.bz2 ./usr/share/tabset/vt100
+	gzip -dc ${BASE_DIR}/builds/ncurses_5.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/share\/tabset\///" -zxf - ./usr/share/tabset/vt100
+#	tar --transform "s/^.\/usr\/share\/tabset\///" -jxf ${BASE_DIR}/builds/ncurses-5.9.tar.bz2 ./usr/share/tabset/vt100
 	mkdir -p /tmp/iso/usr/share/tabset
 	mv vt100 /tmp/iso/usr/share/tabset
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/ncurses_5.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/share\/terminfo\/l\///" -zxf - ./usr/share/terminfo/l/linux
-#	tar --transform "s/^.\/usr\/share\/terminfo\/l\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/ncurses-5.9.tar.bz2 ./usr/share/terminfo/l/linux
+	gzip -dc ${BASE_DIR}/builds/ncurses_5.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/share\/terminfo\/l\///" -zxf - ./usr/share/terminfo/l/linux
+#	tar --transform "s/^.\/usr\/share\/terminfo\/l\///" -jxf ${BASE_DIR}/builds/ncurses-5.9.tar.bz2 ./usr/share/terminfo/l/linux
 	mkdir -p /tmp/iso/usr/share/terminfo/l
 	mv linux /tmp/iso/usr/share/terminfo/l
 
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/e2fsprogs_1.29_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs
-#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${SOURCE_ISO}/install/pkgs/bin/e2fsprogs-1.29.tar.bz2 ./usr/sbin/mke2fs
+	gzip -dc ${BASE_DIR}/builds/e2fsprogs_1.37_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs
+#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${BASE_DIR}/builds/e2fsprogs-1.37.tar.bz2 ./usr/sbin/mke2fs
 	mv mke2fs /tmp/iso/sbin
 
-	gzip -dc ${SOURCE_ISO}/install/pkgs/bin/opkg_0.6.2_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/opkg
+	gzip -dc ${BASE_DIR}/builds/opkg_0.6.2_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/opkg
 	mv opkg /tmp/iso/usr/bin
 	mkdir -p /tmp/iso/etc/opkg
 	cat > /tmp/iso/etc/opkg/opkg.conf <<EOF
@@ -520,8 +520,16 @@ EOF
 
 	ln -s /mnt/ram/tmp /tmp/iso/tmp
 
+	# copy all packages
+	mkdir -p /tmp/iso/install/pkgs/bin/
+	cp -pr ${BASE_DIR}/builds/*.ipk /tmp/iso/install/pkgs/bin/
+	cp -pr ${BASE_DIR}/toolchain/builds/*.ipk /tmp/iso/install/pkgs/bin/
+	mkdir -p /tmp/iso/install/pkgs/src/
+	cp -pr ${BASE_DIR}/src/* /tmp/iso/install/pkgs/src/
+	mkdir -p /tmp/iso/install/pkgs/logs/
+	cp -pr ${BASE_DIR}/logs/* /tmp/iso/install/pkgs/logs/
 	# copy whole iso tree
-	cp -pr ${SOURCE_ISO}/* /tmp/iso
+	cp -pr iso/* /tmp/iso/
 	chown -R root:root /tmp/iso
 
 	echo "creating some ipk packages ..."
@@ -589,24 +597,26 @@ EOF
 # Main
 # ----------------------------------------------------------------------------
 
-# FIXME: pending to upgrade with new file structure
-echo "This version does not recognize yet the current directory tree."
-exit 0
-
-if [ $# != 3 ] ; then
-	echo "$0 <os_version> <iso_dir> <kernel_dir>"
+if [ $# != 2 ] ; then
+	echo "$0 <os_version> <kernel_dir>"
 	exit 1
 fi
 
+BASE_DIR=`pwd`
 OSVERSION=$1
-SOURCE_ISO=$2
-KERNEL_DIR=$3
+KERNEL_DIR=$2
 KERNEL_VERSION=$(grep UTS_RELEASE ${KERNEL_DIR}/include/fiwix/system.h | awk '{print $3}' | sed 's/"//g')
 
+cd base || exit 1
+
 # some checks
-[ ! -d "$KERNEL_DIR" ] && exit 1
-[ -z "$KERNEL_VERSION" ] && exit 1
-[ -f ${SOURCE_FLOPPY} ] || exit 1
+[ ! -d "$BASE_DIR/builds" ] && echo "ERROR: directory '$BASE_DIR/builds' does not exist." && exit 1
+[ ! -d "$BASE_DIR/src" ] && echo "ERROR: directory '$BASE_DIR/src' does not exist." && exit 1
+[ ! -d "$BASE_DIR/logs" ] && echo "ERROR: directory '$BASE_DIR/logs' does not exist." && exit 1
+[ ! -d "$BASE_DIR/toolchain" ] && echo "ERROR: directory '$BASE_DIR/toolchain' does not exist." && exit 1
+[ ! -d "$KERNEL_DIR" ] && echo "ERROR: directory '$KERNEL_DIR' does not exist." && exit 1
+[ -z "$KERNEL_VERSION" ] && echo "ERROR: kernel version is '$KERNEL_VERSION'." && exit 1
+[ -f ${SOURCE_FLOPPY} ] || echo "ERROR: '${SOURCE_FLOPPY}' does not exist." || exit 1
 
 make_media_setup
 

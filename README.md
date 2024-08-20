@@ -1,5 +1,5 @@
 Since Fiwix does not support networking yet, it is not able to download the
-tarballs from Internet upstreams. This repository includes all the tarballs
+upstream tarballs from Internet. This repository includes all the tarballs
 (and patches) to create the final FiwixOS packages.
 
 I use this repository to update the packages that will form the next FiwixOS
@@ -41,26 +41,25 @@ partition `/dev/hdd1`. Then format the partition with EXT2 and you are done.
 # shutdown -h 0
 ```
 
-At this point you can mount this virtual disk from your Host Operating System,
+At this point you can mount this virtual disk from your host Operating System,
 and clone this repository into it.
 
-Once you have clone it, you can boot FiwixOS again, mount the filesystem and
-you can add new packages and update the build script `makeall.sh`.
+Once you have clone it you can add new packages or update them, then boot
+FiwixOS and mount the filesystem to build the packages with the script
+`makeall.sh`.
 
 This repository also includes the GNU Toolchain and the Newlib C library into
-the `toolchain/` directory.
-
-Use the script `make-toolchain.sh` to build the packages Binutils, GCC and
-the Newlib C library.
+the `toolchain/` directory. Use the script `make-toolchain.sh` to build the
+whole Toolchain.
 
 
 Building the media files
 ------------------------
-- `install.sh` is the installation script that comes with the Installation
+- `base/install.sh` is the installation script that comes with the Installation
   CD-ROM. This is the script that is used to install FiwixOS in your computer.
 
 - `make_media.sh` is the script intended to be run under `root` to create the
   final FiwixOS media.
 
-  Example: `./make_media.sh 3.3 /path/to/iso /path/to/fiwix/source/code`
+  Example: `./make_media.sh 3.3 /path/to/fiwix/source/code`
 
