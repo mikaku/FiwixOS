@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # FiwixOS _VERSION_ installation script.
-# Copyright 2018-2023, Jordi Sanfeliu. All rights reserved.
+# Copyright 2018-2024, Jordi Sanfeliu. All rights reserved.
 # Distributed under the terms of the Fiwix License.
 #
 
@@ -97,7 +97,7 @@ welcome() {
 	echo "			to the installation of FiwixOS $OSVERSION"
 	echo "			    for the i386 architecture"
 	echo
-	echo "		    Copyright (c) 2018-2023 by Jordi Sanfeliu"
+	echo "		    Copyright (c) 2018-2024 by Jordi Sanfeliu"
 	echo "			      <jordi@fibranet.cat>"
 	echo
 	echo
@@ -574,7 +574,7 @@ make_root_fs() {
 	else
 		(echo t ; echo $nump ; echo 83 ; echo w) | /busybox fdisk $TARGET >$CONSOLE 2>$CONSOLE || error || exit 1
 	fi
-	system "$SOURCE/sbin/mke2fs -q -r 0 -b 1024 ${TARGET}${nump}" || error || exit 1
+	system "$SOURCE/sbin/mke2fs -q -r 0 $blksize ${TARGET}${nump}" || error || exit 1
 }
 
 make_home_fs() {
@@ -583,7 +583,7 @@ make_home_fs() {
 
 		nump=$(expr $nump + 1)
 		(echo t ; echo $nump ; echo 83 ; echo w) | /busybox fdisk $TARGET >$CONSOLE 2>$CONSOLE || error || exit 1
-		system "$SOURCE/sbin/mke2fs -q -r 0 -b 1024 ${TARGET}${nump}" || error || exit 1
+		system "$SOURCE/sbin/mke2fs -q -r 0 $blksize ${TARGET}${nump}" || error || exit 1
 		nump=$(expr $nump - 1)
 	fi
 }
@@ -1049,7 +1049,7 @@ EOF
 # menu.lst generated during the FiwixOS installation
 #
 # FiwixOS
-# Copyright (C) 2018-2023 Jordi Sanfeliu <jordi@fibranet.cat>
+# Copyright (C) 2018-2024 Jordi Sanfeliu <jordi@fibranet.cat>
 #
 # GRUB configuration file
 #
@@ -1137,6 +1137,7 @@ nump=
 progress=
 pass=1
 software=
+blksize=$1
 
 $BRIGHT ; $BGBLUE
 scroll ; welcome
