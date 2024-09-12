@@ -12,7 +12,6 @@ extern "C" {
 #include <sys/types.h>
 #include <sys/_types.h>
 #include <stddef.h>
-#include <bits/posix_opt.h>
 
 extern char **environ;
 
@@ -25,7 +24,6 @@ extern char **environ;
  *    - added the prototype for 'truncate64'.
  *    - added the prototype for 'ftruncate64'.
  *    - added the prototype for 'chown32'.
- *    - included the header 'bits/posix_opt.h'.
  */
 extern char **__argv;
 extern char *__progname;
