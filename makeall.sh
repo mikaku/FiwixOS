@@ -651,6 +651,16 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		freetype)
+			_unpack $prg-$ver J
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr --mandir=/usr/share/man || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		gawk)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -687,7 +697,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				LIBS="-llzma -lz" ./configure --prefix=/usr || exit 1
+				LIBS="-llzma -lz" ./configure --prefix=/usr --disable-freetype || exit 1
 				_make
 			popd
 			_pack $prg-$ver
@@ -1887,6 +1897,7 @@ build expat 2.5.0 i386 "" "An XML parser library"
 build file 5.45 i386 "" "Utility for determining file types"
 build findutils 4.4.2 i386 "" "The GNU versions of find utilities (find and xargs)"
 build flex 2.6.4 i386 "" "A tool for generating scanners (text pattern recognizers)"
+build freetype 2.10.4 i386 "" "A free and portable font rendering engine"
 build gawk 3.1.8 i386 "" "The GNU version of the AWK text processing utility"
 #build global 6.6.10 i386 "" "Source code tag system"
 build global 6.6.13 i386 "" "Source code tag system"
