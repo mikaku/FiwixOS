@@ -697,6 +697,9 @@ create_devices() {
 
 	makedev lp0 c 6 0 660 lp
 
+	makedev psaux c 10 1 660 root
+	ln -s /dev/psaux dev/mouse
+
 	ln -s /proc/self/fd dev/fd
 	ln -s /proc/self/fd/0 dev/stdin
 	ln -s /proc/self/fd/1 dev/stdout
