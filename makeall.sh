@@ -1332,8 +1332,12 @@ EOF
 			mkdir -p ${PREFIX}/usr/share/man
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
+				# this is needed to have a decent mouse under SVGA (320x200)
+				sed -i 's/^mouse Microsoft/mouse IMPS2/' src/config/libvga.config || exit 1
+				sed -i 's/^mouse_accel_type\tpower/# mouse_accel_type\tpower/' src/config/libvga.config || exit 1
+				sed -i 's/^# mouse_accel_type\toff/mouse_accel_type\toff/' src/config/libvga.config || exit 1
 				# this is needed to make lxdoom happy
-				sed -i 's/# chipset VGA/chipset VGA/' src/config/libvga.config || exit 1
+				sed -i 's/^# chipset VGA/chipset VGA/' src/config/libvga.config || exit 1
 				make static || exit 1
 				make install TOPDIR=${PREFIX} || exit 1
 				make demoprogs || exit 1
