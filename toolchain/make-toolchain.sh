@@ -1,7 +1,7 @@
 #!/bin/sh
 #
-# FiwixOS 3.3
-# Copyright 2018-2023, Jordi Sanfeliu. All rights reserved.
+# FiwixOS 3.4
+# Copyright 2018-2024, Jordi Sanfeliu. All rights reserved.
 # Distributed under the terms of the Fiwix License.
 #
 # GNU toolchain building script (with newlib) for the i386-pc-fiwix platform.
@@ -35,6 +35,12 @@ _opkg() {
 	deps=$4
 	desc=$5
 	name="$prg-$ver"
+	filename="${prg}_${ver}_$arch.ipk"
+
+	if [ -f $filename ] ; then
+		echo "File '$filename' already exists."
+		return
+	fi
 
 	rm -rf $name
 	mkdir $name
@@ -53,9 +59,9 @@ Depends: $deps
 EOF
 		tar zcf control.tar.gz control
 		echo 2.0 > debian-binary
-		tar zcf ../${prg}_${ver}_$arch.ipk . || exit 1
+		tar zcf ../$filename . || exit 1
 	popd
-	echo "${prg}_${ver}_$arch.ipk"
+	echo "$filename"
 	rm -rf $name
 	sync
 }
@@ -178,6 +184,7 @@ build_gcc() {
 
 	# at this point we need to pack gcc
 	pushd $PREFIX || error
+		rm -f ./usr/bin/i386-pc-fiwix-*
 		tar jcvf ../builds/${GCC}.tar.bz2 . | tee -a ../$LOG
 	popd
 
@@ -300,7 +307,6 @@ build_libstdc() {
 	echo | tee -a ${LOG}
 	echo -e '\007'
 }
-
 
 # Main
 # ----------------------------------------------------------------------------
