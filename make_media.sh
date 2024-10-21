@@ -511,9 +511,10 @@ EOF
 	mkdir -p /tmp/iso/usr/share/terminfo/l
 	mv linux /tmp/iso/usr/share/terminfo/l
 
-	gzip -dc ${BASE_DIR}/builds/e2fsprogs_1.37_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs
-#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${BASE_DIR}/builds/e2fsprogs-1.37.tar.bz2 ./usr/sbin/mke2fs
-	mv mke2fs /tmp/iso/sbin
+	gzip -dc ${BASE_DIR}/builds/e2fsprogs_1.37_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
+#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${BASE_DIR}/builds/e2fsprogs-1.37.tar.bz2 ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
+	mv mke2fs e2fsck debugfs tune2fs /tmp/iso/sbin
+	ln -s /sbin/e2fsck /tmp/iso/sbin/fsck.ext2
 
 	gzip -dc ${BASE_DIR}/builds/opkg_0.6.2_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/opkg
 	mv opkg /tmp/iso/usr/bin
