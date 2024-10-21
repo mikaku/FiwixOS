@@ -147,14 +147,21 @@ create_devices() {
 	makedev $media tty10 c 4 10
 	makedev $media tty11 c 4 11
 	makedev $media tty12 c 4 12
+	makedev $media ttyS0 c 4 64
+	makedev $media ttyS1 c 4 65
+	makedev $media ttyS2 c 4 66
+	makedev $media ttyS3 c 4 67
+
+	makedev $media lp0 c 6 0
+
+	makedev $media psaux c 10 1
+	ln -s /dev/psaux /tmp/$media/dev/mouse
 
 	ln -s /proc/self/fd /tmp/$media/dev/fd
 	ln -s /proc/self/fd/0 /tmp/$media/dev/stdin
 	ln -s /proc/self/fd/1 /tmp/$media/dev/stdout
 	ln -s /proc/self/fd/2 /tmp/$media/dev/stderr
 
-	echo "creating fifo devices ..."
-	mkfifo /tmp/$media/dev/fifo
 	sync
 }
 
