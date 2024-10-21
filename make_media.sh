@@ -533,8 +533,8 @@ EOF
 	cp -pr ${BASE_DIR}/toolchain/builds/*.ipk /tmp/iso/install/pkgs/bin/
 	mkdir -p /tmp/iso/install/pkgs/src/
 	cp -pr ${BASE_DIR}/src/* /tmp/iso/install/pkgs/src/
-	mkdir -p /tmp/iso/install/pkgs/logs/
-	cp -pr ${BASE_DIR}/logs/* /tmp/iso/install/pkgs/logs/
+	mkdir -p /tmp/iso/install/pkgs/buildlogs/
+	cp -pr ${BASE_DIR}/logs/* /tmp/iso/install/pkgs/buildlogs/
 	# copy whole iso tree
 	cp -pr iso/* /tmp/iso/
 	chown -R root:root /tmp/iso
