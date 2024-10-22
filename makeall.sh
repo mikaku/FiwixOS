@@ -59,6 +59,11 @@ _opkg() {
 		vercond=$(echo $ver | sed 's/\.//')
 		prg=${prg}${vercond}
 	fi
+	# 'automake-1.11.1' exception
+	if [ "${prg}-${ver}" = "automake-1.11.1" ] ; then
+		vercond=$(echo $ver | sed 's/\.//g')
+		prg=${prg}${vercond}
+	fi
 
 	name="$prg-$ver"
 	pushd $PREFIX
@@ -349,13 +354,30 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		automake)
-			_unpack $prg-$ver J
-			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
-				./configure --prefix=/usr || exit 1
-				_make
-			popd
+		automake|automake1111)
+			if [ "$prg" = "automake1111" ] ; then
+				prg="automake"
+				_unpack $prg-$ver z
+				pushd $prg-$ver || exit 1
+					_patch $prg-$ver
+					./configure --prefix=/usr --program-suffix=-1.11.1 || exit 1
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/automake-1.11.1"
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/automake-1.11.1" install
+				popd
+				pushd $PREFIX
+					rm -rf usr/share/info usr/share/man usr/share/doc/ usr/share/local
+				popd
+				rm -rf "${prg}-${ver}"
+				vercond=$(echo $ver | sed 's/\.//g')
+				prg=${prg}${vercond}
+			else
+				_unpack $prg-$ver J
+				pushd $prg-$ver || exit 1
+					_patch $prg-$ver
+					./configure --prefix=/usr || exit 1
+					_make
+				popd
+			fi
 			_pack $prg-$ver
 			;;
 
@@ -1145,6 +1167,45 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		newlib)
+			# untar binutils and rename all binaries to avoid complaints
+			pushd $PREFIX
+				tar jxf ../builds/binutils-*.tar.bz2
+				pushd usr/bin
+					for file in * ; do mv $file i386-fiwix-$file ; done
+				popd
+			popd
+			_unpack $prg-$ver z
+			pushd $prg-$ver
+				_patch $prg-$ver
+				_patch $prg-$ver-fiwix
+				pushd newlib
+					autoreconf || exit 1
+				popd
+				./configure \
+					--target="i386-fiwix" \
+					--host=i386 \
+					--prefix=/usr \
+					--with-arch=i386 \
+					--enable-libstdcxx \
+					--enable-newlib-io-c99-formats \
+					--enable-newlib-long-time_t || exit 1
+				make DESTDIR=${PREFIX} all
+				make DESTDIR=${PREFIX} install
+			popd
+			pushd $PREFIX
+				sed -i 's/_Noreturn/__attribute__((__noreturn__))/' usr/i386-fiwix/include/stdlib.h
+				# remove spawn.h since is not provided by Newlib and its functions confuses autotools
+				rm -f usr/i386-fiwix/include/spawn.h
+				# relocate some files and remove binutils files
+				pushd usr
+					mv i386-fiwix/include i386-fiwix/lib i386-pc-fiwix/
+					rm -rf bin i386-fiwix include lib share
+				popd
+			popd
+			_pack $prg-$ver
+			;;
+
 		newt)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -1888,6 +1949,7 @@ build aalib 1.4.0 i386 "" "ASCII art library"
 build at 3.1.23 i386 "" "Job spooling tools"
 build autoconf264 2.64 noarch "" "A GNU tool for automatically configuring source code"
 build autoconf 2.69 noarch "" "A GNU tool for automatically configuring source code"
+build automake1111 1.11.1 noarch "autoconf264" "A GNU tool for automatically creating Makefiles"
 build automake 1.15.1 noarch "" "A GNU tool for automatically creating Makefiles"
 build bash 4.4.18 i386 "" "The GNU Bourne Again shell"
 build bc 1.07.1 i386 "" "GNU's bc (a numeric processing language) and dc (a calculator)"
