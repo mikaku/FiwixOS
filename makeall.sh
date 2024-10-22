@@ -54,6 +54,12 @@ _opkg() {
 	deps="$4"
 	desc="$5"
 
+	# 'autoconf-2.64' exception
+	if [ "${prg}-${ver}" = "autoconf-2.64" ] ; then
+		vercond=$(echo $ver | sed 's/\.//')
+		prg=${prg}${vercond}
+	fi
+
 	name="$prg-$ver"
 	pushd $PREFIX
 		if [ -z "$arch" ] ; then
@@ -316,13 +322,30 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		autoconf)
-			_unpack $prg-$ver J
-			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
-				./configure --prefix=/usr || exit 1
-				_make
-			popd
+		autoconf|autoconf264)
+			if [ "$prg" = "autoconf264" ] ; then
+				prg="autoconf"
+				_unpack $prg-$ver z
+				pushd $prg-$ver || exit 1
+					_patch $prg-$ver
+					./configure --prefix=/usr --program-suffix=-2.64 || exit 1
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/autoconf-2.64"
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/autoconf-2.64" install
+				popd
+				pushd $PREFIX
+					rm -rf usr/share/info usr/share/man
+				popd
+				rm -rf "${prg}-${ver}"
+				vercond=$(echo $ver | sed 's/\.//')
+				prg=${prg}${vercond}
+			else
+				_unpack $prg-$ver J
+				pushd $prg-$ver || exit 1
+					_patch $prg-$ver
+					./configure --prefix=/usr || exit 1
+					_make
+				popd
+			fi
 			_pack $prg-$ver
 			;;
 
@@ -1863,8 +1886,9 @@ build Python 3.6.15 i386 "" "Python 3.6 interpreter"
 build SDL 1.2.15 i386 "" "Cross-platform multimedia library"
 build aalib 1.4.0 i386 "" "ASCII art library"
 build at 3.1.23 i386 "" "Job spooling tools"
-build autoconf 2.69 i386 "" "A GNU tool for automatically configuring source code"
-build automake 1.15.1 i386 "" "A GNU tool for automatically creating Makefiles"
+build autoconf264 2.64 noarch "" "A GNU tool for automatically configuring source code"
+build autoconf 2.69 noarch "" "A GNU tool for automatically configuring source code"
+build automake 1.15.1 noarch "" "A GNU tool for automatically creating Makefiles"
 build bash 4.4.18 i386 "" "The GNU Bourne Again shell"
 build bc 1.07.1 i386 "" "GNU's bc (a numeric processing language) and dc (a calculator)"
 build busybox 1.01 i386 "" "Statically linked binary providing simplified versions of system commands"
