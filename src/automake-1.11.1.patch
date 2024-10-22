@@ -1,0 +1,26 @@
+diff -ru automake-1.11.1/lib/config.guess automake-1.11.1.ok/lib/config.guess
+--- automake-1.11.1/lib/config.guess	2009-12-08 18:15:40 +0000
++++ automake-1.11.1.ok/lib/config.guess	2018-05-20 18:44:08 +0000
+@@ -1299,6 +1299,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru automake-1.11.1/lib/config.sub automake-1.11.1.ok/lib/config.sub
+--- automake-1.11.1/lib/config.sub	2009-12-08 18:15:40 +0000
++++ automake-1.11.1.ok/lib/config.sub	2018-05-20 18:44:24 +0000
+@@ -1302,7 +1302,8 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
++	      | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
