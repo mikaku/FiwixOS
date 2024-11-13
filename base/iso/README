@@ -1,8 +1,8 @@
-Welcome to FiwixOS 3.3
+Welcome to FiwixOS _VERSION_
 ==============================================================================
-FiwixOS 3.3 is a Fiwix distribution, an operating system made from a software
+FiwixOS is a Fiwix distribution, an operating system made from a software
 collection that is based upon the Fiwix kernel. It basically comprises the
-Fiwix kernel, GNU tools, libraries and additional software.
+Fiwix kernel, the GNU Toolchain, libraries and additional software.
 
 Fiwix is an operating system kernel, written by Jordi Sanfeliu from scratch,
 based on the UNIX architecture and fully focused on being POSIX compatible. It
@@ -10,7 +10,7 @@ is designed and developed mainly as a hobby OS but also for educational
 purposes.
 
 In this operating system you will find a list of ported packages natively
-compiled to run on FiwixOS 3.3 for the i386 architecture.  Unfortunately and
+compiled to run on FiwixOS _VERSION_ for the i386 architecture.  Unfortunately and
 due to some lacks in either the Fiwix kernel and in the Newlib C library, it
 wasn't possible to port some necessary (GNU) packages to create an even more
 decent UNIX-like system.  That's the reason why I've included the Busybox tool,
@@ -32,81 +32,85 @@ Python-3.6.15
 SDL-1.2.15
 aalib-1.4.0
 at-3.1.23
+autoconf264-2.64
 autoconf-2.69
+automake1111-1.11.1
 automake-1.15.1
 bash-4.4.18
 bc-1.07.1
 binutils-2.25.1
 busybox-1.01
-byacc-20230521
+byacc-20240109
 bzip2-1.0.8
 chkconfig-1.3.30.2
 coreutils-9.1
-cpio-2.14
+cpio-2.15
 dash-0.5.12
-ddrescue-1.25
-dialog-1.3-20230209
-diffstat-1.65
-diffutils-3.6
-dmidecode-2.12
-dos2unix-7.5.0
-e2fsprogs-1.29
+ddrescue-1.28
+dialog-1.3-20240619
+diffstat-1.66
+diffutils-3.10
+dmidecode-3.6
+dos2unix-7.5.2
+e2fsprogs-1.37
+e2fsprogs-libs-1.37
 e3-2.7.1
-ed-1.19
+ed-1.20.2
 enscript-1.6.6
 expat-2.5.0
-file-5.41
+file-5.45
 findutils-4.4.2
 flex-2.6.4
+freetype-2.10.4
 gawk-3.1.8
 gcc-4.7.4
-gcc-libstdc++-4.7.4
-global-6.6.10
+global-6.6.13
 gmp-6.2.1
 gnu-ghostscript-9.14.1
 gnuit-4.9.5
 gperf-3.1
-grep-3.8
-groff-1.22.4
+grep-3.11
+groff-1.23.0
 grub-0.97
-gsl-2.7.1
-gzip-1.12
+gsl-2.8
+gzip-1.13
 indent-2.2.12
-jpeg-9e
-lcms2-2.15
-less-633
-libarchive-3.6.2
-libffi-3.4.4
+jpeg-9f
+lcms2-2.16
+less-661
+libarchive-3.7.4
+libffi-3.4.6
 libiconv-1.17
-libpng-1.6.37
+libpng-1.6.43
+libstdc++-4.7.4
 libtool-2.4.7
-libuuid-1.0.3
-libxcrypt-4.4.33
+libxcrypt-4.4.36
 libxml2-v2.9.14
 libxslt-v1.1.34
-logrotate-3.21.0
+logrotate-3.22.0
 lookbusy-1.4
 lrzsz-0.12.14
-lua-5.4.6
+lua-5.4.7
 lxdoom-1.4.4
-lzip-1.23
+lzip-1.24.1
 m4-1.4.18
 make-4.2.1
 mandoc-1.14.6
 mingetty-1.08
-mpc-1.1.0
-mpfr-3.1.6
-nano-4.9.3
-nasm-2.16.01
-ncompress-4.2.4.6
+moe-1.14
+mpc-1.3.1
+mpfr-4.2.1
+nano-8.1
+nasm-2.16.03
+ncompress-5.0
 ncurses-5.9
-ncurses-examples-20180127
-newlib-4.2.0
+ncurses-examples-20211021
+newlib-4.4.0.20231231
 newt-r0-52-23
 openjpeg-1.5.2
 opkg-0.6.2
 patch-2.7.6
-pciutils-3.8.0
+pciutils-3.13.0
 pcre-8.45
 perl-5.20.3
 picocom-3.1
@@ -115,26 +119,26 @@ popt-1.19
 procps-3.2.8
 pwgen-2.08
 readline-7.0
-sed-4.4
+sed-4.7
 sharutils-4.15.2
 slang-2.3.3
-stress-1.0.4
+stress-1.0.7
 svgalib-1.4.3
 symlinks-1.4.3
-sysvinit-2.84
-tar-1.34
+sysvinit-2.87dsf
+tar-1.35
 termcap-1.3.1
 texinfo-5.2
-tiff-4.4.0
+tiff-4.5.1
 time-1.9
 tmpwatch-2.11
 tree-2.1.1
-units-2.22
+units-2.23
 unzip-60
 util-linux-ng-2.17
 vim-7.4
 vixie-cron-4.1
-vttest-20230201
+vttest-20240218
 wdiff-1.2.2
 which-2.21
 xml2-0.5
@@ -143,7 +147,7 @@ xz-5.0.8
 zgv-5.9
 zile-2.3.24
 zip-30
-zlib-1.2.13
+zlib-1.3.1
 
 The Fiwix kernel headers are also installed by default under the directory
 /usr/include/fiwix. They should be useful to build specific programs.

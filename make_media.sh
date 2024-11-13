@@ -531,7 +531,6 @@ EOF
 	# copy all packages
 	mkdir -p /tmp/iso/install/pkgs/bin/
 	cp -pr ${BASE_DIR}/builds/*.ipk /tmp/iso/install/pkgs/bin/
-	cp -pr ${BASE_DIR}/toolchain/builds/*.ipk /tmp/iso/install/pkgs/bin/
 	mkdir -p /tmp/iso/install/pkgs/src/
 	cp -pr ${BASE_DIR}/src/* /tmp/iso/install/pkgs/src/
 	mkdir -p /tmp/iso/install/pkgs/buildlogs/
@@ -574,6 +573,7 @@ EOF
 
 	mv /tmp/iso/README /tmp/iso/install
 	mv /tmp/iso/LICENSE /tmp/iso/install
+	sed -i 's/_VERSION_/'$OSVERSION'/' /tmp/iso/install/README /tmp/iso/install/LICENSE
 
 	kernel_packages
 
