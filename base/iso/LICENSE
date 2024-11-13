@@ -1,11 +1,11 @@
-FiwixOS 3.3 for the i386 architecture.
-Copyright 2018-2023, Jordi Sanfeliu.
+FiwixOS _VERSION_ for the i386 architecture.
+Copyright 2018-2024, Jordi Sanfeliu.
 The kernel is distributed under the terms of the Fiwix License.
 All rights reserved.
 
 This Installation CD-ROM includes the original upstream source code
 and the license of every single package installed in the system.
 
-FiwixOS 3.3 comes with ABSOLUTELY NO WARRANTY.
+FiwixOS _VERSION_ comes with ABSOLUTELY NO WARRANTY.
         *** USE AT YOUR OWN RISK! ***
 
