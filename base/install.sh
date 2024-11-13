@@ -22,9 +22,13 @@ DEFAULT="echo -en \\033[m"	# \\033[0;39m
 REVERSE="echo -en \\033[7m"
 BRIGHT="echo -en \\033[1;39m"
 
-DIALOG="dialog --ascii-lines --no-collapse"
-HEADER="FiwixOS $OSVERSION Installation"
+COLUMNS=80
 LINES=24
+
+DIALOG="dialog --ascii-lines --no-collapse"
+TITLE="FiwixOS $OSVERSION Installation"
+#HEADER=$(printf "${TITLE}%$((${COLUMNS}-${#TITLE}-2))s\n" "$(date)")
+HEADER=$TITLE
 CONSOLE="/dev/tty12"
 keymap=
 BOOTDEV=$(df / | grep dev | awk '{print $1}')
