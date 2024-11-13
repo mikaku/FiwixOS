@@ -98,7 +98,12 @@ EOF
 _pack() {
 	name=$1
 	extrargs=$2
-	rm -rf $name
+	remove=$3
+
+	if [ "$remove" != "NOTREMOVE" ] ; then
+		rm -rf $name
+	fi
+
 	pushd $PREFIX
 		# Bash regex to exclude 'e3-x.y.z' package
                 if ! [[ "$name" =~ ^e3-.*$ ]] ; then
@@ -1167,45 +1172,6 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		newlib)
-			# untar binutils and rename all binaries to avoid complaints
-			pushd $PREFIX
-				tar jxf ../builds/binutils-*.tar.bz2
-				pushd usr/bin
-					for file in * ; do mv $file i386-fiwix-$file ; done
-				popd
-			popd
-			_unpack $prg-$ver z
-			pushd $prg-$ver
-				_patch $prg-$ver
-				_patch $prg-$ver-fiwix
-				pushd newlib
-					autoreconf || exit 1
-				popd
-				./configure \
-					--target="i386-fiwix" \
-					--host=i386 \
-					--prefix=/usr \
-					--with-arch=i386 \
-					--enable-libstdcxx \
-					--enable-newlib-io-c99-formats \
-					--enable-newlib-long-time_t || exit 1
-				make DESTDIR=${PREFIX} all
-				make DESTDIR=${PREFIX} install
-			popd
-			pushd $PREFIX
-				sed -i 's/_Noreturn/__attribute__((__noreturn__))/' usr/i386-fiwix/include/stdlib.h
-				# remove spawn.h since is not provided by Newlib and its functions confuses autotools
-				rm -f usr/i386-fiwix/include/spawn.h
-				# relocate some files and remove binutils files
-				pushd usr
-					mv i386-fiwix/include i386-fiwix/lib i386-pc-fiwix/
-					rm -rf bin i386-fiwix include lib share
-				popd
-			popd
-			_pack $prg-$ver
-			;;
-
 		newt)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -1899,6 +1865,135 @@ EOF
 			_pack $prg-$ver
 			;;
 
+
+		# Toolchain
+		binutils)
+			_unpack $prg-$ver j
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				pushd ld
+					AUTOCONF="autoconf-2.64" automake-1.11.1 || exit 1
+				popd
+				CFLAGS="-march=i386 -s" CXXFLAGS="-march=i386" ./configure \
+					--prefix=/usr \
+					--with-arch=i386 \
+					--with-build-sysroot=/ \
+					--with-sysroot=/ \
+					--disable-multilib \
+					--disable-nls \
+					--disable-werror \
+					--disable-shared || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
+		gcc)
+			_unpack $prg-$ver j
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				pushd libstdc++-v3
+					autoconf-2.64 || exit 1
+				popd
+				CFLAGS="-march=i386 -s" CXXFLAGS="-march=i386" ./configure \
+					--prefix=/usr \
+					--with-arch=i386 \
+					--with-gmp=/ \
+					--with-mpfr=/ \
+					--with-mpc=/ \
+					--enable-languages=c,c++ \
+					--disable-lto \
+					--disable-shared \
+					--disable-multilib \
+					--with-newlib \
+					--disable-nls \
+					--disable-bootstrap \
+					--disable-libstdcxx-pch \
+					--disable-werror || exit 1
+				make DESTDIR=${PREFIX} all-gcc
+				make DESTDIR=${PREFIX} install-gcc
+				make DESTDIR=${PREFIX} all-target-libgcc
+				make DESTDIR=${PREFIX} install-target-libgcc
+			popd
+			ln -s /usr/bin/gcc ${PREFIX}/usr/bin/cc
+			pushd $PREFIX
+				rm -f usr/lib/gcc/i386-pc-fiwix/$ver/include-fixed/limits.h
+				rm -f usr/bin/i386-pc-fiwix-*
+			popd
+			_pack $prg-$ver "" NOTREMOVE
+			;;
+
+		newlib)
+			# untar previous packages
+			pushd $PREFIX
+				tar jxf ../builds/gcc-*.tar.bz2
+				tar jxf ../builds/binutils-*.tar.bz2
+				pushd usr/bin
+					for file in * ; do mv $file i386-fiwix-$file ; done
+				popd
+			popd
+			_unpack $prg-$ver z
+			pushd $prg-$ver
+				_patch $prg-$ver
+				_patch $prg-$ver-fiwix
+				pushd newlib
+					autoreconf || exit 1
+				popd
+				./configure \
+					--target="i386-fiwix" \
+					--host=i386 \
+					--prefix=/usr \
+					--with-arch=i386 \
+					--enable-libstdcxx \
+					--enable-newlib-io-c99-formats \
+					--enable-newlib-long-time_t || exit 1
+				make DESTDIR=${PREFIX} all
+				make DESTDIR=${PREFIX} install
+			popd
+			pushd $PREFIX
+				sed -i 's/_Noreturn/__attribute__((__noreturn__))/' usr/i386-fiwix/include/stdlib.h
+				# remove spawn.h since is not provided by Newlib and its functions confuses autotools
+				rm -f usr/i386-fiwix/include/spawn.h
+				# relocate some files and remove binutils files
+				mv usr/i386-fiwix/include usr/i386-pc-fiwix
+				mv usr/i386-fiwix/lib/* usr/i386-pc-fiwix/lib
+				rm -rf usr/i386-pc-fiwix/lib/ldscripts usr/libexec/
+				rm -rf usr/i386-pc-fiwix/bin
+				rm -rf usr/bin usr/i386-fiwix usr/include usr/lib usr/share
+			popd
+			_pack $prg-$ver "" NOTREMOVE
+			;;
+
+		libstdc++)
+			# untar previous packages
+			pushd $PREFIX
+				tar jxf ../builds/gcc-*.tar.bz2
+				tar jxf ../builds/binutils-*.tar.bz2
+				tar jxf ../builds/newlib-*.tar.bz2
+			popd
+			pushd gcc-$ver || exit 1
+				rm -rf i386-pc-fiwix/libquadmath
+				rm -rf i386-pc-fiwix/libssp
+				rm -rf i386-pc-fiwix/libstdc++-v3
+				ln -sf ../newlib-4.4.0.20231231/newlib .
+				ln -sf ../newlib-4.4.0.20231231/libgloss .
+				make DESTDIR=${PREFIX} all-target-libstdc++-v3
+				make DESTDIR=${PREFIX} all-target-libssp
+				make DESTDIR=${PREFIX} all-target-libquadmath
+				make DESTDIR=${PREFIX} install all-target-libstdc++-v3
+				make DESTDIR=${PREFIX} install all-target-libssp
+				make DESTDIR=${PREFIX} install all-target-libquadmath
+			popd
+			pushd $PREFIX
+				rm -f usr/lib/gcc/i386-pc-fiwix/$ver/include-fixed/limits.h
+				rm -rf usr/lib/gcc/i386-pc-fiwix/$ver/include/ssp/
+				rm -rf usr/bin
+				rm -rf usr/i386-pc-fiwix/
+			popd
+			rm -rf gcc-$ver newlib-*
+			_pack $prg-$ver
+			;;
+
 	esac
 	) 2>&1 | tee -a ${LOGS}/$prg.buildlog
 
@@ -2060,6 +2155,13 @@ build zgv 5.9 i386 "" "Picture viewer for SVGAlib"
 build zile 2.3.24 i386 "" "Zile Is Lossy Emacs"
 build zip 30 i386 "" "A file compression and packaging utility compatible with PKZIP"
 build zlib 1.3.1 i386 "" "Compression and decompression library"
+
+# Toolchain
+build binutils 2.25.1 i386 "automake1111" "A GNU collection of binary utilities"
+build gcc 4.7.4 i386 "autoconf264" "GNU Compiler Collection (C, C++, Objective-C, ...)"
+build newlib 4.4.0.20231231 i386 "gcc" "A Standard C Library implementation intended for use on embedded systems"
+build libstdc++ 4.7.4 i386 "gcc" "GNU Standard C++ Library"
+
 echo
 echo "DONE."
 exit
