@@ -711,9 +711,6 @@ create_devices() {
 
 	makedev fb0 c 29 0 660 root
 	ln -s /dev/fb0 dev/fb
-
-	mkfifo dev/fifo
-	chmod 666 dev/fifo
 }
 
 create_system_dirs() {
@@ -899,25 +896,25 @@ EOF
 	nump=1
 	if [ "$separateboot" = 0 ] ; then
 		cat <<EOF >etc/fstab
-${TARGET}${nump}	/boot	ext2	ro,defaults	0 0
+${TARGET}${nump}	/boot		ext2	ro,defaults	0 0
 EOF
 		nump=$(expr $nump + 1)
 	fi
 
 
 	cat <<EOF >>etc/fstab
-${TARGET}${nump}	/	ext2	defaults	1 1
+${TARGET}${nump}	/		ext2	defaults	1 1
 EOF
 	nump=$(expr $nump + 1)
 
 	if [ "$nparts" -gt 2 ] ; then
 		cat <<EOF >>etc/fstab
-${TARGET}${nump}	/home	ext2	rw,defaults	0 0
+${TARGET}${nump}	/home		ext2	rw,defaults	0 0
 EOF
 	fi
 
 	cat <<EOF >>etc/fstab
-none		/proc	proc	defaults,noauto	0 0
+none		/proc		proc	defaults,noauto	0 0
 EOF
 
 	cat <<EOF >>etc/motd
