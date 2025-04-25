@@ -699,6 +699,9 @@ create_devices() {
 	makedev ttyS2 c 4 66 660 root
 	makedev ttyS3 c 4 67 660 root
 
+	makedev ptmx c 5 2 666 tty
+	mkdir dev/pts ; chmod 755 dev/pts
+
 	makedev lp0 c 6 0 660 lp
 
 	makedev psaux c 10 1 660 root
@@ -915,6 +918,7 @@ EOF
 
 	cat <<EOF >>etc/fstab
 none		/proc		proc	defaults,noauto	0 0
+none		/dev/pts/	devpts	defaults	0 0
 EOF
 
 	cat <<EOF >>etc/motd
