@@ -2003,7 +2003,7 @@ EOF
 				rm -rf usr/bin
 				rm -rf usr/i386-pc-fiwix/
 			popd
-			rm -rf gcc-$ver newlib-*
+			rm -rf gcc-$ver newlib-4.4.0.20231231
 			_pack $prg-$ver
 			;;
 
