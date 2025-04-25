@@ -1327,6 +1327,19 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		screen)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				CPPFLAGS="-DPOSIX=1 -DNAMEDPIPE=1" ./configure --prefix=/usr || exit 1
+				sed -i 's#^ETCSCREENRC=.*#ETCSCREENRC=/etc/screenrc#' Makefile
+				_make
+				mkdir -p ${PREFIX}/etc
+				cp etc/etcscreenrc ${PREFIX}/etc/screenrc
+			popd
+			_pack $prg-$ver
+			;;
+
 		sed)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
@@ -2126,6 +2139,7 @@ build popt 1.19 i386 "" "C library for parsing command line parameters"
 build procps 3.2.8 i386 "" "System and process monitoring utilities"
 build pwgen 2.08 i386 "" "Automatic password generation"
 build readline 7.0 i386 "" "A library for editing typed command lines"
+build screen 4.2.1 i386 "" "A screen manager that supports multiple logins on one terminal Description" "https://ftp.gnu.org/gnu/screen/"
 build sed 4.7 i386 "" "A GNU stream text editor"
 build sharutils 4.15.2 i386 "" "The GNU shar utilities for packaging and unpackaging shell archives"
 build slang 2.3.3 i386 "" "Shared library for the S-Lang extension language"

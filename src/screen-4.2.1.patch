@@ -1,0 +1,57 @@
+diff -ru screen-4.2.1/extern.h screen-4.2.1.new/extern.h
+--- screen-4.2.1/extern.h	2014-04-26 16:22:09 +0000
++++ screen-4.2.1.new/extern.h	2025-04-09 18:12:57 +0000
+@@ -161,7 +161,7 @@
+ extern void  zmodem_abort __P((struct win *, struct display *));
+ #endif
+ #ifndef HAVE_EXECVPE
+-extern void  execvpe __P((char *, char **, char **));
++extern int  execvpe __P((const char *, char * const [], char * const []));
+ #endif
+ 
+ /* utmp.c */
+diff -ru screen-4.2.1/utmp.c screen-4.2.1.new/utmp.c
+--- screen-4.2.1/utmp.c	2014-04-26 16:22:09 +0000
++++ screen-4.2.1.new/utmp.c	2025-04-09 18:12:57 +0000
+@@ -94,7 +94,7 @@
+ static int  initutmp __P((void));
+ static void setutent __P((void));
+ #endif
+-#if defined(linux) && defined(GETUTENT)
++#if defined(linux) && defined(GETUTENT) || defined(fiwix)
+ static struct utmp *xpututline __P((struct utmp *utmp));
+ # define pututline xpututline
+ #endif
+@@ -598,7 +598,7 @@
+ struct utmp *u;
+ {
+   u->ut_type = DEAD_PROCESS;
+-#if (!defined(linux) || defined(EMPTY)) && !defined(__CYGWIN__)
++#if (!defined(linux) || !defined(fiwix) || defined(EMPTY)) && !defined(__CYGWIN__)
+   u->ut_exit.e_termination = 0;
+   u->ut_exit.e_exit = 0;
+ #endif
+@@ -873,7 +873,7 @@
+ }
+ # endif /* BUGGYGETLOGIN */
+ 
+-#if defined(linux) && defined(GETUTENT)
++#if defined(linux) && defined(GETUTENT) || defined(fiwix)
+ # undef pututline
+ 
+ /* aargh, linux' pututline returns void! */
+diff -ru screen-4.2.1/window.c screen-4.2.1.new/window.c
+--- screen-4.2.1/window.c	2014-04-26 10:58:35 +0000
++++ screen-4.2.1.new/window.c	2025-04-19 07:43:18 +0000
+@@ -1462,9 +1462,8 @@
+ }
+ 
+ #ifndef HAVE_EXECVPE
+-void
+-execvpe(prog, args, env)
+-char *prog, **args, **env;
++int
++execvpe(const char *prog, char * const args[], char * const env[])
+ {
+   register char *path = NULL, *p;
+   char buf[1024];
