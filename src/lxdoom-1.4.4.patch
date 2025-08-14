@@ -1,6 +1,6 @@
 diff -ru lxdoom-1.4.4/config.guess lxdoom-1.4.4.new/config.guess
 --- lxdoom-1.4.4/config.guess	1999-10-01 08:23:37 +0000
-+++ lxdoom-1.4.4.new/config.guess	2020-05-05 18:58:57 +0000
++++ lxdoom-1.4.4.new/config.guess	2025-07-05 05:41:42 +0000
 @@ -799,6 +799,9 @@
      BePC:BeOS:*:*)	# BeOS running on Intel PC compatible.
  	echo i586-pc-beos
@@ -13,7 +13,7 @@ diff -ru lxdoom-1.4.4/config.guess lxdoom-1.4.4.new/config.guess
  #echo '(No uname command or uname output not recognized.)' 1>&2
 diff -ru lxdoom-1.4.4/config.sub lxdoom-1.4.4.new/config.sub
 --- lxdoom-1.4.4/config.sub	1999-10-01 08:23:37 +0000
-+++ lxdoom-1.4.4.new/config.sub	2020-05-05 18:59:08 +0000
++++ lxdoom-1.4.4.new/config.sub	2025-07-05 05:41:42 +0000
 @@ -714,7 +714,7 @@
  	      | -ptx* | -coff* | -ecoff* | -winnt* | -domain* | -vsta* \
  	      | -udi* | -eabi* | -lites* | -ieee* | -go32* | -aux* \
@@ -25,7 +25,7 @@ diff -ru lxdoom-1.4.4/config.sub lxdoom-1.4.4.new/config.sub
  	-linux*)
 diff -ru lxdoom-1.4.4/src/Makefile.in lxdoom-1.4.4.new/src/Makefile.in
 --- lxdoom-1.4.4/src/Makefile.in	2000-04-01 09:25:49 +0000
-+++ lxdoom-1.4.4.new/src/Makefile.in	2020-05-05 19:49:55 +0000
++++ lxdoom-1.4.4.new/src/Makefile.in	2025-07-05 05:41:42 +0000
 @@ -83,8 +83,8 @@
  VERSION = @VERSION@
  
@@ -39,7 +39,24 @@ diff -ru lxdoom-1.4.4/src/Makefile.in lxdoom-1.4.4.new/src/Makefile.in
  
 diff -ru lxdoom-1.4.4/src/d_main.c lxdoom-1.4.4.new/src/d_main.c
 --- lxdoom-1.4.4/src/d_main.c	2000-03-27 10:33:49 +0000
-+++ lxdoom-1.4.4.new/src/d_main.c	2020-05-05 19:00:19 +0000
++++ lxdoom-1.4.4.new/src/d_main.c	2025-07-05 05:44:08 +0000
+@@ -117,13 +117,13 @@
+ //jff 4/19/98 list of standard IWAD names
+ const char *const standard_iwads[]=
+ {
++  "doom.wad",
++  "doom1.wad",
++  "doomu.wad", /* CPhipps - alow doomu.wad */
+   "doom2f.wad",
+   "doom2.wad",
+   "plutonia.wad",
+   "tnt.wad",
+-  "doom.wad",
+-  "doom1.wad",
+-  "doomu.wad", /* CPhipps - alow doomu.wad */
+ };
+ static const int nstandard_iwads = sizeof standard_iwads/sizeof*standard_iwads;
+ 
 @@ -229,6 +229,7 @@
      case GS_LEVEL:
        V_SetPalette(0); // cph - use default (basic) palette  
@@ -58,7 +75,7 @@ diff -ru lxdoom-1.4.4/src/d_main.c lxdoom-1.4.4.new/src/d_main.c
      boolean redrawborderstuff;
 diff -ru lxdoom-1.4.4/src/g_game.c lxdoom-1.4.4.new/src/g_game.c
 --- lxdoom-1.4.4/src/g_game.c	2000-03-17 20:50:30 +0000
-+++ lxdoom-1.4.4.new/src/g_game.c	2020-05-05 19:01:15 +0000
++++ lxdoom-1.4.4.new/src/g_game.c	2025-07-05 05:41:42 +0000
 @@ -869,6 +869,7 @@
      case GS_INTERMISSION:
        WI_End();
@@ -112,7 +129,7 @@ diff -ru lxdoom-1.4.4/src/g_game.c lxdoom-1.4.4.new/src/g_game.c
    CheckSaveGame(GAME_OPTION_SIZE+MIN_MAXPLAYERS+10);
 diff -ru lxdoom-1.4.4/src/i_main.h lxdoom-1.4.4.new/src/i_main.h
 --- lxdoom-1.4.4/src/i_main.h	2000-03-16 13:27:29 +0000
-+++ lxdoom-1.4.4.new/src/i_main.h	2020-05-05 19:23:09 +0000
++++ lxdoom-1.4.4.new/src/i_main.h	2025-07-05 05:41:42 +0000
 @@ -44,9 +44,7 @@
  extern int broken_pipe;
  extern int (*I_GetTime)(void);
@@ -125,7 +142,7 @@ diff -ru lxdoom-1.4.4/src/i_main.h lxdoom-1.4.4.new/src/i_main.h
  
 diff -ru lxdoom-1.4.4/src/l_main.c lxdoom-1.4.4.new/src/l_main.c
 --- lxdoom-1.4.4/src/l_main.c	2000-03-16 13:27:29 +0000
-+++ lxdoom-1.4.4.new/src/l_main.c	2020-05-05 19:22:46 +0000
++++ lxdoom-1.4.4.new/src/l_main.c	2025-07-05 05:41:42 +0000
 @@ -314,9 +314,7 @@
    }
  }
@@ -138,7 +155,7 @@ diff -ru lxdoom-1.4.4/src/l_main.c lxdoom-1.4.4.new/src/l_main.c
  {
 diff -ru lxdoom-1.4.4/src/l_udp.c lxdoom-1.4.4.new/src/l_udp.c
 --- lxdoom-1.4.4/src/l_udp.c	2000-01-26 08:44:24 +0000
-+++ lxdoom-1.4.4.new/src/l_udp.c	2020-05-05 19:35:48 +0000
++++ lxdoom-1.4.4.new/src/l_udp.c	2025-07-05 05:41:42 +0000
 @@ -31,6 +31,7 @@
   *-----------------------------------------------------------------------------*/
  
@@ -212,7 +229,7 @@ diff -ru lxdoom-1.4.4/src/l_udp.c lxdoom-1.4.4.new/src/l_udp.c
   * $Log: l_udp.c,v $
 diff -ru lxdoom-1.4.4/src/p_maputl.c lxdoom-1.4.4.new/src/p_maputl.c
 --- lxdoom-1.4.4/src/p_maputl.c	1999-10-12 13:01:13 +0000
-+++ lxdoom-1.4.4.new/src/p_maputl.c	2020-05-05 19:03:23 +0000
++++ lxdoom-1.4.4.new/src/p_maputl.c	2025-07-05 05:41:42 +0000
 @@ -322,7 +322,7 @@
  //
  // A fast function for testing intersections between things and linedefs.
@@ -224,7 +241,7 @@ diff -ru lxdoom-1.4.4/src/p_maputl.c lxdoom-1.4.4.new/src/p_maputl.c
    int dy = l->dy >> FRACBITS;
 diff -ru lxdoom-1.4.4/src/r_bsp.h lxdoom-1.4.4.new/src/r_bsp.h
 --- lxdoom-1.4.4/src/r_bsp.h	1999-10-12 13:00:57 +0000
-+++ lxdoom-1.4.4.new/src/r_bsp.h	2020-05-05 19:04:00 +0000
++++ lxdoom-1.4.4.new/src/r_bsp.h	2025-07-05 05:41:42 +0000
 @@ -41,11 +41,11 @@
  extern line_t   *linedef;
  extern sector_t *frontsector;

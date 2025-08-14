@@ -2112,7 +2112,7 @@ build logrotate 3.22.0 i386 "" "Rotates, compresses, removes and mails system lo
 build lookbusy 1.4 i386 "" "A synthetic load generator"
 build lrzsz 0.12.14 i386 "" "The lrz and lsz modem communications programs"
 build lua 5.4.7 i386 "" "Powerful light-weight programming language"
-build lxdoom 1.4.4 i386 "" "A version of Doom for SVGAlib and XFree86"
+build lxdoom 1.4.4 i386 "" "A version of Doom for SVGAlib and X11" "https://doomwiki.org/wiki/LxDoom"
 build lzip 1.24.1 i386 "" "LZMA compressor with integrity checking"
 build m4 1.4.18 i386 "" "GNU macro processor"
 build make 4.2.1 i386 "" "A GNU tool which simplifies the build process for users"
