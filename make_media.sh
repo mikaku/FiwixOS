@@ -621,7 +621,6 @@ cd base || exit 1
 [ ! -d "$BASE_DIR/builds" ] && echo "ERROR: directory '$BASE_DIR/builds' does not exist." && exit 1
 [ ! -d "$BASE_DIR/src" ] && echo "ERROR: directory '$BASE_DIR/src' does not exist." && exit 1
 [ ! -d "$BASE_DIR/logs" ] && echo "ERROR: directory '$BASE_DIR/logs' does not exist." && exit 1
-[ ! -d "$BASE_DIR/toolchain" ] && echo "ERROR: directory '$BASE_DIR/toolchain' does not exist." && exit 1
 [ ! -d "$KERNEL_DIR" ] && echo "ERROR: directory '$KERNEL_DIR' does not exist." && exit 1
 [ -z "$KERNEL_VERSION" ] && echo "ERROR: kernel version is '$KERNEL_VERSION'." && exit 1
 [ -f ${SOURCE_FLOPPY} ] || echo "ERROR: '${SOURCE_FLOPPY}' does not exist." || exit 1
