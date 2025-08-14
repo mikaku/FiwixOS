@@ -874,9 +874,6 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 # User specific environment and startup programs
-PATH=$PATH:/usr/local/bin:/root/bin
-
-export PATH
 
 EOF
 
@@ -887,6 +884,10 @@ EOF
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+
+# User specific environment
+PATH=\$HOME/bin:\$PATH
+export PATH
 
 # User specific aliases and functions
 
@@ -899,7 +900,7 @@ EOF
 	nump=1
 	if [ "$separateboot" = 0 ] ; then
 		cat <<EOF >etc/fstab
-${TARGET}${nump}	/boot		ext2	ro,defaults	0 0
+${TARGET}${nump}	/boot		ext2	ro,defaults	1 2
 EOF
 		nump=$(expr $nump + 1)
 	fi
@@ -912,7 +913,7 @@ EOF
 
 	if [ "$nparts" -gt 2 ] ; then
 		cat <<EOF >>etc/fstab
-${TARGET}${nump}	/home		ext2	rw,defaults	0 0
+${TARGET}${nump}	/home		ext2	rw,defaults	1 2
 EOF
 	fi
 
