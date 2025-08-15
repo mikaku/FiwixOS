@@ -621,7 +621,7 @@ EOF
 			popd
 			pushd $PREFIX
 				mkdir usr
-				mv bin man usr
+				mv bin share usr
 				pushd usr/bin
 					ln -sf e3 e3ws
 					ln -sf e3 e3em
@@ -2077,7 +2077,7 @@ build dmidecode 3.6 i386 "" "Tool to analyse BIOS DMI data"
 build dos2unix 7.5.2 i386 "" "Text file format converters"
 build e2fsprogs-libs 1.37 i386 "" "Ext2/3/4 file system specific libraries"
 build e2fsprogs 1.37 i386 "" "Utilities for managing ext2 and ext3 file systems"
-build e3 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi"
+build e3 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi" "https://sites.google.com/site/e3editor/"
 build ed 1.20.2 i386 "" "The GNU line editor"
 build enscript 1.6.6 i386 "" "A plain ASCII to PostScript converter"
 build expat 2.5.0 i386 "" "An XML parser library"
