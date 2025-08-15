@@ -1,6 +1,6 @@
 diff -ru util-linux-ng-2.17/config/config.guess util-linux-ng-2.17.new/config/config.guess
 --- util-linux-ng-2.17/config/config.guess	2009-07-24 20:49:33 +0000
-+++ util-linux-ng-2.17.new/config/config.guess	2023-07-11 16:34:46 +0000
++++ util-linux-ng-2.17.new/config/config.guess	2025-07-28 14:02:22 +0000
 @@ -1359,6 +1359,9 @@
      i*86:AROS:*:*)
  	echo ${UNAME_MACHINE}-pc-aros
@@ -13,7 +13,7 @@ diff -ru util-linux-ng-2.17/config/config.guess util-linux-ng-2.17.new/config/co
  #echo '(No uname command or uname output not recognized.)' 1>&2
 diff -ru util-linux-ng-2.17/config/config.sub util-linux-ng-2.17.new/config/config.sub
 --- util-linux-ng-2.17/config/config.sub	2009-07-24 20:49:33 +0000
-+++ util-linux-ng-2.17.new/config/config.sub	2023-07-11 16:34:46 +0000
++++ util-linux-ng-2.17.new/config/config.sub	2025-07-28 14:02:22 +0000
 @@ -1283,7 +1283,7 @@
  	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
  	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
@@ -25,7 +25,7 @@ diff -ru util-linux-ng-2.17/config/config.sub util-linux-ng-2.17.new/config/conf
  	-qnx*)
 diff -ru util-linux-ng-2.17/config.h.in util-linux-ng-2.17.new/config.h.in
 --- util-linux-ng-2.17/config.h.in	2010-01-07 22:16:02 +0000
-+++ util-linux-ng-2.17.new/config.h.in	2023-07-11 16:34:46 +0000
++++ util-linux-ng-2.17.new/config.h.in	2025-07-28 14:02:22 +0000
 @@ -267,7 +267,7 @@
  /* Define to 1 if you have the `strtoull' function. */
  #undef HAVE_STRTOULL
@@ -45,9 +45,85 @@ diff -ru util-linux-ng-2.17/config.h.in util-linux-ng-2.17.new/config.h.in
  /* Define to the version of this package. */
  #undef PACKAGE_VERSION
  
+diff -ru util-linux-ng-2.17/disk-utils/Makefile.in util-linux-ng-2.17.new/disk-utils/Makefile.in
+--- util-linux-ng-2.17/disk-utils/Makefile.in	2010-01-07 22:16:04 +0000
++++ util-linux-ng-2.17.new/disk-utils/Makefile.in	2025-07-28 14:39:32 +0000
+@@ -39,13 +39,12 @@
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/config/include-Makefile.am
+ @LINUX_TRUE@am__append_1 = ../lib/linux_version.c
+-sbin_PROGRAMS = mkfs$(EXEEXT) mkswap$(EXEEXT) fsck.minix$(EXEEXT) \
++sbin_PROGRAMS = blockdev$(EXEEXT) mkfs$(EXEEXT) mkswap$(EXEEXT) fsck.minix$(EXEEXT) \
+ 	mkfs.minix$(EXEEXT) mkfs.bfs$(EXEEXT) $(am__EXEEXT_1) \
+ 	$(am__EXEEXT_2) $(am__EXEEXT_3) $(am__EXEEXT_4)
+ usrbin_exec_PROGRAMS = isosize$(EXEEXT)
+ usrsbin_exec_PROGRAMS = $(am__EXEEXT_5)
+-@LINUX_TRUE@am__append_2 = fdformat.8 blockdev.8
+-@LINUX_TRUE@am__append_3 = blockdev
++@LINUX_TRUE@am__append_2 = fdformat.8
+ @LINUX_TRUE@am__append_4 = fdformat
+ @BUILD_ELVTUNE_TRUE@am__append_5 = elvtune
+ @BUILD_ELVTUNE_TRUE@am__append_6 = elvtune.8
+@@ -78,7 +77,6 @@
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-@LINUX_TRUE@am__EXEEXT_1 = blockdev$(EXEEXT)
+ @BUILD_ELVTUNE_TRUE@am__EXEEXT_2 = elvtune$(EXEEXT)
+ @BUILD_RAW_TRUE@@HAVE_RAW_TRUE@am__EXEEXT_3 = raw$(EXEEXT)
+ @BUILD_CRAMFS_TRUE@am__EXEEXT_4 = fsck.cramfs$(EXEEXT) \
+@@ -90,9 +88,9 @@
+ 	$(usrsbin_exec_PROGRAMS)
+ am__blockdev_SOURCES_DIST = blockdev.c ../lib/blkdev.c \
+ 	../lib/linux_version.c
+-@LINUX_TRUE@am__objects_1 = linux_version.$(OBJEXT)
++am__objects_1 = linux_version.$(OBJEXT)
+ am__objects_2 = blkdev.$(OBJEXT) $(am__objects_1)
+-@LINUX_TRUE@am_blockdev_OBJECTS = blockdev.$(OBJEXT) $(am__objects_2)
++am_blockdev_OBJECTS = blockdev.$(OBJEXT) $(am__objects_2)
+ blockdev_OBJECTS = $(am_blockdev_OBJECTS)
+ blockdev_LDADD = $(LDADD)
+ AM_V_lt = $(am__v_lt_$(V))
+@@ -399,7 +397,7 @@
+ ul_libuuid_builddir = $(top_builddir)/shlibs/uuid/src
+ ul_libuuid_la = $(top_builddir)/shlibs/uuid/src/libuuid.la
+ utils_common = ../lib/blkdev.c $(am__append_1)
+-dist_man_MANS = isosize.8 mkfs.8 mkswap.8 fsck.minix.8 mkfs.minix.8 \
++dist_man_MANS = blockdev.8 isosize.8 mkfs.8 mkswap.8 fsck.minix.8 mkfs.minix.8 \
+ 	mkfs.bfs.8 $(am__append_2) $(am__append_6) $(am__append_8)
+ fsck_minix_SOURCES = fsck.minix.c minix.h
+ mkfs_minix_SOURCES = mkfs.minix.c minix.h $(utils_common)
+@@ -409,7 +407,7 @@
+ 	$(am__append_16)
+ mkswap_CFLAGS = $(AM_CFLAGS) $(am__append_11) $(am__append_13) \
+ 	$(am__append_15)
+-@LINUX_TRUE@blockdev_SOURCES = blockdev.c $(utils_common)
++blockdev_SOURCES = blockdev.c $(utils_common)
+ @BUILD_ELVTUNE_TRUE@elvtune_SOURCES = elvtune.c ../lib/linux_version.c
+ @BUILD_CRAMFS_TRUE@cramfs_common = $(utils_common) cramfs.h cramfs_common.c cramfs_common.h
+ @BUILD_CRAMFS_TRUE@fsck_cramfs_SOURCES = fsck.cramfs.c $(cramfs_common)
+diff -ru util-linux-ng-2.17/disk-utils/blockdev.c util-linux-ng-2.17.new/disk-utils/blockdev.c
+--- util-linux-ng-2.17/disk-utils/blockdev.c	2009-12-01 09:31:53 +0000
++++ util-linux-ng-2.17.new/disk-utils/blockdev.c	2025-07-28 14:02:22 +0000
+@@ -17,6 +17,15 @@
+ 
+ const char *progname;
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ 
+ struct bdc {
+ 	long		ioc;		/* ioctl code */
 diff -ru util-linux-ng-2.17/fdisk/cfdisk.c util-linux-ng-2.17.new/fdisk/cfdisk.c
 --- util-linux-ng-2.17/fdisk/cfdisk.c	2010-01-06 10:10:47 +0000
-+++ util-linux-ng-2.17.new/fdisk/cfdisk.c	2023-07-11 16:34:46 +0000
++++ util-linux-ng-2.17.new/fdisk/cfdisk.c	2025-07-28 14:02:22 +0000
 @@ -160,6 +160,15 @@
  #define round_int(d) ((double)((int)(d+0.5)))
  #define ceiling(d) ((double)(((d) != (int)(d)) ? (int)(d+1.0) : (int)(d)))
@@ -66,7 +142,7 @@ diff -ru util-linux-ng-2.17/fdisk/cfdisk.c util-linux-ng-2.17.new/fdisk/cfdisk.c
          unsigned char head;             /* starting head */
 diff -ru util-linux-ng-2.17/fdisk/fdisk.c util-linux-ng-2.17.new/fdisk/fdisk.c
 --- util-linux-ng-2.17/fdisk/fdisk.c	2010-01-06 09:59:52 +0000
-+++ util-linux-ng-2.17.new/fdisk/fdisk.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/fdisk/fdisk.c	2025-07-28 14:02:22 +0000
 @@ -45,6 +45,15 @@
  
  #include "gpt.h"
@@ -85,7 +161,7 @@ diff -ru util-linux-ng-2.17/fdisk/fdisk.c util-linux-ng-2.17.new/fdisk/fdisk.c
  #define hex_val(c)	({ \
 diff -ru util-linux-ng-2.17/fdisk/fdiskaixlabel.c util-linux-ng-2.17.new/fdisk/fdiskaixlabel.c
 --- util-linux-ng-2.17/fdisk/fdiskaixlabel.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/fdisk/fdiskaixlabel.c	2023-07-11 16:34:46 +0000
++++ util-linux-ng-2.17.new/fdisk/fdiskaixlabel.c	2025-07-28 14:02:22 +0000
 @@ -7,7 +7,9 @@
  #include <string.h>             /* strstr */
  #include <unistd.h>             /* write */
@@ -99,7 +175,7 @@ diff -ru util-linux-ng-2.17/fdisk/fdiskaixlabel.c util-linux-ng-2.17.new/fdisk/f
  #include "fdisk.h"
 diff -ru util-linux-ng-2.17/fdisk/fdiskmaclabel.c util-linux-ng-2.17.new/fdisk/fdiskmaclabel.c
 --- util-linux-ng-2.17/fdisk/fdiskmaclabel.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/fdisk/fdiskmaclabel.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/fdisk/fdiskmaclabel.c	2025-07-28 14:02:22 +0000
 @@ -7,7 +7,9 @@
  #include <string.h>             /* strstr */
  #include <unistd.h>             /* write */
@@ -113,7 +189,7 @@ diff -ru util-linux-ng-2.17/fdisk/fdiskmaclabel.c util-linux-ng-2.17.new/fdisk/f
  #include "fdisk.h"
 diff -ru util-linux-ng-2.17/fdisk/fdisksgilabel.c util-linux-ng-2.17.new/fdisk/fdisksgilabel.c
 --- util-linux-ng-2.17/fdisk/fdisksgilabel.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/fdisk/fdisksgilabel.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/fdisk/fdisksgilabel.c	2025-07-28 14:02:22 +0000
 @@ -20,7 +20,9 @@
  #include <sys/stat.h>           /* stat */
  #include <assert.h>             /* assert */
@@ -143,7 +219,7 @@ diff -ru util-linux-ng-2.17/fdisk/fdisksgilabel.c util-linux-ng-2.17.new/fdisk/f
  static  short volumes=1;
 diff -ru util-linux-ng-2.17/fdisk/fdisksunlabel.c util-linux-ng-2.17.new/fdisk/fdisksunlabel.c
 --- util-linux-ng-2.17/fdisk/fdisksunlabel.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/fdisk/fdisksunlabel.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/fdisk/fdisksunlabel.c	2025-07-28 14:02:22 +0000
 @@ -21,7 +21,9 @@
  #include "nls.h"
  #include "blkdev.h"
@@ -173,7 +249,7 @@ diff -ru util-linux-ng-2.17/fdisk/fdisksunlabel.c util-linux-ng-2.17.new/fdisk/f
  static int     floppy = 0;
 diff -ru util-linux-ng-2.17/fdisk/sfdisk.c util-linux-ng-2.17.new/fdisk/sfdisk.c
 --- util-linux-ng-2.17/fdisk/sfdisk.c	2010-01-06 10:06:29 +0000
-+++ util-linux-ng-2.17.new/fdisk/sfdisk.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/fdisk/sfdisk.c	2025-07-28 14:02:22 +0000
 @@ -55,6 +55,15 @@
  #include "wholedisk.h"
  #include "gpt.h"
@@ -279,7 +355,7 @@ diff -ru util-linux-ng-2.17/fdisk/sfdisk.c util-linux-ng-2.17.new/fdisk/sfdisk.c
  	  case 'c' + CHANGE_ID:
 diff -ru util-linux-ng-2.17/include/bitops.h util-linux-ng-2.17.new/include/bitops.h
 --- util-linux-ng-2.17/include/bitops.h	2009-11-30 15:23:17 +0000
-+++ util-linux-ng-2.17.new/include/bitops.h	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/include/bitops.h	2025-07-28 14:02:22 +0000
 @@ -2,7 +2,12 @@
  #define BITOPS_H
  
@@ -295,7 +371,7 @@ diff -ru util-linux-ng-2.17/include/bitops.h util-linux-ng-2.17.new/include/bito
   * Bit map related macros. Usually provided by libc.
 diff -ru util-linux-ng-2.17/lib/md5.c util-linux-ng-2.17.new/lib/md5.c
 --- util-linux-ng-2.17/lib/md5.c	2009-12-10 10:55:13 +0000
-+++ util-linux-ng-2.17.new/lib/md5.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/lib/md5.c	2025-07-28 14:02:22 +0000
 @@ -14,7 +14,12 @@
   * needed on buffers full of bytes, and then call MD5Final, which
   * will fill a supplied 16-byte array with the digest.
@@ -311,7 +387,7 @@ diff -ru util-linux-ng-2.17/lib/md5.c util-linux-ng-2.17.new/lib/md5.c
  #include "md5.h"
 diff -ru util-linux-ng-2.17/lib/wholedisk.c util-linux-ng-2.17.new/lib/wholedisk.c
 --- util-linux-ng-2.17/lib/wholedisk.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/lib/wholedisk.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/lib/wholedisk.c	2025-07-28 14:02:22 +0000
 @@ -6,6 +6,10 @@
  #include "blkdev.h"
  #include "wholedisk.h"
@@ -325,7 +401,7 @@ diff -ru util-linux-ng-2.17/lib/wholedisk.c util-linux-ng-2.17.new/lib/wholedisk
  #ifdef HDIO_GETGEO
 diff -ru util-linux-ng-2.17/login-utils/Makefile.in util-linux-ng-2.17.new/login-utils/Makefile.in
 --- util-linux-ng-2.17/login-utils/Makefile.in	2010-01-07 22:16:06 +0000
-+++ util-linux-ng-2.17.new/login-utils/Makefile.in	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/login-utils/Makefile.in	2025-07-28 14:02:22 +0000
 @@ -52,9 +52,9 @@
  @BUILD_LAST_TRUE@am__append_5 = last
  @BUILD_LAST_TRUE@am__append_6 = last.1
@@ -402,7 +478,7 @@ diff -ru util-linux-ng-2.17/login-utils/Makefile.in util-linux-ng-2.17.new/login
  	$(AM_V_CCLD)$(chfn_LINK) $(chfn_OBJECTS) $(chfn_LDADD) $(LIBS)
 diff -ru util-linux-ng-2.17/login-utils/agetty.c util-linux-ng-2.17.new/login-utils/agetty.c
 --- util-linux-ng-2.17/login-utils/agetty.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/login-utils/agetty.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/login-utils/agetty.c	2025-07-28 14:02:22 +0000
 @@ -29,8 +29,10 @@
  #include <getopt.h>
  #include <time.h>
@@ -432,7 +508,7 @@ diff -ru util-linux-ng-2.17/login-utils/agetty.c util-linux-ng-2.17.new/login-ut
  		  case 't':
 diff -ru util-linux-ng-2.17/login-utils/checktty.c util-linux-ng-2.17.new/login-utils/checktty.c
 --- util-linux-ng-2.17/login-utils/checktty.c	2009-10-15 23:16:40 +0000
-+++ util-linux-ng-2.17.new/login-utils/checktty.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/login-utils/checktty.c	2025-07-28 14:02:22 +0000
 @@ -19,8 +19,10 @@
  #include <time.h>
  #include <sys/stat.h>
@@ -516,7 +592,7 @@ diff -ru util-linux-ng-2.17/login-utils/checktty.c util-linux-ng-2.17.new/login-
  	}
 diff -ru util-linux-ng-2.17/login-utils/login.c util-linux-ng-2.17.new/login-utils/login.c
 --- util-linux-ng-2.17/login-utils/login.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/login-utils/login.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/login-utils/login.c	2025-07-28 14:02:22 +0000
 @@ -83,7 +83,7 @@
  #include <ctype.h>
  #include <unistd.h>
@@ -875,7 +951,7 @@ diff -ru util-linux-ng-2.17/login-utils/login.c util-linux-ng-2.17.new/login-uti
  /* Should not be called from PAM code... */
 diff -ru util-linux-ng-2.17/login-utils/login.h util-linux-ng-2.17.new/login-utils/login.h
 --- util-linux-ng-2.17/login-utils/login.h	2009-10-15 23:16:40 +0000
-+++ util-linux-ng-2.17.new/login-utils/login.h	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/login-utils/login.h	2025-07-28 14:02:22 +0000
 @@ -3,7 +3,7 @@
  extern void sleepexit(int);
  extern char hostaddress[16];
@@ -887,7 +963,7 @@ diff -ru util-linux-ng-2.17/login-utils/login.h util-linux-ng-2.17.new/login-uti
  extern void checktty(const char *user, const char *tty, struct passwd *pwd);
 diff -ru util-linux-ng-2.17/misc-utils/findfs.c util-linux-ng-2.17.new/misc-utils/findfs.c
 --- util-linux-ng-2.17/misc-utils/findfs.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/misc-utils/findfs.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/findfs.c	2025-07-28 14:02:22 +0000
 @@ -16,7 +16,7 @@
  
  static void __attribute__((__noreturn__)) usage(int rc)
@@ -899,7 +975,7 @@ diff -ru util-linux-ng-2.17/misc-utils/findfs.c util-linux-ng-2.17.new/misc-util
  		p = "findfs";
 diff -ru util-linux-ng-2.17/misc-utils/logger.c util-linux-ng-2.17.new/misc-utils/logger.c
 --- util-linux-ng-2.17/misc-utils/logger.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/misc-utils/logger.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/logger.c	2025-07-28 14:02:22 +0000
 @@ -36,6 +36,8 @@
   * - fixed strerr(errno) in gettext calls
   */
@@ -921,7 +997,7 @@ diff -ru util-linux-ng-2.17/misc-utils/logger.c util-linux-ng-2.17.new/misc-util
 +}
 diff -ru util-linux-ng-2.17/misc-utils/namei.c util-linux-ng-2.17.new/misc-utils/namei.c
 --- util-linux-ng-2.17/misc-utils/namei.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/misc-utils/namei.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/namei.c	2025-07-28 14:02:22 +0000
 @@ -441,7 +441,7 @@
  static void
  usage(int rc)
@@ -933,7 +1009,7 @@ diff -ru util-linux-ng-2.17/misc-utils/namei.c util-linux-ng-2.17.new/misc-utils
  		p = "namei";
 diff -ru util-linux-ng-2.17/misc-utils/script.c util-linux-ng-2.17.new/misc-utils/script.c
 --- util-linux-ng-2.17/misc-utils/script.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/misc-utils/script.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/script.c	2025-07-28 14:02:22 +0000
 @@ -262,7 +262,7 @@
  	int status;
  	register int pid;
@@ -945,7 +1021,7 @@ diff -ru util-linux-ng-2.17/misc-utils/script.c util-linux-ng-2.17.new/misc-util
  }
 diff -ru util-linux-ng-2.17/misc-utils/scriptreplay.c util-linux-ng-2.17.new/misc-utils/scriptreplay.c
 --- util-linux-ng-2.17/misc-utils/scriptreplay.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/misc-utils/scriptreplay.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/scriptreplay.c	2025-07-28 14:02:22 +0000
 @@ -36,7 +36,7 @@
  usage(int rc)
  {
@@ -957,7 +1033,7 @@ diff -ru util-linux-ng-2.17/misc-utils/scriptreplay.c util-linux-ng-2.17.new/mis
  
 diff -ru util-linux-ng-2.17/misc-utils/wipefs.c util-linux-ng-2.17.new/misc-utils/wipefs.c
 --- util-linux-ng-2.17/misc-utils/wipefs.c	2009-12-10 11:48:53 +0000
-+++ util-linux-ng-2.17.new/misc-utils/wipefs.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/wipefs.c	2025-07-28 14:02:22 +0000
 @@ -35,7 +35,7 @@
  #include "nls.h"
  
@@ -1010,7 +1086,7 @@ diff -ru util-linux-ng-2.17/misc-utils/wipefs.c util-linux-ng-2.17.new/misc-util
  	" -a, --all           wipe all magic strings (BE CAREFUL!)\n"
 diff -ru util-linux-ng-2.17/misc-utils/write.c util-linux-ng-2.17.new/misc-utils/write.c
 --- util-linux-ng-2.17/misc-utils/write.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/misc-utils/write.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/misc-utils/write.c	2025-07-28 14:02:22 +0000
 @@ -64,6 +64,14 @@
  #include "carefulputc.h"
  #include "nls.h"
@@ -1028,7 +1104,7 @@ diff -ru util-linux-ng-2.17/misc-utils/write.c util-linux-ng-2.17.new/misc-utils
  void wr_fputs(char *);
 diff -ru util-linux-ng-2.17/shlibs/blkid/samples/mkfs.c util-linux-ng-2.17.new/shlibs/blkid/samples/mkfs.c
 --- util-linux-ng-2.17/shlibs/blkid/samples/mkfs.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/shlibs/blkid/samples/mkfs.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/shlibs/blkid/samples/mkfs.c	2025-07-28 14:02:22 +0000
 @@ -27,7 +27,7 @@
  	if (argc < 2) {
  		fprintf(stderr, "usage: %s <device>  "
@@ -1040,7 +1116,7 @@ diff -ru util-linux-ng-2.17/shlibs/blkid/samples/mkfs.c util-linux-ng-2.17.new/s
  
 diff -ru util-linux-ng-2.17/shlibs/blkid/samples/partitions.c util-linux-ng-2.17.new/shlibs/blkid/samples/partitions.c
 --- util-linux-ng-2.17/shlibs/blkid/samples/partitions.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/shlibs/blkid/samples/partitions.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/shlibs/blkid/samples/partitions.c	2025-07-28 14:02:22 +0000
 @@ -26,7 +26,7 @@
  	if (argc < 2) {
  		fprintf(stderr, "usage: %s <device|file>  "
@@ -1052,7 +1128,7 @@ diff -ru util-linux-ng-2.17/shlibs/blkid/samples/partitions.c util-linux-ng-2.17
  
 diff -ru util-linux-ng-2.17/shlibs/blkid/samples/superblocks.c util-linux-ng-2.17.new/shlibs/blkid/samples/superblocks.c
 --- util-linux-ng-2.17/shlibs/blkid/samples/superblocks.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/shlibs/blkid/samples/superblocks.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/shlibs/blkid/samples/superblocks.c	2025-07-28 14:02:22 +0000
 @@ -26,7 +26,7 @@
  	if (argc < 2) {
  		fprintf(stderr, "usage: %s <device>  "
@@ -1064,7 +1140,7 @@ diff -ru util-linux-ng-2.17/shlibs/blkid/samples/superblocks.c util-linux-ng-2.1
  
 diff -ru util-linux-ng-2.17/shlibs/blkid/samples/topology.c util-linux-ng-2.17.new/shlibs/blkid/samples/topology.c
 --- util-linux-ng-2.17/shlibs/blkid/samples/topology.c	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/shlibs/blkid/samples/topology.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/shlibs/blkid/samples/topology.c	2025-07-28 14:02:22 +0000
 @@ -27,7 +27,7 @@
  	if (argc < 2) {
  		fprintf(stderr, "usage: %s <device>  "
@@ -1076,7 +1152,7 @@ diff -ru util-linux-ng-2.17/shlibs/blkid/samples/topology.c util-linux-ng-2.17.n
  
 diff -ru util-linux-ng-2.17/shlibs/blkid/src/blkidP.h util-linux-ng-2.17.new/shlibs/blkid/src/blkidP.h
 --- util-linux-ng-2.17/shlibs/blkid/src/blkidP.h	2009-12-01 09:31:53 +0000
-+++ util-linux-ng-2.17.new/shlibs/blkid/src/blkidP.h	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/shlibs/blkid/src/blkidP.h	2025-07-28 14:02:22 +0000
 @@ -28,6 +28,8 @@
  #include "blkid.h"
  #include "list.h"
@@ -1086,9 +1162,52 @@ diff -ru util-linux-ng-2.17/shlibs/blkid/src/blkidP.h util-linux-ng-2.17.new/shl
  /*
   * This describes the attributes of a specific device.
   * We can traverse all of the tags by bid_tags (linking to the tag bit_names).
+diff -ru util-linux-ng-2.17/sys-utils/Makefile.in util-linux-ng-2.17.new/sys-utils/Makefile.in
+--- util-linux-ng-2.17/sys-utils/Makefile.in	2010-01-07 22:16:08 +0000
++++ util-linux-ng-2.17.new/sys-utils/Makefile.in	2025-07-28 14:02:22 +0000
+@@ -40,7 +40,7 @@
+ 	$(top_srcdir)/config/include-Makefile.am
+ bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2)
+ sbin_PROGRAMS = $(am__EXEEXT_3) $(am__EXEEXT_4) $(am__EXEEXT_5)
+-usrbin_exec_PROGRAMS = flock$(EXEEXT) ipcrm$(EXEEXT) ipcs$(EXEEXT) \
++usrbin_exec_PROGRAMS = dmesg$(EXEEXT) flock$(EXEEXT) ipcrm$(EXEEXT) ipcs$(EXEEXT) \
+ 	ipcmk$(EXEEXT) renice$(EXEEXT) setsid$(EXEEXT) $(am__EXEEXT_6) \
+ 	$(am__EXEEXT_7) $(am__EXEEXT_8)
+ usrsbin_exec_PROGRAMS = readprofile$(EXEEXT) $(am__EXEEXT_9) \
+@@ -427,7 +427,7 @@
+ ul_libuuid_srcdir = $(top_srcdir)/shlibs/uuid/src
+ ul_libuuid_builddir = $(top_builddir)/shlibs/uuid/src
+ ul_libuuid_la = $(top_builddir)/shlibs/uuid/src/libuuid.la
+-dist_man_MANS = flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 setsid.1 \
++dist_man_MANS = dmesg.1 flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 setsid.1 \
+ 	readprofile.1 $(am__append_5) $(am__append_7) $(am__append_9) \
+ 	$(am__append_11) $(am__append_13) $(am__append_15) \
+ 	$(am__append_18)
+@@ -663,6 +663,9 @@
+ fallocate$(EXEEXT): $(fallocate_OBJECTS) $(fallocate_DEPENDENCIES) 
+ 	@rm -f fallocate$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(fallocate_OBJECTS) $(fallocate_LDADD) $(LIBS)
++dmesg$(EXEEXT): $(dmesg_OBJECTS) $(dmesg_DEPENDENCIES) 
++	@rm -f dmesg$(EXEEXT)
++	$(AM_V_CCLD)$(LINK) $(dmesg_OBJECTS) $(dmesg_LDADD) $(LIBS)
+ flock$(EXEEXT): $(flock_OBJECTS) $(flock_DEPENDENCIES) 
+ 	@rm -f flock$(EXEEXT)
+ 	$(AM_V_CCLD)$(LINK) $(flock_OBJECTS) $(flock_LDADD) $(LIBS)
+diff -ru util-linux-ng-2.17/sys-utils/dmesg.c util-linux-ng-2.17.new/sys-utils/dmesg.c
+--- util-linux-ng-2.17/sys-utils/dmesg.c	2009-10-16 20:50:03 +0000
++++ util-linux-ng-2.17.new/sys-utils/dmesg.c	2025-07-28 14:02:22 +0000
+@@ -29,7 +29,7 @@
+  * Only function 3 is allowed to non-root processes.
+  */
+ 
+-#include <linux/unistd.h>
++#include <fiwix/unistd.h>
+ #include <stdio.h>
+ #include <getopt.h>
+ #include <stdlib.h>
 diff -ru util-linux-ng-2.17/sys-utils/flock.c util-linux-ng-2.17.new/sys-utils/flock.c
 --- util-linux-ng-2.17/sys-utils/flock.c	2009-12-07 14:23:23 +0000
-+++ util-linux-ng-2.17.new/sys-utils/flock.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/sys-utils/flock.c	2025-07-28 14:02:22 +0000
 @@ -253,7 +253,7 @@
        memset(&sa, 0, sizeof sa);
  
@@ -1100,7 +1219,7 @@ diff -ru util-linux-ng-2.17/sys-utils/flock.c util-linux-ng-2.17.new/sys-utils/f
        setitimer(ITIMER_REAL, &timeout, &old_timer);
 diff -ru util-linux-ng-2.17/sys-utils/ipcmk.c util-linux-ng-2.17.new/sys-utils/ipcmk.c
 --- util-linux-ng-2.17/sys-utils/ipcmk.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/sys-utils/ipcmk.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/sys-utils/ipcmk.c	2025-07-28 14:02:22 +0000
 @@ -100,7 +100,7 @@
  	int nsems = 0;
  	int doShm = 0, doMsg = 0, doSem = 0;
@@ -1112,7 +1231,7 @@ diff -ru util-linux-ng-2.17/sys-utils/ipcmk.c util-linux-ng-2.17.new/sys-utils/i
  
 diff -ru util-linux-ng-2.17/sys-utils/renice.c util-linux-ng-2.17.new/sys-utils/renice.c
 --- util-linux-ng-2.17/sys-utils/renice.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/sys-utils/renice.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/sys-utils/renice.c	2025-07-28 14:02:22 +0000
 @@ -35,6 +35,8 @@
    * - added Native Language Support
    */
@@ -1134,7 +1253,7 @@ diff -ru util-linux-ng-2.17/sys-utils/renice.c util-linux-ng-2.17.new/sys-utils/
 +}
 diff -ru util-linux-ng-2.17/tests/helpers/test_sysinfo.c util-linux-ng-2.17.new/tests/helpers/test_sysinfo.c
 --- util-linux-ng-2.17/tests/helpers/test_sysinfo.c	2009-10-16 20:50:03 +0000
-+++ util-linux-ng-2.17.new/tests/helpers/test_sysinfo.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/tests/helpers/test_sysinfo.c	2025-07-28 14:02:22 +0000
 @@ -18,8 +18,14 @@
  #include <stdlib.h>
  #include <string.h>
@@ -1153,7 +1272,7 @@ diff -ru util-linux-ng-2.17/tests/helpers/test_sysinfo.c util-linux-ng-2.17.new/
  #error missing __BYTE_ORDER
 diff -ru util-linux-ng-2.17/text-utils/Makefile.in util-linux-ng-2.17.new/text-utils/Makefile.in
 --- util-linux-ng-2.17/text-utils/Makefile.in	2010-01-07 22:16:09 +0000
-+++ util-linux-ng-2.17.new/text-utils/Makefile.in	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/text-utils/Makefile.in	2025-07-28 14:02:22 +0000
 @@ -41,8 +41,8 @@
  usrbin_exec_PROGRAMS = col$(EXEEXT) colcrt$(EXEEXT) colrm$(EXEEXT) \
  	column$(EXEEXT) hexdump$(EXEEXT) rev$(EXEEXT) line$(EXEEXT) \
@@ -1167,7 +1286,7 @@ diff -ru util-linux-ng-2.17/text-utils/Makefile.in util-linux-ng-2.17.new/text-u
  @HAVE_NCURSES_FALSE@@HAVE_TERMCAP_TRUE@am__append_3 = more.1
 diff -ru util-linux-ng-2.17/text-utils/column.c util-linux-ng-2.17.new/text-utils/column.c
 --- util-linux-ng-2.17/text-utils/column.c	2009-10-15 23:16:41 +0000
-+++ util-linux-ng-2.17.new/text-utils/column.c	2023-07-11 16:34:47 +0000
++++ util-linux-ng-2.17.new/text-utils/column.c	2025-07-28 14:02:22 +0000
 @@ -48,6 +48,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -1178,7 +1297,7 @@ diff -ru util-linux-ng-2.17/text-utils/column.c util-linux-ng-2.17.new/text-util
  #include "widechar.h"
 diff -ru util-linux-ng-2.17/text-utils/display.c util-linux-ng-2.17.new/text-utils/display.c
 --- util-linux-ng-2.17/text-utils/display.c	2009-12-01 12:23:05 +0000
-+++ util-linux-ng-2.17.new/text-utils/display.c	2023-07-11 16:35:02 +0000
++++ util-linux-ng-2.17.new/text-utils/display.c	2025-07-28 14:02:22 +0000
 @@ -48,6 +48,9 @@
  #define MIN(a,b) ((a)<(b)?(a):(b))
  #endif
