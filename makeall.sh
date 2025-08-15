@@ -600,11 +600,9 @@ EOF
 				_make
 			popd
 			pushd $PREFIX
-				rm -f usr/sbin/fsck
 				rm -f usr/sbin/fsck.ext3
 				rm -f usr/sbin/mkfs.ext3
 				rm -f usr/sbin/filefrag
-				rm -f usr/man/man8/fsck.8
 				rm -f usr/man/man8/fsck.ext3.8
 				rm -f usr/man/man8/mkfs.ext3.8
 				rm -f usr/man/man8/filefrag.8
@@ -2075,8 +2073,8 @@ build diffstat 1.66 i386 "" "A utility which provides statistics based on the ou
 build diffutils 3.10 i386 "" "GNU collection of diff utilities"
 build dmidecode 3.6 i386 "" "Tool to analyse BIOS DMI data"
 build dos2unix 7.5.2 i386 "" "Text file format converters"
-build e2fsprogs-libs 1.37 i386 "" "Ext2/3/4 file system specific libraries"
-build e2fsprogs 1.37 i386 "" "Utilities for managing ext2 and ext3 file systems"
+build e2fsprogs-libs 1.40.11 i386 "" "Ext2/3/4 file system specific libraries" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
+build e2fsprogs 1.40.11 i386 "" "Utilities for managing ext2 and ext3 file systems" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e3 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi" "https://sites.google.com/site/e3editor/"
 build ed 1.20.2 i386 "" "The GNU line editor"
 build enscript 1.6.6 i386 "" "A plain ASCII to PostScript converter"

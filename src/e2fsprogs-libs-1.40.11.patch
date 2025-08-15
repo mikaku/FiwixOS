@@ -1,0 +1,25 @@
+diff -ru e2fsprogs-libs-1.40.11/config/config.guess e2fsprogs-libs-1.40.11.new/config/config.guess
+--- e2fsprogs-libs-1.40.11/config/config.guess	2007-06-30 12:58:34 +0000
++++ e2fsprogs-libs-1.40.11.new/config/config.guess	2025-07-12 18:21:55 +0000
+@@ -1295,6 +1295,9 @@
+     i*86:rdos:*:*)
+ 	echo ${UNAME_MACHINE}-pc-rdos
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit 0 ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru e2fsprogs-libs-1.40.11/config/config.sub e2fsprogs-libs-1.40.11.new/config/config.sub
+--- e2fsprogs-libs-1.40.11/config/config.sub	2007-06-30 12:58:34 +0000
++++ e2fsprogs-libs-1.40.11.new/config/config.sub	2025-07-12 18:22:07 +0000
+@@ -1217,7 +1217,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos*)
++	      | -skyos* | -haiku* | -rdos* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
