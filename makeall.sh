@@ -720,6 +720,23 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		glheretic)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				rm -f .depend
+				make WANT_OGL=no vga || exit 1
+				mkdir -p ${PREFIX}/usr/bin/
+				mv vgaheretic ${PREFIX}/usr/bin
+				ln -s vgaheretic ${PREFIX}/usr/bin/heretic
+				mkdir -p ${PREFIX}/usr/share/games/heretic
+				mv doc ${PREFIX}/usr/share/games/heretic
+				# this is only needed for the OpenGL version
+				#mv *.raw ${PREFIX}/usr/share/games/heretic
+			popd
+			_pack $prg-$ver
+			;;
+
 		global)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2084,6 +2101,7 @@ build findutils 4.4.2 i386 "" "The GNU versions of find utilities (find and xarg
 build flex 2.6.4 i386 "" "A tool for generating scanners (text pattern recognizers)"
 build freetype 2.10.4 i386 "" "A free and portable font rendering engine"
 build gawk 3.1.8 i386 "" "The GNU version of the AWK text processing utility"
+build glheretic 1.2 i386 "" "A version of Heretic for SVGAlib and X11" "https://doomwiki.org/wiki/Linux_Heretic"
 build global 6.6.13 i386 "" "Source code tag system"
 build gmp 6.2.1 i386 "" "GNU arbitrary precision library"
 build gnu-ghostscript 9.14.1 i386 "" "Interpreter for PostScript language & PDF"

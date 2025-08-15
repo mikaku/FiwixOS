@@ -1,0 +1,105 @@
+Only in glheretic-1.2: .depend
+diff -ru glheretic-1.2/Makefile glheretic-1.2.new/Makefile
+--- glheretic-1.2/Makefile	2000-05-02 01:57:07 +0000
++++ glheretic-1.2.new/Makefile	2025-06-29 18:35:22 +0000
+@@ -22,7 +22,7 @@
+ 	-DIPX_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
+ 	-D__NEWVGALIB__ # -DIPX_DEBUG -DEXTRA_WADS
+ CDEFS.udp = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DHAVE_VALUES_H -DLINUX_MOUSE \
+-	-DUDP_PROTOCOL -DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
++	-DI_GGI_HERETIC -DNEED_SHMGETEVENTBASE \
+ 	-D__NEWVGALIB__ # -DEXTRA_WADS
+ 
+ CDEFS.solaris = -DUNIX -DHAVE_USLEEP -DHAVE_MATH_H -DHAVE_VALUES_H \
+@@ -85,8 +85,8 @@
+ COPT.sound = -D__DOSOUND__ -DSNDSERV -Isoundclient -D__DOMUSIC__ -DMUSSERV # -D_DEBUGSOUND
+ X11LIBS = -lXext -lX11
+ 
+-MUSSERV = musserver
+-SNDSERV = sndserver
++#MUSSERV = musserver
++#SNDSERV = sndserver
+ 
+ endif
+ 
+@@ -206,8 +206,8 @@
+ 	graphics/i_ggi.o -o ggiheretic
+ 
+ vga:	depvga $(OBJS) graphics/i_vga.o $(MUSSERV) $(SNDSERV)
+-	$(CC) $(CFLAGS) $(VGALIBS) $(OBJS) \
+-	graphics/i_vga.o -o vgaheretic
++	$(CC) $(CFLAGS) $(OBJS) \
++	graphics/i_vga.o -o vgaheretic $(VGALIBS)
+ 
+ sdl:    depsdl $(OBJS) graphics/i_sdl.o $(MUSSERV) $(SNDSERV)
+ 	$(CC) $(CFLAGS) $(X_LDFLAGS) $(SDLLIBS) $(OBJS) \
+diff -ru glheretic-1.2/d_main.c glheretic-1.2.new/d_main.c
+--- glheretic-1.2/d_main.c	2003-12-08 23:21:25 +0000
++++ glheretic-1.2.new/d_main.c	2025-06-29 18:30:13 +0000
+@@ -548,7 +548,7 @@
+ 
+ #define MAPDIR "./"
+ 
+-#define SHAREWAREWADNAME "heretic_share.wad"
++#define SHAREWAREWADNAME "/usr/share/games/heretic/heretic_share.wad"
+ 
+ char *wadfiles[MAXWADFILES] =
+ {
+diff -ru glheretic-1.2/i_ipx.c glheretic-1.2.new/i_ipx.c
+--- glheretic-1.2/i_ipx.c	1999-10-23 09:02:21 +0000
++++ glheretic-1.2.new/i_ipx.c	2025-06-29 18:16:39 +0000
+@@ -1,3 +1,4 @@
++#ifndef __fiwix__
+ 
+ #include <stdlib.h>
+ #include <string.h>
+@@ -772,4 +773,4 @@
+ }
+ 
+ #endif /* #ifdef IPX_DEBUG */
+-
++#endif /* ! __fiwix__ */
+diff -ru glheretic-1.2/i_udp.c glheretic-1.2.new/i_udp.c
+--- glheretic-1.2/i_udp.c	2000-05-01 10:24:52 +0000
++++ glheretic-1.2.new/i_udp.c	2025-06-29 18:18:01 +0000
+@@ -1,3 +1,4 @@
++#ifndef __fiwix__
+ 
+ #include <stdlib.h>
+ #include <string.h>
+@@ -307,4 +308,4 @@
+     ioctl (hsocket, FIONBIO, &trueval);
+ }
+ 
+-
++#endif /* ! __fiwix__ */
+diff -ru glheretic-1.2/r_things.c glheretic-1.2.new/r_things.c
+--- glheretic-1.2/r_things.c	2000-01-26 23:49:35 +0000
++++ glheretic-1.2.new/r_things.c	2025-06-29 18:19:24 +0000
+@@ -145,6 +145,7 @@
+     check++;
+   
+   numsprites = check-namelist;
++  numsprites = 128;	/* this fixes a segfault on start up (?) */
+   
+   if (!numsprites)
+     return;
+diff -ru glheretic-1.2/w_wad.c glheretic-1.2.new/w_wad.c
+--- glheretic-1.2/w_wad.c	2003-12-08 23:10:35 +0000
++++ glheretic-1.2.new/w_wad.c	2025-06-29 18:17:32 +0000
+@@ -93,6 +93,7 @@
+ 
+ #define strcmpi strcasecmp
+ 
++#ifndef __fiwix__
+ /* first character is missing with *s++  ,so this is changed */
+ void strupr (char *s)
+ {
+@@ -105,6 +106,7 @@
+      s++;
+   }
+ }
++#endif /* ! __fiwix__ */
+ 
+ /*
+ ================
