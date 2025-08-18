@@ -1266,7 +1266,7 @@ EOF
 			;;
 
 		perl)
-			_unpack $prg-$ver j
+			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
 				./Configure -Dprefix=/usr -des || exit 1
@@ -2148,7 +2148,7 @@ build opkg 0.6.2 i386 "" "A lightweight package management system based upon ipk
 build patch 2.7.6 i386 "" "Utility for modifying/upgrading files"
 build pciutils 3.13.0 i386 "" "PCI bus related utilities"
 build pcre 8.45 i386 "" "Perl-compatible regular expression library"
-build perl 5.20.3 i386 "" "Practical Extraction and Report Language"
+build perl 5.24.4 i386 "" "Practical Extraction and Report Language" "https://www.cpan.org/src/README.html"
 build picocom 3.1 i386 "" "Minimal serial communications program"
 build pkg-config 0.25 i386 "" "A tool for determining compilation options"
 build popt 1.19 i386 "" "C library for parsing command line parameters"
