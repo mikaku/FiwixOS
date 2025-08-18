@@ -1,6 +1,6 @@
 Since Fiwix does not support networking yet, it is not able to download the
-upstream tarballs from Internet. This repository includes all the tarballs
-(and patches) to create the final FiwixOS packages.
+upstream tarballs from Internet. Hence this repository includes all the tarballs
+(and patches) to create the final FiwixOS set of packages.
 
 I use this repository to update the packages that will form the next FiwixOS
 version, and also to include new ones. Every upstream tarball must go into
@@ -25,12 +25,7 @@ $ qemu-system-i386 \
         -drive file=fiwix-builds-4GB.img,format=raw,if=ide,cache=writeback,index=3 \
         -boot c \
         -m 256 \
-        -enable-kvm \
-        -machine pc \
-        -cpu 486 \
-        -chardev pty,id=pciserial \
-        -device pci-serial,chardev=pciserial \
-        -serial pty
+        -enable-kvm
 ```
 
 Boot your FiwixOS and login, then execute `fdisk` and configure only the first
@@ -47,10 +42,6 @@ and clone this repository into it.
 Once you have clone it you can add new packages or update them, then boot
 FiwixOS and mount the filesystem to build the packages with the script
 `makeall.sh`.
-
-This repository also includes the GNU Toolchain and the Newlib C library into
-the `toolchain/` directory. Use the script `make-toolchain.sh` to build the
-whole Toolchain.
 
 
 Building the media files
