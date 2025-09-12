@@ -726,9 +726,9 @@ EOF
 				_patch $prg-$ver
 				rm -f .depend
 				make WANT_OGL=no vga || exit 1
-				mkdir -p ${PREFIX}/usr/bin/
-				mv vgaheretic ${PREFIX}/usr/bin
-				ln -s vgaheretic ${PREFIX}/usr/bin/heretic
+				mkdir -p ${PREFIX}/usr/games/
+				mv vgaheretic ${PREFIX}/usr/games
+				ln -s vgaheretic ${PREFIX}/usr/games/heretic
 				mkdir -p ${PREFIX}/usr/share/games/heretic
 				mv doc ${PREFIX}/usr/share/games/heretic
 				# this is only needed for the OpenGL version
@@ -1050,6 +1050,7 @@ EOF
 				_patch $prg-$ver
 				./configure --prefix=/usr --disable-cpu-opt --mandir=/usr/share/man || exit 1
 				_make
+				ln -s lsdoom ${PREFIX}/usr/games/doom
 			popd
 			_pack $prg-$ver
 			;;
