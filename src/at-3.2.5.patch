@@ -1,0 +1,110 @@
+diff -ru at-3.2.5/atd.c at-3.2.5.new/atd.c
+--- at-3.2.5/atd.c	2022-02-05 10:00:57 +0000
++++ at-3.2.5.new/atd.c	2025-09-13 12:13:28 +0000
+@@ -495,7 +495,7 @@
+ 
+ 	PRIV_START
+ 
+-	    nice((tolower((int) queue) - 'a') * 2);
++/*	    nice((tolower((int) queue) - 'a') * 2);*/
+ 
+ #ifdef WITH_SELINUX
+ 	    if (selinux_enabled > 0) {
+@@ -504,8 +504,10 @@
+ 	    }
+ #endif
+ 
++/*
+ 	    if (initgroups(pentry->pw_name, pentry->pw_gid))
+ 		perr("Cannot initialize the supplementary group access list");
++*/
+ 
+ 	    if (setgid(ngid) < 0)
+ 		perr("Cannot change group");
+@@ -572,8 +574,10 @@
+ 
+ 	PRIV_START
+ 
++/*
+ 	    if (initgroups(pentry->pw_name, pentry->pw_gid))
+ 		perr("Cannot initialize the supplementary group access list");
++*/
+ 
+ 	    if (setgid(gid) < 0)
+ 		perr("Cannot change group");
+@@ -583,11 +587,13 @@
+ 
+ 	    chdir ("/");
+ 
++/*
+ #if defined(SENDMAIL)
+ 	    execl(SENDMAIL, "sendmail", "-i", mailname, (char *) NULL);
+ #else
+ #error      "No mail command specified."
+ #endif
++*/
+ 	    perr("Exec failed for mail command");
+ 
+ 	PRIV_END
+@@ -773,6 +779,7 @@
+     return next_job;
+ }
+ 
++/*
+ #ifdef HAVE_CLOCK_GETTIME
+ timer_t timer;
+ struct itimerspec timeout;
+@@ -807,6 +814,7 @@
+     sleep(next - now);
+ }
+ #else
++*/
+ void timer_setup()
+ {
+ }
+@@ -820,7 +828,7 @@
+ {
+     sleep(next - now);
+ }
+-#endif
++/*#endif*/
+ /* Global functions */
+ 
+ int
+diff -ru at-3.2.5/config.guess at-3.2.5.new/config.guess
+--- at-3.2.5/config.guess	2022-02-05 10:00:57 +0000
++++ at-3.2.5.new/config.guess	2025-09-13 12:07:17 +0000
+@@ -1315,6 +1315,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru at-3.2.5/config.sub at-3.2.5.new/config.sub
+--- at-3.2.5/config.sub	2022-02-05 10:00:57 +0000
++++ at-3.2.5.new/config.sub	2025-09-13 12:07:30 +0000
+@@ -1346,7 +1346,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru at-3.2.5/parsetime.y at-3.2.5.new/parsetime.y
+--- at-3.2.5/parsetime.y	2022-02-05 10:00:57 +0000
++++ at-3.2.5.new/parsetime.y	2025-09-13 12:08:22 +0000
+@@ -14,6 +14,8 @@
+     ((y) % 4 == 0 && ((y) % 100 != 0 || (y) % 400 == 0))
+ #endif
+ 
++long int daylight;
++
+ struct tm exectm;
+ static int isgmt;
+ static char *tz = NULL;
