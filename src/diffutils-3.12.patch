@@ -1,6 +1,6 @@
-diff -ru diffutils-3.10/gnulib-tests/sys_select.in.h diffutils-3.10.new/gnulib-tests/sys_select.in.h
---- diffutils-3.10/gnulib-tests/sys_select.in.h	2023-04-18 03:47:23.000000000 +0200
-+++ diffutils-3.10.new/gnulib-tests/sys_select.in.h	2024-08-09 08:49:18.000000000 +0200
+diff -ru diffutils-3.12/gnulib-tests/sys_select.in.h diffutils-3.12.new/gnulib-tests/sys_select.in.h
+--- diffutils-3.12/gnulib-tests/sys_select.in.h	2025-01-12 18:13:00 +0000
++++ diffutils-3.12.new/gnulib-tests/sys_select.in.h	2025-09-13 14:30:46 +0000
 @@ -97,9 +97,11 @@
     But avoid namespace pollution on glibc systems, a circular include
     <sys/select.h> -> <sys/time.h> -> <sys/select.h> on FreeBSD 13.1, and
