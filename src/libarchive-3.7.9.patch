@@ -1,0 +1,26 @@
+diff -ru libarchive-3.7.9/libarchive/archive_write_set_format_iso9660.c libarchive-3.7.9.new/libarchive/archive_write_set_format_iso9660.c
+--- libarchive-3.7.9/libarchive/archive_write_set_format_iso9660.c	2025-03-30 20:06:36 +0000
++++ libarchive-3.7.9.new/libarchive/archive_write_set_format_iso9660.c	2025-09-13 16:07:59 +0000
+@@ -63,6 +63,8 @@
+ #define getgid()			0
+ #endif
+ 
++#define timezone _timezone
++
+ /*#define DEBUG 1*/
+ #ifdef DEBUG
+ /* To compare to the ISO image file made by mkisofs. */
+diff -ru libarchive-3.7.9/tar/bsdtar.h libarchive-3.7.9.new/tar/bsdtar.h
+--- libarchive-3.7.9/tar/bsdtar.h	2025-03-30 20:06:36 +0000
++++ libarchive-3.7.9.new/tar/bsdtar.h	2025-09-13 16:07:59 +0000
+@@ -11,6 +11,10 @@
+ #include "bsdtar_platform.h"
+ #include <stdio.h>
+ 
++#ifdef HAVE_LIMITS_H
++#include <limits.h>
++#endif
++
+ #define	DEFAULT_BYTES_PER_BLOCK	(20*512)
+ #define ENV_READER_OPTIONS	"TAR_READER_OPTIONS"
+ #define ENV_WRITER_OPTIONS	"TAR_WRITER_OPTIONS"
