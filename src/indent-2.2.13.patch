@@ -1,0 +1,63 @@
+diff -ru indent-2.2.13/config/config.guess indent-2.2.13.new/config/config.guess
+--- indent-2.2.13/config/config.guess	2023-01-26 09:52:28 +0000
++++ indent-2.2.13.new/config/config.guess	2025-09-13 15:44:32 +0000
+@@ -1495,6 +1495,9 @@
+     *:Unleashed:*:*)
+ 	echo "$UNAME_MACHINE"-unknown-unleashed"$UNAME_RELEASE"
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ # No uname command or uname output not recognized.
+diff -ru indent-2.2.13/config/config.sub indent-2.2.13.new/config/config.sub
+--- indent-2.2.13/config/config.sub	2023-01-26 09:52:29 +0000
++++ indent-2.2.13.new/config/config.sub	2025-09-13 15:44:42 +0000
+@@ -1722,7 +1722,7 @@
+ 	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
+ 	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
+ 	     | midnightbsd* | amdhsa* | unleashed* | emscripten* | wasi* \
+-	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx*)
++	     | nsk* | powerunix* | genode* | zvmoe* | qnx* | emx* | fiwix*)
+ 		;;
+ 	# This one is extra strict with allowed versions
+ 	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)
+diff -ru indent-2.2.13/src/code_io.c indent-2.2.13.new/src/code_io.c
+--- indent-2.2.13/src/code_io.c	2021-04-19 08:13:53 +0000
++++ indent-2.2.13.new/src/code_io.c	2025-09-13 15:46:10 +0000
+@@ -69,6 +69,8 @@
+ #include "globs.h"
+ #include "output.h"
+ 
++#define SSIZE_MAX	INT_MAX
++
+ RCSTAG_CC ("$Id$");
+ 
+ /**
+diff -ru indent-2.2.13/src/indent.c indent-2.2.13.new/src/indent.c
+--- indent-2.2.13/src/indent.c	2021-04-19 08:13:53 +0000
++++ indent-2.2.13.new/src/indent.c	2025-09-13 15:43:58 +0000
+@@ -1061,8 +1061,10 @@
+ #if defined (HAVE_SETLOCALE)
+     setlocale(LC_ALL, "");
+ #endif
++/*
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
++*/
+ 
+ #if defined (_WIN32) && !defined (__CYGWIN__)
+     /* wildcard expansion of commandline arguments, see wildexp.c */
+diff -ru indent-2.2.13/src/indent.h indent-2.2.13.new/src/indent.h
+--- indent-2.2.13/src/indent.h	2023-01-26 09:13:24 +0000
++++ indent-2.2.13.new/src/indent.h	2025-09-13 15:43:37 +0000
+@@ -57,7 +57,7 @@
+ RCSTAG_H (indent, "$Id$");
+ #include <config.h>
+ 
+-#include <libintl.h>
++/*#include <libintl.h>*/
+ #ifdef ENABLE_NLS
+ #define _(X) gettext(X)
+ #else
