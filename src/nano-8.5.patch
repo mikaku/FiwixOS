@@ -1,7 +1,7 @@
-diff -ru nano-8.1/src/text.c nano-8.1.new/src/text.c
---- nano-8.1/src/text.c	2024-07-01 11:15:11.000000000 +0200
-+++ nano-8.1.new/src/text.c	2024-08-10 14:42:15.000000000 +0200
-@@ -2140,8 +2140,7 @@
+diff -ru nano-8.5/src/text.c nano-8.5.new/src/text.c
+--- nano-8.5/src/text.c	2025-06-08 11:26:32 +0000
++++ nano-8.5.new/src/text.c	2025-09-14 18:03:45 +0000
+@@ -2133,8 +2133,7 @@
  			return;
  		}
  
@@ -11,7 +11,7 @@ diff -ru nano-8.1/src/text.c nano-8.1.new/src/text.c
  	}
  
  	/* The spell checker needs the screen, so exit from curses mode. */
-@@ -2190,9 +2189,7 @@
+@@ -2183,9 +2182,7 @@
  	free(arguments[0]);
  
  	/* When the temporary file wasn't touched, say so and leave. */
@@ -22,3 +22,4 @@ diff -ru nano-8.1/src/text.c nano-8.1.new/src/text.c
  		statusline(REMARK, _("Nothing changed"));
  		return;
  	}
+Only in nano-8.5.new/src: text.c.orig
