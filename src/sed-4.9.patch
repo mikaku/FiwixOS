@@ -1,0 +1,15 @@
+diff -ru sed-4.9/gnulib-tests/sys_select.in.h sed-4.9.new/gnulib-tests/sys_select.in.h
+--- sed-4.9/gnulib-tests/sys_select.in.h	2022-10-09 14:42:28 +0000
++++ sed-4.9.new/gnulib-tests/sys_select.in.h	2025-09-15 18:37:19 +0000
+@@ -85,9 +85,11 @@
+    But avoid namespace pollution on glibc systems, a circular include
+    <sys/select.h> -> <sys/time.h> -> <sys/select.h> on FreeBSD 13.1, and
+    "unknown type name" problems on Cygwin.  */
++/*
+ # if !(defined __GLIBC__ || defined __FreeBSD__ || defined __CYGWIN__)
+ #  include <sys/time.h>
+ # endif
++*/
+ 
+ /* On AIX 7 and Solaris 10, <sys/select.h> provides an FD_ZERO implementation
+    that relies on memset(), but without including <string.h>.
