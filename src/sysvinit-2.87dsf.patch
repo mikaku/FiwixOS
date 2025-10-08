@@ -1,7 +1,7 @@
 diff -ru sysvinit-2.87dsf/src/Makefile sysvinit-2.87dsf.new/src/Makefile
 --- sysvinit-2.87dsf/src/Makefile	2009-07-10 21:47:28 +0000
-+++ sysvinit-2.87dsf.new/src/Makefile	2024-03-29 10:47:36 +0000
-@@ -25,10 +25,10 @@
++++ sysvinit-2.87dsf.new/src/Makefile	2025-09-27 10:45:42 +0000
+@@ -25,7 +25,7 @@
  
  ifeq ($(DISTRO),)
  BIN	+= mountpoint
@@ -9,11 +9,16 @@ diff -ru sysvinit-2.87dsf/src/Makefile sysvinit-2.87dsf.new/src/Makefile
 +#SBIN	+= sulogin bootlogd
  USRBIN	+= utmpdump wall
  MAN1	+= mountpoint.1 wall.1
+ MAN8	+= sulogin.8 bootlogd.8
+@@ -35,7 +35,7 @@
+ BIN	+= mountpoint
+ SBIN	+= sulogin bootlogd
+ MAN1	+= mountpoint.1
 -MAN8	+= sulogin.8 bootlogd.8
 +#MAN8	+= sulogin.8 bootlogd.8
  endif
  
- ifeq ($(DISTRO),Debian)
+ ifeq ($(DISTRO),Owl)
 @@ -73,8 +73,8 @@
  init:		init.o init_utmp.o
  		$(CC) $(LDFLAGS) $(STATIC) -o $@ init.o init_utmp.o $(INIT_SELIBS)
@@ -57,7 +62,7 @@ diff -ru sysvinit-2.87dsf/src/Makefile sysvinit-2.87dsf.new/src/Makefile
  		done
 diff -ru sysvinit-2.87dsf/src/dowall.c sysvinit-2.87dsf.new/src/dowall.c
 --- sysvinit-2.87dsf/src/dowall.c	2009-07-12 13:30:31 +0000
-+++ sysvinit-2.87dsf.new/src/dowall.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/dowall.c	2025-09-27 10:45:42 +0000
 @@ -28,7 +28,7 @@
  #include <signal.h>
  #include <setjmp.h>
@@ -87,7 +92,7 @@ diff -ru sysvinit-2.87dsf/src/dowall.c sysvinit-2.87dsf.new/src/dowall.c
  			if (file_isatty(term) &&
 diff -ru sysvinit-2.87dsf/src/halt.c sysvinit-2.87dsf.new/src/halt.c
 --- sysvinit-2.87dsf/src/halt.c	2009-07-12 15:06:19 +0000
-+++ sysvinit-2.87dsf.new/src/halt.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/halt.c	2025-09-27 10:45:42 +0000
 @@ -256,9 +256,6 @@
  		sleep(2);
  	}
@@ -100,7 +105,7 @@ diff -ru sysvinit-2.87dsf/src/halt.c sysvinit-2.87dsf.new/src/halt.c
  
 diff -ru sysvinit-2.87dsf/src/init.c sysvinit-2.87dsf.new/src/init.c
 --- sysvinit-2.87dsf/src/init.c	2009-07-12 17:52:46 +0000
-+++ sysvinit-2.87dsf.new/src/init.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/init.c	2025-09-27 10:45:42 +0000
 @@ -7,7 +7,7 @@
   *
   * Version:	@(#)init.c  2.86  30-Jul-2004  miquels@cistron.nl
@@ -110,139 +115,24 @@ diff -ru sysvinit-2.87dsf/src/init.c sysvinit-2.87dsf.new/src/init.c
  #define DATE    "31-Jul-2004"
  /*
   *		This file is part of the sysvinit suite,
-@@ -40,7 +40,7 @@
- #include <utmp.h>
- #include <ctype.h>
- #include <stdarg.h>
--#include <sys/syslog.h>
-+/*#include <sys/syslog.h>*/
- #include <sys/time.h>
- 
- #ifdef WITH_SELINUX
-@@ -763,9 +763,11 @@
- 		 */
- 		sigfillset(&nmask);
- 		sigprocmask(SIG_BLOCK, &nmask, &omask);
-+/*
- 		openlog("init", 0, LOG_DAEMON);
- 		syslog(LOG_INFO, "%s", buf);
- 		closelog();
-+*/
- 		sigprocmask(SIG_SETMASK, &omask, NULL);
+@@ -2377,12 +2377,12 @@
  	}
+ #endif
  
+-#ifdef __linux__
+ 	/*
+ 	 *	Tell the kernel to send us SIGINT when CTRL-ALT-DEL
+ 	 *	is pressed, and that we want to handle keyboard signals.
+ 	 */
+ 	init_reboot(BMAGIC_SOFT);
++#ifdef __linux__
+ 	if ((f = open(VT_MASTER, O_RDWR | O_NOCTTY)) >= 0) {
+ 		(void) ioctl(f, KDSIGACCEPT, SIGWINCH);
+ 		close(f);
 diff -ru sysvinit-2.87dsf/src/killall5.c sysvinit-2.87dsf.new/src/killall5.c
 --- sysvinit-2.87dsf/src/killall5.c	2009-07-12 14:59:06 +0000
-+++ sysvinit-2.87dsf.new/src/killall5.c	2024-03-29 10:47:36 +0000
-@@ -37,11 +37,17 @@
- #include <sys/stat.h>
- #include <signal.h>
- #include <dirent.h>
--#include <syslog.h>
-+/*#include <syslog.h>*/
- #include <getopt.h>
- #include <stdarg.h>
- #include <sys/mman.h>
- 
-+/* fake values */
-+#define LOG_ERR		1
-+#define LOG_CONS	1
-+#define LOG_PID		1
-+#define LOG_DAEMON	1
-+
- char *Version = "@(#)killall5 2.86 31-Jul-2004 miquels@cistron.nl";
- 
- #define STATNAMELEN	15
-@@ -470,7 +476,7 @@
- void usage(void)
- {
- 	nsyslog(LOG_ERR, "only one argument, a signal number, allowed");
--	closelog();
-+/*	closelog();*/
- 	exit(1);
- }
- 
-@@ -485,7 +491,7 @@
- 	va_start(args, fmt);
- 
- 	if (ttyname(0) == NULL) {
--		vsyslog(pri, fmt, args);
-+/*		vsyslog(pri, fmt, args);*/
- 	} else {
- 		fprintf(stderr, "%s: ",progname);
- 		vfprintf(stderr, fmt, args);
-@@ -522,7 +528,7 @@
- 	while ((opt = getopt(argc,argv,"hco:sx")) != EOF) switch (opt) {
- 		case '?':
- 			nsyslog(LOG_ERR,"invalid options on command line!\n");
--			closelog();
-+/*			closelog();*/
- 			exit(1);
- 		case 'c':
- 			if (geteuid() == 0) chroot_check = 1;
-@@ -531,7 +537,7 @@
- 			if (oind >= PIDOF_OMITSZ -1) {
- 				nsyslog(LOG_ERR,"omit pid buffer size %d "
- 					"exceeded!\n", PIDOF_OMITSZ);
--				closelog();
-+/*				closelog();*/
- 				exit(1);
- 			}
- 			if (strcmp("%PPID",optarg) == 0)
-@@ -540,7 +546,7 @@
- 				nsyslog(LOG_ERR,
- 					"illegal omit pid value (%s)!\n",
- 					optarg);
--				closelog();
-+/*				closelog();*/
- 				exit(1);
- 			}
- 			oind++;
-@@ -564,7 +570,7 @@
- 		snprintf(tmp, 512, "/proc/%d/root", getpid());
- 		if (stat(tmp, &st) < 0) {
- 			nsyslog(LOG_ERR, "stat failed for %s!\n", tmp);
--			closelog();
-+/*			closelog();*/
- 			exit(1);
- 		}
- 	}
-@@ -611,7 +617,7 @@
- 	}
- 	if (!first)
- 		printf("\n");
--	closelog();
-+/*	closelog();*/
- 	return(first ? 1 : 0);
- }
- 
-@@ -638,7 +644,7 @@
- 		progname++;
- 
- 	/* Now connect to syslog. */
--	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);
-+/*	openlog(progname, LOG_CONS|LOG_PID, LOG_DAEMON);*/
- 
- 	/* Were we called as 'pidof' ? */
- 	if (strcmp(progname, "pidof") == 0)
-@@ -657,14 +663,14 @@
- 					nsyslog(LOG_ERR,"omit pid buffer size "
- 						"%d exceeded!\n",
- 						KILLALL_OMITSZ);
--					closelog();
-+/*					closelog();*/
- 					exit(1);
- 				}
- 				if ((opid[oind] = atoi(argv[i])) < 1) {
- 					nsyslog(LOG_ERR,
- 						"illegal omit pid value "
- 						"(%s)!\n", argv[i]);
--					closelog();
-+/*					closelog();*/
- 					exit(1);
- 				}
- 				oind++;
-@@ -689,7 +695,7 @@
++++ sysvinit-2.87dsf.new/src/killall5.c	2025-09-27 10:45:42 +0000
+@@ -689,7 +689,7 @@
  	signal(SIGKILL, SIG_IGN);
  
  	/* lock us into memory */
@@ -251,18 +141,9 @@ diff -ru sysvinit-2.87dsf/src/killall5.c sysvinit-2.87dsf.new/src/killall5.c
  
  	/* Now stop all processes. */
  	kill(-1, SIGSTOP);
-@@ -723,7 +729,7 @@
- 	kill(-1, SIGCONT);
- 
- 	/* Done. */
--	closelog();
-+/*	closelog();*/
- 
- 	/* Force the kernel to run the scheduler */
- 	usleep(1);
 diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
 --- sysvinit-2.87dsf/src/last.c	2009-07-12 17:52:46 +0000
-+++ sysvinit-2.87dsf.new/src/last.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/last.c	2025-09-27 10:45:42 +0000
 @@ -31,9 +31,11 @@
  #include <string.h>
  #include <signal.h>
@@ -313,7 +194,7 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
  		if (len >= sizeof(domain)) len = sizeof(domain) - 1;
 diff -ru sysvinit-2.87dsf/src/mountpoint.c sysvinit-2.87dsf.new/src/mountpoint.c
 --- sysvinit-2.87dsf/src/mountpoint.c	2005-09-10 09:32:27 +0000
-+++ sysvinit-2.87dsf.new/src/mountpoint.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/mountpoint.c	2025-09-27 10:45:42 +0000
 @@ -22,6 +22,7 @@
  #include <stdarg.h>
  #include <getopt.h>
@@ -324,26 +205,17 @@ diff -ru sysvinit-2.87dsf/src/mountpoint.c sysvinit-2.87dsf.new/src/mountpoint.c
  {
 diff -ru sysvinit-2.87dsf/src/reboot.h sysvinit-2.87dsf.new/src/reboot.h
 --- sysvinit-2.87dsf/src/reboot.h	2005-09-10 09:32:27 +0000
-+++ sysvinit-2.87dsf.new/src/reboot.h	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/reboot.h	2025-09-27 10:45:42 +0000
 @@ -32,5 +32,5 @@
  #  define BMAGIC_POWEROFF	BMAGIC_HALT
  #endif
  
 -#define init_reboot(magic)	reboot(magic)
-+#define init_reboot(magic)	reboot(0xfee1dead, 672274793, magic)	/* still uses old format */
++#define init_reboot(magic)	reboot(0xfee1dead, 672274793, magic)	/* Fiwix still uses the old format */
  
 diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
 --- sysvinit-2.87dsf/src/shutdown.c	2009-07-12 15:03:07 +0000
-+++ sysvinit-2.87dsf.new/src/shutdown.c	2024-03-29 10:47:36 +0000
-@@ -36,7 +36,7 @@
- #include <fcntl.h>
- #include <stdarg.h>
- #include <utmp.h>
--#include <syslog.h>
-+/*#include <syslog.h>*/
- #include "paths.h"
- #include "reboot.h"
- #include "initreq.h"
++++ sysvinit-2.87dsf.new/src/shutdown.c	2025-09-27 10:45:54 +0000
 @@ -356,7 +356,7 @@
  /*
   *	Go to runlevel 0, 1 or 6.
@@ -353,34 +225,7 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  {
  	char	*args[8];
  	int	argp = 0;
-@@ -368,12 +368,14 @@
- 		hardsleep(1);
- 		stopit(0);
- 	}
-+/*
- 	openlog("shutdown", LOG_PID, LOG_USER);
- 	if (do_halt)
-   		syslog(LOG_NOTICE, "shutting down for system halt");
- 	else
- 		syslog(LOG_NOTICE, "shutting down for system reboot");
- 	closelog();
-+*/
- 
- 	/* See if we have to do it ourself. */
- 	if (doself) fastdown();
-@@ -400,9 +402,11 @@
- 	unlink(FASTBOOT);
- 	unlink(FORCEFSCK);
- 	init_setenv("INIT_HALT", NULL);
-+/*
- 	openlog("shutdown", LOG_PID, LOG_USER);
- 	syslog(LOG_NOTICE, "shutdown failed");
- 	closelog();
-+*/
- 	exit(1);
- }
- 
-@@ -699,7 +703,7 @@
+@@ -699,7 +699,7 @@
  		if (wt < 0) wt += 1440;
  	}
  	/* Shutdown NOW if time == 0 */
@@ -389,7 +234,7 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  
  	/* Give warnings on regular intervals and finally shutdown. */
  	if (wt < 15 && !needwarning(wt)) warn(wt);
-@@ -712,7 +716,7 @@
+@@ -712,7 +712,7 @@
  		hardsleep(60);
  		wt--;
  	}
@@ -400,7 +245,7 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  }
 diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
 --- sysvinit-2.87dsf/src/utmpdump.c	2009-07-10 21:26:04 +0000
-+++ sysvinit-2.87dsf.new/src/utmpdump.c	2024-03-29 10:47:36 +0000
++++ sysvinit-2.87dsf.new/src/utmpdump.c	2025-09-27 10:45:42 +0000
 @@ -38,7 +38,7 @@
  	dest.ut_type = src.ut_type;
  	dest.ut_pid  = src.ut_pid;
@@ -437,28 +282,3 @@ diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
                  ut.ut_time = strtotime(s_time);
  
                  if (oldfmt) {
-diff -ru sysvinit-2.87dsf/src/wall.c sysvinit-2.87dsf.new/src/wall.c
---- sysvinit-2.87dsf/src/wall.c	2005-09-10 09:32:27 +0000
-+++ sysvinit-2.87dsf.new/src/wall.c	2024-03-29 10:47:36 +0000
-@@ -19,7 +19,7 @@
- #include <stdlib.h>
- #include <unistd.h>
- #include <pwd.h>
--#include <syslog.h>
-+/*#include <syslog.h>*/
- 
- 
- char *Version = "@(#) wall 2.79 12-Sep-2000 miquels@cistron.nl";
-@@ -100,10 +100,12 @@
- 	}
-   }
- 
-+/*
-   openlog("wall", LOG_PID, LOG_USER);
-   syslog(LOG_INFO, "wall: user %s broadcasted %d lines (%d chars)",
- 	whoami, i, strlen(buf));
-   closelog();
-+*/
- 
-   unsetenv("TZ");
-   wall(buf, 0, remote);
