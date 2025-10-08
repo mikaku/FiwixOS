@@ -1,9 +1,21 @@
-diff -ruN pciutils-3.13.0/lib/configure pciutils-3.13.0.new/lib/configure
---- pciutils-3.13.0/lib/configure	2024-03-13 18:55:25.000000000 +0100
-+++ pciutils-3.13.0.new/lib/configure	2024-08-10 16:40:08.000000000 +0200
-@@ -226,6 +226,10 @@
- 		IDSDIR="DEVS:"
- 		echo >>$m 'CC=gcc'
+diff -ruN pciutils-3.14.0/Makefile pciutils-3.14.0.new/Makefile
+--- pciutils-3.14.0/Makefile	2025-09-14 20:28:39 +0000
++++ pciutils-3.14.0.new/Makefile	2025-06-21 16:05:02 +0000
+@@ -32,7 +32,7 @@
+ ABI_VERSION=3
+ 
+ # Installation directories
+-PREFIX=/usr/local
++PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+ SBINDIR=$(PREFIX)/sbin
+ SHAREDIR=$(PREFIX)/share
+diff -ruN pciutils-3.14.0/lib/configure pciutils-3.14.0.new/lib/configure
+--- pciutils-3.14.0/lib/configure	2025-06-11 08:38:03 +0000
++++ pciutils-3.14.0.new/lib/configure	2025-09-14 20:13:53 +0000
+@@ -242,6 +242,10 @@
+ 		IDSDIR="/etc/pci"
+ 		LIBRESOLV=
  		;;
 +	fiwix)
 +		echo_n " i386-ports"
@@ -12,9 +24,9 @@ diff -ruN pciutils-3.13.0/lib/configure pciutils-3.13.0.new/lib/configure
  	*)
  		echo " Unfortunately, your OS is not supported by the PCI Library"
  		exit 1
-diff -ruN pciutils-3.13.0/lib/i386-io-fiwix.h pciutils-3.13.0.new/lib/i386-io-fiwix.h
---- pciutils-3.13.0/lib/i386-io-fiwix.h	1970-01-01 01:00:00.000000000 +0100
-+++ pciutils-3.13.0.new/lib/i386-io-fiwix.h	2024-08-10 16:42:43.000000000 +0200
+diff -ruN pciutils-3.14.0/lib/i386-io-fiwix.h pciutils-3.14.0.new/lib/i386-io-fiwix.h
+--- pciutils-3.14.0/lib/i386-io-fiwix.h	1970-01-01 00:00:00 +0000
++++ pciutils-3.14.0.new/lib/i386-io-fiwix.h	2025-09-14 20:15:11 +0000
 @@ -0,0 +1,35 @@
 +/*
 + *	The PCI Library -- Access to i386 I/O ports on FiwixOS (same as in Hurd)
@@ -51,9 +63,9 @@ diff -ruN pciutils-3.13.0/lib/i386-io-fiwix.h pciutils-3.13.0.new/lib/i386-io-fi
 +static inline void intel_io_unlock(void)
 +{
 +}
-diff -ruN pciutils-3.13.0/lib/i386-ports.c pciutils-3.13.0.new/lib/i386-ports.c
---- pciutils-3.13.0/lib/i386-ports.c	2024-03-29 22:46:00.000000000 +0100
-+++ pciutils-3.13.0.new/lib/i386-ports.c	2024-08-10 16:40:08.000000000 +0200
+diff -ruN pciutils-3.14.0/lib/i386-ports.c pciutils-3.14.0.new/lib/i386-ports.c
+--- pciutils-3.14.0/lib/i386-ports.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/lib/i386-ports.c	2025-09-14 20:15:52 +0000
 @@ -32,6 +32,8 @@
  #include "i386-io-djgpp.h"
  #elif defined(PCI_OS_OPENBSD)
@@ -63,59 +75,9 @@ diff -ruN pciutils-3.13.0/lib/i386-ports.c pciutils-3.13.0.new/lib/i386-ports.c
  #else
  #error Do not know how to access I/O ports on this OS.
  #endif
-diff -ruN pciutils-3.13.0/lmr/margin_args.c pciutils-3.13.0.new/lmr/margin_args.c
---- pciutils-3.13.0/lmr/margin_args.c	2024-05-27 14:35:56.000000000 +0200
-+++ pciutils-3.13.0.new/lmr/margin_args.c	2024-08-10 16:51:30.000000000 +0200
-@@ -40,6 +40,7 @@
- dev_for_filter(struct pci_access *pacc, char *filter)
- {
-   struct pci_filter pci_filter;
-+  struct pci_dev *p;
-   pci_filter_init(pacc, &pci_filter);
-   if (pci_filter_parse_slot(&pci_filter, filter))
-     die("Invalid device ID: %s\n", filter);
-@@ -50,7 +51,7 @@
-   if (pci_filter.domain == -1)
-     pci_filter.domain = 0;
- 
--  for (struct pci_dev *p = pacc->devices; p; p = p->next)
-+  for (p = pacc->devices; p; p = p->next)
-     {
-       if (pci_filter_match(&pci_filter, p))
-         return p;
-@@ -77,7 +78,8 @@
- find_ready_links(struct pci_access *pacc, struct margin_link *links, bool cnt_only)
- {
-   u8 cnt = 0;
--  for (struct pci_dev *p = pacc->devices; p; p = p->next)
-+  struct pci_dev *p;
-+  for (p = pacc->devices; p; p = p->next)
-     {
-       if (pci_find_cap(p, PCI_EXT_CAP_ID_LMR, PCI_CAP_EXTENDED) && margin_port_is_down(p))
-         {
-@@ -155,7 +157,8 @@
-                 }
- 
-               int consumed = 0;
--              for (int i = 0; i < 3; i++)
-+              int i;
-+              for (i = 0; i < 3; i++)
-                 if (cons[i] > consumed)
-                   consumed = cons[i];
-               if ((size_t)consumed != strlen(optarg))
-@@ -261,7 +264,8 @@
-         {
-           links = xmalloc(ports_n * sizeof(*links));
-           find_ready_links(pacc, links, false);
--          for (int i = 0; i < ports_n; i++)
-+          int i;
-+          for (i = 0; i < ports_n; i++)
-             init_link_args(&(links[i].args), com_args);
-         }
-     }
-diff -ruN pciutils-3.13.0/lmr/margin.c pciutils-3.13.0.new/lmr/margin.c
---- pciutils-3.13.0/lmr/margin.c	2024-05-27 18:22:21.000000000 +0200
-+++ pciutils-3.13.0.new/lmr/margin.c	2024-08-10 16:48:14.000000000 +0200
+diff -ruN pciutils-3.14.0/lmr/margin.c pciutils-3.14.0.new/lmr/margin.c
+--- pciutils-3.14.0/lmr/margin.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/lmr/margin.c	2025-09-14 20:24:10 +0000
 @@ -221,6 +221,7 @@
    u8 marg_type;
    margin_cmd step_cmd;
@@ -261,10 +223,60 @@ diff -ruN pciutils-3.13.0/lmr/margin.c pciutils-3.13.0.new/lmr/margin.c
      {
        if (results[i].test_status == MARGIN_TEST_OK)
          free(results[i].lanes);
-diff -ruN pciutils-3.13.0/lmr/margin_hw.c pciutils-3.13.0.new/lmr/margin_hw.c
---- pciutils-3.13.0/lmr/margin_hw.c	2024-05-27 18:22:21.000000000 +0200
-+++ pciutils-3.13.0.new/lmr/margin_hw.c	2024-08-10 16:45:24.000000000 +0200
-@@ -24,8 +24,9 @@
+diff -ruN pciutils-3.14.0/lmr/margin_args.c pciutils-3.14.0.new/lmr/margin_args.c
+--- pciutils-3.14.0/lmr/margin_args.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/lmr/margin_args.c	2025-09-14 20:25:23 +0000
+@@ -40,6 +40,7 @@
+ dev_for_filter(struct pci_access *pacc, char *filter)
+ {
+   struct pci_filter pci_filter;
++  struct pci_dev *p;
+   pci_filter_init(pacc, &pci_filter);
+   if (pci_filter_parse_slot(&pci_filter, filter))
+     die("Invalid device ID: %s\n", filter);
+@@ -50,7 +51,7 @@
+   if (pci_filter.domain == -1)
+     pci_filter.domain = 0;
+ 
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (pci_filter_match(&pci_filter, p))
+         return p;
+@@ -77,7 +78,8 @@
+ find_ready_links(struct pci_access *pacc, struct margin_link *links, bool cnt_only)
+ {
+   u8 cnt = 0;
+-  for (struct pci_dev *p = pacc->devices; p; p = p->next)
++  struct pci_dev *p;
++  for (p = pacc->devices; p; p = p->next)
+     {
+       if (pci_find_cap(p, PCI_EXT_CAP_ID_LMR, PCI_CAP_EXTENDED) && margin_port_is_down(p))
+         {
+@@ -155,7 +157,8 @@
+                 }
+ 
+               int consumed = 0;
+-              for (int i = 0; i < 3; i++)
++              int i;
++              for (i = 0; i < 3; i++)
+                 if (cons[i] > consumed)
+                   consumed = cons[i];
+               if ((size_t)consumed != strlen(optarg))
+@@ -261,7 +264,8 @@
+         {
+           links = xmalloc(ports_n * sizeof(*links));
+           find_ready_links(pacc, links, false);
+-          for (int i = 0; i < ports_n; i++)
++          int i;
++          for (i = 0; i < ports_n; i++)
+             init_link_args(&(links[i].args), com_args);
+         }
+     }
+diff -ruN pciutils-3.14.0/lmr/margin_hw.c pciutils-3.14.0.new/lmr/margin_hw.c
+--- pciutils-3.14.0/lmr/margin_hw.c	2025-06-21 15:08:44 +0000
++++ pciutils-3.14.0.new/lmr/margin_hw.c	2025-09-14 20:22:47 +0000
+@@ -25,8 +25,9 @@
    u16 vendor = pci_read_word(dev, PCI_VENDOR_ID);
    u16 device = pci_read_word(dev, PCI_DEVICE_ID);
    u8 revision = pci_read_byte(dev, PCI_REVISION_ID);
@@ -275,7 +287,7 @@ diff -ruN pciutils-3.13.0/lmr/margin_hw.c pciutils-3.13.0.new/lmr/margin_hw.c
      {
        if (vendor == special_hw[i][0] && device == special_hw[i][1] && revision == special_hw[i][2])
          return special_hw[i][3];
-@@ -54,11 +55,12 @@
+@@ -55,11 +56,12 @@
                   struct pci_dev **up_port)
  {
    struct pci_cap *cap = pci_find_cap(dev, PCI_CAP_ID_EXP, PCI_CAP_NORMAL);
@@ -289,9 +301,9 @@ diff -ruN pciutils-3.13.0/lmr/margin_hw.c pciutils-3.13.0.new/lmr/margin_hw.c
      {
        if (given_down && pci_read_byte(dev, PCI_SECONDARY_BUS) == p->bus && dev->domain == p->domain
            && p->func == 0)
-diff -ruN pciutils-3.13.0/lmr/margin_log.c pciutils-3.13.0.new/lmr/margin_log.c
---- pciutils-3.13.0/lmr/margin_log.c	2024-05-27 18:22:21.000000000 +0200
-+++ pciutils-3.13.0.new/lmr/margin_log.c	2024-08-10 16:48:52.000000000 +0200
+diff -ruN pciutils-3.14.0/lmr/margin_log.c pciutils-3.14.0.new/lmr/margin_log.c
+--- pciutils-3.14.0/lmr/margin_log.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/lmr/margin_log.c	2025-09-14 20:24:35 +0000
 @@ -51,6 +51,8 @@
  void
  margin_log_link(struct margin_link *link)
@@ -327,9 +339,9 @@ diff -ruN pciutils-3.13.0/lmr/margin_log.c pciutils-3.13.0.new/lmr/margin_log.c
          {
            if (arg.lanes_numbers[i] - 1 == arg.lanes_numbers[i - 1])
              {
-diff -ruN pciutils-3.13.0/lmr/margin_results.c pciutils-3.13.0.new/lmr/margin_results.c
---- pciutils-3.13.0/lmr/margin_results.c	2024-05-27 14:35:56.000000000 +0200
-+++ pciutils-3.13.0.new/lmr/margin_results.c	2024-08-10 16:50:28.000000000 +0200
+diff -ruN pciutils-3.14.0/lmr/margin_results.c pciutils-3.14.0.new/lmr/margin_results.c
+--- pciutils-3.14.0/lmr/margin_results.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/lmr/margin_results.c	2025-09-14 20:25:00 +0000
 @@ -68,8 +68,9 @@
                             "Invalid lanes specified with arguments",
                             "Invalid receivers specified with arguments",
@@ -392,21 +404,28 @@ diff -ruN pciutils-3.13.0/lmr/margin_results.c pciutils-3.13.0.new/lmr/margin_re
                  fprintf(csv, "NA,");
                fprintf(csv, "NA\n");
              }
-diff -ruN pciutils-3.13.0/ls-ecaps.c pciutils-3.13.0.new/ls-ecaps.c
---- pciutils-3.13.0/ls-ecaps.c	2024-04-29 09:36:21.000000000 +0200
-+++ pciutils-3.13.0.new/ls-ecaps.c	2024-08-10 16:40:08.000000000 +0200
-@@ -677,8 +677,9 @@
-       int prevmatched=0;
+diff -ruN pciutils-3.14.0/ls-ecaps.c pciutils-3.14.0.new/ls-ecaps.c
+--- pciutils-3.14.0/ls-ecaps.c	2025-06-21 15:17:18 +0000
++++ pciutils-3.14.0.new/ls-ecaps.c	2025-09-14 20:18:27 +0000
+@@ -661,6 +661,8 @@
+ static void
+ cap_rcec(struct device *d, int where)
+ {
++  int dev;
++
+   printf("Root Complex Event Collector Endpoint Association\n");
+   if (verbose < 2)
+     return;
+@@ -678,7 +680,7 @@
        int adjcount=0;
        int prevdev=0;
-+      int dev;
        printf("RCiEP at Device(s):");
 -      for (int dev=0; dev < 32; dev++)
 +      for (dev=0; dev < 32; dev++)
          {
  	  if (BITS(bmap, dev, 1))
  	    {
-@@ -878,8 +879,9 @@
+@@ -987,8 +989,9 @@
      "CXL device registers",
      "CPMU registers",
    };
@@ -417,21 +436,9 @@ diff -ruN pciutils-3.13.0/ls-ecaps.c pciutils-3.13.0.new/ls-ecaps.c
      {
        int pos = where + PCI_CXL_RL_BLOCK1_LO + 8*i;
        if (pos + 7 >= where + len)
-diff -ruN pciutils-3.13.0/Makefile pciutils-3.13.0.new/Makefile
---- pciutils-3.13.0/Makefile	2024-05-30 17:58:01.000000000 +0200
-+++ pciutils-3.13.0.new/Makefile	2024-08-10 16:40:08.000000000 +0200
-@@ -32,7 +32,7 @@
- ABI_VERSION=3
- 
- # Installation directories
--PREFIX=/usr/local
-+PREFIX=/usr
- BINDIR=$(PREFIX)/bin
- SBINDIR=$(PREFIX)/sbin
- SHAREDIR=$(PREFIX)/share
-diff -ruN pciutils-3.13.0/pcilmr.c pciutils-3.13.0.new/pcilmr.c
---- pciutils-3.13.0/pcilmr.c	2024-05-27 14:35:56.000000000 +0200
-+++ pciutils-3.13.0.new/pcilmr.c	2024-08-10 16:44:43.000000000 +0200
+diff -ruN pciutils-3.14.0/pcilmr.c pciutils-3.14.0.new/pcilmr.c
+--- pciutils-3.14.0/pcilmr.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.14.0.new/pcilmr.c	2025-09-14 20:21:42 +0000
 @@ -19,12 +19,14 @@
  static void
  scan_links(struct pci_access *pacc, bool only_ready)
