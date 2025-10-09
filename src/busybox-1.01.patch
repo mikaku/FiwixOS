@@ -70,27 +70,6 @@ diff -ru busybox-1.01/include/libbb.h busybox-1.01.new/include/libbb.h
 diff -ru busybox-1.01/init/init.c busybox-1.01.new/init/init.c
 --- busybox-1.01/init/init.c	2005-08-17 01:29:16 +0000
 +++ busybox-1.01.new/init/init.c	2021-11-19 20:33:16 +0000
-@@ -47,10 +47,6 @@
- #include "init_shared.h"
- 
- 
--#ifdef CONFIG_SYSLOGD
--# include <sys/syslog.h>
--#endif
--
- 
- #define INIT_BUFFS_SIZE 256
- 
-@@ -224,9 +220,6 @@
- 	/* Log the message to syslogd */
- 	if (device & LOG) {
- 		/* don`t out "\r\n" */
--		openlog(bb_applet_name, 0, LOG_DAEMON);
--		syslog(LOG_INFO, "%s", msg);
--		closelog();
- 	}
- 
- 	msg[l++] = '\n';
 @@ -678,7 +671,7 @@
  	 * linux/kernel/sys.c, which can cause the machine to panic when
  	 * the init process is killed.... */
@@ -100,65 +79,6 @@ diff -ru busybox-1.01/init/init.c busybox-1.01.new/init/init.c
  		_exit(0);
  	}
  	waitpid (pid, NULL, 0);
-diff -ru busybox-1.01/init/init_shared.c busybox-1.01.new/init/init_shared.c
---- busybox-1.01/init/init_shared.c	2005-08-17 01:29:16 +0000
-+++ busybox-1.01.new/init/init_shared.c	2021-11-19 20:33:16 +0000
-@@ -25,7 +25,6 @@
- #include <unistd.h>
- #include <getopt.h>
- #include <sys/reboot.h>
--#include <sys/syslog.h>
- #include "busybox.h"
- #include "init_shared.h"
- 
-@@ -63,17 +62,13 @@
- #endif
- 	reboot(RB_ENABLE_CAD);
- 
--	openlog(bb_applet_name, 0, pri);
--
- 	message = "\nThe system is going down NOW !!";
--	syslog(pri, "%s", message);
- 	printf(bb_shutdown_format, message);
- 
- 	sync();
- 
- 	/* Send signals to every process _except_ pid 1 */
- 	message = "Sending SIGTERM to all processes.";
--	syslog(pri, "%s", message);
- 	printf(bb_shutdown_format, message);
- 
- 	kill(-1, SIGTERM);
-@@ -81,7 +76,6 @@
- 	sync();
- 
- 	message = "Sending SIGKILL to all processes.";
--	syslog(pri, "%s", message);
- 	printf(bb_shutdown_format, message);
- 
- 	kill(-1, SIGKILL);
-diff -ru busybox-1.01/libbb/change_identity.c busybox-1.01.new/libbb/change_identity.c
---- busybox-1.01/libbb/change_identity.c	2005-08-17 01:29:14 +0000
-+++ busybox-1.01.new/libbb/change_identity.c	2021-11-19 20:33:16 +0000
-@@ -33,7 +33,6 @@
- #include <unistd.h>
- #include <string.h>
- #include <stdlib.h>
--#include <syslog.h>
- #include <ctype.h>
- 
- #include "libbb.h"
-diff -ru busybox-1.01/libbb/correct_password.c busybox-1.01.new/libbb/correct_password.c
---- busybox-1.01/libbb/correct_password.c	2005-08-17 01:29:14 +0000
-+++ busybox-1.01.new/libbb/correct_password.c	2021-11-19 20:33:16 +0000
-@@ -33,7 +33,6 @@
- #include <unistd.h>
- #include <string.h>
- #include <stdlib.h>
--#include <syslog.h>
- #include <ctype.h>
- #include <crypt.h>
- 
 diff -ru busybox-1.01/libbb/create_icmp6_socket.c busybox-1.01.new/libbb/create_icmp6_socket.c
 --- busybox-1.01/libbb/create_icmp6_socket.c	2005-08-17 01:29:14 +0000
 +++ busybox-1.01.new/libbb/create_icmp6_socket.c	2021-11-19 20:33:16 +0000
@@ -320,47 +240,9 @@ diff -ru busybox-1.01/libbb/procps.c busybox-1.01.new/libbb/procps.c
  
  #include "libbb.h"
  
-diff -ru busybox-1.01/libbb/restricted_shell.c busybox-1.01.new/libbb/restricted_shell.c
---- busybox-1.01/libbb/restricted_shell.c	2005-08-17 01:29:14 +0000
-+++ busybox-1.01.new/libbb/restricted_shell.c	2021-11-19 20:33:16 +0000
-@@ -33,7 +33,6 @@
- #include <unistd.h>
- #include <string.h>
- #include <stdlib.h>
--#include <syslog.h>
- #include <ctype.h>
- #include "libbb.h"
- 
-diff -ru busybox-1.01/libbb/run_shell.c busybox-1.01.new/libbb/run_shell.c
---- busybox-1.01/libbb/run_shell.c	2005-08-17 01:29:14 +0000
-+++ busybox-1.01.new/libbb/run_shell.c	2021-11-19 20:33:16 +0000
-@@ -33,7 +33,6 @@
- #include <unistd.h>
- #include <string.h>
- #include <stdlib.h>
--#include <syslog.h>
- #include <ctype.h>
- #include "libbb.h"
- #ifdef CONFIG_SELINUX
 diff -ru busybox-1.01/libbb/setup_environment.c busybox-1.01.new/libbb/setup_environment.c
 --- busybox-1.01/libbb/setup_environment.c	2005-08-17 01:29:14 +0000
 +++ busybox-1.01.new/libbb/setup_environment.c	2021-11-19 20:33:16 +0000
-@@ -33,7 +33,6 @@
- #include <unistd.h>
- #include <string.h>
- #include <stdlib.h>
--#include <syslog.h>
- #include <ctype.h>
- #include "libbb.h"
- 
-@@ -61,7 +60,6 @@
- 		 */		
- 		if ( chdir ( pw-> pw_dir )) {
- 			if ( chdir ( "/" )) {
--				syslog ( LOG_WARNING, "unable to cd to %s' for user %s'\n", pw-> pw_dir, pw-> pw_name );
- 				bb_error_msg_and_die ( "cannot cd to home directory or /" );
- 			}
- 			fputs ( "warning: cannot change to home directory\n", stderr );
 @@ -70,7 +68,6 @@
  		/* Leave TERM unchanged.  Set HOME, SHELL, USER, LOGNAME, PATH.
  		   Unset all other environment variables.  */
@@ -451,18 +333,6 @@ diff -ru busybox-1.01/loginutils/getty.c busybox-1.01.new/loginutils/getty.c
  #include "busybox.h"
  
  #ifdef CONFIG_FEATURE_UTMP
-@@ -36,11 +37,6 @@
- #define _PATH_LOGIN     "/bin/login"
- 
-  /* If USE_SYSLOG is undefined all diagnostics go directly to /dev/console. */
--#ifdef CONFIG_SYSLOGD
--#include <sys/param.h>
--#define USE_SYSLOG
--#include <syslog.h>
--#endif
- 
- 
-  /*
 @@ -50,9 +46,6 @@
  
  #ifdef LOGIN_PROCESS			/* defined in System V utmp.h */
@@ -476,14 +346,6 @@ diff -ru busybox-1.01/loginutils/getty.c busybox-1.01.new/loginutils/getty.c
 diff -ru busybox-1.01/loginutils/login.c busybox-1.01.new/loginutils/login.c
 --- busybox-1.01/loginutils/login.c	2005-08-17 01:29:15 +0000
 +++ busybox-1.01.new/loginutils/login.c	2021-11-19 20:33:16 +0000
-@@ -4,7 +4,6 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
--#include <syslog.h>
- #include <termios.h>
- #include <unistd.h>
- #include <utmp.h>
 @@ -14,6 +13,7 @@
  #include <sys/types.h>
  #include <ctype.h>
@@ -492,153 +354,6 @@ diff -ru busybox-1.01/loginutils/login.c busybox-1.01.new/loginutils/login.c
  
  #include "busybox.h"
  #ifdef CONFIG_SELINUX
-@@ -148,9 +148,7 @@
- 	else
- 		snprintf ( fromhost, sizeof( fromhost ) - 1, " on `%.100s'", tty );
- 
--	setpgrp();
--
--	openlog ( "login", LOG_PID | LOG_CONS | LOG_NOWAIT, LOG_AUTH );
-+	setpgid(0, 0);
- 
- 	while ( 1 ) {
- 		failed = 0;
-@@ -213,7 +211,6 @@
- 		puts("Login incorrect");
- 		username[0] = 0;
- 		if ( ++count == 3 ) {
--			syslog ( LOG_WARNING, "invalid password for `%s'%s\n", pw->pw_name, fromhost);
- 			return EXIT_FAILURE;
- 	}
- 	}
-@@ -260,9 +257,6 @@
- 	else
- 		safe_strncpy ( full_tty, tty, sizeof( full_tty ) - 1 );
- 
--	if ( !is_my_tty ( full_tty ))
--		syslog ( LOG_ERR, "unable to determine TTY name, got %s\n", full_tty );
--
- 	/* Try these, but don't complain if they fail
- 	 * (for example when the root fs is read only) */
- 	chown ( full_tty, pw-> pw_uid, pw-> pw_gid );
-@@ -277,8 +271,6 @@
- 	motd ( );
- 	signal ( SIGALRM, SIG_DFL );	/* default alarm signal */
- 
--	if ( pw-> pw_uid == 0 )
--		syslog ( LOG_INFO, "root login %s\n", fromhost );
- 	run_shell ( tmp, 1, 0, 0
- #ifdef CONFIG_SELINUX
- 	, sid
-diff -ru busybox-1.01/loginutils/passwd.c busybox-1.01.new/loginutils/passwd.c
---- busybox-1.01/loginutils/passwd.c	2005-08-17 01:29:15 +0000
-+++ busybox-1.01.new/loginutils/passwd.c	2021-11-19 20:33:16 +0000
-@@ -7,7 +7,6 @@
- #include <sys/types.h>
- #include <unistd.h>
- #include <utime.h>
--#include <syslog.h>
- #include <time.h>
- #include <sys/resource.h>
- #include <errno.h>
-@@ -149,7 +148,6 @@
- 	const struct spwd *sp;
- #endif							/* CONFIG_FEATURE_SHADOWPASSWDS */
- 	amroot = (getuid() == 0);
--	openlog("passwd", LOG_PID | LOG_CONS | LOG_NOWAIT, LOG_AUTH);
- 	while ((flag = getopt(argc, argv, "a:dlu")) != EOF) {
- 		switch (flag) {
- 		case 'a':
-@@ -183,7 +181,6 @@
- 		bb_error_msg_and_die("Unknown user %s\n", name);
- 	}
- 	if (!amroot && pw->pw_uid != getuid()) {
--		syslog(LOG_WARNING, "can't change pwd for `%s'", name);
- 		bb_error_msg_and_die("Permission denied.\n");
- 	}
- #ifdef CONFIG_FEATURE_SHADOWPASSWDS
-@@ -202,7 +199,6 @@
- 	if (!(dflg || lflg || uflg)) {
- 		if (!amroot) {
- 			if (cp[0] == '!') {
--				syslog(LOG_WARNING, "password locked for `%s'", np);
- 				bb_error_msg_and_die( "The password for `%s' cannot be changed.\n", np);
- 			}
- 		}
-@@ -231,15 +227,11 @@
- 	signal(SIGQUIT, SIG_IGN);
- 	umask(077);
- 	if (setuid(0)) {
--		syslog(LOG_ERR, "can't setuid(0)");
- 		bb_error_msg_and_die( "Cannot change ID to root.\n");
- 	}
- 	if (!update_passwd(pw, crypt_passwd)) {
--		syslog(LOG_INFO, "password for `%s' changed by user `%s'", name,
--			   myname);
- 		printf("Password changed.\n");
- 	} else {
--		syslog(LOG_WARNING, "an error occurred updating the password file");
- 		bb_error_msg_and_die("An error occurred updating the password file.\n");
- 	}
- 	return (0);
-@@ -332,8 +324,6 @@
- 		}
- 		cipher = pw_encrypt(clear, crypt_passwd);
- 		if (strcmp(cipher, crypt_passwd) != 0) {
--			syslog(LOG_WARNING, "incorrect password for `%s'",
--				   pw->pw_name);
- 			time(&start);
- 			now = start;
- 			while (difftime(now, start) < FAIL_DELAY) {
-diff -ru busybox-1.01/loginutils/su.c busybox-1.01.new/loginutils/su.c
---- busybox-1.01/loginutils/su.c	2005-08-17 01:29:15 +0000
-+++ busybox-1.01.new/loginutils/su.c	2021-11-19 20:33:16 +0000
-@@ -5,7 +5,6 @@
- #include <stdio.h>
- #include <stdlib.h>
- #include <string.h>
--#include <syslog.h>
- #include <termios.h>
- #include <unistd.h>
- #include <utmp.h>
-@@ -33,7 +32,6 @@
- # if defined( SYSLOG_SUCCESS ) && defined( SYSLOG_FAILURE )
- static void log_su (const char *successful, const char *old_user, const char *tty)
- {
--	syslog ( LOG_NOTICE, "%s%s on %s", successful, old_user, tty);
- }
- #  define log_su_successful(cu, u, tty) if(!cu) log_su("", u, tty)
- #  define log_su_failure(cu, u, tty)    if(!cu) log_su("FAILED SU ", u, tty)
-@@ -41,11 +39,9 @@
- 	/* partial logging */
- #  if !defined( SYSLOG_SUCESS )
- #   define log_su_successful(cu, u, tty)
--#   define log_su_failure(cu, u, t) if(!cu) \
--			syslog(LOG_NOTICE, "FAILED SU %s on %s", u, t)
-+#   define log_su_failure(cu, u, t) 
- #  else
--#   define log_su_successful(cu, u, t) if(!cu) \
--			syslog(LOG_NOTICE, "%s on %s", u, t)
-+#   define log_su_successful(cu, u, t) 
- #   define log_su_failure(cu, u, tty)
- #  endif
- # endif
-@@ -106,7 +102,6 @@
- 	if(!tty)
- 		tty = "none";
- 
--	openlog ( bb_applet_name, 0, LOG_AUTH );
- #endif
- 
- 	pw = getpwnam ( opt_username );
-@@ -127,7 +122,6 @@
- 	}
- 
- #if defined( SYSLOG_SUCCESS ) || defined( SYSLOG_FAILURE )
--	closelog();
- #endif
- 
- 	if ( !opt_shell && opt_preserve )
 diff -ru busybox-1.01/miscutils/last.c busybox-1.01.new/miscutils/last.c
 --- busybox-1.01/miscutils/last.c	2005-08-17 01:29:15 +0000
 +++ busybox-1.01.new/miscutils/last.c	2021-11-19 20:33:16 +0000
