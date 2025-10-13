@@ -1,0 +1,1174 @@
+diff -ru util-linux-ng-2.18/config/config.guess util-linux-ng-2.18.new/config/config.guess
+--- util-linux-ng-2.18/config/config.guess	2009-12-10 15:29:51 +0000
++++ util-linux-ng-2.18.new/config/config.guess	2025-09-23 18:19:32 +0000
+@@ -1299,6 +1299,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru util-linux-ng-2.18/config/config.sub util-linux-ng-2.18.new/config/config.sub
+--- util-linux-ng-2.18/config/config.sub	2009-12-10 15:29:51 +0000
++++ util-linux-ng-2.18.new/config/config.sub	2025-09-23 18:19:32 +0000
+@@ -1302,7 +1302,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru util-linux-ng-2.18/disk-utils/Makefile.in util-linux-ng-2.18.new/disk-utils/Makefile.in
+--- util-linux-ng-2.18/disk-utils/Makefile.in	2010-06-30 12:53:03 +0000
++++ util-linux-ng-2.18.new/disk-utils/Makefile.in	2025-09-23 19:18:06 +0000
+@@ -39,14 +39,13 @@
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/config/include-Makefile.am
+ @LINUX_TRUE@am__append_1 = $(top_srcdir)/lib/linux_version.c
+-sbin_PROGRAMS = mkfs$(EXEEXT) mkswap$(EXEEXT) fsck.minix$(EXEEXT) \
++sbin_PROGRAMS = blockdev$(EXEEXT) mkfs$(EXEEXT) mkswap$(EXEEXT) fsck.minix$(EXEEXT) \
+ 	mkfs.minix$(EXEEXT) mkfs.bfs$(EXEEXT) $(am__EXEEXT_1) \
+ 	$(am__EXEEXT_2) $(am__EXEEXT_3) $(am__EXEEXT_4) \
+ 	$(am__EXEEXT_5)
+ usrbin_exec_PROGRAMS = isosize$(EXEEXT)
+ usrsbin_exec_PROGRAMS = $(am__EXEEXT_6)
+-@LINUX_TRUE@am__append_2 = fdformat.8 blockdev.8
+-@LINUX_TRUE@am__append_3 = blockdev
++@LINUX_TRUE@am__append_2 = fdformat.8
+ @LINUX_TRUE@am__append_4 = fdformat
+ @BUILD_LIBBLKID_TRUE@am__append_5 = swaplabel
+ @BUILD_LIBBLKID_TRUE@am__append_6 = swaplabel.8
+@@ -79,7 +78,6 @@
+ CONFIG_HEADER = $(top_builddir)/config.h
+ CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
+-@LINUX_TRUE@am__EXEEXT_1 = blockdev$(EXEEXT)
+ @BUILD_LIBBLKID_TRUE@am__EXEEXT_2 = swaplabel$(EXEEXT)
+ @BUILD_ELVTUNE_TRUE@am__EXEEXT_3 = elvtune$(EXEEXT)
+ @BUILD_RAW_TRUE@@HAVE_RAW_TRUE@am__EXEEXT_4 = raw$(EXEEXT)
+@@ -92,9 +90,9 @@
+ 	$(usrsbin_exec_PROGRAMS)
+ am__blockdev_SOURCES_DIST = blockdev.c $(top_srcdir)/lib/blkdev.c \
+ 	$(top_srcdir)/lib/linux_version.c
+-@LINUX_TRUE@am__objects_1 = linux_version.$(OBJEXT)
++am__objects_1 = linux_version.$(OBJEXT)
+ am__objects_2 = blkdev.$(OBJEXT) $(am__objects_1)
+-@LINUX_TRUE@am_blockdev_OBJECTS = blockdev.$(OBJEXT) $(am__objects_2)
++am_blockdev_OBJECTS = blockdev.$(OBJEXT) $(am__objects_2)
+ blockdev_OBJECTS = $(am_blockdev_OBJECTS)
+ blockdev_LDADD = $(LDADD)
+ AM_V_lt = $(am__v_lt_$(V))
+@@ -431,7 +429,7 @@
+ @BUILD_LIBUUID_TRUE@@HAVE_UUID_TRUE@uuid_cflags = -I$(ul_libuuid_srcdir)
+ @BUILD_LIBUUID_FALSE@@HAVE_UUID_TRUE@uuid_ldadd = $(UUID_LIBS)
+ @BUILD_LIBUUID_TRUE@@HAVE_UUID_TRUE@uuid_ldadd = $(ul_libuuid_la)
+-dist_man_MANS = isosize.8 mkfs.8 mkswap.8 fsck.minix.8 mkfs.minix.8 \
++dist_man_MANS = blockdev.8 isosize.8 mkfs.8 mkswap.8 fsck.minix.8 mkfs.minix.8 \
+ 	mkfs.bfs.8 $(am__append_2) $(am__append_6) $(am__append_10) \
+ 	$(am__append_12)
+ fsck_minix_SOURCES = fsck.minix.c minix.h
+@@ -443,7 +441,7 @@
+ mkswap_SOURCES = mkswap.c $(utils_common) $(top_srcdir)/lib/wholedisk.c
+ mkswap_LDADD = $(uuid_ldadd) $(am__append_14) $(am__append_16)
+ mkswap_CFLAGS = $(AM_CFLAGS) $(uuid_cflags) $(am__append_15)
+-@LINUX_TRUE@blockdev_SOURCES = blockdev.c $(utils_common)
++blockdev_SOURCES = blockdev.c $(utils_common)
+ @BUILD_ELVTUNE_TRUE@elvtune_SOURCES = elvtune.c $(top_srcdir)/lib/linux_version.c
+ @BUILD_CRAMFS_TRUE@cramfs_common = $(utils_common) cramfs.h cramfs_common.c cramfs_common.h
+ @BUILD_CRAMFS_TRUE@fsck_cramfs_SOURCES = fsck.cramfs.c $(cramfs_common)
+diff -ru util-linux-ng-2.18/disk-utils/blockdev.c util-linux-ng-2.18.new/disk-utils/blockdev.c
+--- util-linux-ng-2.18/disk-utils/blockdev.c	2010-06-14 09:19:19 +0000
++++ util-linux-ng-2.18.new/disk-utils/blockdev.c	2025-09-23 18:22:36 +0000
+@@ -17,6 +17,14 @@
+ 
+ const char *progname;
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
+ 
+ struct bdc {
+ 	long		ioc;		/* ioctl code */
+diff -ru util-linux-ng-2.18/disk-utils/swaplabel.c util-linux-ng-2.18.new/disk-utils/swaplabel.c
+--- util-linux-ng-2.18/disk-utils/swaplabel.c	2010-05-19 21:36:23 +0000
++++ util-linux-ng-2.18.new/disk-utils/swaplabel.c	2025-09-23 18:19:32 +0000
+@@ -159,7 +159,7 @@
+ static void __attribute__((__noreturn__)) usage(FILE *out)
+ {
+ 	fprintf(out, _("Usage: %s [options] <device>\n\nOptions:\n"),
+-			program_invocation_short_name);
++			__progname);
+ 
+ 	fprintf(out, _(
+ 		" -h, --help          this help\n"
+diff -ru util-linux-ng-2.18/fdisk/cfdisk.c util-linux-ng-2.18.new/fdisk/cfdisk.c
+--- util-linux-ng-2.18/fdisk/cfdisk.c	2010-06-21 08:00:20 +0000
++++ util-linux-ng-2.18.new/fdisk/cfdisk.c	2025-09-23 18:19:32 +0000
+@@ -170,6 +170,15 @@
+ #define round_int(d) ((double)((int)(d+0.5)))
+ #define ceiling(d) ((double)(((d) != (int)(d)) ? (int)(d+1.0) : (int)(d)))
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ struct partition {
+         unsigned char boot_ind;         /* 0x80 - active */
+         unsigned char head;             /* starting head */
+diff -ru util-linux-ng-2.18/fdisk/fdisk.c util-linux-ng-2.18.new/fdisk/fdisk.c
+--- util-linux-ng-2.18/fdisk/fdisk.c	2010-06-30 12:44:25 +0000
++++ util-linux-ng-2.18.new/fdisk/fdisk.c	2025-09-23 18:19:32 +0000
+@@ -46,6 +46,15 @@
+ 
+ #include "gpt.h"
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ static void delete_partition(int i);
+ 
+ #define hex_val(c)	({ \
+diff -ru util-linux-ng-2.18/fdisk/fdiskaixlabel.c util-linux-ng-2.18.new/fdisk/fdiskaixlabel.c
+--- util-linux-ng-2.18/fdisk/fdiskaixlabel.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/fdisk/fdiskaixlabel.c	2025-09-23 18:19:32 +0000
+@@ -7,7 +7,9 @@
+ #include <string.h>             /* strstr */
+ #include <unistd.h>             /* write */
+ 
+-#include <endian.h>
++#ifdef __fiwix_
++#include <machine/endian.h>
++#endif
+ 
+ #include "common.h"
+ #include "fdisk.h"
+diff -ru util-linux-ng-2.18/fdisk/fdiskmaclabel.c util-linux-ng-2.18.new/fdisk/fdiskmaclabel.c
+--- util-linux-ng-2.18/fdisk/fdiskmaclabel.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/fdisk/fdiskmaclabel.c	2025-09-23 18:19:32 +0000
+@@ -7,7 +7,9 @@
+ #include <string.h>             /* strstr */
+ #include <unistd.h>             /* write */
+ 
+-#include <endian.h>
++#ifdef __fiwix_
++#include <machine/endian.h>
++#endif
+ 
+ #include "common.h"
+ #include "fdisk.h"
+diff -ru util-linux-ng-2.18/fdisk/fdisksgilabel.c util-linux-ng-2.18.new/fdisk/fdisksgilabel.c
+--- util-linux-ng-2.18/fdisk/fdisksgilabel.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/fdisk/fdisksgilabel.c	2025-09-23 18:19:32 +0000
+@@ -20,7 +20,9 @@
+ #include <sys/stat.h>           /* stat */
+ #include <assert.h>             /* assert */
+ 
+-#include <endian.h>
++#ifdef __fiwix_
++#include <machine/endian.h>
++#endif
+ #include "nls.h"
+ 
+ #include "blkdev.h"
+@@ -29,6 +31,15 @@
+ #include "fdisk.h"
+ #include "fdisksgilabel.h"
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ static	int     other_endian = 0;
+ static	int     debug = 0;
+ static  short volumes=1;
+diff -ru util-linux-ng-2.18/fdisk/fdisksunlabel.c util-linux-ng-2.18.new/fdisk/fdisksunlabel.c
+--- util-linux-ng-2.18/fdisk/fdisksunlabel.c	2010-05-19 21:36:23 +0000
++++ util-linux-ng-2.18.new/fdisk/fdisksunlabel.c	2025-09-23 18:19:32 +0000
+@@ -21,7 +21,9 @@
+ #include "nls.h"
+ #include "blkdev.h"
+ 
+-#include <endian.h>
++#ifdef __fiwix_
++#include <machine/endian.h>
++#endif
+ #ifdef HAVE_LINUX_MAJOR_H
+ #include <linux/major.h>	/* FLOPPY_MAJOR */
+ #endif
+@@ -30,6 +32,15 @@
+ #include "fdisk.h"
+ #include "fdisksunlabel.h"
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ static int     other_endian = 0;
+ static int     scsi_disk = 0;
+ static int     floppy = 0;
+diff -ru util-linux-ng-2.18/fdisk/sfdisk.c util-linux-ng-2.18.new/fdisk/sfdisk.c
+--- util-linux-ng-2.18/fdisk/sfdisk.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/fdisk/sfdisk.c	2025-09-23 18:19:32 +0000
+@@ -55,6 +55,15 @@
+ #include "wholedisk.h"
+ #include "gpt.h"
+ 
++#ifdef __fiwix__
++struct hd_geometry {
++	unsigned char heads;
++	unsigned char sectors;
++	unsigned short int cylinders;
++	unsigned long int start;
++};
++#endif
++
+ /*
+  * Table of contents:
+  *  A. About seeking
+@@ -869,7 +878,7 @@
+ int show_extended = 0;
+ int one_only = 0;
+ int one_only_pno;
+-int increment = 0;
++int _increment = 0;
+ 
+ static void
+ set_format(char c) {
+@@ -932,24 +941,24 @@
+ 	if (G.cylindersize) {
+ 	  printf(_("Units = cylinders of %lu bytes, blocks of 1024 bytes"
+ 		 ", counting from %d\n\n"),
+-		 G.cylindersize<<9, increment);
++		 G.cylindersize<<9, _increment);
+ 	    printf(_("   Device Boot Start     End   #cyls    #blocks   Id  System\n"));
+ 	    break;
+ 	}
+ 	/* fall through */
+       case F_SECTOR:
+ 	printf(_("Units = sectors of 512 bytes, counting from %d\n\n"),
+-	       increment);
++	       _increment);
+ 	printf(_("   Device Boot    Start       End   #sectors  Id  System\n"));
+ 	break;
+       case F_BLOCK:
+ 	printf(_("Units = blocks of 1024 bytes, counting from %d\n\n"),
+-	       increment);
++	       _increment);
+ 	printf(_("   Device Boot   Start       End    #blocks   Id  System\n"));
+ 	break;
+       case F_MEGABYTE:
+ 	printf(_("Units = mebibytes of 1048576 bytes, blocks of 1024 bytes"
+-	       ", counting from %d\n\n"), increment);
++	       ", counting from %d\n\n"), _increment);
+ 	printf(_("   Device Boot Start   End    MiB    #blocks   Id  System\n"));
+ 	break;
+     }
+@@ -1065,8 +1074,8 @@
+     switch(format) {
+       case F_CYLINDER:
+ 	if (G.cylindersize) {
+-	    out_rounddown(6, start, G.cylindersize, increment);
+-	    out_roundup(6, end, G.cylindersize, increment);
++	    out_rounddown(6, start, G.cylindersize, _increment);
++	    out_roundup(6, end, G.cylindersize, _increment);
+ 	    out_roundup_size(6, size, G.cylindersize);
+ 	    out_rounddown(9, size, 2, 0);
+ 	    break;
+@@ -1074,8 +1083,8 @@
+ 	/* fall through */
+       default:
+       case F_SECTOR:
+-	out_rounddown(9, start, 1, increment);
+-	out_roundup(9, end, 1, increment);
++	out_rounddown(9, start, 1, _increment);
++	out_roundup(9, end, 1, _increment);
+ 	out_rounddown(10, size, 1, 0);
+ 	break;
+       case F_BLOCK:
+@@ -1083,13 +1092,13 @@
+ 	printf("%8lu,%3lu ",
+ 	       p->sector/2, ((p->sector & 1) ? 512 : 0) + p->offset);
+ #endif
+-	out_rounddown(8, start, 2, increment);
+-	out_roundup(8, end, 2, increment);
++	out_rounddown(8, start, 2, _increment);
++	out_roundup(8, end, 2, _increment);
+ 	out_rounddown(9, size, 2, 0);
+ 	break;
+       case F_MEGABYTE:
+-	out_rounddown(5, start, 2048, increment);
+-	out_roundup(5, end, 2048, increment);
++	out_rounddown(5, start, 2048, _increment);
++	out_roundup(5, end, 2048, _increment);
+ 	out_roundup_size(5, size, 2048);
+ 	out_rounddown(9, size, 2, 0);
+ 	break;
+@@ -2515,7 +2524,7 @@
+ 	  case 'G':
+ 	    opt_out_pt_geom = 1; break;
+ 	  case 'i':
+-	    increment = 1; break;
++	    _increment = 1; break;
+ 	  case 'c':
+ 	  case 'c' + PRINT_ID:
+ 	  case 'c' + CHANGE_ID:
+diff -ru util-linux-ng-2.18/include/bitops.h util-linux-ng-2.18.new/include/bitops.h
+--- util-linux-ng-2.18/include/bitops.h	2010-02-04 11:53:56 +0000
++++ util-linux-ng-2.18.new/include/bitops.h	2025-09-23 18:19:32 +0000
+@@ -2,7 +2,12 @@
+ #define BITOPS_H
+ 
+ #include <stdint.h>
++#ifndef __fiwix__
+ #include <endian.h>
++#else
++#define __BYTE_ORDER	__LITTLE_ENDIAN
++#define __LITTLE_ENDIAN	1234
++#endif
+ 
+ /*
+  * Bit map related macros. Usually provided by libc.
+diff -ru util-linux-ng-2.18/lib/mangle.c util-linux-ng-2.18.new/lib/mangle.c
+--- util-linux-ng-2.18/lib/mangle.c	2010-05-19 21:36:23 +0000
++++ util-linux-ng-2.18.new/lib/mangle.c	2025-09-23 18:19:32 +0000
+@@ -96,7 +96,7 @@
+ {
+ 	if (argc < 3) {
+ 		fprintf(stderr, "usage: %s --mangle | --unmangle <string>\n",
+-						program_invocation_short_name);
++						__progname);
+ 		return EXIT_FAILURE;
+ 	}
+ 
+diff -ru util-linux-ng-2.18/lib/md5.c util-linux-ng-2.18.new/lib/md5.c
+--- util-linux-ng-2.18/lib/md5.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/lib/md5.c	2025-09-23 18:19:32 +0000
+@@ -14,7 +14,12 @@
+  * needed on buffers full of bytes, and then call MD5Final, which
+  * will fill a supplied 16-byte array with the digest.
+  */
++#ifndef __fiwix__
+ #include <endian.h>
++#else
++#define __BYTE_ORDER	__LITTLE_ENDIAN
++#define __LITTLE_ENDIAN	1234
++#endif
+ #include <string.h>		/* for memcpy() */
+ 
+ #include "md5.h"
+diff -ru util-linux-ng-2.18/lib/tt.c util-linux-ng-2.18.new/lib/tt.c
+--- util-linux-ng-2.18/lib/tt.c	2010-06-07 09:44:06 +0000
++++ util-linux-ng-2.18.new/lib/tt.c	2025-09-23 18:19:32 +0000
+@@ -650,7 +650,7 @@
+ 
+ 	if (argc == 2 && !strcmp(argv[1], "--help")) {
+ 		printf("%s [--ascii | --raw | --list]\n",
+-				program_invocation_short_name);
++				__progname);
+ 		return EXIT_SUCCESS;
+ 	} else if (argc == 2 && !strcmp(argv[1], "--ascii"))
+ 		flags |= TT_FL_ASCII;
+diff -ru util-linux-ng-2.18/lib/wholedisk.c util-linux-ng-2.18.new/lib/wholedisk.c
+--- util-linux-ng-2.18/lib/wholedisk.c	2010-02-04 11:53:56 +0000
++++ util-linux-ng-2.18.new/lib/wholedisk.c	2025-09-23 18:19:32 +0000
+@@ -6,6 +6,10 @@
+ #include "blkdev.h"
+ #include "wholedisk.h"
+ 
++#ifdef __fiwix__
++#include <fiwix/part.h>
++#endif
++
+ int is_whole_disk_fd(int fd, const char *name)
+ {
+ #ifdef HDIO_GETGEO
+diff -ru util-linux-ng-2.18/login-utils/agetty.c util-linux-ng-2.18.new/login-utils/agetty.c
+--- util-linux-ng-2.18/login-utils/agetty.c	2010-04-01 14:11:56 +0000
++++ util-linux-ng-2.18.new/login-utils/agetty.c	2025-09-23 18:19:32 +0000
+@@ -861,6 +861,7 @@
+ 		   }
+ 		  break;
+ 
++#ifndef __fiwix__
+ 		  case 'O':
+ 		   {
+ 			char *dom = "unknown_domain";
+@@ -885,6 +886,7 @@
+ 			}
+ 		   }
+ 		  break;
++#endif /* ! __fiwix__ */
+ 
+ 		  case 'd':
+ 		  case 't':
+diff -ru util-linux-ng-2.18/login-utils/checktty.c util-linux-ng-2.18.new/login-utils/checktty.c
+--- util-linux-ng-2.18/login-utils/checktty.c	2010-04-01 14:11:56 +0000
++++ util-linux-ng-2.18.new/login-utils/checktty.c	2025-09-23 18:19:32 +0000
+@@ -37,7 +37,7 @@
+ #define TTY_MAJOR 4
+ #endif
+ 
+-static gid_t mygroups[NGROUPS];
++static gid_t mygroups[NGROUPS_MAX];
+ static int   num_groups;
+ 
+ #define NAMELEN 128
+@@ -78,7 +78,7 @@
+ static void
+ find_groups(gid_t defgrp, const char *user)
+ {
+-	num_groups = getgroups(NGROUPS, mygroups);
++	num_groups = getgroups(NGROUPS_MAX, mygroups);
+ }
+ 
+ static struct ttyclass *
+@@ -186,6 +186,7 @@
+ 	return ((p & mask) == (a & mask));
+ }
+ 
++#ifndef __fiwix__
+ /* IPv6 -- pattern is [hex:hex:....]/number ([net]/mask) */
+ static int
+ hnmatch_ip6(const char *pat)
+@@ -281,11 +282,14 @@
+ 		return (strcasecmp(pat, hn + m - n) == 0);
+ 	}
+ }
++#endif /* ! __fiwix__ */
+ 
+ #ifdef MAIN_TEST_CHECKTTY
+ 
+ char	hostaddress[16];
++#ifndef __fiwix__
+ sa_family_t hostfamily;
++#endif /* ! __fiwix__ */
+ char	*hostname;
+ void	sleepexit(int eval) {}		/* dummy for this test */
+ void	badlogin(const char *s) {}	/* dummy for this test */
+@@ -309,6 +313,7 @@
+ 		{ NULL, NULL }
+ 	}, *item;
+ 
++#ifndef __fiwix__
+ 	memset(&hints, 0, sizeof(hints));
+ 	hints.ai_family = AF_UNSPEC;
+ 	hints.ai_flags = AI_NUMERICHOST |  AI_PASSIVE | AI_ADDRCONFIG;
+@@ -340,6 +345,7 @@
+ 			printf("getaddrinfo() failed\n");
+ 
+ 	}
++#endif /* ! __fiwix__ */
+ 	return 0;
+ }
+ #endif /* MAIN_TEST_CHECKTTY */
+diff -ru util-linux-ng-2.18/login-utils/login.c util-linux-ng-2.18.new/login-utils/login.c
+--- util-linux-ng-2.18/login-utils/login.c	2010-04-01 14:11:56 +0000
++++ util-linux-ng-2.18.new/login-utils/login.c	2025-09-23 18:19:32 +0000
+@@ -104,7 +104,9 @@
+ #include <stdlib.h>
+ #include <sys/syslog.h>
+ #include <sys/sysmacros.h>
++/*
+ #include <linux/major.h>
++*/
+ #include <netdb.h>
+ #ifdef HAVE_LIBAUDIT
+ # include <libaudit.h>
+@@ -133,7 +135,7 @@
+ }
+ #endif
+ 
+-#include <lastlog.h>
++/*#include <lastlog.h>*/
+ 
+ #define SLEEP_EXIT_TIMEOUT 5
+ 
+@@ -173,7 +175,7 @@
+ static struct passwd pwdcopy;
+ #endif
+ char    hostaddress[16];	/* used in checktty.c */
+-sa_family_t hostfamily;		/* used in checktty.c */
++/*sa_family_t hostfamily;*/		/* used in checktty.c */
+ char	*hostname;		/* idem */
+ static char	*username, *tty_name, *tty_number;
+ static char	thishost[100];
+@@ -407,7 +409,7 @@
+     pid = getpid();
+ 
+     signal(SIGALRM, timedout);
+-    siginterrupt(SIGALRM,1);           /* we have to interrupt syscalls like ioclt() */
++/*    siginterrupt(SIGALRM,1);*/           /* we have to interrupt syscalls like ioclt() */
+     alarm((unsigned int)timeout);
+     signal(SIGQUIT, SIG_IGN);
+     signal(SIGINT, SIG_IGN);
+@@ -416,7 +418,7 @@
+     bindtextdomain(PACKAGE, LOCALEDIR);
+     textdomain(PACKAGE);
+ 
+-    setpriority(PRIO_PROCESS, 0, 0);
++/*    setpriority(PRIO_PROCESS, 0, 0);*/
+     initproctitle(argc, argv);
+ 
+     /*
+@@ -451,6 +453,7 @@
+ 	    *p = 0;
+ 
+ 	  hostname = strdup(optarg); 	/* strdup: Ambrose C. Li */
++/*
+ 	  {
+ 		struct addrinfo hints, *info = NULL;
+ 
+@@ -476,6 +479,7 @@
+ 			freeaddrinfo(info);
+ 		}
+ 	  }
++*/
+ 	  break;
+ 
+ 	case 'p':
+@@ -546,7 +550,7 @@
+ 	/* Kill processes left on this tty */
+ 	tcsetattr(0,TCSAFLUSH,&ttt);
+ 	signal(SIGHUP, SIG_IGN); /* so vhangup() wont kill us */
+-	vhangup();
++/*	vhangup();*/
+ 	signal(SIGHUP, SIG_DFL);
+ 
+ 	/* open stdin,stdout,stderr to the tty */
+@@ -726,12 +730,14 @@
+      * This should be done before pam_setcred because
+      * the PAM modules might add groups during pam_setcred.
+      */
++/*
+     if (initgroups(username, pwd->pw_gid) < 0) {
+ 	    syslog(LOG_ERR, "initgroups: %m");
+ 	    fprintf(stderr, _("\nSession setup problem, abort.\n"));
+ 	    pam_end(pamh, PAM_SYSTEM_ERR);
+ 	    exit(1);
+     }
++*/
+ 
+     retcode = pam_open_session(pamh, 0);
+     PAM_FAIL_CHECK;
+@@ -776,7 +782,7 @@
+ 	  salt = "xx";
+ 
+ 	if (pwd) {
+-	    initgroups(username, pwd->pw_gid);
++/*	    initgroups(username, pwd->pw_gid);*/
+ 	    checktty(username, tty_name, pwd); /* in checktty.c */
+ 	}
+ 
+@@ -823,7 +829,7 @@
+ 	if (!passwd_req || (pwd && !*pwd->pw_passwd))
+ 	  break;
+ 
+-	setpriority(PRIO_PROCESS, 0, -4);
++/*	setpriority(PRIO_PROCESS, 0, -4);*/
+ 	pp = getpass(_("Password: "));
+ 
+ #  ifdef CRYPTOCARD
+@@ -833,7 +839,7 @@
+ #  endif /* CRYPTOCARD */
+ 
+ 	p = crypt(pp, salt);
+-	setpriority(PRIO_PROCESS, 0, 0);
++/*	setpriority(PRIO_PROCESS, 0, 0);*/
+ 
+ #  ifdef KERBEROS
+ 	/*
+@@ -970,8 +976,10 @@
+ 	ut.ut_pid = pid;
+ 	if (hostname) {
+ 		xstrncpy(ut.ut_host, hostname, sizeof(ut.ut_host));
++/*
+ 		if (hostaddress[0])
+ 			memcpy(&ut.ut_addr_v6, hostaddress, sizeof(ut.ut_addr_v6));
++*/
+ 	}
+ 
+ 	pututline(&ut);
+@@ -1428,6 +1436,7 @@
+ 
+ void
+ dolastlog(int quiet) {
++/*
+     struct lastlog ll;
+     int fd;
+ 
+@@ -1456,7 +1465,7 @@
+ 		time_t t;
+ 		time(&t);
+ 		ll.ll_time = t; /* ll_time is always 32bit */
+-	}
++/*	}
+ 
+ 	xstrncpy(ll.ll_line, tty_name, sizeof(ll.ll_line));
+ 	if (hostname)
+@@ -1465,6 +1474,7 @@
+ 	write(fd, (char *)&ll, sizeof(ll));
+ 	close(fd);
+     }
++*/
+ }
+ 
+ void
+diff -ru util-linux-ng-2.18/login-utils/login.h util-linux-ng-2.18.new/login-utils/login.h
+--- util-linux-ng-2.18/login-utils/login.h	2010-01-28 14:57:59 +0000
++++ util-linux-ng-2.18.new/login-utils/login.h	2025-09-23 18:19:32 +0000
+@@ -3,7 +3,7 @@
+ extern void sleepexit(int);
+ extern char hostaddress[16];
+ extern char *hostname;
+-extern sa_family_t hostfamily;
++/*extern sa_family_t hostfamily;*/
+ 
+ /* defined in checktty.c */
+ extern void checktty(const char *user, const char *tty, struct passwd *pwd);
+diff -ru util-linux-ng-2.18/login-utils/setpwnam.c util-linux-ng-2.18.new/login-utils/setpwnam.c
+--- util-linux-ng-2.18/login-utils/setpwnam.c	2010-02-04 11:53:56 +0000
++++ util-linux-ng-2.18.new/login-utils/setpwnam.c	2025-09-23 18:19:32 +0000
+@@ -71,6 +71,60 @@
+ 
+ static void pw_init(void);
+ 
++/* Copyright (C) 1991-2014 Free Software Foundation, Inc.
++   This file is part of the GNU C Library.
++
++   The GNU C Library is free software; you can redistribute it and/or
++   modify it under the terms of the GNU Lesser General Public
++   License as published by the Free Software Foundation; either
++   version 2.1 of the License, or (at your option) any later version.
++
++   The GNU C Library is distributed in the hope that it will be useful,
++   but WITHOUT ANY WARRANTY; without even the implied warranty of
++   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++   Lesser General Public License for more details.
++
++   You should have received a copy of the GNU Lesser General Public
++   License along with the GNU C Library; if not, see
++   <http://www.gnu.org/licenses/>.  */
++
++#include <errno.h>
++#include <stdio.h>
++#include <pwd.h>
++
++#define _S(x)	x ?: ""
++
++/* Write an entry to the given stream.
++   This must know the format of the password file.  */
++int
++putpwent (p, stream)
++     const struct passwd *p;
++     FILE *stream;
++{
++  if (p == NULL || stream == NULL)
++    {
++      return -1;
++    }
++
++  if (p->pw_name[0] == '+' || p->pw_name[0] == '-')
++    {
++      if (fprintf (stream, "%s:%s:::%s:%s:%s\n",
++		   p->pw_name, _S (p->pw_passwd),
++		   _S (p->pw_gecos), _S (p->pw_dir), _S (p->pw_shell)) < 0)
++	return -1;
++    }
++  else
++    {
++      if (fprintf (stream, "%s:%s:%lu:%lu:%s:%s:%s\n",
++		   p->pw_name, _S (p->pw_passwd),
++		   (unsigned long int) p->pw_uid,
++		   (unsigned long int) p->pw_gid,
++		   _S (p->pw_gecos), _S (p->pw_dir), _S (p->pw_shell)) < 0)
++	return -1;
++    }
++  return 0;
++}
++
+ /*
+  *  setpwnam () --
+  *	takes a struct passwd in which every field is filled in and valid.
+diff -ru util-linux-ng-2.18/misc-utils/namei.c util-linux-ng-2.18.new/misc-utils/namei.c
+--- util-linux-ng-2.18/misc-utils/namei.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/misc-utils/namei.c	2025-09-23 18:19:32 +0000
+@@ -441,7 +441,7 @@
+ static void
+ usage(int rc)
+ {
+-	const char *p = program_invocation_short_name;
++	const char *p = __progname;
+ 
+ 	if (!*p)
+ 		p = "namei";
+diff -ru util-linux-ng-2.18/misc-utils/script.c util-linux-ng-2.18.new/misc-utils/script.c
+--- util-linux-ng-2.18/misc-utils/script.c	2010-06-04 21:59:49 +0000
++++ util-linux-ng-2.18.new/misc-utils/script.c	2025-09-23 18:19:32 +0000
+@@ -282,7 +282,7 @@
+ 	int status;
+ 	register int pid;
+ 
+-	while ((pid = wait3(&status, WNOHANG, 0)) > 0)
++	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
+ 		if (pid == child) {
+ 			childstatus = status;
+ 			die = 1;
+diff -ru util-linux-ng-2.18/misc-utils/scriptreplay.c util-linux-ng-2.18.new/misc-utils/scriptreplay.c
+--- util-linux-ng-2.18/misc-utils/scriptreplay.c	2010-02-04 11:53:56 +0000
++++ util-linux-ng-2.18.new/misc-utils/scriptreplay.c	2025-09-23 18:19:32 +0000
+@@ -36,7 +36,7 @@
+ usage(int rc)
+ {
+ 	printf(_("%s <timingfile> [<typescript> [<divisor>]]\n"),
+-			program_invocation_short_name);
++			__progname);
+ 	exit(rc);
+ }
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/samples/mkfs.c util-linux-ng-2.18.new/shlibs/blkid/samples/mkfs.c
+--- util-linux-ng-2.18/shlibs/blkid/samples/mkfs.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/samples/mkfs.c	2025-09-23 18:19:32 +0000
+@@ -27,7 +27,7 @@
+ 	if (argc < 2) {
+ 		fprintf(stderr, "usage: %s <device>  "
+ 			"-- checks based on libblkid for mkfs-like programs.\n",
+-			program_invocation_short_name);
++			__progname);
+ 		return EXIT_FAILURE;
+ 	}
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/samples/partitions.c util-linux-ng-2.18.new/shlibs/blkid/samples/partitions.c
+--- util-linux-ng-2.18/shlibs/blkid/samples/partitions.c	2010-05-19 21:36:24 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/samples/partitions.c	2025-09-23 18:19:32 +0000
+@@ -26,7 +26,7 @@
+ 	if (argc < 2) {
+ 		fprintf(stderr, "usage: %s <device|file>  "
+ 				"-- prints partitions\n",
+-				program_invocation_short_name);
++				__progname);
+ 		return EXIT_FAILURE;
+ 	}
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/samples/superblocks.c util-linux-ng-2.18.new/shlibs/blkid/samples/superblocks.c
+--- util-linux-ng-2.18/shlibs/blkid/samples/superblocks.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/samples/superblocks.c	2025-09-23 18:19:32 +0000
+@@ -26,7 +26,7 @@
+ 	if (argc < 2) {
+ 		fprintf(stderr, "usage: %s <device>  "
+ 				"-- prints superblocks details about the device\n",
+-				program_invocation_short_name);
++				__progname);
+ 		return EXIT_FAILURE;
+ 	}
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/samples/topology.c util-linux-ng-2.18.new/shlibs/blkid/samples/topology.c
+--- util-linux-ng-2.18/shlibs/blkid/samples/topology.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/samples/topology.c	2025-09-23 18:19:32 +0000
+@@ -27,7 +27,7 @@
+ 	if (argc < 2) {
+ 		fprintf(stderr, "usage: %s <device>  "
+ 				"-- prints topology details about the device\n",
+-				program_invocation_short_name);
++				__progname);
+ 		return EXIT_FAILURE;
+ 	}
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/devname.c util-linux-ng-2.18.new/shlibs/blkid/src/devname.c
+--- util-linux-ng-2.18/shlibs/blkid/src/devname.c	2010-05-19 21:36:24 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/devname.c	2025-09-23 18:19:32 +0000
+@@ -37,6 +37,7 @@
+ #endif
+ #include <time.h>
+ 
++#include <sys/sysmacros.h>	/* for major and minor */
+ #include "blkidP.h"
+ 
+ #include "canonicalize.h"		/* $(top_srcdir)/include */
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/devno.c util-linux-ng-2.18.new/shlibs/blkid/src/devno.c
+--- util-linux-ng-2.18/shlibs/blkid/src/devno.c	2010-05-19 21:36:24 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/devno.c	2025-09-23 18:19:32 +0000
+@@ -32,6 +32,7 @@
+ #include <fcntl.h>
+ #include <inttypes.h>
+ 
++#include <sys/sysmacros.h>	/* for major and minor */
+ #include "blkidP.h"
+ #include "pathnames.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/partitions/partitions.c util-linux-ng-2.18.new/shlibs/blkid/src/partitions/partitions.c
+--- util-linux-ng-2.18/shlibs/blkid/src/partitions/partitions.c	2010-06-02 11:27:17 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/partitions/partitions.c	2025-09-23 18:19:32 +0000
+@@ -18,6 +18,7 @@
+ #include <errno.h>
+ #include <stdint.h>
+ #include <stdarg.h>
++#include <sys/sysmacros.h>	/* for major and minor */
+ 
+ #include "partitions.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/superblocks/zfs.c util-linux-ng-2.18.new/shlibs/blkid/src/superblocks/zfs.c
+--- util-linux-ng-2.18/shlibs/blkid/src/superblocks/zfs.c	2010-05-19 21:36:25 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/superblocks/zfs.c	2025-09-23 18:19:32 +0000
+@@ -66,7 +66,7 @@
+ #define nvdebug(fmt, ...)	do { } while(0)
+ /*#define nvdebug(fmt, a...)	printf(fmt, ##a)*/
+ 
+-static void zfs_extract_guid_name(blkid_probe pr, loff_t offset)
++static void zfs_extract_guid_name(blkid_probe pr, __loff_t offset)
+ {
+ 	struct nvlist *nvl;
+ 	struct nvpair *nvp;
+@@ -164,7 +164,7 @@
+ 	uint64_t swab_magic = swab64(UBERBLOCK_MAGIC);
+ 	struct zfs_uberblock *ub;
+ 	int swab_endian;
+-	loff_t offset;
++	__loff_t offset;
+ 	int tried;
+ 	int found;
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/topology/dm.c util-linux-ng-2.18.new/shlibs/blkid/src/topology/dm.c
+--- util-linux-ng-2.18/shlibs/blkid/src/topology/dm.c	2010-05-19 21:36:25 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/topology/dm.c	2025-09-23 18:19:32 +0000
+@@ -18,6 +18,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <sys/sysmacros.h>	/* for major and minor */
+ 
+ #include "topology.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/topology/evms.c util-linux-ng-2.18.new/shlibs/blkid/src/topology/evms.c
+--- util-linux-ng-2.18/shlibs/blkid/src/topology/evms.c	2010-06-14 09:03:25 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/topology/evms.c	2025-09-23 18:19:32 +0000
+@@ -19,6 +19,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <sys/sysmacros.h>	/* for major and minor */
+ 
+ #include "topology.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/topology/lvm.c util-linux-ng-2.18.new/shlibs/blkid/src/topology/lvm.c
+--- util-linux-ng-2.18/shlibs/blkid/src/topology/lvm.c	2010-05-19 21:36:25 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/topology/lvm.c	2025-09-23 18:19:32 +0000
+@@ -18,6 +18,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <sys/sysmacros.h>	/* for major and minor */
+ 
+ #include "topology.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/blkid/src/topology/md.c util-linux-ng-2.18.new/shlibs/blkid/src/topology/md.c
+--- util-linux-ng-2.18/shlibs/blkid/src/topology/md.c	2010-06-14 09:03:25 +0000
++++ util-linux-ng-2.18.new/shlibs/blkid/src/topology/md.c	2025-09-23 18:19:32 +0000
+@@ -19,6 +19,7 @@
+ #include <sys/stat.h>
+ #include <sys/types.h>
+ #include <unistd.h>
++#include <sys/sysmacros.h>	/* for major and minor */
+ 
+ #include "topology.h"
+ 
+diff -ru util-linux-ng-2.18/shlibs/mount/src/test.c util-linux-ng-2.18.new/shlibs/mount/src/test.c
+--- util-linux-ng-2.18/shlibs/mount/src/test.c	2010-06-07 09:44:06 +0000
++++ util-linux-ng-2.18.new/shlibs/mount/src/test.c	2025-09-23 18:19:32 +0000
+@@ -10,6 +10,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#include <unistd.h>
+ 
+ #ifndef TEST_PROGRAM
+ #define TEST_PROGRAM
+@@ -48,7 +49,7 @@
+ 	return rc == 0 ? EXIT_SUCCESS : EXIT_FAILURE;
+ usage:
+ 	printf("\nUsage:\n\t%s <test> [testoptions]\nTests:\n",
+-			program_invocation_short_name);
++			__progname);
+ 	for (ts = tests; ts->name; ts++) {
+ 		printf("\t%-15s", ts->name);
+ 		if (ts->usage)
+diff -ru util-linux-ng-2.18/sys-utils/Makefile.in util-linux-ng-2.18.new/sys-utils/Makefile.in
+--- util-linux-ng-2.18/sys-utils/Makefile.in	2010-06-30 12:53:07 +0000
++++ util-linux-ng-2.18.new/sys-utils/Makefile.in	2025-09-23 18:22:06 +0000
+@@ -40,7 +40,7 @@
+ 	$(top_srcdir)/config/include-Makefile.am
+ bin_PROGRAMS = $(am__EXEEXT_1) $(am__EXEEXT_2)
+ sbin_PROGRAMS = $(am__EXEEXT_3) $(am__EXEEXT_4) $(am__EXEEXT_5)
+-usrbin_exec_PROGRAMS = flock$(EXEEXT) ipcrm$(EXEEXT) ipcs$(EXEEXT) \
++usrbin_exec_PROGRAMS = dmesg$(EXEEXT) flock$(EXEEXT) ipcrm$(EXEEXT) ipcs$(EXEEXT) \
+ 	ipcmk$(EXEEXT) renice$(EXEEXT) setsid$(EXEEXT) $(am__EXEEXT_6) \
+ 	$(am__EXEEXT_7) $(am__EXEEXT_8) $(am__EXEEXT_9)
+ usrsbin_exec_PROGRAMS = readprofile$(EXEEXT) $(am__EXEEXT_10)
+@@ -249,7 +249,7 @@
+ man8dir = $(mandir)/man8
+ NROFF = nroff
+ MANS = $(dist_man_MANS) $(man_MANS)
+-am__dist_noinst_DATA_DIST = flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 \
++am__dist_noinst_DATA_DIST = dmesg.1 flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 \
+ 	setsid.1 readprofile.1 dmesg.1 ctrlaltdel.8 cytune.8 setarch.8 \
+ 	ldattach.8 tunelp.8 rtcwake.8 fsfreeze.8 lscpu.1 fallocate.1 \
+ 	pivot_root.8 switch_root.8 unshare.1 arch.1
+@@ -440,7 +440,7 @@
+ 
+ # mount.h is generated by ./configure script and stored in build directory
+ ul_libmount_incdir = $(ul_libmount_builddir)
+-dist_man_MANS = flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 setsid.1 \
++dist_man_MANS = dmesg.1 flock.1 ipcrm.1 ipcs.1 ipcmk.1 renice.1 setsid.1 \
+ 	readprofile.1 $(am__append_5) $(am__append_7) $(am__append_9) \
+ 	$(am__append_11) $(am__append_13) $(am__append_15) \
+ 	$(am__append_17)
+diff -ru util-linux-ng-2.18/sys-utils/dmesg.c util-linux-ng-2.18.new/sys-utils/dmesg.c
+--- util-linux-ng-2.18/sys-utils/dmesg.c	2010-02-04 11:53:59 +0000
++++ util-linux-ng-2.18.new/sys-utils/dmesg.c	2025-09-23 18:19:32 +0000
+@@ -29,7 +29,7 @@
+  * Only function 3 is allowed to non-root processes.
+  */
+ 
+-#include <linux/unistd.h>
++#include <fiwix/unistd.h>
+ #include <stdio.h>
+ #include <getopt.h>
+ #include <stdlib.h>
+diff -ru util-linux-ng-2.18/sys-utils/flock.c util-linux-ng-2.18.new/sys-utils/flock.c
+--- util-linux-ng-2.18/sys-utils/flock.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/sys-utils/flock.c	2025-09-23 18:19:32 +0000
+@@ -253,7 +253,7 @@
+       memset(&sa, 0, sizeof sa);
+ 
+       sa.sa_handler = timeout_handler;
+-      sa.sa_flags   = SA_ONESHOT;
++      sa.sa_flags   = SA_RESETHAND;
+       sigaction(SIGALRM, &sa, &old_sa);
+ 
+       setitimer(ITIMER_REAL, &timeout, &old_timer);
+diff -ru util-linux-ng-2.18/sys-utils/ipcmk.c util-linux-ng-2.18.new/sys-utils/ipcmk.c
+--- util-linux-ng-2.18/sys-utils/ipcmk.c	2010-02-04 11:53:59 +0000
++++ util-linux-ng-2.18.new/sys-utils/ipcmk.c	2025-09-23 18:19:32 +0000
+@@ -100,7 +100,7 @@
+ 	int nsems = 0;
+ 	int doShm = 0, doMsg = 0, doSem = 0;
+ 
+-	progname = program_invocation_short_name;
++	progname = __progname;
+ 	if (!progname)
+ 		progname = "ipcmk";
+ 
+diff -ru util-linux-ng-2.18/sys-utils/ipcs.c util-linux-ng-2.18.new/sys-utils/ipcs.c
+--- util-linux-ng-2.18/sys-utils/ipcs.c	2010-06-30 10:51:35 +0000
++++ util-linux-ng-2.18.new/sys-utils/ipcs.c	2025-09-23 18:19:32 +0000
+@@ -114,7 +114,7 @@
+ 	printf (_("Usage: %1$s [-asmq] [-t|-c|-l|-u|-p]\n"
+ 	          "       %1$s [-s|-m|-q] -i id\n"
+ 	          "       %1$s -h for help\n"),
+-		program_invocation_short_name);
++		__progname);
+ 	exit(rc);
+ }
+ 
+@@ -122,7 +122,7 @@
+ help (int rc) {
+ 	printf (_("Usage: %1$s [resource]... [output-format]\n"
+ 	          "       %1$s [resource] -i id\n\n"),
+-		program_invocation_short_name);
++		__progname);
+ 
+ 	printf (_("Provide information on IPC facilities for which you "
+ 		  "have read access.\n\n"));
+diff -ru util-linux-ng-2.18/sys-utils/renice.c util-linux-ng-2.18.new/sys-utils/renice.c
+--- util-linux-ng-2.18/sys-utils/renice.c	2010-02-04 11:53:59 +0000
++++ util-linux-ng-2.18.new/sys-utils/renice.c	2025-09-23 18:19:32 +0000
+@@ -35,6 +35,8 @@
+   * - added Native Language Support
+   */
+ 
++#ifndef __fiwix__
++
+ #include <sys/types.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+@@ -169,3 +171,9 @@
+ 	       who, oldprio, newprio);
+ 	return 0;
+ }
++
++#endif /* !__fiwix__ */
++
++int main(void)
++{
++}
+diff -ru util-linux-ng-2.18/tests/helpers/test_sysinfo.c util-linux-ng-2.18.new/tests/helpers/test_sysinfo.c
+--- util-linux-ng-2.18/tests/helpers/test_sysinfo.c	2010-02-04 11:53:59 +0000
++++ util-linux-ng-2.18.new/tests/helpers/test_sysinfo.c	2025-09-23 18:19:32 +0000
+@@ -18,11 +18,12 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <unistd.h>
+-#include <endian.h>
++#include <sys/endian.h>
++#include <bits/wordsize.h>
+ #include <limits.h>
+ 
+-#if !defined __BYTE_ORDER || !(__BYTE_ORDER == __LITTLE_ENDIAN) && !(__BYTE_ORDER == __BIG_ENDIAN)
+-#error missing __BYTE_ORDER
++#if !defined _BYTE_ORDER || !(_BYTE_ORDER == _LITTLE_ENDIAN) && !(_BYTE_ORDER == _BIG_ENDIAN)
++#error missing _BYTE_ORDER
+ #endif
+ 
+ typedef struct {
+@@ -40,7 +41,7 @@
+ int
+ hlp_endianness(void)
+ {
+-#if (__BYTE_ORDER == __LITTLE_ENDIAN)
++#if (_BYTE_ORDER == _LITTLE_ENDIAN)
+ 	printf("LE\n");
+ #else
+ 	printf("BE\n");
+diff -ru util-linux-ng-2.18/text-utils/display.c util-linux-ng-2.18.new/text-utils/display.c
+--- util-linux-ng-2.18/text-utils/display.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/text-utils/display.c	2025-09-23 18:19:32 +0000
+@@ -53,6 +53,9 @@
+ static off_t address;			/* address/offset in stream */
+ static off_t eaddress;			/* end address */
+ 
++typedef signed long long int quad_t;
++typedef unsigned long long int u_quad_t;
++
+ static inline void
+ print(PR *pr, u_char *bp) {
+ 
+diff -ru util-linux-ng-2.18/text-utils/more.c util-linux-ng-2.18.new/text-utils/more.c
+--- util-linux-ng-2.18/text-utils/more.c	2010-03-18 22:11:23 +0000
++++ util-linux-ng-2.18.new/text-utils/more.c	2025-09-23 18:19:32 +0000
+@@ -54,6 +54,7 @@
+ #include <sys/stat.h>
+ #include <sys/file.h>
+ #include <sys/wait.h>
++#include <limits.h>
+ #include "xstrncpy.h"
+ #include "nls.h"
+ #include "widechar.h"
+@@ -141,7 +142,7 @@
+ int		nfiles;		/* Number of files left to process */
+ char		*shell;		/* The name of the shell to use */
+ int		shellp;		/* A previous shell command exists */
+-sigjmp_buf	restore;
++jmp_buf	restore;
+ char		*Line;		/* Line buffer */
+ size_t		LineLen;	/* size of Line buffer */
+ int		Lpp = 24;	/* lines per page */
+@@ -383,7 +384,7 @@
+ 	if ((f = checkf (fnames[fnum], &clearit)) != NULL) {
+ 	    context.line = context.chrctr = 0;
+ 	    Currline = 0;
+-	    if (firstf) sigsetjmp (restore, 1);
++	    if (firstf) setjmp (restore);
+ 	    if (firstf) {
+ 		firstf = 0;
+ 		if (srchopt) {
+@@ -395,7 +396,7 @@
+ 		    skiplns (initline, f);
+ 	    }
+ 	    else if (fnum < nfiles && !no_tty) {
+-		sigsetjmp (restore, 1);
++		setjmp (restore);
+ 		left = command (fnames[fnum], f);
+ 	    }
+ 	    if (left != 0) {
+@@ -429,7 +430,7 @@
+ 		    within = 0;
+ 		}
+ 	    }
+-	    sigsetjmp (restore, 1);
++	    setjmp (restore);
+ 	    fflush(stdout);
+ 	    fclose(f);
+ 	    screen_start.line = screen_start.chrctr = 0L;
+@@ -627,7 +628,7 @@
+ 	if (Pause && clreol)
+ 	    clreos ();
+ 	Ungetc (c, f);
+-	sigsetjmp (restore, 1);
++	setjmp (restore);
+ 	Pause = 0; startup = 0;
+ 	if ((num_lines = command (NULL, f)) == 0)
+ 	    return;
+@@ -655,7 +656,7 @@
+ 	putchar ('\n');
+ 	if (!startup) {
+ 	    signal(SIGQUIT, onquit);
+-	    siglongjmp (restore, 1);
++	    longjmp (restore, 1);
+ 	}
+ 	else
+ 	    Pause++;
+@@ -1555,6 +1556,9 @@
+     int saveln, rv;
+     char *s;
+ 
++    error (_("Pattern not found"));
++    return;
++
+     context.line = saveln = Currline;
+     context.chrctr = startline;
+     lncount = 0;
+@@ -1951,7 +1955,7 @@
+ 	    }
+ 	    else {
+ 		if (!eraseln) promptlen = maxlen;
+-		siglongjmp (restore, 1);
++		longjmp (restore, 1);
+ 	    }
+ 	}
+ 	else if (((cc_t) c == otty.c_cc[VKILL]) && !slash) {
+@@ -2085,7 +2089,7 @@
+ 	putsout(mess);
+     fflush(stdout);
+     errors++;
+-    siglongjmp (restore, 1);
++    longjmp (restore, 1);
+ }
+ 
+ 
+@@ -2158,5 +2162,5 @@
+     signal (SIGTSTP, onsusp);
+     set_tty ();
+     if (inwait)
+-	    siglongjmp (restore, 1);
++	    longjmp (restore, 1);
+ }
