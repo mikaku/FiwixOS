@@ -494,11 +494,11 @@ EOF
 
 	# extract some necessary programs for the installation
 
-	gzip -dc ${BASE_DIR}/builds/sed_4.7_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/sed
+	gzip -dc ${BASE_DIR}/builds/sed_4.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/sed
 #	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/sed-4.4.tar.bz2 ./usr/bin/sed
 	mv sed /tmp/iso/usr/bin
 
-	gzip -dc ${BASE_DIR}/builds/dialog_1.3-20240619_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/dialog
+	gzip -dc ${BASE_DIR}/builds/dialog_1.3-20250817_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/dialog
 #	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/dialog-1.3-20240619.tar.bz2 ./usr/bin/dialog
 	mv dialog /tmp/iso/usr/bin
 
