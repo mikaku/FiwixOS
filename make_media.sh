@@ -311,18 +311,18 @@ setup_grub_iso() {
 default 0
 timeout 5
 title FiwixOS $OSVERSION (standard VGA)
-	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=4096
+	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=1024
 title FiwixOS $OSVERSION (VESA FB 1024x768 32bpp)
-	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=4096
+	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=1024
 	vbematch 1024 768 32
 title FiwixOS $OSVERSION (VESA FB 1024x768 24bpp)
-	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=4096
+	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=1024
 	vbematch 1024 768 24
 title FiwixOS $OSVERSION (VESA FB 800x600 32bpp)
-	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=4096
+	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=1024
 	vbematch 800 600 32
 title FiwixOS $OSVERSION (VESA FB 800x600 24bpp)
-	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=4096
+	kernel /boot/fiwix ro root=/dev/hdc rootfstype=iso9660 ramdisksize=1024
 	vbematch 800 600 24
 EOF
 
