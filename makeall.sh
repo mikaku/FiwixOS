@@ -1124,7 +1124,7 @@ EOF
 		mpfr)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
-				./configure --prefix=/usr --disable-thread-safe || exit 1
+				./configure --prefix=/usr || exit 1
 				_make
 			popd
 			_pack $prg-$ver
