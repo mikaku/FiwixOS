@@ -1511,7 +1511,7 @@ EOF
 			;;
 
 		tree)
-			_unpack $prg-$ver z
+			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
 				_make
