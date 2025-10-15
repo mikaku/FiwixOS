@@ -1544,7 +1544,7 @@ EOF
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --enable-static --disable-tls --disable-libuuid --disable-uuidd --disable-nls --disable-arch --disable-cramfs --disable-switch_root --disable-pivot_root --disable-unshare --disable-mesg --disable-wall --disable-init --disable-schedutils --disable-fsck --disable-libblkid --enable-login-utils --enable-write || exit 1
+				./configure --prefix=/usr --enable-static --disable-tls --disable-libuuid --disable-uuidd --disable-nls --disable-arch --disable-cramfs --disable-switch_root --disable-pivot_root --disable-unshare --disable-mesg --disable-wall --disable-init --disable-schedutils --disable-fsck --disable-libblkid --disable-libmount --enable-login-utils --enable-write || exit 1
 				_make "-DHAVE_TERMIOS_H"
 			popd
 			pushd $PREFIX
@@ -1554,15 +1554,12 @@ EOF
 				rmdir lib
 				rmdir sbin
 				# remove unused tools
-				rm -f usr/bin/logger
 				rm -f usr/bin/renice
 				rm -f usr/bin/linux* usr/bin/i386
 				rm -f usr/sbin/vigr
 				rm -f usr/sbin/mkfs
 				rm -f usr/sbin/mkfs.bfs
-				rm -f usr/share/man/man1/logger.1
 				rm -f usr/share/man/man1/renice.1
-				rm -f usr/share/man/man1/more.1
 				rm -f usr/share/man/man8/linux*.8
 				rm -f usr/share/man/man8/i386.8
 				rm -f usr/share/man/man8/mkfs.8
@@ -1990,8 +1987,8 @@ EOF
 				rm -rf i386-pc-fiwix/libquadmath
 				rm -rf i386-pc-fiwix/libssp
 				rm -rf i386-pc-fiwix/libstdc++-v3
-				ln -sf ../newlib-4.4.0.20231231/newlib .
-				ln -sf ../newlib-4.4.0.20231231/libgloss .
+				ln -sf ../newlib-4.5.0.20241231/newlib .
+				ln -sf ../newlib-4.5.0.20241231/libgloss .
 				make DESTDIR=${PREFIX} all-target-libstdc++-v3
 				make DESTDIR=${PREFIX} all-target-libssp
 				make DESTDIR=${PREFIX} all-target-libquadmath
