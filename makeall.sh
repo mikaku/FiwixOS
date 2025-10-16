@@ -939,8 +939,8 @@ EOF
 		libxcrypt)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
-				./configure --prefix=/usr --disable-werror --disable-shared --disable-libtool-lock || exit 1
-				_make "-DENABLE_WEAK_HASHES"
+				./configure --prefix=/usr --disable-werror || exit 1
+				_make
 			popd
 			_pack $prg-$ver
 			;;
