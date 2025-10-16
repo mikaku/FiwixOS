@@ -677,7 +677,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-threads || exit 1
+				./configure --prefix=/usr || exit 1
 				_make "-D_POSIX_ARG_MAX=4096"
 			popd
 			_pack $prg-$ver
