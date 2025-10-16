@@ -667,7 +667,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=/usr --disable-shared || exit 1
+				./configure --prefix=/usr || exit 1
 				_make
 			popd
 			_pack $prg-$ver
