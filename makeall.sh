@@ -881,9 +881,6 @@ EOF
 				./configure --prefix=/usr || exit 1
 				_make
 			popd
-			pushd $PREFIX
-				ln -s less usr/bin/more
-			popd
 			_pack $prg-$ver
 			;;
 
