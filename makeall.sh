@@ -227,14 +227,14 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				./configure --prefix=${PREFIX}/usr --with-jobdir=/var/spool/at --with-atspool=/var/spool/at/spool --with-daemon_username=root --with-daemon_groupname=root || exit 1
+				./configure --prefix=/usr --with-jobdir=/var/spool/at --with-atspool=/var/spool/at/spool --with-daemon_username=root --with-daemon_groupname=root || exit 1
 				make DESTDIR=${PREFIX} || exit 1
 				make install \
 					DESTDIR=${PREFIX} \
 					DAEMON_USERNAME=`id -nu` \
 					DAEMON_GROUPNAME=`id -ng` \
-					ATJOB_DIR=${PREFIX}/var/spool/at \
-					ATSPOOL_DIR=${PREFIX}/var/spool/at/spool \
+					ATJOB_DIR=/var/spool/at \
+					ATSPOOL_DIR=/var/spool/at/spool \
 					INSTALL_ROOT_USER=`id -nu` \
 					INSTALL_ROOT_GROUP=`id -nu` || exit 1
 			popd
