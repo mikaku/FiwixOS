@@ -1128,6 +1128,21 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		musl)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				./configure --disable-shared --enable-gcc-wrapper || exit 1
+				_make
+			popd
+			pushd $PREFIX
+				mkdir -p usr/bin
+				ln -sf /usr/local/musl/bin/musl-gcc usr/bin/musl-gcc
+				cp -p usr/local/musl/lib/libm.a usr/local/musl/lib/libg.a
+				cp -p usr/local/musl/lib/libm.a usr/local/musl/lib/libnosys.a
+			popd
+			_pack ${altprg}-$ver
+			;;
+
 		nano)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
