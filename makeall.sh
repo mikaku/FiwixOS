@@ -53,6 +53,7 @@ _opkg() {
 	arch="$3"
 	deps="$4"
 	desc="$5"
+	url="$6"
 
 	# 'autoconf-2.64' exception
 	if [ "${prg}-${ver}" = "autoconf-2.64" ] ; then
@@ -86,6 +87,7 @@ Architecture: $arch
 Maintainer: jordi@fibranet.cat
 Description: $desc
 Depends: $deps
+URL: $url
 
 EOF
 		mv data.tar.gz ${name}
