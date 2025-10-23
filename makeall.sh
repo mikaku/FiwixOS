@@ -55,17 +55,6 @@ _opkg() {
 	desc="$5"
 	url="$6"
 
-	# 'autoconf-2.64' exception
-	if [ "${prg}-${ver}" = "autoconf-2.64" ] ; then
-		vercond=$(echo $ver | sed 's/\.//')
-		prg=${prg}${vercond}
-	fi
-	# 'automake-1.11.1' exception
-	if [ "${prg}-${ver}" = "automake-1.11.1" ] ; then
-		vercond=$(echo $ver | sed 's/\.//g')
-		prg=${prg}${vercond}
-	fi
-
 	name="$prg-$ver"
 	pushd $PREFIX
 		if [ -z "$arch" ] ; then
@@ -335,22 +324,20 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		autoconf|autoconf264)
-			if [ "$prg" = "autoconf264" ] ; then
-				prg="autoconf"
+		autoconf)
+			if [ -n "$altprg" ] ; then
 				_unpack $prg-$ver z
 				pushd $prg-$ver || exit 1
 					_patch $prg-$ver
-					./configure --prefix=/usr --program-suffix=-2.64 || exit 1
-					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/autoconf-2.64"
-					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/autoconf-2.64" install
+					./configure --prefix=/usr --program-suffix=-${ver} || exit 1
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/${prg}-${ver}"
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/${prg}-${ver}" install
 				popd
 				pushd $PREFIX
 					rm -rf usr/share/info usr/share/man
 				popd
 				rm -rf "${prg}-${ver}"
-				vercond=$(echo $ver | sed 's/\.//')
-				prg=${prg}${vercond}
+				prg=$altprg
 			else
 				_unpack $prg-$ver J
 				pushd $prg-$ver || exit 1
@@ -362,22 +349,20 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		automake|automake1111)
-			if [ "$prg" = "automake1111" ] ; then
-				prg="automake"
+		automake)
+			if [ -n "$altprg" ] ; then
 				_unpack $prg-$ver z
 				pushd $prg-$ver || exit 1
 					_patch $prg-$ver
-					./configure --prefix=/usr --program-suffix=-1.11.1 || exit 1
-					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/automake-1.11.1"
-					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/automake-1.11.1" install
+					./configure --prefix=/usr --program-suffix=-${ver} || exit 1
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/${prg}-${ver}"
+					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/${prg}-${ver}" install
 				popd
 				pushd $PREFIX
 					rm -rf usr/share/info usr/share/man usr/share/doc/ usr/share/local
 				popd
 				rm -rf "${prg}-${ver}"
-				vercond=$(echo $ver | sed 's/\.//g')
-				prg=${prg}${vercond}
+				prg=$altprg
 			else
 				_unpack $prg-$ver J
 				pushd $prg-$ver || exit 1
@@ -426,23 +411,19 @@ EOF
 			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
-				cp ../${SRC}/$prg-$ver-config .config
+				config=$prg-$ver-config
+				if [ -n "$altprg" ] ; then
+					config="$altprg-$ver.config"
+				fi
+				cp ../${SRC}/$config .config
 				make || exit 1
 				make PREFIX=$PREFIX install || exit 1
 			popd
-			_pack $prg-$ver
-			;;
-
-		busybox-mini)
-			prg=busybox
-			_unpack $prg-$ver j
-			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
-				cp ../${SRC}/$prg-$ver-config.mini .config
-				make || exit 1
-				make PREFIX=$PREFIX install || exit 1
-			popd
-			_pack $prg-mini-$ver
+			if [ -n "$altprg" ] ; then
+				_pack $altprg-$ver
+			else
+				_pack $prg-$ver
+			fi
 			rm -rf $prg-$ver
 			;;
 
@@ -1141,6 +1122,7 @@ EOF
 				cp -p usr/local/musl/lib/libm.a usr/local/musl/lib/libnosys.a
 			popd
 			_pack ${altprg}-$ver
+			rm -rf $prg-$ver
 			;;
 
 		nano)
@@ -2014,7 +1996,7 @@ EOF
 				rm -rf usr/bin
 				rm -rf usr/i386-pc-fiwix/
 			popd
-			rm -rf gcc-$ver newlib-4.4.0.20231231
+			rm -rf gcc-$ver newlib-4.5.0.20241231
 			_pack $prg-$ver
 			;;
 
@@ -2042,16 +2024,21 @@ build() {
 			;;
 	esac
 
-	test -z "$altprg" && altprg=$prg
+	realname=$prg
+	if [ -n "$altprg" ] ; then
+		realname=$altprg
+	fi
 
-	if ! [ -f ${BUILDS}/${altprg}-${ver}.tar.bz2 ] ; then
+	if ! [ -f ${BUILDS}/${realname}-${ver}.tar.bz2 ] ; then
 		rm -rf $PREFIX
 		rm -f ${LOGS}/$prg.buildlog
 		mkdir -p $PREFIX
 		{ time _build "$prg" "$altprg" "$ver" ; } 2>> ${LOGS}/$prg.buildlog
 	else
-		echo "File '${BUILDS}/${altprg}-${ver}.tar.bz2' already exists."
+		echo "File '${BUILDS}/${realname}-${ver}.tar.bz2' already exists."
 	fi
+
+	test -z "$altprg" && altprg=$prg
 
 	if ! [ -f ${BUILDS}/${altprg}_${ver}_${arch}.ipk ] ; then
 		_opkg "$altprg" "$ver" "$arch" "$deps" "$desc" "$url"
@@ -2075,19 +2062,19 @@ build() {
 	echo
 }
 
-# build <prg> <altprg> <version> <arch> <dependences> <desc> <url>
+# build <prg> <altprg> <version> <arch> <dependencies> <description> <url>
 build Python "" 3.6.15 i386 "" "Python 3.6 interpreter" "https://www.python.org/downloads/source/"
 build SDL "" 1.2.15 i386 "" "Cross-platform multimedia library" "https://github.com/libsdl-org/SDL-1.2"
 build aalib "" 1.4.0 i386 "" "ASCII art library" "https://aa-project.sourceforge.net/aalib/"
 build at "" 3.2.5 i386 "" "Job spooling tools" "http://ftp.debian.org/debian/pool/main/a/at/"
-build autoconf264 "" 2.64 noarch "" "A GNU tool for automatically configuring source code" "https://ftp.gnu.org/gnu/autoconf/"
+build autoconf autoconf264 2.64 noarch "" "A GNU tool for automatically configuring source code" "https://ftp.gnu.org/gnu/autoconf/"
 build autoconf "" 2.69 noarch "" "A GNU tool for automatically configuring source code" "https://ftp.gnu.org/gnu/autoconf/"
-build automake1111 "" 1.11.1 noarch "autoconf264" "A GNU tool for automatically creating Makefiles" "https://ftp.gnu.org/gnu/automake/"
+build automake automake1111 1.11.1 noarch "autoconf264" "A GNU tool for automatically creating Makefiles" "https://ftp.gnu.org/gnu/automake/"
 build automake "" 1.15.1 noarch "" "A GNU tool for automatically creating Makefiles" "https://ftp.gnu.org/gnu/automake/"
 build bash "" 4.4.18 i386 "" "The GNU Bourne Again shell" "https://ftp.gnu.org/gnu/bash/"
 build bc "" 1.08.2 i386 "" "GNU's bc (a numeric processing language) and dc (a calculator)" "https://ftp.gnu.org/gnu/bc/"
 build busybox "" 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
-build busybox-mini "" 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
+build busybox busybox-mini 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build byacc "" 20241231 i386 "" "Berkeley Yacc, a parser generator" "https://invisible-island.net/archives/byacc/"
 build bzip2 "" 1.0.8 i386 "" "File compression utility" "https://sourceware.org/bzip2/downloads.html"
 build chkconfig "" 1.3.30.2 i386 "" "A system tool for maintaining the /etc/rc*.d hierarchy" "https://github.com/fedora-sysv/chkconfig"
