@@ -647,6 +647,15 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		figlet)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				sed -i 's#^prefix.*$#prefix  = /usr#' Makefile
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		file)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2093,6 +2102,7 @@ build e3 "" 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Em
 build ed "" 1.22.2 i386 "" "The GNU line editor" "https://ftp.gnu.org/gnu/ed/"
 build enscript "" 1.6.6 i386 "" "A plain ASCII to PostScript converter" "https://ftp.gnu.org/gnu/enscript/"
 build expat "" 2.5.0 i386 "" "An XML parser library" "https://libexpat.github.io/"
+build figlet "" 2.2.5 i386 "" "A program for making large letters out of ordinary text" "http://www.figlet.org/"
 build file "" 5.46 i386 "" "Utility for determining file types" "https://www.darwinsys.com/file/"
 build findutils "" 4.4.2 i386 "" "The GNU versions of find utilities (find and xargs)" "https://ftp.gnu.org/gnu/findutils/"
 build flex "" 2.6.4 i386 "" "A tool for generating scanners (text pattern recognizers)" "https://github.com/westes/flex"
