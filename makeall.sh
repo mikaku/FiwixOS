@@ -205,6 +205,27 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		ZEsarUX)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				CFLAGS="-DSHORT_SLEEP_TIMER" LIBS="-lvga" ./configure --prefix=/usr --disable-pthreads --disable-networking --disable-aa || exit 1
+				_make
+			popd
+			pushd $PREFIX
+				rm -f usr/share/zersarux/tbblue*
+				mkdir usr/games
+				mv usr/bin/zesarux usr/games/zesarux
+cat > usr/bin/zesarux <<EOF
+#!/bin/sh
+
+/usr/games/zesarux --zoom 1 --sdl-8bit-color --sdl-force-win-size 320 200 --disableborder --ao null --disable-autoframeskip --vo sdl
+EOF
+				chmod +x usr/bin/zesarux
+			popd
+			_pack $prg-$ver
+			;;
+
 		aalib)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2074,6 +2095,7 @@ build() {
 # build <prg> <altprg> <version> <arch> <dependencies> <description> <url>
 build Python "" 3.6.15 i386 "" "Python 3.6 interpreter" "https://www.python.org/downloads/source/"
 build SDL "" 1.2.15 i386 "" "Cross-platform multimedia library" "https://github.com/libsdl-org/SDL-1.2"
+build ZEsarUX "" 13.0 i386 "" "A Zx80/Zx81/Z88, Zx Spectrum 16/48/128/+2/+2A and ZX-Uno emulator with ULAPlus support" "https://github.com/chernandezba/zesarux"
 build aalib "" 1.4.0 i386 "" "ASCII art library" "https://aa-project.sourceforge.net/aalib/"
 build at "" 3.2.5 i386 "" "Job spooling tools" "http://ftp.debian.org/debian/pool/main/a/at/"
 build autoconf autoconf264 2.64 noarch "" "A GNU tool for automatically configuring source code" "https://ftp.gnu.org/gnu/autoconf/"
