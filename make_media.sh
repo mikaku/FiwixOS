@@ -229,7 +229,7 @@ setup_grub_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2024, Jordi Sanfeliu.
+# Copyright (C) 2018-2025, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -264,7 +264,7 @@ setup_grub_initrd_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2024, Jordi Sanfeliu.
+# Copyright (C) 2018-2025, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -304,7 +304,7 @@ setup_grub_iso() {
 	mkdir -p /tmp/iso/boot/grub
 	cat > /tmp/iso/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2024, Jordi Sanfeliu.
+# Copyright (C) 2018-2025, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -540,7 +540,7 @@ EOF
 	cp -pr iso/* /tmp/iso/
 	chown -R root:root /tmp/iso
 
-	echo "creating some ipk packages ..."
+	echo "creating extra ipk packages ..."
 	mkdir -p /tmp/iso/install/base
 	cp -p basesystem.tar.bz2 /tmp/iso/install/base
 	mv /tmp/iso/install/base/basesystem.tar.bz2 /tmp/iso/install/base/basesystem-${OSVERSION}.tar.bz2
@@ -564,6 +564,20 @@ EOF
 		   noarch \
 		   "lxdoom" \
 		   "The shareware .WAD file for DOOM 2"
+
+	create_ipk /tmp/iso/install/extras/ \
+		   figlet_extra_fonts \
+		   2.2.5 \
+		   noarch \
+		   "" \
+		   "Extra fonts for figlet"
+
+	create_ipk /tmp/iso/install/extras/ \
+		   heretic_shareware \
+		   1.2 \
+		   noarch \
+		   "" \
+		   "The shareware .WAD file for Heretic"
 
 	create_ipk /tmp/iso/install/extras/ \
 		   urw_base35 \
