@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # FiwixOS _VERSION_ installation script.
-# Copyright 2018-2024, Jordi Sanfeliu. All rights reserved.
+# Copyright 2018-2025, Jordi Sanfeliu. All rights reserved.
 # Distributed under the terms of the Fiwix License.
 #
 
@@ -101,7 +101,7 @@ welcome() {
 	echo "			to the installation of FiwixOS $OSVERSION"
 	echo "			    for the i386 architecture"
 	echo
-	echo "		    Copyright (c) 2018-2024 by Jordi Sanfeliu"
+	echo "		    Copyright (c) 2018-2025 by Jordi Sanfeliu"
 	echo "			      <jordi@fibranet.cat>"
 	echo
 	echo
@@ -1058,7 +1058,7 @@ EOF
 # menu.lst generated during the FiwixOS installation
 #
 # FiwixOS
-# Copyright (C) 2018-2024 Jordi Sanfeliu <jordi@fibranet.cat>
+# Copyright (C) 2018-2025 Jordi Sanfeliu <jordi@fibranet.cat>
 #
 # GRUB configuration file
 #
