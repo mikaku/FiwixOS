@@ -1,0 +1,60 @@
+diff -aru dosbox-0.74-3-orig/config.guess dosbox-0.74-3/config.guess
+--- dosbox-0.74-3-orig/config.guess	2019-06-25 15:01:19 +0000
++++ dosbox-0.74-3/config.guess	2026-04-05 16:53:36 +0000
+@@ -1267,6 +1267,9 @@
+     x86_64:Haiku:*:*)
+ 	echo x86_64-unknown-haiku
+ 	exit ;;
++    i386:Fiwix:*:*)
++	echo i386-pc-fiwix
++	exit ;;
+     SX-4:SUPER-UX:*:*)
+ 	echo sx4-nec-superux${UNAME_RELEASE}
+ 	exit ;;
+diff -aru dosbox-0.74-3-orig/config.sub dosbox-0.74-3/config.sub
+--- dosbox-0.74-3-orig/config.sub	2019-06-25 15:01:19 +0000
++++ dosbox-0.74-3/config.sub	2026-04-05 16:57:37 +0000
+@@ -668,6 +668,10 @@
+ 		basic_machine=m68k-ericsson
+ 		os=-ose
+ 		;;
++	fiwix)
++		basic_machine=i386
++		os=-bsd
++		;;
+ 	fx2800)
+ 		basic_machine=i860-alliant
+ 		;;
+@@ -1409,7 +1413,7 @@
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+ 	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -es* \
+-	      | -onefs* | -tirtos* | -phoenix* | -fuchsia*)
++	      | -onefs* | -tirtos* | -phoenix* | -fuchsia* | -fiwix* )
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -aru dosbox-0.74-3-orig/src/gui/sdl_mapper.cpp dosbox-0.74-3/src/gui/sdl_mapper.cpp
+--- dosbox-0.74-3-orig/src/gui/sdl_mapper.cpp	2019-06-22 15:07:45 +0000
++++ dosbox-0.74-3/src/gui/sdl_mapper.cpp	2026-04-05 17:02:29 +0000
+@@ -415,7 +415,7 @@
+ 			/* try to retrieve key from symbolic key as scancode is zero */
+ 			if (keysym.sym<MAX_SDLKEYS) key=scancode_map[(Bitu)keysym.sym];
+ 		} 
+-#if !defined (WIN32) && !defined (MACOSX) && !defined(OS2)
++#if defined(LINUX)
+ 		/* Linux adds 8 to all scancodes */
+ 		else key-=8;
+ #endif
+diff -aru dosbox-0.74-3-orig/src/gui/sdlmain.cpp dosbox-0.74-3/src/gui/sdlmain.cpp
+--- dosbox-0.74-3-orig/src/gui/sdlmain.cpp	2019-06-26 14:56:44 +0000
++++ dosbox-0.74-3/src/gui/sdlmain.cpp	2026-04-05 16:58:56 +0000
+@@ -1924,7 +1924,7 @@
+ #endif
+ 	// Don't init timers, GetTicks seems to work fine and they can use a fair amount of power (Macs again) 
+ 	// Please report problems with audio and other things.
+-	if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO | /*SDL_INIT_TIMER |*/ SDL_INIT_CDROM
++	if ( SDL_Init( SDL_INIT_AUDIO|SDL_INIT_VIDEO /* | SDL_INIT_TIMER | SDL_INIT_CDROM */
+ 		|SDL_INIT_NOPARACHUTE
+ 		) < 0 ) E_Exit("Can't init SDL %s",SDL_GetError());
+ 	sdl.inited = true;
