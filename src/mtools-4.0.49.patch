@@ -1,0 +1,64 @@
+diff -ru mtools-4.0.49-orig/configure mtools-4.0.49/configure
+--- mtools-4.0.49-orig/configure	2025-06-14 16:11:34 +0000
++++ mtools-4.0.49/configure	2026-04-05 18:05:47 +0000
+@@ -6807,8 +6807,8 @@
+   ac_fn_c_check_func "$LINENO" "llseek" "ac_cv_func_llseek"
+ if test "x$ac_cv_func_llseek" = xyes
+ then :
+-  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
+-  seek_function=llseek
++#  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
++#  seek_function=llseek
+ fi
+ 
+ done
+@@ -6826,8 +6826,8 @@
+   ac_fn_c_check_func "$LINENO" "llseek" "ac_cv_func_llseek"
+ if test "x$ac_cv_func_llseek" = xyes
+ then :
+-  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
+-  seek_function=llseek
++#  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
++#  seek_function=llseek
+ fi
+ 
+ done
+@@ -6845,8 +6845,8 @@
+   ac_fn_c_check_func "$LINENO" "llseek" "ac_cv_func_llseek"
+ if test "x$ac_cv_func_llseek" = xyes
+ then :
+-  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
+-  seek_function=llseek
++#  printf "%s\n" "#define HAVE_LLSEEK 1" >>confdefs.h
++#  seek_function=llseek
+ fi
+ 
+ done
+@@ -7391,13 +7391,13 @@
+ ac_fn_c_check_func "$LINENO" "tzset" "ac_cv_func_tzset"
+ if test "x$ac_cv_func_tzset" = xyes
+ then :
+-  printf "%s\n" "#define HAVE_TZSET 1" >>confdefs.h
++#  printf "%s\n" "#define HAVE_TZSET 1" >>confdefs.h
+ 
+ fi
+ ac_fn_c_check_func "$LINENO" "gettimeofday" "ac_cv_func_gettimeofday"
+ if test "x$ac_cv_func_gettimeofday" = xyes
+ then :
+-  printf "%s\n" "#define HAVE_GETTIMEOFDAY 1" >>confdefs.h
++#  printf "%s\n" "#define HAVE_GETTIMEOFDAY 1" >>confdefs.h
+ 
+ fi
+ 
+diff -ru mtools-4.0.49-orig/mtools.h mtools-4.0.49/mtools.h
+--- mtools-4.0.49-orig/mtools.h	2025-02-09 14:32:47 +0000
++++ mtools-4.0.49/mtools.h	2026-04-05 18:01:50 +0000
+@@ -231,7 +231,7 @@
+ 
+ struct dirCache_t **getDirCacheP(Stream_t *Stream);
+ int isRootDir(Stream_t *Stream);
+-unsigned int getStart(Stream_t *Dir, struct directory *dir);
++uint32_t getStart(Stream_t *Dir, struct directory *dir);
+ unsigned int countBlocks(Stream_t *Dir, unsigned int block);
+ char getDrive(Stream_t *Stream);
+ 

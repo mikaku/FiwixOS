@@ -1149,6 +1149,16 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		mtools)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		musl)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2177,6 +2187,7 @@ build mingetty "" 1.08 i386 "" "A compact getty program for virtual consoles onl
 build moe "" 1.15 i386 "" "A powerful clean text editor" "https://ftp.gnu.org/gnu/moe/"
 build mpc "" 1.3.1 i386 "" "GNU MPC is a complex floating-point library with exact rounding" "https://ftp.gnu.org/gnu/mpc/"
 build mpfr "" 4.2.2 i386 "" "C library for multiple-precision floating-point computations" "https://ftp.gnu.org/gnu/mpfr/"
+build mtools "" 4.0.49 i386 "" "Collection of utilities to access MS-DOS disks without mounting them" "https://www.gnu.org/software/mtools/"
 build musl musl-gcc 1.0.5 i386 "" "Lightweight implementation of C standard library (wrapper around gcc)" "https://www.musl-libc.org/"
 build nano "" 8.5 i386 "" "A small text editor" "https://ftp.gnu.org/gnu/nano/"
 build nasm "" 2.16.03 i386 "" "A portable x86 assembler which uses Intel-like syntax" "https://www.nasm.us/pub/nasm/releasebuilds/"
