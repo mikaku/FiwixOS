@@ -586,6 +586,16 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		dosbox)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		e2fsprogs-libs)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2118,6 +2128,7 @@ build diffstat "" 1.68 i386 "" "A utility which provides statistics based on the
 build diffutils "" 3.12 i386 "" "GNU collection of diff utilities" "https://ftp.gnu.org/gnu/diffutils/"
 build dmidecode "" 3.6 i386 "" "Tool to analyse BIOS DMI data" "https://www.nongnu.org/dmidecode/"
 build dos2unix "" 7.5.2 i386 "" "Text file format converters" "https://waterlan.home.xs4all.nl/dos2unix.html"
+build dosbox "" 0.74-3 i386 "" "DOSBox, an x86 emulator with DOS" "https://www.dosbox.com/download.php?main=1"
 build e2fsprogs-libs "" 1.40.11 i386 "" "Ext2/3/4 file system specific libraries" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e2fsprogs "" 1.40.11 i386 "" "Utilities for managing ext2 and ext3 file systems" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e3 "" 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi" "https://sites.google.com/site/e3editor/"
