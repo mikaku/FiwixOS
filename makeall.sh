@@ -34,7 +34,9 @@ _unpack() {
 _patch() {
 	name=$1
 	echo "patching $name"
-	patch -p1 < ../${SRC}/$name.patch || exit 1
+	for file in $(ls ../${SRC}/$name*.patch) ; do
+		patch -p1 < $file || exit 1
+	done
 }
 
 _make() {
