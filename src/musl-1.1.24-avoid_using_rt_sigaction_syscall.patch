@@ -1,0 +1,11 @@
+--- musl-1.1.24/src/signal/sigaction.c	2019-10-13 21:58:27 +0000
++++ musl-1.1.24.new/src/signal/sigaction.c	2026-08-21 09:03:38 +0000
+@@ -82,7 +82,7 @@
+ 		errno = EINVAL;
+ 		return -1;
+ 	}
+-	return __libc_sigaction(sig, sa, old);
++	return __syscall(SYS_sigaction, sig, sa, old);
+ }
+ 
+ weak_alias(__sigaction, sigaction);

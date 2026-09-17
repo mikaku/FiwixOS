@@ -1164,14 +1164,18 @@ EOF
 		musl)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
 				./configure --disable-shared --enable-gcc-wrapper || exit 1
-				_make
+				_make "-DSYSCALL_NO_TLS"
 			popd
 			pushd $PREFIX
 				mkdir -p usr/bin
 				ln -sf /usr/local/musl/bin/musl-gcc usr/bin/musl-gcc
 				cp -p usr/local/musl/lib/libm.a usr/local/musl/lib/libg.a
 				cp -p usr/local/musl/lib/libm.a usr/local/musl/lib/libnosys.a
+				# 'musl-gcc.specs' from musl-1.0.5 seems working better than 1.1.24
+				sed -i 's#^%{!shared: /usr/local/musl/lib/.*#%{!shared: /usr/local/musl/lib/%{pie:S}crt1.o} /usr/local/musl/lib/crti.o %{shared|pie:crtbeginS.o%s;:crtbegin.o%s}#' usr/local/musl/lib/musl-gcc.specs
+				sed -i 's#^crtendS.o%s /usr/local/musl/lib/crtn.o$#%{shared|pie:crtendS.o%s;:crtend.o%s} /usr/local/musl/lib/crtn.o#' usr/local/musl/lib/musl-gcc.specs
 			popd
 			_pack ${altprg}-$ver
 			rm -rf $prg-$ver
@@ -2190,7 +2194,7 @@ build moe "" 1.15 i386 "" "A powerful clean text editor" "https://ftp.gnu.org/gn
 build mpc "" 1.3.1 i386 "" "GNU MPC is a complex floating-point library with exact rounding" "https://ftp.gnu.org/gnu/mpc/"
 build mpfr "" 4.2.2 i386 "" "C library for multiple-precision floating-point computations" "https://ftp.gnu.org/gnu/mpfr/"
 build mtools "" 4.0.49 i386 "" "Collection of utilities to access MS-DOS disks without mounting them" "https://www.gnu.org/software/mtools/"
-build musl musl-gcc 1.0.5 i386 "" "Lightweight implementation of C standard library (wrapper around gcc)" "https://www.musl-libc.org/"
+build musl musl-gcc 1.1.24 i386 "" "Lightweight implementation of C standard library (wrapper around gcc)" "https://www.musl-libc.org/"
 build nano "" 8.5 i386 "" "A small text editor" "https://ftp.gnu.org/gnu/nano/"
 build nasm "" 2.16.03 i386 "" "A portable x86 assembler which uses Intel-like syntax" "https://www.nasm.us/pub/nasm/releasebuilds/"
 build ncompress "" 5.0 i386 "" "Fast compression and decompression utilities" "https://ncompress.sourceforge.io/"

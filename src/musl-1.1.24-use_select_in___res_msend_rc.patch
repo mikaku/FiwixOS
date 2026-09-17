@@ -1,0 +1,46 @@
+diff -ru musl-1.1.24/src/network/res_msend.c musl-1.1.24.new/src/network/res_msend.c
+--- musl-1.1.24/src/network/res_msend.c	2019-10-13 23:58:27.000000000 +0200
++++ musl-1.1.24.new/src/network/res_msend.c	2026-08-29 15:55:32.000000000 +0200
+@@ -4,7 +4,7 @@
+ #include <arpa/inet.h>
+ #include <stdint.h>
+ #include <string.h>
+-#include <poll.h>
++#include <sys/select.h>
+ #include <time.h>
+ #include <ctype.h>
+ #include <unistd.h>
+@@ -44,7 +44,9 @@
+ 	int next;
+ 	int i, j;
+ 	int cs;
+-	struct pollfd pfd;
++	struct timeval tv;
++	fd_set fds;
++	int usec;
+ 	unsigned long t0, t1, t2;
+ 
+ 	pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, &cs);
+@@ -106,8 +108,6 @@
+ 
+ 	memset(alens, 0, sizeof *alens * nqueries);
+ 
+-	pfd.fd = fd;
+-	pfd.events = POLLIN;
+ 	retry_interval = timeout / attempts;
+ 	next = 0;
+ 	t0 = t2 = mtime();
+@@ -127,7 +127,12 @@
+ 		}
+ 
+ 		/* Wait for a response, or until time to retry */
+-		if (poll(&pfd, 1, t1+retry_interval-t2) <= 0) continue;
++		usec = t1+retry_interval-t2;
++		FD_ZERO(&fds);
++		FD_SET(fd, &fds);
++		tv.tv_sec = usec / 1000000;
++		tv.tv_usec = usec;
++		if (select(fd+1, &fds, 0, 0, &tv) <= 0) continue;
+ 
+ 		while ((rlen = recvfrom(fd, answers[next], asize, 0,
+ 		  (void *)&sa, (socklen_t[1]){sl})) >= 0) {
