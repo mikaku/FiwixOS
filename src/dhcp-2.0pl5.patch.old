@@ -1,0 +1,418 @@
+diff -ruN dhcp-2.0pl5/client/scripts/fiwix dhcp-2.0pl5.new/client/scripts/fiwix
+--- dhcp-2.0pl5/client/scripts/fiwix	1970-01-01 01:00:00.000000000 +0100
++++ dhcp-2.0pl5.new/client/scripts/fiwix	2026-10-04 10:08:46.000000000 +0200
+@@ -0,0 +1,154 @@
++#!/bin/sh
++# dhclient-script for Linux. Dan Halbert, March, 1997.
++# Updated for Linux 2.[12] by Brian J. Murrell, January 1999.
++# No guarantees about this. I'm a novice at the details of Linux
++# networking.
++
++# Notes:
++
++# 0. This script is based on the netbsd script supplied with dhcp-970306.
++
++# 1. ifconfig down apparently deletes all relevant routes and flushes
++# the arp cache, so this doesn't need to be done explicitly.
++
++# 2. The alias address handling here has not been tested AT ALL.
++# I'm just going by the doc of modern Linux ip aliasing, which uses
++# notations like eth0:0, eth0:1, for each alias.
++
++# 3. I have to calculate the network address, and calculate the broadcast
++# address if it is not supplied. This might be much more easily done
++# by the dhclient C code, and passed on.
++
++# 4. TIMEOUT not tested. ping has a flag I don't know, and I'm suspicious
++# of the $1 in its args.
++
++# Must be used on exit.   Invokes the local dhcp client exit hooks, if any.
++function exit_with_hooks() {
++  exit_status=$1
++  if [ -x /etc/dhclient-exit-hooks ]; then
++    . /etc/dhclient-exit-hooks
++  fi
++# probably should do something with exit status of the local script
++  exit $exit_status
++}
++
++# Invoke the local dhcp client enter hooks, if they exist.
++if [ -x /etc/dhclient-enter-hooks ]; then
++  exit_status=0
++  . /etc/dhclient-enter-hooks
++  # allow the local script to abort processing of this state
++  # local script must set exit_status variable to nonzero.
++  if [ $exit_status -ne 0 ]; then
++    exit $exit_status
++  fi
++fi
++
++release=`uname -r`
++release=`expr $release : '\(.*\)\..*'`
++relmajor=`echo $release |sed -e 's/^\([^\.]*\)\..*$/\1/'`
++relminor=`echo $release |sed -e 's/^.*\.\([^\.]*\)$/\1/'`
++
++if [ x$new_broadcast_address != x ]; then
++  new_broadcast_arg="broadcast $new_broadcast_address"
++fi
++if [ x$old_broadcast_address != x ]; then
++  old_broadcast_arg="broadcast $old_broadcast_address"
++fi
++if [ x$new_subnet_mask != x ]; then
++  new_subnet_arg="netmask $new_subnet_mask"
++fi
++if [ x$old_subnet_mask != x ]; then
++  old_subnet_arg="netmask $old_subnet_mask"
++fi
++if [ x$alias_subnet_mask != x ]; then
++  alias_subnet_arg="netmask $alias_subnet_mask"
++fi
++
++if [ x$reason = xMEDIUM ]; then
++  # Linux doesn't do mediums (ok, ok, media).
++  exit_with_hooks 0
++fi
++
++if [ x$reason = xPREINIT ]; then
++  ifconfig $interface up
++
++  # We need to give the kernel some time to get the interface up.
++  sleep 1
++
++  exit_with_hooks 0
++fi
++
++if [ x$reason = xARPCHECK ] || [ x$reason = xARPSEND ]; then
++  exit_with_hooks 0
++fi
++  
++if [ x$reason = xBOUND ] || [ x$reason = xRENEW ] || \
++   [ x$reason = xREBIND ] || [ x$reason = xREBOOT ]; then
++  if [ x$old_ip_address != x ] && [ x$old_ip_address != x$new_ip_address ]; then
++    # IP address changed. Bringing down the interface will delete all routes,
++    # and clear the ARP cache.
++    ifconfig $interface down
++
++  fi
++  if [ x$old_ip_address = x ] || [ x$old_ip_address != x$new_ip_address ] || \
++     [ x$reason = xBOUND ] || [ x$reason = xREBOOT ]; then
++
++    ifconfig $interface $new_ip_address $new_subnet_arg \
++							$new_broadcast_arg
++    # Add a network route to the computed network address.
++    if [ $relmajor -lt 2 ] || \
++		( [ $relmajor -eq 2 ] && [ $relminor -eq 0 ] ); then
++      route add -net $new_network_number $new_subnet_arg dev $interface
++    fi
++    for router in $new_routers; do
++      route add default gw $router
++    done
++  fi
++  echo search $new_domain_name >/etc/resolv.conf
++  for nameserver in $new_domain_name_servers; do
++    echo nameserver $nameserver >>/etc/resolv.conf
++  done
++  exit_with_hooks 0
++fi
++
++if [ x$reason = xEXPIRE ] || [ x$reason = xFAIL ]; then
++  if [ x$old_ip_address != x ]; then
++    # Shut down interface, which will delete routes and clear arp cache.
++    ifconfig $interface down
++  fi
++  exit_with_hooks 0
++fi
++
++if [ x$reason = xTIMEOUT ]; then
++  ifconfig $interface $new_ip_address $new_subnet_arg \
++					$new_broadcast_arg
++  set $new_routers
++  ############## what is -w in ping?
++  if ping -q -c 1 $1; then
++    if [ x$new_ip_address != x$alias_ip_address ] && \
++			[ x$alias_ip_address != x ]; then
++      ifconfig $interface:0 inet $alias_ip_address $alias_subnet_arg
++      route add -host $alias_ip_address dev $interface:0
++    fi
++    if [ $relmajor -lt 2 ] || \
++		( [ $relmajor -eq 2 ] && [ $relminor -eq 0 ] ); then
++      route add -net $new_network_number
++    fi
++    for router in $new_routers; do
++      route add default gw $router
++    done
++    echo search $new_domain_name >/etc/resolv.conf.std
++    for nameserver in $new_domain_name_servers; do
++      echo nameserver $nameserver >>/etc/resolv.conf.std
++    done
++    if [ -f /etc/resolv.conf ]; then
++      rm -f /etc/resolv.conf
++      ln /etc/resolv.conf.std /etc/resolv.conf
++    fi
++    exit_with_hooks 0
++  fi
++  ifconfig $interface inet down
++  exit_with_hooks 1
++fi
++
++exit_with_hooks 0
+diff -ruN dhcp-2.0pl5/common/dispatch.c dhcp-2.0pl5.new/common/dispatch.c
+--- dhcp-2.0pl5/common/dispatch.c	1999-07-13 14:51:55.000000000 +0200
++++ dhcp-2.0pl5.new/common/dispatch.c	2026-10-05 16:24:38.000000000 +0200
+@@ -327,7 +327,9 @@
+ 
+ 	/* Now cycle through all the interfaces we found, looking for
+ 	   hardware addresses. */
+-#if defined (HAVE_SIOCGIFHWADDR) && !defined (HAVE_AF_LINK)
++printf("HAVE_SIOCGIFHWADDR\n");
++#if defined (HAVE_SIOCGIFHWADDR) /*&& !defined (HAVE_AF_LINK)*/
++printf("\tsi\n");
+ 	for (tmp = interfaces; tmp; tmp = tmp -> next) {
+ 		struct ifreq ifr;
+ 		struct sockaddr sa;
+@@ -345,8 +347,11 @@
+ 
+ 		/* Read the hardware address from this interface. */
+ 		ifr = *tmp -> ifp;
+-		if (ioctl (sock, SIOCGIFHWADDR, &ifr) < 0)
++printf("ioctl SIOCGIFHWADDR\n");
++		if (ioctl (sock, SIOCGIFHWADDR, &ifr) < 0) {
++			printf("eoooooooooooo\n");
+ 			continue;
++		}
+ 		
+ 		sa = *(struct sockaddr *)&ifr.ifr_hwaddr;
+ 		
+diff -ruN dhcp-2.0pl5/common/socket.c dhcp-2.0pl5.new/common/socket.c
+--- dhcp-2.0pl5/common/socket.c	1999-10-25 17:39:55.000000000 +0200
++++ dhcp-2.0pl5.new/common/socket.c	2026-10-05 15:57:11.000000000 +0200
+@@ -141,9 +141,9 @@
+ 
+ #if defined (HAVE_SO_BINDTODEVICE)
+ 	/* Bind this socket to this interface. */
++printf("info->ifp = '%s' (%d)\n", info->ifp, sizeof(*(info->ifp)));
+ 	if (info -> ifp &&
+-	    setsockopt (sock, SOL_SOCKET, SO_BINDTODEVICE,
+-			(char *)(info -> ifp), sizeof *(info -> ifp)) < 0) {
++	    setsockopt (sock, SOL_SOCKET, SO_BINDTODEVICE, "et1", 32) < 0) {
+ 		error("setsockopt: SO_BINDTODEVICE: %m");
+ 	}
+ #endif
+diff -ruN dhcp-2.0pl5/configure dhcp-2.0pl5.new/configure
+--- dhcp-2.0pl5/configure	1999-07-13 20:38:55.000000000 +0200
++++ dhcp-2.0pl5.new/configure	2026-10-05 15:30:03.000000000 +0200
+@@ -33,6 +33,8 @@
+ 	     *) sysname=linux-2.2 ;;
+ 	   esac;;
+       esac;;
++    Fiwix)
++	sysname=fiwix;;
+     SunOS)
+       case `uname -r` in
+         4*) sysname=sunos4;;
+diff -ruN dhcp-2.0pl5/includes/cf/fiwix.h dhcp-2.0pl5.new/includes/cf/fiwix.h
+--- dhcp-2.0pl5/includes/cf/fiwix.h	1970-01-01 01:00:00.000000000 +0100
++++ dhcp-2.0pl5.new/includes/cf/fiwix.h	2026-10-05 16:23:28.000000000 +0200
+@@ -0,0 +1,136 @@
++/* fiwix.h
++
++   System dependencies for Linux.
++
++   Based on a configuration originally supplied by Jonathan Stone. */
++
++/*
++ * Copyright (c) 1996, 1998, 1999 The Internet Software Consortium.
++ * All rights reserved.
++ *
++ * Redistribution and use in source and binary forms, with or without
++ * modification, are permitted provided that the following conditions
++ * are met:
++ *
++ * 1. Redistributions of source code must retain the above copyright
++ *    notice, this list of conditions and the following disclaimer.
++ * 2. Redistributions in binary form must reproduce the above copyright
++ *    notice, this list of conditions and the following disclaimer in the
++ *    documentation and/or other materials provided with the distribution.
++ * 3. Neither the name of The Internet Software Consortium nor the names of its
++ *    contributors may be used to endorse or promote products derived
++ *    from this software without specific prior written permission.
++ *
++ * THIS SOFTWARE IS PROVIDED BY THE INTERNET SOFTWARE CONSORTIUM AND
++ * CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
++ * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
++ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
++ * THE INTERNET SOFTWARE CONSORTIUM OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
++ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
++ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
++ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
++ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
++ * OF THE POSSIBILITY OF SUCH DAMAGE.
++ */
++
++#include <features.h>
++#ifndef __BIT_TYPES_DEFINED__
++#define __BIT_TYPES_DEFINED__
++#undef __USE_BSD
++typedef short int16_t;
++
++typedef unsigned char u_int8_t;
++typedef unsigned short u_int16_t;
++#endif /* __BIT_TYPES_DEFINED__ */
++
++typedef u_int8_t u8;
++typedef u_int16_t u16;
++typedef u_int32_t u32;
++
++#include <syslog.h>
++#include <sys/types.h>
++#include <string.h>
++#include <errno.h>
++#include <unistd.h>
++#include <sys/wait.h>
++#include <signal.h>
++#include <setjmp.h>
++#include <limits.h>
++
++extern int h_errno;
++
++#include <net/if.h>
++#include <net/route.h>
++
++#if LINUX_MAJOR == 1
++# include <linux/if_arp.h>
++# include <linux/time.h>		/* also necessary */
++#else
++# include <net/if_arp.h>
++#endif
++
++#include <sys/time.h>		/* gettimeofday()*/
++
++/* Databases go in /var/state/dhcp.   It would also be valid to put them
++   in /var/state/misc - indeed, given that there's only one lease file, it
++   would probably be better.   However, I have some ideas for optimizing
++   the lease database that may result in a _lot_ of smaller files being
++   created, so in that context it makes more sense to have a seperate
++   directory. */
++
++#ifndef _PATH_DHCPD_DB
++#define _PATH_DHCPD_DB		"/var/state/dhcp/dhcpd.leases"
++#endif
++
++#ifndef _PATH_DHCLIENT_DB
++#define _PATH_DHCLIENT_DB	"/var/state/dhcp/dhclient.leases"
++#endif
++
++/* Varargs stuff... */
++#include <stdarg.h>
++#define VA_DOTDOTDOT ...
++#define VA_start(list, last) va_start (list, last)
++#define va_dcl
++
++#define vsnprintf(buf, size, fmt, list) vsprintf (buf, fmt, list)
++#define NO_SNPRINTF
++
++#define VOIDPTR	void *
++
++#define EOL	'\n'
++
++/* Time stuff... */
++
++#include <time.h>
++
++#define TIME time_t
++#define GET_TIME(x)	time ((x))
++
++#if (LINUX_MAJOR >= 2)
++# if (LINUX_MINOR >= 1)
++#  if defined (USE_DEFAULT_NETWORK)
++#   define USE_LPF
++#  endif
++#  define LINUX_SLASHPROC_DISCOVERY
++#  define PROCDEV_DEVICE "/proc/net/dev"
++#  define HAVE_ARPHRD_TUNNEL
++#  define HAVE_TR_SUPPORT
++# endif
++# define HAVE_ARPHRD_METRICOM
++# define HAVE_ARPHRD_IEEE802
++# define HAVE_ARPHRD_LOOPBACK
++# define HAVE_SO_BINDTODEVICE
++# define HAVE_SIOCGIFHWADDR
++#endif
++
++#if !defined (USE_LPF)
++# if defined (USE_DEFAULT_NETWORK)
++#  define USE_SOCKETS
++# endif
++# define IGNORE_HOSTUNREACH
++#endif
++
++#define ALIAS_NAMES_PERMUTED
++#define SKIP_DUMMY_INTERFACES
+diff -ruN dhcp-2.0pl5/includes/osdep.h dhcp-2.0pl5.new/includes/osdep.h
+--- dhcp-2.0pl5/includes/osdep.h	1999-10-25 17:40:32.000000000 +0200
++++ dhcp-2.0pl5.new/includes/osdep.h	2026-10-05 16:21:03.000000000 +0200
+@@ -103,6 +103,10 @@
+ #  include "cf/linux.h"
+ #endif
+ 
++#ifdef fiwix
++#  include "cf/fiwix.h"
++#endif
++
+ #ifdef SCO
+ #  include "cf/sco.h"
+ #endif
+diff -ruN dhcp-2.0pl5/Makefile.conf dhcp-2.0pl5.new/Makefile.conf
+--- dhcp-2.0pl5/Makefile.conf	2000-07-20 07:06:34.000000000 +0200
++++ dhcp-2.0pl5.new/Makefile.conf	2026-10-05 16:24:21.000000000 +0200
+@@ -50,12 +50,12 @@
+ 
+ # Major version number (if applicable)
+ ##--majver--
+-MAJORVERSION=MajorVersion
++MAJORVERSION=2
+ ##--majver--
+ 
+ # Minor version number (if applicable)
+ ##--minver--
+-MINORVERSION=MinorVersion
++MINORVERSION=0
+ ##--minver--
+ 
+ ## Porting::
+@@ -244,15 +244,30 @@
+ ##--linux-2.2--
+ #COPTS = -DLINUX_MAJOR=$(MAJORVERSION) -DLINUX_MINOR=$(MINORVERSION)
+ #CF = cf/linux.h
+-#ADMMANDIR = /usr/man/man8
++#ADMMANDIR = /usr/share/man/man8
+ #ADMMANEXT = .8
+ #FFMANDIR = /usr/share/man/man5
+ #FFMANEXT = .5
+ #MANCAT = man
+ #VARRUN = /var/run
+-#VARDB = /var/state/dhcp	# see rationale in includes/cf/linux.h
++#VARDB = /var/lib/dhcp	# see rationale in includes/cf/linux.h
+ #SCRIPT=linux
+-##--linux-2.2--
++#--linux-2.2--
++
++# FiwixOS
++#--fiwix--
++COPTS = -DLINUX_MAJOR=$(MAJORVERSION) -DLINUX_MINOR=$(MINORVERSION)
++CC = musl-gcc
++CF = cf/linux.h
++ADMMANDIR = /usr/man/man8
++ADMMANEXT = .8
++FFMANDIR = /usr/man/man5
++FFMANEXT = .5
++MANCAT = man
++VARRUN = /var/run
++VARDB = /var/state/dhcp	# see rationale in includes/cf/linux.h
++SCRIPT=fiwix
++#--fiwix--
+ 
+ ## SCO
+ ##--sco--

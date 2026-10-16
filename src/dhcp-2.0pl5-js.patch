@@ -1,0 +1,20 @@
+--- dhcp-2.0/common/lpf.c.jj	Thu May 27 19:44:52 1999
++++ dhcp-2.0/common/lpf.c	Mon Jan 24 15:54:27 2000
+@@ -245,7 +245,7 @@ ssize_t send_packet (interface, packet, 
+ 	struct hardware *hto;
+ {
+ 	int bufp = 0;
+-	unsigned char buf [1500];
++	unsigned char buf [1514];
+ 	struct sockaddr sa;
+ 	int result;
+ 
+@@ -286,7 +286,7 @@ ssize_t receive_packet (interface, buf, 
+ 	int nread;
+ 	int length = 0;
+ 	int offset = 0;
+-	unsigned char ibuf [1500];
++	unsigned char ibuf [1514];
+ 	int bufix = 0;
+ 
+ 	length = read (interface -> rfdesc, ibuf, sizeof ibuf);

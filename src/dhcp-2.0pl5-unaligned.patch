@@ -1,0 +1,91 @@
+--- dhcp-2.0/common/packet.c.jj	Thu Jun 10 02:58:16 1999
++++ dhcp-2.0/common/packet.c	Mon Jan 24 18:39:03 2000
+@@ -218,8 +218,8 @@ ssize_t decode_udp_ip_header (interface,
+ 	unsigned char *data;
+ 	int buflen;
+ {
+-  struct ip *ip;
+-  struct udphdr *udp;
++  struct ipp { struct ip i; } __attribute__ ((packed)) *ip;
++  struct udpp { struct udphdr u; } __attribute__ ((packed)) *udp;
+   u_int32_t ip_len = (buf [bufix] & 0xf) << 2;
+   u_int32_t sum, usum;
+   static int ip_packets_seen;
+@@ -230,16 +230,16 @@ ssize_t decode_udp_ip_header (interface,
+   static int udp_packets_length_overflow;
+   int len;
+ 
+-  ip = (struct ip *)(buf + bufix);
+-  udp = (struct udphdr *)(buf + bufix + ip_len);
++  ip = (struct ipp *)(buf + bufix);
++  udp = (struct udpp *)(buf + bufix + ip_len);
+ 
+ #ifdef USERLAND_FILTER
+   /* Is it a UDP packet? */
+-  if (ip -> ip_p != IPPROTO_UDP)
++  if (ip -> i.ip_p != IPPROTO_UDP)
+ 	  return -1;
+ 
+   /* Is it to the port we're serving? */
+-  if (udp -> uh_dport != local_port)
++  if (udp -> u.uh_dport != local_port)
+ 	  return -1;
+ #endif /* USERLAND_FILTER */
+ 
+@@ -257,12 +257,12 @@ ssize_t decode_udp_ip_header (interface,
+   }
+ 
+   /* Check the IP packet length. */
+-  if (ntohs (ip -> ip_len) != buflen)
++  if (ntohs (ip -> i.ip_len) != buflen)
+ 	  debug ("ip length %d disagrees with bytes received %d.",
+-		 ntohs (ip -> ip_len), buflen);
++		 ntohs (ip -> i.ip_len), buflen);
+ 
+   /* Copy out the IP source address... */
+-  memcpy (&from -> sin_addr, &ip -> ip_src, 4);
++  memcpy (&from -> sin_addr, &ip -> i.ip_src, 4);
+ 
+   /* Compute UDP checksums, including the ``pseudo-header'', the UDP
+      header and the data.   If the UDP checksum field is zero, we're
+@@ -270,7 +270,7 @@ ssize_t decode_udp_ip_header (interface,
+ 
+   if (!data) {
+ 	  data = buf + bufix + ip_len + sizeof *udp;
+-	  len = ntohs (udp -> uh_ulen) - sizeof *udp;
++	  len = ntohs (udp -> u.uh_ulen) - sizeof *udp;
+ 	  ++udp_packets_length_checked;
+ 	  if (len + data > buf + bufix + buflen) {
+ 		  ++udp_packets_length_overflow;
+@@ -289,17 +289,17 @@ ssize_t decode_udp_ip_header (interface,
+ 		  debug ("accepting packet with data after udp payload.");
+   }
+ 
+-  usum = udp -> uh_sum;
+-  udp -> uh_sum = 0;
++  usum = udp -> u.uh_sum;
++  udp -> u.uh_sum = 0;
+ 
+   sum = wrapsum (checksum ((unsigned char *)udp, sizeof *udp,
+ 			   checksum (data, len,
+ 				     checksum ((unsigned char *)
+-					       &ip -> ip_src,
+-					       2 * sizeof ip -> ip_src,
++					       &ip -> i.ip_src,
++					       2 * sizeof ip -> i.ip_src,
+ 					       IPPROTO_UDP +
+ 					       (u_int32_t)
+-					       ntohs (udp -> uh_ulen)))));
++					       ntohs (udp -> u.uh_ulen)))));
+ 
+   udp_packets_seen++;
+   if (usum && usum != sum) {
+@@ -314,7 +314,7 @@ ssize_t decode_udp_ip_header (interface,
+   }
+ 
+   /* Copy out the port... */
+-  memcpy (&from -> sin_port, &udp -> uh_sport, sizeof udp -> uh_sport);
++  memcpy (&from -> sin_port, &udp -> u.uh_sport, sizeof udp -> u.uh_sport);
+ 
+   return ip_len + sizeof *udp;
+ }
