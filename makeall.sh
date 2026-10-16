@@ -433,13 +433,20 @@ EOF
 		busybox)
 			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
+				if [ -f ../${SRC}/$altprg-$ver.patch ] ; then
+					_patch $altprg-$ver
+					sed -i 's#prefix/bin/busybox#prefix/bin/'$altprg'#' applets/install.sh
+					sed -i 's#busybox"#'$altprg'"#' applets/install.sh
+				else
+					_patch $prg-$ver
+				fi
 				config=$prg-$ver-config
 				if [ -n "$altprg" ] ; then
 					config="$altprg-$ver.config"
 				fi
 				cp ../${SRC}/$config .config
-				make || exit 1
+				# a second 'make' is needed in the '-networking' version only.
+				make || make || exit 1
 				make PREFIX=$PREFIX install || exit 1
 			popd
 			if [ -n "$altprg" ] ; then
@@ -2132,6 +2139,7 @@ build bash "" 4.4.18 i386 "" "The GNU Bourne Again shell" "https://ftp.gnu.org/g
 build bc "" 1.08.2 i386 "" "GNU's bc (a numeric processing language) and dc (a calculator)" "https://ftp.gnu.org/gnu/bc/"
 build busybox "" 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build busybox busybox-mini 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
+build busybox busybox-networking 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build byacc "" 20241231 i386 "" "Berkeley Yacc, a parser generator" "https://invisible-island.net/archives/byacc/"
 build bzip2 "" 1.0.8 i386 "" "File compression utility" "https://sourceware.org/bzip2/downloads.html"
 build chkconfig "" 1.3.30.2 i386 "" "A system tool for maintaining the /etc/rc*.d hierarchy" "https://github.com/fedora-sysv/chkconfig"

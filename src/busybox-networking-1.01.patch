@@ -1,0 +1,169 @@
+diff -ru busybox-1.01/Rules.mak busybox-1.01.new/Rules.mak
+--- busybox-1.01/Rules.mak	2005-08-17 01:29:17 +0000
++++ busybox-1.01.new/Rules.mak	2026-10-13 17:36:41 +0000
+@@ -35,7 +35,7 @@
+ # by asking the CC compiler what arch it compiles things for, so unless
+ # your compiler is broken, you should not need to specify TARGET_ARCH
+ CROSS           =$(subst ",, $(strip $(CROSS_COMPILER_PREFIX)))
+-CC             = $(CROSS)gcc
++CC             = $(CROSS)musl-gcc
+ AR             = $(CROSS)ar
+ AS             = $(CROSS)as
+ LD             = $(CROSS)ld
+@@ -49,7 +49,7 @@
+ TARGET_OS=linux
+ 
+ # Select the compiler needed to build binaries for your development system
+-HOSTCC    = gcc
++HOSTCC    = musl-gcc
+ HOSTCFLAGS= -Wall -Wstrict-prototypes -O2 -fomit-frame-pointer
+ 
+ # Ensure consistent sort order, 'gcc -print-search-dirs' behavior, etc.
+diff -ru busybox-1.01/applets/install.sh busybox-1.01.new/applets/install.sh
+--- busybox-1.01/applets/install.sh	2005-08-17 01:29:16 +0000
++++ busybox-1.01.new/applets/install.sh	2026-10-13 17:36:41 +0000
+@@ -16,28 +16,28 @@
+ h=`sort busybox.links | uniq`
+ 
+ 
+-rm -f $prefix/bin/busybox || exit 1
++rm -f $prefix/bin/busybox-networking || exit 1
+ mkdir -p $prefix/bin || exit 1
+-install -m 755 busybox $prefix/bin/busybox || exit 1
++install -m 755 busybox $prefix/bin/busybox-networking || exit 1
+ 
+ for i in $h ; do
+ 	appdir=`dirname $i`
+ 	mkdir -p $prefix/$appdir || exit 1
+ 	if [ "$2" = "--hardlinks" ]; then
+-	    bb_path="$prefix/bin/busybox"
++	    bb_path="$prefix/bin/busybox-networking"
+ 	else
+ 	    case "$appdir" in
+ 		/)
+-		    bb_path="bin/busybox"
++		    bb_path="bin/busybox-networking"
+ 		;;
+ 		/bin)
+-		    bb_path="busybox"
++		    bb_path="busybox-networking"
+ 		;;
+ 		/sbin)
+-		    bb_path="../bin/busybox"
++		    bb_path="../bin/busybox-networking"
+ 		;;
+ 		/usr/bin|/usr/sbin)
+-		    bb_path="../../bin/busybox"
++		    bb_path="../../bin/busybox-networking"
+ 		;;
+ 		*)
+ 		echo "Unknown installation directory: $appdir"
+diff -ru busybox-1.01/include/busybox.h busybox-1.01.new/include/busybox.h
+--- busybox-1.01/include/busybox.h	2005-08-17 01:29:15 +0000
++++ busybox-1.01.new/include/busybox.h	2026-10-13 17:36:41 +0000
+@@ -35,7 +35,6 @@
+ #if __GNU_LIBRARY__ < 5 && \
+     !defined(__dietlibc__) && \
+     !defined(_NEWLIB_VERSION)
+-#error "Sorry, this libc version is not supported :("
+ #endif
+ 
+ #ifndef BB_EXTRA_VERSION
+diff -ru busybox-1.01/libbb/interface.c busybox-1.01.new/libbb/interface.c
+--- busybox-1.01/libbb/interface.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/interface.c	2026-10-13 17:36:41 +0000
+@@ -1387,7 +1387,7 @@
+ #if (__GLIBC__ >=2 && __GLIBC_MINOR >= 1) || defined(_NEWLIB_VERSION)
+ #include <net/ethernet.h>
+ #else
+-#include <linux/if_ether.h>
++#include <netinet/if_ether.h>
+ #endif
+ 
+ /* Display an Ethernet address in readable format. */
+diff -ru busybox-1.01/libbb/loop.c busybox-1.01.new/libbb/loop.c
+--- busybox-1.01/libbb/loop.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/loop.c	2026-10-13 17:36:41 +0000
+@@ -19,6 +19,8 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+  */
+ 
++#ifndef __fiwix__
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <fcntl.h>
+@@ -145,7 +147,7 @@
+ 	}
+ 	return NULL;
+ }
+-
++#endif
+ 
+ /* END CODE */
+ /*
+diff -ru busybox-1.01/libbb/module_syscalls.c busybox-1.01.new/libbb/module_syscalls.c
+--- busybox-1.01/libbb/module_syscalls.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/module_syscalls.c	2026-10-13 17:36:41 +0000
+@@ -20,6 +20,8 @@
+  *
+  */
+ 
++#ifndef __fiwix__
++
+ #include <stdio.h>
+ #include <errno.h>
+ #include <unistd.h>
+@@ -104,6 +106,7 @@
+ 
+ 
+ #endif /* __UCLIBC__ */
++#endif
+ 
+ /* END CODE */
+ /*
+diff -ru busybox-1.01/libbb/printf.c busybox-1.01.new/libbb/printf.c
+--- busybox-1.01/libbb/printf.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/printf.c	2026-10-13 17:36:41 +0000
+@@ -126,7 +126,6 @@
+ /* Please see the comments for the above supported libraries for examples
+  * of what is required to support your stdio implementation.
+  */
+-# error Your stdio library is currently not supported.  Please see the commented source.
+ #endif
+ 
+ #ifdef L_bb_vfprintf
+@@ -137,7 +136,7 @@
+ 	int rv;
+ 
+ 	if ((rv = vfprintf(stream, format, arg)) < 0) {
+-		SET_FERROR_UNLOCKED(stream);
++/*		SET_FERROR_UNLOCKED(stream);*/
+ 	}
+ 
+ 	return rv;
+diff -ru busybox-1.01/libbb/procps.c busybox-1.01.new/libbb/procps.c
+--- busybox-1.01/libbb/procps.c	2005-08-17 01:29:14 +0000
++++ busybox-1.01.new/libbb/procps.c	2026-10-13 17:36:41 +0000
+@@ -12,7 +12,6 @@
+ #include <string.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <asm/page.h>
+ 
+ #include "libbb.h"
+ 
+diff -ru busybox-1.01/sysklogd/logger.c busybox-1.01.new/sysklogd/logger.c
+--- busybox-1.01/sysklogd/logger.c	2005-08-17 01:29:11 +0000
++++ busybox-1.01.new/sysklogd/logger.c	2026-10-13 19:01:15 +0000
+@@ -44,8 +44,8 @@
+ 		char *c_name;
+ 		int c_val;
+ 	} CODE;
+-	extern CODE prioritynames[];
+-	extern CODE facilitynames[];
++	CODE prioritynames[];
++	CODE facilitynames[];
+ #  endif
+ #endif
+ 
