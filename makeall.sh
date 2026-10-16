@@ -888,6 +888,16 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		inetutils)
+			_unpack $prg-$ver J
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				CC=musl-gcc ./configure --prefix=/usr --disable-servers --disable-dnsdomainname --disable-hostname --disable-ping6 --disable-rcp --disable-rexec --disable-rlogin --disable-rsh --disable-logger --disable-tftp --disable-ifconfig || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		indent)
 			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
@@ -2188,6 +2198,7 @@ build grub "" 0.97 i386 "" "Grand Unified Boot Loader" "https://ftp.gnu.org/gnu/
 build gsl "" 2.8 i386 "" "The GNU Scientific Library for numerical analysis" "https://ftp.gnu.org/gnu/gsl/"
 build gzip "" 1.14 i386 "" "GNU data compression program" "https://ftp.gnu.org/gnu/gzip/"
 build indent "" 2.2.13 i386 "" "A GNU program for formatting C code" "https://ftp.gnu.org/gnu/indent/"
+build inetutils "" 1.9.4 i386 "" "The GNU Networking Utilities" "https://ftp.gnu.org/gnu/inetutils/"
 build jpeg "" 9f i386 "" "The Independent JPEG Group's JPEG software" "https://ijg.org/"
 build lcms2 "" 2.17 i386 "" "Color Management System" "https://sourceforge.net/projects/lcms/files/lcms/"
 build less "" 679 i386 "" "A text file browser similar to more, but better" "https://www.greenwoodsoftware.com/less/"
