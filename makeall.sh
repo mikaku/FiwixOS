@@ -2193,7 +2193,7 @@ build chkconfig "" 1.3.30.2 i386 "" "A system tool for maintaining the /etc/rc*.
 build coreutils "" 9.1 i386 "" "A set of basic GNU tools commonly used in shell scripts" "https://ftp.gnu.org/gnu/coreutils/"
 build cpio "" 2.15 i386 "" "A GNU archiving program" "https://ftp.gnu.org/gnu/cpio/"
 build dash "" 0.5.12 i386 "" "Small and fast POSIX-compliant shell" "http://gondor.apana.org.au/~herbert/dash/files/"
-build ddrescue "" 1.29 i386 "" "Data recovery tool trying hard to rescue data in case of read errors" "https://ftp.gnu.org/gnu/ddrescue/"
+build ddrescue "" 1.30 i386 "" "Data recovery tool trying hard to rescue data in case of read errors" "https://ftp.gnu.org/gnu/ddrescue/"
 build dhcp "" 2.0pl5 i386 "" "A DHCP (Dynamic Host Configuration Protocol) server and relay agent" "https://downloads.isc.org/isc/dhcp/dhcp-2.0-history/"
 build dialog "" 1.3-20250817 i386 "" "A utility for creating TTY dialog boxes" "https://invisible-island.net/archives/dialog/"
 build diffstat "" 1.68 i386 "" "A utility which provides statistics based on the output of diff" "https://invisible-island.net/archives/diffstat/"
