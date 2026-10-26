@@ -2187,7 +2187,7 @@ build bc "" 1.08.2 i386 "" "GNU's bc (a numeric processing language) and dc (a c
 build busybox "" 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build busybox busybox-mini 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build busybox busybox-networking 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
-build byacc "" 20241231 i386 "" "Berkeley Yacc, a parser generator" "https://invisible-island.net/archives/byacc/"
+build byacc "" 20260126 i386 "" "Berkeley Yacc, a parser generator" "https://invisible-island.net/archives/byacc/"
 build bzip2 "" 1.0.8 i386 "" "File compression utility" "https://sourceware.org/bzip2/downloads.html"
 build chkconfig "" 1.3.30.2 i386 "" "A system tool for maintaining the /etc/rc*.d hierarchy" "https://github.com/fedora-sysv/chkconfig"
 build coreutils "" 9.1 i386 "" "A set of basic GNU tools commonly used in shell scripts" "https://ftp.gnu.org/gnu/coreutils/"
