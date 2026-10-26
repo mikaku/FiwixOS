@@ -1276,6 +1276,22 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		net-tools)
+			_unpack $prg-$ver J
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				CC=musl-gcc _make
+			popd
+			pushd $PREFIX
+				rm -f sbin/rarp
+				rm -rf usr/share/man/man1/
+				rm -rf usr/share/man/man5/
+				rm -f usr/share/man/man8/nameif.8
+				rm -f usr/share/man/man8/rarp.8
+			popd
+			_pack $prg-$ver
+			;;
+
 		newt)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2242,6 +2258,7 @@ build ncftp "" 3.3.0 i386 "" "Improved console FTP client" "https://ncftp.com/do
 build ncompress "" 5.0 i386 "" "Fast compression and decompression utilities" "https://ncompress.sourceforge.io/"
 build ncurses "" 5.9 i386 "" "Ncurses support utilities" "https://invisible-island.net/ncurses/ncurses.html"
 build ncurses-examples "" 20211021 i386 "" "A set of examples using ncurses" "https://invisible-island.net/ncurses/ncurses-examples.html"
+build net-tools "" 2.10 i386 "" "Basic networking tools" "https://sourceforge.net/projects/net-tools/files/"
 build newt "" r0-52-24 i386 "" "A library for text mode user interfaces" "https://pagure.io/newt/releases"
 build openjpeg "" 1.5.2 i386 "" "JPEG 2000 command line tools" "https://www.openjpeg.org/"
 build opkg "" 0.6.2 i386 "" "A lightweight package management system based upon ipkg" "https://git.yoctoproject.org/opkg"
