@@ -1227,6 +1227,16 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		ncftp)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				sed -i '6i #undef FIONBIO\n' sio/SConnect.c || exit 1
+				CC=musl-gcc ./configure --prefix=/usr || exit 1
+				_make
+			popd
+			_pack $prg-$ver
+			;;
+
 		ncompress)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -2145,6 +2155,7 @@ build() {
 	echo
 }
 
+
 # build <prg> <altprg> <version> <arch> <dependencies> <description> <url>
 build Python "" 3.6.15 i386 "" "Python 3.6 interpreter" "https://www.python.org/downloads/source/"
 build SDL "" 1.2.15 i386 "" "Cross-platform multimedia library" "https://github.com/libsdl-org/SDL-1.2"
@@ -2227,6 +2238,7 @@ build mtools "" 4.0.49 i386 "" "Collection of utilities to access MS-DOS disks w
 build musl musl-gcc 1.1.24 i386 "" "Lightweight implementation of C standard library (wrapper around gcc)" "https://www.musl-libc.org/"
 build nano "" 8.5 i386 "" "A small text editor" "https://ftp.gnu.org/gnu/nano/"
 build nasm "" 2.16.03 i386 "" "A portable x86 assembler which uses Intel-like syntax" "https://www.nasm.us/pub/nasm/releasebuilds/"
+build ncftp "" 3.3.0 i386 "" "Improved console FTP client" "https://ncftp.com/download/"
 build ncompress "" 5.0 i386 "" "Fast compression and decompression utilities" "https://ncompress.sourceforge.io/"
 build ncurses "" 5.9 i386 "" "Ncurses support utilities" "https://invisible-island.net/ncurses/ncurses.html"
 build ncurses-examples "" 20211021 i386 "" "A set of examples using ncurses" "https://invisible-island.net/ncurses/ncurses-examples.html"
