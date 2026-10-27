@@ -1,19 +1,19 @@
-diff -ru file-5.46/config.guess file-5.46.new/config.guess
---- file-5.46/config.guess	2024-11-26 19:47:30 +0000
-+++ file-5.46.new/config.guess	2025-09-13 14:44:24 +0000
+diff -ru file-5.48/config.guess file-5.48.new/config.guess
+--- file-5.48/config.guess	2026-06-07 23:44:48 +0000
++++ file-5.48.new/config.guess	2026-10-24 19:50:47 +0000
 @@ -1538,6 +1538,9 @@
      *:Unleashed:*:*)
  	GUESS=$UNAME_MACHINE-unknown-unleashed$UNAME_RELEASE
  	;;
 +    *:Fiwix:*:*)
-+	GUESS=$UNAME_MACHINE-pc-fiwix
++	GUESS=$UNAME_MACHINE-unknown-fiwix
 +	;;
  esac
  
  # Do we have a guess based on uname results?
-diff -ru file-5.46/config.sub file-5.46.new/config.sub
---- file-5.46/config.sub	2024-11-26 19:47:30 +0000
-+++ file-5.46.new/config.sub	2025-09-13 14:44:37 +0000
+diff -ru file-5.48/config.sub file-5.48.new/config.sub
+--- file-5.48/config.sub	2026-06-07 23:44:48 +0000
++++ file-5.48.new/config.sub	2026-10-24 19:51:01 +0000
 @@ -1749,7 +1749,7 @@
  	     | skyos* | haiku* | rdos* | toppers* | drops* | es* \
  	     | onefs* | tirtos* | phoenix* | fuchsia* | redox* | bme* \
@@ -23,9 +23,9 @@ diff -ru file-5.46/config.sub file-5.46.new/config.sub
  		;;
  	# This one is extra strict with allowed versions
  	sco3.2v2 | sco3.2v[4-9]* | sco5v6*)
-diff -ru file-5.46/src/der.h file-5.46.new/src/der.h
---- file-5.46/src/der.h	2024-11-25 21:26:18 +0000
-+++ file-5.46.new/src/der.h	2025-09-13 14:45:51 +0000
+diff -ru file-5.48/src/der.h file-5.48.new/src/der.h
+--- file-5.48/src/der.h	2024-12-19 15:01:49 +0000
++++ file-5.48.new/src/der.h	2026-10-24 19:52:06 +0000
 @@ -24,5 +24,5 @@
   * POSSIBILITY OF SUCH DAMAGE.
   */
