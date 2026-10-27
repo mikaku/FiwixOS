@@ -709,6 +709,7 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
 				sed -i 's#^prefix.*$#prefix  = /usr#' Makefile
+				sed -i 's#^MANDIR.*= \$(prefix)/man#MANDIR  = $(prefix)/share/man#' Makefile
 				_make
 			popd
 			_pack $prg-$ver
