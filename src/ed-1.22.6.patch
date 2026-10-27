@@ -1,6 +1,6 @@
-diff -ru ed-1.22.2/regex.c ed-1.22.2.new/regex.c
---- ed-1.22.2/regex.c	2025-08-15 09:57:18 +0000
-+++ ed-1.22.2.new/regex.c	2025-09-13 14:20:47 +0000
+diff -ru ed-1.22.6/regex.c ed-1.22.6.new/regex.c
+--- ed-1.22.6/regex.c	2026-08-19 10:33:13 +0000
++++ ed-1.22.6.new/regex.c	2026-10-24 19:48:33 +0000
 @@ -17,6 +17,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */

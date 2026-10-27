@@ -2213,7 +2213,7 @@ build dosbox "" 0.74-3 i386 "" "DOSBox, an x86 emulator with DOS" "https://www.d
 build e2fsprogs "" 1.41.14 i386 "" "Utilities for managing ext2 and ext3 file systems" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e2fsprogs-libs "" 1.41.14 i386 "" "Ext2/3/4 file system specific libraries" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e3 "" 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi" "https://sites.google.com/site/e3editor/"
-build ed "" 1.22.2 i386 "" "The GNU line editor" "https://ftp.gnu.org/gnu/ed/"
+build ed "" 1.22.6 i386 "" "The GNU line editor" "https://ftp.gnu.org/gnu/ed/"
 build enscript "" 1.6.6 i386 "" "A plain ASCII to PostScript converter" "https://ftp.gnu.org/gnu/enscript/"
 build expat "" 2.5.0 i386 "" "An XML parser library" "https://libexpat.github.io/"
 build figlet "" 2.2.5 i386 "" "A program for making large letters out of ordinary text" "http://www.figlet.org/"
