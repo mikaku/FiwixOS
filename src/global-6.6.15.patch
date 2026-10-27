@@ -1,24 +1,22 @@
-diff -ru global-6.6.13/libglibc/obstack.c global-6.6.13.new/libglibc/obstack.c
---- global-6.6.13/libglibc/obstack.c	2024-07-02 00:03:49 +0000
-+++ global-6.6.13.new/libglibc/obstack.c	2024-08-08 14:51:22 +0000
-@@ -57,8 +57,6 @@
+diff -ru global-6.6.15/libglibc/obstack.c global-6.6.15.new/libglibc/obstack.c
+--- global-6.6.15/libglibc/obstack.c	2026-06-15 07:29:29 +0000
++++ global-6.6.15.new/libglibc/obstack.c	2026-10-24 19:57:56 +0000
+@@ -57,7 +57,6 @@
  # include <wchar.h>
  #endif
  
 -#ifndef ELIDE_CODE
--
+ 
  
  /* Determine default alignment.  */
- struct fooalign {char x; double d;};
-@@ -425,5 +423,3 @@
-     fprintf (stderr, "%s\n", _("memory exhausted"));
+@@ -426,4 +425,3 @@
    exit (obstack_exit_failure);
  }
--
+ 
 -#endif	/* !ELIDE_CODE */
-diff -ru global-6.6.13/plugin-factory/Makefile.am global-6.6.13.new/plugin-factory/Makefile.am
---- global-6.6.13/plugin-factory/Makefile.am	2024-07-02 00:03:49 +0000
-+++ global-6.6.13.new/plugin-factory/Makefile.am	2024-08-08 14:46:24 +0000
+diff -ru global-6.6.15/plugin-factory/Makefile.am global-6.6.15.new/plugin-factory/Makefile.am
+--- global-6.6.15/plugin-factory/Makefile.am	2026-06-15 07:29:29 +0000
++++ global-6.6.15.new/plugin-factory/Makefile.am	2026-10-24 19:55:15 +0000
 @@ -19,19 +19,19 @@
  
  # Exuberant Ctags parser
@@ -43,10 +41,10 @@ diff -ru global-6.6.13/plugin-factory/Makefile.am global-6.6.13.new/plugin-facto
  
  gtagsdir = ${datadir}/gtags
  gtags_DATA = PLUGIN_HOWTO PLUGIN_HOWTO.pygments PLUGIN_HOWTO.universal-ctags \
-diff -ru global-6.6.13/plugin-factory/Makefile.in global-6.6.13.new/plugin-factory/Makefile.in
---- global-6.6.13/plugin-factory/Makefile.in	2024-07-02 00:03:56 +0000
-+++ global-6.6.13.new/plugin-factory/Makefile.in	2024-08-08 14:49:30 +0000
-@@ -411,19 +411,19 @@
+diff -ru global-6.6.15/plugin-factory/Makefile.in global-6.6.15.new/plugin-factory/Makefile.in
+--- global-6.6.15/plugin-factory/Makefile.in	2026-06-15 07:29:36 +0000
++++ global-6.6.15.new/plugin-factory/Makefile.in	2026-10-24 19:55:31 +0000
+@@ -414,19 +414,19 @@
  
  # Exuberant Ctags parser
  exuberant_ctags_la_SOURCES = exuberant-ctags.c

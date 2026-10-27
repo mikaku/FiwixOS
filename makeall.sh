@@ -2223,7 +2223,7 @@ build flex "" 2.6.4 i386 "" "A tool for generating scanners (text pattern recogn
 build freetype "" 2.10.4 i386 "" "A free and portable font rendering engine" "https://download.savannah.gnu.org/releases/freetype/"
 build gawk "" 3.1.8 i386 "" "The GNU version of the AWK text processing utility" "https://ftp.gnu.org/gnu/gawk/"
 build glheretic "" 1.2 i386 "" "A version of Heretic for SVGAlib and X11" "https://doomwiki.org/wiki/Linux_Heretic"
-build global "" 6.6.13 i386 "" "Source code tag system" "https://ftp.gnu.org/gnu/global/"
+build global "" 6.6.15 i386 "" "Source code tag system" "https://ftp.gnu.org/gnu/global/"
 build gmp "" 6.3.0 i386 "" "GNU arbitrary precision library" "https://ftp.gnu.org/gnu/gmp/"
 build gnu-ghostscript "" 9.14.1 i386 "" "Interpreter for PostScript language & PDF" "https://ftp.gnu.org/gnu/ghostscript/"
 build gnuit "" 4.9.5 i386 "" "GNU Interactive Tools" "https://ftp.gnu.org/gnu/gnuit/"
