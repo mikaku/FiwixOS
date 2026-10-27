@@ -1,0 +1,210 @@
+diff -ru e2fsprogs-1.41.14/config/config.guess e2fsprogs-1.41.14.new/config/config.guess
+--- e2fsprogs-1.41.14/config/config.guess	2009-08-13 01:39:57 +0000
++++ e2fsprogs-1.41.14.new/config/config.guess	2026-10-24 17:16:44 +0000
+@@ -1359,6 +1359,9 @@
+     i*86:AROS:*:*)
+ 	echo ${UNAME_MACHINE}-pc-aros
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo ${UNAME_MACHINE}-pc-fiwix
++	exit ;;
+ esac
+ 
+ #echo '(No uname command or uname output not recognized.)' 1>&2
+diff -ru e2fsprogs-1.41.14/config/config.sub e2fsprogs-1.41.14.new/config/config.sub
+--- e2fsprogs-1.41.14/config/config.sub	2009-08-13 01:39:57 +0000
++++ e2fsprogs-1.41.14.new/config/config.sub	2026-10-24 17:16:44 +0000
+@@ -1283,7 +1283,7 @@
+ 	      | -os2* | -vos* | -palmos* | -uclinux* | -nucleus* \
+ 	      | -morphos* | -superux* | -rtmk* | -rtmk-nova* | -windiss* \
+ 	      | -powermax* | -dnix* | -nx6 | -nx7 | -sei* | -dragonfly* \
+-	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops*)
++	      | -skyos* | -haiku* | -rdos* | -toppers* | -drops* | -fiwix*)
+ 	# Remember, each alternative MUST END IN *, to match a version number.
+ 		;;
+ 	-qnx*)
+diff -ru e2fsprogs-1.41.14/debugfs/util.c e2fsprogs-1.41.14.new/debugfs/util.c
+--- e2fsprogs-1.41.14/debugfs/util.c	2010-12-22 15:49:20 +0000
++++ e2fsprogs-1.41.14.new/debugfs/util.c	2026-10-24 17:16:44 +0000
+@@ -22,7 +22,7 @@
+ extern char *optarg;
+ #endif
+ #ifdef HAVE_OPTRESET
+-extern int optreset;		/* defined by BSD, but not others */
++int optreset;		/* defined by BSD, but not others */
+ #endif
+ 
+ #include "debugfs.h"
+diff -ru e2fsprogs-1.41.14/e2fsck/unix.c e2fsprogs-1.41.14.new/e2fsck/unix.c
+--- e2fsprogs-1.41.14/e2fsck/unix.c	2010-12-22 15:49:20 +0000
++++ e2fsprogs-1.41.14.new/e2fsck/unix.c	2026-10-24 17:16:44 +0000
+@@ -1427,7 +1427,7 @@
+ 		    printf(_("\n%s: ***** FILE SYSTEM WAS MODIFIED *****\n"),
+ 			       ctx->device_name);
+ 		if (ctx->mount_flags & EXT2_MF_ISROOT) {
+-			printf(_("%s: ***** REBOOT LINUX *****\n"),
++			printf(_("%s: ***** REBOOT SYSTEM *****\n"),
+ 			       ctx->device_name);
+ 			exit_value |= FSCK_REBOOT;
+ 		}
+diff -ru e2fsprogs-1.41.14/lib/blkid/llseek.c e2fsprogs-1.41.14.new/lib/blkid/llseek.c
+--- e2fsprogs-1.41.14/lib/blkid/llseek.c	2009-08-13 01:39:57 +0000
++++ e2fsprogs-1.41.14.new/lib/blkid/llseek.c	2026-10-24 17:23:24 +0000
+@@ -123,19 +123,31 @@
+ #endif
+ #endif
+ 
+-blkid_loff_t blkid_llseek(int fd, blkid_loff_t offset, int origin)
++static blkid_loff_t my_llseek (int fd, blkid_loff_t offset, int origin)
+ {
+-#if defined(HAVE_LSEEK64) && defined(HAVE_LSEEK64_PROTOTYPE)
+-	return lseek64 (fd, offset, origin);
+-#else
+-	if ((sizeof(off_t) < sizeof(blkid_loff_t)) &&
+-	    (offset >= ((blkid_loff_t) 1 << ((sizeof(off_t)*8) - 1)))) {
+-		errno = EOVERFLOW;
+-		return -1;
+-	}
+-	return lseek(fd, (off_t) offset, origin);
+-#endif
++	blkid_loff_t result;
++	int retval;
++
++	retval = llseek(fd, (unsigned long long) (offset >> 32),
++			  ((unsigned long long) offset) & 0xffffffff,
++			&result, origin);
++	return (retval == -1 ? (blkid_loff_t) retval : result);
+ }
++blkid_loff_t blkid_llseek (int fd, blkid_loff_t offset, int origin)
++{
++	blkid_loff_t result;
++
++	if ((sizeof(off_t) >= sizeof(blkid_loff_t)) ||
++	    (offset < ((blkid_loff_t) 1 << ((sizeof(off_t)*8) -1))))
++		return lseek(fd, (off_t) offset, origin);
++
++	result = my_llseek (fd, offset, origin);
++	if (result == -1 && errno == ENOSYS) {
++ 		errno = EINVAL;
++ 	}
++	return result;
++}
++
+ 
+ #endif	/* linux */
+ 
+diff -ru e2fsprogs-1.41.14/lib/ext2fs/ext2fs.h e2fsprogs-1.41.14.new/lib/ext2fs/ext2fs.h
+--- e2fsprogs-1.41.14/lib/ext2fs/ext2fs.h	2010-12-22 15:49:20 +0000
++++ e2fsprogs-1.41.14.new/lib/ext2fs/ext2fs.h	2026-10-24 17:17:43 +0000
+@@ -1150,7 +1150,7 @@
+ /* inline functions */
+ extern errcode_t ext2fs_get_mem(unsigned long size, void *ptr);
+ extern errcode_t ext2fs_get_memalign(unsigned long size,
+-				     unsigned long align, void *ptr);
++				     unsigned long align, void **ptr);
+ extern errcode_t ext2fs_free_mem(void *ptr);
+ extern errcode_t ext2fs_resize_mem(unsigned long old_size,
+ 				   unsigned long size, void *ptr);
+@@ -1206,16 +1206,14 @@
+ }
+ 
+ _INLINE_ errcode_t ext2fs_get_memalign(unsigned long size,
+-				       unsigned long align, void *ptr)
++				       unsigned long align, void **ptr)
+ {
+ 	errcode_t retval;
+ 
+ 	if (align == 0)
+ 		align = 8;
+-	if (retval = posix_memalign((void **) ptr, align, size)) {
+-		if (retval == ENOMEM)
+-			return EXT2_ET_NO_MEMORY;
+-		return retval;
++	if (!(*ptr = (void **)aligned_alloc(align, size))) {
++		return EXT2_ET_NO_MEMORY;
+ 	}
+ 	return 0;
+ }
+diff -ru e2fsprogs-1.41.14/lib/ext2fs/llseek.c e2fsprogs-1.41.14.new/lib/ext2fs/llseek.c
+--- e2fsprogs-1.41.14/lib/ext2fs/llseek.c	2010-06-14 03:07:36 +0000
++++ e2fsprogs-1.41.14.new/lib/ext2fs/llseek.c	2026-10-24 17:16:44 +0000
+@@ -119,20 +119,32 @@
+ #define EINVAL EXT2_ET_INVALID_ARGUMENT
+ #endif
+ 
++static ext2_loff_t my_llseek (int fd, ext2_loff_t offset, int origin)
++{
++	ext2_loff_t result;
++	int retval;
++
++	retval = llseek(fd, (unsigned long long) (offset >> 32),
++			  ((unsigned long long) offset) & 0xffffffff,
++			&result, origin);
++	return (retval == -1 ? (ext2_loff_t) retval : result);
++}
+ ext2_loff_t ext2fs_llseek (int fd, ext2_loff_t offset, int origin)
+ {
+-#if defined(HAVE_LSEEK64) && defined(HAVE_LSEEK64_PROTOTYPE)
+-	return lseek64 (fd, offset, origin);
+-#else
+-	if ((sizeof(off_t) < sizeof(ext2_loff_t)) &&
+-	    (offset >= ((ext2_loff_t) 1 << ((sizeof(off_t)*8) -1)))) {
+-		errno = EINVAL;
+-		return -1;
+-	}
+-	return lseek (fd, (off_t) offset, origin);
+-#endif
++	ext2_loff_t result;
++
++	if ((sizeof(off_t) >= sizeof(ext2_loff_t)) ||
++	    (offset < ((ext2_loff_t) 1 << ((sizeof(off_t)*8) -1))))
++		return lseek(fd, (off_t) offset, origin);
++
++	result = my_llseek (fd, offset, origin);
++	if (result == -1 && errno == ENOSYS) {
++ 		errno = EINVAL;
++ 	}
++	return result;
+ }
+ 
++
+ #endif 	/* linux */
+ 
+ 
+diff -ru e2fsprogs-1.41.14/lib/ext2fs/tdb.c e2fsprogs-1.41.14.new/lib/ext2fs/tdb.c
+--- e2fsprogs-1.41.14/lib/ext2fs/tdb.c	2010-05-18 01:24:54 +0000
++++ e2fsprogs-1.41.14.new/lib/ext2fs/tdb.c	2026-10-24 17:16:44 +0000
+@@ -1749,6 +1749,7 @@
+ 		TDB_LOG((tdb, TDB_DEBUG_FATAL, "tdb_transaction: fsync failed\n"));
+ 		return -1;
+ 	}
++#ifndef __fiwix__
+ #ifdef MS_SYNC
+ 	if (tdb->map_ptr) {
+ 		tdb_off_t moffset = offset & ~(tdb->page_size-1);
+@@ -1761,6 +1762,7 @@
+ 		}
+ 	}
+ #endif
++#endif /* ! __fiwix__ */
+ 	return 0;
+ }
+ 
+diff -ru e2fsprogs-1.41.14/misc/mke2fs.c e2fsprogs-1.41.14.new/misc/mke2fs.c
+--- e2fsprogs-1.41.14/misc/mke2fs.c	2010-12-22 23:29:04 +0000
++++ e2fsprogs-1.41.14.new/misc/mke2fs.c	2026-10-24 17:16:44 +0000
+@@ -1254,7 +1254,13 @@
+ 	if (linux_version_code && linux_version_code < (2*65536 + 2*256))
+ 		fs_param.s_rev_level = 0;
+ #endif
+-
++#ifdef __fiwix__
++	fs_param.s_rev_level = 0;
++	fs_param.s_feature_incompat = 0;
++	fs_param.s_feature_compat = 0;
++	fs_param.s_feature_ro_compat = 0;
++#endif /* __fiwix__ */
++ 
+ 	if (argc && *argv) {
+ 		program_name = get_progname(*argv);
+ 

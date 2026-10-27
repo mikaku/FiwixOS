@@ -615,16 +615,6 @@ EOF
 			_pack $prg-$ver
 			;;
 
-		e2fsprogs-libs)
-			_unpack $prg-$ver z
-			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
-				./configure --prefix=/usr --disable-htree --disable-nls --mandir=/usr/share/man || exit 1
-				_make
-			popd
-			_pack $prg-$ver
-			;;
-
 		e2fsprogs)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
@@ -635,10 +625,28 @@ EOF
 			pushd $PREFIX
 				rm -f usr/sbin/fsck.ext3
 				rm -f usr/sbin/mkfs.ext3
+				rm -f usr/sbin/fsck.ext4
+				rm -f usr/sbin/fsck.ext4dev
+				rm -f usr/sbin/mkfs.ext4
+				rm -f usr/sbin/mkfs.ext4dev
 				rm -f usr/sbin/filefrag
-				rm -f usr/man/man8/fsck.ext3.8
-				rm -f usr/man/man8/mkfs.ext3.8
-				rm -f usr/man/man8/filefrag.8
+				rm -f usr/share/man/man8/fsck.ext3.8
+				rm -f usr/share/man/man8/mkfs.ext3.8
+				rm -f usr/share/man/man8/fsck.ext4.8
+				rm -f usr/share/man/man8/fsck.ext4dev.8
+				rm -f usr/share/man/man8/mkfs.ext4.8
+				rm -f usr/share/man/man8/mkfs.ext4dev.8
+				rm -f usr/share/man/man8/filefrag.8
+			popd
+			_pack $prg-$ver
+			;;
+
+		e2fsprogs-libs)
+			_unpack $prg-$ver z
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr --disable-htree --disable-nls --mandir=/usr/share/man || exit 1
+				_make
 			popd
 			_pack $prg-$ver
 			;;
@@ -2201,8 +2209,8 @@ build diffutils "" 3.12 i386 "" "GNU collection of diff utilities" "https://ftp.
 build dmidecode "" 3.6 i386 "" "Tool to analyse BIOS DMI data" "https://www.nongnu.org/dmidecode/"
 build dos2unix "" 7.5.2 i386 "" "Text file format converters" "https://waterlan.home.xs4all.nl/dos2unix.html"
 build dosbox "" 0.74-3 i386 "" "DOSBox, an x86 emulator with DOS" "https://www.dosbox.com/download.php?main=1"
-build e2fsprogs-libs "" 1.40.11 i386 "" "Ext2/3/4 file system specific libraries" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
-build e2fsprogs "" 1.40.11 i386 "" "Utilities for managing ext2 and ext3 file systems" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
+build e2fsprogs "" 1.41.14 i386 "" "Utilities for managing ext2 and ext3 file systems" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
+build e2fsprogs-libs "" 1.41.14 i386 "" "Ext2/3/4 file system specific libraries" "https://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/"
 build e3 "" 2.7.1 i386 "" "Text editor with key bindings similar to WordStar, Emacs, pico, nedit, or vi" "https://sites.google.com/site/e3editor/"
 build ed "" 1.22.2 i386 "" "The GNU line editor" "https://ftp.gnu.org/gnu/ed/"
 build enscript "" 1.6.6 i386 "" "A plain ASCII to PostScript converter" "https://ftp.gnu.org/gnu/enscript/"
