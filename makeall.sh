@@ -920,7 +920,6 @@ EOF
 		jpeg)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
 				_make
 			popd
@@ -2235,7 +2234,7 @@ build gsl "" 2.8 i386 "" "The GNU Scientific Library for numerical analysis" "ht
 build gzip "" 1.15 i386 "" "GNU data compression program" "https://ftp.gnu.org/gnu/gzip/"
 build indent "" 2.2.13 i386 "" "A GNU program for formatting C code" "https://ftp.gnu.org/gnu/indent/"
 build inetutils "" 1.9.4 i386 "" "The GNU Networking Utilities" "https://ftp.gnu.org/gnu/inetutils/"
-build jpeg "" 9f i386 "" "The Independent JPEG Group's JPEG software" "https://ijg.org/"
+build jpeg "" 10 i386 "" "The Independent JPEG Group's JPEG software" "https://ijg.org/"
 build lcms2 "" 2.17 i386 "" "Color Management System" "https://sourceforge.net/projects/lcms/files/lcms/"
 build less "" 679 i386 "" "A text file browser similar to more, but better" "https://www.greenwoodsoftware.com/less/"
 build libarchive "" 3.7.9 i386 "" "A library for handling streaming archive formats" "https://www.libarchive.org/"
