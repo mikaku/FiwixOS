@@ -2238,7 +2238,7 @@ build jpeg "" 10 i386 "" "The Independent JPEG Group's JPEG software" "https://i
 build lcms2 "" 2.19.1 i386 "" "Color Management System" "https://sourceforge.net/projects/lcms/files/lcms/"
 build less "" 692 i386 "" "A text file browser similar to more, but better" "https://www.greenwoodsoftware.com/less/"
 build libarchive "" 3.7.9 i386 "" "A library for handling streaming archive formats" "https://www.libarchive.org/"
-build libffi "" 3.5.2 i386 "" "A portable foreign function interface library" "https://sourceware.org/libffi/"
+build libffi "" 3.8.0 i386 "" "A portable foreign function interface library" "https://sourceware.org/libffi/"
 build libiconv "" 1.18 i386 "" "A character set conversion library" "https://ftp.gnu.org/gnu/libiconv/"
 build libpng "" 1.6.50 i386 "" "A library of functions for manipulating PNG image format files" "https://www.libpng.org/pub/png/libpng.html"
 build libtool "" 2.5.4 i386 "" "The GNU Portable Library Tool" "https://ftp.gnu.org/gnu/libtool/"
