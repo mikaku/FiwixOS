@@ -1,0 +1,24 @@
+diff -ru lcms2-2.19.1/config.guess lcms2-2.19.1.new/config.guess
+--- lcms2-2.19.1/config.guess	2026-05-06 08:10:23 +0000
++++ lcms2-2.19.1.new/config.guess	2026-10-25 06:39:25 +0000
+@@ -1418,6 +1418,9 @@
+     amd64:Isilon\ OneFS:*:*)
+ 	echo x86_64-unknown-onefs
+ 	exit ;;
++    i*86:Fiwix:*:*)
++	echo "$UNAME_MACHINE"-pc-fiwix
++	exit ;;
+ esac
+ 
+ echo "$0: unable to guess system type" >&2
+diff -ru lcms2-2.19.1/utils/jpgicc/jpgicc.c lcms2-2.19.1.new/utils/jpgicc/jpgicc.c
+--- lcms2-2.19.1/utils/jpgicc/jpgicc.c	2026-05-06 08:10:23 +0000
++++ lcms2-2.19.1.new/utils/jpgicc/jpgicc.c	2026-10-25 06:40:49 +0000
+@@ -356,7 +356,6 @@
+ 
+ typedef unsigned short uint16_t;
+ typedef unsigned char uint8_t;
+-typedef unsigned int uint32_t;
+ 
+ #define INTEL_BYTE_ORDER 0x4949
+ #define XRESOLUTION 0x011a
