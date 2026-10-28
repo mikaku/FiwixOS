@@ -2229,7 +2229,7 @@ build gnu-ghostscript "" 9.14.1 i386 "" "Interpreter for PostScript language & P
 build gnuit "" 4.9.5 i386 "" "GNU Interactive Tools" "https://ftp.gnu.org/gnu/gnuit/"
 build gperf "" 3.3 i386 "" "A perfect hash function generator" "https://ftp.gnu.org/gnu/gperf/"
 build grep "" 3.12 i386 "" "Pattern matching utilities" "https://ftp.gnu.org/gnu/grep/"
-build groff "" 1.23.0 i386 "" "A document formatting system" "https://ftp.gnu.org/gnu/groff/"
+build groff "" 1.24.2 i386 "" "A document formatting system" "https://ftp.gnu.org/gnu/groff/"
 build grub "" 0.97 i386 "" "Grand Unified Boot Loader" "https://ftp.gnu.org/gnu/grub/"
 build gsl "" 2.8 i386 "" "The GNU Scientific Library for numerical analysis" "https://ftp.gnu.org/gnu/gsl/"
 build gzip "" 1.14 i386 "" "GNU data compression program" "https://ftp.gnu.org/gnu/gzip/"
