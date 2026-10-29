@@ -2249,7 +2249,7 @@ build lookbusy "" 1.4 i386 "" "A synthetic load generator" "https://devin.com/lo
 build lrzsz "" 0.12.14 i386 "" "The lrz and lsz modem communications programs" "https://www.ohse.de/uwe/software/lrzsz.html"
 build lua "" 5.5.1 i386 "" "Powerful light-weight programming language" "https://lua.org/download.html"
 build lxdoom "" 1.4.4 i386 "" "A version of Doom for SVGAlib and X11" "https://doomwiki.org/wiki/LxDoom"
-build lzip "" 1.25 i386 "" "LZMA compressor with integrity checking" "https://www.nongnu.org/lzip/lzip.html"
+build lzip "" 1.26 i386 "" "LZMA compressor with integrity checking" "https://www.nongnu.org/lzip/lzip.html"
 build m4 "" 1.4.18 i386 "" "GNU macro processor" "https://ftp.gnu.org/gnu/m4/"
 build make "" 4.2.1 i386 "" "A GNU tool which simplifies the build process for users" "https://ftp.gnu.org/gnu/make/"
 build mandoc "" 1.14.6 i386 "" "A suite of tools for compiling mdoc and man" "https://mandoc.bsd.lv/"
