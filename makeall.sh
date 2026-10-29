@@ -1167,7 +1167,7 @@ EOF
 			;;
 
 		mpc)
-			_unpack $prg-$ver z
+			_unpack $prg-$ver J
 			pushd $prg-$ver || exit 1
 				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
@@ -2255,7 +2255,7 @@ build make "" 4.2.1 i386 "" "A GNU tool which simplifies the build process for u
 build mandoc "" 1.14.6 i386 "" "A suite of tools for compiling mdoc and man" "https://mandoc.bsd.lv/"
 build mingetty "" 1.08 i386 "" "A compact getty program for virtual consoles only" "https://sourceforge.net/projects/mingetty/files/"
 build moe "" 1.16 i386 "" "A powerful clean text editor" "https://ftp.gnu.org/gnu/moe/"
-build mpc "" 1.3.1 i386 "" "GNU MPC is a complex floating-point library with exact rounding" "https://ftp.gnu.org/gnu/mpc/"
+build mpc "" 1.4.1 i386 "" "GNU MPC is a complex floating-point library with exact rounding" "https://ftp.gnu.org/gnu/mpc/"
 build mpfr "" 4.2.2 i386 "" "C library for multiple-precision floating-point computations" "https://ftp.gnu.org/gnu/mpfr/"
 build mtools "" 4.0.49 i386 "" "Collection of utilities to access MS-DOS disks without mounting them" "https://www.gnu.org/software/mtools/"
 build musl musl-gcc 1.1.24 i386 "" "Lightweight implementation of C standard library (wrapper around gcc)" "https://www.musl-libc.org/"
