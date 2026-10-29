@@ -2247,7 +2247,7 @@ build libxslt "" v1.1.34 i386 "" "Library providing the Gnome XSLT engine" "http
 build logrotate "" 3.22.0 i386 "" "Rotates, compresses, removes and mails system log files" "https://github.com/logrotate/logrotate"
 build lookbusy "" 1.4 i386 "" "A synthetic load generator" "https://devin.com/lookbusy/"
 build lrzsz "" 0.12.14 i386 "" "The lrz and lsz modem communications programs" "https://www.ohse.de/uwe/software/lrzsz.html"
-build lua "" 5.4.8 i386 "" "Powerful light-weight programming language" "https://lua.org/download.html"
+build lua "" 5.5.1 i386 "" "Powerful light-weight programming language" "https://lua.org/download.html"
 build lxdoom "" 1.4.4 i386 "" "A version of Doom for SVGAlib and X11" "https://doomwiki.org/wiki/LxDoom"
 build lzip "" 1.25 i386 "" "LZMA compressor with integrity checking" "https://www.nongnu.org/lzip/lzip.html"
 build m4 "" 1.4.18 i386 "" "GNU macro processor" "https://ftp.gnu.org/gnu/m4/"
