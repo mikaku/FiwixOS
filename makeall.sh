@@ -2240,7 +2240,7 @@ build libarchive "" 3.7.9 i386 "" "A library for handling streaming archive form
 build libffi "" 3.8.0 i386 "" "A portable foreign function interface library" "https://sourceware.org/libffi/"
 build libiconv "" 1.19 i386 "" "A character set conversion library" "https://ftp.gnu.org/gnu/libiconv/"
 build libpng "" 1.6.59 i386 "" "A library of functions for manipulating PNG image format files" "https://www.libpng.org/pub/png/libpng.html"
-build libtool "" 2.5.4 i386 "" "The GNU Portable Library Tool" "https://ftp.gnu.org/gnu/libtool/"
+build libtool "" 2.6.2 i386 "" "The GNU Portable Library Tool" "https://ftp.gnu.org/gnu/libtool/"
 build libxcrypt "" 4.4.38 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others" "https://github.com/besser82/libxcrypt"
 build libxml2 "" v2.9.14 i386 "" "Library providing XML and HTML support" "https//gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
 build libxslt "" v1.1.34 i386 "" "Library providing the Gnome XSLT engine" "https://gitlab.gnome.org/GNOME/libxslt"
