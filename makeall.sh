@@ -972,7 +972,6 @@ EOF
 		libiconv)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
 				_make
 			popd
@@ -2240,7 +2239,7 @@ build less "" 692 i386 "" "A text file browser similar to more, but better" "htt
 build libarchive "" 3.7.9 i386 "" "A library for handling streaming archive formats" "https://www.libarchive.org/"
 build libffi "" 3.8.0 i386 "" "A portable foreign function interface library" "https://sourceware.org/libffi/"
 build libiconv "" 1.19 i386 "" "A character set conversion library" "https://ftp.gnu.org/gnu/libiconv/"
-build libpng "" 1.6.50 i386 "" "A library of functions for manipulating PNG image format files" "https://www.libpng.org/pub/png/libpng.html"
+build libpng "" 1.6.59 i386 "" "A library of functions for manipulating PNG image format files" "https://www.libpng.org/pub/png/libpng.html"
 build libtool "" 2.5.4 i386 "" "The GNU Portable Library Tool" "https://ftp.gnu.org/gnu/libtool/"
 build libxcrypt "" 4.4.38 i386 "" "Extended crypt library for descrypt, md5crypt, bcrypt, and others" "https://github.com/besser82/libxcrypt"
 build libxml2 "" v2.9.14 i386 "" "Library providing XML and HTML support" "https//gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
