@@ -2272,7 +2272,7 @@ build opkg "" 0.6.2 i386 "" "A lightweight package management system based upon 
 build patch "" 2.8 i386 "" "Utility for modifying/upgrading files" "https://ftp.gnu.org/gnu/patch/"
 build pciutils "" 3.15.0 i386 "" "PCI bus related utilities" "https://mj.ucw.cz/sw/pciutils/"
 build pcre "" 8.45 i386 "" "Perl-compatible regular expression library" "https://www.pcre.org/"
-build perl "" 5.24.4 i386 "" "Practical Extraction and Report Language" "https://www.cpan.org/src/README.html"
+build perl "" 5.26.3 i386 "" "Practical Extraction and Report Language" "https://www.cpan.org/src/README.html"
 build picocom "" 3.1 i386 "" "Minimal serial communications program" "https://gitlab.com/wsakernel/picocom/"
 build pkg-config "" 0.25 i386 "" "A tool for determining compilation options" "https://www.freedesktop.org/wiki/Software/pkg-config/"
 build popt "" 1.19 i386 "" "C library for parsing command line parameters" "https://github.com/rpm-software-management/popt/"
