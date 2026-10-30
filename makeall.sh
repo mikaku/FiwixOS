@@ -2270,7 +2270,7 @@ build newt "" r0-52-24 i386 "" "A library for text mode user interfaces" "https:
 build openjpeg "" 1.5.2 i386 "" "JPEG 2000 command line tools" "https://www.openjpeg.org/"
 build opkg "" 0.6.2 i386 "" "A lightweight package management system based upon ipkg" "https://git.yoctoproject.org/opkg"
 build patch "" 2.8 i386 "" "Utility for modifying/upgrading files" "https://ftp.gnu.org/gnu/patch/"
-build pciutils "" 3.14.0 i386 "" "PCI bus related utilities" "https://mj.ucw.cz/sw/pciutils/"
+build pciutils "" 3.15.0 i386 "" "PCI bus related utilities" "https://mj.ucw.cz/sw/pciutils/"
 build pcre "" 8.45 i386 "" "Perl-compatible regular expression library" "https://www.pcre.org/"
 build perl "" 5.24.4 i386 "" "Practical Extraction and Report Language" "https://www.cpan.org/src/README.html"
 build picocom "" 3.1 i386 "" "Minimal serial communications program" "https://gitlab.com/wsakernel/picocom/"

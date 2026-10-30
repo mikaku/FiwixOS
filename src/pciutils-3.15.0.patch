@@ -1,6 +1,6 @@
-diff -ruN pciutils-3.14.0/Makefile pciutils-3.14.0.new/Makefile
---- pciutils-3.14.0/Makefile	2025-09-14 20:28:39 +0000
-+++ pciutils-3.14.0.new/Makefile	2025-06-21 16:05:02 +0000
+diff -ruN pciutils-3.15.0/Makefile pciutils-3.15.0.new/Makefile
+--- pciutils-3.15.0/Makefile	2026-04-05 19:23:50 +0000
++++ pciutils-3.15.0.new/Makefile	2026-10-25 19:50:48 +0000
 @@ -32,7 +32,7 @@
  ABI_VERSION=3
  
@@ -10,10 +10,10 @@ diff -ruN pciutils-3.14.0/Makefile pciutils-3.14.0.new/Makefile
  BINDIR=$(PREFIX)/bin
  SBINDIR=$(PREFIX)/sbin
  SHAREDIR=$(PREFIX)/share
-diff -ruN pciutils-3.14.0/lib/configure pciutils-3.14.0.new/lib/configure
---- pciutils-3.14.0/lib/configure	2025-06-11 08:38:03 +0000
-+++ pciutils-3.14.0.new/lib/configure	2025-09-14 20:13:53 +0000
-@@ -242,6 +242,10 @@
+diff -ruN pciutils-3.15.0/lib/configure pciutils-3.15.0.new/lib/configure
+--- pciutils-3.15.0/lib/configure	2026-04-05 16:45:14 +0000
++++ pciutils-3.15.0.new/lib/configure	2026-10-25 19:50:48 +0000
+@@ -243,6 +243,10 @@
  		IDSDIR="/etc/pci"
  		LIBRESOLV=
  		;;
@@ -24,9 +24,9 @@ diff -ruN pciutils-3.14.0/lib/configure pciutils-3.14.0.new/lib/configure
  	*)
  		echo " Unfortunately, your OS is not supported by the PCI Library"
  		exit 1
-diff -ruN pciutils-3.14.0/lib/i386-io-fiwix.h pciutils-3.14.0.new/lib/i386-io-fiwix.h
---- pciutils-3.14.0/lib/i386-io-fiwix.h	1970-01-01 00:00:00 +0000
-+++ pciutils-3.14.0.new/lib/i386-io-fiwix.h	2025-09-14 20:15:11 +0000
+diff -ruN pciutils-3.15.0/lib/i386-io-fiwix.h pciutils-3.15.0.new/lib/i386-io-fiwix.h
+--- pciutils-3.15.0/lib/i386-io-fiwix.h	1970-01-01 00:00:00 +0000
++++ pciutils-3.15.0.new/lib/i386-io-fiwix.h	2026-10-25 19:50:48 +0000
 @@ -0,0 +1,35 @@
 +/*
 + *	The PCI Library -- Access to i386 I/O ports on FiwixOS (same as in Hurd)
@@ -63,9 +63,9 @@ diff -ruN pciutils-3.14.0/lib/i386-io-fiwix.h pciutils-3.14.0.new/lib/i386-io-fi
 +static inline void intel_io_unlock(void)
 +{
 +}
-diff -ruN pciutils-3.14.0/lib/i386-ports.c pciutils-3.14.0.new/lib/i386-ports.c
---- pciutils-3.14.0/lib/i386-ports.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/lib/i386-ports.c	2025-09-14 20:15:52 +0000
+diff -ruN pciutils-3.15.0/lib/i386-ports.c pciutils-3.15.0.new/lib/i386-ports.c
+--- pciutils-3.15.0/lib/i386-ports.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/lib/i386-ports.c	2026-10-25 19:50:48 +0000
 @@ -32,6 +32,8 @@
  #include "i386-io-djgpp.h"
  #elif defined(PCI_OS_OPENBSD)
@@ -75,9 +75,9 @@ diff -ruN pciutils-3.14.0/lib/i386-ports.c pciutils-3.14.0.new/lib/i386-ports.c
  #else
  #error Do not know how to access I/O ports on this OS.
  #endif
-diff -ruN pciutils-3.14.0/lmr/margin.c pciutils-3.14.0.new/lmr/margin.c
---- pciutils-3.14.0/lmr/margin.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/lmr/margin.c	2025-09-14 20:24:10 +0000
+diff -ruN pciutils-3.15.0/lmr/margin.c pciutils-3.15.0.new/lmr/margin.c
+--- pciutils-3.15.0/lmr/margin.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/lmr/margin.c	2026-10-25 19:50:48 +0000
 @@ -221,6 +221,7 @@
    u8 marg_type;
    margin_cmd step_cmd;
@@ -223,9 +223,9 @@ diff -ruN pciutils-3.14.0/lmr/margin.c pciutils-3.14.0.new/lmr/margin.c
      {
        if (results[i].test_status == MARGIN_TEST_OK)
          free(results[i].lanes);
-diff -ruN pciutils-3.14.0/lmr/margin_args.c pciutils-3.14.0.new/lmr/margin_args.c
---- pciutils-3.14.0/lmr/margin_args.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/lmr/margin_args.c	2025-09-14 20:25:23 +0000
+diff -ruN pciutils-3.15.0/lmr/margin_args.c pciutils-3.15.0.new/lmr/margin_args.c
+--- pciutils-3.15.0/lmr/margin_args.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/lmr/margin_args.c	2026-10-25 19:50:48 +0000
 @@ -40,6 +40,7 @@
  dev_for_filter(struct pci_access *pacc, char *filter)
  {
@@ -273,9 +273,9 @@ diff -ruN pciutils-3.14.0/lmr/margin_args.c pciutils-3.14.0.new/lmr/margin_args.
              init_link_args(&(links[i].args), com_args);
          }
      }
-diff -ruN pciutils-3.14.0/lmr/margin_hw.c pciutils-3.14.0.new/lmr/margin_hw.c
---- pciutils-3.14.0/lmr/margin_hw.c	2025-06-21 15:08:44 +0000
-+++ pciutils-3.14.0.new/lmr/margin_hw.c	2025-09-14 20:22:47 +0000
+diff -ruN pciutils-3.15.0/lmr/margin_hw.c pciutils-3.15.0.new/lmr/margin_hw.c
+--- pciutils-3.15.0/lmr/margin_hw.c	2025-12-28 20:48:32 +0000
++++ pciutils-3.15.0.new/lmr/margin_hw.c	2026-10-25 19:50:48 +0000
 @@ -25,8 +25,9 @@
    u16 vendor = pci_read_word(dev, PCI_VENDOR_ID);
    u16 device = pci_read_word(dev, PCI_DEVICE_ID);
@@ -301,9 +301,9 @@ diff -ruN pciutils-3.14.0/lmr/margin_hw.c pciutils-3.14.0.new/lmr/margin_hw.c
      {
        if (given_down && pci_read_byte(dev, PCI_SECONDARY_BUS) == p->bus && dev->domain == p->domain
            && p->func == 0)
-diff -ruN pciutils-3.14.0/lmr/margin_log.c pciutils-3.14.0.new/lmr/margin_log.c
---- pciutils-3.14.0/lmr/margin_log.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/lmr/margin_log.c	2025-09-14 20:24:35 +0000
+diff -ruN pciutils-3.15.0/lmr/margin_log.c pciutils-3.15.0.new/lmr/margin_log.c
+--- pciutils-3.15.0/lmr/margin_log.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/lmr/margin_log.c	2026-10-25 19:50:48 +0000
 @@ -51,6 +51,8 @@
  void
  margin_log_link(struct margin_link *link)
@@ -339,9 +339,9 @@ diff -ruN pciutils-3.14.0/lmr/margin_log.c pciutils-3.14.0.new/lmr/margin_log.c
          {
            if (arg.lanes_numbers[i] - 1 == arg.lanes_numbers[i - 1])
              {
-diff -ruN pciutils-3.14.0/lmr/margin_results.c pciutils-3.14.0.new/lmr/margin_results.c
---- pciutils-3.14.0/lmr/margin_results.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/lmr/margin_results.c	2025-09-14 20:25:00 +0000
+diff -ruN pciutils-3.15.0/lmr/margin_results.c pciutils-3.15.0.new/lmr/margin_results.c
+--- pciutils-3.15.0/lmr/margin_results.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/lmr/margin_results.c	2026-10-25 19:50:48 +0000
 @@ -68,8 +68,9 @@
                             "Invalid lanes specified with arguments",
                             "Invalid receivers specified with arguments",
@@ -404,9 +404,9 @@ diff -ruN pciutils-3.14.0/lmr/margin_results.c pciutils-3.14.0.new/lmr/margin_re
                  fprintf(csv, "NA,");
                fprintf(csv, "NA\n");
              }
-diff -ruN pciutils-3.14.0/ls-ecaps.c pciutils-3.14.0.new/ls-ecaps.c
---- pciutils-3.14.0/ls-ecaps.c	2025-06-21 15:17:18 +0000
-+++ pciutils-3.14.0.new/ls-ecaps.c	2025-09-14 20:18:27 +0000
+diff -ruN pciutils-3.15.0/ls-ecaps.c pciutils-3.15.0.new/ls-ecaps.c
+--- pciutils-3.15.0/ls-ecaps.c	2025-12-28 20:48:32 +0000
++++ pciutils-3.15.0.new/ls-ecaps.c	2026-10-25 19:53:08 +0000
 @@ -661,6 +661,8 @@
  static void
  cap_rcec(struct device *d, int where)
@@ -436,9 +436,51 @@ diff -ruN pciutils-3.14.0/ls-ecaps.c pciutils-3.14.0.new/ls-ecaps.c
      {
        int pos = where + PCI_CXL_RL_BLOCK1_LO + 8*i;
        if (pos + 7 >= where + len)
-diff -ruN pciutils-3.14.0/pcilmr.c pciutils-3.14.0.new/pcilmr.c
---- pciutils-3.14.0/pcilmr.c	2025-06-08 17:41:54 +0000
-+++ pciutils-3.14.0.new/pcilmr.c	2025-09-14 20:21:42 +0000
+@@ -1935,6 +1938,7 @@
+ cap_mmio_rbl(struct device *d, int where)
+ {
+   char buf[16];
++  u32 i;
+ 
+   printf("MMIO Register Block Locator\n");
+ 
+@@ -1958,7 +1962,7 @@
+ 
+   u32 num_mrbl = (mrbllen / 8) - 1;
+ 
+-  for (u32 i = 0; i < num_mrbl; i++)
++  for (i = 0; i < num_mrbl; i++)
+     {
+       unsigned int pos = where + PCI_MRBL_REG + i * PCI_MRBL_REG_SIZE;
+       if (!config_fetch(d, pos, PCI_MRBL_REG_SIZE))
+diff -ruN pciutils-3.15.0/lspci.c pciutils-3.15.0.new/lspci.c
+--- pciutils-3.15.0/lspci.c	2026-04-05 18:56:33 +0000
++++ pciutils-3.15.0.new/lspci.c	2026-10-25 19:52:22 +0000
+@@ -810,6 +810,7 @@
+   byte int_pin = get_conf_byte(d, PCI_INTERRUPT_PIN);
+   word command = get_conf_word(d, PCI_COMMAND);
+   int irq = (command & PCI_COMMAND_DISABLE_INTx) ? 0 : p->irq;
++  struct pci_msi_routing *mr;
+ 
+   pci_fill_info(p, PCI_FILL_MSI_ROUTING);
+ 
+@@ -817,11 +818,11 @@
+   int num_msi = 0;
+   if (p->msi_routing)
+     {
+-      for (struct pci_msi_routing *mr = p->msi_routing; mr; mr = mr->next)
++      for (mr = p->msi_routing; mr; mr = mr->next)
+ 	num_msi++;
+       msi_table = xmalloc(num_msi * sizeof(struct pci_msi_routing *));
+       num_msi = 0;
+-      for (struct pci_msi_routing *mr = p->msi_routing; mr; mr = mr->next)
++      for (mr = p->msi_routing; mr; mr = mr->next)
+ 	msi_table[num_msi++] = mr;
+       qsort(msi_table, num_msi, sizeof(struct pci_msi_routing *), compare_msi);
+     }
+diff -ruN pciutils-3.15.0/pcilmr.c pciutils-3.15.0.new/pcilmr.c
+--- pciutils-3.15.0/pcilmr.c	2025-06-08 17:41:54 +0000
++++ pciutils-3.15.0.new/pcilmr.c	2026-10-25 19:50:48 +0000
 @@ -19,12 +19,14 @@
  static void
  scan_links(struct pci_access *pacc, bool only_ready)
