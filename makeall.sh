@@ -2290,7 +2290,7 @@ build sysvinit "" 2.87dsf i386 "" "Programs which control basic system processes
 build tar "" 1.35 i386 "" "GNU file archiving program" "https://ftp.gnu.org/gnu/tar/"
 build termcap "" 1.3.1 i386 "" "The terminal feature database used by certain applications" "https://ftp.gnu.org/gnu/termcap/"
 build texinfo "" 5.2 i386 "" "Tools needed to create Texinfo format documentation files" "https://ftp.gnu.org/gnu/texinfo/"
-build tiff "" 4.6.0 i386 "" "Library of functions for manipulating TIFF format image files" "https://libtiff.gitlab.io/libtiff/"
+build tiff "" 4.7.2 i386 "" "Library of functions for manipulating TIFF format image files" "https://libtiff.gitlab.io/libtiff/"
 build time "" 1.9 i386 "" "A GNU utility for monitoring a program's use of system resources" "https://ftp.gnu.org/gnu/time/"
 build tmpwatch "" 2.11 i386 "" "A utility for removing files based on when they were last accessed" "https://pagure.io/tmpwatch/releases"
 build tree "" 2.2.1 i386 "" "File system tree viewer" "https://gitlab.com/OldManProgrammer/unix-tree"
