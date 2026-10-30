@@ -1,0 +1,62 @@
+diff -ru tree-2.3.2/Makefile tree-2.3.2.new/Makefile
+--- tree-2.3.2/Makefile	2026-03-16 22:38:08 +0000
++++ tree-2.3.2.new/Makefile	2026-10-29 17:25:49 +0000
+@@ -24,10 +24,10 @@
+ 
+ VERSION=2.3.2
+ TREE_DEST=tree
+-DESTDIR=${PREFIX}/bin
++#DESTDIR=${PREFIX}/bin
+ MAN=tree.1
+ # Probably needs to be ${PREFIX}/share/man for most systems now
+-MANDIR=${PREFIX}/man
++#MANDIR=${PREFIX}/man
+ OBJS=color.o file.o filter.o hash.o html.o info.o json.o list.o tree.o unix.o \
+      util.o xml.o strverscmp.o
+ 
+@@ -35,9 +35,9 @@
+ 
+ # Linux defaults:
+ #LDFLAGS?=-s
+-CFLAGS?=-ggdb
++#CFLAGS?=-ggdb
+ CFLAGS?=-O3
+-CFLAGS+=-std=c11 -Wpedantic -Wall -Wextra -Wstrict-prototypes -Wshadow -Wconversion \
++#CFLAGS+=-std=c11 -Wpedantic -Wall -Wextra -Wstrict-prototypes -Wshadow -Wconversion \
+ 	-Wdiscarded-qualifiers
+ # _LARGEFILE64_SOURCE may be considered obsolete
+ CPPFLAGS+=-DLARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+@@ -122,10 +122,10 @@
+ 	rm -f $(TREE_DEST) *.o *~
+ 
+ install: tree
+-	$(INSTALL) -d $(DESTDIR)
+-	$(INSTALL) -d $(MANDIR)/man1
+-	$(INSTALL) $(TREE_DEST) $(DESTDIR)/$(TREE_DEST); \
+-	$(INSTALL) -m 644 doc/$(MAN) $(MANDIR)/man1/$(MAN)
++	$(INSTALL) -d $(DESTDIR)/usr/bin
++	$(INSTALL) -d $(DESTDIR)/usr/share/man/man1
++	$(INSTALL) $(TREE_DEST) $(DESTDIR)/usr/bin/$(TREE_DEST); \
++	$(INSTALL) -m 644 doc/$(MAN) $(DESTDIR)/usr/share/man/man1/$(MAN)
+ 
+ distclean:
+ 	rm -f *.o *~
+diff -ru tree-2.3.2/tree.c tree-2.3.2.new/tree.c
+--- tree-2.3.2/tree.c	2026-03-16 22:38:08 +0000
++++ tree-2.3.2.new/tree.c	2026-10-29 17:14:35 +0000
+@@ -945,13 +945,13 @@
+ 
+ void free_dir(struct _info **d)
+ {
+-  int i;
++  int i, j;
+ 
+   for(i=0;d[i];i++) {
+     free(d[i]->name);
+     if (d[i]->lnk) free(d[i]->lnk);
+     if (d[i]->comment) {
+-      for(int j=0; d[i]->comment[j] != NULL; j++) free(d[i]->comment[j]);
++      for(j=0; d[i]->comment[j] != NULL; j++) free(d[i]->comment[j]);
+     }
+     if (d[i]->err) free(d[i]->err);
+     // d[i]->selinux is a hashed string -- do not free.
