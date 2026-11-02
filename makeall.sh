@@ -430,6 +430,19 @@ EOF
 			_pack $prg-$ver
 			;;
 
+		bison)
+			_unpack $prg-$ver l
+			pushd $prg-$ver || exit 1
+				_patch $prg-$ver
+				./configure --prefix=/usr || exit 1
+				_make
+			popd
+			pushd $PREFIX
+				rm -f usr/share/info/dir
+			popd
+			_pack $prg-$ver
+			;;
+
 		busybox)
 			_unpack $prg-$ver j
 			pushd $prg-$ver || exit 1
@@ -2192,6 +2205,7 @@ build automake automake1111 1.11.1 noarch "autoconf264" "A GNU tool for automati
 build automake "" 1.15.1 noarch "" "A GNU tool for automatically creating Makefiles" "https://ftp.gnu.org/gnu/automake/"
 build bash "" 4.4.18 i386 "" "The GNU Bourne Again shell" "https://ftp.gnu.org/gnu/bash/"
 build bc "" 1.08.2 i386 "" "GNU's bc (a numeric processing language) and dc (a calculator)" "https://ftp.gnu.org/gnu/bc/"
+build bison "" 3.8.2 i386 "" "A GNU general-purpose parser generator" "https://ftp.gnu.org/gnu/bison/"
 build busybox "" 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build busybox busybox-mini 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
 build busybox busybox-networking 1.01 i386 "" "Statically linked binary providing simplified versions of system commands" "https://busybox.net/downloads/"
