@@ -2309,7 +2309,7 @@ build tiff "" 4.7.2 i386 "" "Library of functions for manipulating TIFF format i
 build time "" 1.9 i386 "" "A GNU utility for monitoring a program's use of system resources" "https://ftp.gnu.org/gnu/time/"
 build tmpwatch "" 2.11 i386 "" "A utility for removing files based on when they were last accessed" "https://pagure.io/tmpwatch/releases"
 build tree "" 2.3.2 i386 "" "File system tree viewer" "https://gitlab.com/OldManProgrammer/unix-tree"
-build units "" 2.24 i386 "" "A utility for converting amounts from one unit to another" "https://ftp.gnu.org/gnu/units/"
+build units "" 2.27 i386 "" "A utility for converting amounts from one unit to another" "https://ftp.gnu.org/gnu/units/"
 build unzip "" 60 i386 "" "A utility for unpacking zip files" "https://infozip.sourceforge.net/UnZip.html"
 build util-linux-ng "" 2.18 i386 "" "Collection of basic system utilities" "https://www.kernel.org/pub/linux/utils/util-linux/"
 build vim "" 7.4 i386 "" "The VIM editor" "https://www.vim.org/"
