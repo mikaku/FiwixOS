@@ -2318,7 +2318,7 @@ build vttest "" 20251205 i386 "" "Test VT100-type terminal" "https://invisible-i
 build wdiff "" 1.2.3 i386 "" "Compare files on a word per word basis" "https://ftp.gnu.org/gnu/wdiff/"
 build which "" 2.25 i386 "" "Displays where a particular program in your path is located" "https://ftp.gnu.org/gnu/which/"
 build xml2 "" 0.5 i386 "" "XML/Unix Processing Tools" "https://deb.debian.org/debian/pool/main/x/xml2/"
-build xmlto "" 0.0.28 i386 "" "A tool for converting XML files to various formats" "https://pagure.io/xmlto/releases"
+build xmlto "" 0.0.29 i386 "" "A tool for converting XML files to various formats" "https://pagure.io/xmlto/releases"
 build xz "" 5.0.8 i386 "" "LZMA compression utilities" "https://tukaani.org/xz/"
 build zgv "" 5.9 i386 "" "Picture viewer for SVGAlib" "https://www.svgalib.org/rus/zgv/"
 build zile "" 2.3.24 i386 "" "Zile Is Lossy Emacs" "https://ftp.gnu.org/gnu/zile/"
