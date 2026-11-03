@@ -2315,7 +2315,7 @@ build util-linux-ng "" 2.18 i386 "" "Collection of basic system utilities" "http
 build vim "" 7.4 i386 "" "The VIM editor" "https://www.vim.org/"
 build vixie-cron "" 4.1 i386 "" "The Vixie cron daemon for executing specified programs at set times" "https://ftp.isc.org/isc/cron/"
 build vttest "" 20251205 i386 "" "Test VT100-type terminal" "https://invisible-island.net/archives/vttest/"
-build wdiff "" 1.2.2 i386 "" "Compare files on a word per word basis" "https://ftp.gnu.org/gnu/wdiff/"
+build wdiff "" 1.2.3 i386 "" "Compare files on a word per word basis" "https://ftp.gnu.org/gnu/wdiff/"
 build which "" 2.23 i386 "" "Displays where a particular program in your path is located" "https://ftp.gnu.org/gnu/which/"
 build xml2 "" 0.5 i386 "" "XML/Unix Processing Tools" "https://deb.debian.org/debian/pool/main/x/xml2/"
 build xmlto "" 0.0.28 i386 "" "A tool for converting XML files to various formats" "https://pagure.io/xmlto/releases"
