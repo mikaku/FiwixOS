@@ -422,8 +422,8 @@ You cannot install FiwixOS $OSVERSION from here, use the CD-ROM instead.
 
 EOF
 
-	cp -p fiwix /tmp/floppy/boot
-	cp -p System.map.gz /tmp/floppy/boot
+	cp -p fiwix.nonet /tmp/floppy/boot/fiwix
+	cp -p System.map.gz.nonet /tmp/floppy/boot/System.map.gz
 	umount /tmp/floppy
 	fsck.ext2 -fy $FLOPPY_IMAGE
 	rm -rf /tmp/floppy
@@ -463,7 +463,7 @@ make_floppy_initrd() {
 	setup_grub_initrd_floppy
 
 	mv initrd.img /tmp/floppy/boot
-	cp -p fiwix /tmp/floppy/boot
+	cp -p fiwix.nonet /tmp/floppy/boot/fiwix
 	umount /tmp/floppy
 	fsck.ext2 -fy $FLOPPY_INITRD_IMAGE
 	rm -f initrd.tar.bz2
@@ -495,11 +495,11 @@ EOF
 	# extract some necessary programs for the installation
 
 	gzip -dc ${BASE_DIR}/builds/sed_4.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/sed
-#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/sed-4.4.tar.bz2 ./usr/bin/sed
+#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/sed-4.9.tar.bz2 ./usr/bin/sed
 	mv sed /tmp/iso/usr/bin
 
 	gzip -dc ${BASE_DIR}/builds/dialog_1.3-20250817_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/bin\///" -zxf - ./usr/bin/dialog
-#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/dialog-1.3-20240619.tar.bz2 ./usr/bin/dialog
+#	tar --transform "s/^.\/usr\/bin\///" -jxf ${BASE_DIR}/builds/dialog-1.3-20250817.tar.bz2 ./usr/bin/dialog
 	mv dialog /tmp/iso/usr/bin
 
 	gzip -dc ${BASE_DIR}/builds/ncurses_5.9_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/share\/tabset\///" -zxf - ./usr/share/tabset/vt100
@@ -511,8 +511,8 @@ EOF
 	mkdir -p /tmp/iso/usr/share/terminfo/l
 	mv linux /tmp/iso/usr/share/terminfo/l
 
-	gzip -dc ${BASE_DIR}/builds/e2fsprogs_1.40.11_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
-#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${BASE_DIR}/builds/e2fsprogs-1.40.11.tar.bz2 ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
+	gzip -dc ${BASE_DIR}/builds/e2fsprogs_1.41.14_i386.ipk | tar -xOf - ./data.tar.gz | tar --transform "s/^.\/usr\/sbin\///" -zxf - ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
+#	tar --transform "s/^.\/usr\/sbin\///" -jxf ${BASE_DIR}/builds/e2fsprogs-1.41.14.tar.bz2 ./usr/sbin/mke2fs ./usr/sbin/e2fsck ./usr/sbin/debugfs ./usr/sbin/tune2fs
 	mv mke2fs e2fsck debugfs tune2fs /tmp/iso/sbin
 	ln -s /sbin/e2fsck /tmp/iso/sbin/fsck.ext2
 
@@ -557,13 +557,6 @@ EOF
 		   noarch \
 		   "lxdoom" \
 		   "The shareware .WAD file for DOOM 1"
-
-	create_ipk /tmp/iso/install/extras/ \
-		   doom2_shareware \
-		   1.9 \
-		   noarch \
-		   "lxdoom" \
-		   "The shareware .WAD file for DOOM 2"
 
 	create_ipk /tmp/iso/install/extras/ \
 		   figlet_extra_fonts \
@@ -647,6 +640,8 @@ set -e
 # save the compiled kernel
 cp ${KERNEL_DIR}/fiwix .
 cp ${KERNEL_DIR}/System.map.gz .
+cp ${KERNEL_DIR}/fiwix.nonet .
+cp ${KERNEL_DIR}/System.map.gz.nonet .
 
 make_floppy && echo "done"
 echo
@@ -654,6 +649,7 @@ make_floppy_initrd && echo "done"
 echo
 make_iso && echo "done"
 
+rm -f fiwix.nonet System.map.gz.nonet
 rm -f fiwix System.map.gz
 sync ; sync
 
