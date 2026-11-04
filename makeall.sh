@@ -2323,7 +2323,7 @@ build xz "" 5.0.8 i386 "" "LZMA compression utilities" "https://tukaani.org/xz/"
 build zgv "" 5.9 i386 "" "Picture viewer for SVGAlib" "https://www.svgalib.org/rus/zgv/"
 build zile "" 2.3.24 i386 "" "Zile Is Lossy Emacs" "https://ftp.gnu.org/gnu/zile/"
 build zip "" 30 i386 "" "A file compression and packaging utility compatible with PKZIP" "https://infozip.sourceforge.net/Zip.html"
-build zlib "" 1.3.1 i386 "" "Compression and decompression library" "https://www.zlib.net/"
+build zlib "" 1.3.2 i386 "" "Compression and decompression library" "https://www.zlib.net/"
 
 # Toolchain
 build binutils "" 2.25.1 i386 "automake1111" "A GNU collection of binary utilities" "https://ftp.gnu.org/gnu/binutils/"
