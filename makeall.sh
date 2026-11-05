@@ -1460,7 +1460,6 @@ EOF
 		readline)
 			_unpack $prg-$ver z
 			pushd $prg-$ver || exit 1
-				_patch $prg-$ver
 				./configure --prefix=/usr --disable-shared CPPFLAGS="-D_POSIX_VERSION" || exit 1
 				_make "-D_POSIX_VERSION -DHAVE_TERMIOS_H"
 			popd
@@ -2293,7 +2292,7 @@ build pkg-config "" 0.25 i386 "" "A tool for determining compilation options" "h
 build popt "" 1.19 i386 "" "C library for parsing command line parameters" "https://github.com/rpm-software-management/popt/"
 build procps "" 3.2.8 i386 "" "System and process monitoring utilities" "https://github.com/warmchang/procps"
 build pwgen "" 2.08 i386 "" "Automatic password generation" "https://sourceforge.net/projects/pwgen/files/pwgen/"
-build readline "" 8.1.2 i386 "" "A library for editing typed command lines" "https://ftp.gnu.org/gnu/readline/"
+build readline "" 8.3 i386 "" "A library for editing typed command lines" "https://ftp.gnu.org/gnu/readline/"
 build screen "" 4.2.1 i386 "" "A screen manager that supports multiple logins on one terminal" "https://ftp.gnu.org/gnu/screen/"
 build sed "" 4.9 i386 "" "A GNU stream text editor" "https://ftp.gnu.org/gnu/sed/"
 build sharutils "" 4.15.2 i386 "" "The GNU shar utilities for packaging and unpackaging shell archives" "https://ftp.gnu.org/gnu/sharutils/"
