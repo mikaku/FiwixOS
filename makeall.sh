@@ -1568,7 +1568,7 @@ EOF
 			;;
 
 		sysvinit)
-			_unpack $prg-$ver z
+			_unpack $prg-$ver j
 			pushd $prg-$ver/src || exit 1
 				patch -p2 < ../../${SRC}/$prg-$ver.patch || exit 1
 				make ROOT=${PREFIX} || exit 1
@@ -2307,7 +2307,7 @@ build slang "" 2.3.3 i386 "" "Shared library for the S-Lang extension language" 
 build stress "" 1.0.7 i386 "" "A tool to put given subsystems under a specified load" "https://github.com/resurrecting-open-source-projects/stress"
 build svgalib "" 1.4.3 i386 "" "Low-level fullscreen SVGA graphics library" "http://www.svgalib.org/"
 build symlinks "" 1.4.3 i386 "" "A utility which maintains a system's symbolic links" "https://github.com/brandt/symlinks"
-build sysvinit "" 2.87dsf i386 "" "Programs which control basic system processes" "https://download-mirror.savannah.gnu.org/releases/sysvinit/"
+build sysvinit "" 2.88dsf i386 "" "Programs which control basic system processes" "https://download-mirror.savannah.gnu.org/releases/sysvinit/"
 build tar "" 1.35 i386 "" "GNU file archiving program" "https://ftp.gnu.org/gnu/tar/"
 build termcap "" 1.3.1 i386 "" "The terminal feature database used by certain applications" "https://ftp.gnu.org/gnu/termcap/"
 build texinfo "" 5.2 i386 "" "Tools needed to create Texinfo format documentation files" "https://ftp.gnu.org/gnu/texinfo/"
