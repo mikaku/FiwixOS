@@ -1,87 +1,62 @@
-diff -ru sysvinit-2.87dsf/src/Makefile sysvinit-2.87dsf.new/src/Makefile
---- sysvinit-2.87dsf/src/Makefile	2009-07-10 21:47:28 +0000
-+++ sysvinit-2.87dsf.new/src/Makefile	2025-09-27 10:45:42 +0000
-@@ -25,7 +25,7 @@
+diff -ru sysvinit-2.88dsf/src/Makefile sysvinit-2.88dsf.new/src/Makefile
+--- sysvinit-2.88dsf/src/Makefile	2010-04-11 09:30:27 +0000
++++ sysvinit-2.88dsf.new/src/Makefile	2026-10-28 11:33:59 +0000
+@@ -25,10 +25,10 @@
  
  ifeq ($(DISTRO),)
  BIN	+= mountpoint
 -SBIN	+= sulogin bootlogd
 +#SBIN	+= sulogin bootlogd
  USRBIN	+= utmpdump wall
- MAN1	+= mountpoint.1 wall.1
- MAN8	+= sulogin.8 bootlogd.8
-@@ -35,7 +35,7 @@
- BIN	+= mountpoint
- SBIN	+= sulogin bootlogd
- MAN1	+= mountpoint.1
+ MAN1	+= utmpdump.1 mountpoint.1 wall.1
 -MAN8	+= sulogin.8 bootlogd.8
 +#MAN8	+= sulogin.8 bootlogd.8
  endif
  
- ifeq ($(DISTRO),Owl)
-@@ -73,8 +73,8 @@
+ ifeq ($(DISTRO),Debian)
+@@ -92,7 +92,7 @@
+ init:		LDLIBS += $(INITLIBS) $(STATIC)
  init:		init.o init_utmp.o
- 		$(CC) $(LDFLAGS) $(STATIC) -o $@ init.o init_utmp.o $(INIT_SELIBS)
  
 -halt:		halt.o ifdown.o hddown.o utmp.o reboot.h
--		$(CC) $(LDFLAGS) -o $@ halt.o ifdown.o hddown.o utmp.o
 +halt:		halt.o hddown.o utmp.o reboot.h
-+		$(CC) $(LDFLAGS) -o $@ halt.o hddown.o utmp.o
  
  last:		last.o oldutmp.h
- 		$(CC) $(LDFLAGS) -o $@ last.o
-@@ -127,14 +127,17 @@
- distclean:	clobber
  
- install:
-+		mkdir -p $(ROOT)/bin
- 		for i in $(BIN); do \
- 			$(STRIP) $$i ; \
- 			$(INSTALL_EXEC) $$i $(ROOT)/bin/ ; \
- 		done
-+		mkdir -p $(ROOT)/sbin
- 		for i in $(SBIN); do \
- 			$(STRIP) $$i ; \
- 			$(INSTALL_EXEC) $$i $(ROOT)/sbin/ ; \
- 		done
-+		mkdir -p $(ROOT)/usr/bin
- 		for i in $(USRBIN); do \
- 			$(STRIP) $$i ; \
- 			$(INSTALL_EXEC) $$i $(ROOT)/usr/bin/ ; \
-@@ -147,7 +150,11 @@
- 		if [ ! -f $(ROOT)/usr/bin/lastb ]; then \
- 			ln -sf last $(ROOT)/usr/bin/lastb; \
- 		fi
-+		mkdir -p $(ROOT)/usr/include
- 		$(INSTALL_DATA) initreq.h $(ROOT)/usr/include/
-+		mkdir -p $(ROOT)$(MANDIR)/man1
-+		mkdir -p $(ROOT)$(MANDIR)/man5
-+		mkdir -p $(ROOT)$(MANDIR)/man8
- 		for i in $(MAN1); do \
- 			$(INSTALL_DATA) ../man/$$i $(ROOT)$(MANDIR)/man1/; \
- 		done
-diff -ru sysvinit-2.87dsf/src/dowall.c sysvinit-2.87dsf.new/src/dowall.c
---- sysvinit-2.87dsf/src/dowall.c	2009-07-12 13:30:31 +0000
-+++ sysvinit-2.87dsf.new/src/dowall.c	2025-09-27 10:45:42 +0000
-@@ -28,7 +28,7 @@
- #include <signal.h>
- #include <setjmp.h>
+diff -ru sysvinit-2.88dsf/src/bootlogd.c sysvinit-2.88dsf.new/src/bootlogd.c
+--- sysvinit-2.88dsf/src/bootlogd.c	2010-03-23 14:37:01 +0000
++++ sysvinit-2.88dsf.new/src/bootlogd.c	2026-10-28 11:33:59 +0000
+@@ -276,7 +276,7 @@
+ 	if (errno != ENOIOCTLCMD) return -1;
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__fiwix__)
+ 	/*
+ 	 *	Read /proc/cmdline.
+ 	 */
+diff -ru sysvinit-2.88dsf/src/dowall.c sysvinit-2.88dsf.new/src/dowall.c
+--- sysvinit-2.88dsf/src/dowall.c	2010-03-19 16:53:57 +0000
++++ sysvinit-2.88dsf.new/src/dowall.c	2026-10-28 11:33:59 +0000
+@@ -45,7 +45,7 @@
+ # define HOST_NAME_MAX	255
+ #endif
  
 -static sigjmp_buf jbuf;
 +static jmp_buf jbuf;
  
  /*
   *	Alarm handler
-@@ -36,7 +36,7 @@
- /*ARGSUSED*/
+@@ -57,7 +57,7 @@
  static void handler(int arg)
+ # endif
  {
 -	siglongjmp(jbuf, 1);
 +	longjmp(jbuf, 1);
  }
  
  
-@@ -203,7 +203,7 @@
+@@ -229,7 +229,7 @@
  		/*
  		 *	Open it non-delay
  		 */
@@ -90,10 +65,10 @@ diff -ru sysvinit-2.87dsf/src/dowall.c sysvinit-2.87dsf.new/src/dowall.c
  			alarm(2);
  			flags = O_WRONLY|O_NDELAY|O_NOCTTY;
  			if (file_isatty(term) &&
-diff -ru sysvinit-2.87dsf/src/halt.c sysvinit-2.87dsf.new/src/halt.c
---- sysvinit-2.87dsf/src/halt.c	2009-07-12 15:06:19 +0000
-+++ sysvinit-2.87dsf.new/src/halt.c	2025-09-27 10:45:42 +0000
-@@ -256,9 +256,6 @@
+diff -ru sysvinit-2.88dsf/src/halt.c sysvinit-2.88dsf.new/src/halt.c
+--- sysvinit-2.88dsf/src/halt.c	2010-02-26 13:45:49 +0000
++++ sysvinit-2.88dsf.new/src/halt.c	2026-10-28 11:33:59 +0000
+@@ -266,9 +266,6 @@
  		sleep(2);
  	}
  
@@ -102,20 +77,11 @@ diff -ru sysvinit-2.87dsf/src/halt.c sysvinit-2.87dsf.new/src/halt.c
 -
  	if (do_hddown)
  		(void)hddown();
- 
-diff -ru sysvinit-2.87dsf/src/init.c sysvinit-2.87dsf.new/src/init.c
---- sysvinit-2.87dsf/src/init.c	2009-07-12 17:52:46 +0000
-+++ sysvinit-2.87dsf.new/src/init.c	2025-09-27 10:45:42 +0000
-@@ -7,7 +7,7 @@
-  *
-  * Version:	@(#)init.c  2.86  30-Jul-2004  miquels@cistron.nl
-  */
--#define VERSION "2.86"
-+#define VERSION "2.87"
- #define DATE    "31-Jul-2004"
- /*
-  *		This file is part of the sysvinit suite,
-@@ -2377,12 +2377,12 @@
+ 	else
+diff -ru sysvinit-2.88dsf/src/init.c sysvinit-2.88dsf.new/src/init.c
+--- sysvinit-2.88dsf/src/init.c	2010-04-13 09:48:54 +0000
++++ sysvinit-2.88dsf.new/src/init.c	2026-10-28 11:33:59 +0000
+@@ -2539,12 +2539,12 @@
  	}
  #endif
  
@@ -129,10 +95,19 @@ diff -ru sysvinit-2.87dsf/src/init.c sysvinit-2.87dsf.new/src/init.c
  	if ((f = open(VT_MASTER, O_RDWR | O_NOCTTY)) >= 0) {
  		(void) ioctl(f, KDSIGACCEPT, SIGWINCH);
  		close(f);
-diff -ru sysvinit-2.87dsf/src/killall5.c sysvinit-2.87dsf.new/src/killall5.c
---- sysvinit-2.87dsf/src/killall5.c	2009-07-12 14:59:06 +0000
-+++ sysvinit-2.87dsf.new/src/killall5.c	2025-09-27 10:45:42 +0000
-@@ -689,7 +689,7 @@
+diff -ru sysvinit-2.88dsf/src/killall5.c sysvinit-2.88dsf.new/src/killall5.c
+--- sysvinit-2.88dsf/src/killall5.c	2010-03-19 14:10:55 +0000
++++ sysvinit-2.88dsf.new/src/killall5.c	2026-10-28 11:37:44 +0000
+@@ -169,7 +169,7 @@
+ #endif
+ static inline void xmemalign(void **memptr, size_t alignment, size_t size)
+ {
+-	if ((posix_memalign(memptr, alignment, size)) < 0) {
++	if (!(*memptr = aligned_alloc(alignment, size))) {
+ 		if (sent_sigstop) kill(-1, SIGCONT);
+ 		nsyslog(LOG_ERR, "out of memory");
+ 		exit(1);
+@@ -1056,7 +1056,7 @@
  	signal(SIGKILL, SIG_IGN);
  
  	/* lock us into memory */
@@ -141,10 +116,10 @@ diff -ru sysvinit-2.87dsf/src/killall5.c sysvinit-2.87dsf.new/src/killall5.c
  
  	/* Now stop all processes. */
  	kill(-1, SIGSTOP);
-diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
---- sysvinit-2.87dsf/src/last.c	2009-07-12 17:52:46 +0000
-+++ sysvinit-2.87dsf.new/src/last.c	2025-09-27 10:45:42 +0000
-@@ -31,9 +31,11 @@
+diff -ru sysvinit-2.88dsf/src/last.c sysvinit-2.88dsf.new/src/last.c
+--- sysvinit-2.88dsf/src/last.c	2010-02-19 15:51:36 +0000
++++ sysvinit-2.88dsf.new/src/last.c	2026-10-28 11:33:59 +0000
+@@ -40,9 +40,11 @@
  #include <string.h>
  #include <signal.h>
  #include <getopt.h>
@@ -156,7 +131,7 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
  #include "oldutmp.h"
  
  #ifndef SHUTDOWN_TIME
-@@ -90,7 +92,7 @@
+@@ -101,7 +103,7 @@
  	utn->ut_type = oldut->ut_type;
  	utn->ut_pid  = oldut->ut_pid;
  	utn->ut_time = oldut->ut_oldtime;
@@ -165,7 +140,7 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
  	strncpy(utn->ut_line, oldut->ut_line, OLD_LINESIZE);
  	strncpy(utn->ut_user, oldut->ut_user, OLD_NAMESIZE);
  	strncpy(utn->ut_host, oldut->ut_host, OLD_HOSTSIZE);
-@@ -298,6 +300,7 @@
+@@ -309,6 +311,7 @@
  	return p;
  }
  
@@ -173,7 +148,7 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
  /*
   *	Lookup a host with DNS.
   */
-@@ -349,6 +352,7 @@
+@@ -360,6 +363,7 @@
  
  	return getnameinfo(sa, salen, result, size, NULL, 0, flags);
  }
@@ -181,7 +156,7 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
  
  /*
   *	Show one line of information on screen
-@@ -449,8 +453,10 @@
+@@ -460,8 +464,10 @@
  	 *	Look up host with DNS if needed.
  	 */
  	r = -1;
@@ -191,11 +166,11 @@ diff -ru sysvinit-2.87dsf/src/last.c sysvinit-2.87dsf.new/src/last.c
 +*/
  	if (r < 0) {
  		len = UT_HOSTSIZE;
- 		if (len >= sizeof(domain)) len = sizeof(domain) - 1;
-diff -ru sysvinit-2.87dsf/src/mountpoint.c sysvinit-2.87dsf.new/src/mountpoint.c
---- sysvinit-2.87dsf/src/mountpoint.c	2005-09-10 09:32:27 +0000
-+++ sysvinit-2.87dsf.new/src/mountpoint.c	2025-09-27 10:45:42 +0000
-@@ -22,6 +22,7 @@
+ 		if (len >= (int)sizeof(domain)) len = sizeof(domain) - 1;
+diff -ru sysvinit-2.88dsf/src/mountpoint.c sysvinit-2.88dsf.new/src/mountpoint.c
+--- sysvinit-2.88dsf/src/mountpoint.c	2009-09-10 08:28:49 +0000
++++ sysvinit-2.88dsf.new/src/mountpoint.c	2026-10-28 11:33:59 +0000
+@@ -31,6 +31,7 @@
  #include <stdarg.h>
  #include <getopt.h>
  #include <stdio.h>
@@ -203,20 +178,20 @@ diff -ru sysvinit-2.87dsf/src/mountpoint.c sysvinit-2.87dsf.new/src/mountpoint.c
  
  int dostat(char *path, struct stat *st, int do_lstat, int quiet)
  {
-diff -ru sysvinit-2.87dsf/src/reboot.h sysvinit-2.87dsf.new/src/reboot.h
---- sysvinit-2.87dsf/src/reboot.h	2005-09-10 09:32:27 +0000
-+++ sysvinit-2.87dsf.new/src/reboot.h	2025-09-27 10:45:42 +0000
-@@ -32,5 +32,5 @@
+diff -ru sysvinit-2.88dsf/src/reboot.h sysvinit-2.88dsf.new/src/reboot.h
+--- sysvinit-2.88dsf/src/reboot.h	2009-09-10 08:28:49 +0000
++++ sysvinit-2.88dsf.new/src/reboot.h	2026-10-28 11:33:59 +0000
+@@ -47,5 +47,5 @@
  #  define BMAGIC_POWEROFF	BMAGIC_HALT
  #endif
  
 -#define init_reboot(magic)	reboot(magic)
-+#define init_reboot(magic)	reboot(0xfee1dead, 672274793, magic)	/* Fiwix still uses the old format */
++#define init_reboot(magic)	reboot(0xfee1dead, 672274793, magic) /* Fiwix uses the old format */
  
-diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
---- sysvinit-2.87dsf/src/shutdown.c	2009-07-12 15:03:07 +0000
-+++ sysvinit-2.87dsf.new/src/shutdown.c	2025-09-27 10:45:54 +0000
-@@ -356,7 +356,7 @@
+diff -ru sysvinit-2.88dsf/src/shutdown.c sysvinit-2.88dsf.new/src/shutdown.c
+--- sysvinit-2.88dsf/src/shutdown.c	2010-03-23 14:37:01 +0000
++++ sysvinit-2.88dsf.new/src/shutdown.c	2026-10-28 11:33:59 +0000
+@@ -399,7 +399,7 @@
  /*
   *	Go to runlevel 0, 1 or 6.
   */
@@ -225,7 +200,7 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  {
  	char	*args[8];
  	int	argp = 0;
-@@ -699,7 +699,7 @@
+@@ -743,7 +743,7 @@
  		if (wt < 0) wt += 1440;
  	}
  	/* Shutdown NOW if time == 0 */
@@ -234,7 +209,7 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  
  	/* Give warnings on regular intervals and finally shutdown. */
  	if (wt < 15 && !needwarning(wt)) warn(wt);
-@@ -712,7 +712,7 @@
+@@ -756,7 +756,7 @@
  		hardsleep(60);
  		wt--;
  	}
@@ -243,10 +218,10 @@ diff -ru sysvinit-2.87dsf/src/shutdown.c sysvinit-2.87dsf.new/src/shutdown.c
  
  	return 0; /* Never happens */
  }
-diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
---- sysvinit-2.87dsf/src/utmpdump.c	2009-07-10 21:26:04 +0000
-+++ sysvinit-2.87dsf.new/src/utmpdump.c	2025-09-27 10:45:42 +0000
-@@ -38,7 +38,7 @@
+diff -ru sysvinit-2.88dsf/src/utmpdump.c sysvinit-2.88dsf.new/src/utmpdump.c
+--- sysvinit-2.88dsf/src/utmpdump.c	2010-03-23 14:37:01 +0000
++++ sysvinit-2.88dsf.new/src/utmpdump.c	2026-10-28 11:33:59 +0000
+@@ -47,7 +47,7 @@
  	dest.ut_type = src.ut_type;
  	dest.ut_pid  = src.ut_pid;
  	dest.ut_time = src.ut_oldtime;
@@ -255,7 +230,7 @@ diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
  	strncpy(dest.ut_id,   src.ut_id,   4);
  	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
  	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
-@@ -56,7 +56,7 @@
+@@ -65,7 +65,7 @@
  	dest.ut_type    = src.ut_type;
  	dest.ut_pid     = src.ut_pid;
  	dest.ut_oldtime = src.ut_time;
@@ -264,7 +239,7 @@ diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
  	strncpy(dest.ut_id,   src.ut_id,   4);
  	strncpy(dest.ut_line, src.ut_line, OLD_LINESIZE);
  	strncpy(dest.ut_user, src.ut_user, OLD_NAMESIZE);
-@@ -122,7 +122,7 @@
+@@ -131,7 +131,7 @@
  	char *addr_string, *time_string;
  	struct in_addr in;
  
@@ -273,7 +248,7 @@ diff -ru sysvinit-2.87dsf/src/utmpdump.c sysvinit-2.87dsf.new/src/utmpdump.c
  	addr_string = inet_ntoa(in);
  	time_string = timetostr(ut.ut_time);
  	cleanse(ut.ut_id);
-@@ -215,7 +215,7 @@
+@@ -228,7 +228,7 @@
  		line += gettok(line, s_addr, sizeof(s_addr)-1, 1);
  		line += gettok(line, s_time, sizeof(s_time)-1, 0);
  
