@@ -441,7 +441,9 @@ EOF
 				_make
 			popd
 			pushd $PREFIX
+				rm -f usr/bin/yacc
 				rm -f usr/share/info/dir
+				rm -f usr/share/man/man1/yacc.1
 			popd
 			_pack $prg-$ver
 			;;
