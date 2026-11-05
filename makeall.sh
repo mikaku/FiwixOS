@@ -382,6 +382,9 @@ EOF
 					make DESTDIR=${PREFIX} pkgdatadir="/usr/share/${prg}-${ver}" install
 				popd
 				pushd $PREFIX
+					# Perl 5.26 introduced a change requiring literal braces to be escaped.
+					# <https://stackoverflow.com/questions/63384159/how-to-fix-unescaped-left-brace-in-regex-is-illegal-here-in-regex-error>
+					sed -i '4113 s/{(/\\{(/;4113 s/)}/)\\}/' usr/bin/automake-1.11.1
 					rm -rf usr/share/info usr/share/man usr/share/doc/ usr/share/local
 				popd
 				rm -rf "${prg}-${ver}"
