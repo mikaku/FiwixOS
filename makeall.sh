@@ -818,6 +818,11 @@ EOF
 				_patch $prg-$ver
 				./configure --prefix=/usr || exit 1
 				_make "-DELIDE_CODE=1"
+				mkdir -p ${PREFIX}/etc
+				mv gtags.conf ${PREFIX}/etc
+			popd
+			pushd $PREFIX
+				rmdir -p usr/var/gtags
 			popd
 			_pack $prg-$ver
 			;;
