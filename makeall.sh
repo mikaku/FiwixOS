@@ -753,6 +753,9 @@ EOF
 				./configure --prefix=/usr || exit 1
 				_make "-D_POSIX_ARG_MAX=4096"
 			popd
+			pushd $PREFIX
+				rmdir usr/var
+			popd
 			_pack $prg-$ver
 			;;
 
