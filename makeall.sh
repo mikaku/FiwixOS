@@ -643,6 +643,7 @@ EOF
 			pushd $PREFIX
 				mkdir -p etc
 				mv usr/etc/mke2fs.conf etc
+				rmdir usr/etc
 				rm -f usr/sbin/fsck.ext3
 				rm -f usr/sbin/mkfs.ext3
 				rm -f usr/sbin/fsck.ext4
