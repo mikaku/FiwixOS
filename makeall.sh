@@ -2086,7 +2086,6 @@ EOF
 			_unpack $prg-$ver z
 			pushd $prg-$ver
 				_patch $prg-$ver
-				_patch $prg-$ver-fiwix
 				pushd newlib
 					autoreconf || exit 1
 				popd
@@ -2126,8 +2125,8 @@ EOF
 				rm -rf i386-pc-fiwix/libquadmath
 				rm -rf i386-pc-fiwix/libssp
 				rm -rf i386-pc-fiwix/libstdc++-v3
-				ln -sf ../newlib-4.5.0.20241231/newlib .
-				ln -sf ../newlib-4.5.0.20241231/libgloss .
+				ln -sf ../newlib-4.6.0.20260123/newlib .
+				ln -sf ../newlib-4.6.0.20260123/libgloss .
 				make DESTDIR=${PREFIX} all-target-libstdc++-v3
 				make DESTDIR=${PREFIX} all-target-libssp
 				make DESTDIR=${PREFIX} all-target-libquadmath
@@ -2141,7 +2140,7 @@ EOF
 				rm -rf usr/bin
 				rm -rf usr/i386-pc-fiwix/
 			popd
-			rm -rf gcc-$ver newlib-4.5.0.20241231
+			rm -rf gcc-$ver newlib-4.6.0.20260123
 			_pack $prg-$ver
 			;;
 
@@ -2343,7 +2342,7 @@ build zlib "" 1.3.2 i386 "" "Compression and decompression library" "https://www
 # Toolchain
 build binutils "" 2.25.1 i386 "automake1111" "A GNU collection of binary utilities" "https://ftp.gnu.org/gnu/binutils/"
 build gcc "" 4.7.4 i386 "autoconf264" "GNU Compiler Collection (C, C++, Objective-C, ...)" "https://ftp.gnu.org/gnu/gcc/"
-build newlib "" 4.5.0.20241231 i386 "gcc" "A Standard C Library implementation intended for use on embedded systems" "https://sourceware.org/newlib/"
+build newlib "" 4.6.0.20260123 i386 "gcc" "A Standard C Library implementation intended for use on embedded systems" "https://sourceware.org/newlib/"
 build libstdc++ "" 4.7.4 i386 "gcc" "GNU Standard C++ Library" "https://ftp.gnu.org/gnu/gcc/"
 
 echo
