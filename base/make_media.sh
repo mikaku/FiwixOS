@@ -229,7 +229,7 @@ setup_grub_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2025, Jordi Sanfeliu.
+# Copyright (C) 2018-2026, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -264,7 +264,7 @@ setup_grub_initrd_floppy() {
 	mkdir -p /tmp/floppy/boot/grub
 	cat > /tmp/floppy/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2025, Jordi Sanfeliu.
+# Copyright (C) 2018-2026, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -304,7 +304,7 @@ setup_grub_iso() {
 	mkdir -p /tmp/iso/boot/grub
 	cat > /tmp/iso/boot/grub/menu.lst <<EOF
 # FiwixOS
-# Copyright (C) 2018-2025, Jordi Sanfeliu.
+# Copyright (C) 2018-2026, Jordi Sanfeliu.
 #
 # GRUB configuration file.
 #
@@ -638,10 +638,10 @@ make_media_setup
 set -e
 
 # save the compiled kernel
-cp ${KERNEL_DIR}/fiwix .
-cp ${KERNEL_DIR}/System.map.gz .
-cp ${KERNEL_DIR}/fiwix.nonet .
-cp ${KERNEL_DIR}/System.map.gz.nonet .
+mv ${KERNEL_DIR}/fiwix .
+mv ${KERNEL_DIR}/System.map.gz .
+mv ${KERNEL_DIR}/fiwix.nonet .
+mv ${KERNEL_DIR}/System.map.gz.nonet .
 
 make_floppy && echo "done"
 echo

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# FiwixOS 3.5
-# Copyright 2018-2025, Jordi Sanfeliu. All rights reserved.
+# FiwixOS 3.6
+# Copyright 2018-2026, Jordi Sanfeliu. All rights reserved.
 # Distributed under the terms of the Fiwix License.
 #
 # Package building script
